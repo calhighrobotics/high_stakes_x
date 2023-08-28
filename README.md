@@ -2,6 +2,6 @@
 
 This is the PROS version of the robot, rewritten from the VexCode version. This was done so that we could support a greater feature set and support external libraries.
 
-The PROS version will be first rewritten from the VEXCode version and then it will have features added onto it.
+The PROS version will be first rewritten from the VEXCode version and then it will have features added onto it. It is not expected to become production ready as soon as it is complete.
 
 To see the vexcode version, go [here](https://github.com/calhighrobotics/Over-Under-2023-24-teamB)
