@@ -309,9 +309,9 @@
       }
     },
     "upload_options": {
-      "description": "1516B's over under vex program",
+      "description": "1516B's over under program vex",
       "slot": 2,
-      "icon": "planet"
+      "icon": "X"
     }
   }
 }
