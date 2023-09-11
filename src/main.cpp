@@ -75,13 +75,13 @@ void autonomous() {}
  */
 void opcontrol() {
 	pros::Controller controller (pros::E_CONTROLLER_MASTER);
-	pros::Motor RightFront (1, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-	pros::Motor LeftFront (2, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
+	pros::Motor RightFront (2, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
+	pros::Motor LeftFront (1, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 	pros::Motor LeftBack (3, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 	pros::Motor RightBack (4, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 	pros::Motor LeftMid (10, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 	pros::Motor Elevation (20, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-	pros::Motor RightMid (6, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
+	pros::Motor RightMid (9, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 	pros::Motor Catapult (7, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 	pros::Motor IntakeLeft (8, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 	pros::Motor IntakeRight (9, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
@@ -89,19 +89,14 @@ void opcontrol() {
 
     while (true) {
         // Read joystick values
-		int power = controller.get_analog(ANALOG_LEFT_Y);
-		int turn = controller.get_analog(ANALOG_RIGHT_X);
+		int power = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
+		int turn = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_X);
 
 		int left = power + turn;
 		int right = power - turn;
 
-		while (true)
-		{
-			controller.print(0, 0, power);
-			controller.print(1, 0, turn);
-		}
 		
-
+		// EXPERIMENTAL DRIVETRAIN CODE - Not Working currently.
 		RightFront.move(right);
 		RightMid.move(right);
 		RightBack.move(right);
@@ -109,10 +104,41 @@ void opcontrol() {
 		LeftFront.move(left);
 		LeftMid.move(left);
 		LeftBack.move(left);
+		
+		// Controls Catapult movement - uses A button to cock the catapult back, the Y button to release tension.
+		if (controller.get_digital(DIGITAL_A)) {
+			Catapult.move(127);
+		}
+		else if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_Y)) {
+			Catapult.move(-127);
+		}
+		else {
+			Catapult.brake();
+		}
 
+		// Catapult controller, uses the X button holded down to push the elevation up.
+		if (controller.get_digital(DIGITAL_X)) {
+			Elevation.move(127);
+		}
+		else {
+			Elevation.brake();
+		}
+
+		// Intake controller, moves the left and right intakes and stops them if nothing is pressed.
+		if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_B)) {
+			IntakeRight.move(127);
+			IntakeLeft.move(127);
+		}
+		else {
+			IntakeRight.brake();
+			IntakeLeft.brake();
+		}
+		
 
 
 
         pros::delay(2); // Small delay to reduce CPU usage
     }
+	
+	
 }
