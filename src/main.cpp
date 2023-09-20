@@ -34,6 +34,20 @@ void initialize() {
  * the VEX Competition Switch, following either autonomous or opcontrol. When
  * the robot is enabled, this task will exit.
  */
+
+void initRerun(int rf, int rb, int lf, int lb, /*int lm, int rm,*/ int cat, int intake) {
+      uint8_t arr[6];
+      arr[0] = rf;
+      arr[1] = rb;
+      arr[2] = lf;
+      arr[3] = lb;
+      //arr[4] = lm;
+      //arr[5] = rm;
+      arr[4] = cat;
+      arr[5] = intake;
+      //Brain.SDcard.savefile("rerun.txt", arr, sizeof(arr));
+}
+
 void disabled() {}
 
 /**
