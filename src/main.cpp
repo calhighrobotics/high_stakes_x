@@ -89,6 +89,7 @@ void autonomous() {}
  */
 void opcontrol() {
 	pros::Controller controller (pros::E_CONTROLLER_MASTER);
+  pros::Controller controller2 (pros::E_CONTROLLER_PARTNER);
 	pros::Motor RightFront (2, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 	pros::Motor LeftFront (1, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 	pros::Motor LeftBack (3, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
@@ -98,8 +99,8 @@ void opcontrol() {
 	pros::Motor RightMid (9, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 	pros::Motor Catapult (7, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 	pros::Motor IntakeLeft (8, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-	pros::Motor IntakeRight (9, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-
+	pros::Motor IntakeRight (11, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
+  pros::ADIDigitalOut piston1 ('A');
 
     while (true) {
         // Read joystick values
@@ -139,16 +140,27 @@ void opcontrol() {
 		}
 
 		// Intake controller, moves the left and right intakes and stops them if nothing is pressed.
-		if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_B)) {
+		if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_R1)) {
 			IntakeRight.move(127);
 			IntakeLeft.move(127);
 		}
+    if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_R2)) {
+      IntakeRight.move(-127);
+			IntakeLeft.move(-127);
+    }
 		else {
 			IntakeRight.brake();
 			IntakeLeft.brake();
 		}
-		
 
+    if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_L1)) {
+      piston1.set_value(true);
+
+    }
+
+
+		
+    
 
 
         pros::delay(2); // Small delay to reduce CPU usage
