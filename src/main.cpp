@@ -1,5 +1,7 @@
 #include "main.h"
+#include "okapi/api.hpp"
 
+using namespace okapi;
 /**
  * A callback function for LLEMU's center button.
  *
@@ -72,7 +74,12 @@ void competition_initialize() {}
  * will be stopped. Re-enabling the robot will restart the task, not re-start it
  * from where it left off.
  */
-void autonomous() {}
+void autonomous() {
+	auto chassis = ChassisControllerBuilder()
+		.withMotors({11, 5, 13}, {2, 8, 6});
+
+
+}
 
 /**
  * Runs the operator control code. This function will be started in its own task
@@ -100,7 +107,7 @@ void opcontrol() {
 	pros::Motor Catapult (7, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 	pros::Motor IntakeLeft (8, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 	pros::Motor IntakeRight (11, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-  pros::ADIDigitalOut piston1 ('A');
+	pros::ADIDigitalOut piston1 ('A');
 
     while (true) {
         // Read joystick values
