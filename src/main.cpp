@@ -37,18 +37,6 @@ void initialize() {
  * the robot is enabled, this task will exit.
  */
 
-void initRerun(int rf, int rb, int lf, int lb, /*int lm, int rm,*/ int cat, int intake) {
-      uint8_t arr[6];
-      arr[0] = rf;
-      arr[1] = rb;
-      arr[2] = lf;
-      arr[3] = lb;
-      //arr[4] = lm;
-      //arr[5] = rm;
-      arr[4] = cat;
-      arr[5] = intake;
-      //Brain.SDcard.savefile("rerun.txt", arr, sizeof(arr));
-}
 
 void disabled() {}
 
@@ -96,36 +84,30 @@ void autonomous() {
  */
 void opcontrol() {
 	pros::Controller controller (pros::E_CONTROLLER_MASTER);
-  pros::Controller controller2 (pros::E_CONTROLLER_PARTNER);
-	pros::Motor RightFront (2, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-	pros::Motor LeftFront (1, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-	pros::Motor LeftBack (3, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-	pros::Motor RightBack (4, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-	pros::Motor LeftMid (10, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-	pros::Motor Elevation (20, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-	pros::Motor RightMid (9, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-	pros::Motor Catapult (7, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-	pros::Motor IntakeLeft (8, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-	pros::Motor IntakeRight (11, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-	pros::ADIDigitalOut piston1 ('A');
+  	pros::Controller controller2 (pros::E_CONTROLLER_PARTNER);
+	pros::Motor RightFront (6, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
+	pros::Motor LeftFront (5, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
+	pros::Motor LeftBack (7, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
+	pros::Motor RightBack (8, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
+	pros::Motor LeftMid (2, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
+	pros::Motor Lift (10, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
+	pros::Motor RightMid (3, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
+	pros::Motor Catapult (9, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
+	pros::ADIDigitalOut wing1 ('A');
+	pros::ADIDigitalOut wing2 ('B');
+
+
+	pros::Motor_Group drive_left ({LeftFront, LeftMid, LeftBack});
+	pros::Motor_Group drive_right ({RightFront, RightMid, RightBack});
+
+
+	bool wings = false;
 
     while (true) {
         // Read joystick values
-		int power = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
-		int turn = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_X);
+		drive_left.move(controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y));
+		drive_right.move(controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_Y));
 
-		int left = power + turn;
-		int right = power - turn;
-
-		
-		// EXPERIMENTAL DRIVETRAIN CODE - Not Working currently.
-		RightFront.move(right);
-		RightMid.move(right);
-		RightBack.move(right);
-
-		LeftFront.move(left);
-		LeftMid.move(left);
-		LeftBack.move(left);
 		
 		// Controls Catapult movement - uses A button to cock the catapult back, the Y button to release tension.
 		if (controller.get_digital(DIGITAL_A)) {
@@ -139,31 +121,32 @@ void opcontrol() {
 		}
 
 		// Catapult controller, uses the X button holded down to push the elevation up.
-		if (controller.get_digital(DIGITAL_X)) {
-			Elevation.move(127);
-		}
-		else {
-			Elevation.brake();
-		}
+		
 
 		// Intake controller, moves the left and right intakes and stops them if nothing is pressed.
 		if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_R1)) {
-			IntakeRight.move(127);
-			IntakeLeft.move(127);
+			Lift.move(127);
 		}
-    if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_R2)) {
-      IntakeRight.move(-127);
-			IntakeLeft.move(-127);
-    }
+		if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_R2)) {
+			Lift.move(-127);
+		}
 		else {
-			IntakeRight.brake();
-			IntakeLeft.brake();
+			Lift.brake();
 		}
 
-    if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_L1)) {
-      piston1.set_value(true);
+		if(master.get_digital_new_press(pros::Digital_B)) {
+			wings = !wings;
+		}
 
-    }
+		if (wings) {
+			wing1.set_value(true);
+			wing1.set_value(true);
+		}
+		else {
+			wing1.set_value(true);
+			wing1.set_value(true);
+		}
+	
 
 
 		
