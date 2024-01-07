@@ -1,7 +1,5 @@
 #include "main.h"
-#include "okapi/api.hpp"
 
-using namespace okapi;
 /**
  * A callback function for LLEMU's center button.
  *
@@ -63,9 +61,6 @@ void competition_initialize() {}
  * from where it left off.
  */
 void autonomous() {
-	auto chassis = ChassisControllerBuilder()
-		.withMotors({11, 5, 13}, {2, 8, 6});
-
 
 }
 
@@ -86,19 +81,20 @@ void opcontrol() {
 	pros::Controller controller (pros::E_CONTROLLER_MASTER);
   	pros::Controller controller2 (pros::E_CONTROLLER_PARTNER);
 	pros::Motor RightFront (6, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-	pros::Motor LeftFront (5, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-	pros::Motor LeftBack (7, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
+	pros::Motor LeftFront (-5, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
+	pros::Motor LeftBack (-7, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 	pros::Motor RightBack (8, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-	pros::Motor LeftMid (2, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
+	pros::Motor LeftMid (-2, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 	pros::Motor Lift (10, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 	pros::Motor RightMid (3, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-	pros::Motor Catapult (9, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
+	pros::Motor Lift2 (-9, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 	pros::ADIDigitalOut wing1 ('A');
 	pros::ADIDigitalOut wing2 ('B');
 
 
 	pros::Motor_Group drive_left ({LeftFront, LeftMid, LeftBack});
 	pros::Motor_Group drive_right ({RightFront, RightMid, RightBack});
+	pros::Motor_Group lift_motors ({RightFront, RightMid, RightBack});
 
 
 	bool wings = false;
@@ -110,31 +106,23 @@ void opcontrol() {
 
 		
 		// Controls Catapult movement - uses A button to cock the catapult back, the Y button to release tension.
-		if (controller.get_digital(DIGITAL_A)) {
-			Catapult.move(127);
+		if (controller.get_digital(DIGITAL_R1)) {
+			lift_motors.move(127);
 		}
-		else if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_Y)) {
-			Catapult.move(-127);
+		else if (controller.get_digital(DIGITAL_R2)) {
+			lift_motors.move(-127);
 		}
 		else {
-			Catapult.brake();
+			lift_motors.brake();
 		}
 
 		// Catapult controller, uses the X button holded down to push the elevation up.
 		
 
 		// Intake controller, moves the left and right intakes and stops them if nothing is pressed.
-		if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_R1)) {
-			Lift.move(127);
-		}
-		if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_R2)) {
-			Lift.move(-127);
-		}
-		else {
-			Lift.brake();
-		}
+	
 
-		if(master.get_digital_new_press(pros::Digital_B)) {
+		if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_B)) {
 			wings = !wings;
 		}
 
