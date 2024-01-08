@@ -95,18 +95,29 @@ void opcontrol() {
 
 	pros::Motor_Group drive_left ({LeftFront, LeftMid, LeftBack});
 	pros::Motor_Group drive_right ({RightFront, RightMid, RightBack});
-	pros::Motor_Group lift_motors ({RightFront, RightMid, RightBack});
+	pros::Motor_Group lift_motors ({Lift, Lift2});
 
 	int system = 1;
 	bool wings = false;
 
     while (true) {
         // Read joystick values
+
+		// TANK DRIVE
 		drive_left.move(controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y));
 		drive_right.move(controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_Y));
 
-		
-		// Controls Catapult movement - uses A button to cock the catapult back, the Y button to release tension.
+
+		// Using Arcade drive
+		// int leftY = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
+        // int rightX = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_X);
+        
+        // // Move the left side of the robot
+        // drive_left.move(leftY + rightX);
+        
+        // // Move the right side of the robot 
+        // drive_right.move(leftY - rightX);
+
 		if (controller.get_digital(DIGITAL_R1)) {
 			lift_motors.move(127);
 		}
