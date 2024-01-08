@@ -88,15 +88,16 @@ void opcontrol() {
 	pros::Motor Lift (10, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 	pros::Motor RightMid (3, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 	pros::Motor Lift2 (-9, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-	pros::ADIDigitalOut wing1 ('A');
-	pros::ADIDigitalOut wing2 ('B');
+	pros::ADIDigitalOut wing ('A');
+	pros::ADIDigitalOut pto_1 ('B');
+	pros::ADIDigitalOut pto_2 ('C');
 
 
 	pros::Motor_Group drive_left ({LeftFront, LeftMid, LeftBack});
 	pros::Motor_Group drive_right ({RightFront, RightMid, RightBack});
 	pros::Motor_Group lift_motors ({RightFront, RightMid, RightBack});
 
-
+	int system = 1;
 	bool wings = false;
 
     while (true) {
@@ -127,14 +128,42 @@ void opcontrol() {
 		}
 
 		if (wings) {
-			wing1.set_value(true);
-			wing1.set_value(true);
+			wing.set_value(true);
 		}
 		else {
-			wing1.set_value(true);
-			wing1.set_value(true);
+			wing.set_value(true);
 		}
-	
+
+		if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_X)) {
+			if (system == 1) {
+				// intake
+				controller.clear_line(0);
+				pto_1.set_value(false);
+				controller.print(1, 0, "System %d : Intake", system);
+			}
+			if (system == 2) {
+				// Four Bar
+				controller.clear_line(0);
+				pto_1.set_value(true);
+				pto_2.set_value(true);
+				controller.print(1, 0, "System %d : 4-bar", system);
+			}
+			if (system == 3) {
+				// Flywheel
+				controller.clear_line(0);
+				pto_1.set_value(true);
+				pto_2.set_value(false);
+				controller.print(1, 0, "System %d : Flywheel", system);
+			}
+
+			system = system + 1;
+
+			// Checks if the toggler goes out of bounds.
+			if (system == 4) {
+				system = 1;
+			}
+
+		}
 
 
 		
