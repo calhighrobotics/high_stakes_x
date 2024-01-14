@@ -1,5 +1,32 @@
 #include "main.h"
 
+/*
+           ___
+          |_|_|
+          |_|_|              _____
+          |_|_|     ____    |*_*_*|
+ _______   _\__\___/ __ \____|_|_   _______
+/ ____  |=|      \  <_+>  /      |=|  ____ \
+~|    |\|=|======\\______//======|=|/|    |~
+ |_   |    \      |      |      /    |    |
+  \==-|     \     |1516B |     /     |----|~~/
+  |   |      |    |      |    |      |____/~/
+  |   |       \____\____/____/      /    / /
+  |   |         {----------}       /____/ /
+  |___|        /~~~~~~~~~~~~\     |_/~|_|/
+   \_/        |/~~~~~||~~~~~\|     /__|\
+   | |         |    ||||    |     (/|| \)
+   | |        /     |  |     \       \\
+   |_|        |     |  |     |
+              |_____|  |_____|
+              (_____)  (_____)
+              |     |  |     |
+              |     |  |     |
+              |/~~~\|  |/~~~\|
+              /|___|\  /|___|\
+             <_______><_______>
+*/
+
 typedef struct {
 	float current;
 	float kP;
@@ -128,8 +155,68 @@ int execPID(int iAim , int iActual, float kP, float kI, float kD, float kILimit)
  */
 void autonomous() {
 
+	int system = 1;
+	bool wings = false;
 
+	std::vector<uint8_t> data((std::istreambuf_iterator<char>("rerun.txt")), std::istreambuf_iterator<char>());
 
+	for (uint8_t i=0; i < data.size(); i+=9) {
+		drive_left.move(controller.get_analog(data[i]));
+		drive_right.move(controller.get_analog(data[i+1]));
+
+		if (controller.get_digital(data[i+2])) {
+			lift_motors.move(127);
+		}
+		else if (controller.get_digital(data[i+3])) {
+			lift_motors.move(-127);
+		}
+		else {
+			lift_motors.brake();
+		}
+
+		if(controller.get_digital_new_press(data[i+4])) {
+			wings = !wings;
+		}
+
+		if (wings) {
+			wing.set_value(true);
+		}
+		else {
+			wing.set_value(true);
+		}
+
+		if(controller.get_digital_new_press(data[i+5])) {
+			if (system == 1) {
+				// intake
+				controller.clear_line(0);
+				pto_1.set_value(false);
+				controller.print(1, 0, "System %d : Intake", system);
+			}
+			if (system == 2) {
+				// Four Bar
+				controller.clear_line(0);
+				pto_1.set_value(true);
+				pto_2.set_value(true);
+				controller.print(1, 0, "System %d : 4-bar", system);
+			}
+			if (system == 3) {
+				// Flywheel
+				controller.clear_line(0);
+				pto_1.set_value(true);
+				pto_2.set_value(false);
+				controller.print(1, 0, "System %d : Flywheel", system);
+			}
+
+			system = system + 1;
+
+			// Checks if the toggler goes out of bounds.
+			if (system == 4) {
+				system = 1;
+			}
+		pros::delay(3);
+	}
+
+	}
 
 
 }
