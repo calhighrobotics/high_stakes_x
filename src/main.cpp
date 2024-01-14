@@ -15,6 +15,25 @@ typedef struct {
 
 pid PID;
 
+	pros::Controller controller (pros::E_CONTROLLER_MASTER);
+  	pros::Controller controller2 (pros::E_CONTROLLER_PARTNER);
+	pros::Motor RightFront (6, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
+	pros::Motor LeftFront (-5, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
+	pros::Motor LeftBack (-7, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
+	pros::Motor RightBack (8, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
+	pros::Motor LeftMid (-2, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
+	pros::Motor Lift (10, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
+	pros::Motor RightMid (3, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
+	pros::Motor Lift2 (-9, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
+	pros::ADIDigitalOut wing ('A');
+	pros::ADIDigitalOut pto_1 ('B');
+	pros::ADIDigitalOut pto_2 ('C');
+
+
+	pros::Motor_Group drive_left ({LeftFront, LeftMid, LeftBack});
+	pros::Motor_Group drive_right ({RightFront, RightMid, RightBack});
+	pros::Motor_Group lift_motors ({Lift, Lift2});
+
 /**
  * A callback function for LLEMU's center button.
  *
@@ -109,6 +128,10 @@ int execPID(int iAim , int iActual, float kP, float kI, float kD, float kILimit)
  */
 void autonomous() {
 
+
+
+
+
 }
 
 /**
@@ -125,24 +148,7 @@ void autonomous() {
  * task, not resume it from where it left off.
  */
 void opcontrol() {
-	pros::Controller controller (pros::E_CONTROLLER_MASTER);
-  	pros::Controller controller2 (pros::E_CONTROLLER_PARTNER);
-	pros::Motor RightFront (6, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-	pros::Motor LeftFront (-5, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-	pros::Motor LeftBack (-7, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-	pros::Motor RightBack (8, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-	pros::Motor LeftMid (-2, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-	pros::Motor Lift (10, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-	pros::Motor RightMid (3, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-	pros::Motor Lift2 (-9, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-	pros::ADIDigitalOut wing ('A');
-	pros::ADIDigitalOut pto_1 ('B');
-	pros::ADIDigitalOut pto_2 ('C');
 
-
-	pros::Motor_Group drive_left ({LeftFront, LeftMid, LeftBack});
-	pros::Motor_Group drive_right ({RightFront, RightMid, RightBack});
-	pros::Motor_Group lift_motors ({Lift, Lift2});
 
 	int system = 1;
 	bool wings = false;
