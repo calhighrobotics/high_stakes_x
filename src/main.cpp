@@ -1,5 +1,20 @@
 #include "main.h"
 
+typedef struct {
+	float current;
+	float kP;
+	float kI;
+	float kD;
+	float target;
+	float error;
+	float integral;
+	float derivative;
+	float lastError;
+	int   lastTime;
+} pid;
+
+pid PID;
+
 /**
  * A callback function for LLEMU's center button.
  *
@@ -48,6 +63,38 @@ void disabled() {}
  * starts.
  */
 void competition_initialize() {}
+
+
+
+
+
+int execPID(int iAim , int iActual, float kP, float kI, float kD, float kILimit) {
+	
+	PID.current = iActual;
+	PID.error = iAim - iActual;
+
+	if (kI != 0) {
+		if (abs(PID.error) < kILimit) {
+			PID.integral = PID.integral + PID.error;
+		} else {
+			PID.integral = 0;
+		}
+	} else {
+		PID.integral = 0;
+	}
+
+	PID.derivative = PID.error - PID.lastError;
+	
+	PID.lastError = PID.error;
+	pros::delay(5);
+
+	return (PID.error * kP) + (PID.integral * kI) + (PID.derivative * kD);
+}
+
+
+
+
+
 
 /**
  * Runs the user autonomous code. This function will be started in its own task
