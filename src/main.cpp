@@ -1,4 +1,5 @@
 #include "main.h"
+#include "lemlib/api.hpp"
 
 /*
            ___
@@ -42,25 +43,66 @@ typedef struct {
 
 pid PID;
 
-	pros::Controller controller (pros::E_CONTROLLER_MASTER);
-  	pros::Controller controller2 (pros::E_CONTROLLER_PARTNER);
-	pros::Motor RightFront (6, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-	pros::Motor LeftFront (-5, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-	pros::Motor LeftBack (-7, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-	pros::Motor RightBack (8, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-	pros::Motor LeftMid (-2, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-	pros::Motor Lift (10, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-	pros::Motor RightMid (3, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-	pros::Motor Lift2 (-9, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-	pros::ADIDigitalOut wing ('A');
-	pros::ADIDigitalOut pto_1 ('B');
-	pros::ADIDigitalOut pto_2 ('C');
+pros::Controller controller (pros::E_CONTROLLER_MASTER);
+pros::Controller controller2 (pros::E_CONTROLLER_PARTNER);
+pros::Motor RightFront (6, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
+pros::Motor LeftFront (-5, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
+pros::Motor LeftBack (-7, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
+pros::Motor RightBack (8, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
+pros::Motor LeftMid (-2, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
+pros::Motor Lift (10, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
+pros::Motor RightMid (3, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
+pros::Motor Lift2 (-9, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
+pros::Imu inertial_sensor(13);
+pros::ADIDigitalOut wing ('A');
+pros::ADIDigitalOut pto_1 ('B');
+pros::ADIDigitalOut pto_2 ('C');
 
 
-	pros::Motor_Group drive_left ({LeftFront, LeftMid, LeftBack});
-	pros::Motor_Group drive_right ({RightFront, RightMid, RightBack});
-	pros::Motor_Group lift_motors ({Lift, Lift2});
+pros::Motor_Group drive_left ({LeftFront, LeftMid, LeftBack});
+pros::Motor_Group drive_right ({RightFront, RightMid, RightBack});
+pros::Motor_Group lift_motors ({Lift, Lift2});
 
+lemlib::Drivetrain_t drivetrain {
+    &drive_left, // left drivetrain motors
+    &drive_right, // right drivetrain motors
+    10, // track width
+    4, // wheel diameter
+    360 // wheel rpm
+};
+
+lemlib::OdomSensors_t sensors {
+    nullptr, // vertical tracking wheel 1
+    nullptr, // vertical tracking wheel 2
+    nullptr, // horizontal tracking wheel 1
+    nullptr, // we don't have a second tracking wheel, so we set it to nullptr
+    &inertial_sensor // inertial sensor
+};
+
+
+// forward/backward PID
+lemlib::ChassisController_t lateralController {
+    8, // kP
+    30, // kD
+    1, // smallErrorRange
+    100, // smallErrorTimeout
+    3, // largeErrorRange
+    500, // largeErrorTimeout
+    5 // slew rate
+};
+ 
+// turning PID
+lemlib::ChassisController_t angularController {
+    4, // kP
+    40, // kD
+    1, // smallErrorRange
+    100, // smallErrorTimeout
+    3, // largeErrorRange
+    500, // largeErrorTimeout
+    0 // slew rate
+};
+
+lemlib::Chassis chassis(drivetrain, lateralController, angularController, sensors);
 /**
  * A callback function for LLEMU's center button.
  *
@@ -83,11 +125,25 @@ void on_center_button() {
  * All other competition modes are blocked by initialize; it is recommended
  * to keep execution time for this mode under a few seconds.
  */
+
+void  displayLocation() {
+	while (true) {
+        lemlib::Pose pose = chassis.getPose(); // get the current position of the robot
+        pros::lcd::print(0, "x: %f", pose.x); // print the x position
+        pros::lcd::print(1, "y: %f", pose.y); // print the y position
+        pros::lcd::print(2, "heading: %f", pose.theta); // print the heading
+        pros::delay(10);
+    }
+}
+
 void initialize() {
 	pros::lcd::initialize();
-	pros::lcd::set_text(1, "Hello PROS User!");
+	chassis.calibrate();
 
-	pros::lcd::register_btn1_cb(on_center_button);
+	chassis.setPose(0, 0, 0); // X: 0, Y: 0, Heading: 0
+    chassis.setPose(5.2, 10.333, 87); // Setting an example start location for the robot so it is not relatativistic 
+
+	pros::Task screenTask(displayLocation);
 }
 
 /**
@@ -95,6 +151,7 @@ void initialize() {
  * the VEX Competition Switch, following either autonomous or opcontrol. When
  * the robot is enabled, this task will exit.
  */
+
 
 
 void disabled() {}
