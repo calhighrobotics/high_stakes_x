@@ -1,6 +1,7 @@
 #include "main.h"
 #include "lemlib/api.hpp"
 
+
 /*
            ___
           |_|_|
@@ -66,9 +67,9 @@ pros::Motor_Group lift_motors ({Lift, Lift2});
 lemlib::Drivetrain_t drivetrain {
     &drive_left, // left drivetrain motors
     &drive_right, // right drivetrain motors
-    10, // track width
-    4, // wheel diameter
-    360 // wheel rpm
+    11.75, // track width
+    4, // wheel diameter - 3.25 on competition bot, 4 on test drivetrain
+	200 // wheel rpm - 360 rpm for competition bot, 200 for test drivetrain
 };
 
 lemlib::OdomSensors_t sensors {
@@ -109,6 +110,12 @@ lemlib::Chassis chassis(drivetrain, lateralController, angularController, sensor
  * When this callback is fired, it will toggle line 2 of the LCD text between
  * "I was pressed!" and nothing.
  */
+
+
+int subsystem = 1;
+bool wings = false;
+int deadzone = 5;
+
 void on_center_button() {
 	static bool pressed = false;
 	pressed = !pressed;
@@ -141,7 +148,7 @@ void initialize() {
 	chassis.calibrate();
 
 	chassis.setPose(0, 0, 0); // X: 0, Y: 0, Heading: 0
-    chassis.setPose(5.2, 10.333, 87); // Setting an example start location for the robot so it is not relatativistic 
+     // Setting an example start location for the robot so it is not relatativistic 
 
 	pros::Task screenTask(displayLocation);
 }
@@ -212,68 +219,13 @@ int execPID(int iAim , int iActual, float kP, float kI, float kD, float kILimit)
  */
 void autonomous() {
 
-	int system = 1;
-	bool wings = false;
+	chassis.moveTo(0, 0, 5000);
+	chassis.moveTo(-4.73, 65.429, 5000);
+	chassis.moveTo(-2.168, 125.537, 5000);
 
-	std::vector<uint8_t> data((std::istreambuf_iterator<char>("rerun.txt")), std::istreambuf_iterator<char>());
 
-	for (uint8_t i=0; i < data.size(); i+=9) {
-		drive_left.move(controller.get_analog(data[i]));
-		drive_right.move(controller.get_analog(data[i+1]));
 
-		if (controller.get_digital(data[i+2])) {
-			lift_motors.move(127);
-		}
-		else if (controller.get_digital(data[i+3])) {
-			lift_motors.move(-127);
-		}
-		else {
-			lift_motors.brake();
-		}
 
-		if(controller.get_digital_new_press(data[i+4])) {
-			wings = !wings;
-		}
-
-		if (wings) {
-			wing.set_value(true);
-		}
-		else {
-			wing.set_value(true);
-		}
-
-		if(controller.get_digital_new_press(data[i+5])) {
-			if (system == 1) {
-				// intake
-				controller.clear_line(0);
-				pto_1.set_value(false);
-				controller.print(1, 0, "System %d : Intake", system);
-			}
-			if (system == 2) {
-				// Four Bar
-				controller.clear_line(0);
-				pto_1.set_value(true);
-				pto_2.set_value(true);
-				controller.print(1, 0, "System %d : 4-bar", system);
-			}
-			if (system == 3) {
-				// Flywheel
-				controller.clear_line(0);
-				pto_1.set_value(true);
-				pto_2.set_value(false);
-				controller.print(1, 0, "System %d : Flywheel", system);
-			}
-
-			system = system + 1;
-
-			// Checks if the toggler goes out of bounds.
-			if (system == 4) {
-				system = 1;
-			}
-		pros::delay(3);
-	}
-
-	}
 
 
 }
@@ -294,17 +246,28 @@ void autonomous() {
 void opcontrol() {
 
 
-	int system = 1;
-	bool wings = false;
-
     while (true) {
         // Read joystick values
 
 		// TANK DRIVE
-		drive_left.move(controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y));
-		drive_right.move(controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_Y));
 
-
+        int left = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
+        int right = controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_Y);
+        
+        // std::abs takes the absolute value of whatever it is called on.
+        // Thus, any values in range (-5,5) are discarded as 0.
+        if(std::abs(left) < deadzone) {
+            left = 0;
+        }
+        if(std::abs(right) < deadzone) {
+            right = 0;
+        }
+        
+        // Drive the left side of the robot forward at joystick left Y speed
+        drive_left.move(left);
+        
+        // Drive the right side of the robot forward at joystick right Y speed
+        drive_right.move(right);
 		// Using Arcade drive
 		// int leftY = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
         // int rightX = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_X);
@@ -343,20 +306,20 @@ void opcontrol() {
 		}
 
 		if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_X)) {
-			if (system == 1) {
+			if (subsystem == 1) {
 				// intake
 				controller.clear_line(0);
 				pto_1.set_value(false);
 				controller.print(1, 0, "System %d : Intake", system);
 			}
-			if (system == 2) {
+			if (subsystem == 2) {
 				// Four Bar
 				controller.clear_line(0);
 				pto_1.set_value(true);
 				pto_2.set_value(true);
 				controller.print(1, 0, "System %d : 4-bar", system);
 			}
-			if (system == 3) {
+			if (subsystem == 3) {
 				// Flywheel
 				controller.clear_line(0);
 				pto_1.set_value(true);
@@ -364,11 +327,11 @@ void opcontrol() {
 				controller.print(1, 0, "System %d : Flywheel", system);
 			}
 
-			system = system + 1;
+			subsystem = subsystem + 1;
 
 			// Checks if the toggler goes out of bounds.
-			if (system == 4) {
-				system = 1;
+			if (subsystem == 4) {
+				subsystem = 1;
 			}
 
 		}
