@@ -54,8 +54,9 @@ pros::Motor LeftMid (-2, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_
 pros::Motor Lift (10, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 pros::Motor RightMid (3, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 pros::Motor Lift2 (-9, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-pros::Imu inertial_sensor(13);
+// pros::Imu inertial_sensor(13);
 pros::ADIDigitalOut wing ('A');
+pros::ADIDigitalOut wing2 ('D');
 pros::ADIDigitalOut pto_1 ('B');
 pros::ADIDigitalOut pto_2 ('C');
 
@@ -113,6 +114,7 @@ lemlib::Chassis chassis(drivetrain, lateralController, angularController, sensor
 
 
 int subsystem = 1;
+int auton = 1;
 bool wings = false;
 int deadzone = 5;
 
@@ -133,11 +135,11 @@ void on_center_button() {
  * to keep execution time for this mode under a few seconds.
  */
 
-void  displayLocation() {
+void displayLocation() {
 	while (true) {
         lemlib::Pose pose = chassis.getPose(); // get the current position of the robot
         pros::lcd::print(0, "x: %f", pose.x); // print the x position
-        pros::lcd::print(1, "y: %f", pose.y); // print the y position
+        pros::lcd::print(1, "y: %f", pose.y); // pri∟nt the y position
         pros::lcd::print(2, "heading: %f", pose.theta); // print the heading
         pros::delay(10);
     }
@@ -148,9 +150,9 @@ void initialize() {
 	chassis.calibrate();
 
 	chassis.setPose(0, 0, 0); // X: 0, Y: 0, Heading: 0
-     // Setting an example start location for the robot so it is not relatativistic 
-
+     // Setting an example start location for the robot so it is all relatativistic 
 	pros::Task screenTask(displayLocation);
+	
 }
 
 /**
@@ -172,34 +174,14 @@ void disabled() {}
  * This task will exit when the robot is enabled and autonomous or opcontrol
  * starts.
  */
-void competition_initialize() {}
+void competition_initialize() {
 
 
-
-
-
-int execPID(int iAim , int iActual, float kP, float kI, float kD, float kILimit) {
-	
-	PID.current = iActual;
-	PID.error = iAim - iActual;
-
-	if (kI != 0) {
-		if (abs(PID.error) < kILimit) {
-			PID.integral = PID.integral + PID.error;
-		} else {
-			PID.integral = 0;
-		}
-	} else {
-		PID.integral = 0;
-	}
-
-	PID.derivative = PID.error - PID.lastError;
-	
-	PID.lastError = PID.error;
-	pros::delay(5);
-
-	return (PID.error * kP) + (PID.integral * kI) + (PID.derivative * kD);
 }
+	
+
+
+
 
 
 
@@ -218,10 +200,31 @@ int execPID(int iAim , int iActual, float kP, float kI, float kD, float kILimit)
  * from where it left off.
  */
 void autonomous() {
+	
+	if(auton == 1){ 
+		
+		
+		chassis.turnTo(36.285, -45.745, 2000);
+		chassis.moveTo(25.987, 58.854, 200);
+		chassis.moveTo(12.019, 96.538, 200);
 
-	chassis.moveTo(0, 0, 5000);
-	chassis.moveTo(-4.73, 65.429, 5000);
-	chassis.moveTo(-2.168, 125.537, 5000);
+
+
+		//run auton for Front Red 
+	}
+	if(auton == 2){ 
+		
+		chassis.moveTo(0, 0, 5000);
+		chassis.moveTo(-18.131, 20.89, 5000);
+		chassis.moveTo(-20.693, 64.444, 5000);
+		chassis.moveTo(8.868, 98.34, 5000);
+
+
+		//run auton for Front Red 
+	}
+
+
+	
 
 
 
@@ -245,7 +248,7 @@ void autonomous() {
  */
 void opcontrol() {
 
-
+	
     while (true) {
         // Read joystick values
 
@@ -269,14 +272,6 @@ void opcontrol() {
         // Drive the right side of the robot forward at joystick right Y speed
         drive_right.move(right);
 		// Using Arcade drive
-		// int leftY = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
-        // int rightX = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_X);
-        
-        // // Move the left side of the robot
-        // drive_left.move(leftY + rightX);
-        
-        // // Move the right side of the robot 
-        // drive_right.move(leftY - rightX);
 
 		if (controller.get_digital(DIGITAL_R1)) {
 			lift_motors.move(127);
@@ -300,9 +295,11 @@ void opcontrol() {
 
 		if (wings) {
 			wing.set_value(true);
+			wing2.set_value(false);
 		}
 		else {
-			wing.set_value(true);
+			wing.set_value(false);
+			wing2.set_value(true);
 		}
 
 		if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_X)) {
