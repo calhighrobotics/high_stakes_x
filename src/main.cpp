@@ -150,8 +150,19 @@ void displayLocation() {
 }
 
 void displayHi() {
-	while (true) { // get the current position of the robot
-        pros::lcd::print(0, "Hello PROS!"); // print the x position// print the heading
+	while (true) {
+	std::vector<double> positions = drive_.get_positions();	// get the current position of the robot
+        pros::lcd::print(1, "");
+	pros::lcd::print(1, ": %f", pose.y); // print the x position// print the heading
+        pros::delay(10);
+    }
+}
+
+void displayBye() {
+	while (true) {
+	std::vector<double> positions = drive_.get_positions();	// get the current position of the robot
+        pros::lcd::print(1, "");
+	pros::lcd::print(1, ": %f", pose.y); // print the x position// print the heading
         pros::delay(10);
     }
 }
@@ -228,6 +239,7 @@ void autonomous() {
 		else {
 			drive_.move_velocity(150);
 			pros::delay(2000);
+			drive_.brake();
 			drive_right.move_velocity(180);
 			pros::delay(400);
 			drive_.move_velocity(170);
@@ -249,8 +261,10 @@ void autonomous() {
 		else {
 			drive_.move_velocity(150);
 			pros::delay(2000);
+			drive_.brake();
 			drive_right.move_velocity(180);
 			pros::delay(400);
+			drive_right.brake();
 			drive_.move_velocity(170);
 			pros::delay(3000);
 		}
