@@ -1,5 +1,6 @@
 #include "main.h"
 #include "lemlib/api.hpp"
+#include <ostream>
 
 
 /*
@@ -54,7 +55,7 @@ pros::Motor LeftMid (-2, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_
 pros::Motor Lift (10, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 pros::Motor RightMid (3, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 pros::Motor Lift2 (-9, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-// pros::Imu inertial_sensor(13);
+pros::Imu inertial_sensor(13);
 pros::ADIDigitalOut wing ('A');
 pros::ADIDigitalOut wing2 ('D');
 pros::ADIDigitalOut pto_1 ('B');
@@ -248,7 +249,7 @@ void autonomous() {
  */
 void opcontrol() {
 
-	
+	std::cout >> registry_get_plugged_type(13);
     while (true) {
         // Read joystick values
 
