@@ -66,6 +66,7 @@ pros::ADIDigitalOut pto_2 ('C');
 
 pros::Motor_Group drive_left ({LeftFront, LeftMid, LeftBack});
 pros::Motor_Group drive_right ({RightFront, RightMid, RightBack});
+pros::Motor_Group drive_ ({LeftFront, RightFront, Leftmid, Rightmid, LeftBack, Rightback});
 pros::Motor_Group lift_motors ({Lift, Lift2});
 
 lemlib::Drivetrain_t drivetrain {
@@ -224,6 +225,15 @@ void autonomous() {
 			chassis.moveTo(25.987, 58.854, 200);
 			chassis.moveTo(12.019, 96.538, 200);
 		}
+		else {
+			drive_.move_velocity(150);
+			pros::delay(2000);
+			drive_right.move_velocity(180);
+			pros::delay(400);
+			drive_.move_velocity(170);
+			pros::delay(3000);
+			
+		}
 
 
 
@@ -235,6 +245,14 @@ void autonomous() {
 			chassis.moveTo(-18.131, 20.89, 5000);
 			chassis.moveTo(-20.693, 64.444, 5000);
 			chassis.moveTo(8.868, 98.34, 5000);
+		}
+		else {
+			drive_.move_velocity(150);
+			pros::delay(2000);
+			drive_right.move_velocity(180);
+			pros::delay(400);
+			drive_.move_velocity(170);
+			pros::delay(3000);
 		}
 
 
