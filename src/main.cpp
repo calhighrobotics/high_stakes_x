@@ -48,9 +48,8 @@ typedef struct {
 pid PID;
 
 pros::Controller controller (pros::E_CONTROLLER_MASTER);
-pros::Controller controller2 (pros::E_CONTROLLER_PARTNER);
 pros::Motor RightFront (6, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-pros::Motor LeftFront (-5, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
+pros::Motor LeftFront (-5, pros:: E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 pros::Motor LeftBack (-7, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 pros::Motor RightBack (8, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 pros::Motor LeftMid (-2, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
@@ -66,7 +65,7 @@ pros::ADIDigitalOut pto_2 ('C');
 
 pros::Motor_Group drive_left ({LeftFront, LeftMid, LeftBack});
 pros::Motor_Group drive_right ({RightFront, RightMid, RightBack});
-pros::Motor_Group drive_ ({LeftFront, RightFront, Leftmid, Rightmid, LeftBack, Rightback});
+pros::Motor_Group drive_ ({LeftFront, RightFront, LeftMid, RightMid, LeftBack, RightBack});
 pros::Motor_Group lift_motors ({Lift, Lift2});
 
 lemlib::Drivetrain_t drivetrain {
@@ -151,14 +150,14 @@ void displayLocation() {
 
 void displayHi() {
 	while (true) {
-	std::vector<std::int32_t> currents = drive_.get_current_draws();// get the current position of the robot
+	// std::vector<std::int32_t> currents = drive_.get_current_draws();// get the current position of the robot
     pros::lcd::print(0, "Motor energy draw");
-	pros::lcd::print(1, "motor 1 draw: %f", currents[0]);
-	pros::lcd::print(1, "motor 2 draw: %f", currents[1]);
-	pros::lcd::print(1, "motor 3 draw: %f", currents[2]);
-	pros::lcd::print(1, "motor 4 draw: %f", currents[3]);
-	pros::lcd::print(1, "motor 5 draw: %f", currents[4]);
-	pros::lcd::print(1, "motor 6 draw: %f", currents[5]); // print the x position// print the heading
+	// pros::lcd::print(1, "motor 1 draw: %f", currents[0]);
+	// pros::lcd::print(1, "motor 2 draw: %f", currents[1]);
+	// pros::lcd::print(1, "motor 3 draw: %f", currents[2]);
+	// pros::lcd::print(1, "motor 4 draw: %f", currents[3]);
+	// pros::lcd::print(1, "motor 5 draw: %f", currents[4]);
+	// pros::lcd::print(1, "motor 6 draw: %f", currents[5]); // print the x position// print the heading
         pros::delay(10);
     }
 }
@@ -230,8 +229,8 @@ void autonomous() {
 		
 		if (pros::c::registry_get_plugged_type(13) == pros::c::E_DEVICE_IMU) {
 			chassis.turnTo(36.285, -45.745, 2000);
-			chassis.moveTo(25.987, 58.854, 200);
-			chassis.moveTo(12.019, 96.538, 200);
+			// chassis.moveTo(25.987, 58.854, 200);
+			// chassis.moveTo(12.019, 96.538, 200);
 		}
 		else {
 			drive_.move_velocity(150);
@@ -251,9 +250,9 @@ void autonomous() {
 	if(auton == 2){ 
 		if (pros::c::registry_get_plugged_type(13) == pros::c::E_DEVICE_IMU) {
 			chassis.moveTo(0, 0, 5000);
-			chassis.moveTo(-18.131, 20.89, 5000);
-			chassis.moveTo(-20.693, 64.444, 5000);
-			chassis.moveTo(8.868, 98.34, 5000);
+			// chassis.moveTo(-18.131, 20.89, 5000);
+			// chassis.moveTo(-20.693, 64.444, 5000);
+			// chassis.moveTo(8.868, 98.34, 5000);
 		}
 		else {
 			drive_.move_velocity(150);
@@ -271,7 +270,24 @@ void autonomous() {
 	}
 
 
-	
+		if(auton == 3){ 
+		if (pros::c::registry_get_plugged_type(13) == pros::c::E_DEVICE_IMU) {
+			chassis.moveTo(0, 0, 5000);
+			// chassis.moveTo(-18.131, 20.89, 5000);
+			// chassis.moveTo(-20.693, 64.444, 5000);
+			// chassis.moveTo(8.868, 98.34, 5000);
+		} else {
+			while (true) {
+				pros::delay(3000);
+				drive_.move_velocity(180);
+				pros::delay(3000);
+				drive_.move_velocity(-180);
+				pros::delay(3000);
+			}
+		}
+
+
+	}
 
 
 
@@ -319,7 +335,7 @@ void opcontrol() {
         drive_right.move(right);
 		// Using Arcade drive
 
-		if (controller.get_digital(DIGITAL_R1)) {
+		if (controller.get_digital(DIGITAL_L2)) {
 			lift_motors.move(127);
 		}
 		else if (controller.get_digital(DIGITAL_R2)) {
@@ -351,29 +367,32 @@ void opcontrol() {
 		if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_X)) {
 			if (subsystem == 1) {
 				// intake
-				controller.clear_line(0);
+				controller.set_text(0, 0, "System : Intake");
 				pto_1.set_value(false);
-				controller.print(1, 0, "System %d : Intake", system);
+				pto_2.set_value(true);
+				controller.clear_line(0);
 			}
 			if (subsystem == 2) {
 				// Four Bar
-				controller.clear_line(0);
+				
+				controller.set_text(0, 0, "System : 4-bar");
 				pto_1.set_value(true);
 				pto_2.set_value(true);
-				controller.print(1, 0, "System %d : 4-bar", system);
-			}
-			if (subsystem == 3) {
-				// Flywheel
 				controller.clear_line(0);
-				pto_1.set_value(true);
-				pto_2.set_value(false);
-				controller.print(1, 0, "System %d : Flywheel", system);
+				
 			}
+			// if (subsystem == 3) {
+			// 	// Flywheel
+			// 	controller.clear_line(0);
+			// 	pto_1.set_value(true);
+			// 	pto_2.set_value(false);
+			// 	controller.print(1, 0, "System : Flywheel");
+			// }
 
 			subsystem = subsystem + 1;
 
 			// Checks if the toggler goes out of bounds.
-			if (subsystem == 4) {
+			if (subsystem == 3) {
 				subsystem = 1;
 			}
 
