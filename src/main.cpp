@@ -54,10 +54,10 @@ pros::Motor LeftFront (-5, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODE
 pros::Motor LeftBack (-7, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 pros::Motor RightBack (8, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 pros::Motor LeftMid (-2, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-pros::Motor Lift (10, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
+pros::Motor Lift (19, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 pros::Motor RightMid (3, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 pros::Motor Lift2 (-9, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-pros::Imu inertial_sensor(13);
+pros::Imu inertial_sensor(15);
 pros::ADIDigitalOut wing ('A');
 pros::ADIDigitalOut wing2 ('D');
 pros::ADIDigitalOut pto_1 ('B');
@@ -151,10 +151,15 @@ void displayLocation() {
 
 void displayHi() {
 	while (true) {
-	std::vector<double> positions = drive_.get_positions();	// get the current position of the robot
-        pros::lcd::print(1, "");
-	pros::lcd::print(1, ": %f", pose.y); // print the x position// print the heading
-        pros::delay(10);
+		std::vector<std::int32_t> currents - drive_.get_current_draws();
+		pros::lcd::print(0, "Motor energy draw");
+		pros::lcd::print(1, "motors 1 draws %f", currents[0]);
+		pros::lcd::print(1, "motors 2 draws %f", currents[1]);
+		pros::lcd::print(1, "motors 3 draws %f", currents[2]);
+		pros::lcd::print(1, "motors 4 draws %f", currents[3]);
+		pros::lcd::print(1, "motors 5 draws %f", currents[4]);
+		pros::lcd::print(1, "motors 6 draws %f", currents[5]);
+		pros::delay(10);
     }
 }
 
@@ -280,7 +285,7 @@ void autonomous() {
 				pros::delay(3000);
 				drive_.move_velocity(180);
 				pros::delay(3000);
-				pros_.move(velocity(-180))
+				pros_.move_velocity(-180);
 				pros::delay(3000);
 			}
 		}
