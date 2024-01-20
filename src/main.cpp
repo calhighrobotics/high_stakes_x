@@ -2,7 +2,9 @@
 #include "lemlib/api.hpp"
 #include <ostream>
 
-
+#include "api.h"
+#include "pros/apix.h"
+#include "pros/serial.h"
 /*
            ___
           |_|_|
@@ -146,13 +148,26 @@ void displayLocation() {
     }
 }
 
+void displayHi() {
+	while (true) { // get the current position of the robot
+        pros::lcd::print(0, "Hello PROS!"); // print the x position// print the heading
+        pros::delay(10);
+    }
+}
+
 void initialize() {
 	pros::lcd::initialize();
-	chassis.calibrate();
+	
+	if (pros::c::registry_get_plugged_type(13) == pros::c::E_DEVICE_IMU) {
+		chassis.calibrate();
 
-	chassis.setPose(0, 0, 0); // X: 0, Y: 0, Heading: 0
-     // Setting an example start location for the robot so it is all relatativistic 
-	pros::Task screenTask(displayLocation);
+		chassis.setPose(0, 0, 0); // X: 0, Y: 0, Heading: 0
+		// Setting an example start location for the robot so it is all relatativistic 
+		pros::Task screenTask(displayLocation);
+	}
+	else {
+		pros::Task screenTask(displayHi);
+	}
 	
 }
 
@@ -204,21 +219,23 @@ void autonomous() {
 	
 	if(auton == 1){ 
 		
-		
-		chassis.turnTo(36.285, -45.745, 2000);
-		chassis.moveTo(25.987, 58.854, 200);
-		chassis.moveTo(12.019, 96.538, 200);
+		if (pros::c::registry_get_plugged_type(13) == pros::c::E_DEVICE_IMU) {
+			chassis.turnTo(36.285, -45.745, 2000);
+			chassis.moveTo(25.987, 58.854, 200);
+			chassis.moveTo(12.019, 96.538, 200);
+		}
 
 
 
 		//run auton for Front Red 
 	}
 	if(auton == 2){ 
-		
-		chassis.moveTo(0, 0, 5000);
-		chassis.moveTo(-18.131, 20.89, 5000);
-		chassis.moveTo(-20.693, 64.444, 5000);
-		chassis.moveTo(8.868, 98.34, 5000);
+		if (pros::c::registry_get_plugged_type(13) == pros::c::E_DEVICE_IMU) {
+			chassis.moveTo(0, 0, 5000);
+			chassis.moveTo(-18.131, 20.89, 5000);
+			chassis.moveTo(-20.693, 64.444, 5000);
+			chassis.moveTo(8.868, 98.34, 5000);
+		}
 
 
 		//run auton for Front Red 
@@ -249,7 +266,6 @@ void autonomous() {
  */
 void opcontrol() {
 
-	std::cout >> registry_get_plugged_type(13);
     while (true) {
         // Read joystick values
 
