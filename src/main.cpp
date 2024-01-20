@@ -269,6 +269,22 @@ void autonomous() {
 			pros::delay(3000);
 		}
 
+	if (auton == 3) {
+		if (pros::c::registry_get_plugged_type(13) == pros::c::E_DEVICE_IMU) {
+			chassis.moveTo(0, 0, 5000);
+			chassis.moveTo(-18.131, 20.89, 5000);
+			chassis.moveTo(-20.693, 64.444, 5000);
+			chassis.moveTo(8.868, 98.34, 5000);
+		} else {
+			while (true) {
+				pros::delay(3000);
+				drive_.move_velocity(180);
+				pros::delay(3000);
+				pros_.move(velocity(-180))
+				pros::delay(3000);
+			}
+		}
+	}
 
 		//run auton for Front Red 
 	}
