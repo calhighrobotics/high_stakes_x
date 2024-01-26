@@ -117,7 +117,7 @@ lemlib::Chassis chassis(drivetrain, lateralController, angularController, sensor
 
 
 int subsystem = 1;
-int auton = 1;
+int auton = 5;
 bool wings = false;
 int deadzone = 5;
 
@@ -151,13 +151,13 @@ void displayLocation() {
 void displayHi() {
 	while (true) {
 	// std::vector<std::int32_t> currents = drive_.get_current_draws();// get the current position of the robot
-    pros::lcd::print(0, "Motor energy draw");
-	// pros::lcd::print(1, "motor 1 draw: %f", currents[0]);
-	// pros::lcd::print(1, "motor 2 draw: %f", currents[1]);
-	// pros::lcd::print(1, "motor 3 draw: %f", currents[2]);
-	// pros::lcd::print(1, "motor 4 draw: %f", currents[3]);
-	// pros::lcd::print(1, "motor 5 draw: %f", currents[4]);
-	// pros::lcd::print(1, "motor 6 draw: %f", currents[5]); // print the x position// print the heading
+    pros::lcd::print(0, "Motor velocity draw");
+	pros::lcd::print(1, "motor 1 vel: %lf", LeftFront.get_actual_velocity());
+	pros::lcd::print(2, "motor 2 vel: %lf", RightFront.get_actual_velocity());
+	pros::lcd::print(3, "motor 3 vel: %lf", LeftMid.get_actual_velocity());
+	pros::lcd::print(4, "motor 4 vel: %lf", RightMid.get_actual_velocity());
+	pros::lcd::print(5, "motor 5 vel: %lf", LeftBack.get_actual_velocity());
+	pros::lcd::print(6, "motor 6 vel: %lf", RightBack.get_actual_velocity()); // print the x position// print the heading
         pros::delay(10);
     }
 }
@@ -199,7 +199,17 @@ void disabled() {}
  * starts.
  */
 void competition_initialize() {
-
+	/*if (controller.get_digital(DIGITAL_RIGHT)) {
+		
+		controller.set_text(0, 0, "Auton 1");
+		auton++;
+		controller.clear_line(0);
+		if (auton == 4) {
+			controller.set_text(0, 0, "Auton 1");
+			auton = 1;
+			controller.clear_line(0);
+		}
+	}*/
 
 }
 	
@@ -264,7 +274,7 @@ void autonomous() {
 			drive_.move_velocity(170);
 			pros::delay(3000);
 		}
-
+ 
 
 		//run auton for Front Red 
 	}
@@ -276,7 +286,10 @@ void autonomous() {
 			// chassis.moveTo(-18.131, 20.89, 5000);
 			// chassis.moveTo(-20.693, 64.444, 5000);
 			// chassis.moveTo(8.868, 98.34, 5000);
-		} else {
+		} 
+		}
+		
+		if (auton == 4) {
 			while (true) {
 				pros::delay(3000);
 				drive_.move_velocity(180);
@@ -285,6 +298,8 @@ void autonomous() {
 				pros::delay(3000);
 			}
 		}
+		else{
+		}
 
 
 	}
@@ -292,9 +307,6 @@ void autonomous() {
 
 
 
-
-
-}
 
 /**
  * Runs the operator control code. This function will be started in its own task
