@@ -53,9 +53,9 @@ pros::Motor LeftFront (-5, pros:: E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCOD
 pros::Motor LeftBack (-7, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 pros::Motor RightBack (8, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 pros::Motor LeftMid (-2, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-pros::Motor Lift (19, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
+pros::Motor Puncher (19, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 pros::Motor RightMid (3, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-pros::Motor Lift2 (-9, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
+pros::Motor Intake (9, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 pros::Imu inertial_sensor(15);
 pros::ADIDigitalOut wing ('A');
 pros::ADIDigitalOut wing2 ('D');
@@ -72,8 +72,8 @@ lemlib::Drivetrain_t drivetrain {
     &drive_left, // left drivetrain motors
     &drive_right, // right drivetrain motors
     11.75, // track width
-    4, // wheel diameter - 3.25 on competition bot, 4 on test drivetrain
-	200 // wheel rpm - 360 rpm for competition bot, 200 for test drivetrain
+    3.25, // wheel diameter - 3.25 on competition bot, 4 on test drivetrain
+	360 // wheel rpm - 360 rpm for competition bot, 200 for test drivetrain
 };
 
 lemlib::OdomSensors_t sensors {
@@ -117,7 +117,7 @@ lemlib::Chassis chassis(drivetrain, lateralController, angularController, sensor
 
 
 int subsystem = 1;
-int auton = 5;
+int auton = 1;
 bool wings = false;
 int deadzone = 5;
 
@@ -169,7 +169,7 @@ void initialize() {
 	if (pros::c::registry_get_plugged_type(13) == pros::c::E_DEVICE_IMU) {
 		chassis.calibrate();
 
-		chassis.setPose(0, 0, 0); // X: 0, Y: 0, Heading: 0
+		chassis.setPose(0, 0, 90); // X: 0, Y: 0, Heading: 0
 		// Setting an example start location for the robot so it is all relatativistic 
 		pros::Task screenTask(displayLocation);
 	}
@@ -235,19 +235,24 @@ void competition_initialize() {
  */
 void autonomous() {
 	
-	if(auton == 1){ 
+	if(auton == 1){
+		// Autonomous for Far side defensive zone.
 		
 		if (pros::c::registry_get_plugged_type(13) == pros::c::E_DEVICE_IMU) {
-			chassis.turnTo(36.285, -45.745, 2000);
-			// chassis.moveTo(25.987, 58.854, 200);
-			// chassis.moveTo(12.019, 96.538, 200);
+			chassis.setPose(-32.862, -58.306, 90);
+			chassis.moveTo(-0.979, -59.856, 8000);
+			chassis.moveTo(37.281, -58.478, 8000);
+			chassis.moveTo(47.449, -52.791, 5000);
+			chassis.moveTo(54.859, -43.869, 5000);
+			chassis.moveTo(59.168, -27.113, 5000);
+
 		}
 		else {
 			drive_.move_velocity(150);
-			pros::delay(2000);
+			pros::delay(5000);
 			drive_.brake();
 			drive_right.move_velocity(180);
-			pros::delay(400);
+			pros::delay(350);
 			drive_.move_velocity(170);
 			pros::delay(3000);
 			
@@ -255,70 +260,41 @@ void autonomous() {
 
 
 
-		//run auton for Front Red 
+		
 	}
-	if(auton == 2){ 
+	if(auton == 2){
+		// Autonomous for near side offensive zone.
+
 		if (pros::c::registry_get_plugged_type(13) == pros::c::E_DEVICE_IMU) {
-			chassis.moveTo(0, 0, 5000);
-			// chassis.moveTo(-18.131, 20.89, 5000);
-			// chassis.moveTo(-20.693, 64.444, 5000);
-			// chassis.moveTo(8.868, 98.34, 5000);
+			chassis.setPose(37.281, -58.306, 35);
+			chassis.moveTo(47.449, -52.791, 5000);
+			chassis.moveTo(54.859, -43.869, 5000);
+			chassis.moveTo(59.168, -27.113, 5000);
 		}
 		else {
 			drive_.move_velocity(150);
 			pros::delay(2000);
 			drive_.brake();
 			drive_right.move_velocity(180);
-			pros::delay(400);
+			pros::delay(550);
 			drive_right.brake();
 			drive_.move_velocity(170);
 			pros::delay(3000);
 		}
-
-	if (auton == 3) {
-		if (pros::c::registry_get_plugged_type(13) == pros::c::E_DEVICE_IMU) {
-			chassis.moveTo(0, 0, 5000);
-			chassis.moveTo(-18.131, 20.89, 5000);
-			chassis.moveTo(-20.693, 64.444, 5000);
-			chassis.moveTo(8.868, 98.34, 5000);
-		} else {
-			while (true) {
-				pros::delay(3000);
-				drive_.move_velocity(180);
-				pros::delay(3000);
-				pros_.move_velocity(-180);
-				pros::delay(3000);
-			}
-		}
-	}
-
-		//run auton for Front Red 
-	}
-
-
-		if(auton == 3){ 
-		if (pros::c::registry_get_plugged_type(13) == pros::c::E_DEVICE_IMU) {
-			chassis.moveTo(0, 0, 5000);
-			// chassis.moveTo(-18.131, 20.89, 5000);
-			// chassis.moveTo(-20.693, 64.444, 5000);
-			// chassis.moveTo(8.868, 98.34, 5000);
-		} 
-		}
 		
-		if (auton == 4) {
-			while (true) {
-				pros::delay(3000);
-				drive_.move_velocity(180);
-				pros::delay(3000);
-				drive_.move_velocity(-180);
-				pros::delay(3000);
-			}
-		}
-		else{
-		}
-
-
 	}
+
+
+		if(auton == 3){
+		// Autonomous routine for the Skills challenge
+			while (true) {
+				Puncher.move(95);
+			}
+
+		}
+		}
+
+
 
 
 
@@ -346,6 +322,12 @@ void opcontrol() {
 
         int left = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
         int right = controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_Y);
+
+
+		// Arcade Measurements
+		// int left = master.get_analog(pros::E_E_CONTROLLER_ANALOG_LEFT_Y);
+        // int right = master.get_analog(pros::E_E_CONTROLLER_ANALOG_RIGHT_X);
+
         
         // std::abs takes the absolute value of whatever it is called on.
         // Thus, any values in range (-5,5) are discarded as 0.
@@ -361,16 +343,35 @@ void opcontrol() {
         
         // Drive the right side of the robot forward at joystick right Y speed
         drive_right.move(right);
-		// Using Arcade drive
+
+		// Arcade movement
+		// Move the left side of the robot
+        // drive_left.move(left + right);
+        
+        // Move the right side of the robot 
+        // drive_right.move(left - right);
+		
+
 
 		if (controller.get_digital(DIGITAL_L2)) {
-			lift_motors.move(127);
+			Puncher.move(127);
 		}
 		else if (controller.get_digital(DIGITAL_R2)) {
-			lift_motors.move(-127);
+			Puncher.move(-127);
 		}
 		else {
-			lift_motors.brake();
+			Puncher.brake();
+		}
+
+
+		if (controller.get_digital(DIGITAL_L1)) {
+			Intake.move(127);
+		}
+		else if (controller.get_digital(DIGITAL_R1)) {
+			Intake.move(-127);
+		}
+		else {
+			Intake.brake();
 		}
 
 		// Catapult controller, uses the X button holded down to push the elevation up.
@@ -382,7 +383,6 @@ void opcontrol() {
 		if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_B)) {
 			wings = !wings;
 		}
-
 		if (wings) {
 			wing.set_value(true);
 			wing2.set_value(false);
@@ -392,39 +392,39 @@ void opcontrol() {
 			wing2.set_value(true);
 		}
 
-		if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_X)) {
-			if (subsystem == 1) {
-				// intake
-				controller.set_text(0, 0, "System : Intake");
-				pto_1.set_value(false);
-				pto_2.set_value(true);
-				controller.clear_line(0);
-			}
-			if (subsystem == 2) {
-				// Four Bar
+		// if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_X)) {
+		// 	if (subsystem == 1) {
+		// 		// intake
+		// 		controller.set_text(0, 0, "System : Intake");
+		// 		pto_1.set_value(false);
+		// 		pto_2.set_value(true);
+		// 		controller.clear_line(0);
+		// 	}
+		// 	if (subsystem == 2) {
+		// 		// Four Bar
 				
-				controller.set_text(0, 0, "System : 4-bar");
-				pto_1.set_value(true);
-				pto_2.set_value(true);
-				controller.clear_line(0);
+		// 		controller.set_text(0, 0, "System : 4-bar");
+		// 		pto_1.set_value(true);
+		// 		pto_2.set_value(true);
+		// 		controller.clear_line(0);
 				
-			}
-			// if (subsystem == 3) {
-			// 	// Flywheel
-			// 	controller.clear_line(0);
-			// 	pto_1.set_value(true);
-			// 	pto_2.set_value(false);
-			// 	controller.print(1, 0, "System : Flywheel");
-			// }
+		// 	}
+		// 	// if (subsystem == 3) {
+		// 	// 	// Flywheel
+		// 	// 	controller.clear_line(0);
+		// 	// 	pto_1.set_value(true);
+		// 	// 	pto_2.set_value(false);
+		// 	// 	controller.print(1, 0, "System : Flywheel");
+		// 	// }
 
-			subsystem = subsystem + 1;
+		// 	subsystem = subsystem + 1;
 
-			// Checks if the toggler goes out of bounds.
-			if (subsystem == 3) {
-				subsystem = 1;
-			}
+		// 	// Checks if the toggler goes out of bounds.
+		// 	if (subsystem == 3) {
+		// 		subsystem = 1;
+		// 	}
 
-		}
+		// }
 
 
 		
