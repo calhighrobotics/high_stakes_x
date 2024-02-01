@@ -66,7 +66,6 @@ pros::ADIDigitalOut pto_2 ('C');
 pros::Motor_Group drive_left ({LeftFront, LeftMid, LeftBack});
 pros::Motor_Group drive_right ({RightFront, RightMid, RightBack});
 pros::Motor_Group drive_ ({LeftFront, RightFront, LeftMid, RightMid, LeftBack, RightBack});
-pros::Motor_Group lift_motors ({Lift, Lift2});
 
 lemlib::Drivetrain_t drivetrain {
     &drive_left, // left drivetrain motors
@@ -196,7 +195,7 @@ void disabled() {}
  * on the LCD.
  *
  * This task will exit when the robot is enabled and autonomous or opcontrol
- * starts.
+ * starts.<asd></asd>
  */
 void competition_initialize() {
 	/*if (controller.get_digital(DIGITAL_RIGHT)) {
