@@ -35,6 +35,8 @@
 #define PROS_USE_LITERALS
 
 #include "api.h"
+#include "robot/auton.h"
+#include "globals.h"
 #include "robot/drivetrain.h"
 
 /**
@@ -80,3 +82,4 @@ void opcontrol(void);
 #endif
 
 #endif  // _PROS_MAIN_H_
+;
