@@ -2,10 +2,14 @@
 #include "api.h"
 #include "lemlib/api.hpp"
 
+// The following files are imported in order to provide type definitions into the compiler that allows for the objecys to
+#include "robot/wings.h"
+
 extern bool wings;
 
 extern pros::Controller controller;
 
+extern Robot::Wings robotWings;
 
 extern pros::Motor RightFront;
 extern pros::Motor LeftFront;

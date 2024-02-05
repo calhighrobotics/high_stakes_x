@@ -2,6 +2,7 @@
 #include "api.h"
 #include "robot/auton.h"
 #include "robot/drivetrain.h"
+#include "robot/wings.h"
 
 
 
@@ -14,6 +15,8 @@ int Autonomous::auton = 1;
 bool Autonomous::AutonSwitch = false;
 int Drivetrain::deadzone = 5;
 
+// Defines the objects that are used by the program for each of the individual subsystems.
+Robot::Wings robotWings;
 
 bool wings = true;
 

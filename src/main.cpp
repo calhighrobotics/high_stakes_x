@@ -132,8 +132,6 @@ void competition_initialize() {
 	}*/
 
 }
-	
-
 
 
 
@@ -211,51 +209,9 @@ void opcontrol() {
 		// Intake controller, moves the left and right intakes and stops them if nothing is pressed.
 	
 
-		if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_B)) {
-			wings = !wings;
-		}
-		if (wings) {
-			wing.set_value(true);
-			wing2.set_value(false);
-		}
-		else {
-			wing.set_value(false);
-			wing2.set_value(true);
-		}
+		robotWings.check();
 
-		// if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_X)) {
-		// 	if (subsystem == 1) {
-		// 		// intake
-		// 		controller.set_text(0, 0, "System : Intake");
-		// 		pto_1.set_value(false);
-		// 		pto_2.set_value(true);
-		// 		controller.clear_line(0);
-		// 	}
-		// 	if (subsystem == 2) {
-		// 		// Four Bar
-				
-		// 		controller.set_text(0, 0, "System : 4-bar");
-		// 		pto_1.set_value(true);
-		// 		pto_2.set_value(true);
-		// 		controller.clear_line(0);
-				
-		// 	}
-		// 	// if (subsystem == 3) {
-		// 	// 	// Flywheel
-		// 	// 	controller.clear_line(0);
-		// 	// 	pto_1.set_value(true);
-		// 	// 	pto_2.set_value(false);
-		// 	// 	controller.print(1, 0, "System : Flywheel");
-		// 	// }
-
-		// 	subsystem = subsystem + 1;
-
-		// 	// Checks if the toggler goes out of bounds.
-		// 	if (subsystem == 3) {
-		// 		subsystem = 1;
-		// 	}
-
-		// }
+	
 
 
 		
