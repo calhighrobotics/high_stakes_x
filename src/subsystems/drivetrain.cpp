@@ -1,17 +1,19 @@
-#include "main.h"
+#include "robot/drivetrain.h"
 #include "api.h"
+#include "globals.h"
 
-int Drivetrain::deadzone = 5;
+
+
 
 static int CheckDeadzone(int ControllerInput) {
     if(std::abs(ControllerInput) < Drivetrain::deadzone) {
         return 0;
+    }
     return ControllerInput;
-}
+
 }
 
 void Drivetrain::ArcadeDrive() {
-
 
     // Arcade Measurements
     int left = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
@@ -32,12 +34,11 @@ void Drivetrain::ArcadeDrive() {
 }
 
 void Drivetrain::TankDrive() {
+
+    Drivetrain::deadzone = 5;
+
     int left = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
     int right = controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_Y);
-
-    // Arcade Measurements
-    // int left = master.get_analog(pros::E_E_CONTROLLER_ANALOG_LEFT_Y);
-    // int right = master.get_analog(pros::E_E_CONTROLLER_ANALOG_RIGHT_X);
 
     
     // std::abs takes the absolute value of whatever it is called on.

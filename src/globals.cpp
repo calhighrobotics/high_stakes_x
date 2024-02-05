@@ -1,8 +1,21 @@
-#include "main.h"
+#include "globals.h"
+#include "api.h"
+#include "robot/auton.h"
+#include "robot/drivetrain.h"
 
-int subsystem = 1;
-int auton = 1;
-bool wings = false;
+
+
+/*
+* Although the following constants belong in their own seperate files(auton.cpp, drivetriain.cpp), they are put here in order to maintain 
+* a common location for all of the constants used by the program to belong in.
+* NOTE: This is the location where these variables are put into memory, but they can be otherwise modified throughout the program.
+*/
+int Autonomous::auton = 1;
+bool Autonomous::AutonSwitch = false;
+int Drivetrain::deadzone = 5;
+
+
+bool wings = true;
 
 pros::Controller controller (pros::E_CONTROLLER_MASTER);
 pros::Motor RightFront (6, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);

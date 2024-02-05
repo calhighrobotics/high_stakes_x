@@ -1,12 +1,8 @@
 #pragma once
 #include "api.h"
-#include "main.h"
 #include "lemlib/api.hpp"
 
-extern int subsystem;
-extern int auton;
 extern bool wings;
-extern int deadzone;
 
 extern pros::Controller controller;
 
