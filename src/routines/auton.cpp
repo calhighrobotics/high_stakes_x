@@ -4,7 +4,6 @@
 
 
 namespace Autonomous {
-	namespace {
 	void Auton1() {
     if(Autonomous::auton == 1){
 		// Autonomous for Far side defensive zone.
@@ -65,7 +64,6 @@ void Auton3() {
 
 }
 
-	}
 }
 
 
