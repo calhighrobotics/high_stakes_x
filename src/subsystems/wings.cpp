@@ -5,9 +5,9 @@
 
 void Robot::Wings::check(){
     if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_B)) {
-        wings = !wings;
+        state = !state;
     }
-    if (wings) {
+    if (state) {
         wing.set_value(true);
         wing2.set_value(false);
         Robot::Wings::setState(true);

@@ -2,10 +2,10 @@
 #include "api.h"
 #include "globals.h"
 
+using namespace Robot;
 
 
-
-static int CheckDeadzone(int ControllerInput) {
+int Drivetrain::CheckDeadzone(int ControllerInput) {
     if(std::abs(ControllerInput) < Drivetrain::deadzone) {
         return 0;
     }

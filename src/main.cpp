@@ -17,6 +17,12 @@
 */
 
 
+struct RobotSubsystems {
+	Robot::Autonomous autonomous;
+	Robot::Drivetrain drivetrain;
+	Robot::Wings wings;
+} subsystem;
+
 /**
  * A callback function for LLEMU's center button.
  *
@@ -107,7 +113,7 @@ void competition_initialize() {
 	
 
 
-
+}
 
 
 
@@ -126,7 +132,7 @@ void competition_initialize() {
  */
 void autonomous() {
 	
-	Autonomous::AutonSwitcher();
+	subsystem.autonomous.AutonSwitcher();
 
 
 
@@ -151,7 +157,7 @@ void opcontrol() {
 
 
     while (true) {
-        Drivetrain::ArcadeDrive();
+        subsystem.drivetrain.ArcadeDrive();
 		
 
 
@@ -182,7 +188,7 @@ void opcontrol() {
 		// Intake controller, moves the left and right intakes and stops them if nothing is pressed.
 	
 
-		robotWings.check();
+		subsystem.wings.check();
 
 	
 

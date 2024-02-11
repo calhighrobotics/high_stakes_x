@@ -11,12 +11,8 @@
 * a common location for all of the constants used by the program to belong in.
 * NOTE: This is the location where these variables are put into memory, but they can be otherwise modified throughout the program.
 */
-int Autonomous::auton = 1;
-bool Autonomous::AutonSwitch = false;
-int Drivetrain::deadzone = 5;
 
 // Defines the objects that are used by the program for each of the individual subsystems.
-Robot::Wings robotWings;
 
 bool wings = true;
 

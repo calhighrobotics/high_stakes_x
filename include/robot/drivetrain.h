@@ -13,7 +13,7 @@ namespace Robot {
         void setdeadzone(int newDeadZone);
         int getdeadzone();
     private:
-        int CheckDeadzone();
+        int CheckDeadzone(int entry);
         int deadzone;
 
     };
