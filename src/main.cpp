@@ -21,6 +21,7 @@ struct RobotSubsystems {
 	Robot::Autonomous autonomous;
 	Robot::Drivetrain drivetrain;
 	Robot::Wings wings;
+	Robot::Puncher catapult;
 } subsystem;
 
 /**
@@ -188,7 +189,7 @@ void opcontrol() {
 		// Intake controller, moves the left and right intakes and stops them if nothing is pressed.
 	
 
-		subsystem.wings.check();
+		subsystem.wings.run();
 
 	
 

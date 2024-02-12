@@ -4,7 +4,7 @@
 namespace Robot {
 class Wings {
     public:
-        void check();
+        void run();
         void setState(bool wingState);
         bool getState();
     private:

@@ -3,7 +3,7 @@
 #include "globals.h"
 
 
-void Robot::Wings::check(){
+void Robot::Wings::run(){
     if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_B)) {
         state = !state;
     }

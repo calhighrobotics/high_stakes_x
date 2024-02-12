@@ -14,11 +14,13 @@ extern pros::Motor LeftFront;
 extern pros::Motor LeftBack;
 extern pros::Motor RightBack;
 extern pros::Motor LeftMid;
-extern pros::Motor Puncher;
+extern pros::Motor PuncherMotor;
+extern pros::Motor PuncherMotor2;
 extern pros::Motor RightMid;
 extern pros::Motor Intake;
 
 extern pros::Imu inertial_sensor;
+extern pros::Distance distance;
 
 
 extern pros::ADIDigitalOut wing;

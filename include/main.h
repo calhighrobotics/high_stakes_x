@@ -38,6 +38,7 @@
 #include "robot/auton.h"
 #include "globals.h"
 #include "robot/drivetrain.h"
+#include "robot/puncher.h"
 
 /**
  * You should add more #includes here

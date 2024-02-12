@@ -15,6 +15,7 @@ int Drivetrain::CheckDeadzone(int ControllerInput) {
 
 void Drivetrain::ArcadeDrive() {
 
+    Drivetrain::deadzone = 5;
     // Arcade Measurements
     int left = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
     int right = controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_X);
