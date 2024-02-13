@@ -133,7 +133,7 @@ void competition_initialize() {
  */
 void autonomous() {
 	
-	subsystem.autonomous.AutonSwitcher();
+	subsystem.autonomous.AutoDrive(true);
 
 
 

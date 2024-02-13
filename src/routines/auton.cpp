@@ -67,7 +67,13 @@ void Autonomous::Auton3() {
 }
 
 
-void Autonomous::AutoDrive() {
+void Autonomous::AutoDrive(bool autono = false) {
+
+	// Keep the switcher running while the controller down button has not been pressed and the time period is not autonomous
+	if (autono == false) {
+		AutonSwitcher();
+	}
+	
 
     if(Autonomous::auton == 1){
         Auton1();
@@ -85,6 +91,8 @@ void Autonomous::AutoDrive() {
 
 void Autonomous::AutonSwitcher() {
 
+	while (!controller.get_digital(pros::E_CONTROLLER_DIGITAL_DOWN)) {
+
     if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_RIGHT)) {
 			
 			
@@ -97,6 +105,8 @@ void Autonomous::AutonSwitcher() {
 			}
 
 		}
+	pros::delay(5);
+	}
     
     
 }

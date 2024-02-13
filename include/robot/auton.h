@@ -8,8 +8,12 @@ namespace Robot {
     class Autonomous {
     
     public:
+        // Doxygen comments
+        /// @brief Sets the number of the autonomuos program to use.
         static int auton;
-        void AutoDrive();
+
+        /// @brief Main function .
+        void AutoDrive(bool autono);
         void AutonSwitcher();
 
     private:
