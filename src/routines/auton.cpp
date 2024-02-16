@@ -4,7 +4,7 @@
 
 using namespace Robot;
 
-int Autonomous::auton = 0;
+int Autonomous::auton = 1;
 
 void Autonomous::Auton1() {
 if(Autonomous::auton == 1){
@@ -57,24 +57,25 @@ void Autonomous::Auton2() {
 }
 
 
-void Autonomous::Auton3() {
+void Autonomous::Auton3(&Puncher puncher) {
     
+	puncher.setDistancePuncher(true);
     // Autonomous routine for the Skills challenge
         while (true) {
-            Puncher.move(95);
+            puncher.run();
         }
 
 }
 
-
-void Autonomous::AutoDrive(bool autono = false) {
+// Takes in two parameters: The autonomous value as well as the puncher object.
+void Autonomous::AutoDrive(bool autono = false, Puncher& puncher) {
 
 	// Keep the switcher running while the controller down button has not been pressed and the time period is not autonomous
 	if (autono == false) {
 		AutonSwitcher();
 	}
 	
-
+	// Compare the current auton value to run the auton routine
     if(Autonomous::auton == 1){
         Auton1();
     }
@@ -84,14 +85,13 @@ void Autonomous::AutoDrive(bool autono = false) {
     }
 
     if(Autonomous::auton == 3){
-        Auton3();
+        Auton3(puncher);
     }
 
 }
 
 void Autonomous::AutonSwitcher() {
 
-	while (!controller.get_digital(pros::E_CONTROLLER_DIGITAL_DOWN)) {
 
     if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_RIGHT)) {
 			
@@ -105,8 +105,6 @@ void Autonomous::AutonSwitcher() {
 			}
 
 		}
-	pros::delay(5);
-	}
     
     
 }

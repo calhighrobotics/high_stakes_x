@@ -28,7 +28,7 @@ extern pros::ADIDigitalOut wing2;
 extern pros::ADIDigitalOut pto_1;
 extern pros::ADIDigitalOut pto_2;
 
-
+extern pros::Motor_Group punchers;
 extern pros::Motor_Group drive_left;
 extern pros::Motor_Group drive_right;
 extern pros::Motor_Group drive_;

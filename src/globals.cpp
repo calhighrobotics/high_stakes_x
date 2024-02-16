@@ -33,11 +33,13 @@ pros::ADIDigitalOut wing2 ('D');
 pros::ADIDigitalOut pto_1 ('B');
 pros::ADIDigitalOut pto_2 ('C');
 
-
+pros::Motor_Group punchers ({PuncherMotor, PuncherMotor2});
 pros::Motor_Group drive_left ({LeftFront, LeftMid, LeftBack});
 pros::Motor_Group drive_right ({RightFront, RightMid, RightBack});
 pros::Motor_Group drive_ ({LeftFront, RightFront, LeftMid, RightMid, LeftBack, RightBack});
 
+
+// Describes the lemlib objects that are used to control the autonomous functions of the robot. 
 lemlib::Drivetrain_t drivetrain {
     &drive_left, // left drivetrain motors
     &drive_right, // right drivetrain motors
