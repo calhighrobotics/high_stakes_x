@@ -18,7 +18,7 @@ extern pros::Motor LeftMid;
 extern pros::Motor PuncherMotor;
 extern pros::Motor PuncherMotor2;
 extern pros::Motor RightMid;
-extern pros::Motor Intake;
+extern pros::Motor IntakeMotor;
 
 extern pros::Imu inertial_sensor;
 extern pros::Distance distance;

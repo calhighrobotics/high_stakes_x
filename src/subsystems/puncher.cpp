@@ -1,4 +1,5 @@
 #include "robot/drivetrain.h"
+#include "robot/puncher.h"
 #include "api.h"
 #include "globals.h"
 #include "pros/apix.h"
@@ -17,11 +18,11 @@ void Puncher::setDistancePuncher(bool punch) {
 }
 
 
-void Puncher::run() {
+void Puncher::run(int autonVal) {
 
     // Manual Puncher Control
     if (Puncher::toShoot() == 2 || distancePuncher == false) {
-        if(controller.get_digital(DIGITAL_R2)) {
+        if(controller.get_digital(pros::E_CONTROLLER_DIGITAL_R2)) {
             punchers.move(127);
         }
         else {
@@ -30,7 +31,7 @@ void Puncher::run() {
     }
 
     // Auton Puncher Control using the distance sensor
-    if (Robot::Autonomous::auton == 3 || distancePuncher == true) {
+    if (distancePuncher == true && autonVal == 3) {
         if (Puncher::toShoot() == 0) {
             punchers.move_absolute(30, 95);
         }
@@ -53,4 +54,5 @@ int Puncher::toShoot() {
     if (distance.get() > 12 && distancePuncher == true) {
         return 0;
     }
+    return 2;
 }

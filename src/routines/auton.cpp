@@ -62,7 +62,7 @@ void Autonomous::Auton3(Puncher &puncher) {
 	puncher.setDistancePuncher(true);
     // Autonomous routine for the Skills challenge
         while (true) {
-            puncher.run();
+            puncher.run(Autonomous::auton);
         }
 
 }
@@ -89,7 +89,7 @@ void Autonomous::AutoDrive(Puncher &puncher, bool autono = false) {
     }
 
 }
-
+// 
 void Autonomous::AutonSwitcher() {
 
 

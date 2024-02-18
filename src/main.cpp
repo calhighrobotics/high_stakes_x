@@ -23,6 +23,7 @@ struct RobotSubsystems {
 	Robot::Drivetrain drivetrain;
 	Robot::Wings wings;
 	Robot::Puncher catapult;
+	Robot::Intake intake;
 } subsystem;
 
 /**
@@ -81,7 +82,6 @@ void initialize() {
 	
 	if (pros::c::registry_get_plugged_type(13) == pros::c::E_DEVICE_IMU) {
 		chassis.calibrate();
-
 		chassis.setPose(0, 0, 90); // X: 0, Y: 0, Heading: 0
 		// Setting an example start location for the robot so it is all relatativistic 
 		pros::Task screenTask(displayLocation);
@@ -159,25 +159,17 @@ void opcontrol() {
 
 
     while (true) {
-        subsystem.drivetrain.ArcadeDrive();
+        subsystem.drivetrain.TankDrive();
 		
 
 
-		subsystem.catapult.run();
+		subsystem.catapult.run(0);
 
 
-		if (controller.get_digital(DIGITAL_L1)) {
-			Intake.move(127);
-		}
-		else if (controller.get_digital(DIGITAL_R1)) {
-			Intake.move(-127);
-		}
-		else {
-			Intake.brake();
-		}
+		
 
 		// Catapult controller, uses the X button holded down to push the elevation up.
-		
+		subsystem.intake.run();
 
 		// Intake controller, moves the left and right intakes and stops them if nothing is pressed.
 	

@@ -10,6 +10,7 @@
 bin/
 build/
 .vscode/
+.idea/
 .cache/
 compile_commands.json
 temp.log

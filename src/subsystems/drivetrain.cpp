@@ -9,8 +9,9 @@ int Drivetrain::CheckDeadzone(int ControllerInput) {
     if(std::abs(ControllerInput) < Drivetrain::deadzone) {
         return 0;
     }
-    return ControllerInput;
-
+    else {
+        return ControllerInput;
+    }
 }
 
 void Drivetrain::ArcadeDrive() {

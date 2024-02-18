@@ -39,6 +39,7 @@
 #include "globals.h"
 #include "robot/drivetrain.h"
 #include "robot/puncher.h"
+#include "robot/intake.h"
 
 /**
  * You should add more #includes here
