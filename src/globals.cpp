@@ -14,7 +14,7 @@
 
 // Defines the objects that are used by the program for each of the individual subsystems.
 
-bool wings = true;
+namespace Robot {
 
 pros::Controller controller (pros::E_CONTROLLER_MASTER);
 pros::Motor RightFront (6, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
@@ -80,3 +80,5 @@ lemlib::ChassisController_t angularController {
 };
 
 lemlib::Chassis chassis(drivetrain, lateralController, angularController, sensors);
+
+}

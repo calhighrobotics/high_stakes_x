@@ -57,7 +57,7 @@ void Autonomous::Auton2() {
 }
 
 
-void Autonomous::Auton3(&Puncher puncher) {
+void Autonomous::Auton3(Puncher &puncher) {
     
 	puncher.setDistancePuncher(true);
     // Autonomous routine for the Skills challenge
@@ -68,7 +68,7 @@ void Autonomous::Auton3(&Puncher puncher) {
 }
 
 // Takes in two parameters: The autonomous value as well as the puncher object.
-void Autonomous::AutoDrive(bool autono = false, Puncher& puncher) {
+void Autonomous::AutoDrive(Puncher &puncher, bool autono = false) {
 
 	// Keep the switcher running while the controller down button has not been pressed and the time period is not autonomous
 	if (autono == false) {

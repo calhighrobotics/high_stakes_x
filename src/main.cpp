@@ -5,6 +5,7 @@
 #include "pros/apix.h"
 #include "pros/serial.h"
 
+using namespace Robot;
 
 /*
   (      (     (      (     (   
@@ -133,7 +134,7 @@ void competition_initialize() {
  */
 void autonomous() {
 	
-	subsystem.autonomous.AutoDrive(true);
+	subsystem.autonomous.AutoDrive(subsystem.catapult, true);
 
 
 
@@ -162,15 +163,7 @@ void opcontrol() {
 		
 
 
-		if (controller.get_digital(DIGITAL_L2)) {
-			Puncher.move(127);
-		}
-		else if (controller.get_digital(DIGITAL_R2)) {
-			Puncher.move(-127);
-		}
-		else {
-			Puncher.brake();
-		}
+		subsystem.catapult.run();
 
 
 		if (controller.get_digital(DIGITAL_L1)) {
