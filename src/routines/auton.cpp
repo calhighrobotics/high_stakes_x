@@ -11,13 +11,8 @@ if(Autonomous::auton == 1){
 	// Autonomous for Far side defensive zone.
 	
 	if (pros::c::registry_get_plugged_type(13) == pros::c::E_DEVICE_IMU) {
-		chassis.setPose(-32.862, -58.306, 90);
-		chassis.moveTo(-0.979, -59.856, 8000);
-		chassis.moveTo(37.281, -58.478, 8000);
-		chassis.moveTo(47.449, -52.791, 5000);
-		chassis.moveTo(54.859, -43.869, 5000);
-		chassis.moveTo(59.168, -27.113, 5000);
-
+		chassis.followPath("home_side_auton_path_1.txt");
+		chassis.followPath("home_side_auton_path_2.txt");
 	}
 	else {
 		drive_.move_velocity(150);
