@@ -112,9 +112,19 @@ void disabled() {}
  * starts.<asd></asd>
  */
 void competition_initialize() {
+	// Allows the user to select the autonomous routine, drive control type as well as whether the distance puncher is enabled.
+	// The user can select the auton routine by pressing the right buttons on the controller.
+	// The user can select the drive control type by pressing the down button on the controller.
+	// The user can select the distance puncher by pressing the left button on the controller.
+	// The state of each subsystem is displayed on the controller screen.
+	while (true)
+	{
+		subsystem.autonomous.AutonSwitcher();
+		subsystem.drivetrain.SwitchDrive();
+		subsystem.catapult.PuncherSwitch();
+		pros::delay(10);
+	}
 	
-
-
 }
 
 
@@ -159,7 +169,7 @@ void opcontrol() {
 
 
     while (true) {
-        subsystem.drivetrain.TankDrive();
+        subsystem.drivetrain.run();
 		
 
 

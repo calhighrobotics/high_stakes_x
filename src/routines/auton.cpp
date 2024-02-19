@@ -99,7 +99,10 @@ void Autonomous::AutonSwitcher() {
 				Autonomous::auton = 1;
 			}
 
+			controller.set_text(0, 0, "Auton: %d", Autonomous::auton);
+
 		}
-    
+	
+		
     
 }
