@@ -11,8 +11,13 @@ if(Autonomous::auton == 1){
 	// Autonomous for Far side defensive zone.
 	
 	if (pros::c::registry_get_plugged_type(13) == pros::c::E_DEVICE_IMU) {
+		// 36.994 -58.128 0
+		chassis.setPose(36.994, -58.128, 0);
 		chassis.followPath("home_side_auton_path_1.txt");
 		chassis.followPath("home_side_auton_path_2.txt");
+		chassis.followPath("home_side_auton_path_3.txt");
+		chassis.followPath("home_side_auton_path_4.txt");
+		chassis.followPath("home_side_auton_path_5.txt");
 	}
 	else {
 		drive_.move_velocity(150);
@@ -32,10 +37,12 @@ void Autonomous::Auton2() {
 		// Autonomous for near side offensive zone.
 
 		if (pros::c::registry_get_plugged_type(13) == pros::c::E_DEVICE_IMU) {
-			chassis.setPose(37.281, -58.306, 35);
-			chassis.moveTo(47.449, -52.791, 5000);
-			chassis.moveTo(54.859, -43.869, 5000);
-			chassis.moveTo(59.168, -27.113, 5000);
+			// -36.851 -58.638 0
+			chassis.setPose(-36.851, -58.638, 0);
+			chassis.followPath("far_side_auton_path_1.txt");
+			chassis.followPath("far_side_auton_path_2.txt");
+			chassis.followPath("far_side_auton_path_3.txt");
+			chassis.followPath("far_side_auton_path_4.txt");
 		}
 		else {
 			drive_.move_velocity(150);
