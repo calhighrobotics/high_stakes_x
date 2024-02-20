@@ -14,11 +14,11 @@ if(Autonomous::auton == 1){
 	if (pros::c::registry_get_plugged_type(13) == pros::c::E_DEVICE_IMU) {
 		// 36.994 -58.128 0
 		chassis.setPose(36.994, -58.128, 0);
-		chassis.followPath("home_side_auton_path_1.txt");
-		chassis.followPath("home_side_auton_path_2.txt");
-		chassis.followPath("home_side_auton_path_3.txt");
-		chassis.followPath("home_side_auton_path_4.txt");
-		chassis.followPath("home_side_auton_path_5.txt");
+		chassis.follow("home_side_auton_path_1.txt", 2000, 15);
+		chassis.follow("home_side_auton_path_2.txt", 2000, 15);
+		chassis.follow("home_side_auton_path_3.txt", 2000, 15);
+		chassis.follow("home_side_auton_path_4.txt", 2000, 15);
+		chassis.follow("home_side_auton_path_5.txt", 2000, 15);
 	}
 	else {
 		drive_.move_velocity(150);
@@ -40,10 +40,10 @@ void Autonomous::Auton2() {
 		if (pros::c::registry_get_plugged_type(13) == pros::c::E_DEVICE_IMU) {
 			// -36.851 -58.638 0
 			chassis.setPose(-36.851, -58.638, 0);
-			chassis.followPath("far_side_auton_path_1.txt");
-			chassis.followPath("far_side_auton_path_2.txt");
-			chassis.followPath("far_side_auton_path_3.txt");
-			chassis.followPath("far_side_auton_path_4.txt");
+			chassis.follow("far_side_auton_path_1.txt", 2000, 15);
+			chassis.follow("far_side_auton_path_2.txt", 2000, 15);
+			chassis.follow("far_side_auton_path_3.txt", 2000, 15);
+			chassis.follow("far_side_auton_path_4.txt", 2000, 15);
 		}
 		else {
 			drive_.move_velocity(150);
@@ -106,8 +106,13 @@ void Autonomous::AutonSwitcher() {
 			if (Autonomous::auton == 4) {
 				Autonomous::auton = 1;
 			}
+			
+			
+			// Set the controllet text to the current autonomous routine value
+			controller.print(0, 0, "Autonomous prog: %d", Autonomous::auton);
 
-		}
-    
+	}
+	
+		
     
 }

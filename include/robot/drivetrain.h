@@ -8,6 +8,7 @@ namespace Robot {
     // int deadzone needs to be external in order to allow other files to see and modify the variable. Otherwise, will be redefined and made unavailable for usage.
 
     public:
+        void run();
         /// @brief left joystick(forward,backward); right joystick(left, right)
         void ArcadeDrive();
         /// @brief left and right joystick
@@ -22,13 +23,15 @@ namespace Robot {
             @return dead zone value
         */
         int getdeadzone();
+        void SwitchDrive();
+        int driveMode;
+        Drivetrain();
     private:
         /**
             @brief Verifies that the controller input is inside the deadzone range.
             @param int entry controller input
         */
         int CheckDeadzone(int entry);
-        /// deadzone value
         int deadzone;
 
     };

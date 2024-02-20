@@ -22,7 +22,7 @@ struct RobotSubsystems {
 	Robot::Autonomous autonomous;
 	Robot::Drivetrain drivetrain;
 	Robot::Wings wings;
-	Robot::Puncher catapult;
+	Robot::Puncher puncher;
 	Robot::Intake intake;
 } subsystem;
 
@@ -45,6 +45,9 @@ void on_center_button() {
 	}
 }
 
+void toggles() {
+	Robot::Utility::toggleSubsystemOptions(subsystem.autonomous, subsystem.drivetrain, subsystem.puncher);
+}
 /**
  * Runs initialization code. This occurs as soon as the program is started.
  *
@@ -52,42 +55,21 @@ void on_center_button() {
  * to keep execution time for this mode under a few seconds.
  */
 
-void displayLocation() {
-	while (true) {
-        lemlib::Pose pose = chassis.getPose(); // get the current position of the robot
-        pros::lcd::print(0, "x: %f", pose.x); // print the x position
-        pros::lcd::print(1, "y: %f", pose.y); // pri∟nt the y position
-        pros::lcd::print(2, "heading: %f", pose.theta); // print the heading
-        pros::delay(10);
-    }
-}
-
-void displayHi() {
-	while (true) {
-	// std::vector<std::int32_t> currents = drive_.get_current_draws();// get the current position of the robot
-    pros::lcd::print(0, "Motor velocity draw");
-	pros::lcd::print(1, "motor 1 vel: %lf", LeftFront.get_actual_velocity());
-	pros::lcd::print(2, "motor 2 vel: %lf", RightFront.get_actual_velocity());
-	pros::lcd::print(3, "motor 3 vel: %lf", LeftMid.get_actual_velocity());
-	pros::lcd::print(4, "motor 4 vel: %lf", RightMid.get_actual_velocity());
-	pros::lcd::print(5, "motor 5 vel: %lf", LeftBack.get_actual_velocity());
-	pros::lcd::print(6, "motor 6 vel: %lf", RightBack.get_actual_velocity()); // print the x position// print the heading
-        pros::delay(10);
-    }
-}
-
 
 void initialize() {
+
+
 	pros::lcd::initialize();
+	pros::Task toggler(toggles);
 	
 	if (pros::c::registry_get_plugged_type(13) == pros::c::E_DEVICE_IMU) {
 		chassis.calibrate();
 		chassis.setPose(0, 0, 90); // X: 0, Y: 0, Heading: 0
 		// Setting an example start location for the robot so it is all relatativistic 
-		pros::Task screenTask(displayLocation);
+		pros::Task screenTask(Robot::Utility::displayLocation);
 	}
 	else {
-		pros::Task screenTask(displayHi);
+		pros::Task screenTask(Robot::Utility::displayMotorVel);
 	}
 	
 }
@@ -112,10 +94,15 @@ void disabled() {}
  * starts.<asd></asd>
  */
 void competition_initialize() {
+	// Allows the user to select the autonomous routine, drive control type as well as whether the distance puncher is enabled.
+	// The user can select the auton routine by pressing the right buttons on the controller.
+	// The user can select the drive control type by pressing the down button on the controller.
+	// The user can select the distance puncher by pressing the left button on the controller.
+	// The state of each subsystem is displayed on the controller screen.
 	
-
-
+	
 }
+
 
 
 
@@ -134,7 +121,7 @@ void competition_initialize() {
  */
 void autonomous() {
 	
-	subsystem.autonomous.AutoDrive(subsystem.catapult, true);
+	subsystem.autonomous.AutoDrive(subsystem.puncher, true);
 
 
 
@@ -158,12 +145,13 @@ void autonomous() {
 void opcontrol() {
 
 
+	subsystem.puncher.setDistancePuncher(false);
     while (true) {
-        subsystem.drivetrain.TankDrive();
+        subsystem.drivetrain.run();
 		
 
 
-		subsystem.catapult.run(0);
+		subsystem.puncher.run(0);
 
 
 		

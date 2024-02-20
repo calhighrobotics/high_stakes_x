@@ -9,12 +9,6 @@ using namespace Robot;
 
 void Puncher::setDistancePuncher(bool punch) {
     distancePuncher = punch;
-    if (punch) {
-        controller.set_text(0, 0, "Auton Puncher Activated");
-    }
-    if (!punch) {
-        controller.set_text(0, 0, "Auton Puncher Deactivated");
-    }
 }
 
 
@@ -55,4 +49,28 @@ int Puncher::toShoot() {
         return 0;
     }
     return 2;
+}
+
+
+void Puncher::PuncherSwitch() {
+
+        if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_LEFT)) {
+			
+			// Toggles the puncher distance sensor
+            Puncher::setDistancePuncher(!distancePuncher);
+
+
+            // Prints the state of the puncher distance sensor to the brain(as a boolean)
+            if (distancePuncher == true) {
+                controller.print(0, 0, "Puncher: True");
+            }
+            else {
+                controller.print(0, 0, "Puncher: False");
+            }
+           
+
+		}
+	
+		
+    
 }

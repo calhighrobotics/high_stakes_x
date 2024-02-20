@@ -40,6 +40,7 @@
 #include "robot/drivetrain.h"
 #include "robot/puncher.h"
 #include "robot/intake.h"
+#include "robot/utility.h"
 
 /**
  * You should add more #includes here
