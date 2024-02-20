@@ -1,4 +1,3 @@
-
 // Header guard - Ensures that the header file will not get double imported.
 #pragma once
 
@@ -9,10 +8,6 @@ namespace Robot {
 
     public:
         void run();
-        /// @brief left joystick(forward,backward); right joystick(left, right)
-        void ArcadeDrive();
-        /// @brief left and right joystick
-        void TankDrive();
         /**
             @brief Sets joystick deadzone
             @param int newDeadZone new deadzone value
@@ -25,13 +20,18 @@ namespace Robot {
         int getdeadzone();
         void SwitchDrive();
         int driveMode;
-        Drivetrain();
+        void Drivetrain();
     private:
+        /// @brief left joystick(forward,backward); right joystick(left, right)
+        void ArcadeDrive();
+        /// @brief left and right joystick
+        void TankDrive();
         /**
             @brief Verifies that the controller input is inside the deadzone range.
             @param int entry controller input
         */
         int CheckDeadzone(int entry);
+        /// deadzone value
         int deadzone;
 
     };
