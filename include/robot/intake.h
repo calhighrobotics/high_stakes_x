@@ -5,7 +5,7 @@ namespace Robot {
     class Intake {
         public:
 
-            // Runs the main 
+            /// Runs the main 
             void run();
     };
 }
