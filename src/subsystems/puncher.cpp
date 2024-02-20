@@ -5,7 +5,7 @@
 #include "pros/apix.h"
 
 using namespace Robot;
-
+using namespace Robot::Globals;
 
 void Puncher::setDistancePuncher(bool punch) {
     distancePuncher = punch;

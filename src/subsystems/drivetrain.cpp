@@ -3,6 +3,7 @@
 #include "globals.h"
 
 using namespace Robot;
+using namespace Robot::Globals;
 
 int Drivetrain::CheckDeadzone(int ControllerInput) {
     if(std::abs(ControllerInput) < Drivetrain::deadzone) {

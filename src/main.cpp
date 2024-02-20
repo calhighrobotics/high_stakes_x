@@ -6,7 +6,7 @@
 #include "pros/serial.h"
 
 using namespace Robot;
-
+using namespace Robot::Globals;
 /*
   (      (     (      (     (   
   )\    (()    )\     )\   (_)  

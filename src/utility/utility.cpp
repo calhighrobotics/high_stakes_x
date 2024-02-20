@@ -3,7 +3,10 @@
 #include "globals.h"
 
 using namespace Robot;
-// Takes in the Autonomous object, drivetrain object and puncher object  and sets the corresponding variables to the input values.
+using namespace Robot::Globals;
+/**
+ * \todo Figure out a way to send an event to the different objects to toggle between the different subsystems.
+*/
 void Utility::toggleSubsystemOptions(Autonomous &auton, Drivetrain &drive, Puncher &punch) {
     // Allows the user to select the autonomous routine, drive control type as well as whether the distance puncher is enabled.
 	// The user can select the auton routine by pressing the right buttons on the controller.

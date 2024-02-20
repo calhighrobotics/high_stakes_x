@@ -3,6 +3,7 @@
 #include "pros/apix.h"
 
 using namespace Robot;
+using namespace Robot::Globals;
 
 int Autonomous::auton = 1;
 
