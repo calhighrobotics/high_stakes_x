@@ -21,13 +21,7 @@ if(Autonomous::auton == 1){
 		chassis.follow("home_side_auton_path_5.txt", 2000, 15);
 	}
 	else {
-		drive_.move_velocity(150);
-		pros::delay(5000);
-		drive_.brake();
-		drive_right.move_velocity(180);
-		pros::delay(350);
-		drive_.move_velocity(170);
-		pros::delay(3000);
+		;
 		
 	}
 }
@@ -46,14 +40,7 @@ void Autonomous::Auton2() {
 			chassis.follow("far_side_auton_path_4.txt", 2000, 15);
 		}
 		else {
-			drive_.move_velocity(150);
-			pros::delay(2000);
-			drive_.brake();
-			drive_right.move_velocity(180);
-			pros::delay(550);
-			drive_right.brake();
-			drive_.move_velocity(170);
-			pros::delay(3000);
+			;
 		}
 		
 	}
@@ -61,8 +48,6 @@ void Autonomous::Auton2() {
 
 
 void Autonomous::Auton3(Puncher &puncher) {
-    
-	puncher.setDistancePuncher(true);
     // Autonomous routine for the Skills challenge
         while (true) {
             puncher.run(Autonomous::auton);

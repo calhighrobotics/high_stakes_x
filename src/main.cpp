@@ -144,8 +144,7 @@ void autonomous() {
  */
 void opcontrol() {
 
-
-	subsystem.puncher.setDistancePuncher(false);
+	
     while (true) {
         subsystem.drivetrain.run();
 		
