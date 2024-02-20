@@ -6,6 +6,7 @@ using namespace Robot;
 
 int Autonomous::auton = 1;
 
+
 void Autonomous::Auton1() {
 if(Autonomous::auton == 1){
 	// Autonomous for Far side defensive zone.
