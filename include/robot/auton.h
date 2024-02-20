@@ -14,8 +14,8 @@ namespace Robot {
 
         /**
 	        @brief Auton Selector.  Selects the auton path to run.
-	        @param Puncher puncher
-	        @param bool autono
+	        @param Puncher puncher Puncher object.
+	        @param bool autono Represents if the down button is pressed to toggle selector.
         */
         void AutoDrive(Puncher &puncher, bool autono);
         
@@ -23,13 +23,13 @@ namespace Robot {
         void AutonSwitcher();
 
     private:
-	    /// @brief Runs the Auton path for the far side defensive game stategy
+	    /// @brief Runs the Auton path for the far side defensive game stategy.
         void Auton1();
 	    /// @brief Runs the Auton path for near side offensive game strategy.
         void Auton2();
         /**
-	        @brief Runs the puncher routine for the Skills Challenge
-	        @param Puncher puncher
+	        @brief Runs the puncher routine for the Skills Challenge.
+	        @param Puncher puncher Puncher object.
         */
         void Auton3(Puncher &puncher);
 
