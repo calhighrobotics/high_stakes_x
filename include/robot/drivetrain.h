@@ -22,6 +22,15 @@ namespace Robot {
      */
     class Drivetrain {
     public:
+        /**
+         * @brief Runs the drivetrain.
+         * 
+         * This function is responsible for controlling the movement of the robot's drivetrain.
+         * It executes the necessary actions to make the robot move according to the current drive mode.
+         * 
+         * @details The drivetrain can be controlled using different drive modes, such as tank drive or arcade drive.
+         * This function implements the logic to interpret the joystick inputs and convert them into appropriate drivetrain movements.
+         */
         void run();
 
         /**
@@ -50,9 +59,25 @@ namespace Robot {
          * By retrieving the current deadzone value, you can adjust other parts of your code to take it into account.
          */
         int getdeadzone();
+
+        /**
+         * @brief Switches the DriveTrain mode between arcade and tank drive.
+         * 
+         * The drive mode determines how the drivetrain interprets the joystick inputs.
+         * Arcade drive uses the left joystick for forward and backward movement, and the right joystick for left and right movement.
+         * Tank drive uses the left and right joysticks for controlling the left and right sides of the robot.
+         */
         void SwitchDrive();
-        int driveMode;
-        void Drivetrain();
+
+        int driveMode; ///< The current drive train mode, between arcade (0) and tank (1).
+
+        /**
+         * @brief Initializes the Drivetrain object.
+         * 
+         * This constructor is responsible for initializing the Drivetrain object and setting default values.
+         */
+        Drivetrain();
+
     private:
         /**
          * @brief Drives the robot using arcade drive.

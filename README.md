@@ -1,9 +1,12 @@
 # PROS Version
-==
-This is the PROS version of the robot, rewritten from the VexCode version. This was done so that we could support a greater feature set and support external libraries.
 
-The PROS version will be first rewritten from the VEXCode version and then it will have features added onto it. It is not expected to become production ready as soon as it is complete.
+This is the Over Under repository for team **1516B**
 
-To see the vexcode version, go [here](https://github.com/calhighrobotics/Over-Under-2023-24-teamB)
+We aim to have a cohesive codebase that covers many subsystems but also follows best practices in the C++ development space as well as bringing in new features through modularity.
 
+The codebase is split up into:
 
+```
+/include - Contains information about the declarations of various methods and how they would be used
+/src - Contains implementation of the above methods and the definition
+```
