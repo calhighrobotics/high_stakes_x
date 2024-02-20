@@ -4,8 +4,6 @@
 
 using namespace Robot;
 
-Drivetrain::driveMode = 0
-
 int Drivetrain::CheckDeadzone(int ControllerInput) {
     if(std::abs(ControllerInput) < Drivetrain::deadzone) {
         return 0;
@@ -36,6 +34,10 @@ void Drivetrain::ArcadeDrive() {
     drive_right.move(left - right);
 }
 
+Drivetrain::Drivetrain() {
+    Drivetrain::driveMode = 0;
+}
+
 void Drivetrain::TankDrive() {
 
     Drivetrain::deadzone = 5;
@@ -57,6 +59,9 @@ void Drivetrain::TankDrive() {
     drive_right.move(right);
 }
 
+// Set the deadzone for the drivetrain
+
+
 // Run the drivetrain depending on the control mode
 void Drivetrain::run() {
     if (Drivetrain::driveMode == 0) {
@@ -75,6 +80,12 @@ void Drivetrain::SwitchDrive() {
         if (Drivetrain::driveMode == 2) {
             Drivetrain::driveMode = 0;
         }
-        controller.set_text(0, 0, "Drive Mode: %d", Drivetrain::driveMode);
+        
+        if (Drivetrain::driveMode == 0) {
+            controller.print(0, 0, "Drive: Arcade");
+        }
+        if (Drivetrain::driveMode == 1) {
+            controller.print(0, 0, "Drive: Tank");
+        }
     }
 }

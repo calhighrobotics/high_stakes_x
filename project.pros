@@ -1,7 +1,7 @@
 {
   "py/object": "pros.conductor.project.Project",
   "py/state": {
-    "project_name": "1516B ON ",
+    "project_name": "1516",
     "target": "v5",
     "templates": {
       "LemLib": {
@@ -333,8 +333,9 @@
     },
     "upload_options": {
       "description": "1516B's over under program vex",
-      "icon": "alien",
-      "slot": 1
+      "icon": "X",
+      "slot": 2,
+      "after": "none"
     }
   }
 }

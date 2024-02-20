@@ -13,6 +13,7 @@ namespace Robot {
         int getdeadzone();
         void SwitchDrive();
         int driveMode;
+        Drivetrain();
     private:
         int CheckDeadzone(int entry);
         void ArcadeDrive();

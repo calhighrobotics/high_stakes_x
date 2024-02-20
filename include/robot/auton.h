@@ -1,7 +1,5 @@
 #pragma once
 
-
-#include "drivetrain.h"
 #include "puncher.h"
 
 namespace Robot {
@@ -14,7 +12,8 @@ namespace Robot {
         /// @brief Sets the number of the autonomuos program to use.
         static int auton;
 
-        /// @brief Main function .
+        /// @brief Main function. Takes in the autonomous value to choose how to have the puncher shoot and 
+
         void AutoDrive(Puncher &puncher, bool autono);
         void AutonSwitcher();
 
