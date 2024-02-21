@@ -4,6 +4,8 @@
 
 namespace Robot {
     /**
+     * @details We use Lemlib extensively for our docuemntation. You can find the documentation for Lemlib at
+     * <A HREF="https://lemlib.github.io/lemlib/">Lemlib documentation</A>.
      * @brief The Robot namespace contains classes and functions related to the robot's autonomous behavior.
      */
     class Autonomous {
@@ -32,6 +34,8 @@ namespace Robot {
         
         /**
          * @brief Switches the autonomous program.
+         * 
+         * @details Make sure to pass in a reference to the Puncher object with .
          * 
          * This function switches the autonomous program to the next available program.
          * It allows the user to cycle through different autonomous programs during runtime.
