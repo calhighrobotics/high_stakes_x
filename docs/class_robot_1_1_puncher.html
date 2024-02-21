@@ -27,6 +27,7 @@ window.MathJax = {
 };
 </script>
 <script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
@@ -145,27 +146,9 @@ Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a <a class="el" href="class_robot_1_1_puncher.html" title="Represents a Puncher mechanism for a robot.">Puncher</a> mechanism for a robot. </p>
 <p>The <a class="el" href="class_robot_1_1_puncher.html" title="Represents a Puncher mechanism for a robot.">Puncher</a> class provides functionality to control a puncher mechanism on a robot. It allows running the puncher based on an autonomous value, setting the distancePuncher variable, toggling the distance sensor activation, and checking whether to shoot or not. </p>
+
+<p class="definition">Definition at line <a class="el" href="puncher_8h_source.html#l00012">12</a> of file <a class="el" href="puncher_8h_source.html">puncher.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a63973e01011483e2a32b15ff2534bfdb" name="a63973e01011483e2a32b15ff2534bfdb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a63973e01011483e2a32b15ff2534bfdb">&#9670;&#160;</a></span>PuncherSwitch()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Puncher::PuncherSwitch </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Toggles whether the distance sensor is activated or not and prints it out. </p>
-<p>This function toggles the distance sensor activation by flipping the value of the distancePuncher variable. It then prints out the current state of the distancePuncher variable. </p>
-
-</div>
-</div>
 <a id="aad9583da0a98fbdafe736c5faa15f131" name="aad9583da0a98fbdafe736c5faa15f131"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aad9583da0a98fbdafe736c5faa15f131">&#9670;&#160;</a></span>run()</h2>
 
@@ -190,6 +173,40 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="puncher_8cpp_source.html#l00015">15</a> of file <a class="el" href="puncher_8cpp_source.html">puncher.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   15</span>                              {</div>
+<div class="line"><span class="lineno">   16</span> </div>
+<div class="line"><span class="lineno">   17</span>    <span class="comment">// Manual Puncher Control</span></div>
+<div class="line"><span class="lineno">   18</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="#aad7537db5dd680d94b5f0af9f215c25f">Puncher::toShoot</a>() == 2 || <a class="code hl_variable" href="#a2713821a19623ab69e1b3d6881c21e01">distancePuncher</a> == <span class="keyword">false</span>) {</div>
+<div class="line"><span class="lineno">   19</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="namespace_robot_1_1_globals.html#a0836d6c757263202c26276bf4dd2f22f">controller</a>.get_digital(pros::E_CONTROLLER_DIGITAL_R2)) {</div>
+<div class="line"><span class="lineno">   20</span>            <a class="code hl_variable" href="namespace_robot_1_1_globals.html#ae1de33e7b736ec8ddad4c55f6d822f57">punchers</a>.move(127);</div>
+<div class="line"><span class="lineno">   21</span>        }</div>
+<div class="line"><span class="lineno">   22</span>        <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   23</span>            <a class="code hl_variable" href="namespace_robot_1_1_globals.html#ae1de33e7b736ec8ddad4c55f6d822f57">punchers</a>.brake();</div>
+<div class="line"><span class="lineno">   24</span>        }</div>
+<div class="line"><span class="lineno">   25</span>    }</div>
+<div class="line"><span class="lineno">   26</span> </div>
+<div class="line"><span class="lineno">   27</span>    <span class="comment">// Auton Puncher Control using the distance sensor</span></div>
+<div class="line"><span class="lineno">   28</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a2713821a19623ab69e1b3d6881c21e01">distancePuncher</a> == <span class="keyword">true</span> &amp;&amp; autonVal == 3) {</div>
+<div class="line"><span class="lineno">   29</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="#aad7537db5dd680d94b5f0af9f215c25f">Puncher::toShoot</a>() == 0) {</div>
+<div class="line"><span class="lineno">   30</span>            <a class="code hl_variable" href="namespace_robot_1_1_globals.html#ae1de33e7b736ec8ddad4c55f6d822f57">punchers</a>.move_absolute(30, 95);</div>
+<div class="line"><span class="lineno">   31</span>        }</div>
+<div class="line"><span class="lineno">   32</span>        <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   33</span>            <a class="code hl_variable" href="namespace_robot_1_1_globals.html#ae1de33e7b736ec8ddad4c55f6d822f57">punchers</a>.brake();</div>
+<div class="line"><span class="lineno">   34</span>        }</div>
+<div class="line"><span class="lineno">   35</span>    }</div>
+<div class="line"><span class="lineno">   36</span>    </div>
+<div class="line"><span class="lineno">   37</span>   </div>
+<div class="line"><span class="lineno">   38</span>}</div>
+<div class="ttc" id="aclass_robot_1_1_puncher_html_a2713821a19623ab69e1b3d6881c21e01"><div class="ttname"><a href="#a2713821a19623ab69e1b3d6881c21e01">Robot::Puncher::distancePuncher</a></div><div class="ttdeci">bool distancePuncher</div><div class="ttdoc">Determines whether to use the distance sensor or not.</div><div class="ttdef"><b>Definition</b> <a href="puncher_8h_source.html#l00061">puncher.h:61</a></div></div>
+<div class="ttc" id="aclass_robot_1_1_puncher_html_aad7537db5dd680d94b5f0af9f215c25f"><div class="ttname"><a href="#aad7537db5dd680d94b5f0af9f215c25f">Robot::Puncher::toShoot</a></div><div class="ttdeci">int toShoot()</div><div class="ttdoc">Checks if the distance sensor is connected and whether to shoot.</div><div class="ttdef"><b>Definition</b> <a href="puncher_8cpp_source.html#l00040">puncher.cpp:40</a></div></div>
+<div class="ttc" id="anamespace_robot_1_1_globals_html_a0836d6c757263202c26276bf4dd2f22f"><div class="ttname"><a href="namespace_robot_1_1_globals.html#a0836d6c757263202c26276bf4dd2f22f">Robot::Globals::controller</a></div><div class="ttdeci">pros::Controller controller</div></div>
+<div class="ttc" id="anamespace_robot_1_1_globals_html_ae1de33e7b736ec8ddad4c55f6d822f57"><div class="ttname"><a href="namespace_robot_1_1_globals.html#ae1de33e7b736ec8ddad4c55f6d822f57">Robot::Globals::punchers</a></div><div class="ttdeci">pros::Motor_Group punchers</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="namespace_robot_1_1_globals.html#a0836d6c757263202c26276bf4dd2f22f">Robot::Globals::controller</a>, <a class="el" href="puncher_8h_source.html#l00061">distancePuncher</a>, <a class="el" href="namespace_robot_1_1_globals.html#ae1de33e7b736ec8ddad4c55f6d822f57">Robot::Globals::punchers</a>, and <a class="el" href="puncher_8cpp_source.html#l00040">toShoot()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="auton_8cpp_source.html#l00051">Robot::Autonomous::Auton3()</a>, and <a class="el" href="main_8cpp_source.html#l00144">opcontrol()</a>.</p>
 
 </div>
 </div>
@@ -216,6 +233,64 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="puncher_8cpp_source.html#l00010">10</a> of file <a class="el" href="puncher_8cpp_source.html">puncher.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   10</span>                                           {</div>
+<div class="line"><span class="lineno">   11</span>    <a class="code hl_variable" href="#a2713821a19623ab69e1b3d6881c21e01">distancePuncher</a> = punch;</div>
+<div class="line"><span class="lineno">   12</span>}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="puncher_8h_source.html#l00061">distancePuncher</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="puncher_8cpp_source.html#l00055">PuncherSwitch()</a>.</p>
+
+</div>
+</div>
+<a id="a63973e01011483e2a32b15ff2534bfdb" name="a63973e01011483e2a32b15ff2534bfdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63973e01011483e2a32b15ff2534bfdb">&#9670;&#160;</a></span>PuncherSwitch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Puncher::PuncherSwitch </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Toggles whether the distance sensor is activated or not and prints it out. </p>
+<p>This function toggles the distance sensor activation by flipping the value of the distancePuncher variable. It then prints out the current state of the distancePuncher variable. </p>
+
+<p class="definition">Definition at line <a class="el" href="puncher_8cpp_source.html#l00055">55</a> of file <a class="el" href="puncher_8cpp_source.html">puncher.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   55</span>                            {</div>
+<div class="line"><span class="lineno">   56</span> </div>
+<div class="line"><span class="lineno">   57</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="namespace_robot_1_1_globals.html#a0836d6c757263202c26276bf4dd2f22f">controller</a>.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_LEFT)) {</div>
+<div class="line"><span class="lineno">   58</span>            </div>
+<div class="line"><span class="lineno">   59</span>            <span class="comment">// Toggles the puncher distance sensor</span></div>
+<div class="line"><span class="lineno">   60</span>            <a class="code hl_function" href="#a5458c3a56d6eab940e1991019bb447e5">Puncher::setDistancePuncher</a>(!<a class="code hl_variable" href="#a2713821a19623ab69e1b3d6881c21e01">distancePuncher</a>);</div>
+<div class="line"><span class="lineno">   61</span> </div>
+<div class="line"><span class="lineno">   62</span> </div>
+<div class="line"><span class="lineno">   63</span>            <span class="comment">// Prints the state of the puncher distance sensor to the brain(as a boolean)</span></div>
+<div class="line"><span class="lineno">   64</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a2713821a19623ab69e1b3d6881c21e01">distancePuncher</a> == <span class="keyword">true</span>) {</div>
+<div class="line"><span class="lineno">   65</span>                <a class="code hl_variable" href="namespace_robot_1_1_globals.html#a0836d6c757263202c26276bf4dd2f22f">controller</a>.print(0, 0, <span class="stringliteral">&quot;Puncher: True&quot;</span>);</div>
+<div class="line"><span class="lineno">   66</span>            }</div>
+<div class="line"><span class="lineno">   67</span>            <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   68</span>                <a class="code hl_variable" href="namespace_robot_1_1_globals.html#a0836d6c757263202c26276bf4dd2f22f">controller</a>.print(0, 0, <span class="stringliteral">&quot;Puncher: False&quot;</span>);</div>
+<div class="line"><span class="lineno">   69</span>            }</div>
+<div class="line"><span class="lineno">   70</span>           </div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>        }</div>
+<div class="line"><span class="lineno">   73</span>    </div>
+<div class="line"><span class="lineno">   74</span>        </div>
+<div class="line"><span class="lineno">   75</span>    </div>
+<div class="line"><span class="lineno">   76</span>}</div>
+<div class="ttc" id="aclass_robot_1_1_puncher_html_a5458c3a56d6eab940e1991019bb447e5"><div class="ttname"><a href="#a5458c3a56d6eab940e1991019bb447e5">Robot::Puncher::setDistancePuncher</a></div><div class="ttdeci">void setDistancePuncher(bool punch)</div><div class="ttdoc">Sets the distancePuncher variable based on the punch parameter.</div><div class="ttdef"><b>Definition</b> <a href="puncher_8cpp_source.html#l00010">puncher.cpp:10</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="namespace_robot_1_1_globals.html#a0836d6c757263202c26276bf4dd2f22f">Robot::Globals::controller</a>, <a class="el" href="puncher_8h_source.html#l00061">distancePuncher</a>, and <a class="el" href="puncher_8cpp_source.html#l00010">setDistancePuncher()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="utility_8cpp_source.html#l00010">Robot::Utility::toggleSubsystemOptions()</a>.</p>
 
 </div>
 </div>
@@ -246,6 +321,26 @@ Private Attributes</h2></td></tr>
 <p>This function checks if the distance sensor is connected and retrieves the distance from the triball. It uses the distance to determine whether to shoot or not.</p>
 <dl class="section return"><dt>Returns</dt><dd>The value returned of whether to shoot or not. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="puncher_8cpp_source.html#l00040">40</a> of file <a class="el" href="puncher_8cpp_source.html">puncher.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>                     {</div>
+<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">if</span> (pros::c::registry_get_plugged_type(13) != pros::c::E_DEVICE_DISTANCE) {</div>
+<div class="line"><span class="lineno">   42</span>        <a class="code hl_variable" href="#a2713821a19623ab69e1b3d6881c21e01">distancePuncher</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   43</span>        <span class="keywordflow">return</span> 2;</div>
+<div class="line"><span class="lineno">   44</span>    }</div>
+<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="namespace_robot_1_1_globals.html#a3499c45d80043d7e0bd2d68d42003e92">distance</a>.get() &lt;= 12 &amp;&amp; <a class="code hl_variable" href="#a2713821a19623ab69e1b3d6881c21e01">distancePuncher</a> == <span class="keyword">true</span>) {</div>
+<div class="line"><span class="lineno">   46</span>        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><span class="lineno">   47</span>    }</div>
+<div class="line"><span class="lineno">   48</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="namespace_robot_1_1_globals.html#a3499c45d80043d7e0bd2d68d42003e92">distance</a>.get() &gt; 12 &amp;&amp; <a class="code hl_variable" href="#a2713821a19623ab69e1b3d6881c21e01">distancePuncher</a> == <span class="keyword">true</span>) {</div>
+<div class="line"><span class="lineno">   49</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   50</span>    }</div>
+<div class="line"><span class="lineno">   51</span>    <span class="keywordflow">return</span> 2;</div>
+<div class="line"><span class="lineno">   52</span>}</div>
+<div class="ttc" id="anamespace_robot_1_1_globals_html_a3499c45d80043d7e0bd2d68d42003e92"><div class="ttname"><a href="namespace_robot_1_1_globals.html#a3499c45d80043d7e0bd2d68d42003e92">Robot::Globals::distance</a></div><div class="ttdeci">pros::Distance distance</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="namespace_robot_1_1_globals.html#a3499c45d80043d7e0bd2d68d42003e92">Robot::Globals::distance</a>, and <a class="el" href="puncher_8h_source.html#l00061">distancePuncher</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="puncher_8cpp_source.html#l00015">run()</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -272,11 +367,15 @@ Private Attributes</h2></td></tr>
 <p>Determines whether to use the distance sensor or not. </p>
 <p>The distancePuncher variable decides whether to use the distance sensor or not. If distancePuncher is true, the distance sensor is used. If it is false, the distance sensor is not used. </p>
 
+<p class="definition">Definition at line <a class="el" href="puncher_8h_source.html#l00061">61</a> of file <a class="el" href="puncher_8h_source.html">puncher.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="puncher_8cpp_source.html#l00055">PuncherSwitch()</a>, <a class="el" href="puncher_8cpp_source.html#l00015">run()</a>, <a class="el" href="puncher_8cpp_source.html#l00010">setDistancePuncher()</a>, and <a class="el" href="puncher_8cpp_source.html#l00040">toShoot()</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/robot/<a class="el" href="puncher_8h_source.html">puncher.h</a></li>
-<li>src/subsystems/<a class="el" href="puncher_8cpp.html">puncher.cpp</a></li>
+<li>src/subsystems/<a class="el" href="puncher_8cpp_source.html">puncher.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -284,7 +383,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_robot.html">Robot</a></li><li class="navelem"><a class="el" href="class_robot_1_1_puncher.html">Puncher</a></li>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+    <li class="footer">Generated on Tue Feb 20 2024 18:08:37 for 1516b Over Under by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>
 </body>

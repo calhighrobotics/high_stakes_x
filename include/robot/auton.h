@@ -4,9 +4,9 @@
 
 namespace Robot {
     /**
-     * @details We use Lemlib extensively for our docuemntation. You can find the documentation for Lemlib at
+     * @details We use Lemlib extensively for our documentation. You can find the documentation for Lemlib at
      * <A HREF="https://lemlib.github.io/lemlib/">Lemlib documentation</A>.
-     * @brief The Robot namespace contains classes and functions related to the robot's autonomous behavior.
+     * @brief The \ref Autonomous class contains classes and functions related to the robot's autonomous behavior.
      */
     class Autonomous {
     

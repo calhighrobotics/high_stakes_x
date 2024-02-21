@@ -54,7 +54,8 @@ namespace Robot {
         extern pros::Motor_Group punchers;
         extern pros::Motor_Group drive_left;
         extern pros::Motor_Group drive_right;
-        extern pros::Motor_Group drive_;
+        // Used as a motor group meant to be passed into lemlib, a full drivetrain group.
+	extern pros::Motor_Group drive_;
 
         extern lemlib::Drivetrain_t drivetrain;
 

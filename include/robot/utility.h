@@ -8,6 +8,7 @@
 namespace Robot {
     /**
      * @brief Contains utility functions for controlling the screen and toggling subsystems.
+     * @test The Utility namespace is a group of unrelated methods that have functions that are important independently.
      */
     namespace Utility {
         /// @brief Displays current position of the robot.

@@ -27,6 +27,7 @@ window.MathJax = {
 };
 </script>
 <script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
@@ -127,6 +128,7 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains utility functions for controlling the screen and toggling subsystems. </p>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000001">Test</a></b></dt><dd>The <a class="el" href="namespace_robot_1_1_utility.html" title="Contains utility functions for controlling the screen and toggling subsystems.">Utility</a> namespace is a group of unrelated methods that have functions that are important independently. </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="a043980c10e7bddc2ec36da271d408feb" name="a043980c10e7bddc2ec36da271d408feb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a043980c10e7bddc2ec36da271d408feb">&#9670;&#160;</a></span>displayLocation()</h2>
@@ -144,6 +146,22 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Displays current position of the robot. </p>
+
+<p class="definition">Definition at line <a class="el" href="utility_8cpp_source.html#l00042">42</a> of file <a class="el" href="utility_8cpp_source.html">utility.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   42</span>                              {</div>
+<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
+<div class="line"><span class="lineno">   44</span>        lemlib::Pose pose = <a class="code hl_variable" href="namespace_robot_1_1_globals.html#adb19c4d8d7b61867e04f934a6dcd6f87">chassis</a>.getPose(); <span class="comment">// get the current position of the robot</span></div>
+<div class="line"><span class="lineno">   45</span>        pros::lcd::print(0, <span class="stringliteral">&quot;x: %f&quot;</span>, pose.x); <span class="comment">// print the x position</span></div>
+<div class="line"><span class="lineno">   46</span>        pros::lcd::print(1, <span class="stringliteral">&quot;y: %f&quot;</span>, pose.y); <span class="comment">// pri∟nt the y position</span></div>
+<div class="line"><span class="lineno">   47</span>        pros::lcd::print(2, <span class="stringliteral">&quot;heading: %f&quot;</span>, pose.theta); <span class="comment">// print the heading</span></div>
+<div class="line"><span class="lineno">   48</span>        pros::delay(10);</div>
+<div class="line"><span class="lineno">   49</span>    }</div>
+<div class="line"><span class="lineno">   50</span>}</div>
+<div class="ttc" id="anamespace_robot_1_1_globals_html_adb19c4d8d7b61867e04f934a6dcd6f87"><div class="ttname"><a href="namespace_robot_1_1_globals.html#adb19c4d8d7b61867e04f934a6dcd6f87">Robot::Globals::chassis</a></div><div class="ttdeci">lemlib::Chassis chassis</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="namespace_robot_1_1_globals.html#adb19c4d8d7b61867e04f934a6dcd6f87">Robot::Globals::chassis</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00059">initialize()</a>.</p>
 
 </div>
 </div>
@@ -163,6 +181,31 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Displays current velocity of the robot. </p>
+
+<p class="definition">Definition at line <a class="el" href="utility_8cpp_source.html#l00028">28</a> of file <a class="el" href="utility_8cpp_source.html">utility.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   28</span>                              {</div>
+<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
+<div class="line"><span class="lineno">   30</span>    <span class="comment">// std::vector&lt;std::int32_t&gt; currents = drive_.get_current_draws();// get the current position of the robot</span></div>
+<div class="line"><span class="lineno">   31</span>        pros::lcd::print(0, <span class="stringliteral">&quot;Motor velocity draw&quot;</span>);</div>
+<div class="line"><span class="lineno">   32</span>        pros::lcd::print(1, <span class="stringliteral">&quot;motor 1 vel: %lf&quot;</span>, <a class="code hl_variable" href="namespace_robot_1_1_globals.html#aa3c7b6bd7690ade6f6ef1f41582bada1">LeftFront</a>.get_actual_velocity());</div>
+<div class="line"><span class="lineno">   33</span>        pros::lcd::print(2, <span class="stringliteral">&quot;motor 2 vel: %lf&quot;</span>, <a class="code hl_variable" href="namespace_robot_1_1_globals.html#a57080a8667cacf9797e45a46903c2c0d">RightFront</a>.get_actual_velocity());</div>
+<div class="line"><span class="lineno">   34</span>        pros::lcd::print(3, <span class="stringliteral">&quot;motor 3 vel: %lf&quot;</span>, <a class="code hl_variable" href="namespace_robot_1_1_globals.html#a307257e8c75b5c402957288afc4983ed">LeftMid</a>.get_actual_velocity());</div>
+<div class="line"><span class="lineno">   35</span>        pros::lcd::print(4, <span class="stringliteral">&quot;motor 4 vel: %lf&quot;</span>, <a class="code hl_variable" href="namespace_robot_1_1_globals.html#a8f5ed28ef65173e08177eb6be13a910b">RightMid</a>.get_actual_velocity());</div>
+<div class="line"><span class="lineno">   36</span>        pros::lcd::print(5, <span class="stringliteral">&quot;motor 5 vel: %lf&quot;</span>, <a class="code hl_variable" href="namespace_robot_1_1_globals.html#af074623411b68ec48da3f47ae2a69287">LeftBack</a>.get_actual_velocity());</div>
+<div class="line"><span class="lineno">   37</span>        pros::lcd::print(6, <span class="stringliteral">&quot;motor 6 vel: %lf&quot;</span>, <a class="code hl_variable" href="namespace_robot_1_1_globals.html#a45509b60c052a78f32531f657f40b8da">RightBack</a>.get_actual_velocity()); <span class="comment">// print the x position// print the heading</span></div>
+<div class="line"><span class="lineno">   38</span>        pros::delay(10);</div>
+<div class="line"><span class="lineno">   39</span>    }</div>
+<div class="line"><span class="lineno">   40</span>}</div>
+<div class="ttc" id="anamespace_robot_1_1_globals_html_a307257e8c75b5c402957288afc4983ed"><div class="ttname"><a href="namespace_robot_1_1_globals.html#a307257e8c75b5c402957288afc4983ed">Robot::Globals::LeftMid</a></div><div class="ttdeci">pros::Motor LeftMid</div></div>
+<div class="ttc" id="anamespace_robot_1_1_globals_html_a45509b60c052a78f32531f657f40b8da"><div class="ttname"><a href="namespace_robot_1_1_globals.html#a45509b60c052a78f32531f657f40b8da">Robot::Globals::RightBack</a></div><div class="ttdeci">pros::Motor RightBack</div></div>
+<div class="ttc" id="anamespace_robot_1_1_globals_html_a57080a8667cacf9797e45a46903c2c0d"><div class="ttname"><a href="namespace_robot_1_1_globals.html#a57080a8667cacf9797e45a46903c2c0d">Robot::Globals::RightFront</a></div><div class="ttdeci">pros::Motor RightFront</div></div>
+<div class="ttc" id="anamespace_robot_1_1_globals_html_a8f5ed28ef65173e08177eb6be13a910b"><div class="ttname"><a href="namespace_robot_1_1_globals.html#a8f5ed28ef65173e08177eb6be13a910b">Robot::Globals::RightMid</a></div><div class="ttdeci">pros::Motor RightMid</div></div>
+<div class="ttc" id="anamespace_robot_1_1_globals_html_aa3c7b6bd7690ade6f6ef1f41582bada1"><div class="ttname"><a href="namespace_robot_1_1_globals.html#aa3c7b6bd7690ade6f6ef1f41582bada1">Robot::Globals::LeftFront</a></div><div class="ttdeci">pros::Motor LeftFront</div></div>
+<div class="ttc" id="anamespace_robot_1_1_globals_html_af074623411b68ec48da3f47ae2a69287"><div class="ttname"><a href="namespace_robot_1_1_globals.html#af074623411b68ec48da3f47ae2a69287">Robot::Globals::LeftBack</a></div><div class="ttdeci">pros::Motor LeftBack</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="namespace_robot_1_1_globals.html#af074623411b68ec48da3f47ae2a69287">Robot::Globals::LeftBack</a>, <a class="el" href="namespace_robot_1_1_globals.html#aa3c7b6bd7690ade6f6ef1f41582bada1">Robot::Globals::LeftFront</a>, <a class="el" href="namespace_robot_1_1_globals.html#a307257e8c75b5c402957288afc4983ed">Robot::Globals::LeftMid</a>, <a class="el" href="namespace_robot_1_1_globals.html#a45509b60c052a78f32531f657f40b8da">Robot::Globals::RightBack</a>, <a class="el" href="namespace_robot_1_1_globals.html#a57080a8667cacf9797e45a46903c2c0d">Robot::Globals::RightFront</a>, and <a class="el" href="namespace_robot_1_1_globals.html#a8f5ed28ef65173e08177eb6be13a910b">Robot::Globals::RightMid</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00059">initialize()</a>.</p>
 
 </div>
 </div>
@@ -193,13 +236,39 @@ Functions</h2></td></tr>
 <p>Toggles subsystems, drive mode auton routine, and puncher. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="class_robot_1_1_autonomous.html" title="The Robot namespace contains classes and functions related to the robot&#39;s autonomous behavior.">Autonomous</a></td><td>auton Auton object. </td></tr>
+    <tr><td class="paramname"><a class="el" href="class_robot_1_1_autonomous.html" title="The Autonomous class contains classes and functions related to the robot&#39;s autonomous behavior.">Autonomous</a></td><td>auton Auton object. </td></tr>
     <tr><td class="paramname"><a class="el" href="class_robot_1_1_drivetrain.html" title="Represents the drivetrain of the robot.">Drivetrain</a></td><td>drive <a class="el" href="class_robot_1_1_drivetrain.html" title="Represents the drivetrain of the robot.">Drivetrain</a> object. </td></tr>
     <tr><td class="paramname"><a class="el" href="class_robot_1_1_puncher.html" title="Represents a Puncher mechanism for a robot.">Puncher</a></td><td>punch <a class="el" href="class_robot_1_1_puncher.html" title="Represents a Puncher mechanism for a robot.">Puncher</a> object.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo</a></b></dt><dd>Figure out a way to send an event to the different objects to toggle between the different subsystems. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="utility_8cpp_source.html#l00010">10</a> of file <a class="el" href="utility_8cpp_source.html">utility.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   10</span>                                                                                         {</div>
+<div class="line"><span class="lineno">   11</span>    <span class="comment">// Allows the user to select the autonomous routine, drive control type as well as whether the distance puncher is enabled.</span></div>
+<div class="line"><span class="lineno">   12</span>    <span class="comment">// The user can select the auton routine by pressing the right buttons on the controller.</span></div>
+<div class="line"><span class="lineno">   13</span>    <span class="comment">// The user can select the drive control type by pressing the down button on the controller.</span></div>
+<div class="line"><span class="lineno">   14</span>    <span class="comment">// The user can select the distance puncher by pressing the left button on the controller.</span></div>
+<div class="line"><span class="lineno">   15</span>    <span class="comment">// The state of each subsystem is displayed on the controller screen.</span></div>
+<div class="line"><span class="lineno">   16</span>    <span class="keywordflow">while</span> (<span class="keyword">true</span>)</div>
+<div class="line"><span class="lineno">   17</span>    {</div>
+<div class="line"><span class="lineno">   18</span>        auton.<a class="code hl_function" href="class_robot_1_1_autonomous.html#a6e8bc657f1842887508876fabc1e3085">AutonSwitcher</a>();</div>
+<div class="line"><span class="lineno">   19</span>        drive.<a class="code hl_function" href="class_robot_1_1_drivetrain.html#a4349382fde427976ba7ffc66ead2c43b">SwitchDrive</a>();</div>
+<div class="line"><span class="lineno">   20</span>        punch.<a class="code hl_function" href="class_robot_1_1_puncher.html#a63973e01011483e2a32b15ff2534bfdb">PuncherSwitch</a>();</div>
+<div class="line"><span class="lineno">   21</span> </div>
+<div class="line"><span class="lineno">   22</span>        <span class="comment">// Exits the loop if the up button is pressed</span></div>
+<div class="line"><span class="lineno">   23</span> </div>
+<div class="line"><span class="lineno">   24</span>        pros::delay(10);</div>
+<div class="line"><span class="lineno">   25</span>    }</div>
+<div class="line"><span class="lineno">   26</span>}</div>
+<div class="ttc" id="aclass_robot_1_1_autonomous_html_a6e8bc657f1842887508876fabc1e3085"><div class="ttname"><a href="class_robot_1_1_autonomous.html#a6e8bc657f1842887508876fabc1e3085">Robot::Autonomous::AutonSwitcher</a></div><div class="ttdeci">void AutonSwitcher()</div><div class="ttdoc">Switches the autonomous program.</div><div class="ttdef"><b>Definition</b> <a href="auton_8cpp_source.html#l00082">auton.cpp:82</a></div></div>
+<div class="ttc" id="aclass_robot_1_1_drivetrain_html_a4349382fde427976ba7ffc66ead2c43b"><div class="ttname"><a href="class_robot_1_1_drivetrain.html#a4349382fde427976ba7ffc66ead2c43b">Robot::Drivetrain::SwitchDrive</a></div><div class="ttdeci">void SwitchDrive()</div><div class="ttdoc">Switches the DriveTrain mode between arcade and tank drive.</div><div class="ttdef"><b>Definition</b> <a href="drivetrain_8cpp_source.html#l00078">drivetrain.cpp:78</a></div></div>
+<div class="ttc" id="aclass_robot_1_1_puncher_html_a63973e01011483e2a32b15ff2534bfdb"><div class="ttname"><a href="class_robot_1_1_puncher.html#a63973e01011483e2a32b15ff2534bfdb">Robot::Puncher::PuncherSwitch</a></div><div class="ttdeci">void PuncherSwitch()</div><div class="ttdoc">Toggles whether the distance sensor is activated or not and prints it out.</div><div class="ttdef"><b>Definition</b> <a href="puncher_8cpp_source.html#l00055">puncher.cpp:55</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="auton_8cpp_source.html#l00082">Robot::Autonomous::AutonSwitcher()</a>, <a class="el" href="puncher_8cpp_source.html#l00055">Robot::Puncher::PuncherSwitch()</a>, and <a class="el" href="drivetrain_8cpp_source.html#l00078">Robot::Drivetrain::SwitchDrive()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00048">toggles()</a>.</p>
 
 </div>
 </div>
@@ -209,7 +278,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_robot.html">Robot</a></li><li class="navelem"><a class="el" href="namespace_robot_1_1_utility.html">Utility</a></li>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+    <li class="footer">Generated on Tue Feb 20 2024 18:08:37 for 1516b Over Under by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>
 </body>

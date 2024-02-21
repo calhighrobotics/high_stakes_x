@@ -27,6 +27,7 @@ window.MathJax = {
 };
 </script>
 <script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
@@ -112,66 +113,130 @@ $(function(){initNavTree('main_8h_source.html',''); initResizable(); });
   <div class="headertitle"><div class="title">main.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="main_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#ifndef _PROS_MAIN_H_</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#define _PROS_MAIN_H_</span></div>
+<a href="main_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/**</span></div>
+<div class="line"><span class="lineno">    2</span><span class="comment"> * \file main.h</span></div>
+<div class="line"><span class="lineno">    3</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">    4</span><span class="comment"> * Contains common definitions and header files used throughout your PROS</span></div>
+<div class="line"><span class="lineno">    5</span><span class="comment"> * project.</span></div>
+<div class="line"><span class="lineno">    6</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">    7</span><span class="comment"> * \copyright Copyright (c) 2017-2023, Purdue University ACM SIGBots.</span></div>
+<div class="line"><span class="lineno">    8</span><span class="comment"> * All rights reserved.</span></div>
+<div class="line"><span class="lineno">    9</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">   10</span><span class="comment"> * This Source Code Form is subject to the terms of the Mozilla Public</span></div>
+<div class="line"><span class="lineno">   11</span><span class="comment"> * License, v. 2.0. If a copy of the MPL was not distributed with this</span></div>
+<div class="line"><span class="lineno">   12</span><span class="comment"> * file, You can obtain one at http://mozilla.org/MPL/2.0/.</span></div>
+<div class="line"><span class="lineno">   13</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">_PROS_MAIN_H_</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">_PROS_MAIN_H_</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="main_8h.html#ae5817dbade24ea595c3ce938b34f9994">   27</a></span><span class="preprocessor">#define PROS_USE_SIMPLE_NAMES</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">/**</span></div>
+<div class="line"><span class="lineno">   19</span><span class="comment"> * If defined, some commonly used enums will have preprocessor macros which give</span></div>
+<div class="line"><span class="lineno">   20</span><span class="comment"> * a shorter, more convenient naming pattern. If this isn&#39;t desired, simply</span></div>
+<div class="line"><span class="lineno">   21</span><span class="comment"> * comment the following line out.</span></div>
+<div class="line"><span class="lineno">   22</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">   23</span><span class="comment"> * For instance, E_CONTROLLER_MASTER has a shorter name: CONTROLLER_MASTER.</span></div>
+<div class="line"><span class="lineno">   24</span><span class="comment"> * E_CONTROLLER_MASTER is pedantically correct within the PROS styleguide, but</span></div>
+<div class="line"><span class="lineno">   25</span><span class="comment"> * not convenient for most student programmers.</span></div>
+<div class="line"><span class="lineno">   26</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="main_8h.html#ae5817dbade24ea595c3ce938b34f9994">   27</a></span><span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">PROS_USE_SIMPLE_NAMES</span></div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="main_8h.html#ab1b081349029f8bf68a7f2086732e42b">   35</a></span><span class="preprocessor">#define PROS_USE_LITERALS</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">/**</span></div>
+<div class="line"><span class="lineno">   30</span><span class="comment"> * If defined, C++ literals will be available for use. All literals are in the</span></div>
+<div class="line"><span class="lineno">   31</span><span class="comment"> * pros::literals namespace.</span></div>
+<div class="line"><span class="lineno">   32</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">   33</span><span class="comment"> * For instance, you can do `4_mtr = 50` to set motor 4&#39;s target velocity to 50</span></div>
+<div class="line"><span class="lineno">   34</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="main_8h.html#ab1b081349029f8bf68a7f2086732e42b">   35</a></span><span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">PROS_USE_LITERALS</span></div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &quot;<a class="code" href="api_8h.html">api.h</a>&quot;</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#include &quot;<a class="code" href="auton_8h.html">robot/auton.h</a>&quot;</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#include &quot;<a class="code" href="globals_8h.html">globals.h</a>&quot;</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#include &quot;<a class="code" href="drivetrain_8h.html">robot/drivetrain.h</a>&quot;</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#include &quot;<a class="code" href="puncher_8h.html">robot/puncher.h</a>&quot;</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#include &quot;<a class="code" href="intake_8h.html">robot/intake.h</a>&quot;</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#include &quot;<a class="code" href="utility_8h.html">robot/utility.h</a>&quot;</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="api_8h.html">&quot;api.h&quot;</a></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;robot/auton.h&quot;</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="globals_8h.html" title="Contains global variables and type definitions for the Robot namespace.">&quot;globals.h&quot;</a></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;robot/drivetrain.h&quot;</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;robot/puncher.h&quot;</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;robot/intake.h&quot;</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;robot/utility.h&quot;</span></div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">/**</span></div>
+<div class="line"><span class="lineno">   46</span><span class="comment"> * You should add more #includes here</span></div>
+<div class="line"><span class="lineno">   47</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">//#include &quot;okapi/api.hpp&quot;</span></div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">//#include &quot;pros/api_legacy.h&quot;</span></div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">/**</span></div>
+<div class="line"><span class="lineno">   52</span><span class="comment"> * If you find doing pros::Motor() to be tedious and you&#39;d prefer just to do</span></div>
+<div class="line"><span class="lineno">   53</span><span class="comment"> * Motor, you can use the namespace with the following commented out line.</span></div>
+<div class="line"><span class="lineno">   54</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">   55</span><span class="comment"> * IMPORTANT: Only the okapi or pros namespace may be used, not both</span></div>
+<div class="line"><span class="lineno">   56</span><span class="comment"> * concurrently! The okapi namespace will export all symbols inside the pros</span></div>
+<div class="line"><span class="lineno">   57</span><span class="comment"> * namespace.</span></div>
+<div class="line"><span class="lineno">   58</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">// using namespace pros;</span></div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">// using namespace pros::literals;</span></div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment">// using namespace okapi;</span></div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">/**</span></div>
+<div class="line"><span class="lineno">   64</span><span class="comment"> * Prototypes for the competition control tasks are redefined here to ensure</span></div>
+<div class="line"><span class="lineno">   65</span><span class="comment"> * that they can be called from user code (i.e. calling autonomous from a</span></div>
+<div class="line"><span class="lineno">   66</span><span class="comment"> * button press in opcontrol() for testing purposes).</span></div>
+<div class="line"><span class="lineno">   67</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="preprocessor">#</span><span class="preprocessor">ifdef</span> __cplusplus</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="keywordtype">void</span> <a class="code hl_function" href="main_8h.html#a2df3d06bc5bced154da27fce393f991f">autonomous</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="keywordtype">void</span> <a class="code hl_function" href="main_8h.html#a9efe22aaead3a5e936b5df459de02eba">initialize</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="keywordtype">void</span> <a class="code hl_function" href="main_8h.html#a3ed01880f60e5a3afffc71f623174dbd">disabled</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="keywordtype">void</span> <a class="code hl_function" href="main_8h.html#a16a77889800f9a99f69f9dd026013505">competition_initialize</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keywordtype">void</span> <a class="code hl_function" href="main_8h.html#a1903abdb5ef0f301d660754c8315fc17">opcontrol</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="keywordtype">void</span> <a class="code hl_function" href="main_8cpp.html#a3c7ca506bbc071fa740de13805b7f376">autonomous</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="keywordtype">void</span> <a class="code hl_function" href="main_8cpp.html#a25a40b6614565f755233080a384c35f1">initialize</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="keywordtype">void</span> <a class="code hl_function" href="main_8cpp.html#a4e1a74721457de1f01d41566400fb3e5">disabled</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="keywordtype">void</span> <a class="code hl_function" href="main_8cpp.html#a870462d80a8efe920f8c95ee313cb9e5">competition_initialize</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keywordtype">void</span> <a class="code hl_function" href="main_8cpp.html#ac57194c628bb97b849be48d79c99c4ac">opcontrol</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="preprocessor">#</span><span class="preprocessor">ifdef</span> __cplusplus</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>}</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="preprocessor">#</span><span class="preprocessor">ifdef</span> __cplusplus</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="comment">/**</span></div>
+<div class="line"><span class="lineno">   82</span><span class="comment"> * You can add C++-only headers here</span></div>
+<div class="line"><span class="lineno">   83</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="comment">//#include &lt;iostream&gt;</span></div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="preprocessor">#endif  </span><span class="comment">// _PROS_MAIN_H_</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="preprocessor">#</span><span class="preprocessor">endif</span>  <span class="comment">// _PROS_MAIN_H_</span></div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>;</div>
-<div class="ttc" id="aapi_8h_html"><div class="ttname"><a href="api_8h.html">api.h</a></div></div>
-<div class="ttc" id="aauton_8h_html"><div class="ttname"><a href="auton_8h.html">auton.h</a></div></div>
-<div class="ttc" id="adrivetrain_8h_html"><div class="ttname"><a href="drivetrain_8h.html">drivetrain.h</a></div><div class="ttdoc">Contains the declaration of the Drivetrain class.</div></div>
-<div class="ttc" id="aglobals_8h_html"><div class="ttname"><a href="globals_8h.html">globals.h</a></div><div class="ttdoc">Contains global variables and type definitions for the Robot namespace.</div></div>
-<div class="ttc" id="aintake_8h_html"><div class="ttname"><a href="intake_8h.html">intake.h</a></div></div>
-<div class="ttc" id="amain_8h_html_a16a77889800f9a99f69f9dd026013505"><div class="ttname"><a href="main_8h.html#a16a77889800f9a99f69f9dd026013505">competition_initialize</a></div><div class="ttdeci">void competition_initialize(void)</div><div class="ttdef"><b>Definition</b> main.cpp:95</div></div>
-<div class="ttc" id="amain_8h_html_a1903abdb5ef0f301d660754c8315fc17"><div class="ttname"><a href="main_8h.html#a1903abdb5ef0f301d660754c8315fc17">opcontrol</a></div><div class="ttdeci">void opcontrol(void)</div><div class="ttdef"><b>Definition</b> main.cpp:144</div></div>
-<div class="ttc" id="amain_8h_html_a2df3d06bc5bced154da27fce393f991f"><div class="ttname"><a href="main_8h.html#a2df3d06bc5bced154da27fce393f991f">autonomous</a></div><div class="ttdeci">void autonomous(void)</div><div class="ttdef"><b>Definition</b> main.cpp:121</div></div>
-<div class="ttc" id="amain_8h_html_a3ed01880f60e5a3afffc71f623174dbd"><div class="ttname"><a href="main_8h.html#a3ed01880f60e5a3afffc71f623174dbd">disabled</a></div><div class="ttdeci">void disabled(void)</div><div class="ttdef"><b>Definition</b> main.cpp:84</div></div>
-<div class="ttc" id="amain_8h_html_a9efe22aaead3a5e936b5df459de02eba"><div class="ttname"><a href="main_8h.html#a9efe22aaead3a5e936b5df459de02eba">initialize</a></div><div class="ttdeci">void initialize(void)</div><div class="ttdef"><b>Definition</b> main.cpp:59</div></div>
-<div class="ttc" id="apuncher_8h_html"><div class="ttname"><a href="puncher_8h.html">puncher.h</a></div></div>
-<div class="ttc" id="autility_8h_html"><div class="ttname"><a href="utility_8h.html">utility.h</a></div></div>
+<div class="ttc" id="aclass_robot_1_1_autonomous_html"><div class="ttname"><a href="class_robot_1_1_autonomous.html">Robot::Autonomous</a></div><div class="ttdoc">The Autonomous class contains classes and functions related to the robot's autonomous behavior.</div><div class="ttdef"><b>Definition</b> <a href="auton_8h_source.html#l00011">auton.h:11</a></div></div>
+<div class="ttc" id="aclass_robot_1_1_autonomous_html_a00a04b68bea9c3b46f577fa34e5f0d69"><div class="ttname"><a href="class_robot_1_1_autonomous.html#a00a04b68bea9c3b46f577fa34e5f0d69">Robot::Autonomous::AutoDrive</a></div><div class="ttdeci">void AutoDrive(Puncher &amp;puncher, bool autono)</div><div class="ttdoc">Drives the robot autonomously.</div><div class="ttdef"><b>Definition</b> <a href="auton_8cpp_source.html#l00060">auton.cpp:60</a></div></div>
+<div class="ttc" id="aclass_robot_1_1_drivetrain_html"><div class="ttname"><a href="class_robot_1_1_drivetrain.html">Robot::Drivetrain</a></div><div class="ttdoc">Represents the drivetrain of the robot.</div><div class="ttdef"><b>Definition</b> <a href="drivetrain_8h_source.html#l00023">drivetrain.h:23</a></div></div>
+<div class="ttc" id="aclass_robot_1_1_drivetrain_html_a1d76f7c8860e4d2ffacd3c541c457ae1"><div class="ttname"><a href="class_robot_1_1_drivetrain.html#a1d76f7c8860e4d2ffacd3c541c457ae1">Robot::Drivetrain::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">Runs the drivetrain.</div><div class="ttdef"><b>Definition</b> <a href="drivetrain_8cpp_source.html#l00067">drivetrain.cpp:67</a></div></div>
+<div class="ttc" id="aclass_robot_1_1_intake_html"><div class="ttname"><a href="class_robot_1_1_intake.html">Robot::Intake</a></div><div class="ttdoc">The Intake class represents a robot intake system.</div><div class="ttdef"><b>Definition</b> <a href="intake_8h_source.html#l00008">intake.h:8</a></div></div>
+<div class="ttc" id="aclass_robot_1_1_intake_html_a130e4922767dd5355130885468624dfe"><div class="ttname"><a href="class_robot_1_1_intake.html#a130e4922767dd5355130885468624dfe">Robot::Intake::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">Runs the main function of the intake system.</div><div class="ttdef"><b>Definition</b> <a href="intake_8cpp_source.html#l00007">intake.cpp:7</a></div></div>
+<div class="ttc" id="aclass_robot_1_1_puncher_html"><div class="ttname"><a href="class_robot_1_1_puncher.html">Robot::Puncher</a></div><div class="ttdoc">Represents a Puncher mechanism for a robot.</div><div class="ttdef"><b>Definition</b> <a href="puncher_8h_source.html#l00012">puncher.h:12</a></div></div>
+<div class="ttc" id="aclass_robot_1_1_puncher_html_aad9583da0a98fbdafe736c5faa15f131"><div class="ttname"><a href="class_robot_1_1_puncher.html#aad9583da0a98fbdafe736c5faa15f131">Robot::Puncher::run</a></div><div class="ttdeci">void run(int autonVal)</div><div class="ttdoc">Runs the puncher based on the given autonomous value.</div><div class="ttdef"><b>Definition</b> <a href="puncher_8cpp_source.html#l00015">puncher.cpp:15</a></div></div>
+<div class="ttc" id="aclass_robot_1_1_wings_html"><div class="ttname"><a href="class_robot_1_1_wings.html">Robot::Wings</a></div><div class="ttdoc">The Wings class represents the wings of a robot.</div><div class="ttdef"><b>Definition</b> <a href="wings_8h_source.html#l00011">wings.h:11</a></div></div>
+<div class="ttc" id="aclass_robot_1_1_wings_html_a468b112f75832763a9234156897ad82d"><div class="ttname"><a href="class_robot_1_1_wings.html#a468b112f75832763a9234156897ad82d">Robot::Wings::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">Runs the wings.</div><div class="ttdef"><b>Definition</b> <a href="wings_8cpp_source.html#l00007">wings.cpp:7</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a25a40b6614565f755233080a384c35f1"><div class="ttname"><a href="main_8cpp.html#a25a40b6614565f755233080a384c35f1">initialize</a></div><div class="ttdeci">void initialize()</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00059">main.cpp:59</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a3c7ca506bbc071fa740de13805b7f376"><div class="ttname"><a href="main_8cpp.html#a3c7ca506bbc071fa740de13805b7f376">autonomous</a></div><div class="ttdeci">void autonomous()</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00121">main.cpp:121</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a4e1a74721457de1f01d41566400fb3e5"><div class="ttname"><a href="main_8cpp.html#a4e1a74721457de1f01d41566400fb3e5">disabled</a></div><div class="ttdeci">void disabled()</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00084">main.cpp:84</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a870462d80a8efe920f8c95ee313cb9e5"><div class="ttname"><a href="main_8cpp.html#a870462d80a8efe920f8c95ee313cb9e5">competition_initialize</a></div><div class="ttdeci">void competition_initialize()</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00095">main.cpp:95</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ac57194c628bb97b849be48d79c99c4ac"><div class="ttname"><a href="main_8cpp.html#ac57194c628bb97b849be48d79c99c4ac">opcontrol</a></div><div class="ttdeci">void opcontrol()</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00144">main.cpp:144</a></div></div>
+<div class="ttc" id="amain_8cpp_html_af608d192f5b730ea3fe04e4ee5cd49e2"><div class="ttname"><a href="main_8cpp.html#af608d192f5b730ea3fe04e4ee5cd49e2">toggles</a></div><div class="ttdeci">void toggles()</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00048">main.cpp:48</a></div></div>
+<div class="ttc" id="anamespace_robot_1_1_globals_html"><div class="ttname"><a href="namespace_robot_1_1_globals.html">Robot::Globals</a></div><div class="ttdoc">Contains global variables and type definitions for the Robot namespace.</div><div class="ttdef"><b>Definition</b> <a href="globals_8cpp_source.html#l00018">globals.cpp:18</a></div></div>
+<div class="ttc" id="anamespace_robot_1_1_globals_html_adb19c4d8d7b61867e04f934a6dcd6f87"><div class="ttname"><a href="namespace_robot_1_1_globals.html#adb19c4d8d7b61867e04f934a6dcd6f87">Robot::Globals::chassis</a></div><div class="ttdeci">lemlib::Chassis chassis</div></div>
+<div class="ttc" id="anamespace_robot_1_1_utility_html"><div class="ttname"><a href="namespace_robot_1_1_utility.html">Robot::Utility</a></div><div class="ttdoc">Contains utility functions for controlling the screen and toggling subsystems.</div><div class="ttdef"><b>Definition</b> <a href="utility_8h_source.html#l00013">utility.h:13</a></div></div>
+<div class="ttc" id="anamespace_robot_1_1_utility_html_a043980c10e7bddc2ec36da271d408feb"><div class="ttname"><a href="namespace_robot_1_1_utility.html#a043980c10e7bddc2ec36da271d408feb">Robot::Utility::displayLocation</a></div><div class="ttdeci">void displayLocation()</div><div class="ttdoc">Displays current position of the robot.</div><div class="ttdef"><b>Definition</b> <a href="utility_8cpp_source.html#l00042">utility.cpp:42</a></div></div>
+<div class="ttc" id="anamespace_robot_1_1_utility_html_a99f5f3a9b20290fc8a525ab2f935a697"><div class="ttname"><a href="namespace_robot_1_1_utility.html#a99f5f3a9b20290fc8a525ab2f935a697">Robot::Utility::toggleSubsystemOptions</a></div><div class="ttdeci">void toggleSubsystemOptions(Autonomous &amp;auton, Drivetrain &amp;drive, Puncher &amp;punch)</div><div class="ttdoc">Toggles subsystems, drive mode auton routine, and puncher.</div><div class="ttdef"><b>Definition</b> <a href="utility_8cpp_source.html#l00010">utility.cpp:10</a></div></div>
+<div class="ttc" id="anamespace_robot_1_1_utility_html_ae923edc042caa87e3c10e32f8040728c"><div class="ttname"><a href="namespace_robot_1_1_utility.html#ae923edc042caa87e3c10e32f8040728c">Robot::Utility::displayMotorVel</a></div><div class="ttdeci">void displayMotorVel()</div><div class="ttdoc">Displays current velocity of the robot.</div><div class="ttdef"><b>Definition</b> <a href="utility_8cpp_source.html#l00028">utility.cpp:28</a></div></div>
+<div class="ttc" id="anamespace_robot_html"><div class="ttname"><a href="namespace_robot.html">Robot</a></div><div class="ttdoc">Contains all objects generated by the 1516B team - Contains all of the subsystems,...</div><div class="ttdef"><b>Definition</b> <a href="globals_8cpp_source.html#l00017">globals.cpp:17</a></div></div>
+<div class="ttc" id="astruct_robot_1_1_robot_subsystems_html"><div class="ttname"><a href="struct_robot_1_1_robot_subsystems.html">Robot::RobotSubsystems</a></div><div class="ttdoc">Structure that holds instances of all robot subsystems.</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00031">main.cpp:31</a></div></div>
+<div class="ttc" id="astruct_robot_1_1_robot_subsystems_html_a67a4c24abfe227dcc01d585dbb0dc39f"><div class="ttname"><a href="struct_robot_1_1_robot_subsystems.html#a67a4c24abfe227dcc01d585dbb0dc39f">Robot::RobotSubsystems::puncher</a></div><div class="ttdeci">Robot::Puncher puncher</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00035">main.cpp:35</a></div></div>
+<div class="ttc" id="astruct_robot_1_1_robot_subsystems_html_a72b5eba687ab7ea6aa4dfb0179fca49e"><div class="ttname"><a href="struct_robot_1_1_robot_subsystems.html#a72b5eba687ab7ea6aa4dfb0179fca49e">Robot::RobotSubsystems::drivetrain</a></div><div class="ttdeci">Robot::Drivetrain drivetrain</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00033">main.cpp:33</a></div></div>
+<div class="ttc" id="astruct_robot_1_1_robot_subsystems_html_acf764dc9c9f40e92bd3a6b8a2960ff63"><div class="ttname"><a href="struct_robot_1_1_robot_subsystems.html#acf764dc9c9f40e92bd3a6b8a2960ff63">Robot::RobotSubsystems::autonomous</a></div><div class="ttdeci">Robot::Autonomous autonomous</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00032">main.cpp:32</a></div></div>
+<div class="ttc" id="astruct_robot_1_1_robot_subsystems_html_ae86c5fbb3c98d020087123534d633bcd"><div class="ttname"><a href="struct_robot_1_1_robot_subsystems.html#ae86c5fbb3c98d020087123534d633bcd">Robot::RobotSubsystems::wings</a></div><div class="ttdeci">Robot::Wings wings</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00034">main.cpp:34</a></div></div>
+<div class="ttc" id="astruct_robot_1_1_robot_subsystems_html_afcb73e62b67068c0ef9183fdc21b4cee"><div class="ttname"><a href="struct_robot_1_1_robot_subsystems.html#afcb73e62b67068c0ef9183fdc21b4cee">Robot::RobotSubsystems::intake</a></div><div class="ttdeci">Robot::Intake intake</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00036">main.cpp:36</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="main_8h.html">main.h</a></li>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+    <li class="footer">Generated on Tue Feb 20 2024 18:08:29 for 1516b Over Under by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>
 </body>

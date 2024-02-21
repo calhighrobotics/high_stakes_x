@@ -27,6 +27,7 @@ window.MathJax = {
 };
 </script>
 <script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
@@ -106,7 +107,8 @@ $(function(){initNavTree('globals_8cpp.html',''); initResizable(); });
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">globals.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -115,7 +117,9 @@ $(function(){initNavTree('globals_8cpp.html',''); initResizable(); });
 <code>#include &quot;<a class="el" href="auton_8h_source.html">robot/auton.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="drivetrain_8h_source.html">robot/drivetrain.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="wings_8h_source.html">robot/wings.h</a>&quot;</code><br />
-</div><table class="memberdecls">
+</div>
+<p><a href="globals_8cpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespace_robot" id="r_namespace_robot"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_robot.html">Robot</a></td></tr>
@@ -169,6 +173,17 @@ Functions</h2></td></tr>
 <tr class="separator:aacee70a693400ed240b421665559a583"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec3e8c8164c2a5e47aae7cadfd17ec54" id="r_aec3e8c8164c2a5e47aae7cadfd17ec54"><td class="memItemLeft" align="right" valign="top">lemlib::Chassis&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_robot_1_1_globals.html#aec3e8c8164c2a5e47aae7cadfd17ec54">Robot::Globals::chassis</a> (<a class="el" href="namespace_robot_1_1_globals.html#ae109a1a66852e38acf7f66f55d217aff">drivetrain</a>, <a class="el" href="namespace_robot_1_1_globals.html#abc32a0a65677e63f5926f10fe36e050c">lateralController</a>, <a class="el" href="namespace_robot_1_1_globals.html#a15a5d2acb255490a395f8f6aa26d36ec">angularController</a>, <a class="el" href="namespace_robot_1_1_globals.html#aa0e1f12e14d568f7192ad705b7825b30">sensors</a>)</td></tr>
 <tr class="separator:aec3e8c8164c2a5e47aae7cadfd17ec54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ae109a1a66852e38acf7f66f55d217aff" id="r_ae109a1a66852e38acf7f66f55d217aff"><td class="memItemLeft" align="right" valign="top">lemlib::Drivetrain_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_robot_1_1_globals.html#ae109a1a66852e38acf7f66f55d217aff">Robot::Globals::drivetrain</a></td></tr>
+<tr class="separator:ae109a1a66852e38acf7f66f55d217aff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0e1f12e14d568f7192ad705b7825b30" id="r_aa0e1f12e14d568f7192ad705b7825b30"><td class="memItemLeft" align="right" valign="top">lemlib::OdomSensors_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_robot_1_1_globals.html#aa0e1f12e14d568f7192ad705b7825b30">Robot::Globals::sensors</a></td></tr>
+<tr class="separator:aa0e1f12e14d568f7192ad705b7825b30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc32a0a65677e63f5926f10fe36e050c" id="r_abc32a0a65677e63f5926f10fe36e050c"><td class="memItemLeft" align="right" valign="top">lemlib::ChassisController_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_robot_1_1_globals.html#abc32a0a65677e63f5926f10fe36e050c">Robot::Globals::lateralController</a></td></tr>
+<tr class="separator:abc32a0a65677e63f5926f10fe36e050c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15a5d2acb255490a395f8f6aa26d36ec" id="r_a15a5d2acb255490a395f8f6aa26d36ec"><td class="memItemLeft" align="right" valign="top">lemlib::ChassisController_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_robot_1_1_globals.html#a15a5d2acb255490a395f8f6aa26d36ec">Robot::Globals::angularController</a></td></tr>
+<tr class="separator:a15a5d2acb255490a395f8f6aa26d36ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -176,7 +191,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="globals_8cpp.html">globals.cpp</a></li>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+    <li class="footer">Generated on Tue Feb 20 2024 18:08:37 for 1516b Over Under by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>
 </body>

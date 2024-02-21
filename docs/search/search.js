@@ -22,7 +22,7 @@
 
  @licend  The above is the entire license notice for the JavaScript code in this file
  */
-const SEARCH_COOKIE_NAME = ''+'search_grp';
+const SEARCH_COOKIE_NAME = '1268ab6146d958378dc6232ce4671427_'+'search_grp';
 
 const searchResults = new SearchResults();
 
