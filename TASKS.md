@@ -9,10 +9,10 @@
 
 ## In Progress
 - Tune Autonomous Routine in the PID and the Pure Pursuit algorithms
-- Document the codebase
-    - Classes/Methods/Structs/Files/Variables
-    - Update 1516B wiki accordingly.
+- Update 1516B wiki to latest codebase.
 
 ## Completed
 - Implemented toggle systems for switching subsystems during robot usage.
+- Document the codebase
+    - Classes/Methods/Structs/Files/Variables
 
