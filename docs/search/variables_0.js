@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['angularcontroller_0',['angularController',['../main_8cpp.html#a8d5a3a568401b7b0aef8c5c359520dbe',1,'main.cpp']]],
-  ['auton_1',['auton',['../main_8cpp.html#ac0ccf826a0224e23d0684eac52e500ea',1,'main.cpp']]]
+  ['angularcontroller_0',['angularController',['../namespace_robot_1_1_globals.html#a15a5d2acb255490a395f8f6aa26d36ec',1,'Robot::Globals']]],
+  ['auton_1',['auton',['../class_robot_1_1_autonomous.html#a35870e1dbd00c82d40f8181fbb257189',1,'Robot::Autonomous']]],
+  ['autonomous_2',['autonomous',['../struct_robot_1_1_robot_subsystems.html#acf764dc9c9f40e92bd3a6b8a2960ff63',1,'Robot::RobotSubsystems']]]
 ];

@@ -1,0 +1,27 @@
+var screen_8hpp =
+[
+    [ "convert_args", "screen_8hpp.html#a86206a0e06649bc26cb2c417e197fe1c", null ],
+    [ "convert_args", "screen_8hpp.html#a2fe33fdd514fc82e99a5551cb00b73b6", null ],
+    [ "copy_area", "screen_8hpp.html#ac8b195fde29a483de7fe34156067a92c", null ],
+    [ "draw_circle", "screen_8hpp.html#a53c5922a466814315bf0c0150838b799", null ],
+    [ "draw_line", "screen_8hpp.html#ae3bef1694428c775fd6dce977cbfa87b", null ],
+    [ "draw_pixel", "screen_8hpp.html#a5d4493bbada5ff871a44461f0bc71a7d", null ],
+    [ "draw_rect", "screen_8hpp.html#a02af0ec1e3430efbb5b66c4cfe92b735", null ],
+    [ "erase", "screen_8hpp.html#addc37523f02666234b4f87dd5683f2de", null ],
+    [ "erase_circle", "screen_8hpp.html#a3ab31a7257cb0d6d0fb776703b17ede3", null ],
+    [ "erase_line", "screen_8hpp.html#a22c2c2ac7ffe36b2946052170c526e7d", null ],
+    [ "erase_pixel", "screen_8hpp.html#ad0a321bd81d028d75feec7f6c1c13e49", null ],
+    [ "erase_rect", "screen_8hpp.html#a22199222d41fd80c81799fafe3fbec4e", null ],
+    [ "fill_circle", "screen_8hpp.html#a7037d11afb655cb5e2d7547d94c5f91a", null ],
+    [ "fill_rect", "screen_8hpp.html#a596ee2c64e8d5cb8abcdab741490b884", null ],
+    [ "get_eraser", "screen_8hpp.html#ac589639dcad1320da01239fa2ee91895", null ],
+    [ "get_pen", "screen_8hpp.html#a16f5bad9cbd8aaf1de2f747bf4c88139", null ],
+    [ "print", "screen_8hpp.html#a934a573ccd12290a30af83fbd7ba1140", null ],
+    [ "print", "screen_8hpp.html#abca8d131b3c02dc5806c15e3f3f32bc7", null ],
+    [ "scroll", "screen_8hpp.html#ada1288989c095a51803f3c3ec32f63de", null ],
+    [ "scroll_area", "screen_8hpp.html#a54598658b4962091f0dd30474d3c579f", null ],
+    [ "set_eraser", "screen_8hpp.html#aba559f124030115ae1e1bcd5d7ab12ee", null ],
+    [ "set_pen", "screen_8hpp.html#acf5d93452112748c9480e355a6b9d84d", null ],
+    [ "touch_callback", "screen_8hpp.html#a8493a48e858cba5e4aa28f6889a79f54", null ],
+    [ "touch_status", "screen_8hpp.html#a4e473df306276304a64218f5cb1afad1", null ]
+];

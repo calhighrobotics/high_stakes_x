@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['chassis_0',['chassis',['../main_8cpp.html#a812836b0d942f6311f1cde5aeb629095',1,'main.cpp']]],
-  ['competition_5finitialize_1',['competition_initialize',['../main_8h.html#a16a77889800f9a99f69f9dd026013505',1,'competition_initialize(void):&#160;main.cpp'],['../main_8cpp.html#a870462d80a8efe920f8c95ee313cb9e5',1,'competition_initialize():&#160;main.cpp']]],
-  ['controller_2',['controller',['../main_8cpp.html#af7921e40f53b0a5ed21ab8b8967806ca',1,'main.cpp']]]
+  ['chassis_0',['chassis',['../namespace_robot_1_1_globals.html#aec3e8c8164c2a5e47aae7cadfd17ec54',1,'Robot::Globals']]],
+  ['checkdeadzone_1',['CheckDeadzone',['../class_robot_1_1_drivetrain.html#a6184f05a5a4f463bdfea0935a947bf63',1,'Robot::Drivetrain']]],
+  ['competition_5finitialize_2',['competition_initialize',['../main_8h.html#a16a77889800f9a99f69f9dd026013505',1,'competition_initialize(void):&#160;main.cpp'],['../main_8cpp.html#a870462d80a8efe920f8c95ee313cb9e5',1,'competition_initialize():&#160;main.cpp']]],
+  ['controller_3',['controller',['../namespace_robot_1_1_globals.html#ad903c21a4d3499ccebcf2a3e11deb989',1,'Robot::Globals']]]
 ];

@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['pto_5f1_0',['pto_1',['../main_8cpp.html#a24aa862efcadba1e05bde8dd4abbb3e6',1,'main.cpp']]],
-  ['pto_5f2_1',['pto_2',['../main_8cpp.html#a04e0c32fa394ecba5a682e2fcf04fde3',1,'main.cpp']]],
-  ['puncher_2',['Puncher',['../main_8cpp.html#af618e4041749b51fd5aa7be565453e54',1,'main.cpp']]]
+  ['opcontrol_0',['opcontrol',['../main_8h.html#a1903abdb5ef0f301d660754c8315fc17',1,'opcontrol(void):&#160;main.cpp'],['../main_8cpp.html#ac57194c628bb97b849be48d79c99c4ac',1,'opcontrol():&#160;main.cpp']]]
 ];

@@ -20,8 +20,10 @@
 namespace Robot {
 
     /**
-     * @namespace Globals
      * @brief Contains global variables and type definitions for the Robot namespace.
+     * @details The majority of the global variables are defined in the Globals namespace. This is to allow for easy access to the variables from any file in the project. 
+     * The Globals namespace is also used to hold lemlib objects that are used to control the autonomous functions of the robot. It contains parameters that are used to control
+     * the PID that lemlib uses, additionally.
      */
     namespace Globals {
         extern pros::Controller controller;

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['inertial_5fsensor_0',['inertial_sensor',['../main_8cpp.html#a9b3894de23a0ef7991aeb1a1ddb6f3ad',1,'main.cpp']]],
-  ['initialize_1',['initialize',['../main_8h.html#a9efe22aaead3a5e936b5df459de02eba',1,'initialize(void):&#160;main.cpp'],['../main_8cpp.html#a25a40b6614565f755233080a384c35f1',1,'initialize():&#160;main.cpp']]],
-  ['intake_2',['Intake',['../main_8cpp.html#ae05222d1e37e482d98e5f0941b164eee',1,'main.cpp']]]
+  ['getdeadzone_0',['getdeadzone',['../class_robot_1_1_drivetrain.html#a06a102cf29362fc605088d7fc8efa432',1,'Robot::Drivetrain']]],
+  ['getstate_1',['getState',['../class_robot_1_1_wings.html#a558e63b6317c14dfd48f9831c1affdee',1,'Robot::Wings']]]
 ];

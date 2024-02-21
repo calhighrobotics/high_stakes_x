@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['leftback_0',['LeftBack',['../main_8cpp.html#a13493fc631247de2b49f5ea6f0427b1c',1,'main.cpp']]],
-  ['leftfront_1',['LeftFront',['../main_8cpp.html#a30f9b724c23bee79638bc7f7b5931fad',1,'main.cpp']]],
-  ['leftmid_2',['LeftMid',['../main_8cpp.html#a4301604e232e13910040e951bcf72184',1,'main.cpp']]],
-  ['lift_5fmotors_3',['lift_motors',['../main_8cpp.html#a8b72e24ce4df05c70bdaf5805033c886',1,'main.cpp']]]
+  ['inertial_5fsensor_0',['inertial_sensor',['../namespace_robot_1_1_globals.html#afee30007990814bed58615aef0657410',1,'Robot::Globals']]],
+  ['initialize_1',['initialize',['../main_8h.html#a9efe22aaead3a5e936b5df459de02eba',1,'initialize(void):&#160;main.cpp'],['../main_8cpp.html#a25a40b6614565f755233080a384c35f1',1,'initialize():&#160;main.cpp']]],
+  ['intakemotor_2',['IntakeMotor',['../namespace_robot_1_1_globals.html#a5cded15b60eb97a9f419a8d048942997',1,'Robot::Globals']]]
 ];

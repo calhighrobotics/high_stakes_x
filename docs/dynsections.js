@@ -124,8 +124,8 @@ let codefold = {
   opened : true,
 
   // in case HTML_COLORSTYLE is LIGHT or DARK the vars will be replaced, so we write them out explicitly and use double quotes
-  plusImg:  [ "url('plusd.svg')",  "url('../../plusd.svg')" ],
-  minusImg: [ "url('minusd.svg')", "url('../../minusd.svg')" ],
+  plusImg:  [ "url('plus.svg')",  "url('../../plus.svg')" ],
+  minusImg: [ "url('minus.svg')", "url('../../minus.svg')" ],
 
   // toggle all folding blocks
   toggle_all : function(relPath) {

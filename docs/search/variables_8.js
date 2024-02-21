@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['sensors_0',['sensors',['../main_8cpp.html#a7f9193f6594d334a9797c1d7fc8f6fb3',1,'main.cpp']]],
-  ['subsystem_1',['subsystem',['../main_8cpp.html#ab608c9b4a6fbed897b82ac7cd611053e',1,'main.cpp']]]
+  ['wing_0',['wing',['../namespace_robot_1_1_globals.html#a6510074d94d33f6e2021cc3b866e1b2e',1,'Robot::Globals']]],
+  ['wing2_1',['wing2',['../namespace_robot_1_1_globals.html#a48fb4d4799607fd6cae627eb3cf9584f',1,'Robot::Globals']]],
+  ['wings_2',['wings',['../struct_robot_1_1_robot_subsystems.html#ae86c5fbb3c98d020087123534d633bcd',1,'Robot::RobotSubsystems']]]
 ];

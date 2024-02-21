@@ -1,15 +1,13 @@
 var searchData=
 [
-  ['pid_0',['pid',['../structpid.html',1,'']]],
-  ['pid_1',['PID',['../main_8cpp.html#a99a682eee9778a7e7449e782b328c1fa',1,'main.cpp']]],
-  ['pros_20version_2',['# PROS Version',['../md__r_e_a_d_m_e.html',1,'']]],
-  ['pros_5fuse_5fliterals_3',['PROS_USE_LITERALS',['../main_8h.html#ab1b081349029f8bf68a7f2086732e42b',1,'main.h']]],
-  ['pros_5fuse_5fsimple_5fnames_4',['PROS_USE_SIMPLE_NAMES',['../main_8h.html#ae5817dbade24ea595c3ce938b34f9994',1,'main.h']]],
-  ['pros_5fversion_5fmajor_5',['PROS_VERSION_MAJOR',['../api_8h.html#acf9db466e90feb907fcc26ef81cb632a',1,'api.h']]],
-  ['pros_5fversion_5fminor_6',['PROS_VERSION_MINOR',['../api_8h.html#a2d562412188fb07e89b1e3090acfe6be',1,'api.h']]],
-  ['pros_5fversion_5fpatch_7',['PROS_VERSION_PATCH',['../api_8h.html#a5ff4cca1c0567779b8f298931b19a213',1,'api.h']]],
-  ['pros_5fversion_5fstring_8',['PROS_VERSION_STRING',['../api_8h.html#a451f2006e330023022107fb96992d6cd',1,'api.h']]],
-  ['pto_5f1_9',['pto_1',['../main_8cpp.html#a24aa862efcadba1e05bde8dd4abbb3e6',1,'main.cpp']]],
-  ['pto_5f2_10',['pto_2',['../main_8cpp.html#a04e0c32fa394ecba5a682e2fcf04fde3',1,'main.cpp']]],
-  ['puncher_11',['Puncher',['../main_8cpp.html#af618e4041749b51fd5aa7be565453e54',1,'main.cpp']]]
+  ['readme_2emd_0',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
+  ['rightback_1',['RightBack',['../namespace_robot_1_1_globals.html#a45509b60c052a78f32531f657f40b8da',1,'Robot::Globals::RightBack'],['../namespace_robot_1_1_globals.html#ae7fba8b8193bfb00fdb4cf258e6ac9e5',1,'Robot::Globals::RightBack(8, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES)']]],
+  ['rightfront_2',['RightFront',['../namespace_robot_1_1_globals.html#a57080a8667cacf9797e45a46903c2c0d',1,'Robot::Globals::RightFront'],['../namespace_robot_1_1_globals.html#a1cd420e7341761ff60b8e995e5b3048c',1,'Robot::Globals::RightFront(6, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES)']]],
+  ['rightmid_3',['RightMid',['../namespace_robot_1_1_globals.html#a8f5ed28ef65173e08177eb6be13a910b',1,'Robot::Globals::RightMid'],['../namespace_robot_1_1_globals.html#af76ca000046f7f2718f39607220cc091',1,'Robot::Globals::RightMid(3, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES)']]],
+  ['robot_4',['Robot',['../namespace_robot.html',1,'']]],
+  ['robot_3a_3aglobals_5',['Globals',['../namespace_robot_1_1_globals.html',1,'Robot']]],
+  ['robot_3a_3autility_6',['Utility',['../namespace_robot_1_1_utility.html',1,'Robot']]],
+  ['robotsubsystems_7',['RobotSubsystems',['../struct_robot_1_1_robot_subsystems.html',1,'Robot']]],
+  ['robotwings_8',['robotWings',['../namespace_robot_1_1_globals.html#ada6160ed56e75d7d93f2d5a5fdd10c1f',1,'Robot::Globals']]],
+  ['run_9',['run',['../class_robot_1_1_drivetrain.html#a1d76f7c8860e4d2ffacd3c541c457ae1',1,'Robot::Drivetrain::run()'],['../class_robot_1_1_intake.html#a130e4922767dd5355130885468624dfe',1,'Robot::Intake::run()'],['../class_robot_1_1_puncher.html#aad9583da0a98fbdafe736c5faa15f131',1,'Robot::Puncher::run()'],['../class_robot_1_1_wings.html#a468b112f75832763a9234156897ad82d',1,'Robot::Wings::run()']]]
 ];

@@ -18,6 +18,15 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
@@ -30,7 +39,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="roboticslogo-b69bab06.png"/></td>
   <td id="projectalign">
-   <div id="projectname">1516b Over Under<span id="projectnumber">&#160;1.0.0</span>
+   <div id="projectname">1516b Over Under<span id="projectnumber">&#160;2.0</span>
    </div>
    <div id="projectbrief">Codebase for 1516b over under season</div>
   </td>
@@ -95,17 +104,73 @@ $(function(){initNavTree('functions.html',''); initResizable(); });
 </div>
 
 <div class="contents">
-<div class="textblock">Here is a list of all class members with links to the classes they belong to:</div><ul>
-<li>current&#160;:&#160;<a class="el" href="structpid.html#aeab5e8b280665dcff53dd217d0d68b27">pid</a></li>
-<li>derivative&#160;:&#160;<a class="el" href="structpid.html#a03c5f673632500e92901b7d4275a0db6">pid</a></li>
-<li>error&#160;:&#160;<a class="el" href="structpid.html#aa4cf22893ff04afa0d2508e51ee9180d">pid</a></li>
-<li>integral&#160;:&#160;<a class="el" href="structpid.html#a3c54185f7b4867281786eff640443a00">pid</a></li>
-<li>kD&#160;:&#160;<a class="el" href="structpid.html#a6c721a7983511fb9f91777ae45481473">pid</a></li>
-<li>kI&#160;:&#160;<a class="el" href="structpid.html#a65e8bc146e02bad2702a0286d37b81bc">pid</a></li>
-<li>kP&#160;:&#160;<a class="el" href="structpid.html#a5a7b54866748e12568f9b9599b31f8eb">pid</a></li>
-<li>lastError&#160;:&#160;<a class="el" href="structpid.html#ad661092f21ab1e0e6aa35fbcfcf6f161">pid</a></li>
-<li>lastTime&#160;:&#160;<a class="el" href="structpid.html#a7efaca130f4d2154b085c9c3548a3838">pid</a></li>
-<li>target&#160;:&#160;<a class="el" href="structpid.html#a6d9e07e7142c9e0ff0ec3b9613fd8b7e">pid</a></li>
+<div class="textblock">Here is a list of all class members with links to the classes they belong to:</div>
+
+<h3><a id="index_a" name="index_a"></a>- a -</h3><ul>
+<li>ArcadeDrive()&#160;:&#160;<a class="el" href="class_robot_1_1_drivetrain.html#a5ff4b99fa2f88c0cad2732b5f2dd36fb">Robot::Drivetrain</a></li>
+<li>AutoDrive()&#160;:&#160;<a class="el" href="class_robot_1_1_autonomous.html#a00a04b68bea9c3b46f577fa34e5f0d69">Robot::Autonomous</a></li>
+<li>auton&#160;:&#160;<a class="el" href="class_robot_1_1_autonomous.html#a35870e1dbd00c82d40f8181fbb257189">Robot::Autonomous</a></li>
+<li>Auton1()&#160;:&#160;<a class="el" href="class_robot_1_1_autonomous.html#a026105b4889fbfbb8d0479d25ac0c46e">Robot::Autonomous</a></li>
+<li>Auton2()&#160;:&#160;<a class="el" href="class_robot_1_1_autonomous.html#a536aefd131cd3f39d89b01ac9f5c505a">Robot::Autonomous</a></li>
+<li>Auton3()&#160;:&#160;<a class="el" href="class_robot_1_1_autonomous.html#af8a3384e57b410604c933aac5b71e9ca">Robot::Autonomous</a></li>
+<li>autonomous&#160;:&#160;<a class="el" href="struct_robot_1_1_robot_subsystems.html#acf764dc9c9f40e92bd3a6b8a2960ff63">Robot::RobotSubsystems</a></li>
+<li>AutonSwitcher()&#160;:&#160;<a class="el" href="class_robot_1_1_autonomous.html#a6e8bc657f1842887508876fabc1e3085">Robot::Autonomous</a></li>
+</ul>
+
+
+<h3><a id="index_c" name="index_c"></a>- c -</h3><ul>
+<li>CheckDeadzone()&#160;:&#160;<a class="el" href="class_robot_1_1_drivetrain.html#a6184f05a5a4f463bdfea0935a947bf63">Robot::Drivetrain</a></li>
+</ul>
+
+
+<h3><a id="index_d" name="index_d"></a>- d -</h3><ul>
+<li>deadzone&#160;:&#160;<a class="el" href="class_robot_1_1_drivetrain.html#a83881a0114a50194618acc86626e6371">Robot::Drivetrain</a></li>
+<li>distancePuncher&#160;:&#160;<a class="el" href="class_robot_1_1_puncher.html#a2713821a19623ab69e1b3d6881c21e01">Robot::Puncher</a></li>
+<li>driveMode&#160;:&#160;<a class="el" href="class_robot_1_1_drivetrain.html#a3d11a2bb6aee30ffdd6a31c8e41127e7">Robot::Drivetrain</a></li>
+<li>Drivetrain()&#160;:&#160;<a class="el" href="class_robot_1_1_drivetrain.html#abfcc3eea7516b5f76422d39676adbd27">Robot::Drivetrain</a></li>
+<li>drivetrain&#160;:&#160;<a class="el" href="struct_robot_1_1_robot_subsystems.html#a72b5eba687ab7ea6aa4dfb0179fca49e">Robot::RobotSubsystems</a></li>
+</ul>
+
+
+<h3><a id="index_g" name="index_g"></a>- g -</h3><ul>
+<li>getdeadzone()&#160;:&#160;<a class="el" href="class_robot_1_1_drivetrain.html#a06a102cf29362fc605088d7fc8efa432">Robot::Drivetrain</a></li>
+<li>getState()&#160;:&#160;<a class="el" href="class_robot_1_1_wings.html#a558e63b6317c14dfd48f9831c1affdee">Robot::Wings</a></li>
+</ul>
+
+
+<h3><a id="index_i" name="index_i"></a>- i -</h3><ul>
+<li>intake&#160;:&#160;<a class="el" href="struct_robot_1_1_robot_subsystems.html#afcb73e62b67068c0ef9183fdc21b4cee">Robot::RobotSubsystems</a></li>
+</ul>
+
+
+<h3><a id="index_p" name="index_p"></a>- p -</h3><ul>
+<li>puncher&#160;:&#160;<a class="el" href="struct_robot_1_1_robot_subsystems.html#a67a4c24abfe227dcc01d585dbb0dc39f">Robot::RobotSubsystems</a></li>
+<li>PuncherSwitch()&#160;:&#160;<a class="el" href="class_robot_1_1_puncher.html#a63973e01011483e2a32b15ff2534bfdb">Robot::Puncher</a></li>
+</ul>
+
+
+<h3><a id="index_r" name="index_r"></a>- r -</h3><ul>
+<li>run()&#160;:&#160;<a class="el" href="class_robot_1_1_drivetrain.html#a1d76f7c8860e4d2ffacd3c541c457ae1">Robot::Drivetrain</a>, <a class="el" href="class_robot_1_1_intake.html#a130e4922767dd5355130885468624dfe">Robot::Intake</a>, <a class="el" href="class_robot_1_1_puncher.html#aad9583da0a98fbdafe736c5faa15f131">Robot::Puncher</a>, <a class="el" href="class_robot_1_1_wings.html#a468b112f75832763a9234156897ad82d">Robot::Wings</a></li>
+</ul>
+
+
+<h3><a id="index_s" name="index_s"></a>- s -</h3><ul>
+<li>setdeadzone()&#160;:&#160;<a class="el" href="class_robot_1_1_drivetrain.html#adac428228d108b10fbb3936335dd23f1">Robot::Drivetrain</a></li>
+<li>setDistancePuncher()&#160;:&#160;<a class="el" href="class_robot_1_1_puncher.html#a5458c3a56d6eab940e1991019bb447e5">Robot::Puncher</a></li>
+<li>setState()&#160;:&#160;<a class="el" href="class_robot_1_1_wings.html#a45fb0681b6697d8326a5cf823e6c06a2">Robot::Wings</a></li>
+<li>state&#160;:&#160;<a class="el" href="class_robot_1_1_wings.html#a88349f546fe8aca131c5d77fd0c10cce">Robot::Wings</a></li>
+<li>SwitchDrive()&#160;:&#160;<a class="el" href="class_robot_1_1_drivetrain.html#a4349382fde427976ba7ffc66ead2c43b">Robot::Drivetrain</a></li>
+</ul>
+
+
+<h3><a id="index_t" name="index_t"></a>- t -</h3><ul>
+<li>TankDrive()&#160;:&#160;<a class="el" href="class_robot_1_1_drivetrain.html#af6e286ea58a7d6bfa45d86bd2c0e8d47">Robot::Drivetrain</a></li>
+<li>toShoot()&#160;:&#160;<a class="el" href="class_robot_1_1_puncher.html#aad7537db5dd680d94b5f0af9f215c25f">Robot::Puncher</a></li>
+</ul>
+
+
+<h3><a id="index_w" name="index_w"></a>- w -</h3><ul>
+<li>wings&#160;:&#160;<a class="el" href="struct_robot_1_1_robot_subsystems.html#ae86c5fbb3c98d020087123534d633bcd">Robot::RobotSubsystems</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

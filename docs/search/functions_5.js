@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['on_5fcenter_5fbutton_0',['on_center_button',['../main_8cpp.html#af1af5ed4943c195d6436a8c02e58fe3f',1,'main.cpp']]],
-  ['opcontrol_1',['opcontrol',['../main_8h.html#a1903abdb5ef0f301d660754c8315fc17',1,'opcontrol(void):&#160;main.cpp'],['../main_8cpp.html#ac57194c628bb97b849be48d79c99c4ac',1,'opcontrol():&#160;main.cpp']]]
+  ['leftback_0',['LeftBack',['../namespace_robot_1_1_globals.html#a5796f2a97f4dc3e7e6611d758a8528e8',1,'Robot::Globals']]],
+  ['leftfront_1',['LeftFront',['../namespace_robot_1_1_globals.html#a5a54875d3c6bdc6e437ad05ab285a0b5',1,'Robot::Globals']]],
+  ['leftmid_2',['LeftMid',['../namespace_robot_1_1_globals.html#a71a033c361f829aa9b1c6303856dced9',1,'Robot::Globals']]]
 ];

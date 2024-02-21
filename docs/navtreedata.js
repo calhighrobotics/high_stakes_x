@@ -25,13 +25,28 @@
 var NAVTREE =
 [
   [ "1516b Over Under", "index.html", [
-    [ "# PROS Version", "md__r_e_a_d_m_e.html", null ],
-    [ "TASKS", "md__t_a_s_k_s.html", null ],
+    [ "PROS Version", "index.html", null ],
+    [ "TO-DO", "md__t_a_s_k_s.html", [
+      [ "Ideas", "md__t_a_s_k_s.html#autotoc_md2", null ],
+      [ "To Complete", "md__t_a_s_k_s.html#autotoc_md3", null ],
+      [ "In Progress", "md__t_a_s_k_s.html#autotoc_md4", null ],
+      [ "Completed", "md__t_a_s_k_s.html#autotoc_md5", null ]
+    ] ],
+    [ "Todo List", "todo.html", null ],
+    [ "Namespaces", "namespaces.html", [
+      [ "Namespace List", "namespaces.html", "namespaces_dup" ],
+      [ "Namespace Members", "namespacemembers.html", [
+        [ "All", "namespacemembers.html", null ],
+        [ "Functions", "namespacemembers_func.html", null ],
+        [ "Variables", "namespacemembers_vars.html", null ]
+      ] ]
+    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", null ],
+        [ "Functions", "functions_func.html", null ],
         [ "Variables", "functions_vars.html", null ]
       ] ]
     ] ],
@@ -40,7 +55,6 @@ var NAVTREE =
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
-        [ "Variables", "globals_vars.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]

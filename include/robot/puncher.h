@@ -2,7 +2,13 @@
 
 namespace Robot {
 
-        
+    /**
+    * @brief Represents a Puncher mechanism for a robot.
+    *
+    * @details The Puncher class provides functionality to control a puncher mechanism on a robot.
+    * It allows running the puncher based on an autonomous value, setting the distancePuncher variable,
+    * toggling the distance sensor activation, and checking whether to shoot or not.
+    */
     class Puncher {
         public:
             /**
@@ -10,6 +16,8 @@ namespace Robot {
             *
             * This function executes the puncher mechanism based on the provided autonomous value.
             * It contains conditionals that determine the behavior of the puncher.
+            *
+            * @note Make sure to have the Puncher object initialized before calling this function.
             *
             * @param autonVal The autonomous value to determine the puncher behavior.
             */
@@ -40,7 +48,7 @@ namespace Robot {
             * This function checks if the distance sensor is connected and retrieves the distance from the triball.
             * It uses the distance to determine whether to shoot or not.
             *
-            * @return The value returned of whether to shoot or no.
+            * @return The value returned of whether to shoot or not.
             */
             int toShoot();
             

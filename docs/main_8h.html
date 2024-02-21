@@ -18,6 +18,15 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
@@ -30,7 +39,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="roboticslogo-b69bab06.png"/></td>
   <td id="projectalign">
-   <div id="projectname">1516b Over Under<span id="projectnumber">&#160;1.0.0</span>
+   <div id="projectname">1516b Over Under<span id="projectnumber">&#160;2.0</span>
    </div>
    <div id="projectbrief">Codebase for 1516b over under season</div>
   </td>
@@ -102,6 +111,12 @@ $(function(){initNavTree('main_8h.html',''); initResizable(); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="api_8h_source.html">api.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="auton_8h_source.html">robot/auton.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="globals_8h_source.html">globals.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="drivetrain_8h_source.html">robot/drivetrain.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="puncher_8h_source.html">robot/puncher.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="intake_8h_source.html">robot/intake.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="utility_8h_source.html">robot/utility.h</a>&quot;</code><br />
 </div>
 <p><a href="main_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -199,7 +214,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Runs after <a class="el" href="main_8cpp.html#a25a40b6614565f755233080a384c35f1">initialize()</a>, and before autonomous when connected to the Field Management System or the VEX Competition Switch. This is intended for competition-specific initialization routines, such as an autonomous selector on the LCD.</p>
-<p>This task will exit when the robot is enabled and autonomous or opcontrol starts. </p>
+<p>This task will exit when the robot is enabled and autonomous or opcontrol starts.&lt;asd&gt;&lt;/asd&gt; </p>
 
 </div>
 </div>
@@ -235,6 +250,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Runs initialization code. This occurs as soon as the program is started.</p>
+<p>All other competition modes are blocked by initialize; it is recommended to keep execution time for this mode under a few seconds. </p>
 
 </div>
 </div>

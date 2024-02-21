@@ -1,0 +1,27 @@
+var classpros_1_1_vision =
+[
+    [ "Vision", "classpros_1_1_vision.html#a46cdaf74713f630b5bb5f4d0d3259dcd", null ],
+    [ "clear_led", "classpros_1_1_vision.html#a00f02cfb09ca224c2a7735be918e941d", null ],
+    [ "create_color_code", "classpros_1_1_vision.html#ab50bcfb700b591e2f1654962baac400f", null ],
+    [ "get_by_code", "classpros_1_1_vision.html#a4b96f92a2ae2f29fd37709958f48e514", null ],
+    [ "get_by_sig", "classpros_1_1_vision.html#a10fd89ed3c5e8fe5ce25046a877c7d84", null ],
+    [ "get_by_size", "classpros_1_1_vision.html#aa5cca450a5b80278a97bbea786195733", null ],
+    [ "get_exposure", "classpros_1_1_vision.html#a80552b2897b8edcdb68bc56477213f2e", null ],
+    [ "get_object_count", "classpros_1_1_vision.html#a73869f85b3d2e468ffc51957d80f5a75", null ],
+    [ "get_port", "classpros_1_1_vision.html#af9958688590139df7b1227765f63d5ce", null ],
+    [ "get_signature", "classpros_1_1_vision.html#af1d1bc18fd7dacfd23d9dfc403b7d419", null ],
+    [ "get_white_balance", "classpros_1_1_vision.html#a7a89ad6812bfd46e24e69e1dc2f55039", null ],
+    [ "print_signature", "classpros_1_1_vision.html#ada22311366ce088fa9ac08a8e3510800", null ],
+    [ "read_by_code", "classpros_1_1_vision.html#afbe909146f5cf396b322467885731d04", null ],
+    [ "read_by_sig", "classpros_1_1_vision.html#af5bb50d41d63d6ff9cf4f6a642046fca", null ],
+    [ "read_by_size", "classpros_1_1_vision.html#adb2a3e6a7c483cda5a32a341d5be0cc6", null ],
+    [ "set_auto_white_balance", "classpros_1_1_vision.html#a19cf2d7cf34b763b80da2c6511a61a49", null ],
+    [ "set_exposure", "classpros_1_1_vision.html#a2ad6faaad1abb936f52022022611ac7f", null ],
+    [ "set_led", "classpros_1_1_vision.html#ada3f1fdd2cc24c15af26bdd7c17bf604", null ],
+    [ "set_signature", "classpros_1_1_vision.html#a71c3c083ad5538a544e377ebc510cb75", null ],
+    [ "set_white_balance", "classpros_1_1_vision.html#a923fc18c2b50a42b9c5c6292a476c9b5", null ],
+    [ "set_wifi_mode", "classpros_1_1_vision.html#aa41af827ad6f9d6c050ca28c51d173ad", null ],
+    [ "set_zero_point", "classpros_1_1_vision.html#a89e0a23b112b8632171ef27cc6f57a6c", null ],
+    [ "signature_from_utility", "classpros_1_1_vision.html#aa46f3bfb4956c7061b34764c92fc68fd", null ],
+    [ "_port", "classpros_1_1_vision.html#a1e1f1e031f1bb30c0e9865ff647ec000", null ]
+];

@@ -18,6 +18,16 @@ using namespace Robot::Globals;
 */
 
 
+/**
+ * @file main.cpp
+ * @brief This file contains the main code for the robot's operation.
+ */
+
+
+namespace Robot {
+/**
+ * @brief Structure that holds instances of all robot subsystems.
+ */
 struct RobotSubsystems {
 	Robot::Autonomous autonomous;
 	Robot::Drivetrain drivetrain;
@@ -25,6 +35,7 @@ struct RobotSubsystems {
 	Robot::Puncher puncher;
 	Robot::Intake intake;
 } subsystem;
+}
 
 /**
  * A callback function for LLEMU's center button.
@@ -33,17 +44,6 @@ struct RobotSubsystems {
  * "I was pressed!" and nothing.
  */
 
-
-
-void on_center_button() {
-	static bool pressed = false;
-	pressed = !pressed;
-	if (pressed) {
-		pros::lcd::set_text(1, "I was pressed!");
-	} else {
-		pros::lcd::clear_line(2);
-	}
-}
 
 void toggles() {
 	Robot::Utility::toggleSubsystemOptions(subsystem.autonomous, subsystem.drivetrain, subsystem.puncher);
@@ -57,7 +57,6 @@ void toggles() {
 
 
 void initialize() {
-
 
 	pros::lcd::initialize();
 	pros::Task toggler(toggles);
