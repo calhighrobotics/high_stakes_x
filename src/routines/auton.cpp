@@ -30,6 +30,8 @@ if(Autonomous::auton == 1){
 		drive_.move(-85);
 		pros::delay(1000);
 		drive_.brake();
+		drive_.move(85);
+		pros::delay(100);
 		
 		
 	}
@@ -56,6 +58,8 @@ void Autonomous::Auton2() {
 			drive_.move(-85);
 			pros::delay(600);
 			drive_.brake();
+			drive_.move(85);
+			pros::delay(100);
 		}
 		
 	}
