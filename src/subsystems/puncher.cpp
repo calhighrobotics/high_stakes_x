@@ -73,13 +73,16 @@ void Puncher::PuncherSwitch() {
 
         Puncher::distancePuncherBool = Puncher::distancePuncherBool + 1;
         
+        if (Puncher::distancePuncherBool == 2) {
+            Puncher::distancePuncherBool = 0;
+        }
 
         std::printf("Puncher: %d\n", Puncher::distancePuncherBool);
         
-        if (Puncher::distancePuncherBool % 2 == 0) {
+        if (Puncher::distancePuncherBool == 0) {
             controller.print(0, 0, "Puncher Distance");
         }
-        if (Puncher::distancePuncherBool % 2 == 1) {
+        if (Puncher::distancePuncherBool == 1) {
             controller.print(0, 0, "Puncher User");
         }
     }		

@@ -147,6 +147,10 @@ void opcontrol() {
 	
     while (true) {
 
+		if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_UP)) {
+			autonomous();
+		}
+
         subsystem.drivetrain.run();
 		
 
