@@ -78,10 +78,7 @@ void move_(std::int32_t time, std::int32_t speed, std::int32_t speed_right=0) {
 void Autonomous::AutoDrive(Puncher &puncher, bool autono = false) {
 
 	// Keep the switcher running while the controller down button has not been pressed and the time period is not autonomous
-	if (autono == false) {
-		AutonSwitcher();
-	}
-	
+	Autonomous::auton = 3;
 	// Compare the current auton value to run the auton routine
     if(Autonomous::auton == 1){
         Auton1();

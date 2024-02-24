@@ -19,6 +19,8 @@ public:
      * @note Make sure to initialize the wings before calling this function.
      */
 
+    Wings();
+
     void run();
 
     void FrontWings();

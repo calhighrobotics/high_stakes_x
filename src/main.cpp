@@ -32,6 +32,7 @@ struct RobotSubsystems {
 	Robot::Autonomous autonomous;
 	Robot::Drivetrain drivetrain;
 	Robot::Wings wings;
+	Robot::Elevation elevation;
 	Robot::Puncher puncher;
 	Robot::Intake intake;
 } subsystem;
@@ -145,11 +146,12 @@ void opcontrol() {
 
 	
     while (true) {
+
         subsystem.drivetrain.run();
 		
 
 
-		subsystem.puncher.run(0);
+		subsystem.puncher.run();
 
 
 		
@@ -166,10 +168,10 @@ void opcontrol() {
 
 
 		
-    
+		subsystem.elevation.run();
 
 
-        pros::delay(2); // Small delay to reduce CPU usage
+        pros::delay(10); // Small delay to reduce CPU usage
     }
 	
 	

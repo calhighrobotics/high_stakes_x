@@ -21,7 +21,9 @@ namespace Robot {
             *
             * @param autonVal The autonomous value to determine the puncher behavior.
             */
-            void run(int autonVal);
+            void UserRun();
+
+            void DistanceRun();
 
             /**
             * @brief Sets the distancePuncher variable based on the punch parameter.
@@ -31,7 +33,7 @@ namespace Robot {
             *
             * @param punch The value to set the distancePuncher variable to.
             */
-            void setDistancePuncher(bool punch);
+            void setDistancePuncher(int punch);
             
             /**
             * @brief Toggles whether the distance sensor is activated or not and prints it out.
@@ -40,6 +42,11 @@ namespace Robot {
             * It then prints out the current state of the distancePuncher variable.
             */
             void PuncherSwitch();
+
+            void run();
+
+
+
 
         private:
             /**
@@ -58,6 +65,6 @@ namespace Robot {
             * The distancePuncher variable decides whether to use the distance sensor or not.
             * If distancePuncher is true, the distance sensor is used. If it is false, the distance sensor is not used.
             */
-            bool distancePuncher;
+            int distancePuncherBool;
         };
 }

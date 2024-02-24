@@ -46,10 +46,10 @@ namespace Robot {
         extern pros::Distance distance;
 
 
-        extern pros::ADIDigitalOut wing;
-        extern pros::ADIDigitalOut wing2;
-        extern pros::ADIDigitalOut pto_1;
-        extern pros::ADIDigitalOut pto_2;
+        extern pros::ADIDigitalOut FrontWing;
+        extern pros::ADIDigitalOut BackWing1;
+        extern pros::ADIDigitalOut BackWing2;
+        extern pros::ADIDigitalOut Elevator;
 
         extern pros::Motor_Group punchers;
         extern pros::Motor_Group drive_left;

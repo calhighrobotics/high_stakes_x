@@ -5,19 +5,14 @@
 using namespace Robot::Globals;
 
 void Robot::Wings::run(){
-    if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_B)) {
-        state = !state;
-    }
-    if (state) {
-        Front.set_value(true);
-        wing2.set_value(false);
-        Robot::Wings::setState(true);
-    }
-    else {
-        wing.set_value(false);
-        wing2.set_value(true);
-        Robot::Wings::setState(true);
-    }
+    BackWings();
+    FrontWings();
+}
+
+Robot::Wings::Wings() {
+    BackWing1.set_value(false);
+    BackWing2.set_value(false);
+    FrontWing.set_value(false);
 }
 
 
@@ -39,12 +34,12 @@ void Robot::Wings::FrontWings() {
     if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_X)) {
         FrontWingState = !FrontWingState;
     }
-    if (BackWingState) {
-        BackWing1.set_value(true);
+    if (FrontWingState) {
+        FrontWing.set_value(true);
 
     }
     else {
-        BackWing1.set_value(false);
+        FrontWing.set_value(false);
     }
 }
 

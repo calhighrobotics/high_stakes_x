@@ -7,70 +7,81 @@
 using namespace Robot;
 using namespace Robot::Globals;
 
-void Puncher::setDistancePuncher(bool punch) {
-    distancePuncher = punch;
-}
 
-
-void Puncher::run(int autonVal) {
-
+void Puncher::UserRun() {
+    if (toShoot() == 2) {
+        Puncher::distancePuncherBool = 1;
+    }
     // Manual Puncher Control
-    if (Puncher::toShoot() == 2 || distancePuncher == false) {
+    if (Puncher::distancePuncherBool == 1) {
         if(controller.get_digital(pros::E_CONTROLLER_DIGITAL_R2)) {
             punchers.move(127);
         }
         else {
             punchers.brake();
         }
+    }  
+}
+
+void Puncher::DistanceRun() {
+
+    if (Puncher::toShoot() == 2) {
+        Puncher::distancePuncherBool = 1;
     }
 
-    // Auton Puncher Control using the distance sensor
-    if (distancePuncher == true && autonVal == 3) {
-        if (Puncher::toShoot() == 1) {
-            punchers.move_absolute(30, 95);
-        }
+    if (Puncher::distancePuncherBool == 0) {
+    // Distance Puncher Control
+        if (distance.get() <= 20) {
+        
+            // if (Puncher::toShoot() == 1) {
+            punchers.move(127);
+            }
         else {
             punchers.brake();
         }
     }
-    
-   
+    else {
+        Puncher::UserRun();
+    }
+}
+
+void Puncher::run() {
+    if (Puncher::distancePuncherBool == 0) {
+        Puncher::DistanceRun();
+    }
+    else {
+        Puncher::UserRun();
+    }
+
 }
 
 int Puncher::toShoot() {
-    if (pros::c::registry_get_plugged_type(13) != pros::c::E_DEVICE_DISTANCE) {
-        distancePuncher = false;
-        return 2;
-    }
-    if (distance.get() <= 12 && distancePuncher == true) {
+    if (distance.get() <= 20) {
         return 1;
     }
-    if (distance.get() > 12 && distancePuncher == true) {
+    if (distance.get() > 20) {
         return 0;
     }
-    return 2;
+    return 0;
 }
+
 
 
 void Puncher::PuncherSwitch() {
 
-        if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_LEFT)) {
-			
-			// Toggles the puncher distance sensor
-            Puncher::setDistancePuncher(!distancePuncher);
+    if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_LEFT)) {
 
+        Puncher::distancePuncherBool = Puncher::distancePuncherBool + 1;
+        
 
-            // Prints the state of the puncher distance sensor to the brain(as a boolean)
-            if (distancePuncher == true) {
-                controller.print(0, 0, "Puncher: True");
-            }
-            else {
-                controller.print(0, 0, "Puncher: False");
-            }
-           
-
-		}
-	
-		
+        std::printf("Puncher: %d\n", Puncher::distancePuncherBool);
+        
+        if (Puncher::distancePuncherBool % 2 == 0) {
+            controller.print(0, 0, "Puncher Distance");
+        }
+        if (Puncher::distancePuncherBool % 2 == 1) {
+            controller.print(0, 0, "Puncher User");
+        }
+    }		
     
 }
