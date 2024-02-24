@@ -21,17 +21,9 @@ public:
 
     void run();
 
-    /**
-     * @brief Sets the state of the wings.
-     * @param wingState The state of the wings.
-     */
-    void setState(bool wingState);
+    void FrontWings();
 
-    /**
-     * @brief Gets the current state of the wings.
-     * @return The current state of the wings.
-     */
-    bool getState();
+    void BackWings();
 
 private:
     /** The current state of the wings. 
@@ -39,7 +31,8 @@ private:
      *  It can be either true or false, indicating whether the wings are activated or deactivated.
      *  This variable is used to control the behavior of the wings and to query their current state.
      */
-    bool state; 
+    bool FrontWingState;
+    bool BackWingState; 
 };
 
 }

@@ -26,7 +26,7 @@ void Puncher::run(int autonVal) {
 
     // Auton Puncher Control using the distance sensor
     if (distancePuncher == true && autonVal == 3) {
-        if (Puncher::toShoot() == 0) {
+        if (Puncher::toShoot() == 1) {
             punchers.move_absolute(30, 95);
         }
         else {

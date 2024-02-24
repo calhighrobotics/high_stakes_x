@@ -9,7 +9,7 @@ void Robot::Wings::run(){
         state = !state;
     }
     if (state) {
-        wing.set_value(true);
+        Front.set_value(true);
         wing2.set_value(false);
         Robot::Wings::setState(true);
     }
@@ -20,10 +20,31 @@ void Robot::Wings::run(){
     }
 }
 
-void Robot::Wings::setState(bool wingState) {
-    state = wingState;
+
+void Robot::Wings::BackWings() {
+    if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_B)) {
+        BackWingState = !BackWingState;
+    }
+    if (BackWingState) {
+        BackWing1.set_value(true);
+        BackWing2.set_value(true);
+    }
+    else {
+        BackWing1.set_value(false);
+        BackWing2.set_value(true);
+    }
 }
 
-bool Robot::Wings::getState() {
-    return state;
+void Robot::Wings::FrontWings() {
+    if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_X)) {
+        FrontWingState = !FrontWingState;
+    }
+    if (BackWingState) {
+        BackWing1.set_value(true);
+
+    }
+    else {
+        BackWing1.set_value(false);
+    }
 }
+
