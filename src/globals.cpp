@@ -27,12 +27,14 @@ pros::Motor PuncherMotor (-19, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_EN
 pros::Motor PuncherMotor2 (20, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 pros::Motor RightMid (3, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 pros::Motor IntakeMotor (-9, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
+
 pros::Imu inertial_sensor(15);
 pros::Distance distance(18);
-pros::ADIDigitalOut FrontWings ('A');
+
+pros::ADIDigitalOut FrontWing ('A');
 pros::ADIDigitalOut BackWing1 ('B');
 pros::ADIDigitalOut BackWing2 ('C');
-pros::ADIDigitalOut Elevation ('D');
+pros::ADIDigitalOut Elevator ('D');
 
 pros::Motor_Group punchers ({PuncherMotor, PuncherMotor2});
 pros::Motor_Group drive_left ({LeftFront, LeftMid, LeftBack});

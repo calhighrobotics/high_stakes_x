@@ -38,6 +38,8 @@
 #include "robot/auton.h"
 #include "globals.h"
 #include "robot/drivetrain.h"
+#include "robot/wings.h"
+#include "robot/elevation.h"
 #include "robot/puncher.h"
 #include "robot/intake.h"
 #include "robot/utility.h"

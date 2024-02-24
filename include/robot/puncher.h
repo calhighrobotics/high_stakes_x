@@ -41,6 +41,8 @@ namespace Robot {
             */
             void PuncherSwitch();
 
+            
+
         private:
             /**
             * @brief Checks if the distance sensor is connected and whether to shoot.

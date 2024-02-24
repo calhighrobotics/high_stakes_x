@@ -25,7 +25,7 @@ void Puncher::run(int autonVal) {
     }
 
     // Auton Puncher Control using the distance sensor
-    if (distancePuncher == true && autonVal == 3) {
+    else if (distancePuncher == true && autonVal == 3) {
         if (Puncher::toShoot() == 1) {
             punchers.move_absolute(30, 95);
         }
@@ -64,13 +64,12 @@ void Puncher::PuncherSwitch() {
             if (distancePuncher == true) {
                 controller.print(0, 0, "Puncher: True");
             }
-            else {
+
+            if (distancePuncher == false) {
                 controller.print(0, 0, "Puncher: False");
             }
            
 
-		}
-	
-		
+		}		
     
 }
