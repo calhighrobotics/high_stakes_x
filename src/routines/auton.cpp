@@ -54,12 +54,11 @@ void Autonomous::Auton3(Puncher &puncher) {
     	puncher.run(Autonomous::auton);
 		pros::delay(1);
 	}
-	move_(500, 127, -127);
-	move_(3000, 127);
-	move_(500, -127, 127);
-	move_()
-	
-
+	//movement
+	chassis.setPose(-55.174, -55.383, 45);
+	chassis.follow("auton_skills_1.txt", 5000, 15);
+	subsystem.wings.run();
+	chassis.follow("auton_skills_2.txt", 10000, 15);
 	
 
 }
