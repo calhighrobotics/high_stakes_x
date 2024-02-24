@@ -9,6 +9,12 @@ void Robot::Wings::run(){
     FrontWings();
 }
 
+Robot::Wings::Wings() {
+    BackWing1.set_value(false);
+    BackWing2.set_value(false);
+    FrontWing.set_value(false);
+}
+
 
 void Robot::Wings::BackWings() {
     if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_B)) {

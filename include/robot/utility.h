@@ -22,5 +22,6 @@ namespace Robot {
             @param Puncher punch Puncher object.
         */
         void toggleSubsystemOptions(Autonomous &auton, Drivetrain &drive, Puncher &punch);
+
     }
 }

@@ -50,8 +50,9 @@ void Autonomous::Auton2() {
 
 void Autonomous::Auton3(Puncher &puncher) {
     // Autonomous routine for the Skills challenge
+
         while (true) {
-            puncher.run(Autonomous::auton);
+            puncher.DistanceRun();
         }
 
 }
@@ -60,10 +61,7 @@ void Autonomous::Auton3(Puncher &puncher) {
 void Autonomous::AutoDrive(Puncher &puncher, bool autono = false) {
 
 	// Keep the switcher running while the controller down button has not been pressed and the time period is not autonomous
-	if (autono == false) {
-		AutonSwitcher();
-	}
-	
+	Autonomous::auton = 3;
 	// Compare the current auton value to run the auton routine
     if(Autonomous::auton == 1){
         Auton1();

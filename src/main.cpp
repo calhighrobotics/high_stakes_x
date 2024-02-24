@@ -146,11 +146,12 @@ void opcontrol() {
 
 	
     while (true) {
+
         subsystem.drivetrain.run();
 		
 
 
-		subsystem.puncher.run(0);
+		subsystem.puncher.run();
 
 
 		
@@ -170,7 +171,7 @@ void opcontrol() {
 		subsystem.elevation.run();
 
 
-        pros::delay(2); // Small delay to reduce CPU usage
+        pros::delay(10); // Small delay to reduce CPU usage
     }
 	
 	
