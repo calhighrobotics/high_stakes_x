@@ -50,10 +50,28 @@ void Autonomous::Auton2() {
 
 void Autonomous::Auton3(Puncher &puncher) {
     // Autonomous routine for the Skills challenge
-        while (true) {
-            puncher.run(Autonomous::auton);
-        }
+	for (int i=0; i < 30000; i++) {
+    	puncher.run(Autonomous::auton);
+		pros::delay(1);
+	}
+	move_(500, 127, -127);
+	move_(3000, 127);
+	move_(500, -127, 127);
+	move_()
+	
 
+	
+
+}
+
+void move_(std::int32_t time, std::int32_t speed, std::int32_t speed_right=0) {
+	if (speed_right == 0) {
+		speed_right = speed;
+	}
+	drive_left.move(speed);
+	drive_right.move(speed_right);
+	pros::delay(time);
+	drive_.move(0);
 }
 
 // Takes in two parameters: The autonomous value as well as the puncher object.
