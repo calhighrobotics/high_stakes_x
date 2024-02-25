@@ -47,7 +47,17 @@ struct RobotSubsystems {
 
 
 void toggles() {
-	Robot::Utility::toggleSubsystemOptions(subsystem.autonomous, subsystem.drivetrain, subsystem.puncher);
+	while (true)
+	{
+		subsystem.puncher.PuncherSwitch();
+        subsystem.autonomous.AutonSwitcher();
+		subsystem.drivetrain.SwitchDrive();
+		
+
+		// Exits the loop if the up button is pressed
+
+		pros::delay(30);
+	}
 }
 /**
  * Runs initialization code. This occurs as soon as the program is started.
@@ -60,10 +70,10 @@ void toggles() {
 void initialize() {
 
 	pros::lcd::initialize();
-	pros::Task toggler(toggles);
+	pros::Task toggld(toggles);
 	
 	if (pros::c::registry_get_plugged_type(13) == pros::c::E_DEVICE_IMU) {
-		chassis.calibrate();
+		chassis.calibrate();  
 		chassis.setPose(0, 0, 90); // X: 0, Y: 0, Heading: 0
 		// Setting an example start location for the robot so it is all relatativistic 
 		pros::Task screenTask(Robot::Utility::displayLocation);
@@ -100,7 +110,6 @@ void competition_initialize() {
 	// The user can select the distance puncher by pressing the left button on the controller.
 	// The state of each subsystem is displayed on the controller screen.
 	
-	
 }
 
 
@@ -108,7 +117,7 @@ void competition_initialize() {
 
 
 
-/**
+/**6
  * Runs the user autonomous code. This function will be started in its own task
  * with the default priority and stack size whenever the robot is enabled via
  * the Field Management System or the VEX Competition Switch in the autonomous
