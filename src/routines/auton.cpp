@@ -123,12 +123,13 @@ void Autonomous::AutoDrive(Puncher &puncher, bool autono = false) {
     }
 
 }
+
 // 
 void Autonomous::AutonSwitcher() {
 
 
-    if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_RIGHT)) {
-			
+    if(autonToggleSwitch.get_new_press()) {
+			pros::lcd::clear_line(3);
 			
 
 			Autonomous::auton = auton + 1;
@@ -137,10 +138,19 @@ void Autonomous::AutonSwitcher() {
 			if (Autonomous::auton == 4) {
 				Autonomous::auton = 1;
 			}
+
 			
-			
+			if (auton == 1) {
+				autonName = "Far side defensive";
+			}
+			if (auton == 2) {
+				autonName = "Home side offensive";
+			}
+			if (auton == 3) {
+				autonName = "Skills Challenge";
+			}
 			// Set the controllet text to the current autonomous routine value
-			controller.print(0, 0, "Autonomous prog: %d", Autonomous::auton);
+			pros::lcd::print(3, "Autonomous prog: %s", autonName);
 
 	}
 	

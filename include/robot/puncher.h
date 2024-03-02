@@ -25,6 +25,9 @@ namespace Robot {
 
             void DistanceRun();
 
+            void ManualOverride();
+
+            Puncher();
             /**
             * @brief Sets the distancePuncher variable based on the punch parameter.
             *

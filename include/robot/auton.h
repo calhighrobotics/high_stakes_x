@@ -1,5 +1,5 @@
 #pragma once
-
+#include <string>
 #include "puncher.h"
 
 namespace Robot {
@@ -69,5 +69,6 @@ namespace Robot {
          */
         void Auton3(Puncher &puncher);
 
+        std::string autonName;
     };
 }

@@ -36,6 +36,10 @@ pros::ADIDigitalOut BackWing1 ('B');
 pros::ADIDigitalOut BackWing2 ('C');
 pros::ADIDigitalOut Elevator ('D');
 
+pros::ADIDigitalIn puncherToggleSwitch('E');
+pros::ADIDigitalIn autonToggleSwitch('F');
+pros::ADIDigitalIn drivetrainToggleSwitch('G');
+
 pros::Motor_Group punchers ({PuncherMotor, PuncherMotor2});
 pros::Motor_Group drive_left ({LeftFront, LeftMid, LeftBack});
 pros::Motor_Group drive_right ({RightFront, RightMid, RightBack});

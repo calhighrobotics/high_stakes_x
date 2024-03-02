@@ -65,11 +65,14 @@ int Puncher::toShoot() {
     return 0;
 }
 
-
+Puncher::Puncher() {
+    Puncher::distancePuncherBool = 0;
+}
 
 void Puncher::PuncherSwitch() {
 
-    if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_LEFT)) {
+    if(puncherToggleSwitch.get_new_press()) {
+        pros::lcd::clear_line(1);
 
         Puncher::distancePuncherBool = Puncher::distancePuncherBool + 1;
         
@@ -80,11 +83,30 @@ void Puncher::PuncherSwitch() {
         std::printf("Puncher: %d\n", Puncher::distancePuncherBool);
         
         if (Puncher::distancePuncherBool == 0) {
-            controller.print(0, 0, "Puncher Distance");
+            pros::lcd::set_text(1, "Distance puncher on!");
         }
         if (Puncher::distancePuncherBool == 1) {
-            controller.print(0, 0, "Puncher User");
+            pros::lcd::set_text(1, "Distance puncher off!");
         }
     }		
     
+}
+
+void Puncher::ManualOverride() {
+    if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_RIGHT)) {
+        Puncher::distancePuncherBool = Puncher::distancePuncherBool + 1;
+        
+        if (Puncher::distancePuncherBool == 2) {
+            Puncher::distancePuncherBool = 0;
+        }
+
+        std::printf("Puncher: %d\n", Puncher::distancePuncherBool);
+        
+        if (Puncher::distancePuncherBool == 0) {
+            controller.print(0, 0, "Dist. punch on");
+        }
+        if (Puncher::distancePuncherBool == 1) {
+            controller.print(0, 0, "Dist. punch off");
+        }
+    }
 }

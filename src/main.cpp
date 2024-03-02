@@ -53,6 +53,10 @@ void toggles() {
         subsystem.autonomous.AutonSwitcher();
 		subsystem.drivetrain.SwitchDrive();
 		
+		if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_DOWN)) {
+			pros::lcd::print(4, "toggler stopped");
+			break;
+		}
 
 		// Exits the loop if the up button is pressed
 
@@ -70,16 +74,10 @@ void toggles() {
 void initialize() {
 
 	pros::lcd::initialize();
-	pros::Task toggld(toggles);
-	
+
 	if (pros::c::registry_get_plugged_type(13) == pros::c::E_DEVICE_IMU) {
 		chassis.calibrate();  
-		chassis.setPose(0, 0, 90); // X: 0, Y: 0, Heading: 0
-		// Setting an example start location for the robot so it is all relatativistic 
-		pros::Task screenTask(Robot::Utility::displayLocation);
-	}
-	else {
-		pros::Task screenTask(Robot::Utility::displayMotorVel);
+		chassis.setPose(0, 0, 90);
 	}
 	
 }
@@ -109,6 +107,8 @@ void competition_initialize() {
 	// The user can select the drive control type by pressing the down button on the controller.
 	// The user can select the distance puncher by pressing the left button on the controller.
 	// The state of each subsystem is displayed on the controller screen.
+
+	toggles();
 	
 }
 
@@ -129,7 +129,15 @@ void competition_initialize() {
  * from where it left off.
  */
 void autonomous() {
-	
+
+	if (pros::c::registry_get_plugged_type(13) == pros::c::E_DEVICE_IMU) {
+		 // X: 0, Y: 0, Heading: 0
+		// Setting an example start location for the robot so it is all relatativistic 
+		pros::Task screenTask(Robot::Utility::displayLocation);
+	}
+	else {
+		pros::Task screenTask(Robot::Utility::displayMotorVel);
+	}
 	subsystem.autonomous.AutoDrive(subsystem.puncher, true);
 
 
@@ -157,13 +165,13 @@ void opcontrol() {
     while (true) {
 
 		if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_UP)) {
-			autonomous();
+			competition_initialize();
 		}
 
         subsystem.drivetrain.run();
 		
 
-
+		subsystem.puncher.ManualOverride();
 		subsystem.puncher.run();
 
 

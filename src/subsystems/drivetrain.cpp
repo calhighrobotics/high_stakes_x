@@ -76,17 +76,18 @@ void Drivetrain::run() {
 
 // Switch the drivetrain control mode between arcade and tank drive with the down button(between 1 and 2)
 void Drivetrain::SwitchDrive() {
-    if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_DOWN)) {
+    if(drivetrainToggleSwitch.get_new_press()) {
+        pros::lcd::clear_line(2);
         Drivetrain::driveMode = Drivetrain::driveMode + 1;
         if (Drivetrain::driveMode == 2) {
             Drivetrain::driveMode = 0;
         }
         
         if (Drivetrain::driveMode == 0) {
-            controller.print(0, 0, "Drive: Arcade");
+            pros::lcd::set_text(2, "Drive: Arcade");
         }
         if (Drivetrain::driveMode == 1) {
-            controller.print(0, 0, "Drive: Tank");
+            pros::lcd::set_text(2, "Drive: Tank");
         }
     }
 }

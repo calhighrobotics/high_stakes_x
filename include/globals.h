@@ -69,5 +69,9 @@ namespace Robot {
         extern lemlib::ChassisController_t angularController;
 
         extern lemlib::Chassis chassis;
+
+        extern pros::ADIDigitalIn puncherToggleSwitch;
+        extern pros::ADIDigitalIn autonToggleSwitch;
+        extern pros::ADIDigitalIn drivetrainToggleSwitch;
     }
 } // namespace Robot
