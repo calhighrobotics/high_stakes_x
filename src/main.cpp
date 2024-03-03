@@ -46,6 +46,7 @@ struct RobotSubsystems {
  */
 
 
+
 void toggles() {
 	while (true)
 	{
@@ -75,10 +76,12 @@ void initialize() {
 
 	pros::lcd::initialize();
 
-	if (pros::c::registry_get_plugged_type(13) == pros::c::E_DEVICE_IMU) {
+	if (pros::c::registry_get_plugged_type(15) == pros::c::E_DEVICE_IMU) {
 		chassis.calibrate();  
-		chassis.setPose(0, 0, 90);
+		chassis.setPose(0, 0, 0);
 	}
+	
+	pros::Task screenTask(Robot::Utility::display);
 	
 }
 
@@ -129,15 +132,8 @@ void competition_initialize() {
  * from where it left off.
  */
 void autonomous() {
-
-	if (pros::c::registry_get_plugged_type(13) == pros::c::E_DEVICE_IMU) {
-		 // X: 0, Y: 0, Heading: 0
-		// Setting an example start location for the robot so it is all relatativistic 
-		pros::Task screenTask(Robot::Utility::displayLocation);
-	}
-	else {
-		pros::Task screenTask(Robot::Utility::displayMotorVel);
-	}
+	
+	
 	subsystem.autonomous.AutoDrive(subsystem.puncher, true);
 
 
@@ -166,6 +162,10 @@ void opcontrol() {
 
 		if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_UP)) {
 			competition_initialize();
+		}
+
+		if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_RIGHT)) {
+			autonomous();
 		}
 
         subsystem.drivetrain.run();

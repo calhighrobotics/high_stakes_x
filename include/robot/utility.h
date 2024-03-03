@@ -15,6 +15,8 @@ namespace Robot {
         void displayLocation();
         /// @brief Displays current velocity of the robot.
         void displayMotorVel();
+
+        void display();
         /** 
             @brief Toggles subsystems, drive mode auton routine, and puncher.
             @param Autonomous auton Auton object.

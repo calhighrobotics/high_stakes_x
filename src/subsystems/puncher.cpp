@@ -102,7 +102,7 @@ void Puncher::ManualOverride() {
 
         std::printf("Puncher: %d\n", Puncher::distancePuncherBool);
         
-        if (Puncher::distancePuncherBool == 0) {
+        if (Puncher::distanceedePuncherBool == 0) {
             controller.print(0, 0, "Dist. punch on");
         }
         if (Puncher::distancePuncherBool == 1) {

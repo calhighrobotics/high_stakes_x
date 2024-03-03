@@ -69,6 +69,8 @@ namespace Robot {
          */
         void Auton3(Puncher &puncher);
 
+        void Auton4();
+
         std::string autonName;
     };
 }

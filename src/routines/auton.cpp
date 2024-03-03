@@ -103,6 +103,26 @@ void Autonomous::Auton3(Puncher &puncher) {
 
 }
 
+void Autonomous::Auton4() {
+    // Autonomous routine for the Skills challenge
+
+	chassis.moveTo(10, 0, 1000, 100);
+
+	// else {
+	// 	for (int i=0; i < 30000; i++) {
+	// 		punchers.move(105);
+	// 		pros::delay(1);
+	// 	}
+	// }
+	// //movement
+	// if (pros::c::registry_get_plugged_type(15) == pros::c::E_DEVICE_IMU) {
+	// 	chassis.setPose(-55.174, -55.383, 45);
+	// 	chassis.follow("auton_skills_1.txt", 5000, 15);
+	// 	chassis.follow("auton_skills_2.txt", 10000, 15);
+	// }
+
+}
+
 
 
 // Takes in two parameters: The autonomous value as well as the puncher object.
@@ -121,6 +141,9 @@ void Autonomous::AutoDrive(Puncher &puncher, bool autono = false) {
     if(Autonomous::auton == 3){
         Auton3(puncher);
     }
+	if(Autonomous::auton == 4){
+        Auton4();
+    }
 
 }
 
@@ -135,7 +158,7 @@ void Autonomous::AutonSwitcher() {
 			Autonomous::auton = auton + 1;
 
 			// Checks if the toggler goes out of bounds.
-			if (Autonomous::auton == 4) {
+			if (Autonomous::auton == 5) {
 				Autonomous::auton = 1;
 			}
 
@@ -148,6 +171,9 @@ void Autonomous::AutonSwitcher() {
 			}
 			if (auton == 3) {
 				autonName = "Skills Challenge";
+			}
+			if (auton == 4) {
+				autonName = "Autonomous tuning";
 			}
 			// Set the controllet text to the current autonomous routine value
 			pros::lcd::print(3, "Autonomous prog: %s", autonName);

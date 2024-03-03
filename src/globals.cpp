@@ -50,9 +50,9 @@ pros::Motor_Group drive_ ({LeftFront, RightFront, LeftMid, RightMid, LeftBack, R
 lemlib::Drivetrain_t drivetrain {
     &drive_left, // left drivetrain motors
     &drive_right, // right drivetrain motors
-    11.75, // track width
+    9.75, // track width
     3.25, // wheel diameter - 3.25 on competition bot, 4 on test drivetrain
-	360 // wheel rpm - 360 rpm for competition bot, 200 for test drivetrain
+	450 // wheel rpm - 360 rpm for competition bot, 200 for test drivetrain
 };
 
 lemlib::OdomSensors_t sensors {
