@@ -5,14 +5,14 @@
 using namespace Robot;
 using namespace Robot::Globals;
 
-int Autonomous::auton = 1;
+int Autonomous::auton = 4;
 
 
 void Autonomous::Auton1() {
 if(Autonomous::auton == 1){
 	// Autonomous for Far side defensive zone.
-	
-	if (pros::c::registry_get_plugged_type(15) == pros::c::E_DEVICE_IMU) {
+	int imuOn = 1;
+	if (imuOn == 1) {
 		// 36.994 -58.128 0
 		chassis.setPose(36.994, -58.128, 0);
 		chassis.follow("home_side_auton_path_1.txt", 2000, 15);
@@ -43,8 +43,8 @@ if(Autonomous::auton == 1){
 void Autonomous::Auton2() {
 	if(Autonomous::auton == 2){
 		// Autonomous for near side offensive zone.
-
-		if (pros::c::registry_get_plugged_type(15) == pros::c::E_DEVICE_IMU) {
+		int imuOn = 1;
+		if (imuOn == 1) {
 			// -36.851 -58.638 0
 			chassis.setPose(-36.851, -58.638, 0);
 			chassis.follow("far_side_auton_path_1.txt", 2000, 15);
@@ -105,8 +105,17 @@ void Autonomous::Auton3(Puncher &puncher) {
 
 void Autonomous::Auton4() {
     // Autonomous routine for the Skills challenge
-
-	chassis.moveTo(10, 0, 1000, 100);
+	lemlib::Pose pose = chassis.getPose();
+	chassis.moveTo(0, 4, 2000);
+	IntakeMotor.move_relative(400, 100);
+	pros::delay(1000);
+	chassis.setPose(0, 0, 180);
+	chassis.moveTo(0, 30, 2000, 70);
+	chassis.setPose(0, 0, 180);
+	chassis.turnTo(-32, 20, 2000);
+	chassis.setPose(0, 0, 300);
+	IntakeMotor.move_absolute(-400, 100);
+	chassis.moveTo(-35, 15, 4000, 50);
 
 	// else {
 	// 	for (int i=0; i < 30000; i++) {

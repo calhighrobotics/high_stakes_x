@@ -40,6 +40,7 @@ void Utility::displayMotorVel() {
 }
 
 void Utility::displayLocation() {
+    using namespace Robot::Globals;
 
     lemlib::Pose pose = chassis.getPose(); // get the current position of the robot
     pros::lcd::print(0, "x: %f", pose.x); // print the x position
@@ -51,12 +52,12 @@ void Utility::display() {
     while (true) {
         if (!pros::competition::is_disabled()) {
             pros::lcd::clear();
-            if (pros::c::registry_get_plugged_type(15) == pros::c::E_DEVICE_IMU) {
-                Utility::displayLocation();
-            } 
-            else {
-                Utility::displayMotorVel();
-            }
+            // if (pros::c::registry_get_plugged_type(15) == 6) {
+            Utility::displayLocation();
+            // } 
+            // else {
+            //     Utility::displayMotorVel();
+            // }
         }
         else {
             ;

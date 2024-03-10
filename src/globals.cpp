@@ -50,7 +50,7 @@ pros::Motor_Group drive_ ({LeftFront, RightFront, LeftMid, RightMid, LeftBack, R
 lemlib::Drivetrain_t drivetrain {
     &drive_left, // left drivetrain motors
     &drive_right, // right drivetrain motors
-    9.75, // track width
+    10, // track width
     3.25, // wheel diameter - 3.25 on competition bot, 4 on test drivetrain
 	450 // wheel rpm - 360 rpm for competition bot, 200 for test drivetrain
 };
@@ -66,24 +66,24 @@ lemlib::OdomSensors_t sensors {
 
 // forward/backward PID
 lemlib::ChassisController_t lateralController {
-    8, // kP
-    30, // kD
+    33, // kP
+    300, // kD
     1, // smallErrorRange
     100, // smallErrorTimeout
     3, // largeErrorRange
     500, // largeErrorTimeout
-    5 // slew rate
+    10 // slew rate
 };
  
 // turning PID
 lemlib::ChassisController_t angularController {
-    4, // kP
-    40, // kD
+    6, // kP
+    47, // kD
     1, // smallErrorRange
     100, // smallErrorTimeout
     3, // largeErrorRange
     500, // largeErrorTimeout
-    0 // slew rate
+    0.5 // slew rate
 };
 
 lemlib::Chassis chassis(drivetrain, lateralController, angularController, sensors);

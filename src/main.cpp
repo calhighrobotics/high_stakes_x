@@ -76,10 +76,10 @@ void initialize() {
 
 	pros::lcd::initialize();
 
-	if (pros::c::registry_get_plugged_type(15) == pros::c::E_DEVICE_IMU) {
-		chassis.calibrate();  
-		chassis.setPose(0, 0, 0);
-	}
+	// if (pros::c::registry_get_plugged_type(15) == pros::c::E_DEVICE_IMU) {
+	chassis.calibrate();  
+	chassis.setPose(0, 0, 0);
+	
 	
 	pros::Task screenTask(Robot::Utility::display);
 	
