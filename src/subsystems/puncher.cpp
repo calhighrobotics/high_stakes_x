@@ -15,7 +15,7 @@ void Puncher::UserRun() {
     // Manual Puncher Control
     if (Puncher::distancePuncherBool == 1) {
         if(controller.get_digital(pros::E_CONTROLLER_DIGITAL_R2)) {
-            punchers.move(127);
+            punchers.move(-127);
         }
         else {
             punchers.brake();
@@ -34,7 +34,7 @@ void Puncher::DistanceRun() {
         if (distance.get() <= 20) {
         
             // if (Puncher::toShoot() == 1) {
-            punchers.move(127);
+            punchers.move(-127);
             }
         else {
             punchers.brake();
@@ -102,7 +102,7 @@ void Puncher::ManualOverride() {
 
         std::printf("Puncher: %d\n", Puncher::distancePuncherBool);
         
-        if (Puncher::distanceedePuncherBool == 0) {
+        if (Puncher::distancePuncherBool == 0) {
             controller.print(0, 0, "Dist. punch on");
         }
         if (Puncher::distancePuncherBool == 1) {

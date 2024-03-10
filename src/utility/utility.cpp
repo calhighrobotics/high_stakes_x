@@ -1,5 +1,6 @@
 #include "robot/utility.h"
 #include "api.h"
+#include "pros/apix.h"
 #include "globals.h"
 
 using namespace Robot;
@@ -47,12 +48,18 @@ void Utility::displayLocation() {
 }
 
 void Utility::display() {
-    while (!pros::competition::is_disabled()) {
-        if (pros::c::registry_get_plugged_type(15) == pros::c::E_DEVICE_IMU) {
-            Utility::displayLocation();
-        } 
+    while (true) {
+        if (!pros::competition::is_disabled()) {
+            pros::lcd::clear();
+            if (pros::c::registry_get_plugged_type(15) == pros::c::E_DEVICE_IMU) {
+                Utility::displayLocation();
+            } 
+            else {
+                Utility::displayMotorVel();
+            }
+        }
         else {
-            Utility::displayMotorVel();
+            ;
         }
         pros::delay(10);
 	}
