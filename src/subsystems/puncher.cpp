@@ -56,10 +56,10 @@ void Puncher::run() {
 }
 
 int Puncher::toShoot() {
-    if (distance.get() <= 20) {
+    if (distance.get() <= 28) {
         return 1;
     }
-    if (distance.get() > 20) {
+    if (distance.get() > 28) {
         return 0;
     }
     return 0;
