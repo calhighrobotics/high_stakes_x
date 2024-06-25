@@ -1,4 +1,31 @@
 var searchData=
 [
-  ['intake_0',['Intake',['../df/dda/class_robot_1_1_intake.html',1,'Robot']]]
+  ['basesink_0',['BaseSink',['../d0/d14/classlemlib_1_1BaseSink.html',1,'lemlib']]],
+  ['basic_5fdata_1',['basic_data',['../d5/d1f/structfmt_1_1v10_1_1detail_1_1basic__data.html',1,'fmt::v10::detail']]],
+  ['basic_5fformat_5farg_2',['basic_format_arg',['../d4/de2/classfmt_1_1v10_1_1basic__format__arg.html',1,'fmt::basic_format_arg&lt; Context &gt;'],['../d4/de2/classfmt_1_1v10_1_1basic__format__arg.html',1,'fmt::v10::basic_format_arg&lt; Context &gt;']]],
+  ['basic_5fformat_5farg_3c_20fmt_3a_3av10_3a_3abasic_5fformat_5fcontext_20_3e_3',['basic_format_arg&lt; fmt::v10::basic_format_context &gt;',['../d4/de2/classfmt_1_1v10_1_1basic__format__arg.html',1,'fmt::v10']]],
+  ['basic_5fformat_5fargs_4',['basic_format_args',['../d0/d4c/classfmt_1_1v10_1_1basic__format__args.html',1,'fmt::basic_format_args&lt; Context &gt;'],['../d0/d4c/classfmt_1_1v10_1_1basic__format__args.html',1,'fmt::v10::basic_format_args&lt; Context &gt;']]],
+  ['basic_5fformat_5fargs_3c_20fmt_3a_3av10_3a_3abasic_5fformat_5fcontext_20_3e_5',['basic_format_args&lt; fmt::v10::basic_format_context &gt;',['../d0/d4c/classfmt_1_1v10_1_1basic__format__args.html',1,'fmt::v10']]],
+  ['basic_5fformat_5fcontext_6',['basic_format_context',['../dd/d9a/classfmt_1_1v10_1_1basic__format__context.html',1,'fmt::basic_format_context&lt; OutputIt, Char &gt;'],['../dd/d9a/classfmt_1_1v10_1_1basic__format__context.html',1,'fmt::v10::basic_format_context&lt; OutputIt, Char &gt;']]],
+  ['basic_5fformat_5fcontext_3c_20char_20_3e_7',['basic_format_context&lt; Char &gt;',['../dd/d9a/classfmt_1_1v10_1_1basic__format__context.html',1,'fmt::v10']]],
+  ['basic_5fformat_5fparse_5fcontext_8',['basic_format_parse_context',['../dd/de6/classfmt_1_1v10_1_1basic__format__parse__context.html',1,'fmt::basic_format_parse_context&lt; Char &gt;'],['../dd/de6/classfmt_1_1v10_1_1basic__format__parse__context.html',1,'fmt::v10::basic_format_parse_context&lt; Char &gt;']]],
+  ['basic_5fformat_5fstring_9',['basic_format_string',['../d9/de7/classfmt_1_1v10_1_1basic__format__string.html',1,'fmt::basic_format_string&lt; Char, Args &gt;'],['../d9/de7/classfmt_1_1v10_1_1basic__format__string.html',1,'fmt::v10::basic_format_string&lt; Char, Args &gt;']]],
+  ['basic_5ffp_10',['basic_fp',['../d1/d47/structfmt_1_1v10_1_1detail_1_1basic__fp.html',1,'fmt::v10::detail']]],
+  ['basic_5fmemory_5fbuffer_11',['basic_memory_buffer',['../da/dab/classfmt_1_1v10_1_1basic__memory__buffer.html',1,'fmt::basic_memory_buffer&lt; T, SIZE, Allocator &gt;'],['../da/dab/classfmt_1_1v10_1_1basic__memory__buffer.html',1,'fmt::v10::basic_memory_buffer&lt; T, SIZE, Allocator &gt;']]],
+  ['basic_5fmemory_5fbuffer_3c_20bigit_2c_20bigits_5fcapacity_20_3e_12',['basic_memory_buffer&lt; bigit, bigits_capacity &gt;',['../da/dab/classfmt_1_1v10_1_1basic__memory__buffer.html',1,'fmt::v10']]],
+  ['basic_5fmemory_5fbuffer_3c_20wchar_5ft_20_3e_13',['basic_memory_buffer&lt; wchar_t &gt;',['../da/dab/classfmt_1_1v10_1_1basic__memory__buffer.html',1,'fmt::v10']]],
+  ['basic_5fstring_5fview_14',['basic_string_view',['../d9/d3f/classfmt_1_1v10_1_1basic__string__view.html',1,'fmt::basic_string_view&lt; Char &gt;'],['../d9/d3f/classfmt_1_1v10_1_1basic__string__view.html',1,'fmt::v10::basic_string_view&lt; Char &gt;']]],
+  ['basic_5fstring_5fview_3c_20char_20_3e_15',['basic_string_view&lt; char &gt;',['../d9/d3f/classfmt_1_1v10_1_1basic__string__view.html',1,'fmt::v10']]],
+  ['big_5fdecimal_5ffp_16',['big_decimal_fp',['../db/d3a/structfmt_1_1v10_1_1detail_1_1big__decimal__fp.html',1,'fmt::v10::detail']]],
+  ['bigint_17',['bigint',['../d3/df2/classfmt_1_1v10_1_1detail_1_1bigint.html',1,'fmt::v10::detail']]],
+  ['buffer_18',['buffer',['../d7/d8e/classfmt_1_1v10_1_1detail_1_1buffer.html',1,'fmt::v10::detail']]],
+  ['buffer_19',['Buffer',['../dc/d93/classlemlib_1_1Buffer.html',1,'lemlib']]],
+  ['buffer_3c_20bigit_20_3e_20',['buffer&lt; bigit &gt;',['../d7/d8e/classfmt_1_1v10_1_1detail_1_1buffer.html',1,'fmt::v10::detail']]],
+  ['buffer_3c_20char_20_3e_21',['buffer&lt; char &gt;',['../d7/d8e/classfmt_1_1v10_1_1detail_1_1buffer.html',1,'fmt::v10::detail']]],
+  ['buffer_3c_20char_5ftype_20_3e_22',['buffer&lt; char_type &gt;',['../d7/d8e/classfmt_1_1v10_1_1detail_1_1buffer.html',1,'fmt::v10::detail']]],
+  ['buffer_3c_20container_3a_3avalue_5ftype_20_3e_23',['buffer&lt; Container::value_type &gt;',['../d7/d8e/classfmt_1_1v10_1_1detail_1_1buffer.html',1,'fmt::v10::detail']]],
+  ['buffer_3c_20wchar_5ft_20_3e_24',['buffer&lt; wchar_t &gt;',['../d7/d8e/classfmt_1_1v10_1_1detail_1_1buffer.html',1,'fmt::v10::detail']]],
+  ['buffer_5ftraits_25',['buffer_traits',['../d0/d28/structfmt_1_1v10_1_1detail_1_1buffer__traits.html',1,'fmt::v10::detail']]],
+  ['bufferedstdout_26',['BufferedStdout',['../d8/d56/classlemlib_1_1BufferedStdout.html',1,'lemlib']]],
+  ['bytes_27',['bytes',['../db/d07/classfmt_1_1v10_1_1bytes.html',1,'fmt::bytes'],['../db/d07/classfmt_1_1v10_1_1bytes.html',1,'fmt::v10::bytes']]]
 ];

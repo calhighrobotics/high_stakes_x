@@ -1,0 +1,5 @@
+var structfmt_1_1v10_1_1formatter_3_01T_00_01Char_00_01enable__if__t_3_01detail_1_1has__format__as_3_01T_01_4_1_1value_01_4_01_4 =
+[
+    [ "base", "d2/df2/structfmt_1_1v10_1_1formatter_3_01T_00_01Char_00_01enable__if__t_3_01detail_1_1has__format__as_3_01T_01_4_1_1value_01_4_01_4.html#a0942c791eae125f22bf12436b86f858b", null ],
+    [ "format", "d2/df2/structfmt_1_1v10_1_1formatter_3_01T_00_01Char_00_01enable__if__t_3_01detail_1_1has__format__as_3_01T_01_4_1_1value_01_4_01_4.html#a3fcb91d9dfed426e32121740f365c954", null ]
+];

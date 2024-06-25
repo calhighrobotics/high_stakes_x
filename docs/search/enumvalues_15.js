@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['warn_0',['warn',['../classokapi_1_1_logger.html#a66826a92c568743a2722d3c3f6887d81a1ea4c3ab05ee0c6d4de30740443769cb',1,'okapi::Logger']]],
-  ['warn_1',['WARN',['../namespacelemlib_1_1logger.html#aba3f1a5300b77403c1c7c6a8cfcdd635a32bd8a1db2275458673903bdb84cb277',1,'lemlib::logger']]],
-  ['wheat_2',['wheat',['../namespacepros.html#a5533dcafd69b8cfd93f36f13414e2cffad29db4ac8712f5bdb343991281b26db1',1,'pros']]],
-  ['white_3',['white',['../namespacepros.html#a5533dcafd69b8cfd93f36f13414e2cffad508fe45cecaf653904a0e774084bb5c',1,'pros']]],
-  ['white_5fsmoke_4',['white_smoke',['../namespacepros.html#a5533dcafd69b8cfd93f36f13414e2cffa37ecf1e4670c4944a0f98bcb39728578',1,'pros']]]
+  ['value_0',['value',['../df/d79/structfmt_1_1v10_1_1dynamic__format__arg__store_1_1need__copy.html#a3fb8b9a38a5e8e88f4058ab5cc5a84bba51044d8301197cfae7d905ce7c1d05ad',1,'fmt::v10::dynamic_format_arg_store::need_copy']]],
+  ['violet_1',['violet',['../d1/d8a/group__cpp-colors.html#gga5533dcafd69b8cfd93f36f13414e2cffad1d813a48d99f0e102f7d0a1b9068001',1,'pros']]],
+  ['vision_2',['vision',['../d3/d60/group__cpp-device.html#gga0a7387ba6156c831ba1e61d75a04c3d9af42087059b37ae7f4d9f0d3a475801a8',1,'pros::v5']]]
 ];

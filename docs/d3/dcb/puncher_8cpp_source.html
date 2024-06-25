@@ -5,8 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>1516b Over Under: src/subsystems/puncher.cpp Source File</title>
-<link rel="icon" href="../../roboticslogo-b69bab06.png" type="image/x-icon" />
+<title>1516X High Stakes: src/subsystems/puncher.cpp Source File</title>
+<link rel="icon" href="../../logo.png" type="image/x-icon" />
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -39,11 +39,11 @@ window.MathJax = {
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="../../roboticslogo-b69bab06.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="../../logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">1516b Over Under<span id="projectnumber">&#160;2.0</span>
+   <div id="projectname">1516X High Stakes<span id="projectnumber">&#160;2.0</span>
    </div>
-   <div id="projectbrief">Codebase for 1516b over under season</div>
+   <div id="projectbrief">Codebase for 1516X High Stakes season</div>
   </td>
  </tr>
  </tbody>
@@ -114,100 +114,164 @@ $(function(){initNavTree('d3/dcb/puncher_8cpp_source.html','../../'); initResiza
   <div class="headertitle"><div class="title">puncher.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="../../d3/dcb/puncher_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;robot/drivetrain.h&quot;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;robot/puncher.h&quot;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="../../dc/d65/api_8h.html">&quot;api.h&quot;</a></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="../../d5/d87/globals_8h.html" title="Contains global variables and type definitions for the Robot namespace.">&quot;globals.h&quot;</a></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;pros/apix.h&quot;</span></div>
+<a href="../../d3/dcb/puncher_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="../../d5/d9a/drivetrain_8h.html">robot/drivetrain.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="../../df/d25/puncher_8h.html">robot/puncher.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="../../dc/d65/api_8h.html">api.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="../../d5/d87/globals_8h.html">globals.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="../../db/d7e/apix_8h.html">pros/apix.h</a>&quot;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">using</span> <span class="keyword">namespace</span> <a class="code hl_namespace" href="../../dd/d03/namespace_robot.html">Robot</a>;</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">using</span> <span class="keyword">namespace</span> <a class="code hl_namespace" href="../../dd/d03/namespace_robot.html">Robot</a>::<a class="code hl_namespace" href="../../d1/ddb/namespace_robot_1_1_globals.html">Globals</a>;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="../../da/d93/namespaceRobot.html">Robot</a>;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="../../df/d3e/namespaceRobot_1_1Globals.html">Robot::Globals</a>;</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="../../d4/d97/class_robot_1_1_puncher.html#a5458c3a56d6eab940e1991019bb447e5">   10</a></span><span class="keywordtype">void</span> <a class="code hl_class" href="../../d4/d97/class_robot_1_1_puncher.html">Puncher</a>::<a class="code hl_function" href="../../d4/d97/class_robot_1_1_puncher.html#a5458c3a56d6eab940e1991019bb447e5">setDistancePuncher</a>(<span class="keywordtype">bool</span> punch) {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <a class="code hl_variable" href="../../d4/d97/class_robot_1_1_puncher.html#a2713821a19623ab69e1b3d6881c21e01">distancePuncher</a> = punch;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>}</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="../../d4/d97/class_robot_1_1_puncher.html#aad9583da0a98fbdafe736c5faa15f131">   15</a></span><span class="keywordtype">void</span> <a class="code hl_class" href="../../d4/d97/class_robot_1_1_puncher.html">Puncher</a>::<a class="code hl_function" href="../../d4/d97/class_robot_1_1_puncher.html#aad9583da0a98fbdafe736c5faa15f131">run</a>(<span class="keywordtype">int</span> autonVal) {</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="comment">// Manual Puncher Control</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d4/d97/class_robot_1_1_puncher.html">Puncher</a><a class="code hl_function" href="../../d4/d97/class_robot_1_1_puncher.html#aad7537db5dd680d94b5f0af9f215c25f">::</a><a class="code hl_function" href="../../d4/d97/class_robot_1_1_puncher.html#aad7537db5dd680d94b5f0af9f215c25f">toShoot</a><a class="code hl_function" href="../../d4/d97/class_robot_1_1_puncher.html#aad7537db5dd680d94b5f0af9f215c25f">(</a><a class="code hl_function" href="../../d4/d97/class_robot_1_1_puncher.html#aad7537db5dd680d94b5f0af9f215c25f">)</a> == 2 || <a class="code hl_variable" href="../../d4/d97/class_robot_1_1_puncher.html#a2713821a19623ab69e1b3d6881c21e01">distancePuncher</a> == <span class="keyword">false</span>) {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="../../d1/ddb/namespace_robot_1_1_globals.html#a0836d6c757263202c26276bf4dd2f22f">controller</a>.get_digital(pros::E_CONTROLLER_DIGITAL_R2)) {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            <a class="code hl_variable" href="../../d1/ddb/namespace_robot_1_1_globals.html#ae1de33e7b736ec8ddad4c55f6d822f57">punchers</a>.move(127);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        }</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            <a class="code hl_variable" href="../../d1/ddb/namespace_robot_1_1_globals.html#ae1de33e7b736ec8ddad4c55f6d822f57">punchers</a>.brake();</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        }</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    }</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment">// Auton Puncher Control using the distance sensor</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d4/d97/class_robot_1_1_puncher.html#a2713821a19623ab69e1b3d6881c21e01">distancePuncher</a> == <span class="keyword">true</span> &amp;&amp; autonVal == 3) {</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d4/d97/class_robot_1_1_puncher.html">Puncher</a><a class="code hl_function" href="../../d4/d97/class_robot_1_1_puncher.html#aad7537db5dd680d94b5f0af9f215c25f">::</a><a class="code hl_function" href="../../d4/d97/class_robot_1_1_puncher.html#aad7537db5dd680d94b5f0af9f215c25f">toShoot</a><a class="code hl_function" href="../../d4/d97/class_robot_1_1_puncher.html#aad7537db5dd680d94b5f0af9f215c25f">(</a><a class="code hl_function" href="../../d4/d97/class_robot_1_1_puncher.html#aad7537db5dd680d94b5f0af9f215c25f">)</a> == 0) {</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            <a class="code hl_variable" href="../../d1/ddb/namespace_robot_1_1_globals.html#ae1de33e7b736ec8ddad4c55f6d822f57">punchers</a>.move_absolute(30, 95);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        }</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <a class="code hl_variable" href="../../d1/ddb/namespace_robot_1_1_globals.html#ae1de33e7b736ec8ddad4c55f6d822f57">punchers</a>.brake();</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        }</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    }</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>}</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="../../d4/d97/class_robot_1_1_puncher.html#aad7537db5dd680d94b5f0af9f215c25f">   40</a></span><span class="keywordtype">int</span> <a class="code hl_class" href="../../d4/d97/class_robot_1_1_puncher.html">Puncher</a>::<a class="code hl_function" href="../../d4/d97/class_robot_1_1_puncher.html#aad7537db5dd680d94b5f0af9f215c25f">toShoot</a>() {</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordflow">if</span> (pros::c::registry_get_plugged_type(13) != pros::c::E_DEVICE_DISTANCE) {</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <a class="code hl_variable" href="../../d4/d97/class_robot_1_1_puncher.html#a2713821a19623ab69e1b3d6881c21e01">distancePuncher</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordflow">return</span> 2;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d1/ddb/namespace_robot_1_1_globals.html#a3499c45d80043d7e0bd2d68d42003e92">distance</a>.get() &lt;= 12 &amp;&amp; <a class="code hl_variable" href="../../d4/d97/class_robot_1_1_puncher.html#a2713821a19623ab69e1b3d6881c21e01">distancePuncher</a> == <span class="keyword">true</span>) {</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    }</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d1/ddb/namespace_robot_1_1_globals.html#a3499c45d80043d7e0bd2d68d42003e92">distance</a>.get() &gt; 12 &amp;&amp; <a class="code hl_variable" href="../../d4/d97/class_robot_1_1_puncher.html#a2713821a19623ab69e1b3d6881c21e01">distancePuncher</a> == <span class="keyword">true</span>) {</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    }</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordflow">return</span> 2;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>}</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="../../d4/d97/class_robot_1_1_puncher.html#a63973e01011483e2a32b15ff2534bfdb">   55</a></span><span class="keywordtype">void</span> <a class="code hl_class" href="../../d4/d97/class_robot_1_1_puncher.html">Puncher</a>::<a class="code hl_function" href="../../d4/d97/class_robot_1_1_puncher.html#a63973e01011483e2a32b15ff2534bfdb">PuncherSwitch</a>() {</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="../../d1/ddb/namespace_robot_1_1_globals.html#a0836d6c757263202c26276bf4dd2f22f">controller</a>.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_LEFT)) {</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>         <span class="comment">// Toggles the puncher distance sensor</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            <a class="code hl_class" href="../../d4/d97/class_robot_1_1_puncher.html">Puncher</a><a class="code hl_function" href="../../d4/d97/class_robot_1_1_puncher.html#a5458c3a56d6eab940e1991019bb447e5">::</a><a class="code hl_function" href="../../d4/d97/class_robot_1_1_puncher.html#a5458c3a56d6eab940e1991019bb447e5">setDistancePuncher</a><a class="code hl_function" href="../../d4/d97/class_robot_1_1_puncher.html#a5458c3a56d6eab940e1991019bb447e5">(</a>!<a class="code hl_variable" href="../../d4/d97/class_robot_1_1_puncher.html#a2713821a19623ab69e1b3d6881c21e01">distancePuncher</a><a class="code hl_function" href="../../d4/d97/class_robot_1_1_puncher.html#a5458c3a56d6eab940e1991019bb447e5">)</a>;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            <span class="comment">// Prints the state of the puncher distance sensor to the brain(as a boolean)</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d4/d97/class_robot_1_1_puncher.html#a2713821a19623ab69e1b3d6881c21e01">distancePuncher</a> == <span class="keyword">true</span>) {</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                <a class="code hl_variable" href="../../d1/ddb/namespace_robot_1_1_globals.html#a0836d6c757263202c26276bf4dd2f22f">controller</a>.print(0, 0, <span class="stringliteral">&quot;Puncher: True&quot;</span>);</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            }</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                <a class="code hl_variable" href="../../d1/ddb/namespace_robot_1_1_globals.html#a0836d6c757263202c26276bf4dd2f22f">controller</a>.print(0, 0, <span class="stringliteral">&quot;Puncher: False&quot;</span>);</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            }</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="foldopen" id="foldopen00011" data-start="{" data-end="}">
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="../../d8/d8b/classRobot_1_1Puncher.html#aa76eae5bd736176c938041aae81c06c1">   11</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d8b/classRobot_1_1Puncher.html#aa76eae5bd736176c938041aae81c06c1">Puncher::UserRun</a>() {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d8b/classRobot_1_1Puncher.html#aad7537db5dd680d94b5f0af9f215c25f">toShoot</a>() == 2) {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <a class="code hl_variable" href="../../d8/d8b/classRobot_1_1Puncher.html#a98399eac48aaf5cb5d7286d7c575832e">Puncher::distancePuncherBool</a> = 1;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    }</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="comment">// Manual Puncher Control</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d8/d8b/classRobot_1_1Puncher.html#a98399eac48aaf5cb5d7286d7c575832e">Puncher::distancePuncherBool</a> == 1) {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#a9935411c69763c03223e884be03447d2">controller</a>.<a class="code hl_function" href="../../d7/da3/group__cpp-misc.html#gaac8a91edeced9a51c5f3bc9a1aac3bc6">get_digital</a>(pros::E_CONTROLLER_DIGITAL_R2)) {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>            <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#ae1de33e7b736ec8ddad4c55f6d822f57">punchers</a>.move(-127);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        }</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#ae1de33e7b736ec8ddad4c55f6d822f57">punchers</a>.brake();</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        }</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    }  </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>}</div>
+</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="foldopen" id="foldopen00026" data-start="{" data-end="}">
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="../../d8/d8b/classRobot_1_1Puncher.html#a4c7bf9d207fc3877217116a787e33c34">   26</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d8b/classRobot_1_1Puncher.html#a4c7bf9d207fc3877217116a787e33c34">Puncher::DistanceRun</a>() {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d8b/classRobot_1_1Puncher.html#aad7537db5dd680d94b5f0af9f215c25f">Puncher::toShoot</a>() == 2) {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <a class="code hl_variable" href="../../d8/d8b/classRobot_1_1Puncher.html#a98399eac48aaf5cb5d7286d7c575832e">Puncher::distancePuncherBool</a> = 1;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    }</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d8/d8b/classRobot_1_1Puncher.html#a98399eac48aaf5cb5d7286d7c575832e">Puncher::distancePuncherBool</a> == 0) {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="comment">// Distance Puncher Control</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#aa94ad8c3efdb1b56efedb3d6bdcecc63">distance</a>.<a class="code hl_function" href="../../d8/d24/group__cpp-distance.html#ga9e231cbf8c8fc1cdb46105ad8f72ef23">get</a>() &lt;= 20) {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            <span class="comment">// if (Puncher::toShoot() == 1) {</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#ae1de33e7b736ec8ddad4c55f6d822f57">punchers</a>.move(-127);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            }</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#ae1de33e7b736ec8ddad4c55f6d822f57">punchers</a>.brake();</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        }</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <a class="code hl_function" href="../../d8/d8b/classRobot_1_1Puncher.html#aa76eae5bd736176c938041aae81c06c1">Puncher::UserRun</a>();</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    }</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>}</div>
+</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="foldopen" id="foldopen00048" data-start="{" data-end="}">
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="../../d8/d8b/classRobot_1_1Puncher.html#a6aa6d1412bf15a478e21eba355533aa7">   48</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d8b/classRobot_1_1Puncher.html#a6aa6d1412bf15a478e21eba355533aa7">Puncher::run</a>() {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d8/d8b/classRobot_1_1Puncher.html#a98399eac48aaf5cb5d7286d7c575832e">Puncher::distancePuncherBool</a> == 0) {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <a class="code hl_function" href="../../d8/d8b/classRobot_1_1Puncher.html#a4c7bf9d207fc3877217116a787e33c34">Puncher::DistanceRun</a>();</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <a class="code hl_function" href="../../d8/d8b/classRobot_1_1Puncher.html#aa76eae5bd736176c938041aae81c06c1">Puncher::UserRun</a>();</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}</div>
+</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="foldopen" id="foldopen00058" data-start="{" data-end="}">
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="../../d8/d8b/classRobot_1_1Puncher.html#aad7537db5dd680d94b5f0af9f215c25f">   58</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="../../d8/d8b/classRobot_1_1Puncher.html#aad7537db5dd680d94b5f0af9f215c25f">Puncher::toShoot</a>() {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#aa94ad8c3efdb1b56efedb3d6bdcecc63">distance</a>.<a class="code hl_function" href="../../d8/d24/group__cpp-distance.html#ga9e231cbf8c8fc1cdb46105ad8f72ef23">get</a>() &lt;= 28) {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#aa94ad8c3efdb1b56efedb3d6bdcecc63">distance</a>.<a class="code hl_function" href="../../d8/d24/group__cpp-distance.html#ga9e231cbf8c8fc1cdb46105ad8f72ef23">get</a>() &gt; 28) {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    }</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>}</div>
+</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="foldopen" id="foldopen00068" data-start="{" data-end="}">
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="../../d8/d8b/classRobot_1_1Puncher.html#ac2bf38bdc5897a8b41d83c15b15f61d0">   68</a></span><a class="code hl_function" href="../../d8/d8b/classRobot_1_1Puncher.html#ac2bf38bdc5897a8b41d83c15b15f61d0">Puncher::Puncher</a>() {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <a class="code hl_variable" href="../../d8/d8b/classRobot_1_1Puncher.html#a98399eac48aaf5cb5d7286d7c575832e">Puncher::distancePuncherBool</a> = 0;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>}</div>
+</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>      }</div>
+<div class="foldopen" id="foldopen00072" data-start="{" data-end="}">
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="../../d8/d8b/classRobot_1_1Puncher.html#a63973e01011483e2a32b15ff2534bfdb">   72</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d8b/classRobot_1_1Puncher.html#a63973e01011483e2a32b15ff2534bfdb">Puncher::PuncherSwitch</a>() {</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>}</div>
-<div class="ttc" id="aclass_robot_1_1_puncher_html"><div class="ttname"><a href="../../d4/d97/class_robot_1_1_puncher.html">Robot::Puncher</a></div><div class="ttdoc">Represents a Puncher mechanism for a robot.</div><div class="ttdef"><b>Definition</b> <a href="../../df/d25/puncher_8h_source.html#l00012">puncher.h:12</a></div></div>
-<div class="ttc" id="aclass_robot_1_1_puncher_html_a2713821a19623ab69e1b3d6881c21e01"><div class="ttname"><a href="../../d4/d97/class_robot_1_1_puncher.html#a2713821a19623ab69e1b3d6881c21e01">Robot::Puncher::distancePuncher</a></div><div class="ttdeci">bool distancePuncher</div><div class="ttdoc">Determines whether to use the distance sensor or not.</div><div class="ttdef"><b>Definition</b> <a href="../../df/d25/puncher_8h_source.html#l00061">puncher.h:61</a></div></div>
-<div class="ttc" id="aclass_robot_1_1_puncher_html_a5458c3a56d6eab940e1991019bb447e5"><div class="ttname"><a href="../../d4/d97/class_robot_1_1_puncher.html#a5458c3a56d6eab940e1991019bb447e5">Robot::Puncher::setDistancePuncher</a></div><div class="ttdeci">void setDistancePuncher(bool punch)</div><div class="ttdoc">Sets the distancePuncher variable based on the punch parameter.</div><div class="ttdef"><b>Definition</b> <a href="#l00010">puncher.cpp:10</a></div></div>
-<div class="ttc" id="aclass_robot_1_1_puncher_html_a63973e01011483e2a32b15ff2534bfdb"><div class="ttname"><a href="../../d4/d97/class_robot_1_1_puncher.html#a63973e01011483e2a32b15ff2534bfdb">Robot::Puncher::PuncherSwitch</a></div><div class="ttdeci">void PuncherSwitch()</div><div class="ttdoc">Toggles whether the distance sensor is activated or not and prints it out.</div><div class="ttdef"><b>Definition</b> <a href="#l00055">puncher.cpp:55</a></div></div>
-<div class="ttc" id="aclass_robot_1_1_puncher_html_aad7537db5dd680d94b5f0af9f215c25f"><div class="ttname"><a href="../../d4/d97/class_robot_1_1_puncher.html#aad7537db5dd680d94b5f0af9f215c25f">Robot::Puncher::toShoot</a></div><div class="ttdeci">int toShoot()</div><div class="ttdoc">Checks if the distance sensor is connected and whether to shoot.</div><div class="ttdef"><b>Definition</b> <a href="#l00040">puncher.cpp:40</a></div></div>
-<div class="ttc" id="aclass_robot_1_1_puncher_html_aad9583da0a98fbdafe736c5faa15f131"><div class="ttname"><a href="../../d4/d97/class_robot_1_1_puncher.html#aad9583da0a98fbdafe736c5faa15f131">Robot::Puncher::run</a></div><div class="ttdeci">void run(int autonVal)</div><div class="ttdoc">Runs the puncher based on the given autonomous value.</div><div class="ttdef"><b>Definition</b> <a href="#l00015">puncher.cpp:15</a></div></div>
-<div class="ttc" id="anamespace_robot_1_1_globals_html"><div class="ttname"><a href="../../d1/ddb/namespace_robot_1_1_globals.html">Robot::Globals</a></div><div class="ttdoc">Contains global variables and type definitions for the Robot namespace.</div><div class="ttdef"><b>Definition</b> <a href="../../da/d77/globals_8cpp_source.html#l00018">globals.cpp:18</a></div></div>
-<div class="ttc" id="anamespace_robot_1_1_globals_html_a0836d6c757263202c26276bf4dd2f22f"><div class="ttname"><a href="../../d1/ddb/namespace_robot_1_1_globals.html#a0836d6c757263202c26276bf4dd2f22f">Robot::Globals::controller</a></div><div class="ttdeci">pros::Controller controller</div></div>
-<div class="ttc" id="anamespace_robot_1_1_globals_html_a3499c45d80043d7e0bd2d68d42003e92"><div class="ttname"><a href="../../d1/ddb/namespace_robot_1_1_globals.html#a3499c45d80043d7e0bd2d68d42003e92">Robot::Globals::distance</a></div><div class="ttdeci">pros::Distance distance</div></div>
-<div class="ttc" id="anamespace_robot_1_1_globals_html_ae1de33e7b736ec8ddad4c55f6d822f57"><div class="ttname"><a href="../../d1/ddb/namespace_robot_1_1_globals.html#ae1de33e7b736ec8ddad4c55f6d822f57">Robot::Globals::punchers</a></div><div class="ttdeci">pros::Motor_Group punchers</div></div>
-<div class="ttc" id="anamespace_robot_html"><div class="ttname"><a href="../../dd/d03/namespace_robot.html">Robot</a></div><div class="ttdoc">Contains all objects generated by the 1516B team - Contains all of the subsystems,...</div><div class="ttdef"><b>Definition</b> <a href="../../da/d77/globals_8cpp_source.html#l00017">globals.cpp:17</a></div></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#a98c40509b6b482269269ef1291782bc4">puncherToggleSwitch</a>.get_new_press()) {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <a class="code hl_function" href="../../d0/d33/group__cpp-llemu.html#gaef44947cea9006f86d4aaa2e32856835">pros::lcd::clear_line</a>(1);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <a class="code hl_variable" href="../../d8/d8b/classRobot_1_1Puncher.html#a98399eac48aaf5cb5d7286d7c575832e">Puncher::distancePuncherBool</a> = <a class="code hl_variable" href="../../d8/d8b/classRobot_1_1Puncher.html#a98399eac48aaf5cb5d7286d7c575832e">Puncher::distancePuncherBool</a> + 1;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d8/d8b/classRobot_1_1Puncher.html#a98399eac48aaf5cb5d7286d7c575832e">Puncher::distancePuncherBool</a> == 2) {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            <a class="code hl_variable" href="../../d8/d8b/classRobot_1_1Puncher.html#a98399eac48aaf5cb5d7286d7c575832e">Puncher::distancePuncherBool</a> = 0;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        std::printf(<span class="stringliteral">&quot;Puncher: %d\n&quot;</span>, <a class="code hl_variable" href="../../d8/d8b/classRobot_1_1Puncher.html#a98399eac48aaf5cb5d7286d7c575832e">Puncher::distancePuncherBool</a>);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d8/d8b/classRobot_1_1Puncher.html#a98399eac48aaf5cb5d7286d7c575832e">Puncher::distancePuncherBool</a> == 0) {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            <a class="code hl_function" href="../../d0/d33/group__cpp-llemu.html#ga515526f1d3069a6aa985512273aa7788">pros::lcd::set_text</a>(1, <span class="stringliteral">&quot;Distance puncher on!&quot;</span>);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        }</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d8/d8b/classRobot_1_1Puncher.html#a98399eac48aaf5cb5d7286d7c575832e">Puncher::distancePuncherBool</a> == 1) {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            <a class="code hl_function" href="../../d0/d33/group__cpp-llemu.html#ga515526f1d3069a6aa985512273aa7788">pros::lcd::set_text</a>(1, <span class="stringliteral">&quot;Distance puncher off!&quot;</span>);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    }    </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>}</div>
+</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="foldopen" id="foldopen00095" data-start="{" data-end="}">
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="../../d8/d8b/classRobot_1_1Puncher.html#ac63f708180d7ebb4bc3acb732a46edd2">   95</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d8b/classRobot_1_1Puncher.html#ac63f708180d7ebb4bc3acb732a46edd2">Puncher::ManualOverride</a>() {</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#a9935411c69763c03223e884be03447d2">controller</a>.<a class="code hl_function" href="../../d7/da3/group__cpp-misc.html#gaf906050c03bf3c4578239d9f0fd690a8">get_digital_new_press</a>(pros::E_CONTROLLER_DIGITAL_RIGHT)) {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <a class="code hl_variable" href="../../d8/d8b/classRobot_1_1Puncher.html#a98399eac48aaf5cb5d7286d7c575832e">Puncher::distancePuncherBool</a> = <a class="code hl_variable" href="../../d8/d8b/classRobot_1_1Puncher.html#a98399eac48aaf5cb5d7286d7c575832e">Puncher::distancePuncherBool</a> + 1;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d8/d8b/classRobot_1_1Puncher.html#a98399eac48aaf5cb5d7286d7c575832e">Puncher::distancePuncherBool</a> == 2) {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            <a class="code hl_variable" href="../../d8/d8b/classRobot_1_1Puncher.html#a98399eac48aaf5cb5d7286d7c575832e">Puncher::distancePuncherBool</a> = 0;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        }</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        std::printf(<span class="stringliteral">&quot;Puncher: %d\n&quot;</span>, <a class="code hl_variable" href="../../d8/d8b/classRobot_1_1Puncher.html#a98399eac48aaf5cb5d7286d7c575832e">Puncher::distancePuncherBool</a>);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d8/d8b/classRobot_1_1Puncher.html#a98399eac48aaf5cb5d7286d7c575832e">Puncher::distancePuncherBool</a> == 0) {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#a9935411c69763c03223e884be03447d2">controller</a>.<a class="code hl_function" href="../../d7/da3/group__cpp-misc.html#ga387440deb8f377cf793cf02ee766e521">print</a>(0, 0, <span class="stringliteral">&quot;Dist. punch on&quot;</span>);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        }</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d8/d8b/classRobot_1_1Puncher.html#a98399eac48aaf5cb5d7286d7c575832e">Puncher::distancePuncherBool</a> == 1) {</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#a9935411c69763c03223e884be03447d2">controller</a>.<a class="code hl_function" href="../../d7/da3/group__cpp-misc.html#ga387440deb8f377cf793cf02ee766e521">print</a>(0, 0, <span class="stringliteral">&quot;Dist. punch off&quot;</span>);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        }</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    }</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>}</div>
+</div>
+<div class="ttc" id="aapi_8h_html"><div class="ttname"><a href="../../dc/d65/api_8h.html">api.h</a></div></div>
+<div class="ttc" id="aapix_8h_html"><div class="ttname"><a href="../../db/d7e/apix_8h.html">apix.h</a></div></div>
+<div class="ttc" id="aclassRobot_1_1Puncher_html_a4c7bf9d207fc3877217116a787e33c34"><div class="ttname"><a href="../../d8/d8b/classRobot_1_1Puncher.html#a4c7bf9d207fc3877217116a787e33c34">Robot::Puncher::DistanceRun</a></div><div class="ttdeci">void DistanceRun()</div><div class="ttdef"><b>Definition</b> <a href="#l00026">puncher.cpp:26</a></div></div>
+<div class="ttc" id="aclassRobot_1_1Puncher_html_a63973e01011483e2a32b15ff2534bfdb"><div class="ttname"><a href="../../d8/d8b/classRobot_1_1Puncher.html#a63973e01011483e2a32b15ff2534bfdb">Robot::Puncher::PuncherSwitch</a></div><div class="ttdeci">void PuncherSwitch()</div><div class="ttdoc">Toggles whether the distance sensor is activated or not and prints it out.</div><div class="ttdef"><b>Definition</b> <a href="#l00072">puncher.cpp:72</a></div></div>
+<div class="ttc" id="aclassRobot_1_1Puncher_html_a6aa6d1412bf15a478e21eba355533aa7"><div class="ttname"><a href="../../d8/d8b/classRobot_1_1Puncher.html#a6aa6d1412bf15a478e21eba355533aa7">Robot::Puncher::run</a></div><div class="ttdeci">void run()</div><div class="ttdef"><b>Definition</b> <a href="#l00048">puncher.cpp:48</a></div></div>
+<div class="ttc" id="aclassRobot_1_1Puncher_html_a98399eac48aaf5cb5d7286d7c575832e"><div class="ttname"><a href="../../d8/d8b/classRobot_1_1Puncher.html#a98399eac48aaf5cb5d7286d7c575832e">Robot::Puncher::distancePuncherBool</a></div><div class="ttdeci">int distancePuncherBool</div><div class="ttdoc">Determines whether to use the distance sensor or not.</div><div class="ttdef"><b>Definition</b> <a href="../../df/d25/puncher_8h_source.html#l00071">puncher.h:71</a></div></div>
+<div class="ttc" id="aclassRobot_1_1Puncher_html_aa76eae5bd736176c938041aae81c06c1"><div class="ttname"><a href="../../d8/d8b/classRobot_1_1Puncher.html#aa76eae5bd736176c938041aae81c06c1">Robot::Puncher::UserRun</a></div><div class="ttdeci">void UserRun()</div><div class="ttdoc">Runs the puncher based on the given autonomous value.</div><div class="ttdef"><b>Definition</b> <a href="#l00011">puncher.cpp:11</a></div></div>
+<div class="ttc" id="aclassRobot_1_1Puncher_html_aad7537db5dd680d94b5f0af9f215c25f"><div class="ttname"><a href="../../d8/d8b/classRobot_1_1Puncher.html#aad7537db5dd680d94b5f0af9f215c25f">Robot::Puncher::toShoot</a></div><div class="ttdeci">int toShoot()</div><div class="ttdoc">Checks if the distance sensor is connected and whether to shoot.</div><div class="ttdef"><b>Definition</b> <a href="#l00058">puncher.cpp:58</a></div></div>
+<div class="ttc" id="aclassRobot_1_1Puncher_html_ac2bf38bdc5897a8b41d83c15b15f61d0"><div class="ttname"><a href="../../d8/d8b/classRobot_1_1Puncher.html#ac2bf38bdc5897a8b41d83c15b15f61d0">Robot::Puncher::Puncher</a></div><div class="ttdeci">Puncher()</div><div class="ttdef"><b>Definition</b> <a href="#l00068">puncher.cpp:68</a></div></div>
+<div class="ttc" id="aclassRobot_1_1Puncher_html_ac63f708180d7ebb4bc3acb732a46edd2"><div class="ttname"><a href="../../d8/d8b/classRobot_1_1Puncher.html#ac63f708180d7ebb4bc3acb732a46edd2">Robot::Puncher::ManualOverride</a></div><div class="ttdeci">void ManualOverride()</div><div class="ttdef"><b>Definition</b> <a href="#l00095">puncher.cpp:95</a></div></div>
+<div class="ttc" id="adrivetrain_8h_html"><div class="ttname"><a href="../../d5/d9a/drivetrain_8h.html">drivetrain.h</a></div><div class="ttdoc">Contains the declaration of the Drivetrain class.</div></div>
+<div class="ttc" id="aglobals_8h_html"><div class="ttname"><a href="../../d5/d87/globals_8h.html">globals.h</a></div><div class="ttdoc">Contains global variables and type definitions for the Robot namespace.</div></div>
+<div class="ttc" id="agroup__cpp-distance_html_ga9e231cbf8c8fc1cdb46105ad8f72ef23"><div class="ttname"><a href="../../d8/d24/group__cpp-distance.html#ga9e231cbf8c8fc1cdb46105ad8f72ef23">pros::v5::Distance::get</a></div><div class="ttdeci">virtual std::int32_t get()</div></div>
+<div class="ttc" id="agroup__cpp-llemu_html_ga515526f1d3069a6aa985512273aa7788"><div class="ttname"><a href="../../d0/d33/group__cpp-llemu.html#ga515526f1d3069a6aa985512273aa7788">pros::lcd::set_text</a></div><div class="ttdeci">bool set_text(std::int16_t line, std::string text)</div></div>
+<div class="ttc" id="agroup__cpp-llemu_html_gaef44947cea9006f86d4aaa2e32856835"><div class="ttname"><a href="../../d0/d33/group__cpp-llemu.html#gaef44947cea9006f86d4aaa2e32856835">pros::lcd::clear_line</a></div><div class="ttdeci">bool clear_line(std::int16_t line)</div></div>
+<div class="ttc" id="agroup__cpp-misc_html_ga387440deb8f377cf793cf02ee766e521"><div class="ttname"><a href="../../d7/da3/group__cpp-misc.html#ga387440deb8f377cf793cf02ee766e521">pros::v5::Controller::print</a></div><div class="ttdeci">std::int32_t print(std::uint8_t line, std::uint8_t col, const char *fmt, Params... args)</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0e/misc_8hpp_source.html#l00265">misc.hpp:265</a></div></div>
+<div class="ttc" id="agroup__cpp-misc_html_gaac8a91edeced9a51c5f3bc9a1aac3bc6"><div class="ttname"><a href="../../d7/da3/group__cpp-misc.html#gaac8a91edeced9a51c5f3bc9a1aac3bc6">pros::v5::Controller::get_digital</a></div><div class="ttdeci">std::int32_t get_digital(controller_digital_e_t button)</div></div>
+<div class="ttc" id="agroup__cpp-misc_html_gaf906050c03bf3c4578239d9f0fd690a8"><div class="ttname"><a href="../../d7/da3/group__cpp-misc.html#gaf906050c03bf3c4578239d9f0fd690a8">pros::v5::Controller::get_digital_new_press</a></div><div class="ttdeci">std::int32_t get_digital_new_press(controller_digital_e_t button)</div></div>
+<div class="ttc" id="anamespaceRobot_1_1Globals_html"><div class="ttname"><a href="../../df/d3e/namespaceRobot_1_1Globals.html">Robot::Globals</a></div><div class="ttdoc">Contains global variables and type definitions for the Robot namespace.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d87/globals_8h_source.html#l00030">globals.h:30</a></div></div>
+<div class="ttc" id="anamespaceRobot_1_1Globals_html_a98c40509b6b482269269ef1291782bc4"><div class="ttname"><a href="../../df/d3e/namespaceRobot_1_1Globals.html#a98c40509b6b482269269ef1291782bc4">Robot::Globals::puncherToggleSwitch</a></div><div class="ttdeci">pros::ADIDigitalIn puncherToggleSwitch</div></div>
+<div class="ttc" id="anamespaceRobot_1_1Globals_html_a9935411c69763c03223e884be03447d2"><div class="ttname"><a href="../../df/d3e/namespaceRobot_1_1Globals.html#a9935411c69763c03223e884be03447d2">Robot::Globals::controller</a></div><div class="ttdeci">pros::Controller controller</div></div>
+<div class="ttc" id="anamespaceRobot_1_1Globals_html_aa94ad8c3efdb1b56efedb3d6bdcecc63"><div class="ttname"><a href="../../df/d3e/namespaceRobot_1_1Globals.html#aa94ad8c3efdb1b56efedb3d6bdcecc63">Robot::Globals::distance</a></div><div class="ttdeci">pros::Distance distance</div></div>
+<div class="ttc" id="anamespaceRobot_1_1Globals_html_ae1de33e7b736ec8ddad4c55f6d822f57"><div class="ttname"><a href="../../df/d3e/namespaceRobot_1_1Globals.html#ae1de33e7b736ec8ddad4c55f6d822f57">Robot::Globals::punchers</a></div><div class="ttdeci">pros::Motor_Group punchers</div></div>
+<div class="ttc" id="anamespaceRobot_html"><div class="ttname"><a href="../../da/d93/namespaceRobot.html">Robot</a></div><div class="ttdoc">Contains all objects generated by the 1516X team - Contains all of the subsystems,...</div></div>
+<div class="ttc" id="apuncher_8h_html"><div class="ttname"><a href="../../df/d25/puncher_8h.html">puncher.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_42a35307dcefecb9f25978d1dedb502f.html">subsystems</a></li><li class="navelem"><a class="el" href="../../d3/dcb/puncher_8cpp.html">puncher.cpp</a></li>
-    <li class="footer">Generated on Tue Feb 20 2024 18:31:50 for 1516b Over Under by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+    <li class="footer">Generated on Sun Jun 23 2024 18:52:20 for 1516X High Stakes by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>
 </body>

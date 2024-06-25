@@ -1,11 +1,9 @@
 var searchData=
 [
-  ['encoder_0',['Encoder',['../api__legacy_8h.html#a8940e381be25612beae112d6a0c38d85',1,'api_legacy.h']]],
-  ['ext_5fadi_5fencoder_5ft_1',['ext_adi_encoder_t',['../ext__adi_8h.html#a819f455cfd280a0a3f2489ee88aa19ac',1,'ext_adi.h']]],
-  ['ext_5fadi_5fgyro_5ft_2',['ext_adi_gyro_t',['../ext__adi_8h.html#aeb1fda9da4589cd3cd2e9efe5693f308',1,'ext_adi.h']]],
-  ['ext_5fadi_5fled_5ft_3',['ext_adi_led_t',['../ext__adi_8h.html#a0ba5db4df39c9b699914127c8cdb7f1a',1,'ext_adi.h']]],
-  ['ext_5fadi_5fport_5fpair_5ft_4',['ext_adi_port_pair_t',['../namespacepros.html#ae2fa09de922a5b257c32c110cd40f139',1,'pros']]],
-  ['ext_5fadi_5fport_5ftuple_5ft_5',['ext_adi_port_tuple_t',['../namespacepros.html#a940a54edfd928b2e5302010e3612f19c',1,'pros']]],
-  ['ext_5fadi_5fpotentiometer_5ft_6',['ext_adi_potentiometer_t',['../ext__adi_8h.html#a891a22b2cb7fee5d61a8f0f5c1c3d1b6',1,'ext_adi.h']]],
-  ['ext_5fadi_5fultrasonic_5ft_7',['ext_adi_ultrasonic_t',['../ext__adi_8h.html#a628d2ba74a77b5d590e4b865e3f4a7aa',1,'ext_adi.h']]]
+  ['base_0',['base',['../da/dfa/classfmt_1_1v10_1_1detail_1_1compile__parse__context.html#a614f03588dd5d8f3d7d2cc097c5009f9',1,'fmt::v10::detail::compile_parse_context::base'],['../d8/da7/classfmt_1_1v10_1_1appender.html#a900c076309e2dc08cd3b60c653ea0a4c',1,'fmt::v10::appender::base'],['../d2/df2/structfmt_1_1v10_1_1formatter_3_01T_00_01Char_00_01enable__if__t_3_01detail_1_1has__format__as_3_01T_01_4_1_1value_01_4_01_4.html#a0942c791eae125f22bf12436b86f858b',1,'fmt::v10::formatter&lt; T, Char, enable_if_t&lt; detail::has_format_as&lt; T &gt;::value &gt; &gt;::base']]],
+  ['bigit_1',['bigit',['../d3/df2/classfmt_1_1v10_1_1detail_1_1bigint.html#a0ff7a4291c227fedad17fcbab004e790',1,'fmt::v10::detail::bigint']]],
+  ['bool_5fconstant_2',['bool_constant',['../d1/d1a/namespacefmt_1_1v10.html#ab372d2beb2a927c78f4a86dbabaef5f5',1,'fmt::bool_constant'],['../d1/d1a/namespacefmt_1_1v10.html#ab372d2beb2a927c78f4a86dbabaef5f5',1,'fmt::v10::bool_constant']]],
+  ['buffer_5fappender_3',['buffer_appender',['../da/d2b/namespacefmt_1_1v10_1_1detail.html#ad8fb12c681eb057c86d997b189a9fc5c',1,'fmt::v10::detail']]],
+  ['buffer_5fcontext_4',['buffer_context',['../d1/d1a/namespacefmt_1_1v10.html#af3b1bcd47839cb1ba274916604cdacf5',1,'fmt::buffer_context'],['../d1/d1a/namespacefmt_1_1v10.html#af3b1bcd47839cb1ba274916604cdacf5',1,'fmt::v10::buffer_context']]],
+  ['button_5',['Button',['../d8/d0a/namespacepros_1_1adi.html#ae12d89d896e98ffd9e31b5e0bce2ea6b',1,'pros::adi']]]
 ];

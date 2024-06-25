@@ -35,20 +35,11 @@
 #define PROS_USE_LITERALS
 
 #include "api.h"
-#include "robot/auton.h"
-#include "globals.h"
-#include "robot/drivetrain.h"
-#include "robot/wings.h"
-#include "robot/elevation.h"
-#include "robot/puncher.h"
-#include "robot/intake.h"
-#include "robot/utility.h"
 
 /**
  * You should add more #includes here
  */
 //#include "okapi/api.hpp"
-//#include "pros/api_legacy.h"
 
 /**
  * If you find doing pros::Motor() to be tedious and you'd prefer just to do
@@ -87,4 +78,3 @@ void opcontrol(void);
 #endif
 
 #endif  // _PROS_MAIN_H_
-;

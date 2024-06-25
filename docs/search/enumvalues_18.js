@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['z_0',['z',['../namespaceokapi.html#abc16400b91bea99f326802bad79f9c99afbade9e36a3f36d3d676c1b808451dd7',1,'okapi']]]
+  ['zero_0',['zero',['../da/d2b/namespacefmt_1_1v10_1_1detail.html#a2fb1201515439baa6059de4de6c91319ad02c4c4cde7ae76252540d116a40f23a',1,'fmt::v10::detail']]]
 ];

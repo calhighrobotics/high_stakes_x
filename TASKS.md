@@ -2,7 +2,6 @@
 
 ## Ideas
 - Implement testing for the codebase
-- Include Okapi/Sylib or other libraries for more accurate functionality
 
 ## To Complete
 - Write a GUI for the Brain Screen with required information for the driver

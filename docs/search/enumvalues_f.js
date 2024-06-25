@@ -1,15 +1,21 @@
 var searchData=
 [
-  ['pale_5fgoldenrod_0',['pale_goldenrod',['../namespacepros.html#a5533dcafd69b8cfd93f36f13414e2cffa7c36094f728ffad63ec68c40f2adb9f2',1,'pros']]],
-  ['pale_5fgreen_1',['pale_green',['../namespacepros.html#a5533dcafd69b8cfd93f36f13414e2cffa573cc0c97e7f05440b7ca67a93e46349',1,'pros']]],
-  ['pale_5fturquoise_2',['pale_turquoise',['../namespacepros.html#a5533dcafd69b8cfd93f36f13414e2cffa707832f12c57d104ccba9158524e8e69',1,'pros']]],
-  ['pale_5fviolet_5fred_3',['pale_violet_red',['../namespacepros.html#a5533dcafd69b8cfd93f36f13414e2cffab5bd346b77f564748d4d2743156ed6e8',1,'pros']]],
-  ['papay_5fwhip_4',['papay_whip',['../namespacepros.html#a5533dcafd69b8cfd93f36f13414e2cffaa508f4c2e588f66eb38e05b964bf5fdb',1,'pros']]],
-  ['partner_5',['partner',['../namespaceokapi.html#a56349a0562b06c6ffc742e94cb1e4361a7454739e907f5595ae61d84b8547f574',1,'okapi']]],
-  ['peach_5fpuff_6',['peach_puff',['../namespacepros.html#a5533dcafd69b8cfd93f36f13414e2cffae74648a463c3d18a05e153977cb39855',1,'pros']]],
-  ['peru_7',['peru',['../namespacepros.html#a5533dcafd69b8cfd93f36f13414e2cffa32e8419a7ecb8f918c70fdadf783e3d8',1,'pros']]],
-  ['pink_8',['pink',['../namespacepros.html#a5533dcafd69b8cfd93f36f13414e2cffa4a0b0dcedd48f780778d1cd1bb8f9877',1,'pros']]],
-  ['plum_9',['plum',['../namespacepros.html#a5533dcafd69b8cfd93f36f13414e2cffa3e042037287d6871eec3dbd48556b0b4',1,'pros']]],
-  ['powder_5fblue_10',['powder_blue',['../namespacepros.html#a5533dcafd69b8cfd93f36f13414e2cffa76f258d530f43c55523384b472086771',1,'pros']]],
-  ['purple_11',['purple',['../namespacepros.html#a5533dcafd69b8cfd93f36f13414e2cffabb7aedfa61007447dd6efaf9f37641e3',1,'pros']]]
+  ['packed_5farg_5fbits_0',['packed_arg_bits',['../da/d2b/namespacefmt_1_1v10_1_1detail.html#a1e6fe4efc7f81168d64adc80b0696451a57e0322a4d56d1fd946cdc96d74efd94',1,'fmt::v10::detail']]],
+  ['pale_5fgoldenrod_1',['pale_goldenrod',['../d1/d8a/group__cpp-colors.html#gga5533dcafd69b8cfd93f36f13414e2cffa7c36094f728ffad63ec68c40f2adb9f2',1,'pros']]],
+  ['pale_5fgreen_2',['pale_green',['../d1/d8a/group__cpp-colors.html#gga5533dcafd69b8cfd93f36f13414e2cffa573cc0c97e7f05440b7ca67a93e46349',1,'pros']]],
+  ['pale_5fturquoise_3',['pale_turquoise',['../d1/d8a/group__cpp-colors.html#gga5533dcafd69b8cfd93f36f13414e2cffa707832f12c57d104ccba9158524e8e69',1,'pros']]],
+  ['pale_5fviolet_5fred_4',['pale_violet_red',['../d1/d8a/group__cpp-colors.html#gga5533dcafd69b8cfd93f36f13414e2cffab5bd346b77f564748d4d2743156ed6e8',1,'pros']]],
+  ['papay_5fwhip_5',['papay_whip',['../d1/d8a/group__cpp-colors.html#gga5533dcafd69b8cfd93f36f13414e2cffaa508f4c2e588f66eb38e05b964bf5fdb',1,'pros']]],
+  ['peach_5fpuff_6',['peach_puff',['../d1/d8a/group__cpp-colors.html#gga5533dcafd69b8cfd93f36f13414e2cffae74648a463c3d18a05e153977cb39855',1,'pros']]],
+  ['peru_7',['peru',['../d1/d8a/group__cpp-colors.html#gga5533dcafd69b8cfd93f36f13414e2cffa32e8419a7ecb8f918c70fdadf783e3d8',1,'pros']]],
+  ['pink_8',['pink',['../d1/d8a/group__cpp-colors.html#gga5533dcafd69b8cfd93f36f13414e2cffa4a0b0dcedd48f780778d1cd1bb8f9877',1,'pros']]],
+  ['plum_9',['plum',['../d1/d8a/group__cpp-colors.html#gga5533dcafd69b8cfd93f36f13414e2cffa3e042037287d6871eec3dbd48556b0b4',1,'pros']]],
+  ['plus_10',['plus',['../d5/de7/namespacefmt_1_1v10_1_1sign.html#ab690b56851865d06925444d7124c030da61fcd2c6c2ccbc39c4abb01472378a41',1,'fmt::v10::sign']]],
+  ['pointer_11',['pointer',['../d1/d1a/namespacefmt_1_1v10.html#a852a96f4a48f4f85b5f93a3d2042e080accac8a66d468e2522611be86933cc0d9',1,'fmt::v10']]],
+  ['pointer_5fset_12',['pointer_set',['../da/d2b/namespacefmt_1_1v10_1_1detail.html#ae0c837c1dc10296b8b19ee8564d5610da293e7580a53762cb876f1b460517b138',1,'fmt::v10::detail']]],
+  ['pointer_5ftype_13',['pointer_type',['../da/d2b/namespacefmt_1_1v10_1_1detail.html#a922f5660f2cd449b7ba0e1113560eb65ac4c3a6c59d8a6e74dc8b960f585f494a',1,'fmt::v10::detail']]],
+  ['powder_5fblue_14',['powder_blue',['../d1/d8a/group__cpp-colors.html#gga5533dcafd69b8cfd93f36f13414e2cffa76f258d530f43c55523384b472086771',1,'pros']]],
+  ['precision_15',['precision',['../da/d2b/namespacefmt_1_1v10_1_1detail.html#a2fb1201515439baa6059de4de6c91319ae2794d8f12719281eff5601251c8a680',1,'fmt::v10::detail']]],
+  ['predecessor_5fcloser_16',['predecessor_closer',['../da/d2b/namespacefmt_1_1v10_1_1detail.html#afe4f94dfbe480885a3b46c1d610b44e4ad374e5241c1ab399bc25fc57ce142ac5',1,'fmt::v10::detail']]],
+  ['purple_17',['purple',['../d1/d8a/group__cpp-colors.html#gga5533dcafd69b8cfd93f36f13414e2cffabb7aedfa61007447dd6efaf9f37641e3',1,'pros']]]
 ];

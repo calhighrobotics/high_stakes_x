@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['motorget_0',['motorGet',['../api__legacy_8h.html#a6818b7f8a192779991f6eb0cb34098a5',1,'api_legacy.h']]],
-  ['motorset_1',['motorSet',['../api__legacy_8h.html#a59a0d6bd050cd259ad488e68f856ae81',1,'api_legacy.h']]],
-  ['motorstop_2',['motorStop',['../api__legacy_8h.html#a2eda82812d291d642e2d19f8cd116861',1,'api_legacy.h']]],
-  ['mutexcreate_3',['mutexCreate',['../api__legacy_8h.html#af6365f588f0af51030b92491254a83d2',1,'api_legacy.h']]],
-  ['mutexgive_4',['mutexGive',['../api__legacy_8h.html#a0a5476ac4cb9f11c74a30bf978dd7c74',1,'api_legacy.h']]],
-  ['mutextake_5',['mutexTake',['../api__legacy_8h.html#af09a46cb66372fd81f431d914c65457f',1,'api_legacy.h']]]
+  ['qrcodegen_5fbuffer_5flen_5ffor_5fversion_0',['qrcodegen_BUFFER_LEN_FOR_VERSION',['../d1/d8c/qrcodegen_8h.html#a44e02d707085c5157c9a4d1293786aaf',1,'qrcodegen.h']]],
+  ['qrcodegen_5fbuffer_5flen_5fmax_1',['qrcodegen_BUFFER_LEN_MAX',['../d1/d8c/qrcodegen_8h.html#a82257a23d67f51b04926c4fd64bc4fa5',1,'qrcodegen.h']]],
+  ['qrcodegen_5fversion_5fmax_2',['qrcodegen_VERSION_MAX',['../d1/d8c/qrcodegen_8h.html#a347f93227050ed89e6f70f0b1cfb64fe',1,'qrcodegen.h']]],
+  ['qrcodegen_5fversion_5fmin_3',['qrcodegen_VERSION_MIN',['../d1/d8c/qrcodegen_8h.html#a8d1f6f0044dde26b3cda74b815be3f2c',1,'qrcodegen.h']]]
 ];

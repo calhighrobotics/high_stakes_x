@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['imu_0',['IMU',['../namespacepros.html#a9ed8d722c77c4619fc19adb2d8106b11',1,'pros']]],
-  ['imu_5faccel_5fs_5ft_1',['imu_accel_s_t',['../imu_8h.html#a70eb3173193f4f46266eade4c243f662',1,'imu.h']]],
-  ['imu_5fgyro_5fs_5ft_2',['imu_gyro_s_t',['../imu_8h.html#a5b9e240cfb181cce3c741e29efbbbf23',1,'imu.h']]],
-  ['imu_5fstatus_5fe_5ft_3',['imu_status_e_t',['../imu_8h.html#af82c033befb487502f13ae11dfc10231',1,'imu.h']]]
+  ['difference_5ftype_0',['difference_type',['../de/deb/classfmt_1_1v10_1_1detail_1_1counting__iterator.html#a7e413543091075f2aa054aee28d331c5',1,'fmt::v10::detail::counting_iterator']]],
+  ['double_5fbigit_1',['double_bigit',['../d3/df2/classfmt_1_1v10_1_1detail_1_1bigint.html#a5419138435d92ad992d67697546433af',1,'fmt::v10::detail::bigint']]],
+  ['duration_2',['duration',['../d7/d6d/group__cpp-rtos.html#ga7809f574558a544b1c4a45d75fb395bf',1,'pros::rtos::Clock']]]
 ];

@@ -1,18 +1,15 @@
 var searchData=
 [
-  ['v_0',['v',['../structlv__color__hsv__t.html#aee68a0e7d6e57be412bc49a241cf02bf',1,'lv_color_hsv_t']]],
-  ['v5motormaxvoltage_1',['v5MotorMaxVoltage',['../namespaceokapi.html#a4507bf58013826d1597fd5e548175612',1,'okapi']]],
-  ['value_2',['value',['../classokapi_1_1_r_quantity.html#a22d23db5f6efb6570e0175af2e619054',1,'okapi::RQuantity']]],
-  ['var_3',['var',['../classpros_1_1_mutex_var_lock.html#a65e37c88488f541a28add7ee11e67c23',1,'pros::MutexVarLock::var'],['../classpros_1_1_mutex_var.html#a75722dc2a28fe921d8070efd5e281b8e',1,'pros::MutexVar::var']]],
-  ['vect_4',['vect',['../struct__lv__indev__proc__t.html#a311ca773c25e7719b27ec09a36bf17e1',1,'_lv_indev_proc_t']]],
-  ['vector_5',['vector',['../structsquiggles_1_1_profile_point.html#a03ed98d34e41a0e93bad3dc06dd30f38',1,'squiggles::ProfilePoint']]],
-  ['vel_6',['vel',['../structokapi_1_1_p_i_d_tuner_1_1_particle.html#a16dc34bf86fd5c57182d513a597249c8',1,'okapi::PIDTuner::Particle::vel'],['../classokapi_1_1_vel_math.html#af8386892892d453a118581e46839a0c3',1,'okapi::VelMath::vel'],['../classsquiggles_1_1_control_vector.html#a9ee396cd8130c01c7ab979793692ee84',1,'squiggles::ControlVector::vel'],['../structsquiggles_1_1_spline_generator_1_1_generated_vector.html#afd93c2a25f8f240ff585d3c65f29b13a',1,'squiggles::SplineGenerator::GeneratedVector::vel']]],
-  ['velmath_7',['velMath',['../classokapi_1_1_iterative_vel_p_i_d_controller.html#ada933662b0e7fc732590a46dfc643945',1,'okapi::IterativeVelPIDController::velMath'],['../classokapi_1_1_async_vel_controller_builder.html#af75ae3c48370adae66723c07ee75f098',1,'okapi::AsyncVelControllerBuilder::velMath']]],
-  ['velocitymode_8',['velocityMode',['../classokapi_1_1_chassis_controller_p_i_d.html#ac1ef51ed33571d43c8bf0b3fe3aff870',1,'okapi::ChassisControllerPID']]],
-  ['ver_9',['ver',['../structlv__style__t.html#a48710f20c3dcb6c4f69da557206282ad',1,'lv_style_t']]],
-  ['verbose_10',['verbose',['../namespacelemlib.html#a0908db04fbb48d342fa80afd2c0f96de',1,'lemlib']]],
-  ['vertical1_11',['vertical1',['../structlemlib_1_1_odom_sensors__t.html#a1fd959195255a1ef44a0e6e58c88fd7b',1,'lemlib::OdomSensors_t']]],
-  ['vertical2_12',['vertical2',['../structlemlib_1_1_odom_sensors__t.html#a92e9c9f2efd49f6b0c3f33f612708e6a',1,'lemlib::OdomSensors_t']]],
-  ['vision_5fobject_5fs_5ft_13',['vision_object_s_t',['../vision_8h.html#ae619120558539c13e53b5a6f42fb4375',1,'vision.h']]],
-  ['vision_5fsignature_5fs_5ft_14',['vision_signature_s_t',['../vision_8h.html#a135c729c7277f6cc019c2924088a5fd5',1,'vision.h']]]
+  ['w_0',['w',['../df/d74/structlv__img__header__t.html#a6553f8a9dc1a0f8c50dc51dda3aab537',1,'lv_img_header_t']]],
+  ['w_5flayout_1',['w_layout',['../d2/d48/struct__lv__obj__t.html#a652b398250dc510c30b0075e3b6e429d',1,'_lv_obj_t']]],
+  ['wait_5fcb_2',['wait_cb',['../d1/d47/struct__lv__disp__drv__t.html#a8a2da37af8c2236f72b54a008bb60206',1,'_lv_disp_drv_t']]],
+  ['wait_5ffor_5ffinish_3',['wait_for_finish',['../da/d0f/struct__lv__draw__ctx__t.html#a43a0e4bbf6c280dbfee726b8eea55a8d',1,'_lv_draw_ctx_t']]],
+  ['wait_5funtil_5frelease_4',['wait_until_release',['../df/d29/struct__lv__indev__proc__t.html#affc96e7c25e11f103573f7d9e5fd102f',1,'_lv_indev_proc_t']]],
+  ['wheeldiameter_5',['wheelDiameter',['../d5/d5f/classlemlib_1_1Drivetrain.html#af8c059f8515c76cd4ad035934b0076ce',1,'lemlib::Drivetrain']]],
+  ['width_6',['width',['../df/deb/structfmt_1_1v10_1_1format__specs.html#a1b5167b5d8c1bbe5f38d6066cee264e2',1,'fmt::v10::format_specs::width'],['../d3/d0b/structlv__draw__arc__dsc__t.html#a4b6bc7184b2e4aca2834c3ff8552a916',1,'lv_draw_arc_dsc_t::width'],['../db/d82/structlv__draw__line__dsc__t.html#a0fc410ae806fa86bcd511b4931824355',1,'lv_draw_line_dsc_t::width']]],
+  ['width_5fdef_7',['width_def',['../d0/d4a/struct__lv__obj__class__t.html#a282f2c7fa4fda0b656636167b61efe47',1,'_lv_obj_class_t']]],
+  ['width_5fref_8',['width_ref',['../de/d28/structfmt_1_1v10_1_1detail_1_1dynamic__format__specs.html#ab3eb59c6ad865b598ec00a671f91d388',1,'fmt::v10::detail::dynamic_format_specs']]],
+  ['winduprange_9',['windupRange',['../d8/df4/classlemlib_1_1ControllerSettings.html#a6677618b2b661eba088a8408e0d6dabc',1,'lemlib::ControllerSettings::windupRange'],['../d4/deb/classlemlib_1_1PID.html#a940b30e5823f99c40217f956b951d194',1,'lemlib::PID::windupRange']]],
+  ['wrap_10',['wrap',['../da/d0a/struct__lv__group__t.html#a9be7897b37b9557f669ea4465db79db2',1,'_lv_group_t']]],
+  ['write_5fcb_11',['write_cb',['../df/d93/struct__lv__fs__drv__t.html#ab117ba33c0378b58ca87ec55f88cc555',1,'_lv_fs_drv_t']]]
 ];

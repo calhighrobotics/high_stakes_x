@@ -1,0 +1,7 @@
+var searchData=
+[
+  ['screen_20c_20api_0',['Screen C API',['../dd/db2/group__c-screen.html',1,'Simplified Brain Screen C API'],['../d9/d49/group__cpp-screen.html',1,'Simplified Brain Screen C++ API']]],
+  ['sensor_20c_20api_1',['Sensor C API',['../d1/d00/group__c-distance.html',1,'VEX Distance Sensor C API'],['../d8/d24/group__cpp-distance.html',1,'VEX Distance Sensor C++ API'],['../d9/da8/group__c-gps.html',1,'VEX GPS Sensor C API'],['../d5/d80/group__cpp-gps.html',1,'VEX GPS Sensor C API'],['../d1/d83/group__c-imu.html',1,'VEX Inertial Sensor C API'],['../d6/ded/group__cpp-imu.html',1,'VEX Inertial Sensor C++ API'],['../dc/d62/group__c-optical.html',1,'VEX Optical Sensor C API'],['../df/d8a/group__cpp-optical.html',1,'VEX Optical Sensor C++ API'],['../d9/d01/group__c-rotation.html',1,'VEX Rotation Sensor C API'],['../d2/dd0/group__cpp-rotation.html',1,'VEX Rotation Sensor C++ API'],['../de/d34/group__c-vision.html',1,'Vision Sensor C API'],['../d3/de5/group__cpp-vision.html',1,'Vision Sensor C++ API']]],
+  ['serial_20c_20api_2',['Serial C API',['../d7/dde/group__c-serial.html',1,'Generic Serial C API'],['../df/d5e/group__cpp-serial.html',1,'Generic Serial C++ API']]],
+  ['simplified_20brain_20screen_20c_20api_3',['Simplified Brain Screen C API',['../dd/db2/group__c-screen.html',1,'Simplified Brain Screen C API'],['../d9/d49/group__cpp-screen.html',1,'Simplified Brain Screen C++ API']]]
+];

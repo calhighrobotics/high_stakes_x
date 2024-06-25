@@ -1,8 +1,25 @@
 var searchData=
 [
-  ['tan_0',['tan',['../namespacepros.html#a5533dcafd69b8cfd93f36f13414e2cffa5b2d4484498235e80d61a233a7c04991',1,'pros']]],
-  ['teal_1',['teal',['../namespacepros.html#a5533dcafd69b8cfd93f36f13414e2cffa3c4184e82bb3be8fa32669800fb7373c',1,'pros']]],
-  ['thistle_2',['thistle',['../namespacepros.html#a5533dcafd69b8cfd93f36f13414e2cffa94ec2b8d73527db3da316ad28195219e',1,'pros']]],
-  ['tomato_3',['tomato',['../namespacepros.html#a5533dcafd69b8cfd93f36f13414e2cffa006f87892f47ef9aa60fa5ed01a440fb',1,'pros']]],
-  ['turquoise_4',['turquoise',['../namespacepros.html#a5533dcafd69b8cfd93f36f13414e2cffadcbb31fdf774bcd3f09d54c4487377c0',1,'pros']]]
+  ['saddle_5fbrown_0',['saddle_brown',['../d1/d8a/group__cpp-colors.html#gga5533dcafd69b8cfd93f36f13414e2cffa0b1ae0e5580eaa0e6968ec6c8143ecac',1,'pros']]],
+  ['salmon_1',['salmon',['../d1/d8a/group__cpp-colors.html#gga5533dcafd69b8cfd93f36f13414e2cffa180fd182f9a0742f483619781ccc36c4',1,'pros']]],
+  ['sandy_5fbrown_2',['sandy_brown',['../d1/d8a/group__cpp-colors.html#gga5533dcafd69b8cfd93f36f13414e2cffa9a19a83d0097df35f7ba7af753f0537d',1,'pros']]],
+  ['sea_5fgreen_3',['sea_green',['../d1/d8a/group__cpp-colors.html#gga5533dcafd69b8cfd93f36f13414e2cffa2e1e305a440fcfc9109858a7b2e20ca7',1,'pros']]],
+  ['seashell_4',['seashell',['../d1/d8a/group__cpp-colors.html#gga5533dcafd69b8cfd93f36f13414e2cffa1c2123d726ed9e6bc173b68f13915566',1,'pros']]],
+  ['serial_5',['serial',['../d3/d60/group__cpp-device.html#gga0a7387ba6156c831ba1e61d75a04c3d9a74136b24217cb75599440e6e1d807cf7',1,'pros::v5']]],
+  ['sienna_6',['sienna',['../d1/d8a/group__cpp-colors.html#gga5533dcafd69b8cfd93f36f13414e2cffa91c001e5547439063fefe550d83533b6',1,'pros']]],
+  ['sign_7',['sign',['../da/d2b/namespacefmt_1_1v10_1_1detail.html#a2fb1201515439baa6059de4de6c91319a04b29480233f4def5c875875b6bdc3b1',1,'fmt::v10::detail']]],
+  ['silver_8',['silver',['../d1/d8a/group__cpp-colors.html#gga5533dcafd69b8cfd93f36f13414e2cffa97f014516561ef487ec368d6158eb3f4',1,'pros']]],
+  ['sint_5fset_9',['sint_set',['../da/d2b/namespacefmt_1_1v10_1_1detail.html#ae0c837c1dc10296b8b19ee8564d5610dac0b005f5a84d402c985c816fdb49c973',1,'fmt::v10::detail']]],
+  ['sky_5fblue_10',['sky_blue',['../d1/d8a/group__cpp-colors.html#gga5533dcafd69b8cfd93f36f13414e2cffad06424e64af2d470476a234e12a48a40',1,'pros']]],
+  ['slate_5fblue_11',['slate_blue',['../d1/d8a/group__cpp-colors.html#gga5533dcafd69b8cfd93f36f13414e2cffa8f72f2a45cee9a5f2e0afe5d2bb9d4b1',1,'pros']]],
+  ['slate_5fgray_12',['slate_gray',['../d1/d8a/group__cpp-colors.html#gga5533dcafd69b8cfd93f36f13414e2cffaf664bac577c1c520c4a98e63457d2f22',1,'pros']]],
+  ['slate_5fgrey_13',['slate_grey',['../d1/d8a/group__cpp-colors.html#gga5533dcafd69b8cfd93f36f13414e2cffab9a5527091c58510c379a416c8b7d1a3',1,'pros']]],
+  ['snow_14',['snow',['../d1/d8a/group__cpp-colors.html#gga5533dcafd69b8cfd93f36f13414e2cffa2b93fbdf27d43547bec8794054c28e00',1,'pros']]],
+  ['space_15',['space',['../d5/de7/namespacefmt_1_1v10_1_1sign.html#ab690b56851865d06925444d7124c030da7a971fd861f25b905536f46e35ee9cd9',1,'fmt::v10::sign']]],
+  ['spring_5fgreen_16',['spring_green',['../d1/d8a/group__cpp-colors.html#gga5533dcafd69b8cfd93f36f13414e2cffa67485a137fce2085007d93aa115cd093',1,'pros']]],
+  ['start_17',['start',['../da/d2b/namespacefmt_1_1v10_1_1detail.html#a2fb1201515439baa6059de4de6c91319aea2b2676c28c0db26d39331a336c6b92',1,'fmt::v10::detail']]],
+  ['steel_5fblue_18',['steel_blue',['../d1/d8a/group__cpp-colors.html#gga5533dcafd69b8cfd93f36f13414e2cffa00885bc107cec87940dfe4beadbab382',1,'pros']]],
+  ['string_19',['string',['../d1/d1a/namespacefmt_1_1v10.html#a852a96f4a48f4f85b5f93a3d2042e080ab45cffe084dd3d20d928bee85e7b0f21',1,'fmt::v10']]],
+  ['string_5fset_20',['string_set',['../da/d2b/namespacefmt_1_1v10_1_1detail.html#ae0c837c1dc10296b8b19ee8564d5610dae4d06ef7130886ed7fb84cddbdde0a24',1,'fmt::v10::detail']]],
+  ['string_5ftype_21',['string_type',['../da/d2b/namespacefmt_1_1v10_1_1detail.html#a922f5660f2cd449b7ba0e1113560eb65a4771e2c3115bb1af6ce17d9d35a0eb48',1,'fmt::v10::detail']]]
 ];
