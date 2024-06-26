@@ -23,24 +23,14 @@ pros::Motor LeftFront (-5, pros:: E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCOD
 pros::Motor LeftBack (-7, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 pros::Motor RightBack (8, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 pros::Motor LeftMid (-2, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-pros::Motor PuncherMotor (19, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-pros::Motor PuncherMotor2 (-20, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 pros::Motor RightMid (3, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 pros::Motor IntakeMotor (-9, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 
 pros::Imu inertial_sensor(15);
 pros::Distance distance(18);
 
-pros::ADIDigitalOut FrontWing ('A');
-pros::ADIDigitalOut BackWing1 ('B');
-pros::ADIDigitalOut BackWing2 ('C');
-pros::ADIDigitalOut Elevator ('D');
 
-pros::ADIDigitalIn puncherToggleSwitch('E');
-pros::ADIDigitalIn autonToggleSwitch('F');
-pros::ADIDigitalIn drivetrainToggleSwitch('G');
 
-pros::Motor_Group punchers ({PuncherMotor, PuncherMotor2});
 pros::Motor_Group drive_left ({LeftFront, LeftMid, LeftBack});
 pros::Motor_Group drive_right ({RightFront, RightMid, RightBack});
 pros::Motor_Group drive_ ({LeftFront, RightFront, LeftMid, RightMid, LeftBack, RightBack});
