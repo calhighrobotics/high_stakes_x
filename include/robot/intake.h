@@ -12,6 +12,6 @@ namespace Robot {
          * 
          * This function takes user input to control the intake system.
          */
-        void run();
+        void run(unsigned short direction);
     };
 }
