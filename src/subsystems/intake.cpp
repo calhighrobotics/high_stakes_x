@@ -26,6 +26,4 @@ void Intake::run(unsigned short direction) {
             IntakeMotor.move(0);
     }
 
-
-
 }
