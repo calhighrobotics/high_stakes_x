@@ -2,7 +2,6 @@
 #include "api.h"
 #include "robot/auton.h"
 #include "robot/drivetrain.h"
-#include "robot/wings.h"
 
 
 
@@ -18,44 +17,42 @@ namespace Robot {
     namespace Globals {
 
 pros::Controller controller (pros::E_CONTROLLER_MASTER);
-pros::Motor RightFront (6, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-pros::Motor LeftFront (-5, pros:: E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-pros::Motor LeftBack (-7, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-pros::Motor RightBack (8, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-pros::Motor LeftMid (-2, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-pros::Motor PuncherMotor (19, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-pros::Motor PuncherMotor2 (-20, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-pros::Motor RightMid (3, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
-pros::Motor IntakeMotor (-9, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
+pros::Motor RightFront (6, pros::v5::MotorGears::green, pros::v5::MotorUnits::degrees);
+pros::Motor LeftFront (-5, pros::v5::MotorGears::green, pros::v5::MotorUnits::degrees);
+pros::Motor LeftBack (-7, pros::v5::MotorGears::green, pros::v5::MotorUnits::degrees);
+pros::Motor RightBack (8, pros::v5::MotorGears::green, pros::v5::MotorUnits::degrees);
+pros::Motor LeftMid (-2, pros::v5::MotorGears::green, pros::v5::MotorUnits::degrees);
+pros::Motor PuncherMotor (19, pros::v5::MotorGears::green, pros::v5::MotorUnits::degrees);
+pros::Motor PuncherMotor2 (-20, pros::v5::MotorGears::green, pros::v5::MotorUnits::degrees);
+pros::Motor RightMid (3, pros::v5::MotorGears::green, pros::v5::MotorUnits::degrees);
+pros::Motor IntakeMotor (-9, pros::v5::MotorGears::green, pros::v5::MotorUnits::degrees);
 
 pros::Imu inertial_sensor(15);
 pros::Distance distance(18);
 
-pros::ADIDigitalOut FrontWing ('A');
-pros::ADIDigitalOut BackWing1 ('B');
-pros::ADIDigitalOut BackWing2 ('C');
-pros::ADIDigitalOut Elevator ('D');
+pros::adi::DigitalOut Elevator ('D');
 
-pros::ADIDigitalIn puncherToggleSwitch('E');
-pros::ADIDigitalIn autonToggleSwitch('F');
-pros::ADIDigitalIn drivetrainToggleSwitch('G');
+pros::adi::DigitalIn puncherToggleSwitch('E');
+pros::adi::DigitalIn autonToggleSwitch('F');
+pros::adi::DigitalIn drivetrainToggleSwitch('G');
 
-pros::Motor_Group punchers ({PuncherMotor, PuncherMotor2});
-pros::Motor_Group drive_left ({LeftFront, LeftMid, LeftBack});
-pros::Motor_Group drive_right ({RightFront, RightMid, RightBack});
-pros::Motor_Group drive_ ({LeftFront, RightFront, LeftMid, RightMid, LeftBack, RightBack});
+pros::MotorGroup punchers({PuncherMotor.get_port(), PuncherMotor2.get_port()});
+pros::MotorGroup drive_left({LeftFront.get_port(), LeftMid.get_port(), LeftBack.get_port()});
+pros::MotorGroup drive_right({RightFront.get_port(), RightMid.get_port(), RightBack.get_port()});
+pros::MotorGroup drive_({LeftFront.get_port(), RightFront.get_port(), LeftMid.get_port(), RightMid.get_port(), LeftBack.get_port(), RightBack.get_port()});
 
 
 // Describes the lemlib objects that are used to control the autonomous functions of the robot. 
-lemlib::Drivetrain_t drivetrain {
+lemlib::Drivetrain drivetrain {
     &drive_left, // left drivetrain motors
     &drive_right, // right drivetrain motors
     10, // track width
+    lemlib::Omniwheel::OLD_325,
     3.25, // wheel diameter - 3.25 on competition bot, 4 on test drivetrain
 	450 // wheel rpm - 360 rpm for competition bot, 200 for test drivetrain
 };
 
-lemlib::OdomSensors_t sensors {
+lemlib::OdomSensors sensors {
     nullptr, // vertical tracking wheel 1
     nullptr, // vertical tracking wheel 2
     nullptr, // horizontal tracking wheel 1
@@ -65,9 +62,11 @@ lemlib::OdomSensors_t sensors {
 
 
 // forward/backward PID
-lemlib::ChassisController_t lateralController {
+lemlib::ControllerSettings lateral_controller {
     33, // kP
+    0, // kI
     300, // kD
+    2, // Anti Windup
     1, // smallErrorRange
     100, // smallErrorTimeout
     3, // largeErrorRange
@@ -76,9 +75,11 @@ lemlib::ChassisController_t lateralController {
 };
  
 // turning PID
-lemlib::ChassisController_t angularController {
+lemlib::ControllerSettings angular_controller {
     6, // kP
+    0, // kI
     47, // kD
+    2, // Anti Windup
     1, // smallErrorRange
     100, // smallErrorTimeout
     3, // largeErrorRange
@@ -86,7 +87,11 @@ lemlib::ChassisController_t angularController {
     0.5 // slew rate
 };
 
-lemlib::Chassis chassis(drivetrain, lateralController, angularController, sensors);
+lemlib::Chassis chassis(drivetrain, 
+                lateral_controller, 
+                angular_controller, 
+                sensors
+            );
 
     }
 }

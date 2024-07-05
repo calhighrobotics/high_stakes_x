@@ -51,7 +51,6 @@ void Utility::displayLocation() {
 void Utility::display() {
     while (true) {
         if (!pros::competition::is_disabled()) {
-            pros::lcd::clear();
             // if (pros::c::registry_get_plugged_type(15) == 6) {
             Utility::displayLocation();
             // } 
