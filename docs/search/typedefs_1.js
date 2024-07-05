@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['accelerometer_0',['Accelerometer',['../d8/d0a/namespacepros_1_1adi.html#ad840ebf5de66c015821ed2036c39f058',1,'pros::adi']]],
+  ['accelerometer_0',['Accelerometer',['../d8/d0a/namespacepros_1_1adi.html#a355e412877d954dac8ba2acf5cf3c071',1,'pros::adi']]],
   ['adi_5fencoder_5ft_1',['adi_encoder_t',['../d1/d93/group__c-adi.html#gadc7331a863ca648693c688af1ae9a940',1,'adi.h']]],
   ['adi_5fgyro_5ft_2',['adi_gyro_t',['../d1/d93/group__c-adi.html#ga9c451728d4193f1a4e59d7dc489ac292',1,'adi.h']]],
   ['adi_5fled_5ft_3',['adi_led_t',['../d1/d93/group__c-adi.html#ga3f0cd6532514a01a1684ddbaaa40ef8d',1,'adi.h']]],
@@ -8,5 +8,21 @@ var searchData=
   ['adi_5fpotentiometer_5ft_5',['adi_potentiometer_t',['../d1/d93/group__c-adi.html#ga57a45eab54fec9fc2d0a16117a64ad96',1,'adi.h']]],
   ['adi_5fpotentiometer_5ftype_5fe_5ft_6',['adi_potentiometer_type_e_t',['../d1/d93/group__c-adi.html#gac3036e040a3f1ccf29abd64ebfe2fd9a',1,'adi.h']]],
   ['adi_5fultrasonic_5ft_7',['adi_ultrasonic_t',['../d1/d93/group__c-adi.html#ga642e06a44cad02177d4111261e17c3df',1,'adi.h']]],
-  ['align_5ft_8',['align_t',['../d1/d1a/namespacefmt_1_1v10.html#a2f28a9dde5b967c84801f7bf5cb737d9',1,'fmt::align_t'],['../d1/d1a/namespacefmt_1_1v10.html#a2f28a9dde5b967c84801f7bf5cb737d9',1,'fmt::v10::align_t']]]
+  ['adiaccelerometer_8',['ADIAccelerometer',['../da/d7c/namespacepros.html#aca9cec128f416c1283524557ddda4765',1,'pros']]],
+  ['adianalogin_9',['ADIAnalogIn',['../da/d7c/namespacepros.html#a8dda0a0ec33bd4d49a6a5f14c98a8d34',1,'pros']]],
+  ['adianalogout_10',['ADIAnalogOut',['../da/d7c/namespacepros.html#aae2686652c31b3766aa33df57df29e76',1,'pros']]],
+  ['adibutton_11',['ADIButton',['../da/d7c/namespacepros.html#a8ace8552bdd59a6a5b44819d2a218b2a',1,'pros']]],
+  ['adidigitalin_12',['ADIDigitalIn',['../da/d7c/namespacepros.html#a208a037a898d58f285b6128acd0a1fc0',1,'pros']]],
+  ['adidigitalout_13',['ADIDigitalOut',['../da/d7c/namespacepros.html#a21ed7fdd8b1b3ced1170d548700247d4',1,'pros']]],
+  ['adiencoder_14',['ADIEncoder',['../da/d7c/namespacepros.html#a64c42686b8c078d0685d4d0f055e3f1a',1,'pros']]],
+  ['adigyro_15',['ADIGyro',['../da/d7c/namespacepros.html#a1d3badba4889a292ed7ac81c03fe5feb',1,'pros']]],
+  ['adiled_16',['adiled',['../da/d7c/namespacepros.html#a9ec753b9c0ac84eb0b857722bf29be29',1,'pros::ADILED'],['../da/d7c/namespacepros.html#aee7644260dbacd29c71f07a815cdabe0',1,'pros::ADILed']]],
+  ['adilightsensor_17',['ADILightSensor',['../da/d7c/namespacepros.html#a11c018c912fa26796a0c0321cac74f5c',1,'pros']]],
+  ['adilinesensor_18',['ADILineSensor',['../da/d7c/namespacepros.html#a9adb842e76c6b970504aacd497ddc1ab',1,'pros']]],
+  ['adimotor_19',['ADIMotor',['../da/d7c/namespacepros.html#a264fb479aa48462565ee4d574afc8903',1,'pros']]],
+  ['adipneumatics_20',['ADIPneumatics',['../da/d7c/namespacepros.html#ab1f6acec81da80818268fb6583e01a1b',1,'pros']]],
+  ['adiport_21',['ADIPort',['../da/d7c/namespacepros.html#aa9ebabd907586b443492e76fa0b366cc',1,'pros']]],
+  ['adipotentiometer_22',['ADIPotentiometer',['../da/d7c/namespacepros.html#ad5234cfff3c2c0c23b6ed43c343899af',1,'pros']]],
+  ['adiultrasonic_23',['ADIUltrasonic',['../da/d7c/namespacepros.html#a6e5d7d014635a88c85078886cb6f110a',1,'pros']]],
+  ['align_5ft_24',['align_t',['../d1/d1a/namespacefmt_1_1v10.html#aaf42d311a05b56958fe3c53c58380cc9',1,'fmt::align_t'],['../d1/d1a/namespacefmt_1_1v10.html#aaf42d311a05b56958fe3c53c58380cc9',1,'fmt::v10::align_t']]]
 ];

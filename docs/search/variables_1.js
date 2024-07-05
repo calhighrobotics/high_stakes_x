@@ -14,7 +14,7 @@ var searchData=
   ['alt_11',['alt',['../df/deb/structfmt_1_1v10_1_1format__specs.html#a7576067f71e8b7b68225513a6339a296',1,'fmt::v10::format_specs']]],
   ['always_5fzero_12',['always_zero',['../df/d74/structlv__img__header__t.html#a2500e38eea0424cf5639521e4cd36f74',1,'lv_img_header_t']]],
   ['angle_13',['angle',['../d9/d27/structlv__draw__img__dsc__t.html#a938be358d933192daa2d065abd179eb5',1,'lv_draw_img_dsc_t']]],
-  ['angularcontroller_14',['angularController',['../df/d3e/namespaceRobot_1_1Globals.html#a15a5d2acb255490a395f8f6aa26d36ec',1,'Robot::Globals']]],
+  ['angular_5fcontroller_14',['angular_controller',['../df/d3e/namespaceRobot_1_1Globals.html#a7ec7662efd5e0bdeb4790cfa3330edf2',1,'Robot::Globals']]],
   ['angularlargeexit_15',['angularLargeExit',['../dc/df2/classlemlib_1_1Chassis.html#a69845def5621436c81b461c2ee6448bb',1,'lemlib::Chassis']]],
   ['angularpid_16',['angularPID',['../dc/df2/classlemlib_1_1Chassis.html#aad431c28b42cdcc4d6575d5b6ba7a983',1,'lemlib::Chassis']]],
   ['angularsettings_17',['angularSettings',['../dc/df2/classlemlib_1_1Chassis.html#aee8b37740f83be4bf380f646533be477',1,'lemlib::Chassis']]],
@@ -27,10 +27,10 @@ var searchData=
   ['area_5fact_24',['area_act',['../dd/d86/struct__lv__draw__layer__ctx__t.html#a205dd09ce2b914f003383aff9a4424ee',1,'_lv_draw_layer_ctx_t']]],
   ['area_5ffull_25',['area_full',['../dd/d86/struct__lv__draw__layer__ctx__t.html#a943bd13b55986df294119439f627c1d8',1,'_lv_draw_layer_ctx_t']]],
   ['args_26',['args',['../d3/dec/structfmt_1_1v10_1_1detail_1_1default__arg__formatter.html#a2ce9d7efdf2d4852b4c334e7a199a879',1,'fmt::v10::detail::default_arg_formatter']]],
-  ['args_5f_27',['args_',['../db/d85/structfmt_1_1v10_1_1detail_1_1arg__data.html#a839a931547aa5c9904b73d365ca6e597',1,'fmt::v10::detail::arg_data::args_'],['../d7/d99/structfmt_1_1v10_1_1detail_1_1arg__data_3_01T_00_01Char_00_01NUM__ARGS_00_010_01_4.html#ac6f5d99aa4f60e731c03fc86729fa1c9',1,'fmt::v10::detail::arg_data&lt; T, Char, NUM_ARGS, 0 &gt;::args_'],['../dd/d9a/classfmt_1_1v10_1_1basic__format__context.html#a954e9060ed9b977e2b0df411ade2086d',1,'fmt::v10::basic_format_context::args_'],['../d0/d4c/classfmt_1_1v10_1_1basic__format__args.html#ab6a7cfa0eb3ad98e88668b410e638c29',1,'fmt::v10::basic_format_args::args_']]],
+  ['args_5f_27',['args_',['../d7/d99/structfmt_1_1v10_1_1detail_1_1arg__data_3_01T_00_01Char_00_01NUM__ARGS_00_010_01_4.html#ac6f5d99aa4f60e731c03fc86729fa1c9',1,'fmt::v10::detail::arg_data&lt; T, Char, NUM_ARGS, 0 &gt;::args_'],['../d0/d4c/classfmt_1_1v10_1_1basic__format__args.html#ab6a7cfa0eb3ad98e88668b410e638c29',1,'fmt::v10::basic_format_args::args_'],['../dd/d9a/classfmt_1_1v10_1_1basic__format__context.html#a954e9060ed9b977e2b0df411ade2086d',1,'fmt::v10::basic_format_context::args_'],['../db/d85/structfmt_1_1v10_1_1detail_1_1arg__data.html#a839a931547aa5c9904b73d365ca6e597',1,'fmt::v10::detail::arg_data::args_']]],
   ['asset_28',['asset',['../d0/d78/asset_8hpp.html#a132fe4f7d81980f1e0f4316d4c6f2f35',1,'asset.hpp']]],
   ['auton_29',['auton',['../d1/db9/classRobot_1_1Autonomous.html#a35870e1dbd00c82d40f8181fbb257189',1,'Robot::Autonomous']]],
   ['autonname_30',['autonName',['../d1/db9/classRobot_1_1Autonomous.html#a051fde081c90377df56f41b796ffac2d',1,'Robot::Autonomous']]],
-  ['autontoggleswitch_31',['autonToggleSwitch',['../df/d3e/namespaceRobot_1_1Globals.html#a1a947054f19e896d42b2eadaddc2f9e1',1,'Robot::Globals']]],
+  ['autontoggleswitch_31',['autonToggleSwitch',['../df/d3e/namespaceRobot_1_1Globals.html#a06b9e49f2cb10dd4449587b742049d5a',1,'Robot::Globals']]],
   ['average_5fitem_5flength_32',['average_item_length',['../d9/d4d/structlv__lru__t.html#a4f59805ad13b086bf15852d5b2d94651',1,'lv_lru_t']]]
 ];

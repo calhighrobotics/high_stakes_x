@@ -1,10 +1,10 @@
 var abstract__motor_8hpp =
 [
-    [ "MotorCart", "dd/df1/abstract__motor_8hpp.html#a9161594b5d4aaab189b8c5180b8029eb", null ],
-    [ "MotorCartridge", "dd/df1/abstract__motor_8hpp.html#aa490ba54e66c43aef51337b776642f45", null ],
-    [ "MotorGear", "dd/df1/abstract__motor_8hpp.html#a005ea3d914dc7c9b6ef64ca2ddae8aa6", null ],
-    [ "MotorGearset", "dd/df1/abstract__motor_8hpp.html#ac89bb19a5a49feed3720d53cf4f0df67", null ],
-    [ "MotorUnits", "dd/df1/abstract__motor_8hpp.html#ab164848ace458086a09b21afe8c7ecbe", null ],
+    [ "MotorCart", "dd/df1/abstract__motor_8hpp.html#abf9576d4bca48ebfaab80b28ab8cccfd", null ],
+    [ "MotorCartridge", "dd/df1/abstract__motor_8hpp.html#a4bd99d7a615e3d0e8f98fd3c8f46db79", null ],
+    [ "MotorGear", "dd/df1/abstract__motor_8hpp.html#a5bd9eef7c35151f12919dbe4af53d605", null ],
+    [ "MotorGearset", "dd/df1/abstract__motor_8hpp.html#a48218272d0c325b6d8744cac8c349460", null ],
+    [ "MotorUnits", "dd/df1/abstract__motor_8hpp.html#a7cd55c418347e645411a2c01cd3dc299", null ],
     [ "MotorBrake", "dd/df1/abstract__motor_8hpp.html#aab8bc95b5a648f3f53437bb9b2734a91", [
       [ "coast", "dd/df1/abstract__motor_8hpp.html#aab8bc95b5a648f3f53437bb9b2734a91a756d153ba898e1be8218d4651009e981", null ],
       [ "brake", "dd/df1/abstract__motor_8hpp.html#aab8bc95b5a648f3f53437bb9b2734a91ab4628ac934a343cc5df197f6a709633b", null ],

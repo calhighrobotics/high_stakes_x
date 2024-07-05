@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['cache_0',['cache',['../dd/d49/structlv__font__fmt__txt__dsc__t.html#a81e27c73d7fcd9fd10440efe17bc15cd',1,'lv_font_fmt_txt_dsc_t::cache'],['../d0/df9/structlv__fs__file__t.html#ae0054715a28b0888d6016acec2199205',1,'lv_fs_file_t::cache']]],
+  ['cache_0',['cache',['../d0/df9/structlv__fs__file__t.html#ae0054715a28b0888d6016acec2199205',1,'lv_fs_file_t::cache'],['../dd/d49/structlv__font__fmt__txt__dsc__t.html#a81e27c73d7fcd9fd10440efe17bc15cd',1,'lv_font_fmt_txt_dsc_t::cache']]],
   ['cache_5fsize_1',['cache_size',['../df/d93/struct__lv__fs__drv__t.html#a2f1466977df43ca6fc16f62099ce5d73',1,'_lv_fs_drv_t']]],
   ['callbacks_2',['callbacks',['../d8/d81/structlcd__s.html#a94cf01cb0d74b92bdd798b95861ed2cd',1,'lcd_s']]],
   ['capacity_5f_3',['capacity_',['../d7/d8e/classfmt_1_1v10_1_1detail_1_1buffer.html#a4e9a0e5092899d48762d9d68b0811631',1,'fmt::v10::detail::buffer']]],
@@ -8,7 +8,7 @@ var searchData=
   ['cf_5',['cf',['../df/d74/structlv__img__header__t.html#a28513641737b777e0c546bd098eb58af',1,'lv_img_header_t']]],
   ['ch_6',['ch',['../df/dc5/unionlv__color1__t.html#a60ffe67d3b265b0691849c8b24a715ff',1,'lv_color1_t::ch'],['../d6/d98/unionlv__color8__t.html#aab45206d812e472f788e88fd5b125d30',1,'lv_color8_t::ch'],['../db/ddc/unionlv__color16__t.html#a7cbf305c9b2e5c64c2867ca6ef78713d',1,'lv_color16_t::ch'],['../d9/d9a/unionlv__color32__t.html#a2eae53e182307d6d555f8f40794fcefb',1,'lv_color32_t::ch']]],
   ['char_5fvalue_7',['char_value',['../d3/d11/classfmt_1_1v10_1_1detail_1_1value.html#a845b76bd8e8c19129e7d40dacf6af27a',1,'fmt::v10::detail::value']]],
-  ['chassis_8',['chassis',['../df/d3e/namespaceRobot_1_1Globals.html#af6c146decaf4b2052ddca763dfa5e211',1,'Robot::Globals']]],
+  ['chassis_8',['chassis',['../df/d3e/namespaceRobot_1_1Globals.html#a3294984ae5f02bd2f5b5c63509a8550c',1,'Robot::Globals']]],
   ['child_5fcnt_9',['child_cnt',['../dd/dd6/struct__lv__obj__spec__attr__t.html#a4e00767c29ba01c4f7be7e4ca5f1d52f',1,'_lv_obj_spec_attr_t']]],
   ['children_10',['children',['../dd/dd6/struct__lv__obj__spec__attr__t.html#a24899261813fe9686805031d6e753145',1,'_lv_obj_spec_attr_t']]],
   ['class_5fp_11',['class_p',['../d2/d48/struct__lv__obj__t.html#a5c45af901114834bdd67198582250b2d',1,'_lv_obj_t::class_p'],['../da/d70/structlv__obj__draw__part__dsc__t.html#a369f77530d63ba2f746509aab679c3ed',1,'lv_obj_draw_part_dsc_t::class_p']]],
@@ -21,7 +21,7 @@ var searchData=
   ['cmap_5fnum_18',['cmap_num',['../dd/d49/structlv__font__fmt__txt__dsc__t.html#ab807f5078f12759fd740d37413ad7516',1,'lv_font_fmt_txt_dsc_t']]],
   ['cmaps_19',['cmaps',['../dd/d49/structlv__font__fmt__txt__dsc__t.html#a2673563209b2090ef0f27a5755b8f846',1,'lv_font_fmt_txt_dsc_t']]],
   ['code_20',['code',['../df/d21/struct__lv__event__t.html#a80dab8af0ae73edd520276e03da72bd5',1,'_lv_event_t']]],
-  ['color_21',['color',['../d3/d0b/structlv__draw__arc__dsc__t.html#a78111b748fd2e70f79a1311824e1c083',1,'lv_draw_arc_dsc_t::color'],['../d4/d79/structlv__draw__label__dsc__t.html#a9a4e32ec592cef46da84cd1fb5077ca9',1,'lv_draw_label_dsc_t::color'],['../db/d82/structlv__draw__line__dsc__t.html#afd4c74fcfdebef9811de1b005ba147f1',1,'lv_draw_line_dsc_t::color'],['../d9/d98/struct__lv__img__decoder__dsc__t.html#aaff7ba2bbb1d01908d5f695ec16815fe',1,'_lv_img_decoder_dsc_t::color'],['../d4/d54/structlv__draw__sw__blend__dsc__t.html#a72e4655be2e91c3bdb957895cc4c49ca',1,'lv_draw_sw_blend_dsc_t::color'],['../da/d35/structlv__gradient__stop__t.html#a7eb2e8afc8c04f93ffc718c24a8396ef',1,'lv_gradient_stop_t::color'],['../d2/da1/unionlv__style__value__t.html#aa9831331f2edec01437f22c91a0491e8',1,'lv_style_value_t::color']]],
+  ['color_21',['color',['../d2/da1/unionlv__style__value__t.html#aa9831331f2edec01437f22c91a0491e8',1,'lv_style_value_t::color'],['../da/d35/structlv__gradient__stop__t.html#a7eb2e8afc8c04f93ffc718c24a8396ef',1,'lv_gradient_stop_t::color'],['../d9/d98/struct__lv__img__decoder__dsc__t.html#aaff7ba2bbb1d01908d5f695ec16815fe',1,'_lv_img_decoder_dsc_t::color'],['../db/d82/structlv__draw__line__dsc__t.html#afd4c74fcfdebef9811de1b005ba147f1',1,'lv_draw_line_dsc_t::color'],['../d4/d79/structlv__draw__label__dsc__t.html#a9a4e32ec592cef46da84cd1fb5077ca9',1,'lv_draw_label_dsc_t::color'],['../d4/d54/structlv__draw__sw__blend__dsc__t.html#a72e4655be2e91c3bdb957895cc4c49ca',1,'lv_draw_sw_blend_dsc_t::color'],['../d3/d0b/structlv__draw__arc__dsc__t.html#a78111b748fd2e70f79a1311824e1c083',1,'lv_draw_arc_dsc_t::color']]],
   ['color_5fchroma_5fkey_22',['color_chroma_key',['../d1/d47/struct__lv__disp__drv__t.html#adb7820a88a8b1726e7ba12e7c5538c70',1,'_lv_disp_drv_t']]],
   ['color_5fprimary_23',['color_primary',['../db/df4/struct__lv__theme__t.html#a9c89cb48faebdb6f948b9ef2c26cf43b',1,'_lv_theme_t']]],
   ['color_5fsecondary_24',['color_secondary',['../db/df4/struct__lv__theme__t.html#aacb9014f400e490c87dd17ba9c36551d',1,'_lv_theme_t']]],
