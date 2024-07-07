@@ -7,23 +7,19 @@ using namespace Robot::Globals;
 
 
 
-
-
 void Intake::score() {
     IntakeMotor.move(100);
     
 }
 
-void Intake::run(unsigned short direction) {
-    switch (direction) {
-        case 0:
-            IntakeMotor.move(-127);
-            break;
-        case 1:
-            IntakeMotor.move(127);
-            break;
-        default:
-            IntakeMotor.move(0);
+void Robot::Intake::run(){
+    if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_L1)) {
+		IntakeMotor.move(127);
     }
-
+    else if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_R1)) {
+        IntakeMotor.move(-127);
+    }
+    else {
+        IntakeMotor.brake();
+    }
 }

@@ -1,6 +1,5 @@
 #pragma once
 #include <string>
-#include "puncher.h"
 
 namespace Robot {
     /**
@@ -30,7 +29,7 @@ namespace Robot {
          * @param puncher A reference to the Puncher object.
          * @param autono A boolean value indicating whether to use autonomous mode.
          */
-        void AutoDrive(Puncher &puncher, bool autono);
+        void AutoDrive(bool autono);
         
         /**
          * @brief Switches the autonomous program.
@@ -67,7 +66,7 @@ namespace Robot {
          * 
          * @param puncher A reference to the Puncher object.
          */
-        void Auton3(Puncher &puncher);
+        void Auton3();
 
         void Auton4();
 

@@ -22,7 +22,33 @@ void Autonomous::Auton2() {
 
 
 void Autonomous::Auton3() {
+    // Autonomous routine for the Skills challenge
 
+	for (int i=0; i < 30000; i++) {
+		pros::delay(1);
+	}
+	drive_.move(100);
+	pros::delay(1700);
+	drive_.brake();
+	drive_left.move(75);
+	pros::delay(75);
+	drive_.brake();
+	drive_.move(100);
+	pros::delay(2000);
+	drive_.brake();
+
+	// else {
+	// 	for (int i=0; i < 30000; i++) {
+	// 		punchers.move(105);
+	// 		pros::delay(1);
+	// 	}
+	// }
+	// //movement
+	// if (pros::c::registry_get_plugged_type(15) == pros::c::E_DEVICE_IMU) {
+	// 	chassis.setPose(-55.174, -55.383, 45);
+	// 	chassis.follow("auton_skills_1.txt", 5000, 15);
+	// 	chassis.follow("auton_skills_2.txt", 10000, 15);
+	// }
 
 }
 
@@ -33,7 +59,7 @@ void Autonomous::Auton4() {
 
 
 // Takes in two parameters: The autonomous value as well as the puncher object.
-void Autonomous::AutoDrive(Puncher &puncher, bool autono = false) {
+void Autonomous::AutoDrive(bool autono = false) {
 	// Keep the switcher running while the controller down button has not been pressed and the time period is not autonomous
 	// Compare the current auton value to run the auton routine
 

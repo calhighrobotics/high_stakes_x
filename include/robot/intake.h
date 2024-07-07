@@ -12,7 +12,7 @@ namespace Robot {
          * 
          * Takes user input to control the direction of the intake system.
          */
-        void run(unsigned short direction);
+        void run();
 
         /**
          * @brief Outakes rings and scores them inside of latched mobile goal.

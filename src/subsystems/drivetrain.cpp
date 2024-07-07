@@ -45,15 +45,9 @@ void Drivetrain::ArcadeDrive() {
     
     // std::abs takes the absolute value of whatever it is called on.
     // Thus, any values in range (-5,5) are discarded as 0.
-    left = CheckDeadzone(left);
-    right = CheckDeadzone(right);
+    chassis.arcade(left, right, false, 0.6);
 
-    // Arcade movement
-    // Move the left side of the robot
-    drive_left.move(left + right);
-    
-    // Move the right side of the robot 
-    drive_right.move(left - right);
+    pros::delay(15);
 }
 
 Drivetrain::Drivetrain() {
@@ -70,15 +64,9 @@ void Drivetrain::TankDrive() {
     
     // std::abs takes the absolute value of whatever it is called on.
     // Thus, any values in range (-5,5) are discarded as 0.
-    left = CheckDeadzone(left);
-    right = CheckDeadzone(right);
+    chassis.tank(left, right);
 
-    // Arcade movement
-    // Move the left side of the robot
-    drive_left.move(left);
-    
-    // Move the right side of the robot 
-    drive_right.move(right);
+    pros::delay(15);
 }
 
 // Set the deadzone for the drivetrain

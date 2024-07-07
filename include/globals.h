@@ -36,22 +36,16 @@ namespace Robot {
         extern pros::Motor LeftBack;
         extern pros::Motor RightBack;
         extern pros::Motor LeftMid;
-        extern pros::Motor PuncherMotor;
-        extern pros::Motor PuncherMotor2;
+
         extern pros::Motor RightMid;
         extern pros::Motor IntakeMotor;
 
-        extern pros::Imu inertial_sensor;
-        extern pros::Distance distance;
-
-
-        extern pros::adi::DigitalOut Elevator;
 
         extern pros::MotorGroup punchers;
         extern pros::MotorGroup drive_left;
         extern pros::MotorGroup drive_right;
         // Used as a motor group meant to be passed into lemlib, a full drivetrain group.
-	extern pros::MotorGroup drive_;
+	    extern pros::MotorGroup drive_;
 
         extern lemlib::Drivetrain drivetrain;
 
@@ -70,8 +64,11 @@ namespace Robot {
 
         extern lemlib::Chassis chassis;
 
-        extern pros::adi::DigitalIn puncherToggleSwitch;
-        extern pros::adi::DigitalIn autonToggleSwitch;
+        extern lemlib::ExpoDriveCurve throttle_curve;
+
+        extern lemlib::ExpoDriveCurve steer_curve;
+
         extern pros::adi::DigitalIn drivetrainToggleSwitch;
+        extern pros::adi::DigitalIn autonToggleSwitch;
     }
 } // namespace Robot
