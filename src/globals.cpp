@@ -22,21 +22,14 @@ pros::Motor LeftFront (-5, pros::v5::MotorGears::green, pros::v5::MotorUnits::de
 pros::Motor LeftBack (-7, pros::v5::MotorGears::green, pros::v5::MotorUnits::degrees);
 pros::Motor RightBack (8, pros::v5::MotorGears::green, pros::v5::MotorUnits::degrees);
 pros::Motor LeftMid (-2, pros::v5::MotorGears::green, pros::v5::MotorUnits::degrees);
-pros::Motor PuncherMotor (19, pros::v5::MotorGears::green, pros::v5::MotorUnits::degrees);
-pros::Motor PuncherMotor2 (-20, pros::v5::MotorGears::green, pros::v5::MotorUnits::degrees);
 pros::Motor RightMid (3, pros::v5::MotorGears::green, pros::v5::MotorUnits::degrees);
 pros::Motor IntakeMotor (-9, pros::v5::MotorGears::green, pros::v5::MotorUnits::degrees);
 
-pros::Imu inertial_sensor(15);
-pros::Distance distance(18);
-
-pros::adi::DigitalOut Elevator ('D');
-
-pros::adi::DigitalIn puncherToggleSwitch('E');
-pros::adi::DigitalIn autonToggleSwitch('F');
 pros::adi::DigitalIn drivetrainToggleSwitch('G');
+pros::adi::DigitalIn autonToggleSwitch('F');
 
-pros::MotorGroup punchers({PuncherMotor.get_port(), PuncherMotor2.get_port()});
+pros::Imu inertial_sensor(15);
+
 pros::MotorGroup drive_left({LeftFront.get_port(), LeftMid.get_port(), LeftBack.get_port()});
 pros::MotorGroup drive_right({RightFront.get_port(), RightMid.get_port(), RightBack.get_port()});
 pros::MotorGroup drive_({LeftFront.get_port(), RightFront.get_port(), LeftMid.get_port(), RightMid.get_port(), LeftBack.get_port(), RightBack.get_port()});
@@ -87,11 +80,21 @@ lemlib::ControllerSettings angular_controller {
     0.5 // slew rate
 };
 
-lemlib::Chassis chassis(drivetrain, 
-                lateral_controller, 
-                angular_controller, 
-                sensors
-            );
+lemlib::ExpoDriveCurve throttle_curve(3, // joystick deadband out of 127
+                                     10, // minimum output where drivetrain will move out of 127
+                                     1.019 // expo curve gain
+);
 
-    }
-}
+// input curve for steer input during driver control
+lemlib::ExpoDriveCurve steer_curve(3, // joystick deadband out of 127
+                                  10, // minimum output where drivetrain will move out of 127
+                                  1.019 // expo curve gain
+);
+
+lemlib::Chassis chassis(drivetrain,
+                        lateral_controller,
+                        angular_controller,
+                        sensors,
+                        &throttle_curve, 
+                        &steer_curve
+);

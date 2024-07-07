@@ -35,6 +35,11 @@
 #define PROS_USE_LITERALS
 
 #include "api.h"
+#include "robot/auton.h"
+#include "globals.h"
+#include "robot/drivetrain.h"
+#include "robot/intake.h"
+#include "robot/utility.h"
 
 /**
  * You should add more #includes here

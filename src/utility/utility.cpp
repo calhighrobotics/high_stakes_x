@@ -8,7 +8,7 @@ using namespace Robot::Globals;
 /**
  * \todo Figure out a way to send an event to the different objects to toggle between the different subsystems.
 */
-void Utility::toggleSubsystemOptions(Autonomous &auton, Drivetrain &drive, Puncher &punch) {
+void Utility::toggleSubsystemOptions(Autonomous &auton, Drivetrain &drive) {
     // Allows the user to select the autonomous routine, drive control type as well as whether the distance puncher is enabled.
 	// The user can select the auton routine by pressing the right buttons on the controller.
 	// The user can select the drive control type by pressing the down button on the controller.
@@ -16,7 +16,6 @@ void Utility::toggleSubsystemOptions(Autonomous &auton, Drivetrain &drive, Punch
 	// The state of each subsystem is displayed on the controller screen.
 	while (true)
 	{
-		punch.PuncherSwitch();
         auton.AutonSwitcher();
 		drive.SwitchDrive();
 		

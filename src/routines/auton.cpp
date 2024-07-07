@@ -64,11 +64,10 @@ void Autonomous::Auton2() {
 }
 
 
-void Autonomous::Auton3(Puncher &puncher) {
+void Autonomous::Auton3() {
     // Autonomous routine for the Skills challenge
 
 	for (int i=0; i < 30000; i++) {
-		puncher.DistanceRun();
 		pros::delay(1);
 	}
 	drive_.move(100);
@@ -175,7 +174,7 @@ void Autonomous::Auton4() {
 
 
 // Takes in two parameters: The autonomous value as well as the puncher object.
-void Autonomous::AutoDrive(Puncher &puncher, bool autono = false) {
+void Autonomous::AutoDrive(bool autono = false) {
 	// Keep the switcher running while the controller down button has not been pressed and the time period is not autonomous
 	// Compare the current auton value to run the auton routine
 

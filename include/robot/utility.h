@@ -3,7 +3,6 @@
 
 #include "auton.h"
 #include "drivetrain.h"
-#include "puncher.h"
 
 namespace Robot {
     /**
@@ -24,7 +23,7 @@ namespace Robot {
             @param Drivetrain drive Drivetrain object.
             @param Puncher punch Puncher object.
         */
-        void toggleSubsystemOptions(Autonomous &auton, Drivetrain &drive, Puncher &punch);
+        void toggleSubsystemOptions(Autonomous &auton, Drivetrain &drive);
 
     }
 }
