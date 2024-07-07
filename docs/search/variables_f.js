@@ -22,7 +22,7 @@ var searchData=
   ['playback_5fdelay_19',['playback_delay',['../df/d46/struct__lv__anim__t.html#acd9eb914c80c72f6094ad053308892f4',1,'_lv_anim_t']]],
   ['playback_5fnow_20',['playback_now',['../df/d46/struct__lv__anim__t.html#aca604b95ce9cc0ade0a3e6cf35e7b073',1,'_lv_anim_t']]],
   ['playback_5ftime_21',['playback_time',['../df/d46/struct__lv__anim__t.html#ae78637ba3313cc15774fdad2ac05af21',1,'_lv_anim_t']]],
-  ['point_22',['point',['../dc/dcc/structlv__hit__test__info__t.html#ae2eaf439cc30257bcb9703bbfdd0851f',1,'lv_hit_test_info_t::point'],['../db/ded/structlv__indev__data__t.html#afaecb3fba20bd3d6f798dea8b207f257',1,'lv_indev_data_t::point']]],
+  ['point_22',['point',['../db/ded/structlv__indev__data__t.html#afaecb3fba20bd3d6f798dea8b207f257',1,'lv_indev_data_t::point'],['../dc/dcc/structlv__hit__test__info__t.html#ae2eaf439cc30257bcb9703bbfdd0851f',1,'lv_hit_test_info_t::point']]],
   ['pointer_23',['pointer',['../d3/d11/classfmt_1_1v10_1_1detail_1_1value.html#a5de32f6f8dca8384dd879fae74bbbb01',1,'fmt::v10::detail::value::pointer'],['../df/d29/struct__lv__indev__proc__t.html#a8c4f2c3e8ef08f21b09721339468b272',1,'_lv_indev_proc_t::pointer']]],
   ['pos_24',['pos',['../d6/d26/structfmt_1_1v10_1_1detail_1_1digit__grouping_1_1next__state.html#a8900c339b3e16ebe1bddd5b6b37f45a7',1,'fmt::v10::detail::digit_grouping::next_state']]],
   ['pr_5ftimestamp_25',['pr_timestamp',['../df/d29/struct__lv__indev__proc__t.html#a610fbc71cd450b55c0ad5fdf38dfaf5a',1,'_lv_indev_proc_t']]],
@@ -40,8 +40,8 @@ var searchData=
   ['props_37',['props',['../de/de2/structlv__style__transition__dsc__t.html#a3140e03dc30085c0da114be4e4b5e798',1,'lv_style_transition_dsc_t']]],
   ['ptr_38',['ptr',['../d2/da1/unionlv__style__value__t.html#a1ec5ca1a76462368a2e92cebd40de345',1,'lv_style_value_t']]],
   ['ptr_5f_39',['ptr_',['../d7/d8e/classfmt_1_1v10_1_1detail_1_1buffer.html#a93fa0e563f6b7d89cc2584ca61633f59',1,'fmt::v10::detail::buffer']]],
-  ['punchermotor_40',['PuncherMotor',['../df/d3e/namespaceRobot_1_1Globals.html#ac04e1afad490031b5137029888551903',1,'Robot::Globals']]],
-  ['punchermotor2_41',['PuncherMotor2',['../df/d3e/namespaceRobot_1_1Globals.html#a6b31f1f3bbe65925ba2c68cad606b7eb',1,'Robot::Globals']]],
-  ['punchers_42',['punchers',['../df/d3e/namespaceRobot_1_1Globals.html#ae1de33e7b736ec8ddad4c55f6d822f57',1,'Robot::Globals']]],
-  ['punchertoggleswitch_43',['puncherToggleSwitch',['../df/d3e/namespaceRobot_1_1Globals.html#a98c40509b6b482269269ef1291782bc4',1,'Robot::Globals']]]
+  ['punchermotor_40',['PuncherMotor',['../df/d3e/namespaceRobot_1_1Globals.html#a9fb8bf7e36fbb40340cd8d47e2f90150',1,'Robot::Globals']]],
+  ['punchermotor2_41',['PuncherMotor2',['../df/d3e/namespaceRobot_1_1Globals.html#ab59bb155988624f21c9c320572c05a4a',1,'Robot::Globals']]],
+  ['punchers_42',['punchers',['../df/d3e/namespaceRobot_1_1Globals.html#a2d34b9317da20f35887ca215e30e0fc8',1,'Robot::Globals']]],
+  ['punchertoggleswitch_43',['puncherToggleSwitch',['../df/d3e/namespaceRobot_1_1Globals.html#a03f70755f104e28ef2a089ed31934ac3',1,'Robot::Globals']]]
 ];

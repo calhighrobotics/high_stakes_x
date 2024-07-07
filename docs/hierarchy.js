@@ -474,7 +474,6 @@ var hierarchy =
     [ "vision_object_s_t", "d9/d1b/structvision__object__s__t.html", null ],
     [ "vision_signature_s_t", "de/d00/structvision__signature__s__t.html", null ],
     [ "fmt::v10::detail::width_checker< ErrorHandler >", "d8/d37/classfmt_1_1v10_1_1detail_1_1width__checker.html", null ],
-    [ "Robot::Wings", "d4/d6c/classRobot_1_1Wings.html", null ],
     [ "fmt::v10::detail::write_int_arg< UInt >", "db/d89/structfmt_1_1v10_1_1detail_1_1write__int__arg.html", null ],
     [ "fmt::v10::detail::write_int_data< Char >", "d9/d93/structfmt_1_1v10_1_1detail_1_1write__int__data.html", null ]
 ];

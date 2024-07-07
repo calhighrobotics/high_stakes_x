@@ -6,7 +6,7 @@ var group__cpp_llemu =
     [ "LCD_BTN_CENTER", "d0/d33/group__cpp-llemu.html#gabf8903693b4a95a6b653916d5f6fe486", null ],
     [ "LCD_BTN_LEFT", "d0/d33/group__cpp-llemu.html#gafa86afc6491531fb4b4d7f1e18803852", null ],
     [ "LCD_BTN_RIGHT", "d0/d33/group__cpp-llemu.html#ga7851ef3eb7573b194efb0a05d88f2c35", null ],
-    [ "pros::lcd::lcd_btn_cb_fn_t", "d0/d33/group__cpp-llemu.html#ga27c06780cc36ebad596c8d762754f62a", null ],
+    [ "pros::lcd::lcd_btn_cb_fn_t", "d0/d33/group__cpp-llemu.html#gaab522ad4c11fc375e02b7519b9950557", null ],
     [ "pros::lcd::Text_Align", "d0/d33/group__cpp-llemu.html#gadc7b4da48c059758f83a83129a3c2b16", [
       [ "pros::lcd::Text_Align::LEFT", "d0/d33/group__cpp-llemu.html#ggadc7b4da48c059758f83a83129a3c2b16a684d325a7303f52e64011467ff5c5758", null ],
       [ "pros::lcd::Text_Align::CENTER", "d0/d33/group__cpp-llemu.html#ggadc7b4da48c059758f83a83129a3c2b16ac397289ee45877be0cd49811fe245b4e", null ],

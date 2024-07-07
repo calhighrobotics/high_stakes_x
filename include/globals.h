@@ -1,9 +1,9 @@
 #pragma once
+
 #include "api.h"
 #include "lemlib/api.hpp"
 
 // The following files are imported in order to provide type definitions into the compiler that allows for the objecys to
-#include "robot/wings.h"
 
 
 
@@ -30,7 +30,6 @@ namespace Robot {
     namespace Globals {
         extern pros::Controller controller;
 
-        extern Robot::Wings robotWings;
 
         extern pros::Motor RightFront;
         extern pros::Motor LeftFront;
@@ -46,32 +45,29 @@ namespace Robot {
         extern pros::Distance distance;
 
 
-        extern pros::ADIDigitalOut FrontWing;
-        extern pros::ADIDigitalOut BackWing1;
-        extern pros::ADIDigitalOut BackWing2;
-        extern pros::ADIDigitalOut Elevator;
+        extern pros::adi::DigitalOut Elevator;
 
-        extern pros::Motor_Group punchers;
-        extern pros::Motor_Group drive_left;
-        extern pros::Motor_Group drive_right;
+        extern pros::MotorGroup punchers;
+        extern pros::MotorGroup drive_left;
+        extern pros::MotorGroup drive_right;
         // Used as a motor group meant to be passed into lemlib, a full drivetrain group.
-	extern pros::Motor_Group drive_;
+	extern pros::MotorGroup drive_;
 
-        extern lemlib::Drivetrain_t drivetrain;
+        extern lemlib::Drivetrain drivetrain;
 
-        extern lemlib::OdomSensors_t sensors;
+        extern lemlib::OdomSensors sensors;
 
 
         // forward/backward PID
-        extern lemlib::ChassisController_t lateralController;
+        extern lemlib::ControllerSettings lateral_controller;
         
         // turning PID
-        extern lemlib::ChassisController_t angularController;
+        extern lemlib::ControllerSettings angular_controller;
 
         extern lemlib::Chassis chassis;
 
-        extern pros::ADIDigitalIn puncherToggleSwitch;
-        extern pros::ADIDigitalIn autonToggleSwitch;
-        extern pros::ADIDigitalIn drivetrainToggleSwitch;
+        extern pros::adi::DigitalIn puncherToggleSwitch;
+        extern pros::adi::DigitalIn autonToggleSwitch;
+        extern pros::adi::DigitalIn drivetrainToggleSwitch;
     }
 } // namespace Robot

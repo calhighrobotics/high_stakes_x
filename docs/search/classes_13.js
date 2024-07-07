@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['task_0',['Task',['../de/dbc/classpros_1_1rtos_1_1Task.html',1,'pros::rtos::Task'],['../de/dbc/classpros_1_1rtos_1_1Task.html',1,'pros::Task']]],
+  ['task_0',['task',['../de/dbc/classpros_1_1rtos_1_1Task.html',1,'pros::Task'],['../de/dbc/classpros_1_1rtos_1_1Task.html',1,'pros::rtos::Task']]],
   ['telemetrysink_1',['TelemetrySink',['../de/d9d/classlemlib_1_1TelemetrySink.html',1,'lemlib']]],
   ['thousands_5fsep_5fresult_2',['thousands_sep_result',['../d5/d32/structfmt_1_1v10_1_1detail_1_1thousands__sep__result.html',1,'fmt::v10::detail']]],
   ['time_5fs_5ft_3',['time_s_t',['../d0/dc1/structtime__s__t.html',1,'']]],

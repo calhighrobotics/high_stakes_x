@@ -418,8 +418,7 @@ var annotated_dup =
       [ "Drivetrain", "d7/d0e/classRobot_1_1Drivetrain.html", "d7/d0e/classRobot_1_1Drivetrain" ],
       [ "Elevation", "dc/d29/classRobot_1_1Elevation.html", "dc/d29/classRobot_1_1Elevation" ],
       [ "Intake", "dd/dc0/classRobot_1_1Intake.html", "dd/dc0/classRobot_1_1Intake" ],
-      [ "Puncher", "d8/d8b/classRobot_1_1Puncher.html", "d8/d8b/classRobot_1_1Puncher" ],
-      [ "Wings", "d4/d6c/classRobot_1_1Wings.html", "d4/d6c/classRobot_1_1Wings" ]
+      [ "Puncher", "d8/d8b/classRobot_1_1Puncher.html", "d8/d8b/classRobot_1_1Puncher" ]
     ] ],
     [ "_lv_anim_t", "df/d46/struct__lv__anim__t.html", "df/d46/struct__lv__anim__t" ],
     [ "_lv_color_filter_dsc_t", "de/d32/struct__lv__color__filter__dsc__t.html", "de/d32/struct__lv__color__filter__dsc__t" ],

@@ -91,9 +91,8 @@ var searchData=
   ['e_5fvision_5fobject_5fnormal_88',['E_VISION_OBJECT_NORMAL',['../de/d34/group__c-vision.html#gga23584b6ec115e81fd6c715c462683970a8ce71cf51da913d1ea77a4b732890778',1,'vision.h']]],
   ['e_5fvision_5fzero_5fcenter_89',['E_VISION_ZERO_CENTER',['../de/d34/group__c-vision.html#ggaef7c8269b3fb0dfbf4e597b2d8dd7af5ac4bfba95a9c18805da897280e18387c1',1,'vision.h']]],
   ['e_5fvision_5fzero_5ftopleft_90',['E_VISION_ZERO_TOPLEFT',['../de/d34/group__c-vision.html#ggaef7c8269b3fb0dfbf4e597b2d8dd7af5a0ff244c5f3e9771f962986e25b00ff3d',1,'vision.h']]],
-  ['error_91',['ERROR',['../dc/d62/group__c-optical.html#gga656ac13ffc5dd8f7289b47ac1a019409a2fd6f336d08340583bd620a7f5694c90',1,'ERROR:&#160;optical.h'],['../d9/d63/namespacelemlib.html#af6867f1a5fccfd572991e7ae895acd80abb1ca97ec761fc37101737ba0aa2e7c5',1,'lemlib::ERROR']]],
-  ['error_92',['error',['../d6/ded/group__cpp-imu.html#ggad33282b693e3f276879b5afd6a264e57acb5e100e5a9a3e7f6d1fd97512215282',1,'pros']]],
-  ['exp_93',['exp',['../da/d2b/namespacefmt_1_1v10_1_1detail.html#a879d57271137fd627bca887aad57ecdcab0ab0254bd58eb87eaee3172ba49fefb',1,'fmt::v10::detail']]],
-  ['exp_5flower_94',['exp_lower',['../d1/d1a/namespacefmt_1_1v10.html#a852a96f4a48f4f85b5f93a3d2042e080a157555f731870b580669d4ae2e789292',1,'fmt::v10']]],
-  ['exp_5fupper_95',['exp_upper',['../d1/d1a/namespacefmt_1_1v10.html#a852a96f4a48f4f85b5f93a3d2042e080ae1b1fd27ead9e496ec42c0e7fa19effc',1,'fmt::v10']]]
+  ['error_91',['error',['../dc/d62/group__c-optical.html#gga656ac13ffc5dd8f7289b47ac1a019409a2fd6f336d08340583bd620a7f5694c90',1,'ERROR:&#160;optical.h'],['../d9/d63/namespacelemlib.html#af6867f1a5fccfd572991e7ae895acd80abb1ca97ec761fc37101737ba0aa2e7c5',1,'lemlib::ERROR'],['../d6/ded/group__cpp-imu.html#ggad33282b693e3f276879b5afd6a264e57acb5e100e5a9a3e7f6d1fd97512215282',1,'pros::error']]],
+  ['exp_92',['exp',['../da/d2b/namespacefmt_1_1v10_1_1detail.html#a879d57271137fd627bca887aad57ecdcab0ab0254bd58eb87eaee3172ba49fefb',1,'fmt::v10::detail']]],
+  ['exp_5flower_93',['exp_lower',['../d1/d1a/namespacefmt_1_1v10.html#a852a96f4a48f4f85b5f93a3d2042e080a157555f731870b580669d4ae2e789292',1,'fmt::v10']]],
+  ['exp_5fupper_94',['exp_upper',['../d1/d1a/namespacefmt_1_1v10.html#a852a96f4a48f4f85b5f93a3d2042e080ae1b1fd27ead9e496ec42c0e7fa19effc',1,'fmt::v10']]]
 ];
