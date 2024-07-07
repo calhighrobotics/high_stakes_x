@@ -64,6 +64,10 @@ namespace Robot {
         // turning PID
         extern lemlib::ControllerSettings angular_controller;
 
+        // curvature
+        extern lemlib::ExpoDriveCurve steer_curve;
+        extern lemlib::ExpoDriveCurve throttle_curve;
+
         extern lemlib::Chassis chassis;
 
         extern pros::adi::DigitalIn puncherToggleSwitch;

@@ -5,6 +5,7 @@
 using namespace Robot;
 using namespace Robot::Globals;
 
+
 int Drivetrain::CheckDeadzone(int ControllerInput) {
     if(std::abs(ControllerInput) < Drivetrain::deadzone) {
         return 0;
@@ -12,6 +13,26 @@ int Drivetrain::CheckDeadzone(int ControllerInput) {
     else {
         return ControllerInput;
     }
+}
+
+double Drivetrain::turn_remap(double turn) {
+	double denominator = std::sin(std::PI / 2 * CD_TURN_NONLINEARITY);
+	double firstRemapIteration =
+	    std::sin(std::PI / 2 * CD_TURN_NONLINEARITY * turn) / denominator;
+	return std::sin(std::PI / 2 * CD_TURN_NONLINEARITY * firstRemapIteration) / denominator;
+}
+
+void Drivetrain::CurvatureDrive() {
+    Drivetrain::deadzone = 5;
+
+    int left = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
+    int right = controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_X);
+
+    
+    left = CheckDeadzone(left);
+    right = CheckDeadzone(right);
+
+    chassis.curvature(left, right);
 }
 
 void Drivetrain::ArcadeDrive() {
@@ -66,9 +87,12 @@ void Drivetrain::TankDrive() {
 // Run the drivetrain depending on the control mode
 void Drivetrain::run() {
     if (Drivetrain::driveMode == 0) {
-        Drivetrain::ArcadeDrive();
+        Drivetrain::CurvatureDrive();
     }
     if (Drivetrain::driveMode == 1) {
+        Drivetrain::ArcadeDrive();
+    }
+    if (Drivetrain::driveMode == 2) {
         Drivetrain::TankDrive();
     }
 }
@@ -79,14 +103,17 @@ void Drivetrain::SwitchDrive() {
     if(drivetrainToggleSwitch.get_new_press()) {
         pros::lcd::clear_line(2);
         Drivetrain::driveMode = Drivetrain::driveMode + 1;
-        if (Drivetrain::driveMode == 2) {
+        if (Drivetrain::driveMode == 3) {
             Drivetrain::driveMode = 0;
         }
         
         if (Drivetrain::driveMode == 0) {
-            pros::lcd::set_text(2, "Drive: Arcade");
+            pros::lcd::set_text(2, "Drive: Curvature");
         }
         if (Drivetrain::driveMode == 1) {
+            pros::lcd::set_text(2, "Drive: Arcade");
+        }
+        if (Drivetrain::driveMode == 2) {
             pros::lcd::set_text(2, "Drive: Tank");
         }
     }

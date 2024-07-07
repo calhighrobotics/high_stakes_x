@@ -49,6 +49,8 @@ lemlib::Drivetrain drivetrain {
 	450 // wheel rpm - 360 rpm for competition bot, 200 for test drivetrain
 };
 
+
+
 lemlib::OdomSensors sensors {
     nullptr, // vertical tracking wheel 1
     nullptr, // vertical tracking wheel 2
@@ -84,11 +86,24 @@ lemlib::ControllerSettings angular_controller {
     0.5 // slew rate
 };
 
-lemlib::Chassis chassis(drivetrain, 
-                lateral_controller, 
-                angular_controller, 
-                sensors
-            );
+lemlib::ExpoDriveCurve throttle_curve(3, // joystick deadband out of 127
+                                     10, // minimum output where drivetrain will move out of 127
+                                     1.019 // expo curve gain
+);
+
+// input curve for steer input during driver control
+lemlib::ExpoDriveCurve steer_curve(3, // joystick deadband out of 127
+                                  10, // minimum output where drivetrain will move out of 127
+                                  1.019 // expo curve gain
+);
+
+lemlib::Chassis chassis(drivetrain,
+                        lateral_controller,
+                        angular_controller,
+                        sensors,
+                        &throttle_curve, 
+                        &steer_curve
+);
 
     }
 }
