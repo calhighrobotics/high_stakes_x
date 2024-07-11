@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['pros_5ferr_0',['pros_err',['../d5/dd8/adi_8h.html#a8748a4dfbe487cedaafa15f1ff7f2f38',1,'PROS_ERR:&#160;adi.h'],['../da/d41/error_8h.html#a8748a4dfbe487cedaafa15f1ff7f2f38',1,'PROS_ERR:&#160;error.h']]],
+  ['pros_5ferr_0',['PROS_ERR',['../d5/dd8/adi_8h.html#a8748a4dfbe487cedaafa15f1ff7f2f38',1,'PROS_ERR:&#160;adi.h'],['../da/d41/error_8h.html#a8748a4dfbe487cedaafa15f1ff7f2f38',1,'PROS_ERR:&#160;error.h']]],
   ['pros_5ferr_5f2_5fbyte_1',['PROS_ERR_2_BYTE',['../da/d41/error_8h.html#a6aa45f6b703bb3f7b199e3f4bb1efacf',1,'error.h']]],
   ['pros_5ferr_5fbyte_2',['PROS_ERR_BYTE',['../da/d41/error_8h.html#a9bb77e06bf14ae573250893f8660015d',1,'error.h']]],
   ['pros_5ferr_5ff_3',['PROS_ERR_F',['../da/d41/error_8h.html#a8e591efce4b2a8e733e0fa9432e493a6',1,'error.h']]],

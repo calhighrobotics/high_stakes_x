@@ -12,11 +12,11 @@ var namespacepros_1_1adi =
     [ "Port", "d4/d9c/classpros_1_1adi_1_1Port.html", "d4/d9c/classpros_1_1adi_1_1Port" ],
     [ "Potentiometer", "d1/d2b/classpros_1_1adi_1_1Potentiometer.html", "d1/d2b/classpros_1_1adi_1_1Potentiometer" ],
     [ "Ultrasonic", "d6/da4/classpros_1_1adi_1_1Ultrasonic.html", "d6/da4/classpros_1_1adi_1_1Ultrasonic" ],
-    [ "Accelerometer", "d8/d0a/namespacepros_1_1adi.html#a355e412877d954dac8ba2acf5cf3c071", null ],
-    [ "Button", "d8/d0a/namespacepros_1_1adi.html#aad4aa81ed0eb81007bdbc3fe44343649", null ],
-    [ "ext_adi_port_pair_t", "d8/d0a/namespacepros_1_1adi.html#acb9fca1f9cf577286c6f8d6b64eeb4aa", null ],
-    [ "ext_adi_port_tuple_t", "d8/d0a/namespacepros_1_1adi.html#a1fad5d3a645a0c4f1b12aa4453cf3ca0", null ],
-    [ "LED", "d8/d0a/namespacepros_1_1adi.html#ace6ae5f6fbf3ac4e7fc558ae74a56103", null ],
-    [ "LightSensor", "d8/d0a/namespacepros_1_1adi.html#a3d325097040b4ee3a3cd7a5909744e01", null ],
-    [ "LineSensor", "d8/d0a/namespacepros_1_1adi.html#a7197cc5dd35249ae897032241c05473f", null ]
+    [ "Accelerometer", "d8/d0a/namespacepros_1_1adi.html#ad840ebf5de66c015821ed2036c39f058", null ],
+    [ "Button", "d8/d0a/namespacepros_1_1adi.html#ae12d89d896e98ffd9e31b5e0bce2ea6b", null ],
+    [ "ext_adi_port_pair_t", "d8/d0a/namespacepros_1_1adi.html#ab37033b41b12e194bac431882402e29e", null ],
+    [ "ext_adi_port_tuple_t", "d8/d0a/namespacepros_1_1adi.html#aaf8032e34261234d519e439ef01ffd89", null ],
+    [ "LED", "d8/d0a/namespacepros_1_1adi.html#ac96d7950c57e4af32e7f80e5f40b03f0", null ],
+    [ "LightSensor", "d8/d0a/namespacepros_1_1adi.html#af7744b9a111476beed645a40c4a81069", null ],
+    [ "LineSensor", "d8/d0a/namespacepros_1_1adi.html#abc217606f363a6875646ecac8928adfa", null ]
 ];

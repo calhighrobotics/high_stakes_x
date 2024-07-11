@@ -2,7 +2,7 @@ var classfmt_1_1v10_1_1dynamic__format__arg__store =
 [
     [ "need_copy", "df/d79/structfmt_1_1v10_1_1dynamic__format__arg__store_1_1need__copy.html", "df/d79/structfmt_1_1v10_1_1dynamic__format__arg__store_1_1need__copy" ],
     [ "char_type", "d3/db8/classfmt_1_1v10_1_1dynamic__format__arg__store.html#a8d72ca366072a0c4838d69bf8fd1a64f", null ],
-    [ "stored_type", "d3/db8/classfmt_1_1v10_1_1dynamic__format__arg__store.html#a63da0c92b805f4b8290b27446a83e699", null ],
+    [ "stored_type", "d3/db8/classfmt_1_1v10_1_1dynamic__format__arg__store.html#afc36092d00b39796572f0135a76682d3", null ],
     [ "dynamic_format_arg_store", "d3/db8/classfmt_1_1v10_1_1dynamic__format__arg__store.html#ae8eac1236a0d0257cc8567d7f95a6cdc", null ],
     [ "clear", "d3/db8/classfmt_1_1v10_1_1dynamic__format__arg__store.html#a5bc96318c3e062c86e9fb2f48d740b45", null ],
     [ "data", "d3/db8/classfmt_1_1v10_1_1dynamic__format__arg__store.html#a16c4de88b6b15d691d1618890399b874", null ],

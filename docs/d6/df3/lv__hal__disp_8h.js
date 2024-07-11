@@ -3,7 +3,6 @@ var lv__hal__disp_8h =
     [ "_lv_disp_draw_buf_t", "d2/d7e/struct__lv__disp__draw__buf__t.html", "d2/d7e/struct__lv__disp__draw__buf__t" ],
     [ "_lv_disp_drv_t", "d1/d47/struct__lv__disp__drv__t.html", "d1/d47/struct__lv__disp__drv__t" ],
     [ "_lv_disp_t", "de/dbe/struct__lv__disp__t.html", "de/dbe/struct__lv__disp__t" ],
-    [ "LV_ATTRIBUTE_FLUSH_READY", "d6/df3/lv__hal__disp_8h.html#a8516a98c991b133415b00656518d956d", null ],
     [ "lv_disp_draw_buf_t", "d6/df3/lv__hal__disp_8h.html#aabc7592e4a01c99ac13c46aa45296ca3", null ],
     [ "lv_disp_drv_t", "d6/df3/lv__hal__disp_8h.html#ad9ffc837ed3653c57cc9c961cafe2774", null ],
     [ "lv_disp_t", "d6/df3/lv__hal__disp_8h.html#a38e817df2a5f77f36d3fe4975cf58129", null ],
