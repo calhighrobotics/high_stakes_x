@@ -43,7 +43,6 @@ struct RobotSubsystems {
  */
 
 
-
 void toggles() {
 	while (true)
 	{
@@ -77,7 +76,7 @@ void initialize() {
 	chassis.setPose(0, 0, 0);
 	
 	
-	pros::Task screenTask(Robot::Utility::display);
+	// pros::Task screenTask(Robot::Utility::display);
 	
 }
 
@@ -107,7 +106,7 @@ void competition_initialize() {
 	// The user can select the distance puncher by pressing the left button on the controller.
 	// The state of each subsystem is displayed on the controller screen.
 
-	toggles();
+	
 	
 }
 
@@ -130,7 +129,7 @@ void competition_initialize() {
 void autonomous() {
 	
 	
-	subsystem.autonomous.AutoDrive(true);
+	subsystem.autonomous.AutoDrive();
 
 
 
@@ -155,6 +154,7 @@ void opcontrol() {
 
 	
     while (true) {
+
 
 		if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_UP)) {
 			competition_initialize();

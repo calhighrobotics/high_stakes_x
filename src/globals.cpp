@@ -21,8 +21,8 @@ pros::Motor RightFront (6, pros::v5::MotorGears::green, pros::v5::MotorUnits::de
 pros::Motor LeftFront (-5, pros::v5::MotorGears::green, pros::v5::MotorUnits::degrees);
 pros::Motor LeftBack (-7, pros::v5::MotorGears::green, pros::v5::MotorUnits::degrees);
 pros::Motor RightBack (8, pros::v5::MotorGears::green, pros::v5::MotorUnits::degrees);
-pros::Motor LeftMid (-2, pros::v5::MotorGears::green, pros::v5::MotorUnits::degrees);
-pros::Motor RightMid (3, pros::v5::MotorGears::green, pros::v5::MotorUnits::degrees);
+pros::Motor LeftMid (2, pros::v5::MotorGears::green, pros::v5::MotorUnits::degrees);
+pros::Motor RightMid (-3, pros::v5::MotorGears::green, pros::v5::MotorUnits::degrees);
 pros::Motor IntakeMotor (-9, pros::v5::MotorGears::green, pros::v5::MotorUnits::degrees);
 
 pros::adi::DigitalIn drivetrainToggleSwitch('G');
@@ -86,9 +86,9 @@ lemlib::ExpoDriveCurve throttle_curve(3, // joystick deadband out of 127
 );
 
 // input curve for steer input during driver control
-lemlib::ExpoDriveCurve steer_curve(3, // joystick deadband out of 127
-                                  10, // minimum output where drivetrain will move out of 127
-                                  1.019 // expo curve gain
+lemlib::ExpoDriveCurve steer_curve(4, // joystick deadband out of 127
+                                  6, // minimum output where drivetrain will move out of 127
+                                  1.0053 // expo curve gain
 );
 
 lemlib::Chassis chassis(drivetrain,
@@ -98,3 +98,6 @@ lemlib::Chassis chassis(drivetrain,
                         &throttle_curve, 
                         &steer_curve
 );
+
+    }
+}

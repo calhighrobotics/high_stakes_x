@@ -94,6 +94,14 @@ namespace Robot {
         void TankDrive();
 
         /**
+         * @brief Drives the robot using curve drive.
+         * 
+         * Curve drive uses the left joystick for forward and backward movement, and the right joystick for steering.
+         */
+        void CurveDrive();
+
+
+        /**
          * @brief Checks if the controller input is inside the deadzone range.
          * 
          * @param entry The controller input to check.
