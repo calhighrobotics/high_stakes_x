@@ -26,6 +26,7 @@ var struct__lv__disp__drv__t =
     [ "screen_transp", "d1/d47/struct__lv__disp__drv__t.html#a1f20bba3ab4e29515004e70e3fb0b725", null ],
     [ "set_px_cb", "d1/d47/struct__lv__disp__drv__t.html#a05e48a3ce29ceae24aa6106719dfc23e", null ],
     [ "sw_rotate", "d1/d47/struct__lv__disp__drv__t.html#a292c93471eee2cd218898281273da44e", null ],
+    [ "user_data", "d1/d47/struct__lv__disp__drv__t.html#af5fdca24bab6f48c437c21a6d29864bd", null ],
     [ "ver_res", "d1/d47/struct__lv__disp__drv__t.html#a629f3773b25f0321cf19c67983e62b75", null ],
     [ "wait_cb", "d1/d47/struct__lv__disp__drv__t.html#a8a2da37af8c2236f72b54a008bb60206", null ]
 ];

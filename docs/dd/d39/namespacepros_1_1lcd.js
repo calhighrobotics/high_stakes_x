@@ -4,7 +4,7 @@ var namespacepros_1_1lcd =
       [ "convert_args", "d5/d2d/namespacepros_1_1lcd_1_1anonymous__namespace_02llemu_8hpp_03.html#a596850ac0c82628362e28f2f7390ffe3", null ],
       [ "convert_args", "d5/d2d/namespacepros_1_1lcd_1_1anonymous__namespace_02llemu_8hpp_03.html#ae3c49d795bbfede6e8a95dff8cad388c", null ]
     ] ],
-    [ "lcd_btn_cb_fn_t", "d0/d33/group__cpp-llemu.html#gaab522ad4c11fc375e02b7519b9950557", null ],
+    [ "lcd_btn_cb_fn_t", "d0/d33/group__cpp-llemu.html#ga27c06780cc36ebad596c8d762754f62a", null ],
     [ "Text_Align", "d0/d33/group__cpp-llemu.html#gadc7b4da48c059758f83a83129a3c2b16", [
       [ "LEFT", "d0/d33/group__cpp-llemu.html#ggadc7b4da48c059758f83a83129a3c2b16a684d325a7303f52e64011467ff5c5758", null ],
       [ "CENTER", "d0/d33/group__cpp-llemu.html#ggadc7b4da48c059758f83a83129a3c2b16ac397289ee45877be0cd49811fe245b4e", null ],

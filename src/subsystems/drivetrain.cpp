@@ -51,7 +51,7 @@ void Drivetrain::ArcadeDrive() {
 }
 
 Drivetrain::Drivetrain() {
-    Drivetrain::driveMode = 0;
+    Drivetrain::driveMode = 2;
 }
 
 void Drivetrain::TankDrive() {
@@ -69,6 +69,21 @@ void Drivetrain::TankDrive() {
     pros::delay(15);
 }
 
+void Drivetrain::CurveDrive() {
+
+    Drivetrain::deadzone = 5;
+
+    int left = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
+    int right = controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_X);
+
+    
+    // std::abs takes the absolute value of whatever it is called on.
+    // Thus, any values in range (-5,5) are discarded as 0.
+    chassis.curvature(left, right);
+
+    pros::delay(15);
+}
+
 // Set the deadzone for the drivetrain
 
 
@@ -82,6 +97,9 @@ void Drivetrain::run() {
     }
     if (Drivetrain::driveMode == 2) {
         Drivetrain::TankDrive();
+    }
+    if (Drivetrain::driveMode == 2) {
+        Drivetrain::CurveDrive();
     }
 }
 
@@ -103,6 +121,9 @@ void Drivetrain::SwitchDrive() {
         }
         if (Drivetrain::driveMode == 2) {
             pros::lcd::set_text(2, "Drive: Tank");
+        }
+        if (Drivetrain::driveMode == 2) {
+            pros::lcd::set_text(2, "Drive: Curve");
         }
     }
 }

@@ -3,7 +3,7 @@ var vision_8h =
     [ "VISION_FOV_HEIGHT", "de/d34/group__c-vision.html#ga8e72354ed1150786745094bbd1c0ae00", null ],
     [ "VISION_FOV_WIDTH", "de/d34/group__c-vision.html#ga7dd7d66361f62ce2ca94e21bb4779962", null ],
     [ "VISION_OBJECT_ERR_SIG", "de/d34/group__c-vision.html#gabe53b5e2ba20b09f7f5c7173021d02f0", null ],
-    [ "vision_color_code_t", "de/d34/group__c-vision.html#ga9e389c1c0197cdfd70e4935c2d22ee18", null ],
+    [ "vision_color_code_t", "de/d34/group__c-vision.html#ga71f2011a47e95558bb534b05c16c7f2b", null ],
     [ "vision_object_type_e_t", "de/d34/group__c-vision.html#ga150e79f93365d00b079130bcfbe181ad", null ],
     [ "vision_zero_e_t", "de/d34/group__c-vision.html#gabac8bfe6003650c52be72f914bb203d0", null ],
     [ "vision_object_type", "de/d34/group__c-vision.html#ga23584b6ec115e81fd6c715c462683970", [

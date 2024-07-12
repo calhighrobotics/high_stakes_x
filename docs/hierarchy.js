@@ -81,25 +81,28 @@ var hierarchy =
       [ "fmt::v10::detail::arg_mapper< Context >::formattable< T, U >", "dc/dc4/structfmt_1_1v10_1_1detail_1_1arg__mapper_1_1formattable.html", null ],
       [ "fmt::v10::detail::has_format_as< T >", "d5/d34/structfmt_1_1v10_1_1detail_1_1has__format__as.html", null ]
     ] ],
+    [ "lemlib::Buffer", "dc/d93/classlemlib_1_1Buffer.html", [
+      [ "lemlib::BufferedStdout", "d8/d56/classlemlib_1_1BufferedStdout.html", null ]
+    ] ],
     [ "fmt::v10::detail::buffer< T >", "d7/d8e/classfmt_1_1v10_1_1detail_1_1buffer.html", [
-      [ "fmt::v10::basic_memory_buffer< bigit, bigits_capacity >", "da/dab/classfmt_1_1v10_1_1basic__memory__buffer.html", null ],
-      [ "fmt::v10::basic_memory_buffer< wchar_t >", "da/dab/classfmt_1_1v10_1_1basic__memory__buffer.html", null ],
       [ "fmt::v10::basic_memory_buffer< T, SIZE, Allocator >", "da/dab/classfmt_1_1v10_1_1basic__memory__buffer.html", null ],
-      [ "fmt::v10::detail::counting_buffer< T >", "d0/de9/classfmt_1_1v10_1_1detail_1_1counting__buffer.html", null ],
       [ "fmt::v10::detail::iterator_buffer< OutputIt, T, Traits >", "d4/d92/classfmt_1_1v10_1_1detail_1_1iterator__buffer.html", null ],
       [ "fmt::v10::detail::iterator_buffer< T *, T >", "dc/da5/classfmt_1_1v10_1_1detail_1_1iterator__buffer_3_01T_01_5_00_01T_01_4.html", null ],
       [ "fmt::v10::detail::iterator_buffer< T *, T, fixed_buffer_traits >", "de/d26/classfmt_1_1v10_1_1detail_1_1iterator__buffer_3_01T_01_5_00_01T_00_01fixed__buffer__traits_01_4.html", null ]
     ] ],
-    [ "lemlib::Buffer", "dc/d93/classlemlib_1_1Buffer.html", [
-      [ "lemlib::BufferedStdout", "d8/d56/classlemlib_1_1BufferedStdout.html", null ]
+    [ "fmt::v10::detail::buffer< bigit >", "d7/d8e/classfmt_1_1v10_1_1detail_1_1buffer.html", [
+      [ "fmt::v10::basic_memory_buffer< bigit, bigits_capacity >", "da/dab/classfmt_1_1v10_1_1basic__memory__buffer.html", null ]
     ] ],
-    [ "fmt::v10::detail::buffer< bigit >", "d7/d8e/classfmt_1_1v10_1_1detail_1_1buffer.html", null ],
-    [ "fmt::v10::detail::buffer< char >", "d7/d8e/classfmt_1_1v10_1_1detail_1_1buffer.html", null ],
+    [ "fmt::v10::detail::buffer< char >", "d7/d8e/classfmt_1_1v10_1_1detail_1_1buffer.html", [
+      [ "fmt::v10::detail::counting_buffer< T >", "d0/de9/classfmt_1_1v10_1_1detail_1_1counting__buffer.html", null ]
+    ] ],
     [ "fmt::v10::detail::buffer< char_type >", "d7/d8e/classfmt_1_1v10_1_1detail_1_1buffer.html", null ],
     [ "fmt::v10::detail::buffer< Container::value_type >", "d7/d8e/classfmt_1_1v10_1_1detail_1_1buffer.html", [
       [ "fmt::v10::detail::iterator_buffer< std::back_insert_iterator< Container >, enable_if_t< is_contiguous< Container >::value, typename Container::value_type > >", "de/d22/classfmt_1_1v10_1_1detail_1_1iterator__buffer_3_01std_1_1back__insert__iterator_3_01Container_01898b0b7acade8c0ce0a052ec2d9b158d.html", null ]
     ] ],
-    [ "fmt::v10::detail::buffer< wchar_t >", "d7/d8e/classfmt_1_1v10_1_1detail_1_1buffer.html", null ],
+    [ "fmt::v10::detail::buffer< wchar_t >", "d7/d8e/classfmt_1_1v10_1_1detail_1_1buffer.html", [
+      [ "fmt::v10::basic_memory_buffer< wchar_t >", "da/dab/classfmt_1_1v10_1_1basic__memory__buffer.html", null ]
+    ] ],
     [ "fmt::v10::detail::buffer_traits", "d0/d28/structfmt_1_1v10_1_1detail_1_1buffer__traits.html", [
       [ "fmt::v10::detail::iterator_buffer< OutputIt, T, Traits >", "d4/d92/classfmt_1_1v10_1_1detail_1_1iterator__buffer.html", null ]
     ] ],
@@ -164,7 +167,6 @@ var hierarchy =
     [ "fmt::dynamic_format_arg_store< Context >", "d3/db8/classfmt_1_1v10_1_1dynamic__format__arg__store.html", null ],
     [ "fmt::v10::dynamic_format_arg_store< Context >", "d3/db8/classfmt_1_1v10_1_1dynamic__format__arg__store.html", null ],
     [ "fmt::v10::detail::dynamic_spec_id_handler< Char >", "df/d36/structfmt_1_1v10_1_1detail_1_1dynamic__spec__id__handler.html", null ],
-    [ "Robot::Elevation", "dc/d29/classRobot_1_1Elevation.html", null ],
     [ "fmt::v10::detail::error_handler", "d9/d01/structfmt_1_1v10_1_1detail_1_1error__handler.html", null ],
     [ "euler_s_t", "d1/d3d/structeuler__s__t.html", null ],
     [ "lemlib::ExitCondition", "d7/df6/classlemlib_1_1ExitCondition.html", null ],
@@ -201,16 +203,14 @@ var hierarchy =
     [ "fmt::v10::detail::format_decimal_result< Iterator >", "d6/df6/structfmt_1_1v10_1_1detail_1_1format__decimal__result.html", null ],
     [ "fmt::format_int", "d3/d3f/classfmt_1_1v10_1_1format__int.html", null ],
     [ "fmt::v10::format_int", "d3/d3f/classfmt_1_1v10_1_1format__int.html", null ],
-    [ "fmt::format_specs< Char >", "df/deb/structfmt_1_1v10_1_1format__specs.html", [
-      [ "fmt::v10::detail::dynamic_format_specs< Char >", "de/d28/structfmt_1_1v10_1_1detail_1_1dynamic__format__specs.html", null ]
-    ] ],
+    [ "fmt::format_specs< Char >", "df/deb/structfmt_1_1v10_1_1format__specs.html", null ],
+    [ "fmt::v10::format_specs< Char >", "df/deb/structfmt_1_1v10_1_1format__specs.html", null ],
     [ "fmt::v10::format_specs< Char >", "df/deb/structfmt_1_1v10_1_1format__specs.html", [
       [ "fmt::v10::detail::dynamic_format_specs< Char >", "de/d28/structfmt_1_1v10_1_1detail_1_1dynamic__format__specs.html", null ]
     ] ],
-    [ "fmt::v10::format_specs< Char >", "df/deb/structfmt_1_1v10_1_1format__specs.html", [
+    [ "fmt::v10::format_specs< char >", "df/deb/structfmt_1_1v10_1_1format__specs.html", [
       [ "fmt::v10::detail::dynamic_format_specs< Char >", "de/d28/structfmt_1_1v10_1_1detail_1_1dynamic__format__specs.html", null ]
     ] ],
-    [ "fmt::v10::format_specs< char >", "df/deb/structfmt_1_1v10_1_1format__specs.html", null ],
     [ "fmt::v10::detail::format_string_checker< Char, Args >", "de/d29/classfmt_1_1v10_1_1detail_1_1format__string__checker.html", null ],
     [ "fmt::format_to_n_result< OutputIt >", "d5/d8c/structfmt_1_1v10_1_1format__to__n__result.html", null ],
     [ "fmt::v10::format_to_n_result< OutputIt >", "d5/d8c/structfmt_1_1v10_1_1format__to__n__result.html", null ],
@@ -299,6 +299,7 @@ var hierarchy =
     [ "std::is_integral", null, [
       [ "fmt::v10::detail::is_integral< T >", "da/dcc/structfmt_1_1v10_1_1detail_1_1is__integral.html", null ]
     ] ],
+    [ "Robot::Latch", "db/d72/classRobot_1_1Latch.html", null ],
     [ "lcd_s", "d8/d81/structlcd__s.html", null ],
     [ "fmt::loc_value", "db/d0e/classfmt_1_1v10_1_1loc__value.html", null ],
     [ "fmt::v10::loc_value", "db/d0e/classfmt_1_1v10_1_1loc__value.html", null ],
@@ -409,9 +410,9 @@ var hierarchy =
     ] ],
     [ "lemlib::Pose", "db/dff/classlemlib_1_1Pose.html", null ],
     [ "fmt::v10::detail::precision_checker< ErrorHandler >", "d3/d21/classfmt_1_1v10_1_1detail_1_1precision__checker.html", null ],
-    [ "Robot::Puncher", "d8/d8b/classRobot_1_1Puncher.html", null ],
     [ "qrcodegen_Segment", "dd/dcd/structqrcodegen__Segment.html", null ],
     [ "quaternion_s_t", "d4/d47/structquaternion__s__t.html", null ],
+    [ "Robot::RobotSubsystems", "d9/dcb/structRobot_1_1RobotSubsystems.html", null ],
     [ "std::runtime_error", null, [
       [ "fmt::v10::format_error", "d6/d7c/classfmt_1_1v10_1_1format__error.html", null ]
     ] ],

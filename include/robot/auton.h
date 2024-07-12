@@ -29,7 +29,7 @@ namespace Robot {
          * @param puncher A reference to the Puncher object.
          * @param autono A boolean value indicating whether to use autonomous mode.
          */
-        void AutoDrive(bool autono);
+        void AutoDrive();
         
         /**
          * @brief Switches the autonomous program.

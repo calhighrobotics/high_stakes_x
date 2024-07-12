@@ -40,6 +40,7 @@
 #include "robot/drivetrain.h"
 #include "robot/intake.h"
 #include "robot/utility.h"
+#include "pros/apix.h"
 
 /**
  * You should add more #includes here
