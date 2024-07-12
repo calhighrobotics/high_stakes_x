@@ -98,9 +98,6 @@ void Drivetrain::run() {
     if (Drivetrain::driveMode == 2) {
         Drivetrain::TankDrive();
     }
-    if (Drivetrain::driveMode == 2) {
-        Drivetrain::CurveDrive();
-    }
 }
 
 
@@ -121,9 +118,6 @@ void Drivetrain::SwitchDrive() {
         }
         if (Drivetrain::driveMode == 2) {
             pros::lcd::set_text(2, "Drive: Tank");
-        }
-        if (Drivetrain::driveMode == 2) {
-            pros::lcd::set_text(2, "Drive: Curve");
         }
     }
 }
