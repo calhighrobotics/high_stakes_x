@@ -70,5 +70,8 @@ namespace Robot {
 
         extern pros::adi::DigitalIn drivetrainToggleSwitch;
         extern pros::adi::DigitalIn autonToggleSwitch;
+
     }
+
+    struct RobotSubsystems;
 } // namespace Robot

@@ -1,5 +1,8 @@
 #include "robot/auton.h"
 #include "globals.h"
+#include "robot/drivetrain.h"
+#include "robot/intake.h"
+#include "robot/utility.h"
 #include "pros/apix.h"
 
 using namespace Robot;
@@ -9,6 +12,32 @@ int Autonomous::auton = 4;
 
 
 void Autonomous::Auton1() {
+	chassis.setPose(-148.132, -58.408, 190);
+	//robot backs up into wallstake and is ready to outake
+	chassis.follow("path_right_4_winpoint_pt1.txt", 15, 5000)
+
+	subsystem.intake.score();
+
+	// robot moves forward and is ready to intake red ring on top of 2ring stack
+	chassis.follow("path_right_4_winpoint_pt2.txt", 15, 5000)
+	subsystem.intake.toggle();
+	subsystem.intake.interval(5000);
+
+	// robot moves backward and stops at mobile goal. ready to latch and outake ring
+	chassis.follow("path_right_4_winpoint_pt3.txt", 15, 5000)
+	subsystem.latch.toggle();
+	subsystem.intake.score();
+
+	//robot drags mobile goal and stops. ready to intake bottom of ring of 2ring stack + outake to mobile goal
+	// then unlatches mobile goal
+	chassis.follow("path_right_4_winpoint_pt4.txt", 15, 5000)
+	subsystem.intake.toggle();
+	subsystem.intake.interval(5000);
+	subsystem.latch.toggle();
+	subsystem.intake.score();
+
+	// robot ends in contact with tower
+	chassis.follow("path_right_4_winpoint_pt5.txt", 15, 5000)
 
 }
 
@@ -82,6 +111,6 @@ void Autonomous::AutonSwitcher() {
 
 	}
 	
-		
+
     
 }

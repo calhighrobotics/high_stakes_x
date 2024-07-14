@@ -24,17 +24,6 @@ using namespace Robot::Globals;
  */
 
 
-namespace Robot {
-/**
- * @brief Structure that holds instances of all robot subsystems.
- */
-struct RobotSubsystems {
-	Robot::Autonomous autonomous;
-	Robot::Drivetrain drivetrain;
-	Robot::Intake intake;
-} subsystem;
-}
-
 /**
  * A callback function for LLEMU's center button.
  *
@@ -166,10 +155,10 @@ void opcontrol() {
         subsystem.drivetrain.run();
 		
 
-
+		subsystem.latch.run();
 		
 
-		// Catapult controller, uses the X button holded down to push the elevation up.
+		// Intake controller, uses the X button holded down to push the elevation up.
 		subsystem.intake.run();
 
 		// Intake controller, moves the left and right intakes and stops them if nothing is pressed.

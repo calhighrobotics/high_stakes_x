@@ -12,6 +12,11 @@ namespace Robot {
              */
             void run();
 
+            Latch();
 
+            /**
+             * @brief Toggles latch state.
+             */
+            void toggle();
     };
 }
