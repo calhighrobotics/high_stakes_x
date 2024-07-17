@@ -28,6 +28,9 @@ pros::Motor IntakeMotor (-9, pros::v5::MotorGears::blue, pros::v5::MotorUnits::d
 pros::adi::DigitalIn drivetrainToggleSwitch('G');
 pros::adi::DigitalIn autonToggleSwitch('F');
 
+pros::ADIDigitalOut LatchControl('A');
+pros::ADIDigitalOut IntakeToggle('B');
+
 pros::Imu inertial_sensor(15);
 
 pros::MotorGroup drive_left({LeftFront.get_port(), LeftMid.get_port(), LeftBack.get_port()});
@@ -100,7 +103,9 @@ lemlib::Chassis chassis(drivetrain,
                         sensors,
                         &throttle_curve, 
                         &steer_curve
-);
+        );
 
     }
+
+    
 }

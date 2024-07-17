@@ -1,5 +1,7 @@
 #pragma once
 #include <string>
+#include "robot/intake.h"
+#include "robot/latch.h"
 
 namespace Robot {
     /**
@@ -29,7 +31,7 @@ namespace Robot {
          * @param puncher A reference to the Puncher object.
          * @param autono A boolean value indicating whether to use autonomous mode.
          */
-        void AutoDrive();
+        void AutoDrive(Intake &intake, Latch &latch);
         
         /**
          * @brief Switches the autonomous program.
@@ -48,7 +50,7 @@ namespace Robot {
          * This function executes the autonomous path for the far side defensive game strategy.
          * It contains the specific actions and movements required for this strategy.
          */
-        void Auton1();
+        void Auton1(Intake &intake, Latch &latch);
 
         /**
          * @brief Runs the autonomous path for the near side offensive game strategy.
@@ -56,7 +58,7 @@ namespace Robot {
          * This function executes the autonomous path for the near side offensive game strategy.
          * It contains the specific actions and movements required for this strategy.
          */
-        void Auton2();
+        void Auton2(Intake &intake, Latch &latch);
 
         /**
          * @brief Runs the puncher routine for the Skills Challenge.
@@ -66,9 +68,9 @@ namespace Robot {
          * 
          * @param puncher A reference to the Puncher object.
          */
-        void Auton3();
+        void Auton3(Intake &intake, Latch &latch);
 
-        void Auton4();
+        void Auton4(Intake &intake, Latch &latch);
 
         std::string autonName;
     };

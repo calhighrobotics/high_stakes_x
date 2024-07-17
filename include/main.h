@@ -39,6 +39,7 @@
 #include "globals.h"
 #include "robot/drivetrain.h"
 #include "robot/intake.h"
+#include "robot/latch.h"
 #include "robot/utility.h"
 #include "pros/apix.h"
 

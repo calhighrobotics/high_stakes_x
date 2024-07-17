@@ -8,12 +8,12 @@
 using namespace Robot;
 using namespace Robot::Globals;
 /*
-  (      (     (      (     (   
-  )\    (()    )\     )\   (_)  
- ((_)  ((_)   ((_)   ((_) (_))  
- (/ |  | __|  (/ |  (/ /  | |() 
-  | |  |__ \   | |  / _ \ |  _ \
-  |_|  |___/   |_|  \___/ |____/
+ ____ .____________  ____________  ___
+/_   ||   ____/_   |/  _____/\   \/  /
+ |   ||____  \ |   /   __  \  \     / 
+ |   |/       \|   \  |__\  \ /     \ 
+ |___/______  /|___|\_____  //___/\  \
+            \/            \/       \_/
 
 */
 
@@ -23,17 +23,15 @@ using namespace Robot::Globals;
  * @brief This file contains the main code for the robot's operation.
  */
 
-
-namespace Robot {
 /**
- * @brief Structure that holds instances of all robot subsystems.
- */
-struct RobotSubsystems {
-	Robot::Autonomous autonomous;
-	Robot::Drivetrain drivetrain;
-	Robot::Intake intake;
-} subsystem;
-}
+    * @brief Structure that holds instances of all robot subsystems.
+    */
+    struct RobotSubsystems {
+        Robot::Autonomous autonomous;
+        Robot::Drivetrain drivetrain;
+        Robot::Intake intake;
+        Robot::Latch latch;
+    } subsystem;
 
 /**
  * A callback function for LLEMU's center button.
@@ -142,7 +140,8 @@ void autonomous() {
 	chassis.setPose(0, 0, 0);
     // move 48" forwards
     chassis.moveToPoint(0, 24, 10000, {.maxSpeed = 110});
-	//subsystem.autonomous.AutoDrive();
+
+	//subsystem.autonomous.AutoDrive(intake, latch);
 
 
 
@@ -179,10 +178,10 @@ void opcontrol() {
         subsystem.drivetrain.run();
 		
 
-
+		subsystem.latch.run();
 		
 
-		// Catapult controller, uses the X button holded down to push the elevation up.
+		// Intake controller, uses the X button holded down to push the elevation up.
 		subsystem.intake.run();
 
 		// Intake controller, moves the left and right intakes and stops them if nothing is pressed.
