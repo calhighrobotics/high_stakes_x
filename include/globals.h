@@ -71,8 +71,8 @@ namespace Robot {
         extern pros::adi::DigitalIn drivetrainToggleSwitch;
         extern pros::adi::DigitalIn autonToggleSwitch;
 
-        extern pros::ADIDigitalOut LatchControl;
-        extern pros::ADIDigitalOut IntakeToggle;
+        extern pros::adi::Pneumatics LatchControl;
+        extern pros::adi::Pneumatics IntakeToggle;
 
     }
 } // namespace Robot

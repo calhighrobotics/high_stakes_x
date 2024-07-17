@@ -28,8 +28,8 @@ pros::Motor IntakeMotor (-9, pros::v5::MotorGears::blue, pros::v5::MotorUnits::d
 pros::adi::DigitalIn drivetrainToggleSwitch('G');
 pros::adi::DigitalIn autonToggleSwitch('F');
 
-pros::ADIDigitalOut LatchControl('A');
-pros::ADIDigitalOut IntakeToggle('B');
+pros::adi::Pneumatics LatchControl('A', false);
+pros::adi::Pneumatics IntakeToggle('B', false);
 
 pros::Imu inertial_sensor(15);
 

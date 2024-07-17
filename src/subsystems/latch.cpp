@@ -13,9 +13,9 @@ void Latch::run() {
 
 
 Latch::Latch() {
-    LatchControl.set_value(false);
+    ;
 }
 
 void Latch::toggle() {
-    LatchControl.set_value(!LatchControl.get_value());
+    LatchControl.toggle();
 }
