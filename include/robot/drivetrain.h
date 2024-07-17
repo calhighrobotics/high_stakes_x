@@ -60,18 +60,6 @@ namespace Robot {
          */
         int getdeadzone();
 
-        /**
-         * @brief remaps the turning with curvature through throttle
-         *
-         * @return remapped turn input
-         *
-         * Larger changes in joystick input results in a lower real speed, allowing for more control at lower speeds.
-         * When the joystick input increases, the accerleration is faster.
-         *
-         * @details turn input is a sum of the throttle and the turn inputs.
-         * Nonlinearity is applied through sinusoidal functions.
-         */
-         double turn_remap();
 
         /**
          * @brief Switches the DriveTrain mode between arcade and tank drive.

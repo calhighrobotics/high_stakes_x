@@ -74,6 +74,16 @@ void initialize() {
 	// if (pros::c::registry_get_plugged_type(15) == pros::c::E_DEVICE_IMU) {
 	chassis.calibrate();  
 	chassis.setPose(0, 0, 0);
+	pros::Task screen_task([&]() {
+        while (true) {
+            // print robot location to the brain screen
+            pros::lcd::print(0, "X: %f", chassis.getPose().x); // x
+            pros::lcd::print(1, "Y: %f", chassis.getPose().y); // y
+            pros::lcd::print(2, "Theta: %f", chassis.getPose().theta); // heading
+            // delay to save resources
+            pros::delay(20);
+        }
+    });
 	
 	
 	// pros::Task screenTask(Robot::Utility::display);
@@ -129,7 +139,10 @@ void competition_initialize() {
 void autonomous() {
 	
 	
-	subsystem.autonomous.AutoDrive();
+	chassis.setPose(0, 0, 0);
+    // move 48" forwards
+    chassis.moveToPoint(0, 24, 10000, {.maxSpeed = 110});
+	//subsystem.autonomous.AutoDrive();
 
 
 

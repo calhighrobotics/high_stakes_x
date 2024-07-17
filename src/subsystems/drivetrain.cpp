@@ -15,13 +15,6 @@ int Drivetrain::CheckDeadzone(int ControllerInput) {
     }
 }
 
-double Drivetrain::turn_remap(double turn) {
-	double denominator = std::sin(std::PI / 2 * CD_TURN_NONLINEARITY);
-	double firstRemapIteration =
-	    std::sin(std::PI / 2 * CD_TURN_NONLINEARITY * turn) / denominator;
-	return std::sin(std::PI / 2 * CD_TURN_NONLINEARITY * firstRemapIteration) / denominator;
-}
-
 void Drivetrain::CurvatureDrive() {
     Drivetrain::deadzone = 5;
 
@@ -51,7 +44,7 @@ void Drivetrain::ArcadeDrive() {
 }
 
 Drivetrain::Drivetrain() {
-    Drivetrain::driveMode = 2;
+    Drivetrain::driveMode = 0;
 }
 
 void Drivetrain::TankDrive() {

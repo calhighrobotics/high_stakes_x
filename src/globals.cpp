@@ -17,13 +17,13 @@ namespace Robot {
     namespace Globals {
 
 pros::Controller controller (pros::E_CONTROLLER_MASTER);
-pros::Motor RightFront (6, pros::v5::MotorGears::green, pros::v5::MotorUnits::degrees);
-pros::Motor LeftFront (-5, pros::v5::MotorGears::green, pros::v5::MotorUnits::degrees);
-pros::Motor LeftBack (-7, pros::v5::MotorGears::green, pros::v5::MotorUnits::degrees);
-pros::Motor RightBack (8, pros::v5::MotorGears::green, pros::v5::MotorUnits::degrees);
-pros::Motor LeftMid (2, pros::v5::MotorGears::green, pros::v5::MotorUnits::degrees);
-pros::Motor RightMid (-3, pros::v5::MotorGears::green, pros::v5::MotorUnits::degrees);
-pros::Motor IntakeMotor (-9, pros::v5::MotorGears::green, pros::v5::MotorUnits::degrees);
+pros::Motor RightFront (6, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
+pros::Motor LeftFront (-5, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
+pros::Motor LeftBack (-7, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
+pros::Motor RightBack (8, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
+pros::Motor LeftMid (2, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
+pros::Motor RightMid (-3, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
+pros::Motor IntakeMotor (-9, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
 
 pros::adi::DigitalIn drivetrainToggleSwitch('G');
 pros::adi::DigitalIn autonToggleSwitch('F');
@@ -39,10 +39,10 @@ pros::MotorGroup drive_({LeftFront.get_port(), RightFront.get_port(), LeftMid.ge
 lemlib::Drivetrain drivetrain {
     &drive_left, // left drivetrain motors
     &drive_right, // right drivetrain motors
-    10, // track width
+    12.125, // track width
     lemlib::Omniwheel::OLD_325,
-    3.25, // wheel diameter - 3.25 on competition bot, 4 on test drivetrain
-	450 // wheel rpm - 360 rpm for competition bot, 200 for test drivetrain
+    450, // drivetrain rpm is 450
+	2 // horizontal drift is 2
 };
 
 
@@ -58,28 +58,28 @@ lemlib::OdomSensors sensors {
 
 // forward/backward PID
 lemlib::ControllerSettings lateral_controller {
-    33, // kP
+    10, // kP
     0, // kI
-    300, // kD
-    2, // Anti Windup
-    1, // smallErrorRange
-    100, // smallErrorTimeout
-    3, // largeErrorRange
-    500, // largeErrorTimeout
-    10 // slew rate
+    3, // kD
+    0, // Anti Windup
+    0, // smallErrorRange
+    0, // smallErrorTimeout
+    0, // largeErrorRange
+    0, // largeErrorTimeout
+    100 // slew rate
 };
  
 // turning PID
 lemlib::ControllerSettings angular_controller {
-    6, // kP
+    4.04, // kP
     0, // kI
-    47, // kD
-    2, // Anti Windup
+    24.5, // kD
+    3, // Anti Windup
     1, // smallErrorRange
     100, // smallErrorTimeout
     3, // largeErrorRange
     500, // largeErrorTimeout
-    0.5 // slew rate
+    0 // slew rate
 };
 
 lemlib::ExpoDriveCurve throttle_curve(3, // joystick deadband out of 127
