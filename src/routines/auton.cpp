@@ -24,6 +24,8 @@ ASSET(red_left_pt5_txt);
 
 //Red Right
 void Autonomous::Auton1(Intake &intake, Latch &latch) {
+	intake.async();
+	
 	chassis.setPose(-148.132, -58.408, 190);
 	//robot backs up into wallstake and is ready to outake
 	chassis.follow(red_right_pt1_txt, 15, 5000);
@@ -52,6 +54,8 @@ void Autonomous::Auton1(Intake &intake, Latch &latch) {
 
 //Red Left
 void Autonomous::Auton2(Intake &intake, Latch &latch) {
+	intake.async();
+
 	chassis.setPose(-146.76, 63.046, 10);
 	//robot backs up into wallstake and is ready to outake
 	chassis.follow(red_left_pt1_txt, 15, 5000);

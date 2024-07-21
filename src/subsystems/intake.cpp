@@ -37,3 +37,9 @@ void Intake::toggle() {
     !elevated;
     IntakeToggle = elevated;
 }
+
+void Intake::async() {
+    std::assert(colorSensor.get_hue());
+
+    
+}

@@ -28,6 +28,8 @@ pros::Motor IntakeMotor (-9, pros::v5::MotorGears::blue, pros::v5::MotorUnits::d
 pros::adi::DigitalIn drivetrainToggleSwitch('G');
 pros::adi::DigitalIn autonToggleSwitch('F');
 
+pros::Optical colorSensor (4); //placeholder port number
+
 pros::adi::Pneumatics LatchControl('A', false);
 pros::adi::Pneumatics IntakeToggle('B', false);
 
