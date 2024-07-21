@@ -16,47 +16,79 @@ ASSET(red_right_pt3_txt);
 ASSET(red_right_pt4_txt);
 ASSET(red_right_pt5_txt);
 
+ASSET(red_left_pt1_txt);
+ASSET(red_left_pt2_txt);
+ASSET(red_left_pt3_txt);
+ASSET(red_left_pt4_txt);
+ASSET(red_left_pt5_txt);
+
+//Red Right
 void Autonomous::Auton1(Intake &intake, Latch &latch) {
 	chassis.setPose(-148.132, -58.408, 190);
 	//robot backs up into wallstake and is ready to outake
 	chassis.follow(red_right_pt1_txt, 15, 5000);
 
 	intake.score();
-
-	// robot moves forward and is ready to intake red ring on top of 2ring stack
-	chassis.follow(red_right_pt2_txt, 15, 5000);
 	intake.toggle();
-	intake.interval(5000);
+	// robot moves forward and intakes red ring on top of stack
+	chassis.follow(red_right_pt2_txt, 15, 5000);
 
 	// robot moves backward and stops at mobile goal. ready to latch and outake ring
 	chassis.follow(red_right_pt3_txt, 15, 5000);
 	latch.toggle();
 	intake.score();
+	intake.toggle();
 
-	//robot drags mobile goal and stops. ready to intake bottom of ring of 2ring stack + outake to mobile goal
+	//robot drags mobile goal and intakes bottom of ring of 2ring stack then stops. ready to outake to mobile goal
 	// then unlatches mobile goal
 	chassis.follow(red_right_pt4_txt, 15, 5000);
-	intake.toggle();
-	intake.interval(5000);
-	latch.toggle();
 	intake.score();
+	latch.toggle();
 
 	// robot ends in contact with tower
 	chassis.follow(red_right_pt5_txt, 15, 5000);
 
 }
 
+//Red Left
 void Autonomous::Auton2(Intake &intake, Latch &latch) {
+	chassis.setPose(-146.76, 63.046, 10);
+	//robot backs up into wallstake and is ready to outake
+	chassis.follow(red_left_pt1_txt, 15, 5000);
+	intake.score();
+	intake.toggle();
 
+	//robot moves and intakes ring from top of 2ring stack.
+	chassis.follow(red_left_pt2_txt, 15, 5000);
+	intake.toggle();
+
+	//robot moves backward toward mobile goal. Ready to latch then score.
+	chassis.follow(red_left_pt3_txt, 15, 5000);
+	latch.toggle();
+	intake.score();
+
+	//robot turns around and intakes ring from bottom of 2ring stack.
+	chassis.follow(red_left_pt4_txt, 15, 5000);
+	intake.score();
+	latch.toggle();
+
+	//robot ends in contact with mobile goal
+	chassis.follow(red_left_pt5_txt, 15, 5000);
 }
 
-
+//Blue Right
 void Autonomous::Auton3(Intake &intake, Latch &latch) {
-    // Autonomous routine for the Skills challenge
+    
 }
 
+//Blue Left
 void Autonomous::Auton4(Intake &intake, Latch &latch) {
  
+}
+
+// Skills Challenge
+void Autonomous::Auton5(Intake &intake, Latch &latch) {
+
 }
 
 
@@ -80,6 +112,10 @@ void Autonomous::AutoDrive(Intake &intake, Latch &latch) {
 	if(Autonomous::auton == 4){
         Auton4(intake, latch);
     }
+
+	if(Autonomous::auton == 5) {
+		Auton5(intake, latch)
+	}
 
 }
 
