@@ -10,39 +10,39 @@ using namespace Robot::Globals;
 
 int Autonomous::auton = 4;
 
-ASSET(red_right_1_winpoint_pt1_txt);
-ASSET(red_right_1_winpoint_pt2_txt);
-ASSET(red_right_1_winpoint_pt3_txt);
-ASSET(red_right_1_winpoint_pt4_txt);
-ASSET(red_right_1_winpoint_pt5_txt);
+ASSET(red_right_pt1_txt);
+ASSET(red_right_pt2_txt);
+ASSET(red_right_pt3_txt);
+ASSET(red_right_pt4_txt);
+ASSET(red_right_pt5_txt);
 
 void Autonomous::Auton1(Intake &intake, Latch &latch) {
 	chassis.setPose(-148.132, -58.408, 190);
 	//robot backs up into wallstake and is ready to outake
-	chassis.follow(red_right_1_winpoint_pt1_txt, 15, 5000);
+	chassis.follow(red_right_pt1_txt, 15, 5000);
 
 	intake.score();
 
 	// robot moves forward and is ready to intake red ring on top of 2ring stack
-	chassis.follow(red_right_1_winpoint_pt2_txt, 15, 5000);
+	chassis.follow(red_right_pt2_txt, 15, 5000);
 	intake.toggle();
 	intake.interval(5000);
 
 	// robot moves backward and stops at mobile goal. ready to latch and outake ring
-	chassis.follow(red_right_1_winpoint_pt3_txt, 15, 5000);
+	chassis.follow(red_right_pt3_txt, 15, 5000);
 	latch.toggle();
 	intake.score();
 
 	//robot drags mobile goal and stops. ready to intake bottom of ring of 2ring stack + outake to mobile goal
 	// then unlatches mobile goal
-	chassis.follow(red_right_1_winpoint_pt4_txt, 15, 5000);
+	chassis.follow(red_right_pt4_txt, 15, 5000);
 	intake.toggle();
 	intake.interval(5000);
 	latch.toggle();
 	intake.score();
 
 	// robot ends in contact with tower
-	chassis.follow(red_right_1_winpoint_pt5_txt, 15, 5000);
+	chassis.follow(red_right_pt5_txt, 15, 5000);
 
 }
 
