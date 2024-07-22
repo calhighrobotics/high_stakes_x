@@ -1,6 +1,7 @@
 #include "robot/intake.h"
 #include "api.h"
 #include "globals.h"
+#include <cassert>
 
 using namespace Robot;
 using namespace Robot::Globals;
@@ -34,12 +35,6 @@ void Intake::run(){
 }
 
 void Intake::toggle() {
-    if (elevated) {
-        IntakeToggle.retract();
-        elevated = false;
-    }
-    else {
-        IntakeToggle.extend();
-        elevated = true;
-    }
+    !elevated;
+    IntakeToggle.toggle();
 }

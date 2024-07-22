@@ -32,6 +32,7 @@ namespace Robot {
              */
             void toggle();
 
+
         private:
             bool elevated;
     };

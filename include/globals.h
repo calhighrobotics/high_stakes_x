@@ -51,6 +51,8 @@ namespace Robot {
 
         extern lemlib::OdomSensors sensors;
 
+        extern pros::Optical colorSensor;
+
 
         // forward/backward PID
         extern lemlib::ControllerSettings lateral_controller;
