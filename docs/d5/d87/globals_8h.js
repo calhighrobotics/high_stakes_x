@@ -3,6 +3,7 @@ var globals_8h =
     [ "angular_controller", "d5/d87/globals_8h.html#a7ec7662efd5e0bdeb4790cfa3330edf2", null ],
     [ "autonToggleSwitch", "d5/d87/globals_8h.html#a06b9e49f2cb10dd4449587b742049d5a", null ],
     [ "chassis", "d5/d87/globals_8h.html#adb19c4d8d7b61867e04f934a6dcd6f87", null ],
+    [ "colorSensor", "d5/d87/globals_8h.html#a3c0b75f3ba187004006780b11c884eb4", null ],
     [ "controller", "d5/d87/globals_8h.html#a9935411c69763c03223e884be03447d2", null ],
     [ "drive_", "d5/d87/globals_8h.html#ac5c96e6dd4a62d8658e148b4d43aeacb", null ],
     [ "drive_left", "d5/d87/globals_8h.html#a3f6b97b912b1083371a8e3b2e9640679", null ],

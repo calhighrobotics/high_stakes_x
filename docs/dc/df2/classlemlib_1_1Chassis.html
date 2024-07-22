@@ -622,7 +622,7 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="aclasslemlib_1_1Chassis_html_a49be67f1c59ca1f3cd1b8f0bb30564a7"><div class="ttname"><a href="#a49be67f1c59ca1f3cd1b8f0bb30564a7">lemlib::Chassis::follow</a></div><div class="ttdeci">void follow(const asset &amp;path, float lookahead, int timeout, bool forwards=true, bool async=true)</div><div class="ttdoc">Move the chassis along a path.</div></div>
 <div class="ttc" id="amain_8h_html_a2df3d06bc5bced154da27fce393f991f"><div class="ttname"><a href="../../d4/dbf/main_8h.html#a2df3d06bc5bced154da27fce393f991f">autonomous</a></div><div class="ttdeci">void autonomous(void)</div><div class="ttdef"><b>Definition</b> <a href="../../df/d0a/main_8cpp_source.html#l00145">main.cpp:145</a></div></div>
 </div><!-- fragment --> 
-<p class="reference">Referenced by <a class="el" href="../../db/ddf/auton_8cpp_source.html#l00020">Robot::Autonomous::Auton1()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../db/ddf/auton_8cpp_source.html#l00027">Robot::Autonomous::Auton1()</a>, and <a class="el" href="../../db/ddf/auton_8cpp_source.html#l00056">Robot::Autonomous::Auton2()</a>.</p>
 
 </div>
 </div>
@@ -761,7 +761,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#adb19c4d8d7b61867e04f934a6dcd6f87">chassis</a>.<a class="code hl_function" href="#a3439290727c96c23608a7295293b0482">moveToPoint</a>(7.5, 7.5, 4000, {.minSpeed = 60, .earlyExitRange = 5});</div>
 <div class="ttc" id="anamespaceRobot_1_1Globals_html_adb19c4d8d7b61867e04f934a6dcd6f87"><div class="ttname"><a href="../../df/d3e/namespaceRobot_1_1Globals.html#adb19c4d8d7b61867e04f934a6dcd6f87">Robot::Globals::chassis</a></div><div class="ttdeci">lemlib::Chassis chassis</div></div>
 </div><!-- fragment --> 
-<p class="reference">Referenced by <a class="el" href="../../db/ddf/auton_8cpp_source.html#l00062">Robot::Autonomous::Auton4()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../db/ddf/auton_8cpp_source.html#l00091">Robot::Autonomous::Auton4()</a>.</p>
 
 </div>
 </div>
@@ -920,7 +920,7 @@ Private Attributes</h2></td></tr>
 <div class="line">chassis.<a class="code hl_function" href="#abadaac0fa9ad9930b55856655a79f6a3">setBrakeMode</a>(pros::E_MOTOR_BRAKE_BRAKE);</div>
 <div class="ttc" id="aclasslemlib_1_1Chassis_html_abadaac0fa9ad9930b55856655a79f6a3"><div class="ttname"><a href="#abadaac0fa9ad9930b55856655a79f6a3">lemlib::Chassis::setBrakeMode</a></div><div class="ttdeci">void setBrakeMode(pros::motor_brake_mode_e mode)</div><div class="ttdoc">Sets the brake mode of the drivetrain motors.</div></div>
 </div><!-- fragment --> 
-<p class="reference">Referenced by <a class="el" href="../../db/ddf/auton_8cpp_source.html#l00062">Robot::Autonomous::Auton4()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../db/ddf/auton_8cpp_source.html#l00091">Robot::Autonomous::Auton4()</a>.</p>
 
 </div>
 </div>
@@ -969,7 +969,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="comment">// this time with theta in radians</span></div>
 <div class="line">chassis.<a class="code hl_function" href="#a56e8f9c0cfb4af91a222909393d6707f">setPose</a>(5.3, 12.2, 3.14, <span class="keyword">true</span>);</div>
 </div><!-- fragment --> 
-<p class="reference">Referenced by <a class="el" href="../../db/ddf/auton_8cpp_source.html#l00020">Robot::Autonomous::Auton1()</a>, <a class="el" href="../../db/ddf/auton_8cpp_source.html#l00062">Robot::Autonomous::Auton4()</a>, and <a class="el" href="../../df/d0a/main_8cpp_source.html#l00073">initialize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../db/ddf/auton_8cpp_source.html#l00027">Robot::Autonomous::Auton1()</a>, <a class="el" href="../../db/ddf/auton_8cpp_source.html#l00056">Robot::Autonomous::Auton2()</a>, <a class="el" href="../../db/ddf/auton_8cpp_source.html#l00091">Robot::Autonomous::Auton4()</a>, and <a class="el" href="../../df/d0a/main_8cpp_source.html#l00073">initialize()</a>.</p>
 
 </div>
 </div>
@@ -1272,7 +1272,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#adb19c4d8d7b61867e04f934a6dcd6f87">chassis</a>.<a class="code hl_function" href="#a470a475bd5a32d272c287572441c0eb3">turnToHeading</a>(45, 2000, {.minSpeed = 60, .earlyExitRange = 5});</div>
 <div class="ttc" id="aclasslemlib_1_1Chassis_html_a470a475bd5a32d272c287572441c0eb3"><div class="ttname"><a href="#a470a475bd5a32d272c287572441c0eb3">lemlib::Chassis::turnToHeading</a></div><div class="ttdeci">void turnToHeading(float theta, int timeout, TurnToHeadingParams params={}, bool async=true)</div><div class="ttdoc">Turn the chassis so it is facing the target heading.</div></div>
 </div><!-- fragment --> 
-<p class="reference">Referenced by <a class="el" href="../../db/ddf/auton_8cpp_source.html#l00062">Robot::Autonomous::Auton4()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../db/ddf/auton_8cpp_source.html#l00091">Robot::Autonomous::Auton4()</a>.</p>
 
 </div>
 </div>
@@ -1791,7 +1791,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d9/d63/namespacelemlib.html">lemlib</a></li><li class="navelem"><a class="el" href="../../dc/df2/classlemlib_1_1Chassis.html">Chassis</a></li>
-    <li class="footer">Generated on Sun Jul 21 2024 20:57:24 for 1516X High Stakes by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
+    <li class="footer">Generated on Sun Jul 21 2024 21:38:19 for 1516X High Stakes by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
   </ul>
 </div>
 </body>

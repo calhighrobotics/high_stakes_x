@@ -1,5 +1,12 @@
 var NAVTREEINDEX32 =
 {
+"dc/d3a/lv__conf_8old_8h.html#ad8eb3e17e3a796c636b2c1d544250779":[7,0,0,2,11,95],
+"dc/d3a/lv__conf_8old_8h.html#adecf949b46a435275d65fb8757583896":[7,0,0,2,11,43],
+"dc/d3a/lv__conf_8old_8h.html#adf6465e5ef359ae3822516a96f532bc4":[7,0,0,2,11,37],
+"dc/d3a/lv__conf_8old_8h.html#ae02bd88184bd34f01f482294e03ba07c":[7,0,0,2,11,86],
+"dc/d3a/lv__conf_8old_8h.html#ae59afae19e0b817c520b5812e04ad1c9":[7,0,0,2,11,33],
+"dc/d3a/lv__conf_8old_8h.html#ae8aa51a16193087d63fe5b06345ae0d5":[7,0,0,2,11,31],
+"dc/d3a/lv__conf_8old_8h.html#ae935cc4745db16485c7df96ee46cfa82":[7,0,0,2,11,69],
 "dc/d3a/lv__conf_8old_8h.html#aee702b62d14f038ccfb9cea7f3da6d1f":[7,0,0,2,11,35],
 "dc/d3a/lv__conf_8old_8h.html#aeff108006de09a570aac88c106497ed6":[7,0,0,2,11,29],
 "dc/d3a/lv__conf_8old_8h.html#af6bea1c07e9bc161b6427c9d21a5e84a":[7,0,0,2,11,113],
@@ -242,12 +249,5 @@ var NAVTREEINDEX32 =
 "dc/d75/classfmt_1_1v10_1_1detail_1_1uint128__fallback.html#ad1a1ef0f55a7a22d72f7a9437e76f118":[5,0,0,1,86,12],
 "dc/d75/classfmt_1_1v10_1_1detail_1_1uint128__fallback.html#ad1a1ef0f55a7a22d72f7a9437e76f118":[5,0,0,5,1,86,12],
 "dc/d75/classfmt_1_1v10_1_1detail_1_1uint128__fallback.html#ad1a1ef0f55a7a22d72f7a9437e76f118":[6,0,0,0,86,12],
-"dc/d75/classfmt_1_1v10_1_1detail_1_1uint128__fallback.html#ad1a1ef0f55a7a22d72f7a9437e76f118":[6,0,0,1,0,86,12],
-"dc/d75/classfmt_1_1v10_1_1detail_1_1uint128__fallback.html#ad588093f89e930fdb177702b9d8749a8":[5,0,0,1,86,8],
-"dc/d75/classfmt_1_1v10_1_1detail_1_1uint128__fallback.html#ad588093f89e930fdb177702b9d8749a8":[5,0,0,5,1,86,8],
-"dc/d75/classfmt_1_1v10_1_1detail_1_1uint128__fallback.html#ad588093f89e930fdb177702b9d8749a8":[6,0,0,0,86,8],
-"dc/d75/classfmt_1_1v10_1_1detail_1_1uint128__fallback.html#ad588093f89e930fdb177702b9d8749a8":[6,0,0,1,0,86,8],
-"dc/d75/classfmt_1_1v10_1_1detail_1_1uint128__fallback.html#ae8145ef77de71cb9bb718e3e69c30045":[5,0,0,1,86,21],
-"dc/d75/classfmt_1_1v10_1_1detail_1_1uint128__fallback.html#ae8145ef77de71cb9bb718e3e69c30045":[5,0,0,5,1,86,21],
-"dc/d75/classfmt_1_1v10_1_1detail_1_1uint128__fallback.html#ae8145ef77de71cb9bb718e3e69c30045":[6,0,0,0,86,21]
+"dc/d75/classfmt_1_1v10_1_1detail_1_1uint128__fallback.html#ad1a1ef0f55a7a22d72f7a9437e76f118":[6,0,0,1,0,86,12]
 };

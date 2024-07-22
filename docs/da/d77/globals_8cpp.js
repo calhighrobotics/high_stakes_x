@@ -2,6 +2,7 @@ var globals_8cpp =
 [
     [ "autonToggleSwitch", "da/d77/globals_8cpp.html#ac0da660b1679e4ecebf6b25ab198f1ad", null ],
     [ "chassis", "da/d77/globals_8cpp.html#a86d4b930bcd43bebe471ba5e47ab04b0", null ],
+    [ "colorSensor", "da/d77/globals_8cpp.html#a96c15ad825aaf2ea620bea0737220897", null ],
     [ "controller", "da/d77/globals_8cpp.html#ad903c21a4d3499ccebcf2a3e11deb989", null ],
     [ "drive_", "da/d77/globals_8cpp.html#a02c7bd285077e8cdbd37d41e4247f1d2", null ],
     [ "drive_left", "da/d77/globals_8cpp.html#af3097b3541f8623afb0c417128227172", null ],

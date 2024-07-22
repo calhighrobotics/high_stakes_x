@@ -1,5 +1,7 @@
 var NAVTREEINDEX31 =
 {
+"db/da3/structfmt_1_1v10_1_1formatter_3_01unsigned_01char_00_01Char_01_4.html":[6,0,0,40],
+"db/da9/structfmt_1_1v10_1_1detail_1_1is__statically__named__arg.html":[5,0,0,1,51],
 "db/da9/structfmt_1_1v10_1_1detail_1_1is__statically__named__arg.html":[5,0,0,5,1,51],
 "db/da9/structfmt_1_1v10_1_1detail_1_1is__statically__named__arg.html":[6,0,0,0,51],
 "db/da9/structfmt_1_1v10_1_1detail_1_1is__statically__named__arg.html":[6,0,0,1,0,51],
@@ -56,11 +58,16 @@ var NAVTREEINDEX31 =
 "db/ddc/unionlv__color16__t.html#a229d888dcd846712eb78010a4938d39d":[6,0,45,3],
 "db/ddc/unionlv__color16__t.html#a7cbf305c9b2e5c64c2867ca6ef78713d":[6,0,45,1],
 "db/ddf/auton_8cpp.html":[7,0,1,0,0],
-"db/ddf/auton_8cpp.html#a1875d1ef0b1e8d268e7ba62ad9601af3":[7,0,1,0,0,4],
-"db/ddf/auton_8cpp.html#a6e53fef1abbbe59971f0f712a64f20a7":[7,0,1,0,0,3],
-"db/ddf/auton_8cpp.html#ab8b9efaefa0414684bee4614c189ac32":[7,0,1,0,0,0],
-"db/ddf/auton_8cpp.html#ad487087d6e512f556d385c27c4e71cd1":[7,0,1,0,0,1],
-"db/ddf/auton_8cpp.html#aefa6721d943202ba834d6d2c23b6760e":[7,0,1,0,0,2],
+"db/ddf/auton_8cpp.html#a0bfa1a42879dd6af439bfd89ebb5a2a8":[7,0,1,0,0,6],
+"db/ddf/auton_8cpp.html#a3598ea4caf555752b276305c8d08c9e7":[7,0,1,0,0,1],
+"db/ddf/auton_8cpp.html#a43869808ea744c18d490a945cd472af1":[7,0,1,0,0,3],
+"db/ddf/auton_8cpp.html#a68a6342870291ebcd3e16983930ae3c5":[7,0,1,0,0,9],
+"db/ddf/auton_8cpp.html#a76bdac759e4c4f0c6311c1cc3ed744fb":[7,0,1,0,0,5],
+"db/ddf/auton_8cpp.html#a810f8401a9085d81f7b0f2c80fa53928":[7,0,1,0,0,2],
+"db/ddf/auton_8cpp.html#aa643a2c95cc3e8154250c5fd5199c4d5":[7,0,1,0,0,0],
+"db/ddf/auton_8cpp.html#ab88dbb562dd2e1d8cbcaf75667aa0084":[7,0,1,0,0,7],
+"db/ddf/auton_8cpp.html#ad20c7c98a139c9a4306e753d8ff3875c":[7,0,1,0,0,8],
+"db/ddf/auton_8cpp.html#ae1f467da57eff40b0a0203ca5b79b53b":[7,0,1,0,0,4],
 "db/ddf/auton_8cpp_source.html":[7,0,1,0,0],
 "db/de1/structfmt_1_1v10_1_1detail_1_1counting__iterator_1_1value__type.html":[5,0,0,1,17,0],
 "db/de1/structfmt_1_1v10_1_1detail_1_1counting__iterator_1_1value__type.html":[5,0,0,5,1,17,0],
@@ -242,12 +249,5 @@ var NAVTREEINDEX31 =
 "dc/d3a/lv__conf_8old_8h.html#ad47cc77d1aa68ec55841989ef28fdf2d":[7,0,0,2,11,102],
 "dc/d3a/lv__conf_8old_8h.html#ad4a2b830ea7ec25167bed0a9e5628c53":[7,0,0,2,11,111],
 "dc/d3a/lv__conf_8old_8h.html#ad5b166a6932d318f3bdda8e998776c1c":[7,0,0,2,11,21],
-"dc/d3a/lv__conf_8old_8h.html#ad753043a4ca4d9be3a78340355916398":[7,0,0,2,11,53],
-"dc/d3a/lv__conf_8old_8h.html#ad8eb3e17e3a796c636b2c1d544250779":[7,0,0,2,11,95],
-"dc/d3a/lv__conf_8old_8h.html#adecf949b46a435275d65fb8757583896":[7,0,0,2,11,43],
-"dc/d3a/lv__conf_8old_8h.html#adf6465e5ef359ae3822516a96f532bc4":[7,0,0,2,11,37],
-"dc/d3a/lv__conf_8old_8h.html#ae02bd88184bd34f01f482294e03ba07c":[7,0,0,2,11,86],
-"dc/d3a/lv__conf_8old_8h.html#ae59afae19e0b817c520b5812e04ad1c9":[7,0,0,2,11,33],
-"dc/d3a/lv__conf_8old_8h.html#ae8aa51a16193087d63fe5b06345ae0d5":[7,0,0,2,11,31],
-"dc/d3a/lv__conf_8old_8h.html#ae935cc4745db16485c7df96ee46cfa82":[7,0,0,2,11,69]
+"dc/d3a/lv__conf_8old_8h.html#ad753043a4ca4d9be3a78340355916398":[7,0,0,2,11,53]
 };

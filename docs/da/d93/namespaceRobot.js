@@ -3,6 +3,7 @@ var namespaceRobot =
     [ "Globals", "df/d3e/namespaceRobot_1_1Globals.html", [
       [ "autonToggleSwitch", "df/d3e/namespaceRobot_1_1Globals.html#ac0da660b1679e4ecebf6b25ab198f1ad", null ],
       [ "chassis", "df/d3e/namespaceRobot_1_1Globals.html#a86d4b930bcd43bebe471ba5e47ab04b0", null ],
+      [ "colorSensor", "df/d3e/namespaceRobot_1_1Globals.html#a96c15ad825aaf2ea620bea0737220897", null ],
       [ "controller", "df/d3e/namespaceRobot_1_1Globals.html#ad903c21a4d3499ccebcf2a3e11deb989", null ],
       [ "drive_", "df/d3e/namespaceRobot_1_1Globals.html#a02c7bd285077e8cdbd37d41e4247f1d2", null ],
       [ "drive_left", "df/d3e/namespaceRobot_1_1Globals.html#af3097b3541f8623afb0c417128227172", null ],
@@ -22,6 +23,7 @@ var namespaceRobot =
       [ "angular_controller", "df/d3e/namespaceRobot_1_1Globals.html#a7ec7662efd5e0bdeb4790cfa3330edf2", null ],
       [ "autonToggleSwitch", "df/d3e/namespaceRobot_1_1Globals.html#a06b9e49f2cb10dd4449587b742049d5a", null ],
       [ "chassis", "df/d3e/namespaceRobot_1_1Globals.html#adb19c4d8d7b61867e04f934a6dcd6f87", null ],
+      [ "colorSensor", "df/d3e/namespaceRobot_1_1Globals.html#a3c0b75f3ba187004006780b11c884eb4", null ],
       [ "controller", "df/d3e/namespaceRobot_1_1Globals.html#a9935411c69763c03223e884be03447d2", null ],
       [ "drive_", "df/d3e/namespaceRobot_1_1Globals.html#ac5c96e6dd4a62d8658e148b4d43aeacb", null ],
       [ "drive_left", "df/d3e/namespaceRobot_1_1Globals.html#a3f6b97b912b1083371a8e3b2e9640679", null ],

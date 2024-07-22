@@ -128,7 +128,7 @@ void Autonomous::AutoDrive(Intake &intake, Latch &latch) {
     }
 
 	if(Autonomous::auton == 5) {
-		Auton5(intake, latch)
+		Auton5(intake, latch);
 	}
 
 }
