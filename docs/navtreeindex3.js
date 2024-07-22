@@ -1,5 +1,7 @@
 var NAVTREEINDEX3 =
 {
+"d0/dc1/structtime__s__t.html#ac331455646d2ae3b6ef3672bb34f154d":[4,18,2,2],
+"d0/dc1/structtime__s__t.html#ac8a3ecd4b82259203859f68163db4551":[4,18,2,0],
 "d0/dca/lv__objx__templ_8h.html":[7,0,0,2,6,10],
 "d0/dca/lv__objx__templ_8h_source.html":[7,0,0,2,6,10],
 "d0/dcc/lv__tabview_8h.html":[7,0,0,2,2,4,14,0],
@@ -96,6 +98,8 @@ var NAVTREEINDEX3 =
 "d1/d11/group__ext-adi.html#gaf2ce9db1ede86cac8426ee8bb5afb886":[4,11,31],
 "d1/d11/group__ext-adi.html#gaf596055f6bf34f19fe24f205ad317c46":[4,11,12],
 "d1/d13/rtos_8hpp.html":[4,28,0],
+"d1/d13/status_8h.html":[7,0,0,5,1],
+"d1/d13/status_8h_source.html":[7,0,0,5,1],
 "d1/d18/liblvgl_2llemu_8hpp.html":[4,1,0],
 "d1/d1a/namespacefmt_1_1v10.html":[5,0,0,5],
 "d1/d1a/namespacefmt_1_1v10.html#a01b92b37a12fc253a631986738956b3f":[5,0,0,71],
@@ -245,9 +249,5 @@ var NAVTREEINDEX3 =
 "d1/d2b/classpros_1_1adi_1_1Potentiometer.html#ac7ead4fd5e2e05eb6aa635ef0eea9213":[6,0,2,0,10,5],
 "d1/d2b/classpros_1_1adi_1_1Potentiometer.html#af442eb74c887078e7e3188f1d8811100":[5,0,2,0,10,2],
 "d1/d2b/classpros_1_1adi_1_1Potentiometer.html#af442eb74c887078e7e3188f1d8811100":[6,0,2,0,10,2],
-"d1/d3c/structlv__mem__buf__t.html":[6,0,80],
-"d1/d3c/structlv__mem__buf__t.html#a7395e5c9da3481eda43156ba12303718":[6,0,80,2],
-"d1/d3c/structlv__mem__buf__t.html#ab2f178894c5008e1f58623650d5aaa73":[6,0,80,0],
-"d1/d3c/structlv__mem__buf__t.html#aca4c4b44e34ac2c8823f8d2c417a3efe":[6,0,80,1],
-"d1/d3d/structeuler__s__t.html":[4,14,5]
+"d1/d3c/structlv__mem__buf__t.html":[6,0,80]
 };

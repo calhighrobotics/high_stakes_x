@@ -61,15 +61,15 @@ lemlib::OdomSensors sensors {
 
 // forward/backward PID
 lemlib::ControllerSettings lateral_controller {
-    10, // kP
-    0, // kI
-    3, // kD
-    0, // Anti Windup
-    0, // smallErrorRange
-    0, // smallErrorTimeout
-    0, // largeErrorRange
-    0, // largeErrorTimeout
-    100 // slew rate
+    7.6, // kP
+    0, // KI
+    8, // kD
+    3, // Anti Windup
+    1, // smallErrorRange
+    100, // smallErrorTimeout
+    3, // largeErrorRange
+    500, // largeErrorTimeout
+    90 // slew rate
 };
  
 // turning PID

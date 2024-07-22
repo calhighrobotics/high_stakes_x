@@ -6,6 +6,7 @@ using namespace Robot;
 using namespace Robot::Globals;
 
 
+
 int Drivetrain::CheckDeadzone(int ControllerInput) {
     if(std::abs(ControllerInput) < Drivetrain::deadzone) {
         return 0;
@@ -44,7 +45,6 @@ void Drivetrain::ArcadeDrive() {
 }
 
 Drivetrain::Drivetrain() {
-    Drivetrain::driveMode = 0;
 }
 
 void Drivetrain::TankDrive() {
@@ -77,40 +77,49 @@ void Drivetrain::CurveDrive() {
     pros::delay(15);
 }
 
-// Set the deadzone for the drivetrain
+/* @brief variable is set in order to serve for the selector, which needs a static variable to keep track of the drive mode. It is synced back
+* to the class variable in the run method.
+*/
+int Drivetrain::driveNum = 0;
 
 
 // Run the drivetrain depending on the control mode
 void Drivetrain::run() {
-    if (Drivetrain::driveMode == 0) {
+
+    if (Drivetrain::driveNum == 0) {
         Drivetrain::CurvatureDrive();
     }
-    if (Drivetrain::driveMode == 1) {
+    if (Drivetrain::driveNum == 1) {
         Drivetrain::ArcadeDrive();
     }
-    if (Drivetrain::driveMode == 2) {
+    if (Drivetrain::driveNum == 2) {
         Drivetrain::TankDrive();
     }
 }
 
-
 // Switch the drivetrain control mode between arcade and tank drive with the down button(between 1 and 2)
-void Drivetrain::SwitchDrive() {
-    if(drivetrainToggleSwitch.get_new_press()) {
-        pros::lcd::clear_line(2);
-        Drivetrain::driveMode = Drivetrain::driveMode + 1;
-        if (Drivetrain::driveMode == 3) {
-            Drivetrain::driveMode = 0;
-        }
-        
-        if (Drivetrain::driveMode == 0) {
-            pros::lcd::set_text(2, "Drive: Curvature");
-        }
-        if (Drivetrain::driveMode == 1) {
-            pros::lcd::set_text(2, "Drive: Arcade");
-        }
-        if (Drivetrain::driveMode == 2) {
-            pros::lcd::set_text(2, "Drive: Tank");
-        }
+std::string Drivetrain::SwitchDrive() {
+
+    Drivetrain::driveNum += 1;
+    
+    if (Drivetrain::driveNum == 3) {
+        Drivetrain::driveNum = 0;
+    }
+
+    // Return the name of the drive mode
+    if (Drivetrain::driveNum == 0) {
+        std::cout << "Curvature Drive" << std::endl;
+        return "Curvature Drive";
+    }
+    if (Drivetrain::driveNum == 1) {
+        std::cout << "Arcade Drive" << std::endl;
+        return "Arcade Drive";
+    }
+    if (Drivetrain::driveNum == 2) {
+        std::cout << "Tank Drive" << std::endl;
+        return "Tank Drive";
+    }
+    else {
+        return "Error";
     }
 }

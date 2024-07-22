@@ -33,6 +33,11 @@ using namespace Robot::Globals;
         Robot::Latch latch;
     } subsystem;
 
+	struct RobotScreen {
+        Robot::selector_screen selector;
+        Robot::status_screen status;
+    } screen;
+
 /**
  * A callback function for LLEMU's center button.
  *
@@ -67,21 +72,24 @@ void toggles() {
 
 void initialize() {
 
-	pros::lcd::initialize();
+	
 
 	// if (pros::c::registry_get_plugged_type(15) == pros::c::E_DEVICE_IMU) {
 	chassis.calibrate();  
 	chassis.setPose(0, 0, 0);
-	pros::Task screen_task([&]() {
-        while (true) {
-            // print robot location to the brain screen
-            pros::lcd::print(0, "X: %f", chassis.getPose().x); // x
-            pros::lcd::print(1, "Y: %f", chassis.getPose().y); // y
-            pros::lcd::print(2, "Theta: %f", chassis.getPose().theta); // heading
-            // delay to save resources
-            pros::delay(20);
-        }
-    });
+
+	screen.selector.selector();
+
+	// pros::Task screen_task([&]() {
+    //     while (true) {
+    //         // print robot location to the brain screen
+    //         pros::lcd::print(0, "X: %f", chassis.getPose().x); // x
+    //         pros::lcd::print(1, "Y: %f", chassis.getPose().y); // y
+    //         pros::lcd::print(2, "Theta: %f", chassis.getPose().theta); // heading
+	// 		// delay to save resources
+    //         pros::delay(20);
+    //     }
+    // });
 	
 	
 	// pros::Task screenTask(Robot::Utility::display);
@@ -137,11 +145,11 @@ void competition_initialize() {
 void autonomous() {
 	
 	
-	chassis.setPose(0, 0, 0);
-    // move 48" forwards
-    chassis.moveToPoint(0, 24, 10000, {.maxSpeed = 110});
+	// chassis.setPose(0, 0, 0);
+    // // move 48" forwards
+    // chassis.moveToPoint(0, 24, 10000, {.maxSpeed = 110});
 
-	//subsystem.autonomous.AutoDrive(intake, latch);
+	subsystem.autonomous.AutoDrive(subsystem.intake, subsystem.latch);
 
 
 
@@ -173,6 +181,11 @@ void opcontrol() {
 		}
 		if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_DOWN)) {
 			autonomous();
+		}
+		if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_LEFT)) {
+			std::string name = Drivetrain::SwitchDrive();
+			//Output the current drive mode to the controller screen
+			controller.print(0, 0, name.c_str());
 		}
 
         subsystem.drivetrain.run();

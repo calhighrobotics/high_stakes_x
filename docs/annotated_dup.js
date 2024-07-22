@@ -418,7 +418,8 @@ var annotated_dup =
       [ "Drivetrain", "d7/d0e/classRobot_1_1Drivetrain.html", "d7/d0e/classRobot_1_1Drivetrain" ],
       [ "Intake", "dd/dc0/classRobot_1_1Intake.html", "dd/dc0/classRobot_1_1Intake" ],
       [ "Latch", "db/d72/classRobot_1_1Latch.html", "db/d72/classRobot_1_1Latch" ],
-      [ "RobotSubsystems", "d9/dcb/structRobot_1_1RobotSubsystems.html", "d9/dcb/structRobot_1_1RobotSubsystems" ]
+      [ "selector_screen", "d8/db6/classRobot_1_1selector__screen.html", "d8/db6/classRobot_1_1selector__screen" ],
+      [ "status_screen", "d4/d33/classRobot_1_1status__screen.html", "d4/d33/classRobot_1_1status__screen" ]
     ] ],
     [ "_lv_anim_t", "df/d46/struct__lv__anim__t.html", "df/d46/struct__lv__anim__t" ],
     [ "_lv_color_filter_dsc_t", "de/d32/struct__lv__color__filter__dsc__t.html", "de/d32/struct__lv__color__filter__dsc__t" ],
@@ -519,6 +520,8 @@ var annotated_dup =
     [ "optical_rgb_s_t", "d4/dc9/structoptical__rgb__s__t.html", null ],
     [ "qrcodegen_Segment", "dd/dcd/structqrcodegen__Segment.html", "dd/dcd/structqrcodegen__Segment" ],
     [ "quaternion_s_t", "d4/d47/structquaternion__s__t.html", null ],
+    [ "RobotScreen", "d2/daa/structRobotScreen.html", "d2/daa/structRobotScreen" ],
+    [ "RobotSubsystems", "d8/d26/structRobotSubsystems.html", "d8/d26/structRobotSubsystems" ],
     [ "screen_touch_status_s", "dd/dfb/structscreen__touch__status__s.html", "dd/dfb/structscreen__touch__status__s" ],
     [ "screen_touch_status_s_t", "de/d25/structscreen__touch__status__s__t.html", null ],
     [ "time_s_t", "d0/dc1/structtime__s__t.html", "d0/dc1/structtime__s__t" ],

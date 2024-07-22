@@ -41,7 +41,9 @@ namespace Robot {
          * This function switches the autonomous program to the next available program.
          * It allows the user to cycle through different autonomous programs during runtime.
          */
-        void AutonSwitcher();
+        static void AutonSwitcher();
+
+        static std::string autonName;
 
     private:
         /**
@@ -70,8 +72,16 @@ namespace Robot {
          */
         void Auton3(Intake &intake, Latch &latch);
 
+        /**
+         * @brief Runs the autonomous path for the far side offensive game strategy.
+         * This function executes the autonomous path for the far side offensive game strategy.
+         * It contains the specific actions and movements required for this strategy.
+         * @todo Make the autonomous more fleshed out, building it properly for the competition
+         */
         void Auton4(Intake &intake, Latch &latch);
 
-        std::string autonName;
+        void Auton5(Intake &intake, Latch &latch);
+
+        
     };
 }

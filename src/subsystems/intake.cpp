@@ -7,13 +7,13 @@ using namespace Robot::Globals;
 
 Intake::Intake() {
     elevated = false;
-    IntakeToggle = elevated;
 }
 
-void Intake::interval(std::uint32_t time) {
+void Intake::interval(uint32_t time) {
     IntakeMotor.move(127);
     pros::delay(time);
 }
+
 
 void Intake::score() {
     IntakeMotor.move(127);
@@ -34,6 +34,12 @@ void Intake::run(){
 }
 
 void Intake::toggle() {
-    !elevated;
-    IntakeToggle = elevated;
+    if (elevated) {
+        IntakeToggle.retract();
+        elevated = false;
+    }
+    else {
+        IntakeToggle.extend();
+        elevated = true;
+    }
 }

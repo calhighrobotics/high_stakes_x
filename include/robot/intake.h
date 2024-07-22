@@ -1,4 +1,5 @@
 #pragma once
+#include <stdint.h>
 
 namespace Robot {
 
@@ -24,7 +25,7 @@ namespace Robot {
             /**
             * @brief Runs intake for a certain interval of time.
             */
-            void interval(std::uint32_t time);
+            void interval(const uint32_t time);
 
             /**
              * @brief Toggles intake elevation.

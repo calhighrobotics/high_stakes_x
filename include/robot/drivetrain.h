@@ -1,5 +1,6 @@
 // Header guard - Ensures that the header file will not get double imported.
 #pragma once
+#include <string>
 
 /**
  * @file drivetrain.h
@@ -68,10 +69,13 @@ namespace Robot {
          * Arcade drive uses the left joystick for forward and backward movement, and the right joystick for left and right movement.
          * Tank drive uses the left and right joysticks for controlling the left and right sides of the robot.
          */
-        void SwitchDrive();
+ ///< The current drive train mode, between arcade (0) and tank (1).
 
-        int driveMode; ///< The current drive train mode, between arcade (0) and tank (1).
 
+        static std::string SwitchDrive();///< The name of the current drive mode.
+
+        // The current drive train mode, between curvature, arcade, and tank.
+        static int driveNum;
         /**
          * @brief Initializes the Drivetrain object.
          * 

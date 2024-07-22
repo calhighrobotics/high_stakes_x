@@ -412,7 +412,8 @@ var hierarchy =
     [ "fmt::v10::detail::precision_checker< ErrorHandler >", "d3/d21/classfmt_1_1v10_1_1detail_1_1precision__checker.html", null ],
     [ "qrcodegen_Segment", "dd/dcd/structqrcodegen__Segment.html", null ],
     [ "quaternion_s_t", "d4/d47/structquaternion__s__t.html", null ],
-    [ "Robot::RobotSubsystems", "d9/dcb/structRobot_1_1RobotSubsystems.html", null ],
+    [ "RobotScreen", "d2/daa/structRobotScreen.html", null ],
+    [ "RobotSubsystems", "d8/d26/structRobotSubsystems.html", null ],
     [ "std::runtime_error", null, [
       [ "fmt::v10::format_error", "d6/d7c/classfmt_1_1v10_1_1format__error.html", null ]
     ] ],
@@ -420,7 +421,9 @@ var hierarchy =
     [ "fmt::v10::runtime_format_string< Char >", "d7/d7f/structfmt_1_1v10_1_1runtime__format__string.html", null ],
     [ "screen_touch_status_s", "dd/dfb/structscreen__touch__status__s.html", null ],
     [ "screen_touch_status_s_t", "de/d25/structscreen__touch__status__s__t.html", null ],
+    [ "Robot::selector_screen", "d8/db6/classRobot_1_1selector__screen.html", null ],
     [ "fmt::v10::detail::singleton", "d9/d18/structfmt_1_1v10_1_1detail_1_1singleton.html", null ],
+    [ "Robot::status_screen", "d4/d33/classRobot_1_1status__screen.html", null ],
     [ "fmt::v10::detail::std_string_view< T >", "db/d7f/structfmt_1_1v10_1_1detail_1_1std__string__view.html", null ],
     [ "Streambuf", null, [
       [ "fmt::v10::detail::formatbuf< Streambuf >", "dc/d6b/classfmt_1_1v10_1_1detail_1_1formatbuf.html", null ]

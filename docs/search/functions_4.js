@@ -41,7 +41,8 @@ var searchData=
   ['drive_5f_38',['drive_',['../df/d3e/namespaceRobot_1_1Globals.html#a02c7bd285077e8cdbd37d41e4247f1d2',1,'Robot::Globals']]],
   ['drive_5fleft_39',['drive_left',['../df/d3e/namespaceRobot_1_1Globals.html#af3097b3541f8623afb0c417128227172',1,'Robot::Globals']]],
   ['drive_5fright_40',['drive_right',['../df/d3e/namespaceRobot_1_1Globals.html#a354a5a9d6884d2f216d811bf50a7d0ae',1,'Robot::Globals']]],
-  ['drivetrain_41',['Drivetrain',['../d5/d5f/classlemlib_1_1Drivetrain.html#a0dae2901eeabaeb982aad04f6b4e38d9',1,'lemlib::Drivetrain::Drivetrain()'],['../d7/d0e/classRobot_1_1Drivetrain.html#abfcc3eea7516b5f76422d39676adbd27',1,'Robot::Drivetrain::Drivetrain()']]],
-  ['drivetraintoggleswitch_42',['drivetrainToggleSwitch',['../df/d3e/namespaceRobot_1_1Globals.html#a73ebda6e6fb91be7e270749a450b87d2',1,'Robot::Globals']]],
-  ['dynamic_5fformat_5farg_5fstore_43',['dynamic_format_arg_store',['../d3/db8/classfmt_1_1v10_1_1dynamic__format__arg__store.html#ae8eac1236a0d0257cc8567d7f95a6cdc',1,'fmt::v10::dynamic_format_arg_store']]]
+  ['drive_5fupdate_41',['drive_update',['../d8/db6/classRobot_1_1selector__screen.html#a29e9b74239ebff08a0dbd327980b0820',1,'Robot::selector_screen']]],
+  ['drivetrain_42',['Drivetrain',['../d5/d5f/classlemlib_1_1Drivetrain.html#a0dae2901eeabaeb982aad04f6b4e38d9',1,'lemlib::Drivetrain::Drivetrain()'],['../d7/d0e/classRobot_1_1Drivetrain.html#abfcc3eea7516b5f76422d39676adbd27',1,'Robot::Drivetrain::Drivetrain()']]],
+  ['drivetraintoggleswitch_43',['drivetrainToggleSwitch',['../df/d3e/namespaceRobot_1_1Globals.html#a73ebda6e6fb91be7e270749a450b87d2',1,'Robot::Globals']]],
+  ['dynamic_5fformat_5farg_5fstore_44',['dynamic_format_arg_store',['../d3/db8/classfmt_1_1v10_1_1dynamic__format__arg__store.html#ae8eac1236a0d0257cc8567d7f95a6cdc',1,'fmt::v10::dynamic_format_arg_store']]]
 ];

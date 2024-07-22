@@ -9,6 +9,7 @@ using namespace Robot;
 using namespace Robot::Globals;
 
 int Autonomous::auton = 4;
+std::string Autonomous::autonName = "Red Left";
 
 ASSET(path_right_4_winpoint_pt1_txt);
 ASSET(path_right_4_winpoint_pt2_txt);
@@ -55,19 +56,34 @@ void Autonomous::Auton3(Intake &intake, Latch &latch) {
     // Autonomous routine for the Skills challenge
 }
 
+/*
+* @todo Flesh out this method before the competition in order to make it a full solo awp autonomous. 
+*/
 void Autonomous::Auton4(Intake &intake, Latch &latch) {
- 
+	chassis.setBrakeMode(pros::E_MOTOR_BRAKE_BRAKE);
+
+	chassis.setPose(0, 0, 0);
+    // move 48" forwards
+    chassis.moveToPoint(0, 72, 3500, {.maxSpeed = 110}, true);
+	chassis.turnToHeading(180, 1000, {.maxSpeed = 90}, false);
+	
+	chassis.setPose(0, 0, 0);
+	chassis.moveToPoint(0, 24, 1000, {.maxSpeed = 110});
+	chassis.turnToHeading(0, 1200, {.maxSpeed = 110}, false);
 }
 
-
+void Autonomous::Auton5(Intake &intake, Latch &latch) {
+    // Autonomous routine for the Skills challenge
+}
 
 // Takes in two parameters: The autonomous value as well as the puncher object.
 void Autonomous::AutoDrive(Intake &intake, Latch &latch) {
 	// Keep the switcher running while the controller down button has not been pressed and the time period is not autonomous
 	// Compare the current auton value to run the auton routine
+	std::cout << Autonomous::auton << std::endl;
 
     if(Autonomous::auton == 1){
-        Auton1(intake, latch);
+        Auton1(intake, latch);	
     }
 
     if(Autonomous::auton == 2){
@@ -77,45 +93,50 @@ void Autonomous::AutoDrive(Intake &intake, Latch &latch) {
     if(Autonomous::auton == 3){
         Auton3(intake, latch);
     }
+
 	if(Autonomous::auton == 4){
         Auton4(intake, latch);
+    }
+
+	if(Autonomous::auton == 5){
+        Auton5(intake, latch);
     }
 
 }
 
 // 
 void Autonomous::AutonSwitcher() {
-
-
-    if(autonToggleSwitch.get_new_press()) {
-			pros::lcd::clear_line(3);
 			
 
-			Autonomous::auton = auton + 1;
+	Autonomous::auton = auton + 1;
 
-			// Checks if the toggler goes out of bounds.
-			if (Autonomous::auton == 5) {
-				Autonomous::auton = 1;
-			}
-
-			
-			if (auton == 1) {
-				autonName = "";
-			}
-			if (auton == 2) {
-				autonName = "";
-			}
-			if (auton == 3) {
-				autonName = "";
-			}
-			if (auton == 4) {
-				autonName = "Skills Challenge";
-			}
-			// Set the controllet text to the current autonomous routine value
-			pros::lcd::print(3, "Autonomous prog: %s", autonName);
-
+	// Checks if the toggler goes out of bounds.
+	if (Autonomous::auton == 6) {
+		Autonomous::auton = 1;
 	}
+
 	
+	if (auton == 1) {
+		Autonomous::autonName = "Red Left";
+		std::cout << Autonomous::autonName << std::endl;
+	}
+	if (auton == 2) {
+		Autonomous::autonName = "Red Right";
+		std::cout << Autonomous::autonName << std::endl;
+	}
+	if (auton == 3) {
+		Autonomous::autonName = "Blue Left";
+		std::cout << Autonomous::autonName << std::endl;
+	}
+	if (auton == 4) {
+		Autonomous::autonName = "Blue Right";
+		std::cout << Autonomous::autonName << std::endl;
+	}
+	if (auton == 5) {
+		Autonomous::autonName = "Skills";
+		std::cout << Autonomous::autonName << std::endl;
+	}
+			// Set the controllet text to the current autonomous routine valu
 
     
 }

@@ -32,9 +32,9 @@ var searchData=
   ['resume_29',['resume',['../de/d12/classlemlib_1_1Timer.html#a4650b393a82ab77d44eb8e58f6a8667e',1,'lemlib::Timer::resume()'],['../d7/d6d/group__cpp-rtos.html#ga2116e5eb1004b12af047d3092b89d4fb',1,'pros::rtos::Task::resume()']]],
   ['retract_30',['retract',['../d1/dca/group__cpp-adi.html#ga859409cb50714357fa8718461c8443e1',1,'pros::adi::Pneumatics']]],
   ['reverse_31',['reverse',['../d2/dd0/group__cpp-rotation.html#gae6269170f19a04a689635c6dc51eb5bc',1,'pros::v5::Rotation']]],
-  ['rightback_32',['RightBack',['../df/d3e/namespaceRobot_1_1Globals.html#af1c93e1e9e2187ffb8b9bbda7941747a',1,'Robot::Globals']]],
-  ['rightfront_33',['RightFront',['../df/d3e/namespaceRobot_1_1Globals.html#abde9449d0ceecf453fb99865167021c3',1,'Robot::Globals']]],
-  ['rightmid_34',['RightMid',['../df/d3e/namespaceRobot_1_1Globals.html#aec286984c454782880335b4f4c6af389',1,'Robot::Globals']]],
+  ['rightback_32',['RightBack',['../df/d3e/namespaceRobot_1_1Globals.html#a42a7df885c7f850707c4bf2e9ccebe4b',1,'Robot::Globals']]],
+  ['rightfront_33',['RightFront',['../df/d3e/namespaceRobot_1_1Globals.html#a874828e0a2ac01914e717995fcfc998b',1,'Robot::Globals']]],
+  ['rightmid_34',['RightMid',['../df/d3e/namespaceRobot_1_1Globals.html#acee1f6e92a94b9bb26ed0de908ab8cdc',1,'Robot::Globals']]],
   ['rotate_35',['rotate',['../db/dff/classlemlib_1_1Pose.html#a85242e05c255d155a83d97c4b463219a',1,'lemlib::Pose']]],
   ['rotation_36',['Rotation',['../d2/dd0/group__cpp-rotation.html#gada2b747e2f1c526bffd85a6cbe1bfc39',1,'pros::v5::Rotation::Rotation(const std::int8_t port)'],['../d2/dd0/group__cpp-rotation.html#gaf7e0c4612cfa4eb44883ed66fcf11250',1,'pros::v5::Rotation::Rotation(const Device &amp;device)']]],
   ['rotation_5fget_5fangle_37',['rotation_get_angle',['../d9/d01/group__c-rotation.html#ga5b4ce16ed5cf043020cff2dea54d0e6b',1,'rotation.h']]],
@@ -50,6 +50,6 @@ var searchData=
   ['rotation_5fset_5freversed_47',['rotation_set_reversed',['../d9/d01/group__c-rotation.html#ga11726119db4e3dc2bb366b1add92412a',1,'rotation.h']]],
   ['rotr_48',['rotr',['../da/d2b/namespacefmt_1_1v10_1_1detail.html#a48ecbaa00e131243aa8875bf70cbe555',1,'fmt::v10::detail::rotr(uint32_t n, uint32_t r) noexcept'],['../da/d2b/namespacefmt_1_1v10_1_1detail.html#aadb34d81528a383ee9d03211c9335306',1,'fmt::v10::detail::rotr(uint64_t n, uint32_t r) noexcept']]],
   ['rumble_49',['rumble',['../d7/da3/group__cpp-misc.html#gae3ab1c1eb83c1928422b911ce0e22c2c',1,'pros::v5::Controller']]],
-  ['run_50',['run',['../d7/d0e/classRobot_1_1Drivetrain.html#a1d76f7c8860e4d2ffacd3c541c457ae1',1,'Robot::Drivetrain::run()'],['../dd/dc0/classRobot_1_1Intake.html#a130e4922767dd5355130885468624dfe',1,'Robot::Intake::run()'],['../db/d72/classRobot_1_1Latch.html#a661a35a9aa60027b166516578347c646',1,'Robot::Latch::run()']]],
+  ['run_50',['run',['../d7/d0e/classRobot_1_1Drivetrain.html#a1d76f7c8860e4d2ffacd3c541c457ae1',1,'Robot::Drivetrain::run()'],['../dd/dc0/classRobot_1_1Intake.html#ac7b56ab18a76bd7a5fa0f5e56701df8a',1,'Robot::Intake::run()'],['../db/d72/classRobot_1_1Latch.html#a8d34afed5baf46a41535570222bb0813',1,'Robot::Latch::run()']]],
   ['runtime_51',['runtime',['../d1/d1a/namespacefmt_1_1v10.html#a285b2658ea0dee5d6eea57e277ac8ead',1,'fmt::runtime()'],['../d1/d1a/namespacefmt_1_1v10.html#a285b2658ea0dee5d6eea57e277ac8ead',1,'fmt::v10::runtime()']]]
 ];

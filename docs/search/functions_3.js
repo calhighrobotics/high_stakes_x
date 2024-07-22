@@ -75,6 +75,7 @@ var searchData=
   ['create_5fcolor_5fcode_72',['create_color_code',['../d3/de5/group__cpp-vision.html#gaa452fc648958ed7b18cd8de81d30d67f',1,'pros::v5::Vision']]],
   ['current_73',['current',['../d7/d6d/group__cpp-rtos.html#gaa3a0337773b3b11fa9c9e607f0246140',1,'pros::rtos::Task']]],
   ['curvature_74',['curvature',['../dc/df2/classlemlib_1_1Chassis.html#a4e71bb1fffd5825d64be5de040cd3445',1,'lemlib::Chassis']]],
-  ['curve_75',['curve',['../d1/d8e/classlemlib_1_1DriveCurve.html#ac7997f9d45695ba4c601c9290f3b5b13',1,'lemlib::DriveCurve::curve()'],['../da/d54/classlemlib_1_1ExpoDriveCurve.html#a3ebb92fde2c9ad90f6a56b166eb1bae9',1,'lemlib::ExpoDriveCurve::curve()']]],
-  ['curvedrive_76',['CurveDrive',['../d7/d0e/classRobot_1_1Drivetrain.html#a1868f488be411281238b5d3559d73048',1,'Robot::Drivetrain']]]
+  ['curvaturedrive_75',['CurvatureDrive',['../d7/d0e/classRobot_1_1Drivetrain.html#ad4a9c069ab83a269d6349c45f249b2bd',1,'Robot::Drivetrain']]],
+  ['curve_76',['curve',['../d1/d8e/classlemlib_1_1DriveCurve.html#ac7997f9d45695ba4c601c9290f3b5b13',1,'lemlib::DriveCurve::curve()'],['../da/d54/classlemlib_1_1ExpoDriveCurve.html#a3ebb92fde2c9ad90f6a56b166eb1bae9',1,'lemlib::ExpoDriveCurve::curve()']]],
+  ['curvedrive_77',['CurveDrive',['../d7/d0e/classRobot_1_1Drivetrain.html#a1868f488be411281238b5d3559d73048',1,'Robot::Drivetrain']]]
 ];
