@@ -83,6 +83,5 @@ namespace Robot {
 
         void Auton5(Intake &intake, Latch &latch);
 
-        
     };
 }
