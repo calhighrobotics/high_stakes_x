@@ -97,14 +97,20 @@ void Drivetrain::run() {
     }
 }
 
-// Switch the drivetrain control mode between arcade and tank drive with the down button(between 1 and 2)
-std::string Drivetrain::SwitchDrive() {
 
-    Drivetrain::driveNum += 1;
-    
-    if (Drivetrain::driveNum == 3) {
+std::string Drivetrain::toggleDrive() {
+    Drivetrain::driveNum+=1;
+    if (Drivetrain::driveNum > 2) {
         Drivetrain::driveNum = 0;
     }
+    return SwitchDrive(Drivetrain::driveNum);
+}
+
+// Switch the drivetrain control mode between arcade and tank drive with the down button(between 1 and 2)
+std::string Drivetrain::SwitchDrive(int drive) {
+    
+    Drivetrain::driveNum = drive;
+
 
     // Return the name of the drive mode
     if (Drivetrain::driveNum == 0) {

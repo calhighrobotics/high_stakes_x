@@ -72,7 +72,23 @@ namespace Robot {
  ///< The current drive train mode, between arcade (0) and tank (1).
 
 
-        static std::string SwitchDrive();///< The name of the current drive mode.
+        /**
+         * @brief Switches the drive mode of the robot.
+         *
+         * This function takes an integer parameter `drive` representing the desired drive mode and returns a string.
+         * The drive mode determines how the robot's drivetrain operates.
+         *
+         * @param drive The desired drive mode.
+         * @return A string indicating the name of the drive mode switch.
+         */
+        static std::string SwitchDrive(int drive);
+
+        /**
+         * Toggles the drive mode of the robot.
+         *
+         * @return The new drive mode as a string.
+         */
+        std::string toggleDrive();
 
         // The current drive train mode, between curvature, arcade, and tank.
         static int driveNum;

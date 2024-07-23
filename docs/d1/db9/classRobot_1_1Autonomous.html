@@ -134,9 +134,9 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a6e8bc657f1842887508876fabc1e3085" id="r_a6e8bc657f1842887508876fabc1e3085"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e8bc657f1842887508876fabc1e3085">AutonSwitcher</a> ()</td></tr>
-<tr class="memdesc:a6e8bc657f1842887508876fabc1e3085"><td class="mdescLeft">&#160;</td><td class="mdescRight">Switches the autonomous program.  <br /></td></tr>
-<tr class="separator:a6e8bc657f1842887508876fabc1e3085"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac70c56d45eb1529038f552713b9c1397" id="r_ac70c56d45eb1529038f552713b9c1397"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac70c56d45eb1529038f552713b9c1397">AutonSwitcher</a> (int autonNum)</td></tr>
+<tr class="memdesc:ac70c56d45eb1529038f552713b9c1397"><td class="mdescLeft">&#160;</td><td class="mdescRight">Switches the autonomous program.  <br /></td></tr>
+<tr class="separator:ac70c56d45eb1529038f552713b9c1397"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -144,6 +144,7 @@ Static Public Attributes</h2></td></tr>
 <tr class="memdesc:a35870e1dbd00c82d40f8181fbb257189"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the number of the autonomous program to use.  <br /></td></tr>
 <tr class="separator:a35870e1dbd00c82d40f8181fbb257189"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f32b587cbbbb7b37e0ccead9c6ec02e" id="r_a4f32b587cbbbb7b37e0ccead9c6ec02e"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4f32b587cbbbb7b37e0ccead9c6ec02e">autonName</a> = &quot;Red Left&quot;</td></tr>
+<tr class="memdesc:a4f32b587cbbbb7b37e0ccead9c6ec02e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The name of the autonomous program.  <br /></td></tr>
 <tr class="separator:a4f32b587cbbbb7b37e0ccead9c6ec02e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
@@ -234,7 +235,7 @@ Private Member Functions</h2></td></tr>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d3/d96/auton_8h_source.html#l00023">auton</a>, <a class="el" href="../../db/ddf/auton_8cpp_source.html#l00027">Auton1()</a>, <a class="el" href="../../db/ddf/auton_8cpp_source.html#l00056">Auton2()</a>, <a class="el" href="../../db/ddf/auton_8cpp_source.html#l00083">Auton3()</a>, <a class="el" href="../../db/ddf/auton_8cpp_source.html#l00091">Auton4()</a>, and <a class="el" href="../../db/ddf/auton_8cpp_source.html#l00104">Auton5()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d0a/main_8cpp_source.html#l00145">autonomous()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d0a/main_8cpp_source.html#l00117">autonomous()</a>.</p>
 
 </div>
 </div>
@@ -496,6 +497,15 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Executes the Skills challenge autonomous.</p>
+<p>This function controls the robot's actions during autonomous routine 5. It takes references to the <code><a class="el" href="../../dd/dc0/classRobot_1_1Intake.html" title="The Intake class represents a robot intake system.">Intake</a></code> and <code><a class="el" href="../../db/d72/classRobot_1_1Latch.html" title="The Latch class represents a latching mechanism.">Latch</a></code> objects as parameters.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">intake</td><td>The reference to the <code><a class="el" href="../../dd/dc0/classRobot_1_1Intake.html" title="The Intake class represents a robot intake system.">Intake</a></code> object. </td></tr>
+    <tr><td class="paramname">latch</td><td>The reference to the <code><a class="el" href="../../db/d72/classRobot_1_1Latch.html" title="The Latch class represents a latching mechanism.">Latch</a></code> object. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="../../db/ddf/auton_8cpp_source.html#l00104">104</a> of file <a class="el" href="../../db/ddf/auton_8cpp_source.html">auton.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  104</span>                                                    {</div>
@@ -506,8 +516,8 @@ Private Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a6e8bc657f1842887508876fabc1e3085" name="a6e8bc657f1842887508876fabc1e3085"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e8bc657f1842887508876fabc1e3085">&#9670;&#160;</a></span>AutonSwitcher()</h2>
+<a id="ac70c56d45eb1529038f552713b9c1397" name="ac70c56d45eb1529038f552713b9c1397"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac70c56d45eb1529038f552713b9c1397">&#9670;&#160;</a></span>AutonSwitcher()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -518,7 +528,7 @@ Private Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void Autonomous::AutonSwitcher </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>autonNum</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -531,49 +541,45 @@ Private Member Functions</h2></td></tr>
 
 <p>Switches the autonomous program. </p>
 <p>Make sure to pass in a reference to the Puncher object with .</p>
-<p>This function switches the autonomous program to the next available program. It allows the user to cycle through different autonomous programs during runtime. </p>
+<p>This function switches the autonomous program to the next available program. It allows the user to cycle through different autonomous programs during runtime.</p>
+<p>Directly switches the autonomous routine based on the value of the auton variable. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../db/ddf/auton_8cpp_source.html#l00137">137</a> of file <a class="el" href="../../db/ddf/auton_8cpp_source.html">auton.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  137</span>                               {</div>
-<div class="line"><span class="lineno">  138</span>         </div>
-<div class="line"><span class="lineno">  139</span> </div>
-<div class="line"><span class="lineno">  140</span>   <a class="code hl_variable" href="#a35870e1dbd00c82d40f8181fbb257189">Autonomous::auton</a> = <a class="code hl_variable" href="#a35870e1dbd00c82d40f8181fbb257189">auton</a> + 1;</div>
-<div class="line"><span class="lineno">  141</span> </div>
-<div class="line"><span class="lineno">  142</span>   <span class="comment">// Checks if the toggler goes out of bounds.</span></div>
-<div class="line"><span class="lineno">  143</span>   <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a35870e1dbd00c82d40f8181fbb257189">Autonomous::auton</a> == 6) {</div>
-<div class="line"><span class="lineno">  144</span>      <a class="code hl_variable" href="#a35870e1dbd00c82d40f8181fbb257189">Autonomous::auton</a> = 1;</div>
-<div class="line"><span class="lineno">  145</span>   }</div>
-<div class="line"><span class="lineno">  146</span> </div>
-<div class="line"><span class="lineno">  147</span>   </div>
-<div class="line"><span class="lineno">  148</span>   <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a35870e1dbd00c82d40f8181fbb257189">auton</a> == 1) {</div>
-<div class="line"><span class="lineno">  149</span>      <a class="code hl_variable" href="#a4f32b587cbbbb7b37e0ccead9c6ec02e">Autonomous::autonName</a> = <span class="stringliteral">&quot;Red Left&quot;</span>;</div>
-<div class="line"><span class="lineno">  150</span>      std::cout &lt;&lt; <a class="code hl_variable" href="#a4f32b587cbbbb7b37e0ccead9c6ec02e">Autonomous::autonName</a> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  151</span>   }</div>
-<div class="line"><span class="lineno">  152</span>   <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a35870e1dbd00c82d40f8181fbb257189">auton</a> == 2) {</div>
-<div class="line"><span class="lineno">  153</span>      <a class="code hl_variable" href="#a4f32b587cbbbb7b37e0ccead9c6ec02e">Autonomous::autonName</a> = <span class="stringliteral">&quot;Red Right&quot;</span>;</div>
-<div class="line"><span class="lineno">  154</span>      std::cout &lt;&lt; <a class="code hl_variable" href="#a4f32b587cbbbb7b37e0ccead9c6ec02e">Autonomous::autonName</a> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  155</span>   }</div>
-<div class="line"><span class="lineno">  156</span>   <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a35870e1dbd00c82d40f8181fbb257189">auton</a> == 3) {</div>
-<div class="line"><span class="lineno">  157</span>      <a class="code hl_variable" href="#a4f32b587cbbbb7b37e0ccead9c6ec02e">Autonomous::autonName</a> = <span class="stringliteral">&quot;Blue Left&quot;</span>;</div>
-<div class="line"><span class="lineno">  158</span>      std::cout &lt;&lt; <a class="code hl_variable" href="#a4f32b587cbbbb7b37e0ccead9c6ec02e">Autonomous::autonName</a> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  159</span>   }</div>
-<div class="line"><span class="lineno">  160</span>   <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a35870e1dbd00c82d40f8181fbb257189">auton</a> == 4) {</div>
-<div class="line"><span class="lineno">  161</span>      <a class="code hl_variable" href="#a4f32b587cbbbb7b37e0ccead9c6ec02e">Autonomous::autonName</a> = <span class="stringliteral">&quot;Blue Right&quot;</span>;</div>
-<div class="line"><span class="lineno">  162</span>      std::cout &lt;&lt; <a class="code hl_variable" href="#a4f32b587cbbbb7b37e0ccead9c6ec02e">Autonomous::autonName</a> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  163</span>   }</div>
-<div class="line"><span class="lineno">  164</span>   <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a35870e1dbd00c82d40f8181fbb257189">auton</a> == 5) {</div>
-<div class="line"><span class="lineno">  165</span>      <a class="code hl_variable" href="#a4f32b587cbbbb7b37e0ccead9c6ec02e">Autonomous::autonName</a> = <span class="stringliteral">&quot;Skills&quot;</span>;</div>
-<div class="line"><span class="lineno">  166</span>      std::cout &lt;&lt; <a class="code hl_variable" href="#a4f32b587cbbbb7b37e0ccead9c6ec02e">Autonomous::autonName</a> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  167</span>   }</div>
-<div class="line"><span class="lineno">  168</span>         <span class="comment">// Set the controllet text to the current autonomous routine valu</span></div>
-<div class="line"><span class="lineno">  169</span> </div>
-<div class="line"><span class="lineno">  170</span>    </div>
-<div class="line"><span class="lineno">  171</span>}</div>
-<div class="ttc" id="aclassRobot_1_1Autonomous_html_a4f32b587cbbbb7b37e0ccead9c6ec02e"><div class="ttname"><a href="#a4f32b587cbbbb7b37e0ccead9c6ec02e">Robot::Autonomous::autonName</a></div><div class="ttdeci">static std::string autonName</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d96/auton_8h_source.html#l00046">auton.h:46</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../db/ddf/auton_8cpp_source.html#l00138">138</a> of file <a class="el" href="../../db/ddf/auton_8cpp_source.html">auton.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  138</span>                                           {</div>
+<div class="line"><span class="lineno">  139</span>         </div>
+<div class="line"><span class="lineno">  140</span> </div>
+<div class="line"><span class="lineno">  141</span>   <a class="code hl_variable" href="#a35870e1dbd00c82d40f8181fbb257189">Autonomous::auton</a> = autonNum;</div>
+<div class="line"><span class="lineno">  142</span> </div>
+<div class="line"><span class="lineno">  143</span>   <span class="comment">// Checks if the toggler goes out of bounds.</span></div>
+<div class="line"><span class="lineno">  144</span> </div>
+<div class="line"><span class="lineno">  145</span>   </div>
+<div class="line"><span class="lineno">  146</span>   <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a35870e1dbd00c82d40f8181fbb257189">auton</a> == 1) {</div>
+<div class="line"><span class="lineno">  147</span>      <a class="code hl_variable" href="#a4f32b587cbbbb7b37e0ccead9c6ec02e">Autonomous::autonName</a> = <span class="stringliteral">&quot;Red Left&quot;</span>;</div>
+<div class="line"><span class="lineno">  148</span>      std::cout &lt;&lt; <a class="code hl_variable" href="#a4f32b587cbbbb7b37e0ccead9c6ec02e">Autonomous::autonName</a> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  149</span>   }</div>
+<div class="line"><span class="lineno">  150</span>   <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a35870e1dbd00c82d40f8181fbb257189">auton</a> == 2) {</div>
+<div class="line"><span class="lineno">  151</span>      <a class="code hl_variable" href="#a4f32b587cbbbb7b37e0ccead9c6ec02e">Autonomous::autonName</a> = <span class="stringliteral">&quot;Red Right&quot;</span>;</div>
+<div class="line"><span class="lineno">  152</span>      std::cout &lt;&lt; <a class="code hl_variable" href="#a4f32b587cbbbb7b37e0ccead9c6ec02e">Autonomous::autonName</a> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  153</span>   }</div>
+<div class="line"><span class="lineno">  154</span>   <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a35870e1dbd00c82d40f8181fbb257189">auton</a> == 3) {</div>
+<div class="line"><span class="lineno">  155</span>      <a class="code hl_variable" href="#a4f32b587cbbbb7b37e0ccead9c6ec02e">Autonomous::autonName</a> = <span class="stringliteral">&quot;Blue Left&quot;</span>;</div>
+<div class="line"><span class="lineno">  156</span>      std::cout &lt;&lt; <a class="code hl_variable" href="#a4f32b587cbbbb7b37e0ccead9c6ec02e">Autonomous::autonName</a> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  157</span>   }</div>
+<div class="line"><span class="lineno">  158</span>   <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a35870e1dbd00c82d40f8181fbb257189">auton</a> == 4) {</div>
+<div class="line"><span class="lineno">  159</span>      <a class="code hl_variable" href="#a4f32b587cbbbb7b37e0ccead9c6ec02e">Autonomous::autonName</a> = <span class="stringliteral">&quot;Blue Right&quot;</span>;</div>
+<div class="line"><span class="lineno">  160</span>      std::cout &lt;&lt; <a class="code hl_variable" href="#a4f32b587cbbbb7b37e0ccead9c6ec02e">Autonomous::autonName</a> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  161</span>   }</div>
+<div class="line"><span class="lineno">  162</span>   <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a35870e1dbd00c82d40f8181fbb257189">auton</a> == 5) {</div>
+<div class="line"><span class="lineno">  163</span>      <a class="code hl_variable" href="#a4f32b587cbbbb7b37e0ccead9c6ec02e">Autonomous::autonName</a> = <span class="stringliteral">&quot;Skills&quot;</span>;</div>
+<div class="line"><span class="lineno">  164</span>      std::cout &lt;&lt; <a class="code hl_variable" href="#a4f32b587cbbbb7b37e0ccead9c6ec02e">Autonomous::autonName</a> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  165</span>   }</div>
+<div class="line"><span class="lineno">  166</span>    </div>
+<div class="line"><span class="lineno">  167</span>}</div>
+<div class="ttc" id="aclassRobot_1_1Autonomous_html_a4f32b587cbbbb7b37e0ccead9c6ec02e"><div class="ttname"><a href="#a4f32b587cbbbb7b37e0ccead9c6ec02e">Robot::Autonomous::autonName</a></div><div class="ttdeci">static std::string autonName</div><div class="ttdoc">The name of the autonomous program.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d96/auton_8h_source.html#l00051">auton.h:51</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d3/d96/auton_8h_source.html#l00023">auton</a>, and <a class="el" href="../../d3/d96/auton_8h_source.html#l00046">autonName</a>.</p>
+<p class="reference">References <a class="el" href="../../d3/d96/auton_8h_source.html#l00023">auton</a>, and <a class="el" href="../../d3/d96/auton_8h_source.html#l00051">autonName</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d85/selector_8cpp_source.html#l00013">Robot::selector_screen::auton_update()</a>, <a class="el" href="../../df/d0a/main_8cpp_source.html#l00049">toggles()</a>, and <a class="el" href="../../dc/dfa/utility_8cpp_source.html#l00011">Robot::Utility::toggleSubsystemOptions()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d85/selector_8cpp_source.html#l00013">auton_state_update()</a>.</p>
 
 </div>
 </div>
@@ -609,7 +615,7 @@ Private Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d96/auton_8h_source.html#l00023">23</a> of file <a class="el" href="../../d3/d96/auton_8h_source.html">auton.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../db/ddf/auton_8cpp_source.html#l00109">AutoDrive()</a>, and <a class="el" href="../../db/ddf/auton_8cpp_source.html#l00137">AutonSwitcher()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../db/ddf/auton_8cpp_source.html#l00109">AutoDrive()</a>, and <a class="el" href="../../db/ddf/auton_8cpp_source.html#l00138">AutonSwitcher()</a>.</p>
 
 </div>
 </div>
@@ -633,9 +639,12 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d96/auton_8h_source.html#l00046">46</a> of file <a class="el" href="../../d3/d96/auton_8h_source.html">auton.h</a>.</p>
+<p>The name of the autonomous program. </p>
+<p>This variable stores the name of the autonomous program currently selected. It is handled by the switching functions and the screen. </p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d85/selector_8cpp_source.html#l00013">Robot::selector_screen::auton_update()</a>, and <a class="el" href="../../db/ddf/auton_8cpp_source.html#l00137">AutonSwitcher()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d96/auton_8h_source.html#l00051">51</a> of file <a class="el" href="../../d3/d96/auton_8h_source.html">auton.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d7/d85/selector_8cpp_source.html#l00013">auton_state_update()</a>, and <a class="el" href="../../db/ddf/auton_8cpp_source.html#l00138">AutonSwitcher()</a>.</p>
 
 </div>
 </div>
@@ -649,7 +658,7 @@ Private Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../da/d93/namespaceRobot.html">Robot</a></li><li class="navelem"><a class="el" href="../../d1/db9/classRobot_1_1Autonomous.html">Autonomous</a></li>
-    <li class="footer">Generated on Sun Jul 21 2024 21:38:19 for 1516X High Stakes by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
+    <li class="footer">Generated on Tue Jul 23 2024 03:15:37 for 1516X High Stakes by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
   </ul>
 </div>
 </body>

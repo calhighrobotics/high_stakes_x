@@ -133,16 +133,14 @@ void Autonomous::AutoDrive(Intake &intake, Latch &latch) {
 
 }
 
-// 
-void Autonomous::AutonSwitcher() {
+/** Directly switches the autonomous routine based on the value of the auton variable.
+*/
+void Autonomous::AutonSwitcher(int autonNum) {
 			
 
-	Autonomous::auton = auton + 1;
+	Autonomous::auton = autonNum;
 
 	// Checks if the toggler goes out of bounds.
-	if (Autonomous::auton == 6) {
-		Autonomous::auton = 1;
-	}
 
 	
 	if (auton == 1) {
@@ -165,7 +163,5 @@ void Autonomous::AutonSwitcher() {
 		Autonomous::autonName = "Skills";
 		std::cout << Autonomous::autonName << std::endl;
 	}
-			// Set the controllet text to the current autonomous routine valu
-
     
 }

@@ -49,8 +49,7 @@ var namespaceRobot =
     [ "Utility", "d2/d94/namespaceRobot_1_1Utility.html", [
       [ "display", "d2/d94/namespaceRobot_1_1Utility.html#ade4d39238d662930a63ce77990431474", null ],
       [ "displayLocation", "d2/d94/namespaceRobot_1_1Utility.html#a043980c10e7bddc2ec36da271d408feb", null ],
-      [ "displayMotorVel", "d2/d94/namespaceRobot_1_1Utility.html#ae923edc042caa87e3c10e32f8040728c", null ],
-      [ "toggleSubsystemOptions", "d2/d94/namespaceRobot_1_1Utility.html#a2c353b68572943ad2d2809a86d35d80a", null ]
+      [ "displayMotorVel", "d2/d94/namespaceRobot_1_1Utility.html#ae923edc042caa87e3c10e32f8040728c", null ]
     ] ],
     [ "Autonomous", "d1/db9/classRobot_1_1Autonomous.html", "d1/db9/classRobot_1_1Autonomous" ],
     [ "Drivetrain", "d7/d0e/classRobot_1_1Drivetrain.html", "d7/d0e/classRobot_1_1Drivetrain" ],

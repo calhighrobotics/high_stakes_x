@@ -120,6 +120,6 @@ var searchData=
   ['suspend_117',['suspend',['../d7/d6d/group__cpp-rtos.html#gaca83d06cca3775f4c91707a94da82d9c',1,'pros::rtos::Task']]],
   ['swingtoheading_118',['swingToHeading',['../dc/df2/classlemlib_1_1Chassis.html#a6a0409074f09a58b956aae120f95eebc',1,'lemlib::Chassis']]],
   ['swingtopoint_119',['swingToPoint',['../dc/df2/classlemlib_1_1Chassis.html#a009084eee084ad27b91199ec7e62e40d',1,'lemlib::Chassis']]],
-  ['switchdrive_120',['SwitchDrive',['../d7/d0e/classRobot_1_1Drivetrain.html#a61bc62fa1e6279abc5154281faca2c69',1,'Robot::Drivetrain']]],
+  ['switchdrive_120',['SwitchDrive',['../d7/d0e/classRobot_1_1Drivetrain.html#ae3d4bcd4b57055d7693559736d24249e',1,'Robot::Drivetrain']]],
   ['system_5ferror_121',['system_error',['../d1/d1a/namespacefmt_1_1v10.html#af7849ef5e9b86910e408669ed1649b00',1,'fmt::system_error()'],['../d1/d1a/namespacefmt_1_1v10.html#af7849ef5e9b86910e408669ed1649b00',1,'fmt::v10::system_error()']]]
 ];

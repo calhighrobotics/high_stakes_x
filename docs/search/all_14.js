@@ -255,7 +255,7 @@ var searchData=
   ['swingtoheadingparams_252',['SwingToHeadingParams',['../dc/d57/structlemlib_1_1SwingToHeadingParams.html',1,'lemlib']]],
   ['swingtopoint_253',['swingToPoint',['../dc/df2/classlemlib_1_1Chassis.html#a009084eee084ad27b91199ec7e62e40d',1,'lemlib::Chassis']]],
   ['swingtopointparams_254',['SwingToPointParams',['../dd/d95/structlemlib_1_1SwingToPointParams.html',1,'lemlib']]],
-  ['switchdrive_255',['SwitchDrive',['../d7/d0e/classRobot_1_1Drivetrain.html#a61bc62fa1e6279abc5154281faca2c69',1,'Robot::Drivetrain']]],
+  ['switchdrive_255',['SwitchDrive',['../d7/d0e/classRobot_1_1Drivetrain.html#ae3d4bcd4b57055d7693559736d24249e',1,'Robot::Drivetrain']]],
   ['sys_5flayer_256',['sys_layer',['../de/dbe/struct__lv__disp__t.html#a6b4790d8da37e46506fa44f1e344c650',1,'_lv_disp_t']]],
   ['system_5ferror_257',['system_error',['../d1/d1a/namespacefmt_1_1v10.html#af7849ef5e9b86910e408669ed1649b00',1,'fmt::system_error()'],['../d1/d1a/namespacefmt_1_1v10.html#af7849ef5e9b86910e408669ed1649b00',1,'fmt::v10::system_error()']]]
 ];

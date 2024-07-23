@@ -1,9 +1,5 @@
 var NAVTREEINDEX43 =
 {
-"functions_vars_m.html":[6,3,2,12],
-"functions_vars_n.html":[6,3,2,13],
-"functions_vars_o.html":[6,3,2,14],
-"functions_vars_p.html":[6,3,2,15],
 "functions_vars_r.html":[6,3,2,16],
 "functions_vars_s.html":[6,3,2,17],
 "functions_vars_t.html":[6,3,2,18],

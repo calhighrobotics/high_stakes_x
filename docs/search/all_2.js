@@ -135,13 +135,14 @@ var searchData=
   ['auton3_132',['Auton3',['../d1/db9/classRobot_1_1Autonomous.html#ab6800ad68e6095b45e1ef3b28cae2b37',1,'Robot::Autonomous']]],
   ['auton4_133',['Auton4',['../d1/db9/classRobot_1_1Autonomous.html#a37ac01951f6c3cb83bf4947c33186cbf',1,'Robot::Autonomous']]],
   ['auton5_134',['Auton5',['../d1/db9/classRobot_1_1Autonomous.html#ace6a690386700aa1a9dbce0fd424a27e',1,'Robot::Autonomous']]],
-  ['auton_5fupdate_135',['auton_update',['../d8/db6/classRobot_1_1selector__screen.html#a5786f876641b3602f35333e4426309a2',1,'Robot::selector_screen']]],
-  ['autonname_136',['autonName',['../d1/db9/classRobot_1_1Autonomous.html#a4f32b587cbbbb7b37e0ccead9c6ec02e',1,'Robot::Autonomous']]],
-  ['autonomous_137',['Autonomous',['../d1/db9/classRobot_1_1Autonomous.html',1,'Robot']]],
-  ['autonomous_138',['autonomous',['../d8/d26/structRobotSubsystems.html#a12ff67a917533ced751cda6d36920dc8',1,'RobotSubsystems::autonomous'],['../d4/dbf/main_8h.html#a2df3d06bc5bced154da27fce393f991f',1,'autonomous(void):&#160;main.cpp'],['../df/d0a/main_8cpp.html#a3c7ca506bbc071fa740de13805b7f376',1,'autonomous():&#160;main.cpp']]],
-  ['autonswitcher_139',['AutonSwitcher',['../d1/db9/classRobot_1_1Autonomous.html#a6e8bc657f1842887508876fabc1e3085',1,'Robot::Autonomous']]],
-  ['autontoggleswitch_140',['autonToggleSwitch',['../df/d3e/namespaceRobot_1_1Globals.html#a06b9e49f2cb10dd4449587b742049d5a',1,'Robot::Globals::autonToggleSwitch'],['../df/d3e/namespaceRobot_1_1Globals.html#ac0da660b1679e4ecebf6b25ab198f1ad',1,'Robot::Globals::autonToggleSwitch(&apos;F&apos;)']]],
-  ['average_5fitem_5flength_141',['average_item_length',['../d9/d4d/structlv__lru__t.html#a4f59805ad13b086bf15852d5b2d94651',1,'lv_lru_t']]],
-  ['avg_142',['avg',['../d9/d63/namespacelemlib.html#a121a30bad5b269e43d64aaf9b81e3242',1,'lemlib']]],
-  ['azure_143',['azure',['../d1/d8a/group__cpp-colors.html#gga5533dcafd69b8cfd93f36f13414e2cffacf04a02e37b774fc311a48f605c3c597',1,'pros']]]
+  ['auton_5fstate_5fupdate_135',['auton_state_update',['../d7/d85/selector_8cpp.html#af3d583f26b46257ce4de696fc4742356',1,'selector.cpp']]],
+  ['auton_5fui_5fupdate_136',['auton_ui_update',['../d7/d85/selector_8cpp.html#a7622c6c97e75f25eae6d64a43c4d6604',1,'selector.cpp']]],
+  ['autonname_137',['autonName',['../d1/db9/classRobot_1_1Autonomous.html#a4f32b587cbbbb7b37e0ccead9c6ec02e',1,'Robot::Autonomous']]],
+  ['autonomous_138',['Autonomous',['../d1/db9/classRobot_1_1Autonomous.html',1,'Robot']]],
+  ['autonomous_139',['autonomous',['../d8/d26/structRobotSubsystems.html#a12ff67a917533ced751cda6d36920dc8',1,'RobotSubsystems::autonomous'],['../d4/dbf/main_8h.html#a2df3d06bc5bced154da27fce393f991f',1,'autonomous(void):&#160;main.cpp'],['../df/d0a/main_8cpp.html#a3c7ca506bbc071fa740de13805b7f376',1,'autonomous():&#160;main.cpp']]],
+  ['autonswitcher_140',['AutonSwitcher',['../d1/db9/classRobot_1_1Autonomous.html#ac70c56d45eb1529038f552713b9c1397',1,'Robot::Autonomous']]],
+  ['autontoggleswitch_141',['autonToggleSwitch',['../df/d3e/namespaceRobot_1_1Globals.html#a06b9e49f2cb10dd4449587b742049d5a',1,'Robot::Globals::autonToggleSwitch'],['../df/d3e/namespaceRobot_1_1Globals.html#ac0da660b1679e4ecebf6b25ab198f1ad',1,'Robot::Globals::autonToggleSwitch(&apos;F&apos;)']]],
+  ['average_5fitem_5flength_142',['average_item_length',['../d9/d4d/structlv__lru__t.html#a4f59805ad13b086bf15852d5b2d94651',1,'lv_lru_t']]],
+  ['avg_143',['avg',['../d9/d63/namespacelemlib.html#a121a30bad5b269e43d64aaf9b81e3242',1,'lemlib']]],
+  ['azure_144',['azure',['../d1/d8a/group__cpp-colors.html#gga5533dcafd69b8cfd93f36f13414e2cffacf04a02e37b774fc311a48f605c3c597',1,'pros']]]
 ];

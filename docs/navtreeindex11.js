@@ -1,6 +1,5 @@
 var NAVTREEINDEX11 =
 {
-"d3/df2/classfmt_1_1v10_1_1detail_1_1bigint.html#a1f0d86fa2ff76bce949bb105a123683f":[6,0,0,0,9,16],
 "d3/df2/classfmt_1_1v10_1_1detail_1_1bigint.html#a1f0d86fa2ff76bce949bb105a123683f":[6,0,0,1,0,9,16],
 "d3/df2/classfmt_1_1v10_1_1detail_1_1bigint.html#a246e5ded4fe184eff1cfb312c436a4fe":[5,0,0,1,9,13],
 "d3/df2/classfmt_1_1v10_1_1detail_1_1bigint.html#a246e5ded4fe184eff1cfb312c436a4fe":[5,0,0,5,1,9,13],
@@ -249,5 +248,6 @@ var NAVTREEINDEX11 =
 "d4/d38/structlemlib_1_1TurnToPointParams.html#af5defea462bbe71e6ec62708bf609a0d":[6,0,1,22,1],
 "d4/d3b/structfmt_1_1v10_1_1formatter_3_01std_1_1nullptr__t_00_01Char_01_4.html":[5,0,0,41],
 "d4/d3b/structfmt_1_1v10_1_1formatter_3_01std_1_1nullptr__t_00_01Char_01_4.html":[5,0,0,5,40],
-"d4/d3b/structfmt_1_1v10_1_1formatter_3_01std_1_1nullptr__t_00_01Char_01_4.html":[6,0,0,1,36]
+"d4/d3b/structfmt_1_1v10_1_1formatter_3_01std_1_1nullptr__t_00_01Char_01_4.html":[6,0,0,1,36],
+"d4/d3b/structfmt_1_1v10_1_1formatter_3_01std_1_1nullptr__t_00_01Char_01_4.html":[6,0,0,37]
 };

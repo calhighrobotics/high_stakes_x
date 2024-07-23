@@ -65,9 +65,10 @@ var searchData=
   ['auton3_62',['Auton3',['../d1/db9/classRobot_1_1Autonomous.html#ab6800ad68e6095b45e1ef3b28cae2b37',1,'Robot::Autonomous']]],
   ['auton4_63',['Auton4',['../d1/db9/classRobot_1_1Autonomous.html#a37ac01951f6c3cb83bf4947c33186cbf',1,'Robot::Autonomous']]],
   ['auton5_64',['Auton5',['../d1/db9/classRobot_1_1Autonomous.html#ace6a690386700aa1a9dbce0fd424a27e',1,'Robot::Autonomous']]],
-  ['auton_5fupdate_65',['auton_update',['../d8/db6/classRobot_1_1selector__screen.html#a5786f876641b3602f35333e4426309a2',1,'Robot::selector_screen']]],
-  ['autonomous_66',['autonomous',['../d4/dbf/main_8h.html#a2df3d06bc5bced154da27fce393f991f',1,'autonomous(void):&#160;main.cpp'],['../df/d0a/main_8cpp.html#a3c7ca506bbc071fa740de13805b7f376',1,'autonomous():&#160;main.cpp']]],
-  ['autonswitcher_67',['AutonSwitcher',['../d1/db9/classRobot_1_1Autonomous.html#a6e8bc657f1842887508876fabc1e3085',1,'Robot::Autonomous']]],
-  ['autontoggleswitch_68',['autonToggleSwitch',['../df/d3e/namespaceRobot_1_1Globals.html#ac0da660b1679e4ecebf6b25ab198f1ad',1,'Robot::Globals']]],
-  ['avg_69',['avg',['../d9/d63/namespacelemlib.html#a121a30bad5b269e43d64aaf9b81e3242',1,'lemlib']]]
+  ['auton_5fstate_5fupdate_65',['auton_state_update',['../d7/d85/selector_8cpp.html#af3d583f26b46257ce4de696fc4742356',1,'selector.cpp']]],
+  ['auton_5fui_5fupdate_66',['auton_ui_update',['../d7/d85/selector_8cpp.html#a7622c6c97e75f25eae6d64a43c4d6604',1,'selector.cpp']]],
+  ['autonomous_67',['autonomous',['../d4/dbf/main_8h.html#a2df3d06bc5bced154da27fce393f991f',1,'autonomous(void):&#160;main.cpp'],['../df/d0a/main_8cpp.html#a3c7ca506bbc071fa740de13805b7f376',1,'autonomous():&#160;main.cpp']]],
+  ['autonswitcher_68',['AutonSwitcher',['../d1/db9/classRobot_1_1Autonomous.html#ac70c56d45eb1529038f552713b9c1397',1,'Robot::Autonomous']]],
+  ['autontoggleswitch_69',['autonToggleSwitch',['../df/d3e/namespaceRobot_1_1Globals.html#ac0da660b1679e4ecebf6b25ab198f1ad',1,'Robot::Globals']]],
+  ['avg_70',['avg',['../d9/d63/namespacelemlib.html#a121a30bad5b269e43d64aaf9b81e3242',1,'lemlib']]]
 ];

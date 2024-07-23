@@ -1,6 +1,5 @@
 var NAVTREEINDEX14 =
 {
-"d5/d0c/lv__conf__internal_8h.html#a27648a176c28e6adbcf6225d8ef79e56":[7,0,0,2,13,178],
 "d5/d0c/lv__conf__internal_8h.html#a291831ee05115d17571a371d3cbf18f7":[7,0,0,2,13,119],
 "d5/d0c/lv__conf__internal_8h.html#a2b13fb8eabe8f3fe6e8a53fea19bfe65":[7,0,0,2,13,47],
 "d5/d0c/lv__conf__internal_8h.html#a2baca81fec60c49dc18a7845868dc797":[7,0,0,2,13,71],
@@ -249,5 +248,6 @@ var NAVTREEINDEX14 =
 "d5/d3e/structfmt_1_1v10_1_1detail_1_1is__integral_3_01uint128__t_01_4.html":[6,0,0,1,0,44],
 "d5/d3f/lv__draw__sdl__composite_8h.html":[7,0,0,2,1,2,1],
 "d5/d3f/lv__draw__sdl__composite_8h.html#a14078d7df7617a57f6169f28631ccce0":[7,0,0,2,1,2,1,3],
-"d5/d3f/lv__draw__sdl__composite_8h.html#a1a5e731d4ec695910c983ff9fc98b544":[7,0,0,2,1,2,1,4]
+"d5/d3f/lv__draw__sdl__composite_8h.html#a1a5e731d4ec695910c983ff9fc98b544":[7,0,0,2,1,2,1,4],
+"d5/d3f/lv__draw__sdl__composite_8h.html#a3be1ff5d9d691323d4f9b2b7e7c34599":[7,0,0,2,1,2,1,0]
 };

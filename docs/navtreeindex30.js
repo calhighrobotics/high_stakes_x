@@ -1,8 +1,5 @@
 var NAVTREEINDEX30 =
 {
-"db/d30/group__c-colors.html#gga0a204139fa728b63f637526a181ca979a7896ff2cc707b5873da0b97d38bf852e":[4,5,5,20],
-"db/d30/group__c-colors.html#gga0a204139fa728b63f637526a181ca979a790173cc5b67b51b9bfffb08718bd3ce":[4,5,5,73],
-"db/d30/group__c-colors.html#gga0a204139fa728b63f637526a181ca979a7bdfa1b25f33b96d9e4cf249e19de205":[4,5,5,85],
 "db/d30/group__c-colors.html#gga0a204139fa728b63f637526a181ca979a7cb7b1f16de8f6c70406cd653b1422dd":[4,5,5,124],
 "db/d30/group__c-colors.html#gga0a204139fa728b63f637526a181ca979a7d733ef2a9f8a6b44dca8ef6baa59cd8":[4,5,5,106],
 "db/d30/group__c-colors.html#gga0a204139fa728b63f637526a181ca979a818346f3bae2db4d688bb3ad3d5fb7b5":[4,5,5,35],
@@ -249,5 +246,8 @@ var NAVTREEINDEX30 =
 "db/da0/unionfmt_1_1v10_1_1detail_1_1arg__ref_1_1value.html#ae3c2594f6bf36977b6e8f95e32108d38":[6,0,0,1,0,5,0,1],
 "db/da3/structfmt_1_1v10_1_1formatter_3_01unsigned_01char_00_01Char_01_4.html":[5,0,0,44],
 "db/da3/structfmt_1_1v10_1_1formatter_3_01unsigned_01char_00_01Char_01_4.html":[5,0,0,5,43],
-"db/da3/structfmt_1_1v10_1_1formatter_3_01unsigned_01char_00_01Char_01_4.html":[6,0,0,1,39]
+"db/da3/structfmt_1_1v10_1_1formatter_3_01unsigned_01char_00_01Char_01_4.html":[6,0,0,1,39],
+"db/da3/structfmt_1_1v10_1_1formatter_3_01unsigned_01char_00_01Char_01_4.html":[6,0,0,40],
+"db/da9/structfmt_1_1v10_1_1detail_1_1is__statically__named__arg.html":[5,0,0,1,51],
+"db/da9/structfmt_1_1v10_1_1detail_1_1is__statically__named__arg.html":[5,0,0,5,1,51]
 };

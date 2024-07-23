@@ -1,6 +1,5 @@
 var NAVTREEINDEX10 =
 {
-"d3/d60/group__cpp-device.html#gga0a7387ba6156c831ba1e61d75a04c3d9af42087059b37ae7f4d9f0d3a475801a8":[4,8,1,6],
 "d3/d6b/structimu__accel__s__t.html":[4,14,4],
 "d3/d72/vision_8h.html":[4,33,0],
 "d3/d74/classlemlib_1_1InfoSink.html":[5,0,1,10],
@@ -249,5 +248,6 @@ var NAVTREEINDEX10 =
 "d3/df2/classfmt_1_1v10_1_1detail_1_1bigint.html#a1d801410abdf182da4444e95cb21dd21":[6,0,0,0,9,7],
 "d3/df2/classfmt_1_1v10_1_1detail_1_1bigint.html#a1d801410abdf182da4444e95cb21dd21":[6,0,0,1,0,9,7],
 "d3/df2/classfmt_1_1v10_1_1detail_1_1bigint.html#a1f0d86fa2ff76bce949bb105a123683f":[5,0,0,1,9,16],
-"d3/df2/classfmt_1_1v10_1_1detail_1_1bigint.html#a1f0d86fa2ff76bce949bb105a123683f":[5,0,0,5,1,9,16]
+"d3/df2/classfmt_1_1v10_1_1detail_1_1bigint.html#a1f0d86fa2ff76bce949bb105a123683f":[5,0,0,5,1,9,16],
+"d3/df2/classfmt_1_1v10_1_1detail_1_1bigint.html#a1f0d86fa2ff76bce949bb105a123683f":[6,0,0,0,9,16]
 };

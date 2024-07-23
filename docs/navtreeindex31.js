@@ -1,8 +1,5 @@
 var NAVTREEINDEX31 =
 {
-"db/da3/structfmt_1_1v10_1_1formatter_3_01unsigned_01char_00_01Char_01_4.html":[6,0,0,40],
-"db/da9/structfmt_1_1v10_1_1detail_1_1is__statically__named__arg.html":[5,0,0,1,51],
-"db/da9/structfmt_1_1v10_1_1detail_1_1is__statically__named__arg.html":[5,0,0,5,1,51],
 "db/da9/structfmt_1_1v10_1_1detail_1_1is__statically__named__arg.html":[6,0,0,0,51],
 "db/da9/structfmt_1_1v10_1_1detail_1_1is__statically__named__arg.html":[6,0,0,1,0,51],
 "db/db5/group__apix.html":[4,4],
@@ -249,5 +246,8 @@ var NAVTREEINDEX31 =
 "dc/d3a/lv__conf_8old_8h.html#ad47cc77d1aa68ec55841989ef28fdf2d":[7,0,0,2,11,102],
 "dc/d3a/lv__conf_8old_8h.html#ad4a2b830ea7ec25167bed0a9e5628c53":[7,0,0,2,11,111],
 "dc/d3a/lv__conf_8old_8h.html#ad5b166a6932d318f3bdda8e998776c1c":[7,0,0,2,11,21],
-"dc/d3a/lv__conf_8old_8h.html#ad753043a4ca4d9be3a78340355916398":[7,0,0,2,11,53]
+"dc/d3a/lv__conf_8old_8h.html#ad753043a4ca4d9be3a78340355916398":[7,0,0,2,11,53],
+"dc/d3a/lv__conf_8old_8h.html#ad8eb3e17e3a796c636b2c1d544250779":[7,0,0,2,11,95],
+"dc/d3a/lv__conf_8old_8h.html#adecf949b46a435275d65fb8757583896":[7,0,0,2,11,43],
+"dc/d3a/lv__conf_8old_8h.html#adf6465e5ef359ae3822516a96f532bc4":[7,0,0,2,11,37]
 };

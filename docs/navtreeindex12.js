@@ -1,6 +1,5 @@
 var NAVTREEINDEX12 =
 {
-"d4/d3b/structfmt_1_1v10_1_1formatter_3_01std_1_1nullptr__t_00_01Char_01_4.html":[6,0,0,37],
 "d4/d3c/link_8h.html":[4,16,0],
 "d4/d47/structquaternion__s__t.html":[4,14,2],
 "d4/d54/structlv__draw__sw__blend__dsc__t.html":[6,0,57],
@@ -249,5 +248,6 @@ var NAVTREEINDEX12 =
 "d4/dbe/lv__conf__checker_8h.html#a376696c753a2750dc80acaf6fb48770e":[7,0,0,2,12,16],
 "d4/dbe/lv__conf__checker_8h.html#a39568ba761e0c4ce5af64132e036a7e4":[7,0,0,2,12,50],
 "d4/dbe/lv__conf__checker_8h.html#a3c82bb543182bac24f86703d36723c52":[7,0,0,2,12,57],
-"d4/dbe/lv__conf__checker_8h.html#a3fb915a4a32ad32f9b1f1d7180dff72f":[7,0,0,2,12,111]
+"d4/dbe/lv__conf__checker_8h.html#a3fb915a4a32ad32f9b1f1d7180dff72f":[7,0,0,2,12,111],
+"d4/dbe/lv__conf__checker_8h.html#a415619cdc856d208a9a110b4e87878a8":[7,0,0,2,12,11]
 };

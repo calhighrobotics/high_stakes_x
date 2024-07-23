@@ -38,30 +38,7 @@ using namespace Robot::Globals;
         Robot::status_screen status;
     } screen;
 
-/**
- * A callback function for LLEMU's center button.
- *
- * When this callback is fired, it will toggle line 2 of the LCD text between
- * "I was pressed!" and nothing.
- */
 
-
-void toggles() {
-	while (true)
-	{
-        subsystem.autonomous.AutonSwitcher();
-		subsystem.drivetrain.SwitchDrive();
-		
-		if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_DOWN)) {
-			pros::lcd::print(4, "toggler stopped");
-			break;
-		}
-
-		// Exits the loop if the up button is pressed
-
-		pros::delay(30);
-	}
-}
 /**
  * Runs initialization code. This occurs as soon as the program is started.
  *
@@ -75,7 +52,7 @@ void initialize() {
 	
 
 	// if (pros::c::registry_get_plugged_type(15) == pros::c::E_DEVICE_IMU) {
-	chassis.calibrate();  
+	//chassis.calibrate();  
 	chassis.setPose(0, 0, 0);
 
 	screen.selector.selector();
@@ -92,7 +69,6 @@ void initialize() {
     // });
 	
 	
-	// pros::Task screenTask(Robot::Utility::display);
 	
 }
 
@@ -116,11 +92,7 @@ void disabled() {}
  * starts.<asd></asd>
  */
 void competition_initialize() {
-	// Allows the user to select the autonomous routine, drive control type as well as whether the distance puncher is enabled.
-	// The user can select the auton routine by pressing the right buttons on the controller.
-	// The user can select the drive control type by pressing the down button on the controller.
-	// The user can select the distance puncher by pressing the left button on the controller.
-	// The state of each subsystem is displayed on the controller screen.
+	
 
 	
 	
@@ -183,7 +155,7 @@ void opcontrol() {
 			autonomous();
 		}
 		if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_LEFT)) {
-			std::string name = Drivetrain::SwitchDrive();
+			std::string name = subsystem.drivetrain.toggleDrive();
 			//Output the current drive mode to the controller screen
 			controller.print(0, 0, name.c_str());
 		}

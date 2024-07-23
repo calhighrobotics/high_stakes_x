@@ -41,8 +41,13 @@ namespace Robot {
          * This function switches the autonomous program to the next available program.
          * It allows the user to cycle through different autonomous programs during runtime.
          */
-        static void AutonSwitcher();
+        static void AutonSwitcher(int autonNum);
 
+        /**
+         * @brief The name of the autonomous program.
+         * @details This variable stores the name of the autonomous program currently selected.
+         * It is handled by the switching functions and the screen.
+         */
         static std::string autonName;
 
     private:
@@ -81,6 +86,15 @@ namespace Robot {
         void Auton4(Intake &intake, Latch &latch);
 
 
+        /**
+         * Executes the Skills challenge autonomous.
+         *
+         * This function controls the robot's actions during autonomous routine 5.
+         * It takes references to the `Intake` and `Latch` objects as parameters.
+         *
+         * @param intake The reference to the `Intake` object.
+         * @param latch The reference to the `Latch` object.
+         */
         void Auton5(Intake &intake, Latch &latch);
 
     };
