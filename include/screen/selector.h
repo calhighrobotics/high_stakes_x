@@ -1,4 +1,5 @@
 #pragma once
+#include "pros/apix.h"
 
 namespace Robot {
 
@@ -13,6 +14,7 @@ namespace Robot {
 
             selector_screen();
 
+
             /**
              * @brief Function to create and initialize the selector screen.
              * 
@@ -26,6 +28,12 @@ namespace Robot {
 
         private:
 
+            /**
+             * @brief Value of the last selected competition autonomous when switching to a skills autonomous.
+             */
+            static int lastAuton;
+
+            static void auton_ui_update(lv_event_t * e);
            
             /** The 2 event handlers and 1 helper function for the autonomous routine 
             * cannot be put here, as they are static in a different connotation than

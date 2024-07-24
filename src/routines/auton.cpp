@@ -8,7 +8,7 @@
 using namespace Robot;
 using namespace Robot::Globals;
 
-int Autonomous::auton = 4;
+int Autonomous::auton = 1;
 std::string Autonomous::autonName = "Red Left";
 
 ASSET(red_right_pt1_txt);
@@ -23,7 +23,7 @@ ASSET(red_left_pt3_txt);
 ASSET(red_left_pt4_txt);
 ASSET(red_left_pt5_txt);
 
-//Red Right
+//Red Left
 void Autonomous::Auton1(Intake &intake, Latch &latch) {
 	
 	chassis.setPose(-148.132, -58.408, 190);
@@ -52,7 +52,7 @@ void Autonomous::Auton1(Intake &intake, Latch &latch) {
 
 }
 
-//Red Left
+//Red Right
 void Autonomous::Auton2(Intake &intake, Latch &latch) {
 
 	chassis.setPose(-146.76, 63.046, 10);
@@ -79,14 +79,14 @@ void Autonomous::Auton2(Intake &intake, Latch &latch) {
 	chassis.follow(red_left_pt5_txt, 15, 5000);
 }
 
-//Blue Right
+//Blue left
 void Autonomous::Auton3(Intake &intake, Latch &latch) {
     
 }
 
 /*
 * @todo Flesh out this method before the competition in order to make it a full solo awp autonomous. 
-* Blue left
+* Blue right
 */
 void Autonomous::Auton4(Intake &intake, Latch &latch) {
 	chassis.setBrakeMode(pros::E_MOTOR_BRAKE_BRAKE);
@@ -119,15 +119,15 @@ void Autonomous::AutoDrive(Intake &intake, Latch &latch) {
         Auton2(intake, latch);
     }
 
-    if(Autonomous::auton == 3){
+    if(Autonomous::auton == -1){
         Auton3(intake, latch);
     }
 
-	if(Autonomous::auton == 4){
+	if(Autonomous::auton == -2){
         Auton4(intake, latch);
     }
 
-	if(Autonomous::auton == 5) {
+	if(Autonomous::auton == 0) {
 		Auton5(intake, latch);
 	}
 
@@ -151,15 +151,15 @@ void Autonomous::AutonSwitcher(int autonNum) {
 		Autonomous::autonName = "Red Right";
 		std::cout << Autonomous::autonName << std::endl;
 	}
-	if (auton == 3) {
+	if (auton == -1) {
 		Autonomous::autonName = "Blue Left";
 		std::cout << Autonomous::autonName << std::endl;
 	}
-	if (auton == 4) {
+	if (auton == -2) {
 		Autonomous::autonName = "Blue Right";
 		std::cout << Autonomous::autonName << std::endl;
 	}
-	if (auton == 5) {
+	if (auton == 0) {
 		Autonomous::autonName = "Skills";
 		std::cout << Autonomous::autonName << std::endl;
 	}

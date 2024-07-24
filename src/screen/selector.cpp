@@ -1,3 +1,13 @@
+#include "screen/selector.h"
+#include "liblvgl/core/lv_obj.h"
+#include "liblvgl/core/lv_obj_style.h"
+#include "liblvgl/core/lv_obj_tree.h"
+#include "liblvgl/font/lv_font.h"
+#include "liblvgl/lv_conf_internal.h"
+#include "liblvgl/misc/lv_area.h"
+#include "liblvgl/misc/lv_log.h"
+#include "liblvgl/widgets/lv_dropdown.h"
+#include "liblvgl/widgets/lv_label.h"
 #include "main.h"
 #include "pros/apix.h"
 #include "robot/auton.h"
@@ -5,42 +15,9 @@
 
 using namespace Robot;
 
+int selector_screen::lastAuton;
 
-/**
- * @brief function to update the autonomous routine based on the updates made to
-* the dropdown list and skills switch in the UI (See auton_ui_update)
-*/
-void auton_state_update(lv_event_code_t code, lv_obj_t * dropdown, lv_obj_t * label, lv_obj_t * skillSwitch, lv_obj_t * autonSwitch) {
-    // Checks if the dropdown list has been updated, and updates the autonomous routine
-    if(code == LV_EVENT_VALUE_CHANGED) {
-         char * opt = new char[15];
-         std::string auton;
-         lv_dropdown_get_selected_str(dropdown, opt, 15);
-
-        if (lv_obj_has_state(skillSwitch, LV_STATE_CHECKED)) {
-            Autonomous::AutonSwitcher(5);
-        }
-        else {
-            if(strcmp(opt, "Red Left") == 0) {
-                Autonomous::AutonSwitcher(1);
-            }
-            else if(strcmp(opt, "Red Right") == 0) {
-                Autonomous::AutonSwitcher(2);
-            }
-            else if(strcmp(opt, "Blue Left") == 0) {
-                Autonomous::AutonSwitcher(3);
-            }
-            else if(strcmp(opt, "Blue Right") == 0) {
-                Autonomous::AutonSwitcher(4);
-            }
-            else {
-            }
-        }
-        lv_label_set_text_fmt(label, "Current Auton: %s", Autonomous::autonName.c_str());
-    }
-
-}
-
+selector_screen::selector_screen() {}
 
 /**
  * @brief Updates the user interface for autonomous selection.
@@ -48,49 +25,63 @@ void auton_state_update(lv_event_code_t code, lv_obj_t * dropdown, lv_obj_t * la
  * This function is responsible for updating the content of the dropdown list based on the alliance color.
  * It also handles the state of the skill switch and updates the autonomous routine accordingly.
  *
- * @param e Pointer to the event object.
+ * @param e Pointer to the event code.
  */
-static void auton_ui_update(lv_event_t * e) {
-    lv_event_code_t code = lv_event_get_code(e);
+void selector_screen::auton_ui_update(lv_event_t * e) {
     lv_obj_t * tab1 = lv_event_get_current_target(e);
-    lv_obj_t * auton_dd = lv_obj_get_child(tab1, -1);
-    lv_obj_t * skillSwitch = lv_obj_get_child(tab1, -2);
-    lv_obj_t * autonSwitch = lv_obj_get_child(tab1, -3);
-    lv_obj_t * autonLabel = lv_obj_get_child(tab1, -4);
+    lv_obj_t * event_obj = lv_event_get_target(e); 
+    lv_obj_t * autonLabel = lv_obj_get_child(tab1, 2);
+    lv_obj_t * allianceSwitch = lv_obj_get_child(tab1, 3);
+    lv_obj_t * skillSwitch = lv_obj_get_child(tab1, 4);
+    lv_obj_t * auton_dd = lv_obj_get_child(tab1, 5);
 
+    /* Autonomous selector follows this specification for updating the autonomous routine
+     * Skills - 0
+     * Red Alliance - 1, 2, 3, ... ,n 
+     * Blue Alliance - -1, -2, -3, ... ,-n
+     */
+    if (event_obj == auton_dd) {
+        // Converts dropdown index to 1 based indexing
+        int currentAutonIndex = lv_dropdown_get_selected(auton_dd) + 1;
+        bool currentAlliance = lv_obj_has_state(allianceSwitch, LV_STATE_CHECKED);
+        int autonNum = currentAlliance ? currentAutonIndex * -1 : currentAutonIndex;
+        Autonomous::AutonSwitcher(autonNum); 
+    }
     /* Updates content of the dropdown list based on the alliance color, using
-    * the state of the alliance color switch, which is detected through "bubbling"
+    * the state of the alliance color switch, which is detected through "bubbling".
     */
-    if (code == LV_EVENT_VALUE_CHANGED) {
-        if(lv_obj_has_state(autonSwitch, LV_STATE_CHECKED)) {
+    else if (event_obj == allianceSwitch) {
+        if(lv_obj_has_state(allianceSwitch, LV_STATE_CHECKED)) {
             lv_dropdown_clear_options(auton_dd);
-            lv_dropdown_add_option(auton_dd, "Blue Left",0);
-            lv_dropdown_add_option(auton_dd, "Blue Right",1);
+            lv_dropdown_set_options(auton_dd, "Blue Left\nBlue Right");
             lv_obj_set_style_border_color(auton_dd, lv_color_hex(0x0077c8), 0);
         }
         else {
             lv_dropdown_clear_options(auton_dd);
-            lv_dropdown_add_option(auton_dd, "Red Left",0);
-            lv_dropdown_add_option(auton_dd, "Red Right",1);
+            lv_dropdown_set_options(auton_dd, "Red Left\nRed Right");
             lv_obj_set_style_border_color(auton_dd, lv_color_hex(0xd22730), 0);
         }
-    }
-
-    if (lv_obj_has_state(skillSwitch, LV_STATE_CHECKED)) {
-        lv_obj_add_state(autonSwitch, LV_STATE_DISABLED);
-        lv_obj_add_state(auton_dd, LV_STATE_DISABLED);
-        lv_obj_set_style_border_color(auton_dd, lv_color_hex(0x7a7a7a), 0);
+        Autonomous::AutonSwitcher(Autonomous::auton * -1);
     }
     else {
-        lv_obj_clear_state(autonSwitch, LV_STATE_DISABLED);
-        lv_obj_clear_state(auton_dd, LV_STATE_DISABLED);
+        if (lv_obj_has_state(skillSwitch, LV_STATE_CHECKED)) {
+            // Remembers the last competition autonomous
+            selector_screen::lastAuton = Autonomous::auton;
+
+            // Updates the autonomous routine to skills
+            Autonomous::AutonSwitcher(0); 
+            lv_obj_add_state(allianceSwitch, LV_STATE_DISABLED);
+            lv_obj_add_state(auton_dd, LV_STATE_DISABLED);
+            lv_obj_set_style_border_color(auton_dd, lv_color_hex(0x7a7a7a), 0);
+        }
+        else {
+            Autonomous::AutonSwitcher(selector_screen::lastAuton); 
+            lv_obj_clear_state(allianceSwitch, LV_STATE_DISABLED);
+            lv_obj_clear_state(auton_dd, LV_STATE_DISABLED);
+        }
     }
-
-    auton_state_update(code, auton_dd, autonLabel, skillSwitch, autonSwitch);
-    //Updates the Autonomous routine based on the dropdown list and skills
-
+    lv_label_set_text_fmt(autonLabel, "Current Auton: %s", Autonomous::autonName.c_str());
 }
-
 
 /**
  * @brief Updates the drive mode based on the selected option in the drive roller.
@@ -128,7 +119,6 @@ static void drive_update(lv_event_t * e) {
     }
 }
 
-selector_screen::selector_screen() {}
 
 /**
  * @brief Function to create and initialize the selector screen.
@@ -141,19 +131,13 @@ selector_screen::selector_screen() {}
  */
 void selector_screen::selector()
 {
-      /*Create a Tab view object*/
+    /*Create a Tab view object*/
     lv_obj_t * tabview;
-    tabview = lv_tabview_create(lv_scr_act(), LV_DIR_TOP, 45);
+    tabview = lv_tabview_create(lv_scr_act(), LV_DIR_TOP, 30);
 
-    static lv_style_t header_style;
-    lv_style_init(&header_style);
-    lv_style_set_text_font(&header_style, &lv_font_montserrat_16);
-    lv_obj_add_style(tabview, &header_style, 0);
     /*Add 2 tabs*/
     lv_obj_t * tab1 = lv_tabview_add_tab(tabview, "Autonomous select");
     lv_obj_t * tab2 = lv_tabview_add_tab(tabview, "Drive select");
-
-    
 
     /*
     * Both switches are "bubbled" to the tab view. This means that any event on 
@@ -162,59 +146,51 @@ void selector_screen::selector()
     lv_obj_add_event_cb(tab1, auton_ui_update, LV_EVENT_VALUE_CHANGED, NULL);
     lv_obj_add_event_cb(tab2, drive_update, LV_EVENT_VALUE_CHANGED, NULL);
 
-    static lv_style_t label_style;
-    lv_style_init(&label_style);
-    lv_style_set_text_font(&label_style, &lv_font_montserrat_18);
-
     lv_obj_t * label1 = lv_label_create(tab1);
     lv_obj_t * label2 = lv_label_create(tab1);
     lv_obj_t * autonName = lv_label_create(tab1);
-    lv_label_set_text_fmt(label1, "Alliance Color:", 20);
-    lv_label_set_text_fmt(label2, "Skills Auton:", 20);
-    lv_label_set_text_fmt(autonName, "Current Auton:", 25);
-    lv_obj_align(label1, LV_ALIGN_TOP_LEFT, 60, 25);
-    lv_obj_align(label2, LV_ALIGN_LEFT_MID, 60, 0);
+    lv_label_set_text(label1, "Alliance");
+    lv_label_set_text(label2, "Enable Skills");
+    lv_label_set_text_fmt(autonName, "Current Auton: %s", Autonomous::autonName.c_str());
+    lv_obj_align(label1, LV_ALIGN_TOP_LEFT, 0, 10);
+    lv_obj_align(label2, LV_ALIGN_LEFT_MID, 0, 0);
     lv_obj_align(autonName, LV_ALIGN_BOTTOM_MID, 0, 0);
-    lv_obj_add_style(label1, &label_style, 0);
-    lv_obj_add_style(label2, &label_style, 0);
-    lv_obj_add_style(autonName, &label_style, 0);
-
-    // /*Create a normal drop down list*/
-
-
+    lv_obj_set_style_text_font(label1, &lv_font_montserrat_24, 0);
+    lv_obj_set_style_text_font(label2, &lv_font_montserrat_24, 0);
+    lv_obj_set_style_text_font(autonName, &lv_font_montserrat_24, 0);
 
     /*Add alliance color switch*/
     lv_obj_t * matchSwitch = lv_switch_create(tab1);
     lv_obj_add_flag(matchSwitch, LV_OBJ_FLAG_EVENT_BUBBLE);
     lv_obj_set_style_bg_color(matchSwitch, lv_palette_main(LV_PALETTE_RED), LV_STATE_DEFAULT);
-    lv_obj_set_size(matchSwitch, 50, 30);
+    lv_obj_set_size(matchSwitch, lv_pct(25), lv_pct(30));
     lv_obj_set_style_pad_all(matchSwitch, -5, LV_PART_KNOB);
-    lv_obj_align(matchSwitch, LV_ALIGN_TOP_MID, 0, 20);
+    lv_obj_align(matchSwitch, LV_ALIGN_TOP_MID, 0, 0);
 
     /*Add skills switch*/
     lv_obj_t * skillSwitch = lv_switch_create(tab1);
     lv_obj_add_flag(skillSwitch, LV_OBJ_FLAG_EVENT_BUBBLE);
-    lv_obj_set_size(skillSwitch, 50, 30);
+    lv_obj_set_size(skillSwitch, lv_pct(25), lv_pct(30));
     lv_obj_set_style_pad_all(skillSwitch, -5, LV_PART_KNOB);
     lv_obj_align(skillSwitch, LV_ALIGN_CENTER, 0, 0);
 
-    /*Create a drop down list for available */
+    /*Create a drop down list for available autons */
     lv_obj_t * auton_dd = lv_dropdown_create(tab1);
     lv_obj_add_flag(auton_dd, LV_OBJ_FLAG_EVENT_BUBBLE);
     lv_dropdown_set_options(auton_dd, "Red Left\nRed Right");
     lv_obj_set_style_max_height(auton_dd, 50, LV_PART_MAIN);
     lv_obj_set_size(auton_dd, lv_pct(35), lv_pct(35));
-    lv_obj_set_style_pad_top(auton_dd, 15, LV_PART_MAIN);
-    lv_obj_set_style_pad_bottom(auton_dd, 15, LV_PART_MAIN);
+    lv_obj_set_style_pad_top(auton_dd, 10, LV_PART_MAIN);
+    lv_obj_set_style_pad_bottom(auton_dd, 10, LV_PART_MAIN);
     lv_obj_set_style_border_width(auton_dd, 4, 0);
     lv_obj_set_style_border_color(auton_dd, lv_color_hex(0xd22730), 0);
-    lv_obj_align(auton_dd, LV_ALIGN_TOP_RIGHT, 0, 5);
+    lv_obj_align(auton_dd, LV_ALIGN_TOP_RIGHT, 0, 0);
 
     // Drive select tab
     lv_obj_t * driveName = lv_label_create(tab2);
     lv_label_set_text_fmt(driveName, "Current drive mode:", 25);
     lv_obj_align(driveName, LV_ALIGN_BOTTOM_MID, 0, 0);
-    lv_obj_add_style(driveName, &label_style, 0);
+    lv_obj_set_style_text_font(driveName, &lv_font_montserrat_18, 0);
 
     // Style for the highlighted roller option
     static lv_style_t roller_style;
