@@ -33,6 +33,14 @@ namespace Robot {
              */
             static int lastAuton;
 
+            static lv_color_t lastColor;
+
+            constexpr static char redAutons[] = "Red Left\nRed Right";
+
+            constexpr static char blueAutons[] = "Blue Left\nBlue Right";
+            
+            constexpr static char driveModes[] = "Curvature Drive\nArcade Drive\nTank Drive";
+
             static void auton_ui_update(lv_event_t * e);
            
             /** The 2 event handlers and 1 helper function for the autonomous routine 

@@ -3,7 +3,7 @@ var searchData=
   ['tail_0',['tail',['../da/d89/structlv__ll__t.html#a633fc5158edd17d0e02f108a6fe042ad',1,'lv_ll_t']]],
   ['target_1',['target',['../df/d21/struct__lv__event__t.html#ae9d2c357488aba8828549fe5ecdc1d10',1,'_lv_event_t::target'],['../dd/d2d/struct__lv__draw__sdl__layer__ctx__t.html#a6eee1eb886f1337349ce0c90cba15ad9',1,'_lv_draw_sdl_layer_ctx_t::target']]],
   ['target_5frect_2',['target_rect',['../dd/d2d/struct__lv__draw__sdl__layer__ctx__t.html#a43c39e26045ce87c9ca8bc942a9bd9f4',1,'_lv_draw_sdl_layer_ctx_t']]],
-  ['task_3',['task',['../dc/d93/classlemlib_1_1Buffer.html#a48c3d8fc9b131e4c5bfc73de92206127',1,'lemlib::Buffer::task'],['../d7/d6d/group__cpp-rtos.html#gabe72ab6ef92f89fdd4d871bd56d23ea2',1,'pros::rtos::Task::task']]],
+  ['task_3',['task',['../dc/d93/classlemlib_1_1Buffer.html#a48c3d8fc9b131e4c5bfc73de92206127',1,'lemlib::Buffer']]],
   ['tell_5fcb_4',['tell_cb',['../df/d93/struct__lv__fs__drv__t.html#ad11d5b2d3198a1a3f591e282e8c36a35',1,'_lv_fs_drv_t']]],
   ['text_5',['text',['../da/d70/structlv__obj__draw__part__dsc__t.html#a70b5d68f3c0b469fb6d27e141e8612aa',1,'lv_obj_draw_part_dsc_t::text'],['../df/d75/structlv__label__t.html#a5c148f7eee15810387c0489f19df77cc',1,'lv_label_t::text']]],
   ['text_5flength_6',['text_length',['../da/d70/structlv__obj__draw__part__dsc__t.html#ab0ea5ce2c4c4de3d648c78d89cfdad16',1,'lv_obj_draw_part_dsc_t']]],

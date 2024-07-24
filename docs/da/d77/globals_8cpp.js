@@ -8,6 +8,7 @@ var globals_8cpp =
     [ "drive_left", "da/d77/globals_8cpp.html#af3097b3541f8623afb0c417128227172", null ],
     [ "drive_right", "da/d77/globals_8cpp.html#a354a5a9d6884d2f216d811bf50a7d0ae", null ],
     [ "drivetrainToggleSwitch", "da/d77/globals_8cpp.html#a73ebda6e6fb91be7e270749a450b87d2", null ],
+    [ "inertial_sensor", "da/d77/globals_8cpp.html#afee30007990814bed58615aef0657410", null ],
     [ "IntakeMotor", "da/d77/globals_8cpp.html#a3edebfa720c7f56866741f7c06a868ae", null ],
     [ "IntakeToggle", "da/d77/globals_8cpp.html#ac7c4d68388f0dc72b79cc0dbc80df5e6", null ],
     [ "LatchControl", "da/d77/globals_8cpp.html#a08fd08646aa054d67e91ee3dd5a2c5f4", null ],
@@ -18,6 +19,5 @@ var globals_8cpp =
     [ "RightFront", "da/d77/globals_8cpp.html#a874828e0a2ac01914e717995fcfc998b", null ],
     [ "RightMid", "da/d77/globals_8cpp.html#acee1f6e92a94b9bb26ed0de908ab8cdc", null ],
     [ "steer_curve", "da/d77/globals_8cpp.html#a1ff5a667af809c587e8f9404ff66101b", null ],
-    [ "throttle_curve", "da/d77/globals_8cpp.html#ab54e747695060e29274bf7b268f4af48", null ],
-    [ "inertial_sensor", "da/d77/globals_8cpp.html#afa304b0a419547d6e66dad92ca961353", null ]
+    [ "throttle_curve", "da/d77/globals_8cpp.html#ab54e747695060e29274bf7b268f4af48", null ]
 ];

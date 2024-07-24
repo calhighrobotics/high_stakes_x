@@ -125,46 +125,34 @@ $(function(){initNavTree('dc/da2/link_8hpp_source.html','../../'); initResizable
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &quot;<a class="code" href="../../d5/d08/device_8hpp.html">pros/device.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../da/d7c/namespacepros.html">pros</a> {</div>
-<div class="foldopen" id="foldopen00031" data-start="{" data-end="};">
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="../../d9/dba/classpros_1_1Link.html">   31</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d9/dba/classpros_1_1Link.html">Link</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../da/d4f/classpros_1_1v5_1_1Device.html">Device</a> {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">class </span>Link : <span class="keyword">public</span> Device {</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>   <span class="keyword">private</span>:</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>   <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="../../dd/de2/group__cpp-link.html#gae3646bbc19f10bc746dd75a861ab0d13">   68</a></span>   <span class="keyword">explicit</span> <a class="code hl_function" href="../../dd/de2/group__cpp-link.html#gae3646bbc19f10bc746dd75a861ab0d13">Link</a>(<span class="keyword">const</span> std::uint8_t port, <span class="keyword">const</span> std::string link_id, <a class="code hl_typedef" href="../../d3/d54/group__c-link.html#ga63fef5a619cd034d3ee2e71ac74103c4">link_type_e_t</a> type, <span class="keywordtype">bool</span> ov = <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>   <span class="keyword">explicit</span> Link(<span class="keyword">const</span> std::uint8_t port, <span class="keyword">const</span> std::string link_id, <a class="code hl_typedef" href="../../d3/d54/group__c-link.html#ga63fef5a619cd034d3ee2e71ac74103c4">link_type_e_t</a> type, <span class="keywordtype">bool</span> ov = <span class="keyword">true</span>);</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="../../dd/de2/group__cpp-link.html#ga08a8bca759c5bfc770bef362255680de">   89</a></span>   <span class="keywordtype">bool</span> <a class="code hl_function" href="../../dd/de2/group__cpp-link.html#ga08a8bca759c5bfc770bef362255680de">connected</a>();</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>   <span class="keywordtype">bool</span> connected();</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="../../dd/de2/group__cpp-link.html#ga5605212e3a5aea0ac0f21052e46ac384">  111</a></span>   std::uint32_t <a class="code hl_function" href="../../dd/de2/group__cpp-link.html#ga5605212e3a5aea0ac0f21052e46ac384">raw_receivable_size</a>();</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>   std::uint32_t raw_receivable_size();</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>   std::uint32_t raw_transmittable_size();</div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="../../dd/de2/group__cpp-link.html#gab67af15902bc7e9e04aba800d7aec4bd">  164</a></span>   std::uint32_t <a class="code hl_function" href="../../dd/de2/group__cpp-link.html#gab67af15902bc7e9e04aba800d7aec4bd">transmit_raw</a>(<span class="keywordtype">void</span>* data, std::uint16_t data_size);</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>   std::uint32_t transmit_raw(<span class="keywordtype">void</span>* data, std::uint16_t data_size);</div>
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno"><a class="line" href="../../dd/de2/group__cpp-link.html#ga287bf0dc04b76032073e5de2608f8491">  194</a></span>   std::uint32_t <a class="code hl_function" href="../../dd/de2/group__cpp-link.html#ga287bf0dc04b76032073e5de2608f8491">receive_raw</a>(<span class="keywordtype">void</span>* dest, std::uint16_t data_size);</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>   std::uint32_t receive_raw(<span class="keywordtype">void</span>* dest, std::uint16_t data_size);</div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno"><a class="line" href="../../dd/de2/group__cpp-link.html#ga37c1641fbda1f15ed55f4a3c4802314d">  225</a></span>   std::uint32_t <a class="code hl_function" href="../../dd/de2/group__cpp-link.html#ga37c1641fbda1f15ed55f4a3c4802314d">transmit</a>(<span class="keywordtype">void</span>* data, std::uint16_t data_size);</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>   std::uint32_t transmit(<span class="keywordtype">void</span>* data, std::uint16_t data_size);</div>
 <div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno"><a class="line" href="../../dd/de2/group__cpp-link.html#ga0696172c20f2791affb23dc143598890">  256</a></span>   std::uint32_t <a class="code hl_function" href="../../dd/de2/group__cpp-link.html#ga0696172c20f2791affb23dc143598890">receive</a>(<span class="keywordtype">void</span>* dest, std::uint16_t data_size);</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>   std::uint32_t receive(<span class="keywordtype">void</span>* dest, std::uint16_t data_size);</div>
 <div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span> </div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno"><a class="line" href="../../dd/de2/group__cpp-link.html#gaba4f63afa2e096ef49dd6df880a15c76">  277</a></span>   std::uint32_t <a class="code hl_function" href="../../dd/de2/group__cpp-link.html#gaba4f63afa2e096ef49dd6df880a15c76">clear_receive_buf</a>();</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>   std::uint32_t clear_receive_buf();</div>
 <div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>  </div>
 <div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>};</div>
-</div>
 <div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>}  <span class="comment">// namespace pros</span></div>
 <div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span> </div>
 <div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclasspros_1_1Link_html"><div class="ttname"><a href="../../d9/dba/classpros_1_1Link.html">pros::Link</a></div><div class="ttdef"><b>Definition</b> <a href="#l00031">link.hpp:31</a></div></div>
-<div class="ttc" id="aclasspros_1_1v5_1_1Device_html"><div class="ttname"><a href="../../da/d4f/classpros_1_1v5_1_1Device.html">pros::Device</a></div><div class="ttdef"><b>Definition</b> <a href="../../d5/d08/device_8hpp_source.html#l00058">device.hpp:58</a></div></div>
 <div class="ttc" id="adevice_8hpp_html"><div class="ttname"><a href="../../d5/d08/device_8hpp.html">device.hpp</a></div></div>
 <div class="ttc" id="agroup__c-link_html_ga63fef5a619cd034d3ee2e71ac74103c4"><div class="ttname"><a href="../../d3/d54/group__c-link.html#ga63fef5a619cd034d3ee2e71ac74103c4">link_type_e_t</a></div><div class="ttdeci">enum link_type_e link_type_e_t</div></div>
-<div class="ttc" id="agroup__cpp-link_html_ga0696172c20f2791affb23dc143598890"><div class="ttname"><a href="../../dd/de2/group__cpp-link.html#ga0696172c20f2791affb23dc143598890">pros::Link::receive</a></div><div class="ttdeci">std::uint32_t receive(void *dest, std::uint16_t data_size)</div></div>
-<div class="ttc" id="agroup__cpp-link_html_ga08a8bca759c5bfc770bef362255680de"><div class="ttname"><a href="../../dd/de2/group__cpp-link.html#ga08a8bca759c5bfc770bef362255680de">pros::Link::connected</a></div><div class="ttdeci">bool connected()</div></div>
-<div class="ttc" id="agroup__cpp-link_html_ga287bf0dc04b76032073e5de2608f8491"><div class="ttname"><a href="../../dd/de2/group__cpp-link.html#ga287bf0dc04b76032073e5de2608f8491">pros::Link::receive_raw</a></div><div class="ttdeci">std::uint32_t receive_raw(void *dest, std::uint16_t data_size)</div></div>
-<div class="ttc" id="agroup__cpp-link_html_ga37c1641fbda1f15ed55f4a3c4802314d"><div class="ttname"><a href="../../dd/de2/group__cpp-link.html#ga37c1641fbda1f15ed55f4a3c4802314d">pros::Link::transmit</a></div><div class="ttdeci">std::uint32_t transmit(void *data, std::uint16_t data_size)</div></div>
-<div class="ttc" id="agroup__cpp-link_html_ga5605212e3a5aea0ac0f21052e46ac384"><div class="ttname"><a href="../../dd/de2/group__cpp-link.html#ga5605212e3a5aea0ac0f21052e46ac384">pros::Link::raw_receivable_size</a></div><div class="ttdeci">std::uint32_t raw_receivable_size()</div></div>
-<div class="ttc" id="agroup__cpp-link_html_gab67af15902bc7e9e04aba800d7aec4bd"><div class="ttname"><a href="../../dd/de2/group__cpp-link.html#gab67af15902bc7e9e04aba800d7aec4bd">pros::Link::transmit_raw</a></div><div class="ttdeci">std::uint32_t transmit_raw(void *data, std::uint16_t data_size)</div></div>
-<div class="ttc" id="agroup__cpp-link_html_gaba4f63afa2e096ef49dd6df880a15c76"><div class="ttname"><a href="../../dd/de2/group__cpp-link.html#gaba4f63afa2e096ef49dd6df880a15c76">pros::Link::clear_receive_buf</a></div><div class="ttdeci">std::uint32_t clear_receive_buf()</div></div>
-<div class="ttc" id="agroup__cpp-link_html_gae3646bbc19f10bc746dd75a861ab0d13"><div class="ttname"><a href="../../dd/de2/group__cpp-link.html#gae3646bbc19f10bc746dd75a861ab0d13">pros::Link::Link</a></div><div class="ttdeci">Link(const std::uint8_t port, const std::string link_id, link_type_e_t type, bool ov=true)</div></div>
 <div class="ttc" id="alink_8h_html"><div class="ttname"><a href="../../d4/d3c/link_8h.html">link.h</a></div></div>
 <div class="ttc" id="anamespacepros_html"><div class="ttname"><a href="../../da/d7c/namespacepros.html">pros</a></div><div class="ttdef"><b>Definition</b> <a href="../../d1/d18/liblvgl_2llemu_8hpp_source.html#l00046">llemu.hpp:46</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -173,7 +161,7 @@ $(function(){initNavTree('dc/da2/link_8hpp_source.html','../../'); initResizable
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="../../dir_703c5360c2ec24cbc4442e210f2170cc.html">pros</a></li><li class="navelem"><a class="el" href="../../dc/da2/link_8hpp.html">link.hpp</a></li>
-    <li class="footer">Generated on Tue Jul 23 2024 03:15:33 for 1516X High Stakes by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
+    <li class="footer">Generated on Wed Jul 24 2024 13:33:01 for 1516X High Stakes by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
   </ul>
 </div>
 </body>

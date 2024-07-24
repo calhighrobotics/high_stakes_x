@@ -9,7 +9,7 @@ var indexSectionsWithContent =
   6: "_abcdefghilmopqrstuv",
   7: "_acdfilmnopqstuv",
   8: "_abcdefghiklmnopqrstuvwyz",
-  9: "abcdfmov",
+  9: "abcdfov",
   10: "_acfjlnopqu",
   11: "abcdefgilmorstuv",
   12: "1dhlst"

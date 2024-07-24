@@ -130,7 +130,7 @@ $(function(){initNavTree('da/dd2/intake_8cpp_source.html','../../'); initResizab
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="../../dd/dc0/classRobot_1_1Intake.html#a9705bd933029d63fceb0896a46fcd9fc">   13</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/dc0/classRobot_1_1Intake.html#a9705bd933029d63fceb0896a46fcd9fc">Intake::interval</a>(uint32_t time) {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#ae02bff50d64301c060bb70761c5a1767">IntakeMotor</a>.move(127);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#a347634dbef9d46e0889bc24d4fafcc0a">IntakeMotor</a>.move(127);</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    pros::delay(time);</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>}</div>
 </div>
@@ -138,7 +138,7 @@ $(function(){initNavTree('da/dd2/intake_8cpp_source.html','../../'); initResizab
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
 <div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="../../dd/dc0/classRobot_1_1Intake.html#a068f79584bad08fcee16f5ea35fddfb1">   19</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/dc0/classRobot_1_1Intake.html#a068f79584bad08fcee16f5ea35fddfb1">Intake::score</a>() {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#ae02bff50d64301c060bb70761c5a1767">IntakeMotor</a>.move(127);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#a347634dbef9d46e0889bc24d4fafcc0a">IntakeMotor</a>.move(127);</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    pros::delay(3000); <span class="comment">// will modify later, will run until color sensor doesn&#39;t detect a ring</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    </div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>}</div>
@@ -146,14 +146,14 @@ $(function(){initNavTree('da/dd2/intake_8cpp_source.html','../../'); initResizab
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
 <div class="foldopen" id="foldopen00025" data-start="{" data-end="}">
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="../../dd/dc0/classRobot_1_1Intake.html#ac7b56ab18a76bd7a5fa0f5e56701df8a">   25</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/dc0/classRobot_1_1Intake.html#ac7b56ab18a76bd7a5fa0f5e56701df8a">Intake::run</a>(){</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#a9935411c69763c03223e884be03447d2">controller</a>.<a class="code hl_function" href="../../d7/da3/group__cpp-misc.html#gaac8a91edeced9a51c5f3bc9a1aac3bc6">get_digital</a>(pros::E_CONTROLLER_DIGITAL_L1)) {</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>      <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#ae02bff50d64301c060bb70761c5a1767">IntakeMotor</a>.move(127);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#a0836d6c757263202c26276bf4dd2f22f">controller</a>.get_digital(pros::E_CONTROLLER_DIGITAL_L1)) {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>      <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#a347634dbef9d46e0889bc24d4fafcc0a">IntakeMotor</a>.move(127);</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    }</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#a9935411c69763c03223e884be03447d2">controller</a>.<a class="code hl_function" href="../../d7/da3/group__cpp-misc.html#gaac8a91edeced9a51c5f3bc9a1aac3bc6">get_digital</a>(pros::E_CONTROLLER_DIGITAL_R1)) {</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#ae02bff50d64301c060bb70761c5a1767">IntakeMotor</a>.move(-127);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#a0836d6c757263202c26276bf4dd2f22f">controller</a>.get_digital(pros::E_CONTROLLER_DIGITAL_R1)) {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#a347634dbef9d46e0889bc24d4fafcc0a">IntakeMotor</a>.move(-127);</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    }</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#ae02bff50d64301c060bb70761c5a1767">IntakeMotor</a>.brake();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#a347634dbef9d46e0889bc24d4fafcc0a">IntakeMotor</a>.brake();</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    }</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>
 </div>
@@ -161,7 +161,7 @@ $(function(){initNavTree('da/dd2/intake_8cpp_source.html','../../'); initResizab
 <div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="../../dd/dc0/classRobot_1_1Intake.html#a78e1322a4afb09e3434cdc86f85e4667">   37</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/dc0/classRobot_1_1Intake.html#a78e1322a4afb09e3434cdc86f85e4667">Intake::toggle</a>() {</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    !<a class="code hl_variable" href="../../dd/dc0/classRobot_1_1Intake.html#ad716b22372d1f845c9a0a184a79c4548">elevated</a>;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#a5ce9003c3ad9fcb996b7e17b41675225">IntakeToggle</a>.<a class="code hl_function" href="../../d1/dca/group__cpp-adi.html#ga798b6dd39038d1f0cb0e06214c2516a7">toggle</a>();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#ae7aea18500847c3492a5cab108c6babf">IntakeToggle</a>.toggle();</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}</div>
 </div>
 <div class="ttc" id="aapi_8h_html"><div class="ttname"><a href="../../dc/d65/api_8h.html">api.h</a></div></div>
@@ -172,13 +172,11 @@ $(function(){initNavTree('da/dd2/intake_8cpp_source.html','../../'); initResizab
 <div class="ttc" id="aclassRobot_1_1Intake_html_ac7b56ab18a76bd7a5fa0f5e56701df8a"><div class="ttname"><a href="../../dd/dc0/classRobot_1_1Intake.html#ac7b56ab18a76bd7a5fa0f5e56701df8a">Robot::Intake::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">Runs the main function of the intake system.</div><div class="ttdef"><b>Definition</b> <a href="#l00025">intake.cpp:25</a></div></div>
 <div class="ttc" id="aclassRobot_1_1Intake_html_ad716b22372d1f845c9a0a184a79c4548"><div class="ttname"><a href="../../dd/dc0/classRobot_1_1Intake.html#ad716b22372d1f845c9a0a184a79c4548">Robot::Intake::elevated</a></div><div class="ttdeci">bool elevated</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d44/intake_8h_source.html#l00037">intake.h:37</a></div></div>
 <div class="ttc" id="aglobals_8h_html"><div class="ttname"><a href="../../d5/d87/globals_8h.html">globals.h</a></div><div class="ttdoc">Contains global variables and type definitions for the Robot namespace.</div></div>
-<div class="ttc" id="agroup__cpp-adi_html_ga798b6dd39038d1f0cb0e06214c2516a7"><div class="ttname"><a href="../../d1/dca/group__cpp-adi.html#ga798b6dd39038d1f0cb0e06214c2516a7">pros::adi::Pneumatics::toggle</a></div><div class="ttdeci">std::int32_t toggle()</div></div>
-<div class="ttc" id="agroup__cpp-misc_html_gaac8a91edeced9a51c5f3bc9a1aac3bc6"><div class="ttname"><a href="../../d7/da3/group__cpp-misc.html#gaac8a91edeced9a51c5f3bc9a1aac3bc6">pros::v5::Controller::get_digital</a></div><div class="ttdeci">std::int32_t get_digital(controller_digital_e_t button)</div></div>
 <div class="ttc" id="aintake_8h_html"><div class="ttname"><a href="../../d9/d44/intake_8h.html">intake.h</a></div></div>
 <div class="ttc" id="anamespaceRobot_1_1Globals_html"><div class="ttname"><a href="../../df/d3e/namespaceRobot_1_1Globals.html">Robot::Globals</a></div><div class="ttdoc">Contains global variables and type definitions for the Robot namespace.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d87/globals_8h_source.html#l00030">globals.h:30</a></div></div>
-<div class="ttc" id="anamespaceRobot_1_1Globals_html_a5ce9003c3ad9fcb996b7e17b41675225"><div class="ttname"><a href="../../df/d3e/namespaceRobot_1_1Globals.html#a5ce9003c3ad9fcb996b7e17b41675225">Robot::Globals::IntakeToggle</a></div><div class="ttdeci">pros::adi::Pneumatics IntakeToggle</div></div>
-<div class="ttc" id="anamespaceRobot_1_1Globals_html_a9935411c69763c03223e884be03447d2"><div class="ttname"><a href="../../df/d3e/namespaceRobot_1_1Globals.html#a9935411c69763c03223e884be03447d2">Robot::Globals::controller</a></div><div class="ttdeci">pros::Controller controller</div></div>
-<div class="ttc" id="anamespaceRobot_1_1Globals_html_ae02bff50d64301c060bb70761c5a1767"><div class="ttname"><a href="../../df/d3e/namespaceRobot_1_1Globals.html#ae02bff50d64301c060bb70761c5a1767">Robot::Globals::IntakeMotor</a></div><div class="ttdeci">pros::Motor IntakeMotor</div></div>
+<div class="ttc" id="anamespaceRobot_1_1Globals_html_a0836d6c757263202c26276bf4dd2f22f"><div class="ttname"><a href="../../df/d3e/namespaceRobot_1_1Globals.html#a0836d6c757263202c26276bf4dd2f22f">Robot::Globals::controller</a></div><div class="ttdeci">pros::Controller controller</div></div>
+<div class="ttc" id="anamespaceRobot_1_1Globals_html_a347634dbef9d46e0889bc24d4fafcc0a"><div class="ttname"><a href="../../df/d3e/namespaceRobot_1_1Globals.html#a347634dbef9d46e0889bc24d4fafcc0a">Robot::Globals::IntakeMotor</a></div><div class="ttdeci">pros::Motor IntakeMotor</div></div>
+<div class="ttc" id="anamespaceRobot_1_1Globals_html_ae7aea18500847c3492a5cab108c6babf"><div class="ttname"><a href="../../df/d3e/namespaceRobot_1_1Globals.html#ae7aea18500847c3492a5cab108c6babf">Robot::Globals::IntakeToggle</a></div><div class="ttdeci">pros::adi::Pneumatics IntakeToggle</div></div>
 <div class="ttc" id="anamespaceRobot_html"><div class="ttname"><a href="../../da/d93/namespaceRobot.html">Robot</a></div><div class="ttdoc">Contains all objects generated by the 1516X team - Contains all of the subsystems,...</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -186,7 +184,7 @@ $(function(){initNavTree('da/dd2/intake_8cpp_source.html','../../'); initResizab
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_42a35307dcefecb9f25978d1dedb502f.html">subsystems</a></li><li class="navelem"><a class="el" href="../../da/dd2/intake_8cpp.html">intake.cpp</a></li>
-    <li class="footer">Generated on Tue Jul 23 2024 03:15:33 for 1516X High Stakes by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
+    <li class="footer">Generated on Wed Jul 24 2024 13:33:01 for 1516X High Stakes by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
   </ul>
 </div>
 </body>

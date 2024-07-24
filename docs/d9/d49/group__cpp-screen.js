@@ -1,28 +1,4 @@
 var group__cpp_screen =
 [
-    [ "screen.hpp", "d6/d5e/screen_8hpp.html", null ],
-    [ "pros::screen::anonymous_namespace{screen.hpp}::convert_args", "d9/d49/group__cpp-screen.html#ga86206a0e06649bc26cb2c417e197fe1c", null ],
-    [ "pros::screen::anonymous_namespace{screen.hpp}::convert_args", "d9/d49/group__cpp-screen.html#ga2fe33fdd514fc82e99a5551cb00b73b6", null ],
-    [ "pros::screen::copy_area", "d9/d49/group__cpp-screen.html#gac8b195fde29a483de7fe34156067a92c", null ],
-    [ "pros::screen::draw_circle", "d9/d49/group__cpp-screen.html#ga53c5922a466814315bf0c0150838b799", null ],
-    [ "pros::screen::draw_line", "d9/d49/group__cpp-screen.html#gae3bef1694428c775fd6dce977cbfa87b", null ],
-    [ "pros::screen::draw_pixel", "d9/d49/group__cpp-screen.html#ga5d4493bbada5ff871a44461f0bc71a7d", null ],
-    [ "pros::screen::draw_rect", "d9/d49/group__cpp-screen.html#ga02af0ec1e3430efbb5b66c4cfe92b735", null ],
-    [ "pros::screen::erase", "d9/d49/group__cpp-screen.html#gaddc37523f02666234b4f87dd5683f2de", null ],
-    [ "pros::screen::erase_circle", "d9/d49/group__cpp-screen.html#ga3ab31a7257cb0d6d0fb776703b17ede3", null ],
-    [ "pros::screen::erase_line", "d9/d49/group__cpp-screen.html#ga22c2c2ac7ffe36b2946052170c526e7d", null ],
-    [ "pros::screen::erase_pixel", "d9/d49/group__cpp-screen.html#gad0a321bd81d028d75feec7f6c1c13e49", null ],
-    [ "pros::screen::erase_rect", "d9/d49/group__cpp-screen.html#ga22199222d41fd80c81799fafe3fbec4e", null ],
-    [ "pros::screen::fill_circle", "d9/d49/group__cpp-screen.html#ga7037d11afb655cb5e2d7547d94c5f91a", null ],
-    [ "pros::screen::fill_rect", "d9/d49/group__cpp-screen.html#ga596ee2c64e8d5cb8abcdab741490b884", null ],
-    [ "pros::screen::get_eraser", "d9/d49/group__cpp-screen.html#gac589639dcad1320da01239fa2ee91895", null ],
-    [ "pros::screen::get_pen", "d9/d49/group__cpp-screen.html#ga16f5bad9cbd8aaf1de2f747bf4c88139", null ],
-    [ "pros::screen::scroll", "d9/d49/group__cpp-screen.html#gada1288989c095a51803f3c3ec32f63de", null ],
-    [ "pros::screen::scroll_area", "d9/d49/group__cpp-screen.html#ga54598658b4962091f0dd30474d3c579f", null ],
-    [ "pros::screen::set_eraser", "d9/d49/group__cpp-screen.html#gaf675ab41bd5a23c76ebc0ea060311d88", null ],
-    [ "pros::screen::set_eraser", "d9/d49/group__cpp-screen.html#gac818c20d7c748be206c5825a4fbcb34e", null ],
-    [ "pros::screen::set_pen", "d9/d49/group__cpp-screen.html#ga35e9a03f7c633dd5fabc8c5dff91a9bf", null ],
-    [ "pros::screen::set_pen", "d9/d49/group__cpp-screen.html#ga4ed69aedba2817fe21fe710ff190fc8c", null ],
-    [ "pros::screen::touch_callback", "d9/d49/group__cpp-screen.html#ga8493a48e858cba5e4aa28f6889a79f54", null ],
-    [ "pros::screen::touch_status", "d9/d49/group__cpp-screen.html#ga4e473df306276304a64218f5cb1afad1", null ]
+    [ "screen.hpp", "d6/d5e/screen_8hpp.html", null ]
 ];

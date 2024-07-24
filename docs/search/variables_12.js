@@ -66,7 +66,7 @@ var searchData=
   ['start_5fcb_5fcalled_63',['start_cb_called',['../df/d46/struct__lv__anim__t.html#a293f21a4b59ec38b9514000ef079d119',1,'_lv_anim_t']]],
   ['start_5fvalue_64',['start_value',['../df/d46/struct__lv__anim__t.html#affb2afd81ed1d25d5aac711cb7917e8d',1,'_lv_anim_t']]],
   ['starttime_65',['startTime',['../d7/df6/classlemlib_1_1ExitCondition.html#a10f514ee7c74844f2933d80fbe8b131b',1,'lemlib::ExitCondition']]],
-  ['state_66',['state',['../d2/d48/struct__lv__obj__t.html#aa3fd4378cceb29153c26649eeda2f5c3',1,'_lv_obj_t::state'],['../db/ded/structlv__indev__data__t.html#aed0de26ed88301e92bc3d95020a9893b',1,'lv_indev_data_t::state'],['../df/d29/struct__lv__indev__proc__t.html#a993ced14d531f55381346cebf8a978d8',1,'_lv_indev_proc_t::state'],['../d1/dca/group__cpp-adi.html#ga4271c4b84e53e61c2824de16a6c6e1ee',1,'pros::adi::Pneumatics::state']]],
+  ['state_66',['state',['../d2/d48/struct__lv__obj__t.html#aa3fd4378cceb29153c26649eeda2f5c3',1,'_lv_obj_t::state'],['../db/ded/structlv__indev__data__t.html#aed0de26ed88301e92bc3d95020a9893b',1,'lv_indev_data_t::state'],['../df/d29/struct__lv__indev__proc__t.html#a993ced14d531f55381346cebf8a978d8',1,'_lv_indev_proc_t::state']]],
   ['static_5ftxt_67',['static_txt',['../df/d75/structlv__label__t.html#a1a35cae80f734816801a30b584bdc85c',1,'lv_label_t']]],
   ['status_68',['status',['../d2/daa/structRobotScreen.html#a847410b76f15cb3e968d720a66aa54d1',1,'RobotScreen']]],
   ['steer_5fcurve_69',['steer_curve',['../df/d3e/namespaceRobot_1_1Globals.html#a3821b1645dcd37c631e2492390e57a16',1,'Robot::Globals']]],

@@ -1,32 +1,4 @@
 var group__cpp_motor_telemetry =
 [
-    [ "Cpp-motor-configuration", "da/df1/group__cpp-motor-configuration.html", "da/df1/group__cpp-motor-configuration" ],
-    [ "pros::v5::AbstractMotor::get_actual_velocity", "d8/dfd/group__cpp-motor-telemetry.html#ga24c533df70f750cbc4fe7d75784ec3a3", null ],
-    [ "pros::v5::AbstractMotor::get_actual_velocity_all", "d8/dfd/group__cpp-motor-telemetry.html#gadf03de076ea2b2e6f9e63e72155d96db", null ],
-    [ "pros::v5::AbstractMotor::get_current_draw", "d8/dfd/group__cpp-motor-telemetry.html#gac1dce9c327e37f440c05c2dfa5eccaa4", null ],
-    [ "pros::v5::AbstractMotor::get_current_draw_all", "d8/dfd/group__cpp-motor-telemetry.html#gac0d083e403b8b77844aceaf9c271741c", null ],
-    [ "pros::v5::AbstractMotor::get_direction", "d8/dfd/group__cpp-motor-telemetry.html#ga76379b1b375d3a99d0a6dc02798d2f26", null ],
-    [ "pros::v5::AbstractMotor::get_direction_all", "d8/dfd/group__cpp-motor-telemetry.html#ga1eba3733a0830ca8b79aca41831b5440", null ],
-    [ "pros::v5::AbstractMotor::get_efficiency", "d8/dfd/group__cpp-motor-telemetry.html#ga1754513245417c70ba5a0a46d9d7f94a", null ],
-    [ "pros::v5::AbstractMotor::get_efficiency_all", "d8/dfd/group__cpp-motor-telemetry.html#gac4556df897062063ffd681578215bdfc", null ],
-    [ "pros::v5::AbstractMotor::get_faults", "d8/dfd/group__cpp-motor-telemetry.html#gabbf5b0ca2b75e6945cf71c66d5bba505", null ],
-    [ "pros::v5::AbstractMotor::get_faults_all", "d8/dfd/group__cpp-motor-telemetry.html#gaf98308568bafd02b284de749d6a15877", null ],
-    [ "pros::v5::AbstractMotor::get_flags", "d8/dfd/group__cpp-motor-telemetry.html#gacc2f3f0066930632603d7ce5dbadc554", null ],
-    [ "pros::v5::AbstractMotor::get_flags_all", "d8/dfd/group__cpp-motor-telemetry.html#gaa9a361793bd19b77061fabd5d9b06d9a", null ],
-    [ "pros::v5::AbstractMotor::get_position", "d8/dfd/group__cpp-motor-telemetry.html#gad9fe87d31c5f5015295285cf782e9882", null ],
-    [ "pros::v5::AbstractMotor::get_position_all", "d8/dfd/group__cpp-motor-telemetry.html#gab99c893a74ec8b14f5379c7828c1fbec", null ],
-    [ "pros::v5::AbstractMotor::get_power", "d8/dfd/group__cpp-motor-telemetry.html#ga8c0e05eb6948cc666d4d92c43b3e578c", null ],
-    [ "pros::v5::AbstractMotor::get_power_all", "d8/dfd/group__cpp-motor-telemetry.html#gab45f53c170c8328a9c980b7340e4c29c", null ],
-    [ "pros::v5::AbstractMotor::get_raw_position", "d8/dfd/group__cpp-motor-telemetry.html#ga5317afa42fbc441af3569b8433a398f8", null ],
-    [ "pros::v5::AbstractMotor::get_raw_position_all", "d8/dfd/group__cpp-motor-telemetry.html#ga7a4328eea01e74dcdeaccc4b809cec69", null ],
-    [ "pros::v5::AbstractMotor::get_temperature", "d8/dfd/group__cpp-motor-telemetry.html#gaa1fa1c22a72dc8dc608db8e6ac75d7d7", null ],
-    [ "pros::v5::AbstractMotor::get_temperature_all", "d8/dfd/group__cpp-motor-telemetry.html#ga51ec8e1537b10cc3e4dfccb571a3e00a", null ],
-    [ "pros::v5::AbstractMotor::get_torque", "d8/dfd/group__cpp-motor-telemetry.html#ga32a4489f56b907bb61c64ea906bf48a8", null ],
-    [ "pros::v5::AbstractMotor::get_torque_all", "d8/dfd/group__cpp-motor-telemetry.html#gab739c01bf7517b23ba615ad080e452ab", null ],
-    [ "pros::v5::AbstractMotor::get_voltage", "d8/dfd/group__cpp-motor-telemetry.html#gad723b42015e981c91c759c15080a02a1", null ],
-    [ "pros::v5::AbstractMotor::get_voltage_all", "d8/dfd/group__cpp-motor-telemetry.html#ga87cf8f0c1498b3c13d1018a2863f91ec", null ],
-    [ "pros::v5::AbstractMotor::is_over_current", "d8/dfd/group__cpp-motor-telemetry.html#gadf40686434a6523193a031d9f1d745b9", null ],
-    [ "pros::v5::AbstractMotor::is_over_current_all", "d8/dfd/group__cpp-motor-telemetry.html#gadcfa3dbf1fa1cb97fd0ccde234712414", null ],
-    [ "pros::v5::AbstractMotor::is_over_temp", "d8/dfd/group__cpp-motor-telemetry.html#gabf2cc1edfd7c6ec8c8c514c8ef514ffe", null ],
-    [ "pros::v5::AbstractMotor::is_over_temp_all", "d8/dfd/group__cpp-motor-telemetry.html#gaca0d891dafc2de5cf848f856ecfe9015", null ]
+    [ "Cpp-motor-configuration", "da/df1/group__cpp-motor-configuration.html", null ]
 ];

@@ -21,5 +21,5 @@ var searchData=
   ['motionqueued_18',['motionQueued',['../dc/df2/classlemlib_1_1Chassis.html#a7978313e0f9f6544cf7f2897a97371e4',1,'lemlib::Chassis']]],
   ['motionrunning_19',['motionRunning',['../dc/df2/classlemlib_1_1Chassis.html#a57fcd613102fd6d86d695549451ddeb6',1,'lemlib::Chassis']]],
   ['motors_20',['motors',['../d0/d65/classlemlib_1_1TrackingWheel.html#ad1887049481eb2b757f65d785f5f68d1',1,'lemlib::TrackingWheel']]],
-  ['mutex_21',['mutex',['../dc/df2/classlemlib_1_1Chassis.html#a487a03725dc15ea590b0b24e18301f24',1,'lemlib::Chassis::mutex'],['../dc/d93/classlemlib_1_1Buffer.html#a277d7fbdf0dc2ef3130f9068c9c0968d',1,'lemlib::Buffer::mutex'],['../d7/d6d/group__cpp-rtos.html#ga612611de5dc653562bdfc2600aba4350',1,'pros::rtos::Mutex::mutex'],['../dc/d90/classpros_1_1rtos_1_1MutexVarLock.html#a2ee65cd7bc0e7594f7346d06588aaa05',1,'pros::rtos::MutexVarLock::mutex'],['../da/da7/classpros_1_1rtos_1_1MutexVar.html#afb900ca48223dd69e0454d2772b7df0c',1,'pros::rtos::MutexVar::mutex']]]
+  ['mutex_21',['mutex',['../dc/df2/classlemlib_1_1Chassis.html#a487a03725dc15ea590b0b24e18301f24',1,'lemlib::Chassis::mutex'],['../dc/d93/classlemlib_1_1Buffer.html#a277d7fbdf0dc2ef3130f9068c9c0968d',1,'lemlib::Buffer::mutex']]]
 ];

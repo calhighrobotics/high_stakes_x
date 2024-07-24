@@ -32,6 +32,6 @@ var searchData=
   ['auton_29',['auton',['../d1/db9/classRobot_1_1Autonomous.html#a35870e1dbd00c82d40f8181fbb257189',1,'Robot::Autonomous']]],
   ['autonname_30',['autonName',['../d1/db9/classRobot_1_1Autonomous.html#a4f32b587cbbbb7b37e0ccead9c6ec02e',1,'Robot::Autonomous']]],
   ['autonomous_31',['autonomous',['../d8/d26/structRobotSubsystems.html#a12ff67a917533ced751cda6d36920dc8',1,'RobotSubsystems']]],
-  ['autontoggleswitch_32',['autonToggleSwitch',['../df/d3e/namespaceRobot_1_1Globals.html#a06b9e49f2cb10dd4449587b742049d5a',1,'Robot::Globals']]],
+  ['autontoggleswitch_32',['autonToggleSwitch',['../df/d3e/namespaceRobot_1_1Globals.html#a315e69eefa33ae6d7d295593ba1160a0',1,'Robot::Globals']]],
   ['average_5fitem_5flength_33',['average_item_length',['../d9/d4d/structlv__lru__t.html#a4f59805ad13b086bf15852d5b2d94651',1,'lv_lru_t']]]
 ];

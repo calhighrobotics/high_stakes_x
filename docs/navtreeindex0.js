@@ -2,7 +2,6 @@ var NAVTREEINDEX0 =
 {
 "annotated.html":[6,0],
 "classes.html":[6,1],
-"d0/d01/namespacepros_1_1screen_1_1anonymous__namespace_02screen_8hpp_03.html":[5,0,2,6,0],
 "d0/d03/lv__indev_8h.html":[7,0,0,2,0,3],
 "d0/d03/lv__indev_8h.html#a007c53b2a7d206c77bc1d30ad03bb18e":[7,0,0,2,0,3,16],
 "d0/d03/lv__indev_8h.html#a053582f65a8899cfc8a1e4b3fd9bcaf4":[7,0,0,2,0,3,6],
@@ -249,5 +248,6 @@ var NAVTREEINDEX0 =
 "d0/d0a/format_8h.html#afea92d211df4d3601131aba9ecf887d4":[7,0,0,0,3,200],
 "d0/d0a/format_8h.html#aff1a60eb4dade23aed8b3b251073601a":[7,0,0,0,3,121],
 "d0/d0a/format_8h_source.html":[7,0,0,0,3],
-"d0/d0e/misc_8hpp.html":[7,0,0,3,21]
+"d0/d0e/misc_8hpp.html":[7,0,0,3,21],
+"d0/d0e/misc_8hpp_source.html":[7,0,0,3,21]
 };

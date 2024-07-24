@@ -116,7 +116,8 @@ $(function(){initNavTree('d7/d85/selector_8cpp.html','../../'); initResizable(tr
   <div class="headertitle"><div class="title">selector.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="../../d4/dbf/main_8h_source.html">main.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="../../d0/d10/selector_8h_source.html">selector.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d4/dbf/main_8h_source.html">main.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../db/d7e/apix_8h_source.html">pros/apix.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d3/d96/auton_8h_source.html">robot/auton.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d5/d9a/drivetrain_8h_source.html">robot/drivetrain.h</a>&quot;</code><br />
@@ -125,189 +126,11 @@ $(function(){initNavTree('d7/d85/selector_8cpp.html','../../'); initResizable(tr
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af3d583f26b46257ce4de696fc4742356" id="r_af3d583f26b46257ce4de696fc4742356"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3d583f26b46257ce4de696fc4742356">auton_state_update</a> (<a class="el" href="../../d0/d87/lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771">lv_event_code_t</a> code, <a class="el" href="../../df/dd3/lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *dropdown, <a class="el" href="../../df/dd3/lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *<a class="el" href="../../d1/dff/status_8cpp.html#a6baef825d44efa526d0f2897235d28d0">label</a>, <a class="el" href="../../df/dd3/lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *skillSwitch, <a class="el" href="../../df/dd3/lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *autonSwitch)</td></tr>
-<tr class="memdesc:af3d583f26b46257ce4de696fc4742356"><td class="mdescLeft">&#160;</td><td class="mdescRight">function to update the autonomous routine based on the updates made to the dropdown list and skills switch in the UI (See auton_ui_update)  <br /></td></tr>
-<tr class="separator:af3d583f26b46257ce4de696fc4742356"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7622c6c97e75f25eae6d64a43c4d6604" id="r_a7622c6c97e75f25eae6d64a43c4d6604"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7622c6c97e75f25eae6d64a43c4d6604">auton_ui_update</a> (<a class="el" href="../../d0/d87/lv__event_8h.html#a21b130dbe9349eab447cf0c891517272">lv_event_t</a> *e)</td></tr>
-<tr class="memdesc:a7622c6c97e75f25eae6d64a43c4d6604"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the user interface for autonomous selection.  <br /></td></tr>
-<tr class="separator:a7622c6c97e75f25eae6d64a43c4d6604"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf3a132744a73ea5e403f99590bf68e3" id="r_adf3a132744a73ea5e403f99590bf68e3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf3a132744a73ea5e403f99590bf68e3">drive_update</a> (<a class="el" href="../../d0/d87/lv__event_8h.html#a21b130dbe9349eab447cf0c891517272">lv_event_t</a> *e)</td></tr>
 <tr class="memdesc:adf3a132744a73ea5e403f99590bf68e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the drive mode based on the selected option in the drive roller.  <br /></td></tr>
 <tr class="separator:adf3a132744a73ea5e403f99590bf68e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="af3d583f26b46257ce4de696fc4742356" name="af3d583f26b46257ce4de696fc4742356"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af3d583f26b46257ce4de696fc4742356">&#9670;&#160;</a></span>auton_state_update()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void auton_state_update </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d0/d87/lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771">lv_event_code_t</a></td>          <td class="paramname"><span class="paramname"><em>code</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../df/dd3/lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>dropdown</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../df/dd3/lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>label</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../df/dd3/lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>skillSwitch</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../df/dd3/lv__obj_8h.html#a01de9a127bcf589bd7d0c695a429b158">lv_obj_t</a> *</td>          <td class="paramname"><span class="paramname"><em>autonSwitch</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>function to update the autonomous routine based on the updates made to the dropdown list and skills switch in the UI (See auton_ui_update) </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d7/d85/selector_8cpp_source.html#l00013">13</a> of file <a class="el" href="../../d7/d85/selector_8cpp_source.html">selector.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   13</span>                                                                                                                                     {</div>
-<div class="line"><span class="lineno">   14</span>    <span class="comment">// Checks if the dropdown list has been updated, and updates the autonomous routine</span></div>
-<div class="line"><span class="lineno">   15</span>    <span class="keywordflow">if</span>(code == <a class="code hl_enumvalue" href="../../d0/d87/lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a46740aecc431a95080e7ebd9aca815e3">LV_EVENT_VALUE_CHANGED</a>) {</div>
-<div class="line"><span class="lineno">   16</span>         <span class="keywordtype">char</span> * opt = <span class="keyword">new</span> <span class="keywordtype">char</span>[15];</div>
-<div class="line"><span class="lineno">   17</span>         std::string auton;</div>
-<div class="line"><span class="lineno">   18</span>         lv_dropdown_get_selected_str(dropdown, opt, 15);</div>
-<div class="line"><span class="lineno">   19</span> </div>
-<div class="line"><span class="lineno">   20</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="../../df/dd3/lv__obj_8h.html#af6296b36dd5eddc61f5544761b1ff5a7">lv_obj_has_state</a>(skillSwitch, <a class="code hl_enumvalue" href="../../df/dd3/lv__obj_8h.html#adb49720dc49f7d4e4cf9adbf2948e409a6fc6f742b7b193d9dad585f32826afcf">LV_STATE_CHECKED</a>)) {</div>
-<div class="line"><span class="lineno">   21</span>            <a class="code hl_function" href="../../d1/db9/classRobot_1_1Autonomous.html#ac70c56d45eb1529038f552713b9c1397">Autonomous::AutonSwitcher</a>(5);</div>
-<div class="line"><span class="lineno">   22</span>        }</div>
-<div class="line"><span class="lineno">   23</span>        <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   24</span>            <span class="keywordflow">if</span>(strcmp(opt, <span class="stringliteral">&quot;Red Left&quot;</span>) == 0) {</div>
-<div class="line"><span class="lineno">   25</span>                <a class="code hl_function" href="../../d1/db9/classRobot_1_1Autonomous.html#ac70c56d45eb1529038f552713b9c1397">Autonomous::AutonSwitcher</a>(1);</div>
-<div class="line"><span class="lineno">   26</span>            }</div>
-<div class="line"><span class="lineno">   27</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(strcmp(opt, <span class="stringliteral">&quot;Red Right&quot;</span>) == 0) {</div>
-<div class="line"><span class="lineno">   28</span>                <a class="code hl_function" href="../../d1/db9/classRobot_1_1Autonomous.html#ac70c56d45eb1529038f552713b9c1397">Autonomous::AutonSwitcher</a>(2);</div>
-<div class="line"><span class="lineno">   29</span>            }</div>
-<div class="line"><span class="lineno">   30</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(strcmp(opt, <span class="stringliteral">&quot;Blue Left&quot;</span>) == 0) {</div>
-<div class="line"><span class="lineno">   31</span>                <a class="code hl_function" href="../../d1/db9/classRobot_1_1Autonomous.html#ac70c56d45eb1529038f552713b9c1397">Autonomous::AutonSwitcher</a>(3);</div>
-<div class="line"><span class="lineno">   32</span>            }</div>
-<div class="line"><span class="lineno">   33</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(strcmp(opt, <span class="stringliteral">&quot;Blue Right&quot;</span>) == 0) {</div>
-<div class="line"><span class="lineno">   34</span>                <a class="code hl_function" href="../../d1/db9/classRobot_1_1Autonomous.html#ac70c56d45eb1529038f552713b9c1397">Autonomous::AutonSwitcher</a>(4);</div>
-<div class="line"><span class="lineno">   35</span>            }</div>
-<div class="line"><span class="lineno">   36</span>            <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   37</span>            }</div>
-<div class="line"><span class="lineno">   38</span>        }</div>
-<div class="line"><span class="lineno">   39</span>        <a class="code hl_function" href="../../df/de7/lv__label_8h.html#a3de2e48985478051a59ee276f7868936">lv_label_set_text_fmt</a>(<a class="code hl_variable" href="../../d1/dff/status_8cpp.html#a6baef825d44efa526d0f2897235d28d0">label</a>, <span class="stringliteral">&quot;Current Auton: %s&quot;</span>, <a class="code hl_variable" href="../../d1/db9/classRobot_1_1Autonomous.html#a4f32b587cbbbb7b37e0ccead9c6ec02e">Autonomous::autonName</a>.c_str());</div>
-<div class="line"><span class="lineno">   40</span>    }</div>
-<div class="line"><span class="lineno">   41</span> </div>
-<div class="line"><span class="lineno">   42</span>}</div>
-<div class="ttc" id="aclassRobot_1_1Autonomous_html_a4f32b587cbbbb7b37e0ccead9c6ec02e"><div class="ttname"><a href="../../d1/db9/classRobot_1_1Autonomous.html#a4f32b587cbbbb7b37e0ccead9c6ec02e">Robot::Autonomous::autonName</a></div><div class="ttdeci">static std::string autonName</div><div class="ttdoc">The name of the autonomous program.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d96/auton_8h_source.html#l00051">auton.h:51</a></div></div>
-<div class="ttc" id="aclassRobot_1_1Autonomous_html_ac70c56d45eb1529038f552713b9c1397"><div class="ttname"><a href="../../d1/db9/classRobot_1_1Autonomous.html#ac70c56d45eb1529038f552713b9c1397">Robot::Autonomous::AutonSwitcher</a></div><div class="ttdeci">static void AutonSwitcher(int autonNum)</div><div class="ttdoc">Switches the autonomous program.</div><div class="ttdef"><b>Definition</b> <a href="../../db/ddf/auton_8cpp_source.html#l00138">auton.cpp:138</a></div></div>
-<div class="ttc" id="alv__event_8h_html_a34581e6a5056b169f0a229f3e51c7771a46740aecc431a95080e7ebd9aca815e3"><div class="ttname"><a href="../../d0/d87/lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a46740aecc431a95080e7ebd9aca815e3">LV_EVENT_VALUE_CHANGED</a></div><div class="ttdeci">@ LV_EVENT_VALUE_CHANGED</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d87/lv__event_8h_source.html#l00067">lv_event.h:67</a></div></div>
-<div class="ttc" id="alv__label_8h_html_a3de2e48985478051a59ee276f7868936"><div class="ttname"><a href="../../df/de7/lv__label_8h.html#a3de2e48985478051a59ee276f7868936">lv_label_set_text_fmt</a></div><div class="ttdeci">void lv_label_set_text_fmt(lv_obj_t *obj, const char *fmt,...) LV_FORMAT_ATTRIBUTE(2</div></div>
-<div class="ttc" id="alv__obj_8h_html_adb49720dc49f7d4e4cf9adbf2948e409a6fc6f742b7b193d9dad585f32826afcf"><div class="ttname"><a href="../../df/dd3/lv__obj_8h.html#adb49720dc49f7d4e4cf9adbf2948e409a6fc6f742b7b193d9dad585f32826afcf">LV_STATE_CHECKED</a></div><div class="ttdeci">@ LV_STATE_CHECKED</div><div class="ttdef"><b>Definition</b> <a href="../../df/dd3/lv__obj_8h_source.html#l00043">lv_obj.h:43</a></div></div>
-<div class="ttc" id="alv__obj_8h_html_af6296b36dd5eddc61f5544761b1ff5a7"><div class="ttname"><a href="../../df/dd3/lv__obj_8h.html#af6296b36dd5eddc61f5544761b1ff5a7">lv_obj_has_state</a></div><div class="ttdeci">bool lv_obj_has_state(const lv_obj_t *obj, lv_state_t state)</div></div>
-<div class="ttc" id="astatus_8cpp_html_a6baef825d44efa526d0f2897235d28d0"><div class="ttname"><a href="../../d1/dff/status_8cpp.html#a6baef825d44efa526d0f2897235d28d0">label</a></div><div class="ttdeci">static lv_obj_t * label</div><div class="ttdef"><b>Definition</b> <a href="../../d1/dff/status_8cpp_source.html#l00007">status.cpp:7</a></div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d3/d96/auton_8h_source.html#l00051">Robot::Autonomous::autonName</a>, <a class="el" href="../../db/ddf/auton_8cpp_source.html#l00138">Robot::Autonomous::AutonSwitcher()</a>, <a class="el" href="../../d1/dff/status_8cpp_source.html#l00007">label</a>, <a class="el" href="../../d0/d87/lv__event_8h_source.html#l00067">LV_EVENT_VALUE_CHANGED</a>, <a class="el" href="../../df/de7/lv__label_8h.html#a3de2e48985478051a59ee276f7868936">lv_label_set_text_fmt()</a>, <a class="el" href="../../df/dd3/lv__obj_8h.html#af6296b36dd5eddc61f5544761b1ff5a7">lv_obj_has_state()</a>, and <a class="el" href="../../df/dd3/lv__obj_8h_source.html#l00043">LV_STATE_CHECKED</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../d7/d85/selector_8cpp_source.html#l00053">auton_ui_update()</a>.</p>
-
-</div>
-</div>
-<a id="a7622c6c97e75f25eae6d64a43c4d6604" name="a7622c6c97e75f25eae6d64a43c4d6604"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7622c6c97e75f25eae6d64a43c4d6604">&#9670;&#160;</a></span>auton_ui_update()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void auton_ui_update </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d0/d87/lv__event_8h.html#a21b130dbe9349eab447cf0c891517272">lv_event_t</a> *</td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Updates the user interface for autonomous selection. </p>
-<p>This function is responsible for updating the content of the dropdown list based on the alliance color. It also handles the state of the skill switch and updates the autonomous routine accordingly.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">e</td><td>Pointer to the event object. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d7/d85/selector_8cpp_source.html#l00053">53</a> of file <a class="el" href="../../d7/d85/selector_8cpp_source.html">selector.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   53</span>                                            {</div>
-<div class="line"><span class="lineno">   54</span>    <a class="code hl_enumeration" href="../../d0/d87/lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771">lv_event_code_t</a> code = <a class="code hl_function" href="../../d0/d87/lv__event_8h.html#a9a532f570ede648810e9e36b5d3f3bb1">lv_event_get_code</a>(e);</div>
-<div class="line"><span class="lineno">   55</span>    <a class="code hl_struct" href="../../d2/d48/struct__lv__obj__t.html">lv_obj_t</a> * tab1 = <a class="code hl_function" href="../../d0/d87/lv__event_8h.html#af350c670061df4bf39922f31293a5ae1">lv_event_get_current_target</a>(e);</div>
-<div class="line"><span class="lineno">   56</span>    <a class="code hl_struct" href="../../d2/d48/struct__lv__obj__t.html">lv_obj_t</a> * auton_dd = <a class="code hl_function" href="../../de/d81/lv__obj__tree_8h.html#a98240fbf5e810aa982715c04a67eee24">lv_obj_get_child</a>(tab1, -1);</div>
-<div class="line"><span class="lineno">   57</span>    <a class="code hl_struct" href="../../d2/d48/struct__lv__obj__t.html">lv_obj_t</a> * skillSwitch = <a class="code hl_function" href="../../de/d81/lv__obj__tree_8h.html#a98240fbf5e810aa982715c04a67eee24">lv_obj_get_child</a>(tab1, -2);</div>
-<div class="line"><span class="lineno">   58</span>    <a class="code hl_struct" href="../../d2/d48/struct__lv__obj__t.html">lv_obj_t</a> * autonSwitch = <a class="code hl_function" href="../../de/d81/lv__obj__tree_8h.html#a98240fbf5e810aa982715c04a67eee24">lv_obj_get_child</a>(tab1, -3);</div>
-<div class="line"><span class="lineno">   59</span>    <a class="code hl_struct" href="../../d2/d48/struct__lv__obj__t.html">lv_obj_t</a> * autonLabel = <a class="code hl_function" href="../../de/d81/lv__obj__tree_8h.html#a98240fbf5e810aa982715c04a67eee24">lv_obj_get_child</a>(tab1, -4);</div>
-<div class="line"><span class="lineno">   60</span> </div>
-<div class="line"><span class="lineno">   61</span>    <span class="comment">/* Updates content of the dropdown list based on the alliance color, using</span></div>
-<div class="line"><span class="lineno">   62</span><span class="comment">    * the state of the alliance color switch, which is detected through &quot;bubbling&quot;</span></div>
-<div class="line"><span class="lineno">   63</span><span class="comment">    */</span></div>
-<div class="line"><span class="lineno">   64</span>    <span class="keywordflow">if</span> (code == <a class="code hl_enumvalue" href="../../d0/d87/lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a46740aecc431a95080e7ebd9aca815e3">LV_EVENT_VALUE_CHANGED</a>) {</div>
-<div class="line"><span class="lineno">   65</span>        <span class="keywordflow">if</span>(<a class="code hl_function" href="../../df/dd3/lv__obj_8h.html#af6296b36dd5eddc61f5544761b1ff5a7">lv_obj_has_state</a>(autonSwitch, <a class="code hl_enumvalue" href="../../df/dd3/lv__obj_8h.html#adb49720dc49f7d4e4cf9adbf2948e409a6fc6f742b7b193d9dad585f32826afcf">LV_STATE_CHECKED</a>)) {</div>
-<div class="line"><span class="lineno">   66</span>            lv_dropdown_clear_options(auton_dd);</div>
-<div class="line"><span class="lineno">   67</span>            lv_dropdown_add_option(auton_dd, <span class="stringliteral">&quot;Blue Left&quot;</span>,0);</div>
-<div class="line"><span class="lineno">   68</span>            lv_dropdown_add_option(auton_dd, <span class="stringliteral">&quot;Blue Right&quot;</span>,1);</div>
-<div class="line"><span class="lineno">   69</span>            <a class="code hl_function" href="../../de/de7/lv__obj__style__gen_8h.html#a5c9c8bb76cd569612b34636d8a293710">lv_obj_set_style_border_color</a>(auton_dd, <a class="code hl_function" href="../../dd/d76/lv__color_8h.html#a5d7966d9dc2b0e344d986717f70c7585">lv_color_hex</a>(0x0077c8), 0);</div>
-<div class="line"><span class="lineno">   70</span>        }</div>
-<div class="line"><span class="lineno">   71</span>        <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   72</span>            lv_dropdown_clear_options(auton_dd);</div>
-<div class="line"><span class="lineno">   73</span>            lv_dropdown_add_option(auton_dd, <span class="stringliteral">&quot;Red Left&quot;</span>,0);</div>
-<div class="line"><span class="lineno">   74</span>            lv_dropdown_add_option(auton_dd, <span class="stringliteral">&quot;Red Right&quot;</span>,1);</div>
-<div class="line"><span class="lineno">   75</span>            <a class="code hl_function" href="../../de/de7/lv__obj__style__gen_8h.html#a5c9c8bb76cd569612b34636d8a293710">lv_obj_set_style_border_color</a>(auton_dd, <a class="code hl_function" href="../../dd/d76/lv__color_8h.html#a5d7966d9dc2b0e344d986717f70c7585">lv_color_hex</a>(0xd22730), 0);</div>
-<div class="line"><span class="lineno">   76</span>        }</div>
-<div class="line"><span class="lineno">   77</span>    }</div>
-<div class="line"><span class="lineno">   78</span> </div>
-<div class="line"><span class="lineno">   79</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../df/dd3/lv__obj_8h.html#af6296b36dd5eddc61f5544761b1ff5a7">lv_obj_has_state</a>(skillSwitch, <a class="code hl_enumvalue" href="../../df/dd3/lv__obj_8h.html#adb49720dc49f7d4e4cf9adbf2948e409a6fc6f742b7b193d9dad585f32826afcf">LV_STATE_CHECKED</a>)) {</div>
-<div class="line"><span class="lineno">   80</span>        <a class="code hl_function" href="../../df/dd3/lv__obj_8h.html#adbd258635d3d653e5446336764044db1">lv_obj_add_state</a>(autonSwitch, <a class="code hl_enumvalue" href="../../df/dd3/lv__obj_8h.html#adb49720dc49f7d4e4cf9adbf2948e409a63e18d3006cf8c0e73a5062782dce94b">LV_STATE_DISABLED</a>);</div>
-<div class="line"><span class="lineno">   81</span>        <a class="code hl_function" href="../../df/dd3/lv__obj_8h.html#adbd258635d3d653e5446336764044db1">lv_obj_add_state</a>(auton_dd, <a class="code hl_enumvalue" href="../../df/dd3/lv__obj_8h.html#adb49720dc49f7d4e4cf9adbf2948e409a63e18d3006cf8c0e73a5062782dce94b">LV_STATE_DISABLED</a>);</div>
-<div class="line"><span class="lineno">   82</span>        <a class="code hl_function" href="../../de/de7/lv__obj__style__gen_8h.html#a5c9c8bb76cd569612b34636d8a293710">lv_obj_set_style_border_color</a>(auton_dd, <a class="code hl_function" href="../../dd/d76/lv__color_8h.html#a5d7966d9dc2b0e344d986717f70c7585">lv_color_hex</a>(0x7a7a7a), 0);</div>
-<div class="line"><span class="lineno">   83</span>    }</div>
-<div class="line"><span class="lineno">   84</span>    <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   85</span>        <a class="code hl_function" href="../../df/dd3/lv__obj_8h.html#ac94c26d36140c7c83da6914d60170e16">lv_obj_clear_state</a>(autonSwitch, <a class="code hl_enumvalue" href="../../df/dd3/lv__obj_8h.html#adb49720dc49f7d4e4cf9adbf2948e409a63e18d3006cf8c0e73a5062782dce94b">LV_STATE_DISABLED</a>);</div>
-<div class="line"><span class="lineno">   86</span>        <a class="code hl_function" href="../../df/dd3/lv__obj_8h.html#ac94c26d36140c7c83da6914d60170e16">lv_obj_clear_state</a>(auton_dd, <a class="code hl_enumvalue" href="../../df/dd3/lv__obj_8h.html#adb49720dc49f7d4e4cf9adbf2948e409a63e18d3006cf8c0e73a5062782dce94b">LV_STATE_DISABLED</a>);</div>
-<div class="line"><span class="lineno">   87</span>    }</div>
-<div class="line"><span class="lineno">   88</span> </div>
-<div class="line"><span class="lineno">   89</span>    <a class="code hl_function" href="#af3d583f26b46257ce4de696fc4742356">auton_state_update</a>(code, auton_dd, autonLabel, skillSwitch, autonSwitch);</div>
-<div class="line"><span class="lineno">   90</span>    <span class="comment">//Updates the Autonomous routine based on the dropdown list and skills</span></div>
-<div class="line"><span class="lineno">   91</span> </div>
-<div class="line"><span class="lineno">   92</span>}</div>
-<div class="ttc" id="alv__color_8h_html_a5d7966d9dc2b0e344d986717f70c7585"><div class="ttname"><a href="../../dd/d76/lv__color_8h.html#a5d7966d9dc2b0e344d986717f70c7585">lv_color_hex</a></div><div class="ttdeci">static lv_color_t lv_color_hex(uint32_t c)</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d76/lv__color_8h_source.html#l00593">lv_color.h:593</a></div></div>
-<div class="ttc" id="alv__event_8h_html_a34581e6a5056b169f0a229f3e51c7771"><div class="ttname"><a href="../../d0/d87/lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771">lv_event_code_t</a></div><div class="ttdeci">lv_event_code_t</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d87/lv__event_8h_source.html#l00032">lv_event.h:32</a></div></div>
-<div class="ttc" id="alv__event_8h_html_a9a532f570ede648810e9e36b5d3f3bb1"><div class="ttname"><a href="../../d0/d87/lv__event_8h.html#a9a532f570ede648810e9e36b5d3f3bb1">lv_event_get_code</a></div><div class="ttdeci">lv_event_code_t lv_event_get_code(lv_event_t *e)</div></div>
-<div class="ttc" id="alv__event_8h_html_af350c670061df4bf39922f31293a5ae1"><div class="ttname"><a href="../../d0/d87/lv__event_8h.html#af350c670061df4bf39922f31293a5ae1">lv_event_get_current_target</a></div><div class="ttdeci">struct _lv_obj_t * lv_event_get_current_target(lv_event_t *e)</div></div>
-<div class="ttc" id="alv__obj_8h_html_ac94c26d36140c7c83da6914d60170e16"><div class="ttname"><a href="../../df/dd3/lv__obj_8h.html#ac94c26d36140c7c83da6914d60170e16">lv_obj_clear_state</a></div><div class="ttdeci">void lv_obj_clear_state(lv_obj_t *obj, lv_state_t state)</div></div>
-<div class="ttc" id="alv__obj_8h_html_adb49720dc49f7d4e4cf9adbf2948e409a63e18d3006cf8c0e73a5062782dce94b"><div class="ttname"><a href="../../df/dd3/lv__obj_8h.html#adb49720dc49f7d4e4cf9adbf2948e409a63e18d3006cf8c0e73a5062782dce94b">LV_STATE_DISABLED</a></div><div class="ttdeci">@ LV_STATE_DISABLED</div><div class="ttdef"><b>Definition</b> <a href="../../df/dd3/lv__obj_8h_source.html#l00050">lv_obj.h:50</a></div></div>
-<div class="ttc" id="alv__obj_8h_html_adbd258635d3d653e5446336764044db1"><div class="ttname"><a href="../../df/dd3/lv__obj_8h.html#adbd258635d3d653e5446336764044db1">lv_obj_add_state</a></div><div class="ttdeci">void lv_obj_add_state(lv_obj_t *obj, lv_state_t state)</div></div>
-<div class="ttc" id="alv__obj__style__gen_8h_html_a5c9c8bb76cd569612b34636d8a293710"><div class="ttname"><a href="../../de/de7/lv__obj__style__gen_8h.html#a5c9c8bb76cd569612b34636d8a293710">lv_obj_set_style_border_color</a></div><div class="ttdeci">void lv_obj_set_style_border_color(struct _lv_obj_t *obj, lv_color_t value, lv_style_selector_t selector)</div></div>
-<div class="ttc" id="alv__obj__tree_8h_html_a98240fbf5e810aa982715c04a67eee24"><div class="ttname"><a href="../../de/d81/lv__obj__tree_8h.html#a98240fbf5e810aa982715c04a67eee24">lv_obj_get_child</a></div><div class="ttdeci">struct _lv_obj_t * lv_obj_get_child(const struct _lv_obj_t *obj, int32_t id)</div></div>
-<div class="ttc" id="aselector_8cpp_html_af3d583f26b46257ce4de696fc4742356"><div class="ttname"><a href="#af3d583f26b46257ce4de696fc4742356">auton_state_update</a></div><div class="ttdeci">void auton_state_update(lv_event_code_t code, lv_obj_t *dropdown, lv_obj_t *label, lv_obj_t *skillSwitch, lv_obj_t *autonSwitch)</div><div class="ttdoc">function to update the autonomous routine based on the updates made to the dropdown list and skills s...</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d85/selector_8cpp_source.html#l00013">selector.cpp:13</a></div></div>
-<div class="ttc" id="astruct__lv__obj__t_html"><div class="ttname"><a href="../../d2/d48/struct__lv__obj__t.html">_lv_obj_t</a></div><div class="ttdef"><b>Definition</b> <a href="../../df/dd3/lv__obj_8h_source.html#l00174">lv_obj.h:174</a></div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d7/d85/selector_8cpp_source.html#l00013">auton_state_update()</a>, <a class="el" href="../../dd/d76/lv__color_8h_source.html#l00593">lv_color_hex()</a>, <a class="el" href="../../d0/d87/lv__event_8h.html#a9a532f570ede648810e9e36b5d3f3bb1">lv_event_get_code()</a>, <a class="el" href="../../d0/d87/lv__event_8h.html#af350c670061df4bf39922f31293a5ae1">lv_event_get_current_target()</a>, <a class="el" href="../../d0/d87/lv__event_8h_source.html#l00067">LV_EVENT_VALUE_CHANGED</a>, <a class="el" href="../../df/dd3/lv__obj_8h.html#adbd258635d3d653e5446336764044db1">lv_obj_add_state()</a>, <a class="el" href="../../df/dd3/lv__obj_8h.html#ac94c26d36140c7c83da6914d60170e16">lv_obj_clear_state()</a>, <a class="el" href="../../de/d81/lv__obj__tree_8h.html#a98240fbf5e810aa982715c04a67eee24">lv_obj_get_child()</a>, <a class="el" href="../../df/dd3/lv__obj_8h.html#af6296b36dd5eddc61f5544761b1ff5a7">lv_obj_has_state()</a>, <a class="el" href="../../de/de7/lv__obj__style__gen_8h.html#a5c9c8bb76cd569612b34636d8a293710">lv_obj_set_style_border_color()</a>, <a class="el" href="../../df/dd3/lv__obj_8h_source.html#l00043">LV_STATE_CHECKED</a>, and <a class="el" href="../../df/dd3/lv__obj_8h_source.html#l00050">LV_STATE_DISABLED</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../d7/d85/selector_8cpp_source.html#l00142">Robot::selector_screen::selector()</a>.</p>
-
-</div>
-</div>
 <a id="adf3a132744a73ea5e403f99590bf68e3" name="adf3a132744a73ea5e403f99590bf68e3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adf3a132744a73ea5e403f99590bf68e3">&#9670;&#160;</a></span>drive_update()</h2>
 
@@ -340,38 +163,33 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d85/selector_8cpp_source.html#l00104">104</a> of file <a class="el" href="../../d7/d85/selector_8cpp_source.html">selector.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  104</span>                                         {</div>
-<div class="line"><span class="lineno">  105</span>    <a class="code hl_enumeration" href="../../d0/d87/lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771">lv_event_code_t</a> code = <a class="code hl_function" href="../../d0/d87/lv__event_8h.html#a9a532f570ede648810e9e36b5d3f3bb1">lv_event_get_code</a>(e);</div>
-<div class="line"><span class="lineno">  106</span>    <a class="code hl_struct" href="../../d2/d48/struct__lv__obj__t.html">lv_obj_t</a> * tab1 = <a class="code hl_function" href="../../d0/d87/lv__event_8h.html#af350c670061df4bf39922f31293a5ae1">lv_event_get_current_target</a>(e);</div>
-<div class="line"><span class="lineno">  107</span>    <a class="code hl_struct" href="../../d2/d48/struct__lv__obj__t.html">lv_obj_t</a> * drive_roller = <a class="code hl_function" href="../../de/d81/lv__obj__tree_8h.html#a98240fbf5e810aa982715c04a67eee24">lv_obj_get_child</a>(tab1, -1);</div>
-<div class="line"><span class="lineno">  108</span>    <a class="code hl_struct" href="../../d2/d48/struct__lv__obj__t.html">lv_obj_t</a> * driveLabel = <a class="code hl_function" href="../../de/d81/lv__obj__tree_8h.html#a98240fbf5e810aa982715c04a67eee24">lv_obj_get_child</a>(tab1, -2);</div>
-<div class="line"><span class="lineno">  109</span> </div>
-<div class="line"><span class="lineno">  110</span>    <span class="keywordflow">if</span> (code == <a class="code hl_enumvalue" href="../../d0/d87/lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a46740aecc431a95080e7ebd9aca815e3">LV_EVENT_VALUE_CHANGED</a>) {</div>
-<div class="line"><span class="lineno">  111</span>        std::string driveMode;</div>
-<div class="line"><span class="lineno">  112</span>        <span class="keywordtype">char</span> * opt = <span class="keyword">new</span> <span class="keywordtype">char</span>[18];</div>
-<div class="line"><span class="lineno">  113</span>        lv_roller_get_selected_str(drive_roller, opt, 18);</div>
-<div class="line"><span class="lineno">  114</span>        <span class="keywordflow">if</span>(strcmp(opt, <span class="stringliteral">&quot;Curvature Drive&quot;</span>) == 0) {</div>
-<div class="line"><span class="lineno">  115</span>            driveMode = <a class="code hl_function" href="../../d7/d0e/classRobot_1_1Drivetrain.html#ae3d4bcd4b57055d7693559736d24249e">Drivetrain::SwitchDrive</a>(0);</div>
-<div class="line"><span class="lineno">  116</span>        }</div>
-<div class="line"><span class="lineno">  117</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(strcmp(opt, <span class="stringliteral">&quot;Arcade Drive&quot;</span>) == 0) {</div>
-<div class="line"><span class="lineno">  118</span>            driveMode = <a class="code hl_function" href="../../d7/d0e/classRobot_1_1Drivetrain.html#ae3d4bcd4b57055d7693559736d24249e">Drivetrain::SwitchDrive</a>(1);</div>
-<div class="line"><span class="lineno">  119</span>        }</div>
-<div class="line"><span class="lineno">  120</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(strcmp(opt, <span class="stringliteral">&quot;Tank Drive&quot;</span>) == 0) {</div>
-<div class="line"><span class="lineno">  121</span>            driveMode = <a class="code hl_function" href="../../d7/d0e/classRobot_1_1Drivetrain.html#ae3d4bcd4b57055d7693559736d24249e">Drivetrain::SwitchDrive</a>(2);</div>
-<div class="line"><span class="lineno">  122</span>        }</div>
-<div class="line"><span class="lineno">  123</span>        <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  124</span>            driveMode = <span class="stringliteral">&quot;error&quot;</span>;</div>
-<div class="line"><span class="lineno">  125</span>        }</div>
-<div class="line"><span class="lineno">  126</span>        <a class="code hl_function" href="../../df/de7/lv__label_8h.html#a3de2e48985478051a59ee276f7868936">lv_label_set_text_fmt</a>(driveLabel, <span class="stringliteral">&quot;Current drive mode: %s&quot;</span>, driveMode.c_str());</div>
-<div class="line"><span class="lineno">  127</span>    </div>
-<div class="line"><span class="lineno">  128</span>    }</div>
-<div class="line"><span class="lineno">  129</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d7/d85/selector_8cpp_source.html#l00094">94</a> of file <a class="el" href="../../d7/d85/selector_8cpp_source.html">selector.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   94</span>                                         {</div>
+<div class="line"><span class="lineno">   95</span>    <a class="code hl_enumeration" href="../../d0/d87/lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771">lv_event_code_t</a> code = <a class="code hl_function" href="../../d0/d87/lv__event_8h.html#a9a532f570ede648810e9e36b5d3f3bb1">lv_event_get_code</a>(e);</div>
+<div class="line"><span class="lineno">   96</span>    <a class="code hl_struct" href="../../d2/d48/struct__lv__obj__t.html">lv_obj_t</a> * tab1 = <a class="code hl_function" href="../../d0/d87/lv__event_8h.html#af350c670061df4bf39922f31293a5ae1">lv_event_get_current_target</a>(e);</div>
+<div class="line"><span class="lineno">   97</span>    <a class="code hl_struct" href="../../d2/d48/struct__lv__obj__t.html">lv_obj_t</a> * drive_roller = <a class="code hl_function" href="../../de/d81/lv__obj__tree_8h.html#a98240fbf5e810aa982715c04a67eee24">lv_obj_get_child</a>(tab1, -1);</div>
+<div class="line"><span class="lineno">   98</span>    <a class="code hl_struct" href="../../d2/d48/struct__lv__obj__t.html">lv_obj_t</a> * driveLabel = <a class="code hl_function" href="../../de/d81/lv__obj__tree_8h.html#a98240fbf5e810aa982715c04a67eee24">lv_obj_get_child</a>(tab1, -2);</div>
+<div class="line"><span class="lineno">   99</span> </div>
+<div class="line"><span class="lineno">  100</span>    <span class="keywordflow">if</span> (code == <a class="code hl_enumvalue" href="../../d0/d87/lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a46740aecc431a95080e7ebd9aca815e3">LV_EVENT_VALUE_CHANGED</a>) {</div>
+<div class="line"><span class="lineno">  101</span>        std::string driveMode;</div>
+<div class="line"><span class="lineno">  102</span>        driveMode = <a class="code hl_function" href="../../d7/d0e/classRobot_1_1Drivetrain.html#ae3d4bcd4b57055d7693559736d24249e">Drivetrain::SwitchDrive</a>(lv_roller_get_selected(drive_roller));</div>
+<div class="line"><span class="lineno">  103</span>        </div>
+<div class="line"><span class="lineno">  104</span>        <a class="code hl_function" href="../../df/de7/lv__label_8h.html#a3de2e48985478051a59ee276f7868936">lv_label_set_text_fmt</a>(driveLabel, <span class="stringliteral">&quot;Current drive mode: %s&quot;</span>, driveMode.c_str());</div>
+<div class="line"><span class="lineno">  105</span>    </div>
+<div class="line"><span class="lineno">  106</span>    }</div>
+<div class="line"><span class="lineno">  107</span>}</div>
 <div class="ttc" id="aclassRobot_1_1Drivetrain_html_ae3d4bcd4b57055d7693559736d24249e"><div class="ttname"><a href="../../d7/d0e/classRobot_1_1Drivetrain.html#ae3d4bcd4b57055d7693559736d24249e">Robot::Drivetrain::SwitchDrive</a></div><div class="ttdeci">static std::string SwitchDrive(int drive)</div><div class="ttdoc">Switches the DriveTrain mode between arcade and tank drive.</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d27/drivetrain_8cpp_source.html#l00110">drivetrain.cpp:110</a></div></div>
+<div class="ttc" id="alv__event_8h_html_a34581e6a5056b169f0a229f3e51c7771"><div class="ttname"><a href="../../d0/d87/lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771">lv_event_code_t</a></div><div class="ttdeci">lv_event_code_t</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d87/lv__event_8h_source.html#l00032">lv_event.h:32</a></div></div>
+<div class="ttc" id="alv__event_8h_html_a34581e6a5056b169f0a229f3e51c7771a46740aecc431a95080e7ebd9aca815e3"><div class="ttname"><a href="../../d0/d87/lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a46740aecc431a95080e7ebd9aca815e3">LV_EVENT_VALUE_CHANGED</a></div><div class="ttdeci">@ LV_EVENT_VALUE_CHANGED</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d87/lv__event_8h_source.html#l00067">lv_event.h:67</a></div></div>
+<div class="ttc" id="alv__event_8h_html_a9a532f570ede648810e9e36b5d3f3bb1"><div class="ttname"><a href="../../d0/d87/lv__event_8h.html#a9a532f570ede648810e9e36b5d3f3bb1">lv_event_get_code</a></div><div class="ttdeci">lv_event_code_t lv_event_get_code(lv_event_t *e)</div></div>
+<div class="ttc" id="alv__event_8h_html_af350c670061df4bf39922f31293a5ae1"><div class="ttname"><a href="../../d0/d87/lv__event_8h.html#af350c670061df4bf39922f31293a5ae1">lv_event_get_current_target</a></div><div class="ttdeci">struct _lv_obj_t * lv_event_get_current_target(lv_event_t *e)</div></div>
+<div class="ttc" id="alv__label_8h_html_a3de2e48985478051a59ee276f7868936"><div class="ttname"><a href="../../df/de7/lv__label_8h.html#a3de2e48985478051a59ee276f7868936">lv_label_set_text_fmt</a></div><div class="ttdeci">void lv_label_set_text_fmt(lv_obj_t *obj, const char *fmt,...) LV_FORMAT_ATTRIBUTE(2</div></div>
+<div class="ttc" id="alv__obj__tree_8h_html_a98240fbf5e810aa982715c04a67eee24"><div class="ttname"><a href="../../de/d81/lv__obj__tree_8h.html#a98240fbf5e810aa982715c04a67eee24">lv_obj_get_child</a></div><div class="ttdeci">struct _lv_obj_t * lv_obj_get_child(const struct _lv_obj_t *obj, int32_t id)</div></div>
+<div class="ttc" id="astruct__lv__obj__t_html"><div class="ttname"><a href="../../d2/d48/struct__lv__obj__t.html">_lv_obj_t</a></div><div class="ttdef"><b>Definition</b> <a href="../../df/dd3/lv__obj_8h_source.html#l00174">lv_obj.h:174</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d0/d87/lv__event_8h.html#a9a532f570ede648810e9e36b5d3f3bb1">lv_event_get_code()</a>, <a class="el" href="../../d0/d87/lv__event_8h.html#af350c670061df4bf39922f31293a5ae1">lv_event_get_current_target()</a>, <a class="el" href="../../d0/d87/lv__event_8h_source.html#l00067">LV_EVENT_VALUE_CHANGED</a>, <a class="el" href="../../df/de7/lv__label_8h.html#a3de2e48985478051a59ee276f7868936">lv_label_set_text_fmt()</a>, <a class="el" href="../../de/d81/lv__obj__tree_8h.html#a98240fbf5e810aa982715c04a67eee24">lv_obj_get_child()</a>, and <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00110">Robot::Drivetrain::SwitchDrive()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d85/selector_8cpp_source.html#l00142">Robot::selector_screen::selector()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d85/selector_8cpp_source.html#l00119">Robot::selector_screen::selector()</a>.</p>
 
 </div>
 </div>
@@ -381,7 +199,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_6d206338494290d33f3362146a903c8a.html">screen</a></li><li class="navelem"><a class="el" href="../../d7/d85/selector_8cpp.html">selector.cpp</a></li>
-    <li class="footer">Generated on Tue Jul 23 2024 03:15:34 for 1516X High Stakes by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
+    <li class="footer">Generated on Wed Jul 24 2024 13:33:02 for 1516X High Stakes by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
   </ul>
 </div>
 </body>

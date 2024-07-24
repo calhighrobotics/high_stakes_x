@@ -1,13 +1,5 @@
-#include "screen/selector.h"
-#include "liblvgl/core/lv_obj.h"
-#include "liblvgl/core/lv_obj_style.h"
-#include "liblvgl/core/lv_obj_tree.h"
-#include "liblvgl/font/lv_font.h"
-#include "liblvgl/lv_conf_internal.h"
-#include "liblvgl/misc/lv_area.h"
-#include "liblvgl/misc/lv_log.h"
-#include "liblvgl/widgets/lv_dropdown.h"
-#include "liblvgl/widgets/lv_label.h"
+
+#include "selector.h"
 #include "main.h"
 #include "pros/apix.h"
 #include "robot/auton.h"
@@ -16,6 +8,7 @@
 using namespace Robot;
 
 int selector_screen::lastAuton;
+lv_color_t selector_screen::lastColor;
 
 selector_screen::selector_screen() {}
 
@@ -41,7 +34,10 @@ void selector_screen::auton_ui_update(lv_event_t * e) {
      * Blue Alliance - -1, -2, -3, ... ,-n
      */
     if (event_obj == auton_dd) {
-        // Converts dropdown index to 1 based indexing
+        /** 
+        * Converts dropdown index to 1 based indexing - This is to account for the skills
+        * routine which is 0.
+        */
         int currentAutonIndex = lv_dropdown_get_selected(auton_dd) + 1;
         bool currentAlliance = lv_obj_has_state(allianceSwitch, LV_STATE_CHECKED);
         int autonNum = currentAlliance ? currentAutonIndex * -1 : currentAutonIndex;
@@ -53,20 +49,22 @@ void selector_screen::auton_ui_update(lv_event_t * e) {
     else if (event_obj == allianceSwitch) {
         if(lv_obj_has_state(allianceSwitch, LV_STATE_CHECKED)) {
             lv_dropdown_clear_options(auton_dd);
-            lv_dropdown_set_options(auton_dd, "Blue Left\nBlue Right");
+            lv_dropdown_set_options(auton_dd, selector_screen::blueAutons);
             lv_obj_set_style_border_color(auton_dd, lv_color_hex(0x0077c8), 0);
         }
         else {
             lv_dropdown_clear_options(auton_dd);
-            lv_dropdown_set_options(auton_dd, "Red Left\nRed Right");
+            lv_dropdown_set_options(auton_dd, selector_screen::redAutons);
             lv_obj_set_style_border_color(auton_dd, lv_color_hex(0xd22730), 0);
         }
-        Autonomous::AutonSwitcher(Autonomous::auton * -1);
+        // Switches the autonomous routine to the opposite alliance color, accounts for option reset
+        Autonomous::AutonSwitcher((Autonomous::auton > 0) ? -1 : 1);
     }
     else {
         if (lv_obj_has_state(skillSwitch, LV_STATE_CHECKED)) {
             // Remembers the last competition autonomous
             selector_screen::lastAuton = Autonomous::auton;
+            selector_screen::lastColor = lv_obj_get_style_border_color(auton_dd, 0);
 
             // Updates the autonomous routine to skills
             Autonomous::AutonSwitcher(0); 
@@ -78,6 +76,7 @@ void selector_screen::auton_ui_update(lv_event_t * e) {
             Autonomous::AutonSwitcher(selector_screen::lastAuton); 
             lv_obj_clear_state(allianceSwitch, LV_STATE_DISABLED);
             lv_obj_clear_state(auton_dd, LV_STATE_DISABLED);
+            lv_obj_set_style_border_color(auton_dd, selector_screen::lastColor, 0);
         }
     }
     lv_label_set_text_fmt(autonLabel, "Current Auton: %s", Autonomous::autonName.c_str());
@@ -100,20 +99,8 @@ static void drive_update(lv_event_t * e) {
 
     if (code == LV_EVENT_VALUE_CHANGED) {
         std::string driveMode;
-        char * opt = new char[18];
-        lv_roller_get_selected_str(drive_roller, opt, 18);
-        if(strcmp(opt, "Curvature Drive") == 0) {
-            driveMode = Drivetrain::SwitchDrive(0);
-        }
-        else if(strcmp(opt, "Arcade Drive") == 0) {
-            driveMode = Drivetrain::SwitchDrive(1);
-        }
-        else if(strcmp(opt, "Tank Drive") == 0) {
-            driveMode = Drivetrain::SwitchDrive(2);
-        }
-        else {
-            driveMode = "error";
-        }
+        driveMode = Drivetrain::SwitchDrive(lv_roller_get_selected(drive_roller));
+        
         lv_label_set_text_fmt(driveLabel, "Current drive mode: %s", driveMode.c_str());
     
     }
@@ -133,7 +120,7 @@ void selector_screen::selector()
 {
     /*Create a Tab view object*/
     lv_obj_t * tabview;
-    tabview = lv_tabview_create(lv_scr_act(), LV_DIR_TOP, 30);
+    tabview = lv_tabview_create(lv_scr_act(), LV_DIR_TOP, 35);
 
     /*Add 2 tabs*/
     lv_obj_t * tab1 = lv_tabview_add_tab(tabview, "Autonomous select");
@@ -145,6 +132,9 @@ void selector_screen::selector()
     */
     lv_obj_add_event_cb(tab1, auton_ui_update, LV_EVENT_VALUE_CHANGED, NULL);
     lv_obj_add_event_cb(tab2, drive_update, LV_EVENT_VALUE_CHANGED, NULL);
+    lv_obj_t * tabButtons = lv_tabview_get_tab_btns(tabview);
+    lv_obj_set_style_bg_color(tabButtons, lv_color_hex(0x4d0000), 0);
+    lv_obj_set_style_text_font(tabButtons, &lv_font_montserrat_18, 0);
 
     lv_obj_t * label1 = lv_label_create(tab1);
     lv_obj_t * label2 = lv_label_create(tab1);
@@ -155,29 +145,29 @@ void selector_screen::selector()
     lv_obj_align(label1, LV_ALIGN_TOP_LEFT, 0, 10);
     lv_obj_align(label2, LV_ALIGN_LEFT_MID, 0, 0);
     lv_obj_align(autonName, LV_ALIGN_BOTTOM_MID, 0, 0);
-    lv_obj_set_style_text_font(label1, &lv_font_montserrat_24, 0);
-    lv_obj_set_style_text_font(label2, &lv_font_montserrat_24, 0);
-    lv_obj_set_style_text_font(autonName, &lv_font_montserrat_24, 0);
+    lv_obj_set_style_text_font(label1, &lv_font_montserrat_20, 0);
+    lv_obj_set_style_text_font(label2, &lv_font_montserrat_20, 0);
+    lv_obj_set_style_text_font(autonName, &lv_font_montserrat_16, 0);
 
     /*Add alliance color switch*/
     lv_obj_t * matchSwitch = lv_switch_create(tab1);
     lv_obj_add_flag(matchSwitch, LV_OBJ_FLAG_EVENT_BUBBLE);
     lv_obj_set_style_bg_color(matchSwitch, lv_palette_main(LV_PALETTE_RED), LV_STATE_DEFAULT);
-    lv_obj_set_size(matchSwitch, lv_pct(25), lv_pct(30));
+    lv_obj_set_size(matchSwitch, lv_pct(21), lv_pct(27));
     lv_obj_set_style_pad_all(matchSwitch, -5, LV_PART_KNOB);
     lv_obj_align(matchSwitch, LV_ALIGN_TOP_MID, 0, 0);
 
     /*Add skills switch*/
     lv_obj_t * skillSwitch = lv_switch_create(tab1);
     lv_obj_add_flag(skillSwitch, LV_OBJ_FLAG_EVENT_BUBBLE);
-    lv_obj_set_size(skillSwitch, lv_pct(25), lv_pct(30));
+    lv_obj_set_size(skillSwitch, lv_pct(21), lv_pct(27));
     lv_obj_set_style_pad_all(skillSwitch, -5, LV_PART_KNOB);
     lv_obj_align(skillSwitch, LV_ALIGN_CENTER, 0, 0);
 
     /*Create a drop down list for available autons */
     lv_obj_t * auton_dd = lv_dropdown_create(tab1);
     lv_obj_add_flag(auton_dd, LV_OBJ_FLAG_EVENT_BUBBLE);
-    lv_dropdown_set_options(auton_dd, "Red Left\nRed Right");
+    lv_dropdown_set_options(auton_dd, selector_screen::redAutons);
     lv_obj_set_style_max_height(auton_dd, 50, LV_PART_MAIN);
     lv_obj_set_size(auton_dd, lv_pct(35), lv_pct(35));
     lv_obj_set_style_pad_top(auton_dd, 10, LV_PART_MAIN);
@@ -188,7 +178,7 @@ void selector_screen::selector()
 
     // Drive select tab
     lv_obj_t * driveName = lv_label_create(tab2);
-    lv_label_set_text_fmt(driveName, "Current drive mode:", 25);
+    lv_label_set_text_fmt(driveName, "Current drive mode:");
     lv_obj_align(driveName, LV_ALIGN_BOTTOM_MID, 0, 0);
     lv_obj_set_style_text_font(driveName, &lv_font_montserrat_18, 0);
 
@@ -202,7 +192,7 @@ void selector_screen::selector()
 
     lv_obj_t * drive_roller = lv_roller_create(tab2);
     lv_obj_add_flag(drive_roller, LV_OBJ_FLAG_EVENT_BUBBLE);
-    lv_roller_set_options(drive_roller, "Curvature Drive\nArcade Drive\nTank Drive", LV_ROLLER_MODE_INFINITE);
+    lv_roller_set_options(drive_roller, selector_screen::driveModes, LV_ROLLER_MODE_INFINITE);
     // Changed when highlighted
     lv_obj_add_style(drive_roller, &roller_style, LV_PART_SELECTED);
     lv_roller_set_visible_row_count(drive_roller, 3);

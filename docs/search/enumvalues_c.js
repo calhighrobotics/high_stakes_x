@@ -17,6 +17,5 @@ var searchData=
   ['mint_5fcream_14',['mint_cream',['../d1/d8a/group__cpp-colors.html#gga5533dcafd69b8cfd93f36f13414e2cffa28a62909f84c7a965ea755d99db1ca2b',1,'pros']]],
   ['minus_15',['minus',['../d5/de7/namespacefmt_1_1v10_1_1sign.html#ab690b56851865d06925444d7124c030dad64c64d63cf4a16d3241b7209fe11b6b',1,'fmt::v10::sign']]],
   ['misty_5frose_16',['misty_rose',['../d1/d8a/group__cpp-colors.html#gga5533dcafd69b8cfd93f36f13414e2cffa0552f51c284790d9d0f4b43ebfa9f2a8',1,'pros']]],
-  ['moccasin_17',['moccasin',['../d1/d8a/group__cpp-colors.html#gga5533dcafd69b8cfd93f36f13414e2cffadc8a6c38cc98a2c29859c34b26974bc7',1,'pros']]],
-  ['motor_18',['motor',['../d3/d60/group__cpp-device.html#gga0a7387ba6156c831ba1e61d75a04c3d9a59417166c47f7e6b70d1a6701bf4efdd',1,'pros::v5']]]
+  ['moccasin_17',['moccasin',['../d1/d8a/group__cpp-colors.html#gga5533dcafd69b8cfd93f36f13414e2cffadc8a6c38cc98a2c29859c34b26974bc7',1,'pros']]]
 ];
