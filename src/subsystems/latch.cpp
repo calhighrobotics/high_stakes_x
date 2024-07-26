@@ -1,6 +1,4 @@
 #include "robot/latch.h"
-
-#include "api.h"
 #include "globals.h"
 
 using namespace Robot;
