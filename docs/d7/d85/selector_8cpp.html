@@ -118,7 +118,7 @@ $(function(){initNavTree('d7/d85/selector_8cpp.html','../../'); initResizable(tr
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="../../d0/d10/selector_8h_source.html">selector.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d4/dbf/main_8h_source.html">main.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../db/d7e/apix_8h_source.html">pros/apix.h</a>&quot;</code><br />
+<code>#include &quot;pros/apix.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d3/d96/auton_8h_source.html">robot/auton.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d5/d9a/drivetrain_8h_source.html">robot/drivetrain.h</a>&quot;</code><br />
 </div>
@@ -126,7 +126,7 @@ $(function(){initNavTree('d7/d85/selector_8cpp.html','../../'); initResizable(tr
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:adf3a132744a73ea5e403f99590bf68e3" id="r_adf3a132744a73ea5e403f99590bf68e3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf3a132744a73ea5e403f99590bf68e3">drive_update</a> (<a class="el" href="../../d0/d87/lv__event_8h.html#a21b130dbe9349eab447cf0c891517272">lv_event_t</a> *e)</td></tr>
+<tr class="memitem:adf3a132744a73ea5e403f99590bf68e3" id="r_adf3a132744a73ea5e403f99590bf68e3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf3a132744a73ea5e403f99590bf68e3">drive_update</a> (lv_event_t *e)</td></tr>
 <tr class="memdesc:adf3a132744a73ea5e403f99590bf68e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the drive mode based on the selected option in the drive roller.  <br /></td></tr>
 <tr class="separator:adf3a132744a73ea5e403f99590bf68e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -143,7 +143,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void drive_update </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d0/d87/lv__event_8h.html#a21b130dbe9349eab447cf0c891517272">lv_event_t</a> *</td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
+          <td class="paramtype">lv_event_t *</td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -165,29 +165,22 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d85/selector_8cpp_source.html#l00094">94</a> of file <a class="el" href="../../d7/d85/selector_8cpp_source.html">selector.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   94</span>                                         {</div>
-<div class="line"><span class="lineno">   95</span>    <a class="code hl_enumeration" href="../../d0/d87/lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771">lv_event_code_t</a> code = <a class="code hl_function" href="../../d0/d87/lv__event_8h.html#a9a532f570ede648810e9e36b5d3f3bb1">lv_event_get_code</a>(e);</div>
-<div class="line"><span class="lineno">   96</span>    <a class="code hl_struct" href="../../d2/d48/struct__lv__obj__t.html">lv_obj_t</a> * tab1 = <a class="code hl_function" href="../../d0/d87/lv__event_8h.html#af350c670061df4bf39922f31293a5ae1">lv_event_get_current_target</a>(e);</div>
-<div class="line"><span class="lineno">   97</span>    <a class="code hl_struct" href="../../d2/d48/struct__lv__obj__t.html">lv_obj_t</a> * drive_roller = <a class="code hl_function" href="../../de/d81/lv__obj__tree_8h.html#a98240fbf5e810aa982715c04a67eee24">lv_obj_get_child</a>(tab1, -1);</div>
-<div class="line"><span class="lineno">   98</span>    <a class="code hl_struct" href="../../d2/d48/struct__lv__obj__t.html">lv_obj_t</a> * driveLabel = <a class="code hl_function" href="../../de/d81/lv__obj__tree_8h.html#a98240fbf5e810aa982715c04a67eee24">lv_obj_get_child</a>(tab1, -2);</div>
+<div class="line"><span class="lineno">   95</span>    lv_event_code_t code = lv_event_get_code(e);</div>
+<div class="line"><span class="lineno">   96</span>    lv_obj_t * tab1 = lv_event_get_current_target(e);</div>
+<div class="line"><span class="lineno">   97</span>    lv_obj_t * drive_roller = lv_obj_get_child(tab1, -1);</div>
+<div class="line"><span class="lineno">   98</span>    lv_obj_t * driveLabel = lv_obj_get_child(tab1, -2);</div>
 <div class="line"><span class="lineno">   99</span> </div>
-<div class="line"><span class="lineno">  100</span>    <span class="keywordflow">if</span> (code == <a class="code hl_enumvalue" href="../../d0/d87/lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a46740aecc431a95080e7ebd9aca815e3">LV_EVENT_VALUE_CHANGED</a>) {</div>
+<div class="line"><span class="lineno">  100</span>    <span class="keywordflow">if</span> (code == LV_EVENT_VALUE_CHANGED) {</div>
 <div class="line"><span class="lineno">  101</span>        std::string driveMode;</div>
 <div class="line"><span class="lineno">  102</span>        driveMode = <a class="code hl_function" href="../../d7/d0e/classRobot_1_1Drivetrain.html#ae3d4bcd4b57055d7693559736d24249e">Drivetrain::SwitchDrive</a>(lv_roller_get_selected(drive_roller));</div>
 <div class="line"><span class="lineno">  103</span>        </div>
-<div class="line"><span class="lineno">  104</span>        <a class="code hl_function" href="../../df/de7/lv__label_8h.html#a3de2e48985478051a59ee276f7868936">lv_label_set_text_fmt</a>(driveLabel, <span class="stringliteral">&quot;Current drive mode: %s&quot;</span>, driveMode.c_str());</div>
+<div class="line"><span class="lineno">  104</span>        lv_label_set_text_fmt(driveLabel, <span class="stringliteral">&quot;Current drive mode: %s&quot;</span>, driveMode.c_str());</div>
 <div class="line"><span class="lineno">  105</span>    </div>
 <div class="line"><span class="lineno">  106</span>    }</div>
 <div class="line"><span class="lineno">  107</span>}</div>
-<div class="ttc" id="aclassRobot_1_1Drivetrain_html_ae3d4bcd4b57055d7693559736d24249e"><div class="ttname"><a href="../../d7/d0e/classRobot_1_1Drivetrain.html#ae3d4bcd4b57055d7693559736d24249e">Robot::Drivetrain::SwitchDrive</a></div><div class="ttdeci">static std::string SwitchDrive(int drive)</div><div class="ttdoc">Switches the DriveTrain mode between arcade and tank drive.</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d27/drivetrain_8cpp_source.html#l00110">drivetrain.cpp:110</a></div></div>
-<div class="ttc" id="alv__event_8h_html_a34581e6a5056b169f0a229f3e51c7771"><div class="ttname"><a href="../../d0/d87/lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771">lv_event_code_t</a></div><div class="ttdeci">lv_event_code_t</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d87/lv__event_8h_source.html#l00032">lv_event.h:32</a></div></div>
-<div class="ttc" id="alv__event_8h_html_a34581e6a5056b169f0a229f3e51c7771a46740aecc431a95080e7ebd9aca815e3"><div class="ttname"><a href="../../d0/d87/lv__event_8h.html#a34581e6a5056b169f0a229f3e51c7771a46740aecc431a95080e7ebd9aca815e3">LV_EVENT_VALUE_CHANGED</a></div><div class="ttdeci">@ LV_EVENT_VALUE_CHANGED</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d87/lv__event_8h_source.html#l00067">lv_event.h:67</a></div></div>
-<div class="ttc" id="alv__event_8h_html_a9a532f570ede648810e9e36b5d3f3bb1"><div class="ttname"><a href="../../d0/d87/lv__event_8h.html#a9a532f570ede648810e9e36b5d3f3bb1">lv_event_get_code</a></div><div class="ttdeci">lv_event_code_t lv_event_get_code(lv_event_t *e)</div></div>
-<div class="ttc" id="alv__event_8h_html_af350c670061df4bf39922f31293a5ae1"><div class="ttname"><a href="../../d0/d87/lv__event_8h.html#af350c670061df4bf39922f31293a5ae1">lv_event_get_current_target</a></div><div class="ttdeci">struct _lv_obj_t * lv_event_get_current_target(lv_event_t *e)</div></div>
-<div class="ttc" id="alv__label_8h_html_a3de2e48985478051a59ee276f7868936"><div class="ttname"><a href="../../df/de7/lv__label_8h.html#a3de2e48985478051a59ee276f7868936">lv_label_set_text_fmt</a></div><div class="ttdeci">void lv_label_set_text_fmt(lv_obj_t *obj, const char *fmt,...) LV_FORMAT_ATTRIBUTE(2</div></div>
-<div class="ttc" id="alv__obj__tree_8h_html_a98240fbf5e810aa982715c04a67eee24"><div class="ttname"><a href="../../de/d81/lv__obj__tree_8h.html#a98240fbf5e810aa982715c04a67eee24">lv_obj_get_child</a></div><div class="ttdeci">struct _lv_obj_t * lv_obj_get_child(const struct _lv_obj_t *obj, int32_t id)</div></div>
-<div class="ttc" id="astruct__lv__obj__t_html"><div class="ttname"><a href="../../d2/d48/struct__lv__obj__t.html">_lv_obj_t</a></div><div class="ttdef"><b>Definition</b> <a href="../../df/dd3/lv__obj_8h_source.html#l00174">lv_obj.h:174</a></div></div>
+<div class="ttc" id="aclassRobot_1_1Drivetrain_html_ae3d4bcd4b57055d7693559736d24249e"><div class="ttname"><a href="../../d7/d0e/classRobot_1_1Drivetrain.html#ae3d4bcd4b57055d7693559736d24249e">Robot::Drivetrain::SwitchDrive</a></div><div class="ttdeci">static std::string SwitchDrive(int drive)</div><div class="ttdoc">Switches the DriveTrain mode between arcade and tank drive.</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d27/drivetrain_8cpp_source.html#l00099">drivetrain.cpp:99</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d0/d87/lv__event_8h.html#a9a532f570ede648810e9e36b5d3f3bb1">lv_event_get_code()</a>, <a class="el" href="../../d0/d87/lv__event_8h.html#af350c670061df4bf39922f31293a5ae1">lv_event_get_current_target()</a>, <a class="el" href="../../d0/d87/lv__event_8h_source.html#l00067">LV_EVENT_VALUE_CHANGED</a>, <a class="el" href="../../df/de7/lv__label_8h.html#a3de2e48985478051a59ee276f7868936">lv_label_set_text_fmt()</a>, <a class="el" href="../../de/d81/lv__obj__tree_8h.html#a98240fbf5e810aa982715c04a67eee24">lv_obj_get_child()</a>, and <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00110">Robot::Drivetrain::SwitchDrive()</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00099">Robot::Drivetrain::SwitchDrive()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d7/d85/selector_8cpp_source.html#l00119">Robot::selector_screen::selector()</a>.</p>
 
@@ -199,7 +192,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_6d206338494290d33f3362146a903c8a.html">screen</a></li><li class="navelem"><a class="el" href="../../d7/d85/selector_8cpp.html">selector.cpp</a></li>
-    <li class="footer">Generated on Wed Jul 24 2024 13:33:02 for 1516X High Stakes by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
+    <li class="footer">Generated on Fri Jul 26 2024 11:30:17 for 1516X High Stakes by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
   </ul>
 </div>
 </body>

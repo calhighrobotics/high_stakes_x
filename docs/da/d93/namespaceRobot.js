@@ -47,7 +47,6 @@ var namespaceRobot =
       [ "throttle_curve", "df/d3e/namespaceRobot_1_1Globals.html#a43e1c47ebbf4f293f92df313c83f34ab", null ]
     ] ],
     [ "Utility", "d2/d94/namespaceRobot_1_1Utility.html", [
-      [ "display", "d2/d94/namespaceRobot_1_1Utility.html#ade4d39238d662930a63ce77990431474", null ],
       [ "displayLocation", "d2/d94/namespaceRobot_1_1Utility.html#a043980c10e7bddc2ec36da271d408feb", null ],
       [ "displayMotorVel", "d2/d94/namespaceRobot_1_1Utility.html#ae923edc042caa87e3c10e32f8040728c", null ]
     ] ],

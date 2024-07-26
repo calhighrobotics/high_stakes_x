@@ -1,26 +1,8 @@
 var searchData=
 [
-  ['_5flv_5fanim_5fll_0',['_lv_anim_ll',['../d7/d8c/lv__gc_8h.html#a420c79cedca7aab3a61f1d73efd63b60',1,'lv_gc.h']]],
-  ['_5flv_5fdisp_5fll_1',['_lv_disp_ll',['../d7/d8c/lv__gc_8h.html#af36226d41a8798fce0b95d0807527d45',1,'lv_gc.h']]],
-  ['_5flv_5fdraw_5fmask_5fsaved_5farr_5ft_2',['_lv_draw_mask_saved_arr_t',['../d7/d8c/lv__gc_8h.html#a6480249aa13e4f5e0d24946d1e2f2541',1,'lv_gc.h']]],
-  ['_5flv_5ffsdrv_5fll_3',['_lv_fsdrv_ll',['../d7/d8c/lv__gc_8h.html#a3ac5f5104da485c2e59383f85decfaf6',1,'lv_gc.h']]],
-  ['_5flv_5fgroup_5fll_4',['_lv_group_ll',['../d7/d8c/lv__gc_8h.html#a14e88d1fd920ed99136043f2bce2c447',1,'lv_gc.h']]],
-  ['_5flv_5fimg_5fcache_5fsingle_5',['_lv_img_cache_single',['../d7/d8c/lv__gc_8h.html#a1c19d7917321b41d09bf8f33d283debf',1,'lv_gc.h']]],
-  ['_5flv_5fimg_5fdecoder_5fll_6',['_lv_img_decoder_ll',['../d7/d8c/lv__gc_8h.html#a8bb11ab79ca9e102ee0e27fbdad44a58',1,'lv_gc.h']]],
-  ['_5flv_5findev_5fll_7',['_lv_indev_ll',['../d7/d8c/lv__gc_8h.html#ad408057be5f5de5b3a4d50e3a54d5639',1,'lv_gc.h']]],
-  ['_5flv_5flayout_5flist_8',['_lv_layout_list',['../d7/d8c/lv__gc_8h.html#aafaaa2f8739821479a8a2f5f72134b67',1,'lv_gc.h']]],
-  ['_5flv_5fobj_5fstyle_5ftrans_5fll_9',['_lv_obj_style_trans_ll',['../d7/d8c/lv__gc_8h.html#ae9fa3b5ff5ea6b2b160ca7f4f6a64b12',1,'lv_gc.h']]],
-  ['_5flv_5fstyle_5fcustom_5fprop_5fflag_5flookup_5ftable_10',['_lv_style_custom_prop_flag_lookup_table',['../d7/d8c/lv__gc_8h.html#aeca32eaff911d7da3b5e083bd6050bb3',1,'lv_gc.h']]],
-  ['_5flv_5ftheme_5fbasic_5fstyles_11',['_lv_theme_basic_styles',['../d7/d8c/lv__gc_8h.html#a5872aee9db2a53e0158fb3384d2bd8e7',1,'lv_gc.h']]],
-  ['_5flv_5ftheme_5fdefault_5fstyles_12',['_lv_theme_default_styles',['../d7/d8c/lv__gc_8h.html#aff6b0bbdf75823e68483f0eeef642de4',1,'lv_gc.h']]],
-  ['_5flv_5ftimer_5fact_13',['_lv_timer_act',['../d7/d8c/lv__gc_8h.html#ae4b5dd5fbf38d80d0665b2d26cd34200',1,'lv_gc.h']]],
-  ['_5flv_5ftimer_5fll_14',['_lv_timer_ll',['../d7/d8c/lv__gc_8h.html#a85378ce4a8eec8d7dac98cbad662b1d2',1,'lv_gc.h']]],
-  ['_5flv_5ftxt_5fencoded_5fconv_5fwc_15',['_lv_txt_encoded_conv_wc',['../d6/d33/lv__txt_8h.html#a0937a4a7d93fa72cba5811a6bdf3fd3e',1,'lv_txt.h']]],
-  ['_5flv_5ftxt_5fencoded_5fget_5fbyte_5fid_16',['_lv_txt_encoded_get_byte_id',['../d6/d33/lv__txt_8h.html#a24576f7e8b53260b913ffa07cf8e829e',1,'lv_txt.h']]],
-  ['_5flv_5ftxt_5fencoded_5fget_5fchar_5fid_17',['_lv_txt_encoded_get_char_id',['../d6/d33/lv__txt_8h.html#aa541782cfc14c074a02263e7f58e6844',1,'lv_txt.h']]],
-  ['_5flv_5ftxt_5fencoded_5fnext_18',['_lv_txt_encoded_next',['../d6/d33/lv__txt_8h.html#a3fe9cd02f4ec705ef849ca1842bd4c09',1,'lv_txt.h']]],
-  ['_5flv_5ftxt_5fencoded_5fprev_19',['_lv_txt_encoded_prev',['../d6/d33/lv__txt_8h.html#a90051f66330cb40365a4e1943fd7fd07',1,'lv_txt.h']]],
-  ['_5flv_5ftxt_5fencoded_5fsize_20',['_lv_txt_encoded_size',['../d6/d33/lv__txt_8h.html#a0b6eb50707360fcc64668fdc3a706adc',1,'lv_txt.h']]],
-  ['_5flv_5ftxt_5fget_5fencoded_5flength_21',['_lv_txt_get_encoded_length',['../d6/d33/lv__txt_8h.html#a3ef67d93ea8beef56697746d704a1645',1,'lv_txt.h']]],
-  ['_5flv_5ftxt_5funicode_5fto_5fencoded_22',['_lv_txt_unicode_to_encoded',['../d6/d33/lv__txt_8h.html#ae3326e8947223d3670fa583ccd4588af',1,'lv_txt.h']]]
+  ['angular_5fcontroller_0',['angular_controller',['../df/d3e/namespaceRobot_1_1Globals.html#a7ec7662efd5e0bdeb4790cfa3330edf2',1,'Robot::Globals']]],
+  ['auton_1',['auton',['../d1/db9/classRobot_1_1Autonomous.html#a35870e1dbd00c82d40f8181fbb257189',1,'Robot::Autonomous']]],
+  ['autonname_2',['autonName',['../d1/db9/classRobot_1_1Autonomous.html#a4f32b587cbbbb7b37e0ccead9c6ec02e',1,'Robot::Autonomous']]],
+  ['autonomous_3',['autonomous',['../d8/d26/structRobotSubsystems.html#a12ff67a917533ced751cda6d36920dc8',1,'RobotSubsystems']]],
+  ['autontoggleswitch_4',['autonToggleSwitch',['../df/d3e/namespaceRobot_1_1Globals.html#a315e69eefa33ae6d7d295593ba1160a0',1,'Robot::Globals']]]
 ];

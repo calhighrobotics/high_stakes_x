@@ -115,36 +115,28 @@ $(function(){initNavTree('d8/dd6/latch_8cpp_source.html','../../'); initResizabl
 </div><!--header-->
 <div class="contents">
 <a href="../../d8/dd6/latch_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="../../d0/d25/latch_8h.html">robot/latch.h</a>&quot;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="../../dc/d65/api_8h.html">api.h</a>&quot;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="../../d5/d87/globals_8h.html">globals.h</a>&quot;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="../../da/d93/namespaceRobot.html">Robot</a>;</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="../../df/d3e/namespaceRobot_1_1Globals.html">Robot::Globals</a>;</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="foldopen" id="foldopen00008" data-start="{" data-end="}">
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="../../db/d72/classRobot_1_1Latch.html#a8d34afed5baf46a41535570222bb0813">    8</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../db/d72/classRobot_1_1Latch.html#a8d34afed5baf46a41535570222bb0813">Latch::run</a>() {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#a0836d6c757263202c26276bf4dd2f22f">controller</a>.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_B)) {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <a class="code hl_function" href="../../db/d72/classRobot_1_1Latch.html#aecbdd3a48db9bd6cccffbc715ba40d45">Latch::toggle</a>();</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    }</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>}</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="../../dc/d65/api_8h.html">api.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="../../d5/d87/globals_8h.html">globals.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="../../da/d93/namespaceRobot.html">Robot</a>;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="../../df/d3e/namespaceRobot_1_1Globals.html">Robot::Globals</a>;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="foldopen" id="foldopen00009" data-start="{" data-end="}">
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="../../db/d72/classRobot_1_1Latch.html#a8d34afed5baf46a41535570222bb0813">    9</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../db/d72/classRobot_1_1Latch.html#a8d34afed5baf46a41535570222bb0813">Latch::run</a>() {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#a0836d6c757263202c26276bf4dd2f22f">controller</a>.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_B)) {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <a class="code hl_function" href="../../db/d72/classRobot_1_1Latch.html#aecbdd3a48db9bd6cccffbc715ba40d45">Latch::toggle</a>();</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  }</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>}</div>
 </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="../../db/d72/classRobot_1_1Latch.html#ac84b41b397c14406cd0b56698fbfa7fe">   15</a></span><a class="code hl_function" href="../../db/d72/classRobot_1_1Latch.html#ac84b41b397c14406cd0b56698fbfa7fe">Latch::Latch</a>() {</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    ;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>}</div>
-</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="../../db/d72/classRobot_1_1Latch.html#aecbdd3a48db9bd6cccffbc715ba40d45">   19</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../db/d72/classRobot_1_1Latch.html#aecbdd3a48db9bd6cccffbc715ba40d45">Latch::toggle</a>() {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#ac6c5f45b3cca36ae693f1bb18b15332b">LatchControl</a>.toggle();</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>}</div>
-</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="../../db/d72/classRobot_1_1Latch.html#ac84b41b397c14406cd0b56698fbfa7fe">   15</a></span><a class="code hl_function" href="../../db/d72/classRobot_1_1Latch.html#ac84b41b397c14406cd0b56698fbfa7fe">Latch::Latch</a>() { ; }</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="../../db/d72/classRobot_1_1Latch.html#aecbdd3a48db9bd6cccffbc715ba40d45">   17</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../db/d72/classRobot_1_1Latch.html#aecbdd3a48db9bd6cccffbc715ba40d45">Latch::toggle</a>() { <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#ac6c5f45b3cca36ae693f1bb18b15332b">LatchControl</a>.toggle(); }</div>
 <div class="ttc" id="aapi_8h_html"><div class="ttname"><a href="../../dc/d65/api_8h.html">api.h</a></div></div>
-<div class="ttc" id="aclassRobot_1_1Latch_html_a8d34afed5baf46a41535570222bb0813"><div class="ttname"><a href="../../db/d72/classRobot_1_1Latch.html#a8d34afed5baf46a41535570222bb0813">Robot::Latch::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">Runs latching mechanism.</div><div class="ttdef"><b>Definition</b> <a href="#l00008">latch.cpp:8</a></div></div>
+<div class="ttc" id="aclassRobot_1_1Latch_html_a8d34afed5baf46a41535570222bb0813"><div class="ttname"><a href="../../db/d72/classRobot_1_1Latch.html#a8d34afed5baf46a41535570222bb0813">Robot::Latch::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">Runs latching mechanism.</div><div class="ttdef"><b>Definition</b> <a href="#l00009">latch.cpp:9</a></div></div>
 <div class="ttc" id="aclassRobot_1_1Latch_html_ac84b41b397c14406cd0b56698fbfa7fe"><div class="ttname"><a href="../../db/d72/classRobot_1_1Latch.html#ac84b41b397c14406cd0b56698fbfa7fe">Robot::Latch::Latch</a></div><div class="ttdeci">Latch()</div><div class="ttdef"><b>Definition</b> <a href="#l00015">latch.cpp:15</a></div></div>
-<div class="ttc" id="aclassRobot_1_1Latch_html_aecbdd3a48db9bd6cccffbc715ba40d45"><div class="ttname"><a href="../../db/d72/classRobot_1_1Latch.html#aecbdd3a48db9bd6cccffbc715ba40d45">Robot::Latch::toggle</a></div><div class="ttdeci">void toggle()</div><div class="ttdoc">Toggles latch state.</div><div class="ttdef"><b>Definition</b> <a href="#l00019">latch.cpp:19</a></div></div>
+<div class="ttc" id="aclassRobot_1_1Latch_html_aecbdd3a48db9bd6cccffbc715ba40d45"><div class="ttname"><a href="../../db/d72/classRobot_1_1Latch.html#aecbdd3a48db9bd6cccffbc715ba40d45">Robot::Latch::toggle</a></div><div class="ttdeci">void toggle()</div><div class="ttdoc">Toggles latch state.</div><div class="ttdef"><b>Definition</b> <a href="#l00017">latch.cpp:17</a></div></div>
 <div class="ttc" id="aglobals_8h_html"><div class="ttname"><a href="../../d5/d87/globals_8h.html">globals.h</a></div><div class="ttdoc">Contains global variables and type definitions for the Robot namespace.</div></div>
 <div class="ttc" id="alatch_8h_html"><div class="ttname"><a href="../../d0/d25/latch_8h.html">latch.h</a></div></div>
 <div class="ttc" id="anamespaceRobot_1_1Globals_html"><div class="ttname"><a href="../../df/d3e/namespaceRobot_1_1Globals.html">Robot::Globals</a></div><div class="ttdoc">Contains global variables and type definitions for the Robot namespace.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d87/globals_8h_source.html#l00030">globals.h:30</a></div></div>
@@ -157,7 +149,7 @@ $(function(){initNavTree('d8/dd6/latch_8cpp_source.html','../../'); initResizabl
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_42a35307dcefecb9f25978d1dedb502f.html">subsystems</a></li><li class="navelem"><a class="el" href="../../d8/dd6/latch_8cpp.html">latch.cpp</a></li>
-    <li class="footer">Generated on Wed Jul 24 2024 13:33:01 for 1516X High Stakes by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
+    <li class="footer">Generated on Fri Jul 26 2024 11:30:17 for 1516X High Stakes by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
   </ul>
 </div>
 </body>
