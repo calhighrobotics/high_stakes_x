@@ -1,5 +1,5 @@
 #pragma once
-#include "pros/apix.h"
+#include "pros/apix.h" // IWYU pragma: export
 
 namespace Robot {
 

@@ -1,8 +1,5 @@
-
-#include "selector.h"
-
-#include "main.h"
-#include "pros/apix.h"
+#include "main.h" // IWYU pragma: export
+#include "screen/selector.h"
 #include "robot/auton.h"
 #include "robot/drivetrain.h"
 

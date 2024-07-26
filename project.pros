@@ -1,7 +1,11 @@
 {
   "py/object": "pros.conductor.project.Project",
   "py/state": {
+<<<<<<< Updated upstream
     "project_name": "1516",
+=======
+    "project_name": "1516X",
+>>>>>>> Stashed changes
     "target": "v5",
     "templates": {
       "LemLib": {
@@ -441,8 +445,13 @@
     },
     "upload_options": {
       "after": "none",
+<<<<<<< Updated upstream
       "description": "1516B's over under program vex",
       "icon": "power",
+=======
+      "description": "High Stakes :)",
+      "icon": "X",
+>>>>>>> Stashed changes
       "slot": 2
     },
     "use_early_access": false
