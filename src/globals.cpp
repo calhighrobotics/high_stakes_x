@@ -1,9 +1,5 @@
 #include "globals.h"
 
-#include "api.h"
-#include "robot/auton.h"
-#include "robot/drivetrain.h"
-
 /*
  * Although the following constants belong in their own seperate
  * files(auton.cpp, drivetriain.cpp), they are put here in order to maintain a

@@ -1,10 +1,5 @@
 #include "main.h"
-
-#include <iostream>
-
-#include "api.h"
 #include "pros/apix.h"
-#include "pros/serial.h"
 
 using namespace Robot;
 using namespace Robot::Globals;

@@ -1,8 +1,5 @@
 #include "robot/utility.h"
-
-#include "api.h"
 #include "globals.h"
-#include "pros/apix.h"
 
 using namespace Robot;
 using namespace Robot::Globals;
