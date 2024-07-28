@@ -39,20 +39,6 @@ class Drivetrain {
    */
   void run();
 
-        /**
-         * @brief Sets the joystick deadzone.
-         * 
-         * @param newDeadZone The new deadzone value.
-         * 
-         * The deadzone is a range around the joystick's resting position where no movement is registered.
-         * This function allows you to set the deadzone value to filter out small joystick movements.
-         * 
-         * @details The deadzone value determines the sensitivity of the joystick inputs.
-         * A higher deadzone value will require larger joystick movements to register any movement in the drivetrain.
-         * Conversely, a lower deadzone value will make the drivetrain more responsive to small joystick movements.
-         */
-        void setdeadzone(int newDeadZone);
-
         enum Mode {
             CURVATURE_DRIVE, 
             ARCADE_DRIVE, 
@@ -80,7 +66,7 @@ class Drivetrain {
          * Arcade drive uses the left joystick for forward and backward movement, and the right joystick for left and right movement.
          * Tank drive uses the left and right joysticks for controlling the left and right sides of the robot.
          */
-        void SwitchDrive();
+        static void SwitchDrive(int driveNum);
 
 
         Mode driveMode; ///< The current drive train mode
@@ -91,6 +77,8 @@ class Drivetrain {
          * This constructor is responsible for initializing the Drivetrain object and setting default values.
          */
         Drivetrain();
+
+        std::string toggleDrive();
 
  private:
   /**
@@ -117,4 +105,6 @@ class Drivetrain {
    */
   void TankDrive();
 };
+
+
 }  // namespace Robot

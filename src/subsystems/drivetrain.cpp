@@ -65,23 +65,26 @@ std::string Drivetrain::toggleDrive() {
 }
 
 // Switch the drivetrain control mode between arcade and tank drive with the down button(between 1 and 2)
-std::string Drivetrain::SwitchDrive() {
+std::string Drivetrain::SwitchDrive(int driveNum) {
     if(drivetrainToggleSwitch.get_new_press()) {
         
-        if (Drivetrain::driveMode == TANK_DRIVE) {
+        if (driveNum == 0) {
             Drivetrain::driveMode = CURVATURE_DRIVE;
             std::cout << "Curvature Drive" << std::endl;
             return "Curvature Drive";
         }
-        else if (Drivetrain::driveMode == CURVATURE_DRIVE) {
+        else if (driveNum == 1) {
             Drivetrain::driveMode = ARCADE_DRIVE;
             std::cout << "Arcade Drive" << std::endl;
             return "Arcade Drive";
         }
-        else {
+        else if (driveNum == 2) {
             Drivetrain::driveMode = TANK_DRIVE;
             std::cout << "Tank Drive" << std::endl;
             return "Tank Drive";
+        } else {
+            std::cout << "Error" << std::endl;
+            return "Error";
         }
     }
 }

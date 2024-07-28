@@ -44,6 +44,9 @@ namespace Robot {
    */
   void AutoDrive(Intake &intake, Latch &latch);
 
+  void AutonSwitcher();
+
+
   /**
    * @brief Switches the autonomous program.
    *
