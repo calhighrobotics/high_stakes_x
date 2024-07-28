@@ -4,7 +4,7 @@ This is the [High Stakes repository](https://github.com/calhighrobotics/high_sta
 
 We are a VEX VRC team based in the Bay Area, California.
 
-We have both a wiki that covers high-level programming topics along with engineering topics as well as Doxygen documentation for our codebase.
+We have both a wiki that covers high-level programming, engineering, design, and team management topics, as well as Doxygen documentation for our codebase.
 
 - [Wiki](https://calhighrobotics.github.io/1516b)
 - [Doxygen Documentation](https://calhighrobotics.github.io/high_stakes_x)
@@ -19,7 +19,6 @@ The codebase is split up into:
    /robot - Contains the header files and information custom for the actual robot.
 /src - Contains implementation of the above methods and the definition, specific to the 1516X robot
 ```
-
 
 ## Other Libraries
 
