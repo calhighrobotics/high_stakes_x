@@ -65,41 +65,23 @@ std::string Drivetrain::toggleDrive() {
 }
 
 // Switch the drivetrain control mode between arcade and tank drive with the down button(between 1 and 2)
-void Drivetrain::SwitchDrive() {
+std::string Drivetrain::SwitchDrive() {
     if(drivetrainToggleSwitch.get_new_press()) {
-        pros::lcd::clear_line(2);
         
         if (Drivetrain::driveMode == TANK_DRIVE) {
             Drivetrain::driveMode = CURVATURE_DRIVE;
-            pros::lcd::set_text(2, "Drive: Curvature");
+            std::cout << "Curvature Drive" << std::endl;
+            return "Curvature Drive";
         }
-        if (Drivetrain::driveMode == CURVATURE_DRIVE) {
+        else if (Drivetrain::driveMode == CURVATURE_DRIVE) {
             Drivetrain::driveMode = ARCADE_DRIVE;
-            pros::lcd::set_text(2, "Drive: Arcade");
+            std::cout << "Arcade Drive" << std::endl;
+            return "Arcade Drive";
         }
-        if (Drivetrain::driveMode == ARCADE_DRIVE) {
+        else {
             Drivetrain::driveMode = TANK_DRIVE;
-            pros::lcd::set_text(2, "Drive: Tank");
+            std::cout << "Tank Drive" << std::endl;
+            return "Tank Drive";
         }
     }
-// Switch the drivetrain control mode between arcade and tank drive with the
-// down button(between 1 and 2)
-std::string Drivetrain::SwitchDrive(int drive) {
-  Drivetrain::driveNum = drive;
-
-  // Return the name of the drive mode
-  if (Drivetrain::driveNum == 0) {
-    std::cout << "Curvature Drive" << std::endl;
-    return "Curvature Drive";
-  }
-  if (Drivetrain::driveNum == 1) {
-    std::cout << "Arcade Drive" << std::endl;
-    return "Arcade Drive";
-  }
-  if (Drivetrain::driveNum == 2) {
-    std::cout << "Tank Drive" << std::endl;
-    return "Tank Drive";
-  } else {
-    return "Error";
-  }
 }

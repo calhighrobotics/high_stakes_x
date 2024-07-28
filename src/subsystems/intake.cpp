@@ -9,6 +9,7 @@ using namespace Robot::Globals;
 
 Intake::Intake() {
     elevated = false;
+    controller.print(0, 0, "Intake initialized");
 }
 
 void Intake::score() {
