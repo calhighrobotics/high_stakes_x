@@ -5,86 +5,80 @@
 using namespace Robot;
 using namespace Robot::Globals;
 
-void Drivetrain::CurvatureDrive() {
-  int left = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
-  int right = controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_X);
+Drivetrain::DRIVE_MODE Drivetrain::driveMode = CURVATURE_DRIVE;
 
-  chassis.curvature(left, right);
+void Drivetrain::CurvatureDrive()
+{
+	int left  = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
+	int right = controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_X);
 
-  pros::delay(15);
+	chassis.curvature(left, right);
+
+	pros::delay(15);
 }
 
-void Drivetrain::ArcadeDrive() {
-  // Arcade Measurements
-  int left = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
-  int right = controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_X);
+void Drivetrain::ArcadeDrive()
+{
+	// Arcade Measurements
+	int left  = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
+	int right = controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_X);
 
-  chassis.arcade(left, right, false, 0.6);
+	chassis.arcade(left, right, false, 0.6);
 
-  pros::delay(15);
+	pros::delay(15);
 }
 
-Drivetrain::Drivetrain() {
-    Drivetrain::driveMode = CURVATURE_DRIVE;
+Drivetrain::Drivetrain()
+{
+	Drivetrain::driveMode = CURVATURE_DRIVE;
 }
 
-void Drivetrain::TankDrive() {
-  int left = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
-  int right = controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_Y);
+void Drivetrain::TankDrive()
+{
+	int left  = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
+	int right = controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_Y);
 
-  chassis.tank(left, right);
+	chassis.tank(left, right);
 
-  pros::delay(15);
+	pros::delay(15);
 }
 
-/* @brief variable is set in order to serve for the selector, which needs a
- * static variable to keep track of the drive mode. It is synced back to the
- * class variable in the run method.
- */
-int Drivetrain::driveNum = 0;
 
 // Run the drivetrain depending on the control mode
-void Drivetrain::run() {
-    if (Drivetrain::driveMode == CURVATURE_DRIVE) {
-        Drivetrain::CurvatureDrive();
-    }
-    if (Drivetrain::driveMode == ARCADE_DRIVE) {
-        Drivetrain::ArcadeDrive();
-    }
-    if (Drivetrain::driveMode == TANK_DRIVE) {
-        Drivetrain::TankDrive();
-    }
+void Drivetrain::run()
+{
+	switch (Drivetrain::driveMode) {
+	case CURVATURE_DRIVE:
+		Drivetrain::CurvatureDrive();
+	case ARCADE_DRIVE:
+		Drivetrain::ArcadeDrive();
+	case TANK_DRIVE:
+		Drivetrain::TankDrive();
+	}
 }
 
-std::string Drivetrain::toggleDrive() {
-  Drivetrain::driveNum += 1;
-  if (Drivetrain::driveNum > 2) {
-    Drivetrain::driveNum = 0;
-  }
-  return SwitchDrive(Drivetrain::driveNum);
+std::string Drivetrain::toggleDrive()
+{
+	DRIVE_MODE driveMode = static_cast<DRIVE_MODE>((Drivetrain::driveMode + 1) % (TANK_DRIVE + 1));
+	return SwitchDrive(driveMode);
 }
 
 // Switch the drivetrain control mode between arcade and tank drive with the down button(between 1 and 2)
-std::string Drivetrain::SwitchDrive(int driveNum) {
-    if(drivetrainToggleSwitch.get_new_press()) {
-        
-        if (driveNum == 0) {
-            Drivetrain::driveMode = CURVATURE_DRIVE;
-            std::cout << "Curvature Drive" << std::endl;
-            return "Curvature Drive";
-        }
-        else if (driveNum == 1) {
-            Drivetrain::driveMode = ARCADE_DRIVE;
-            std::cout << "Arcade Drive" << std::endl;
-            return "Arcade Drive";
-        }
-        else if (driveNum == 2) {
-            Drivetrain::driveMode = TANK_DRIVE;
-            std::cout << "Tank Drive" << std::endl;
-            return "Tank Drive";
-        } else {
-            std::cout << "Error" << std::endl;
-            return "Error";
-        }
-    }
+std::string Drivetrain::SwitchDrive(Drivetrain::DRIVE_MODE driveMode)
+{
+    Drivetrain::driveMode = driveMode;
+	switch (driveMode) {
+	case CURVATURE_DRIVE:
+        std::cout << "Curvature Drive" << std::endl;
+		return "Curvature Drive";
+	case ARCADE_DRIVE:
+        std::cout << "Arcade Drive" << std::endl;
+        return "Arcade Drive";
+	case TANK_DRIVE:
+		std::cout << "Tank Drive" << std::endl;
+		return "Tank Drive";
+    default:
+        std::cout << "Not a valid drivetrain control mode!" << std::endl;
+        return "Not a valid driveMode!";
+	}
 }

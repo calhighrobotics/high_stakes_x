@@ -1,41 +1,41 @@
 #pragma once
-#include <stdint.h>
 
-namespace Robot {
+namespace Robot
+{
 
 /**
  * @brief The Intake class represents a robot intake system.
  */
 class Intake {
- public:
-  /**
-   * @brief Runs the main function of the intake system.
-   *
-   * Takes optional user input to control the direction of the intake system in
-   * autonomous.
-   */
-  void run();
+public:
+	/**
+	 * @brief Runs the main function of the intake system.
+	 *
+	 * Takes optional user input to control the direction of the intake system in
+	 * autonomous.
+	 */
+	void run();
 
-  /**
-   * @brief Outakes rings and scores them inside of latched mobile goal.
-   */
-  void score();
+	/**
+	 * @brief Outakes rings and scores them inside of latched mobile goal.
+	 */
+	void score();
 
-            Intake();
+	Intake();
 
-  /**
-   * @brief Toggles intake elevation.
-   */
-  void toggle();
+	/**
+	 * @brief Toggles intake elevation.
+	 */
+	void toggle();
 
-            /**
-             * @brief Runs intake in async. 
-             *
-             * auto intake and ejection of rings with color sensor.
-             */
-            void async();
+	/**
+	 * @brief Runs intake in async.
+	 *
+	 * auto intake and ejection of rings with color sensor.
+	 */
+	void async();
 
-        private:
-            bool elevated;
-    };
+private:
+	bool elevated;
+};
 }
