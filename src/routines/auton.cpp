@@ -8,7 +8,7 @@
 using namespace Robot;
 using namespace Robot::Globals;
 
-int Autonomous::auton = 4;
+Autonomous::Mode Autonomous::auton = BLUE_RIGHT;
 
 ASSET(red_right_pt1_txt);
 ASSET(red_right_pt2_txt);
@@ -25,7 +25,7 @@ ASSET(red_left_pt5_txt);
 //Red Right
 void Autonomous::Auton1(Intake &intake, Latch &latch) {
 	intake.async();
-	
+
 	chassis.setPose(-148.132, -58.408, 190);
 	//robot backs up into wallstake and is ready to outake
 	chassis.follow(red_right_pt1_txt, 15, 5000);
@@ -102,23 +102,23 @@ void Autonomous::AutoDrive(Intake &intake, Latch &latch) {
 	// Keep the switcher running while the controller down button has not been pressed and the time period is not autonomous
 	// Compare the current auton value to run the auton routine
 
-    if(Autonomous::auton == 1){
+    if(Autonomous::auton == RED_LEFT){
         Auton1(intake, latch);
     }
 
-    if(Autonomous::auton == 2){
+    if(Autonomous::auton == RED_RIGHT){
         Auton2(intake, latch);
     }
 
-    if(Autonomous::auton == 3){
+    if(Autonomous::auton == BLUE_LEFT){
         Auton3(intake, latch);
     }
-	if(Autonomous::auton == 4){
+	if(Autonomous::auton == BLUE_RIGHT){
         Auton4(intake, latch);
     }
 
-	if(Autonomous::auton == 5) {
-		Auton5(intake, latch)
+	if(Autonomous::auton == SKILLS) {
+		Auton5(intake, latch);
 	}
 
 }
@@ -130,26 +130,25 @@ void Autonomous::AutonSwitcher() {
     if(autonToggleSwitch.get_new_press()) {
 			pros::lcd::clear_line(3);
 			
-
-			Autonomous::auton = auton + 1;
-
-			// Checks if the toggler goes out of bounds.
-			if (Autonomous::auton == 5) {
-				Autonomous::auton = 1;
+			if (auton == SKILLS) {
+				autonName = "Red Leftˇ";
+				auton = RED_LEFT;
 			}
-
-			
-			if (auton == 1) {
-				autonName = "";
+			else if (auton == RED_LEFT) {
+				autonName = "Red Right";
+				auton = RED_RIGHT;
 			}
-			if (auton == 2) {
-				autonName = "";
+			else if (auton == RED_RIGHT) {
+				autonName = "Blue Left";
+				auton = BLUE_LEFT;
 			}
-			if (auton == 3) {
-				autonName = "";
+			else if (auton == BLUE_LEFT) {
+				autonName = "Blue Right";
+				auton = BLUE_RIGHT;
 			}
-			if (auton == 4) {
+			else {
 				autonName = "Skills Challenge";
+				auton = SKILLS;
 			}
 			// Set the controllet text to the current autonomous routine value
 			pros::lcd::print(3, "Autonomous prog: %s", autonName);

@@ -13,7 +13,7 @@ void Latch::run() {
 
 
 Latch::Latch() {
-    ;
+    
 }
 
 void Latch::toggle() {

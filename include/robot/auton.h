@@ -11,6 +11,15 @@ namespace Robot {
      */
     class Autonomous {
     
+    private:
+        enum Mode {
+            RED_LEFT,
+            RED_RIGHT,
+            BLUE_LEFT,
+            BLUE_RIGHT,
+            SKILLS
+        };
+
     public:
         /**
          * @brief Sets the number of the autonomous program to use.
@@ -20,7 +29,7 @@ namespace Robot {
          * 
          * @param auton The number of the autonomous program to use.
          */
-        static int auton;
+        static Mode auton;
 
         /**
          * @brief Drives the robot autonomously.

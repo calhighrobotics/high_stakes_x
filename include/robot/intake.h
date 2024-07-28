@@ -22,14 +22,16 @@ namespace Robot {
             Intake();
 
             /**
-            * @brief Runs intake for a certain interval of time.
-            */
-            void interval(std::uint32_t time);
-
-            /**
              * @brief Toggles intake elevation.
              */
             void toggle();
+
+            /**
+             * @brief Runs intake in async. 
+             *
+             * auto intake and ejection of rings with color sensor.
+             */
+            void async();
 
         private:
             bool elevated;

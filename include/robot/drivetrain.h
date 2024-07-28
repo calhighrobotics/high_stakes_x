@@ -47,6 +47,12 @@ namespace Robot {
          */
         void setdeadzone(int newDeadZone);
 
+        enum Mode {
+            CURVATURE_DRIVE, 
+            ARCADE_DRIVE, 
+            TANK_DRIVE
+        };
+
         /**
          * @brief Returns the current deadzone value.
          * 
@@ -70,7 +76,8 @@ namespace Robot {
          */
         void SwitchDrive();
 
-        int driveMode; ///< The current drive train mode, between arcade (0) and tank (1).
+
+        Mode driveMode; ///< The current drive train mode
 
         /**
          * @brief Initializes the Drivetrain object.

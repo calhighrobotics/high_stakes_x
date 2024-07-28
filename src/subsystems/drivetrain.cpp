@@ -6,6 +6,7 @@ using namespace Robot;
 using namespace Robot::Globals;
 
 
+
 int Drivetrain::CheckDeadzone(int ControllerInput) {
     if(std::abs(ControllerInput) < Drivetrain::deadzone) {
         return 0;
@@ -44,7 +45,7 @@ void Drivetrain::ArcadeDrive() {
 }
 
 Drivetrain::Drivetrain() {
-    Drivetrain::driveMode = 0;
+    Drivetrain::driveMode = CURVATURE_DRIVE;
 }
 
 void Drivetrain::TankDrive() {
@@ -82,13 +83,13 @@ void Drivetrain::CurveDrive() {
 
 // Run the drivetrain depending on the control mode
 void Drivetrain::run() {
-    if (Drivetrain::driveMode == 0) {
+    if (Drivetrain::driveMode == CURVATURE_DRIVE) {
         Drivetrain::CurvatureDrive();
     }
-    if (Drivetrain::driveMode == 1) {
+    if (Drivetrain::driveMode == ARCADE_DRIVE) {
         Drivetrain::ArcadeDrive();
     }
-    if (Drivetrain::driveMode == 2) {
+    if (Drivetrain::driveMode == TANK_DRIVE) {
         Drivetrain::TankDrive();
     }
 }
@@ -98,18 +99,17 @@ void Drivetrain::run() {
 void Drivetrain::SwitchDrive() {
     if(drivetrainToggleSwitch.get_new_press()) {
         pros::lcd::clear_line(2);
-        Drivetrain::driveMode = Drivetrain::driveMode + 1;
-        if (Drivetrain::driveMode == 3) {
-            Drivetrain::driveMode = 0;
-        }
         
-        if (Drivetrain::driveMode == 0) {
+        if (Drivetrain::driveMode == TANK_DRIVE) {
+            Drivetrain::driveMode = CURVATURE_DRIVE;
             pros::lcd::set_text(2, "Drive: Curvature");
         }
-        if (Drivetrain::driveMode == 1) {
+        if (Drivetrain::driveMode == CURVATURE_DRIVE) {
+            Drivetrain::driveMode = ARCADE_DRIVE;
             pros::lcd::set_text(2, "Drive: Arcade");
         }
-        if (Drivetrain::driveMode == 2) {
+        if (Drivetrain::driveMode == ARCADE_DRIVE) {
+            Drivetrain::driveMode = TANK_DRIVE;
             pros::lcd::set_text(2, "Drive: Tank");
         }
     }

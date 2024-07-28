@@ -7,12 +7,6 @@ using namespace Robot::Globals;
 
 Intake::Intake() {
     elevated = false;
-    IntakeToggle = elevated;
-}
-
-void Intake::interval(std::uint32_t time) {
-    IntakeMotor.move(127);
-    pros::delay(time);
 }
 
 void Intake::score() {
@@ -35,11 +29,11 @@ void Intake::run(){
 
 void Intake::toggle() {
     !elevated;
-    IntakeToggle = elevated;
+    IntakeToggle.toggle();
 }
 
-void Intake::async() {
+/*void Intake::async() {
     std::assert(colorSensor.get_hue());
-
     
-}
+    
+}*/
