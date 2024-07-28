@@ -1,4 +1,5 @@
 #include "robot/utility.h"
+
 #include "globals.h"
 
 using namespace Robot;

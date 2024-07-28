@@ -1,5 +1,6 @@
-#include "main.h" // IWYU pragma: export
 #include "robot/auton.h"
+
+#include "main.h"  // IWYU pragma: export
 // Globals header imports used subtypes
 #include "globals.h"
 

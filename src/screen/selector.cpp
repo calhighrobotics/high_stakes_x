@@ -1,5 +1,6 @@
-#include "main.h" // IWYU pragma: export
 #include "screen/selector.h"
+
+#include "main.h"  // IWYU pragma: export
 #include "robot/auton.h"
 #include "robot/drivetrain.h"
 

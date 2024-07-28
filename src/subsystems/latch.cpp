@@ -1,4 +1,5 @@
 #include "robot/latch.h"
+
 #include "globals.h"
 
 using namespace Robot;
