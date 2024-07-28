@@ -128,55 +128,13 @@ Functions</h2></td></tr>
 <tr class="memitem:ae923edc042caa87e3c10e32f8040728c" id="r_ae923edc042caa87e3c10e32f8040728c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae923edc042caa87e3c10e32f8040728c">displayMotorVel</a> ()</td></tr>
 <tr class="memdesc:ae923edc042caa87e3c10e32f8040728c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays current velocity of the robot.  <br /></td></tr>
 <tr class="separator:ae923edc042caa87e3c10e32f8040728c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade4d39238d662930a63ce77990431474" id="r_ade4d39238d662930a63ce77990431474"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade4d39238d662930a63ce77990431474">display</a> ()</td></tr>
-<tr class="separator:ade4d39238d662930a63ce77990431474"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c353b68572943ad2d2809a86d35d80a" id="r_a2c353b68572943ad2d2809a86d35d80a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c353b68572943ad2d2809a86d35d80a">toggleSubsystemOptions</a> (<a class="el" href="../../d1/db9/classRobot_1_1Autonomous.html">Autonomous</a> &amp;auton, <a class="el" href="../../d7/d0e/classRobot_1_1Drivetrain.html">Drivetrain</a> &amp;drive)</td></tr>
-<tr class="memdesc:a2c353b68572943ad2d2809a86d35d80a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggles subsystems, drive mode auton routine, and puncher.  <br /></td></tr>
-<tr class="separator:a2c353b68572943ad2d2809a86d35d80a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains utility functions for controlling the screen and toggling subsystems. </p>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000002">Todo</a></b></dt><dd>Deprecate <a class="el" href="../../d2/d94/namespaceRobot_1_1Utility.html" title="Contains utility functions for controlling the screen and toggling subsystems.">Utility</a> class due to its purpose being covered by the screen class. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Try not to use this class as much as possible. The screen class is a better alternative. </dd></dl>
 <dl class="test"><dt><b><a class="el" href="../../d4/df6/test.html#_test000001">Test</a></b></dt><dd>The <a class="el" href="../../d2/d94/namespaceRobot_1_1Utility.html" title="Contains utility functions for controlling the screen and toggling subsystems.">Utility</a> namespace is a group of unrelated methods that have functions that are important independently. </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="ade4d39238d662930a63ce77990431474" name="ade4d39238d662930a63ce77990431474"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ade4d39238d662930a63ce77990431474">&#9670;&#160;</a></span>display()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Robot::Utility::display </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../dc/dfa/utility_8cpp_source.html#l00050">50</a> of file <a class="el" href="../../dc/dfa/utility_8cpp_source.html">utility.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   50</span>                      {</div>
-<div class="line"><span class="lineno">   51</span>    <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
-<div class="line"><span class="lineno">   52</span>        <span class="keywordflow">if</span> (!<a class="code hl_function" href="../../db/d3d/namespacepros_1_1competition.html#a2d4f4555af4c45f7f82ea75e1223899b">pros::competition::is_disabled</a>()) {</div>
-<div class="line"><span class="lineno">   53</span>            <span class="comment">// if (pros::c::registry_get_plugged_type(15) == 6) {</span></div>
-<div class="line"><span class="lineno">   54</span>            <a class="code hl_function" href="#a043980c10e7bddc2ec36da271d408feb">Utility::displayLocation</a>();</div>
-<div class="line"><span class="lineno">   55</span>            <span class="comment">// } </span></div>
-<div class="line"><span class="lineno">   56</span>            <span class="comment">// else {</span></div>
-<div class="line"><span class="lineno">   57</span>            <span class="comment">//     Utility::displayMotorVel();</span></div>
-<div class="line"><span class="lineno">   58</span>            <span class="comment">// }</span></div>
-<div class="line"><span class="lineno">   59</span>        }</div>
-<div class="line"><span class="lineno">   60</span>        <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   61</span>            ;</div>
-<div class="line"><span class="lineno">   62</span>        }</div>
-<div class="line"><span class="lineno">   63</span>        pros::delay(10);</div>
-<div class="line"><span class="lineno">   64</span>   }</div>
-<div class="line"><span class="lineno">   65</span>}</div>
-<div class="ttc" id="anamespaceRobot_1_1Utility_html_a043980c10e7bddc2ec36da271d408feb"><div class="ttname"><a href="#a043980c10e7bddc2ec36da271d408feb">Robot::Utility::displayLocation</a></div><div class="ttdeci">void displayLocation()</div><div class="ttdoc">Displays current position of the robot.</div><div class="ttdef"><b>Definition</b> <a href="../../dc/dfa/utility_8cpp_source.html#l00041">utility.cpp:41</a></div></div>
-<div class="ttc" id="anamespacepros_1_1competition_html_a2d4f4555af4c45f7f82ea75e1223899b"><div class="ttname"><a href="../../db/d3d/namespacepros_1_1competition.html#a2d4f4555af4c45f7f82ea75e1223899b">pros::competition::is_disabled</a></div><div class="ttdeci">std::uint8_t is_disabled(void)</div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../dc/dfa/utility_8cpp_source.html#l00041">displayLocation()</a>, and <a class="el" href="../../db/d3d/namespacepros_1_1competition.html#a2d4f4555af4c45f7f82ea75e1223899b">pros::competition::is_disabled()</a>.</p>
-
-</div>
-</div>
 <a id="a043980c10e7bddc2ec36da271d408feb" name="a043980c10e7bddc2ec36da271d408feb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a043980c10e7bddc2ec36da271d408feb">&#9670;&#160;</a></span>displayLocation()</h2>
 
@@ -194,27 +152,20 @@ Functions</h2></td></tr>
 
 <p>Displays current position of the robot. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/dfa/utility_8cpp_source.html#l00041">41</a> of file <a class="el" href="../../dc/dfa/utility_8cpp_source.html">utility.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   41</span>                              {</div>
-<div class="line"><span class="lineno">   42</span>    <span class="keyword">using namespace </span><a class="code hl_namespace" href="../../df/d3e/namespaceRobot_1_1Globals.html">Robot::Globals</a>;</div>
-<div class="line"><span class="lineno">   43</span> </div>
-<div class="line"><span class="lineno">   44</span>    <a class="code hl_class" href="../../db/dff/classlemlib_1_1Pose.html">lemlib::Pose</a> pose = <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#adb19c4d8d7b61867e04f934a6dcd6f87">chassis</a>.<a class="code hl_function" href="../../dc/df2/classlemlib_1_1Chassis.html#ac76af83ceaf73850eb74174040009c91">getPose</a>(); <span class="comment">// get the current position of the robot</span></div>
-<div class="line"><span class="lineno">   45</span>    <a class="code hl_function" href="../../d0/d33/group__cpp-llemu.html#gaead67d10b420308d58883135f0d28099">pros::lcd::print</a>(0, <span class="stringliteral">&quot;x: %f&quot;</span>, pose.<a class="code hl_variable" href="../../db/dff/classlemlib_1_1Pose.html#af42d0fce9ed1ac418f8ea6353e4ba661">x</a>); <span class="comment">// print the x position</span></div>
-<div class="line"><span class="lineno">   46</span>    <a class="code hl_function" href="../../d0/d33/group__cpp-llemu.html#gaead67d10b420308d58883135f0d28099">pros::lcd::print</a>(1, <span class="stringliteral">&quot;y: %f&quot;</span>, pose.<a class="code hl_variable" href="../../db/dff/classlemlib_1_1Pose.html#a9dbf4b9c0a2a2569dd87e9a239a448c6">y</a>); <span class="comment">// pri∟nt the y position</span></div>
-<div class="line"><span class="lineno">   47</span>    <a class="code hl_function" href="../../d0/d33/group__cpp-llemu.html#gaead67d10b420308d58883135f0d28099">pros::lcd::print</a>(2, <span class="stringliteral">&quot;heading: %f&quot;</span>, pose.<a class="code hl_variable" href="../../db/dff/classlemlib_1_1Pose.html#a15d50588dd9e593a72a75e3d2d125150">theta</a>); <span class="comment">// print the heading</span></div>
-<div class="line"><span class="lineno">   48</span>}</div>
-<div class="ttc" id="aclasslemlib_1_1Chassis_html_ac76af83ceaf73850eb74174040009c91"><div class="ttname"><a href="../../dc/df2/classlemlib_1_1Chassis.html#ac76af83ceaf73850eb74174040009c91">lemlib::Chassis::getPose</a></div><div class="ttdeci">Pose getPose(bool radians=false, bool standardPos=false)</div><div class="ttdoc">Get the pose of the chassis.</div></div>
-<div class="ttc" id="aclasslemlib_1_1Pose_html"><div class="ttname"><a href="../../db/dff/classlemlib_1_1Pose.html">lemlib::Pose</a></div><div class="ttdoc">A pose in 2D space.</div><div class="ttdef"><b>Definition</b> <a href="../../de/d59/pose_8hpp_source.html#l00015">pose.hpp:15</a></div></div>
-<div class="ttc" id="aclasslemlib_1_1Pose_html_a15d50588dd9e593a72a75e3d2d125150"><div class="ttname"><a href="../../db/dff/classlemlib_1_1Pose.html#a15d50588dd9e593a72a75e3d2d125150">lemlib::Pose::theta</a></div><div class="ttdeci">float theta</div><div class="ttdef"><b>Definition</b> <a href="../../de/d59/pose_8hpp_source.html#l00019">pose.hpp:19</a></div></div>
-<div class="ttc" id="aclasslemlib_1_1Pose_html_a9dbf4b9c0a2a2569dd87e9a239a448c6"><div class="ttname"><a href="../../db/dff/classlemlib_1_1Pose.html#a9dbf4b9c0a2a2569dd87e9a239a448c6">lemlib::Pose::y</a></div><div class="ttdeci">float y</div><div class="ttdef"><b>Definition</b> <a href="../../de/d59/pose_8hpp_source.html#l00018">pose.hpp:18</a></div></div>
-<div class="ttc" id="aclasslemlib_1_1Pose_html_af42d0fce9ed1ac418f8ea6353e4ba661"><div class="ttname"><a href="../../db/dff/classlemlib_1_1Pose.html#af42d0fce9ed1ac418f8ea6353e4ba661">lemlib::Pose::x</a></div><div class="ttdeci">float x</div><div class="ttdef"><b>Definition</b> <a href="../../de/d59/pose_8hpp_source.html#l00017">pose.hpp:17</a></div></div>
-<div class="ttc" id="agroup__cpp-llemu_html_gaead67d10b420308d58883135f0d28099"><div class="ttname"><a href="../../d0/d33/group__cpp-llemu.html#gaead67d10b420308d58883135f0d28099">pros::lcd::print</a></div><div class="ttdeci">bool print(std::int16_t line, const char *fmt, Params... args)</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d23/pros_2llemu_8hpp_source.html#l00119">llemu.hpp:119</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../dc/dfa/utility_8cpp_source.html#l00029">29</a> of file <a class="el" href="../../dc/dfa/utility_8cpp_source.html">utility.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   29</span>                              {</div>
+<div class="line"><span class="lineno">   30</span>  <span class="keyword">using namespace </span><a class="code hl_namespace" href="../../df/d3e/namespaceRobot_1_1Globals.html">Robot::Globals</a>;</div>
+<div class="line"><span class="lineno">   31</span> </div>
+<div class="line"><span class="lineno">   32</span>  lemlib::Pose pose =</div>
+<div class="line"><span class="lineno">   33</span>      <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#adb19c4d8d7b61867e04f934a6dcd6f87">chassis</a>.getPose();  <span class="comment">// get the current position of the robot</span></div>
+<div class="line"><span class="lineno">   34</span>  pros::lcd::print(0, <span class="stringliteral">&quot;x: %f&quot;</span>, pose.x);            <span class="comment">// print the x position</span></div>
+<div class="line"><span class="lineno">   35</span>  pros::lcd::print(1, <span class="stringliteral">&quot;y: %f&quot;</span>, pose.y);            <span class="comment">// pri∟nt the y position</span></div>
+<div class="line"><span class="lineno">   36</span>  pros::lcd::print(2, <span class="stringliteral">&quot;heading: %f&quot;</span>, pose.theta);  <span class="comment">// print the heading</span></div>
+<div class="line"><span class="lineno">   37</span>}</div>
 <div class="ttc" id="anamespaceRobot_1_1Globals_html"><div class="ttname"><a href="../../df/d3e/namespaceRobot_1_1Globals.html">Robot::Globals</a></div><div class="ttdoc">Contains global variables and type definitions for the Robot namespace.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d87/globals_8h_source.html#l00030">globals.h:30</a></div></div>
 <div class="ttc" id="anamespaceRobot_1_1Globals_html_adb19c4d8d7b61867e04f934a6dcd6f87"><div class="ttname"><a href="../../df/d3e/namespaceRobot_1_1Globals.html#adb19c4d8d7b61867e04f934a6dcd6f87">Robot::Globals::chassis</a></div><div class="ttdeci">lemlib::Chassis chassis</div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../df/d3e/namespaceRobot_1_1Globals.html#adb19c4d8d7b61867e04f934a6dcd6f87">Robot::Globals::chassis</a>, <a class="el" href="../../dc/df2/classlemlib_1_1Chassis.html#ac76af83ceaf73850eb74174040009c91">lemlib::Chassis::getPose()</a>, <a class="el" href="../../d8/d23/pros_2llemu_8hpp_source.html#l00119">pros::lcd::print()</a>, <a class="el" href="../../de/d59/pose_8hpp_source.html#l00019">lemlib::Pose::theta</a>, <a class="el" href="../../de/d59/pose_8hpp_source.html#l00017">lemlib::Pose::x</a>, and <a class="el" href="../../de/d59/pose_8hpp_source.html#l00018">lemlib::Pose::y</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../dc/dfa/utility_8cpp_source.html#l00050">display()</a>.</p>
+<p class="reference">References <a class="el" href="../../df/d3e/namespaceRobot_1_1Globals.html#adb19c4d8d7b61867e04f934a6dcd6f87">Robot::Globals::chassis</a>.</p>
 
 </div>
 </div>
@@ -234,82 +185,31 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Displays current velocity of the robot. </p>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000004">Todo</a></b></dt><dd>Figure out a way to send an event to the different objects to toggle between the different subsystems. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/dfa/utility_8cpp_source.html#l00029">29</a> of file <a class="el" href="../../dc/dfa/utility_8cpp_source.html">utility.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   29</span>                              {</div>
-<div class="line"><span class="lineno">   30</span>    <span class="comment">// std::vector&lt;std::int32_t&gt; currents = drive_.get_current_draws();// get the current position of the robot</span></div>
-<div class="line"><span class="lineno">   31</span>    <a class="code hl_function" href="../../d0/d33/group__cpp-llemu.html#gaead67d10b420308d58883135f0d28099">pros::lcd::print</a>(0, <span class="stringliteral">&quot;Motor velocity draw&quot;</span>);</div>
-<div class="line"><span class="lineno">   32</span>    <a class="code hl_function" href="../../d0/d33/group__cpp-llemu.html#gaead67d10b420308d58883135f0d28099">pros::lcd::print</a>(1, <span class="stringliteral">&quot;motor 2 vel: %lf&quot;</span>, <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#a31dd69bd0529018a8a4873ed09570c73">LeftFront</a>.get_actual_velocity());</div>
-<div class="line"><span class="lineno">   33</span>    <a class="code hl_function" href="../../d0/d33/group__cpp-llemu.html#gaead67d10b420308d58883135f0d28099">pros::lcd::print</a>(2, <span class="stringliteral">&quot;motor 2 vel: %lf&quot;</span>, <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#a0dd2759f5fcd3f766f2e7128b9b6762a">RightFront</a>.get_actual_velocity());</div>
-<div class="line"><span class="lineno">   34</span>    <a class="code hl_function" href="../../d0/d33/group__cpp-llemu.html#gaead67d10b420308d58883135f0d28099">pros::lcd::print</a>(3, <span class="stringliteral">&quot;motor 3 vel: %lf&quot;</span>, <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#a5f4857eafe968a7ae2fded03ca50bfb4">LeftMid</a>.get_actual_velocity());</div>
-<div class="line"><span class="lineno">   35</span>    <a class="code hl_function" href="../../d0/d33/group__cpp-llemu.html#gaead67d10b420308d58883135f0d28099">pros::lcd::print</a>(4, <span class="stringliteral">&quot;motor 4 vel: %lf&quot;</span>, <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#a6382079be47940bc1a4f9f5f07c8c692">RightMid</a>.get_actual_velocity());</div>
-<div class="line"><span class="lineno">   36</span>    <a class="code hl_function" href="../../d0/d33/group__cpp-llemu.html#gaead67d10b420308d58883135f0d28099">pros::lcd::print</a>(5, <span class="stringliteral">&quot;motor 5 vel: %lf&quot;</span>, <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#ab66cce8fc45d29a5a0e9b6917eea6d08">LeftBack</a>.get_actual_velocity());</div>
-<div class="line"><span class="lineno">   37</span>    <a class="code hl_function" href="../../d0/d33/group__cpp-llemu.html#gaead67d10b420308d58883135f0d28099">pros::lcd::print</a>(6, <span class="stringliteral">&quot;motor 6 vel: %lf&quot;</span>, <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#a1e08a798bfb59c67198e228256b70eee">RightBack</a>.get_actual_velocity()); <span class="comment">// print the x position// print the heading</span></div>
-<div class="line"><span class="lineno">   38</span>    </div>
-<div class="line"><span class="lineno">   39</span>}</div>
-<div class="ttc" id="anamespaceRobot_1_1Globals_html_a0dd2759f5fcd3f766f2e7128b9b6762a"><div class="ttname"><a href="../../df/d3e/namespaceRobot_1_1Globals.html#a0dd2759f5fcd3f766f2e7128b9b6762a">Robot::Globals::RightFront</a></div><div class="ttdeci">pros::Motor RightFront</div></div>
-<div class="ttc" id="anamespaceRobot_1_1Globals_html_a1e08a798bfb59c67198e228256b70eee"><div class="ttname"><a href="../../df/d3e/namespaceRobot_1_1Globals.html#a1e08a798bfb59c67198e228256b70eee">Robot::Globals::RightBack</a></div><div class="ttdeci">pros::Motor RightBack</div></div>
-<div class="ttc" id="anamespaceRobot_1_1Globals_html_a31dd69bd0529018a8a4873ed09570c73"><div class="ttname"><a href="../../df/d3e/namespaceRobot_1_1Globals.html#a31dd69bd0529018a8a4873ed09570c73">Robot::Globals::LeftFront</a></div><div class="ttdeci">pros::Motor LeftFront</div></div>
-<div class="ttc" id="anamespaceRobot_1_1Globals_html_a5f4857eafe968a7ae2fded03ca50bfb4"><div class="ttname"><a href="../../df/d3e/namespaceRobot_1_1Globals.html#a5f4857eafe968a7ae2fded03ca50bfb4">Robot::Globals::LeftMid</a></div><div class="ttdeci">pros::Motor LeftMid</div></div>
-<div class="ttc" id="anamespaceRobot_1_1Globals_html_a6382079be47940bc1a4f9f5f07c8c692"><div class="ttname"><a href="../../df/d3e/namespaceRobot_1_1Globals.html#a6382079be47940bc1a4f9f5f07c8c692">Robot::Globals::RightMid</a></div><div class="ttdeci">pros::Motor RightMid</div></div>
-<div class="ttc" id="anamespaceRobot_1_1Globals_html_ab66cce8fc45d29a5a0e9b6917eea6d08"><div class="ttname"><a href="../../df/d3e/namespaceRobot_1_1Globals.html#ab66cce8fc45d29a5a0e9b6917eea6d08">Robot::Globals::LeftBack</a></div><div class="ttdeci">pros::Motor LeftBack</div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../df/d3e/namespaceRobot_1_1Globals.html#ab66cce8fc45d29a5a0e9b6917eea6d08">Robot::Globals::LeftBack</a>, <a class="el" href="../../df/d3e/namespaceRobot_1_1Globals.html#a31dd69bd0529018a8a4873ed09570c73">Robot::Globals::LeftFront</a>, <a class="el" href="../../df/d3e/namespaceRobot_1_1Globals.html#a5f4857eafe968a7ae2fded03ca50bfb4">Robot::Globals::LeftMid</a>, <a class="el" href="../../d8/d23/pros_2llemu_8hpp_source.html#l00119">pros::lcd::print()</a>, <a class="el" href="../../df/d3e/namespaceRobot_1_1Globals.html#a1e08a798bfb59c67198e228256b70eee">Robot::Globals::RightBack</a>, <a class="el" href="../../df/d3e/namespaceRobot_1_1Globals.html#a0dd2759f5fcd3f766f2e7128b9b6762a">Robot::Globals::RightFront</a>, and <a class="el" href="../../df/d3e/namespaceRobot_1_1Globals.html#a6382079be47940bc1a4f9f5f07c8c692">Robot::Globals::RightMid</a>.</p>
-
-</div>
-</div>
-<a id="a2c353b68572943ad2d2809a86d35d80a" name="a2c353b68572943ad2d2809a86d35d80a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c353b68572943ad2d2809a86d35d80a">&#9670;&#160;</a></span>toggleSubsystemOptions()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Robot::Utility::toggleSubsystemOptions </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d1/db9/classRobot_1_1Autonomous.html">Autonomous</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>auton</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../d7/d0e/classRobot_1_1Drivetrain.html">Drivetrain</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>drive</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Toggles subsystems, drive mode auton routine, and puncher. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname"><a class="el" href="../../d1/db9/classRobot_1_1Autonomous.html" title="The Autonomous class contains classes and functions related to the robot&#39;s autonomous behavior.">Autonomous</a></td><td>auton Auton object. </td></tr>
-    <tr><td class="paramname"><a class="el" href="../../d7/d0e/classRobot_1_1Drivetrain.html" title="Represents the drivetrain of the robot.">Drivetrain</a></td><td>drive <a class="el" href="../../d7/d0e/classRobot_1_1Drivetrain.html" title="Represents the drivetrain of the robot.">Drivetrain</a> object. </td></tr>
-    <tr><td class="paramname">Puncher</td><td>punch Puncher object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000002">Todo</a></b></dt><dd>Figure out a way to send an event to the different objects to toggle between the different subsystems. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="../../dc/dfa/utility_8cpp_source.html#l00011">11</a> of file <a class="el" href="../../dc/dfa/utility_8cpp_source.html">utility.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   11</span>                                                                         {</div>
-<div class="line"><span class="lineno">   12</span>    <span class="comment">// Allows the user to select the autonomous routine, drive control type as well as whether the distance puncher is enabled.</span></div>
-<div class="line"><span class="lineno">   13</span>   <span class="comment">// The user can select the auton routine by pressing the right buttons on the controller.</span></div>
-<div class="line"><span class="lineno">   14</span>   <span class="comment">// The user can select the drive control type by pressing the down button on the controller.</span></div>
-<div class="line"><span class="lineno">   15</span>   <span class="comment">// The user can select the distance puncher by pressing the left button on the controller.</span></div>
-<div class="line"><span class="lineno">   16</span>   <span class="comment">// The state of each subsystem is displayed on the controller screen.</span></div>
-<div class="line"><span class="lineno">   17</span>   <span class="keywordflow">while</span> (<span class="keyword">true</span>)</div>
-<div class="line"><span class="lineno">   18</span>   {</div>
-<div class="line"><span class="lineno">   19</span>        auton.<a class="code hl_function" href="../../d1/db9/classRobot_1_1Autonomous.html#a6e8bc657f1842887508876fabc1e3085">AutonSwitcher</a>();</div>
-<div class="line"><span class="lineno">   20</span>      drive.<a class="code hl_function" href="../../d7/d0e/classRobot_1_1Drivetrain.html#a4349382fde427976ba7ffc66ead2c43b">SwitchDrive</a>();</div>
-<div class="line"><span class="lineno">   21</span>      </div>
-<div class="line"><span class="lineno">   22</span> </div>
-<div class="line"><span class="lineno">   23</span>      <span class="comment">// Exits the loop if the up button is pressed</span></div>
-<div class="line"><span class="lineno">   24</span> </div>
-<div class="line"><span class="lineno">   25</span>      pros::delay(50);</div>
-<div class="line"><span class="lineno">   26</span>   }</div>
+<p class="definition">Definition at line <a class="el" href="../../dc/dfa/utility_8cpp_source.html#l00014">14</a> of file <a class="el" href="../../dc/dfa/utility_8cpp_source.html">utility.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   14</span>                              {</div>
+<div class="line"><span class="lineno">   15</span>  <span class="comment">// std::vector&lt;std::int32_t&gt; currents = drive_.get_current_draws();// get the</span></div>
+<div class="line"><span class="lineno">   16</span>  <span class="comment">// current position of the robot</span></div>
+<div class="line"><span class="lineno">   17</span>  pros::lcd::print(0, <span class="stringliteral">&quot;Motor velocity draw&quot;</span>, 0);</div>
+<div class="line"><span class="lineno">   18</span>  pros::lcd::print(1, <span class="stringliteral">&quot;motor 2 vel: %lf&quot;</span>, <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#aa3c7b6bd7690ade6f6ef1f41582bada1">LeftFront</a>.get_actual_velocity());</div>
+<div class="line"><span class="lineno">   19</span>  pros::lcd::print(2, <span class="stringliteral">&quot;motor 2 vel: %lf&quot;</span>, <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#a57080a8667cacf9797e45a46903c2c0d">RightFront</a>.get_actual_velocity());</div>
+<div class="line"><span class="lineno">   20</span>  pros::lcd::print(3, <span class="stringliteral">&quot;motor 3 vel: %lf&quot;</span>, <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#a307257e8c75b5c402957288afc4983ed">LeftMid</a>.get_actual_velocity());</div>
+<div class="line"><span class="lineno">   21</span>  pros::lcd::print(4, <span class="stringliteral">&quot;motor 4 vel: %lf&quot;</span>, <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#a8f5ed28ef65173e08177eb6be13a910b">RightMid</a>.get_actual_velocity());</div>
+<div class="line"><span class="lineno">   22</span>  pros::lcd::print(5, <span class="stringliteral">&quot;motor 5 vel: %lf&quot;</span>, <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#af074623411b68ec48da3f47ae2a69287">LeftBack</a>.get_actual_velocity());</div>
+<div class="line"><span class="lineno">   23</span>  pros::lcd::print(</div>
+<div class="line"><span class="lineno">   24</span>      6, <span class="stringliteral">&quot;motor 6 vel: %lf&quot;</span>,</div>
+<div class="line"><span class="lineno">   25</span>      <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#a45509b60c052a78f32531f657f40b8da">RightBack</a></div>
+<div class="line"><span class="lineno">   26</span>          .get_actual_velocity());  <span class="comment">// print the x position// print the heading</span></div>
 <div class="line"><span class="lineno">   27</span>}</div>
-<div class="ttc" id="aclassRobot_1_1Autonomous_html_a6e8bc657f1842887508876fabc1e3085"><div class="ttname"><a href="../../d1/db9/classRobot_1_1Autonomous.html#a6e8bc657f1842887508876fabc1e3085">Robot::Autonomous::AutonSwitcher</a></div><div class="ttdeci">void AutonSwitcher()</div><div class="ttdoc">Switches the autonomous program.</div><div class="ttdef"><b>Definition</b> <a href="../../db/ddf/auton_8cpp_source.html#l00053">auton.cpp:53</a></div></div>
-<div class="ttc" id="aclassRobot_1_1Drivetrain_html_a4349382fde427976ba7ffc66ead2c43b"><div class="ttname"><a href="../../d7/d0e/classRobot_1_1Drivetrain.html#a4349382fde427976ba7ffc66ead2c43b">Robot::Drivetrain::SwitchDrive</a></div><div class="ttdeci">void SwitchDrive()</div><div class="ttdoc">Switches the DriveTrain mode between arcade and tank drive.</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d27/drivetrain_8cpp_source.html#l00084">drivetrain.cpp:84</a></div></div>
+<div class="ttc" id="anamespaceRobot_1_1Globals_html_a307257e8c75b5c402957288afc4983ed"><div class="ttname"><a href="../../df/d3e/namespaceRobot_1_1Globals.html#a307257e8c75b5c402957288afc4983ed">Robot::Globals::LeftMid</a></div><div class="ttdeci">pros::Motor LeftMid</div></div>
+<div class="ttc" id="anamespaceRobot_1_1Globals_html_a45509b60c052a78f32531f657f40b8da"><div class="ttname"><a href="../../df/d3e/namespaceRobot_1_1Globals.html#a45509b60c052a78f32531f657f40b8da">Robot::Globals::RightBack</a></div><div class="ttdeci">pros::Motor RightBack</div></div>
+<div class="ttc" id="anamespaceRobot_1_1Globals_html_a57080a8667cacf9797e45a46903c2c0d"><div class="ttname"><a href="../../df/d3e/namespaceRobot_1_1Globals.html#a57080a8667cacf9797e45a46903c2c0d">Robot::Globals::RightFront</a></div><div class="ttdeci">pros::Motor RightFront</div></div>
+<div class="ttc" id="anamespaceRobot_1_1Globals_html_a8f5ed28ef65173e08177eb6be13a910b"><div class="ttname"><a href="../../df/d3e/namespaceRobot_1_1Globals.html#a8f5ed28ef65173e08177eb6be13a910b">Robot::Globals::RightMid</a></div><div class="ttdeci">pros::Motor RightMid</div></div>
+<div class="ttc" id="anamespaceRobot_1_1Globals_html_aa3c7b6bd7690ade6f6ef1f41582bada1"><div class="ttname"><a href="../../df/d3e/namespaceRobot_1_1Globals.html#aa3c7b6bd7690ade6f6ef1f41582bada1">Robot::Globals::LeftFront</a></div><div class="ttdeci">pros::Motor LeftFront</div></div>
+<div class="ttc" id="anamespaceRobot_1_1Globals_html_af074623411b68ec48da3f47ae2a69287"><div class="ttname"><a href="../../df/d3e/namespaceRobot_1_1Globals.html#af074623411b68ec48da3f47ae2a69287">Robot::Globals::LeftBack</a></div><div class="ttdeci">pros::Motor LeftBack</div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../db/ddf/auton_8cpp_source.html#l00053">Robot::Autonomous::AutonSwitcher()</a>, and <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00084">Robot::Drivetrain::SwitchDrive()</a>.</p>
+<p class="reference">References <a class="el" href="../../df/d3e/namespaceRobot_1_1Globals.html#af074623411b68ec48da3f47ae2a69287">Robot::Globals::LeftBack</a>, <a class="el" href="../../df/d3e/namespaceRobot_1_1Globals.html#aa3c7b6bd7690ade6f6ef1f41582bada1">Robot::Globals::LeftFront</a>, <a class="el" href="../../df/d3e/namespaceRobot_1_1Globals.html#a307257e8c75b5c402957288afc4983ed">Robot::Globals::LeftMid</a>, <a class="el" href="../../df/d3e/namespaceRobot_1_1Globals.html#a45509b60c052a78f32531f657f40b8da">Robot::Globals::RightBack</a>, <a class="el" href="../../df/d3e/namespaceRobot_1_1Globals.html#a57080a8667cacf9797e45a46903c2c0d">Robot::Globals::RightFront</a>, and <a class="el" href="../../df/d3e/namespaceRobot_1_1Globals.html#a8f5ed28ef65173e08177eb6be13a910b">Robot::Globals::RightMid</a>.</p>
 
 </div>
 </div>
@@ -319,7 +219,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../da/d93/namespaceRobot.html">Robot</a></li><li class="navelem"><a class="el" href="../../d2/d94/namespaceRobot_1_1Utility.html">Utility</a></li>
-    <li class="footer">Generated on Thu Jul 11 2024 04:23:46 for 1516X High Stakes by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
+    <li class="footer">Generated on Fri Jul 26 2024 11:30:17 for 1516X High Stakes by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
   </ul>
 </div>
 </body>

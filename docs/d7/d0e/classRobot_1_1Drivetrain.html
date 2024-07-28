@@ -113,7 +113,8 @@ $(function(){initNavTree('d7/d0e/classRobot_1_1Drivetrain.html','../../'); initR
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d6/dc3/classRobot_1_1Drivetrain-members.html">List of all members</a>  </div>
@@ -137,24 +138,31 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a06a102cf29362fc605088d7fc8efa432" id="r_a06a102cf29362fc605088d7fc8efa432"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a06a102cf29362fc605088d7fc8efa432">getdeadzone</a> ()</td></tr>
 <tr class="memdesc:a06a102cf29362fc605088d7fc8efa432"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current deadzone value.  <br /></td></tr>
 <tr class="separator:a06a102cf29362fc605088d7fc8efa432"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4349382fde427976ba7ffc66ead2c43b" id="r_a4349382fde427976ba7ffc66ead2c43b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4349382fde427976ba7ffc66ead2c43b">SwitchDrive</a> ()</td></tr>
-<tr class="memdesc:a4349382fde427976ba7ffc66ead2c43b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Switches the DriveTrain mode between arcade and tank drive.  <br /></td></tr>
-<tr class="separator:a4349382fde427976ba7ffc66ead2c43b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ae2c24454dfe711a64b828493383530" id="r_a0ae2c24454dfe711a64b828493383530"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ae2c24454dfe711a64b828493383530">toggleDrive</a> ()</td></tr>
+<tr class="separator:a0ae2c24454dfe711a64b828493383530"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abfcc3eea7516b5f76422d39676adbd27" id="r_abfcc3eea7516b5f76422d39676adbd27"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abfcc3eea7516b5f76422d39676adbd27">Drivetrain</a> ()</td></tr>
 <tr class="memdesc:abfcc3eea7516b5f76422d39676adbd27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the <a class="el" href="../../d7/d0e/classRobot_1_1Drivetrain.html" title="Represents the drivetrain of the robot.">Drivetrain</a> object.  <br /></td></tr>
 <tr class="separator:abfcc3eea7516b5f76422d39676adbd27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a3d11a2bb6aee30ffdd6a31c8e41127e7" id="r_a3d11a2bb6aee30ffdd6a31c8e41127e7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d11a2bb6aee30ffdd6a31c8e41127e7">driveMode</a></td></tr>
-<tr class="memdesc:a3d11a2bb6aee30ffdd6a31c8e41127e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current drive train mode, between arcade (0) and tank (1).  <br /></td></tr>
-<tr class="separator:a3d11a2bb6aee30ffdd6a31c8e41127e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ae3d4bcd4b57055d7693559736d24249e" id="r_ae3d4bcd4b57055d7693559736d24249e"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3d4bcd4b57055d7693559736d24249e">SwitchDrive</a> (int drive)</td></tr>
+<tr class="memdesc:ae3d4bcd4b57055d7693559736d24249e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Switches the DriveTrain mode between arcade and tank drive.  <br /></td></tr>
+<tr class="separator:ae3d4bcd4b57055d7693559736d24249e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a1447e771ef4efdf7fdb424dedcba93d3" id="r_a1447e771ef4efdf7fdb424dedcba93d3"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1447e771ef4efdf7fdb424dedcba93d3">driveNum</a> = 0</td></tr>
+<tr class="separator:a1447e771ef4efdf7fdb424dedcba93d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a5ff4b99fa2f88c0cad2732b5f2dd36fb" id="r_a5ff4b99fa2f88c0cad2732b5f2dd36fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ff4b99fa2f88c0cad2732b5f2dd36fb">ArcadeDrive</a> ()</td></tr>
 <tr class="memdesc:a5ff4b99fa2f88c0cad2732b5f2dd36fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drives the robot using arcade drive.  <br /></td></tr>
 <tr class="separator:a5ff4b99fa2f88c0cad2732b5f2dd36fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4a9c069ab83a269d6349c45f249b2bd" id="r_ad4a9c069ab83a269d6349c45f249b2bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad4a9c069ab83a269d6349c45f249b2bd">CurvatureDrive</a> ()</td></tr>
+<tr class="memdesc:ad4a9c069ab83a269d6349c45f249b2bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drives the robot using curvature drive.  <br /></td></tr>
+<tr class="separator:ad4a9c069ab83a269d6349c45f249b2bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6e286ea58a7d6bfa45d86bd2c0e8d47" id="r_af6e286ea58a7d6bfa45d86bd2c0e8d47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af6e286ea58a7d6bfa45d86bd2c0e8d47">TankDrive</a> ()</td></tr>
 <tr class="memdesc:af6e286ea58a7d6bfa45d86bd2c0e8d47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drives the robot using tank drive.  <br /></td></tr>
 <tr class="separator:af6e286ea58a7d6bfa45d86bd2c0e8d47"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -176,7 +184,7 @@ Private Attributes</h2></td></tr>
 <p>The <a class="el" href="../../d7/d0e/classRobot_1_1Drivetrain.html" title="Represents the drivetrain of the robot.">Drivetrain</a> class is responsible for controlling the movement of the robot's drivetrain. It provides functions to interpret joystick inputs and convert them into appropriate drivetrain movements. The drivetrain can be controlled using different drive modes, such as tank drive or arcade drive.</p>
 <p>The <a class="el" href="../../d7/d0e/classRobot_1_1Drivetrain.html" title="Represents the drivetrain of the robot.">Drivetrain</a> class also allows setting and retrieving the deadzone value for the joystick. The deadzone is a range around the joystick's resting position where no movement is registered. By adjusting the deadzone value, the sensitivity of the joystick inputs can be fine-tuned. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d9a/drivetrain_8h_source.html#l00023">23</a> of file <a class="el" href="../../d5/d9a/drivetrain_8h_source.html">drivetrain.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d9a/drivetrain_8h_source.html#l00024">24</a> of file <a class="el" href="../../d5/d9a/drivetrain_8h_source.html">drivetrain.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="abfcc3eea7516b5f76422d39676adbd27" name="abfcc3eea7516b5f76422d39676adbd27"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abfcc3eea7516b5f76422d39676adbd27">&#9670;&#160;</a></span>Drivetrain()</h2>
@@ -196,14 +204,9 @@ Private Attributes</h2></td></tr>
 <p>Initializes the <a class="el" href="../../d7/d0e/classRobot_1_1Drivetrain.html" title="Represents the drivetrain of the robot.">Drivetrain</a> object. </p>
 <p>This constructor is responsible for initializing the <a class="el" href="../../d7/d0e/classRobot_1_1Drivetrain.html" title="Represents the drivetrain of the robot.">Drivetrain</a> object and setting default values. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00032">32</a> of file <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html">drivetrain.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   32</span>                       {</div>
-<div class="line"><span class="lineno">   33</span>    <a class="code hl_variable" href="#a3d11a2bb6aee30ffdd6a31c8e41127e7">Drivetrain::driveMode</a> = 2;</div>
-<div class="line"><span class="lineno">   34</span>}</div>
-<div class="ttc" id="aclassRobot_1_1Drivetrain_html_a3d11a2bb6aee30ffdd6a31c8e41127e7"><div class="ttname"><a href="#a3d11a2bb6aee30ffdd6a31c8e41127e7">Robot::Drivetrain::driveMode</a></div><div class="ttdeci">int driveMode</div><div class="ttdoc">The current drive train mode, between arcade (0) and tank (1).</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d9a/drivetrain_8h_source.html#l00072">drivetrain.h:72</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00042">42</a> of file <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html">drivetrain.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   42</span>{}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d5/d9a/drivetrain_8h_source.html#l00072">driveMode</a>.</p>
-
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -233,32 +236,26 @@ Private Attributes</h2></td></tr>
 <p>Drives the robot using arcade drive. </p>
 <p>Arcade drive uses the left joystick for forward and backward movement, and the right joystick for left and right movement. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00017">17</a> of file <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html">drivetrain.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   17</span>                             {</div>
-<div class="line"><span class="lineno">   18</span> </div>
-<div class="line"><span class="lineno">   19</span>    <a class="code hl_variable" href="#a83881a0114a50194618acc86626e6371">Drivetrain::deadzone</a> = 5;</div>
-<div class="line"><span class="lineno">   20</span>    <span class="comment">// Arcade Measurements</span></div>
-<div class="line"><span class="lineno">   21</span>    <span class="keywordtype">int</span> <a class="code hl_enumvalue" href="../../dc/d3f/namespacefmt_1_1v10_1_1align.html#a80fc9ee16cf9d5ab1dea50faae298710a4a1e7f0e8e4c93b14e2ae8ae158f2737">left</a> = <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#a9935411c69763c03223e884be03447d2">controller</a>.<a class="code hl_function" href="../../d7/da3/group__cpp-misc.html#gaaeacf47e15bb9fb9240746d7f995ceb4">get_analog</a>(pros::E_CONTROLLER_ANALOG_LEFT_Y);</div>
-<div class="line"><span class="lineno">   22</span>    <span class="keywordtype">int</span> <a class="code hl_enumvalue" href="../../dc/d3f/namespacefmt_1_1v10_1_1align.html#a80fc9ee16cf9d5ab1dea50faae298710a87d7bae73d80c5d0772d12a6f480b104">right</a> = <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#a9935411c69763c03223e884be03447d2">controller</a>.<a class="code hl_function" href="../../d7/da3/group__cpp-misc.html#gaaeacf47e15bb9fb9240746d7f995ceb4">get_analog</a>(pros::E_CONTROLLER_ANALOG_RIGHT_X);</div>
-<div class="line"><span class="lineno">   23</span> </div>
-<div class="line"><span class="lineno">   24</span>    </div>
-<div class="line"><span class="lineno">   25</span>    <span class="comment">// std::abs takes the absolute value of whatever it is called on.</span></div>
-<div class="line"><span class="lineno">   26</span>    <span class="comment">// Thus, any values in range (-5,5) are discarded as 0.</span></div>
-<div class="line"><span class="lineno">   27</span>    <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#adb19c4d8d7b61867e04f934a6dcd6f87">chassis</a>.<a class="code hl_function" href="../../dc/df2/classlemlib_1_1Chassis.html#aad9b4283cd809cc9e700853e6dc9925e">arcade</a>(left, right, <span class="keyword">false</span>, 0.6);</div>
-<div class="line"><span class="lineno">   28</span> </div>
-<div class="line"><span class="lineno">   29</span>    pros::delay(15);</div>
-<div class="line"><span class="lineno">   30</span>}</div>
-<div class="ttc" id="aclassRobot_1_1Drivetrain_html_a83881a0114a50194618acc86626e6371"><div class="ttname"><a href="#a83881a0114a50194618acc86626e6371">Robot::Drivetrain::deadzone</a></div><div class="ttdeci">int deadzone</div><div class="ttdoc">The deadzone value for the joystick.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d9a/drivetrain_8h_source.html#l00112">drivetrain.h:112</a></div></div>
-<div class="ttc" id="aclasslemlib_1_1Chassis_html_aad9b4283cd809cc9e700853e6dc9925e"><div class="ttname"><a href="../../dc/df2/classlemlib_1_1Chassis.html#aad9b4283cd809cc9e700853e6dc9925e">lemlib::Chassis::arcade</a></div><div class="ttdeci">void arcade(int throttle, int turn, bool disableDriveCurve=false, float desaturateBias=0.5)</div><div class="ttdoc">Control the robot during the driver using the arcade drive control scheme. In this control scheme one...</div></div>
-<div class="ttc" id="agroup__cpp-misc_html_gaaeacf47e15bb9fb9240746d7f995ceb4"><div class="ttname"><a href="../../d7/da3/group__cpp-misc.html#gaaeacf47e15bb9fb9240746d7f995ceb4">pros::v5::Controller::get_analog</a></div><div class="ttdeci">std::int32_t get_analog(controller_analog_e_t channel)</div></div>
-<div class="ttc" id="anamespaceRobot_1_1Globals_html_a9935411c69763c03223e884be03447d2"><div class="ttname"><a href="../../df/d3e/namespaceRobot_1_1Globals.html#a9935411c69763c03223e884be03447d2">Robot::Globals::controller</a></div><div class="ttdeci">pros::Controller controller</div></div>
+<p class="definition">Definition at line <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00029">29</a> of file <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html">drivetrain.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   29</span>                             {</div>
+<div class="line"><span class="lineno">   30</span>  <a class="code hl_variable" href="#a83881a0114a50194618acc86626e6371">Drivetrain::deadzone</a> = 5;</div>
+<div class="line"><span class="lineno">   31</span>  <span class="comment">// Arcade Measurements</span></div>
+<div class="line"><span class="lineno">   32</span>  <span class="keywordtype">int</span> left = <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#a0836d6c757263202c26276bf4dd2f22f">controller</a>.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);</div>
+<div class="line"><span class="lineno">   33</span>  <span class="keywordtype">int</span> right = <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#a0836d6c757263202c26276bf4dd2f22f">controller</a>.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_X);</div>
+<div class="line"><span class="lineno">   34</span> </div>
+<div class="line"><span class="lineno">   35</span>  <span class="comment">// std::abs takes the absolute value of whatever it is called on.</span></div>
+<div class="line"><span class="lineno">   36</span>  <span class="comment">// Thus, any values in range (-5,5) are discarded as 0.</span></div>
+<div class="line"><span class="lineno">   37</span>  <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#adb19c4d8d7b61867e04f934a6dcd6f87">chassis</a>.arcade(left, right, <span class="keyword">false</span>, 0.6);</div>
+<div class="line"><span class="lineno">   38</span> </div>
+<div class="line"><span class="lineno">   39</span>  pros::delay(15);</div>
+<div class="line"><span class="lineno">   40</span>}</div>
+<div class="ttc" id="aclassRobot_1_1Drivetrain_html_a83881a0114a50194618acc86626e6371"><div class="ttname"><a href="#a83881a0114a50194618acc86626e6371">Robot::Drivetrain::deadzone</a></div><div class="ttdeci">int deadzone</div><div class="ttdoc">The deadzone value for the joystick.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d9a/drivetrain_8h_source.html#l00140">drivetrain.h:140</a></div></div>
+<div class="ttc" id="anamespaceRobot_1_1Globals_html_a0836d6c757263202c26276bf4dd2f22f"><div class="ttname"><a href="../../df/d3e/namespaceRobot_1_1Globals.html#a0836d6c757263202c26276bf4dd2f22f">Robot::Globals::controller</a></div><div class="ttdeci">pros::Controller controller</div></div>
 <div class="ttc" id="anamespaceRobot_1_1Globals_html_adb19c4d8d7b61867e04f934a6dcd6f87"><div class="ttname"><a href="../../df/d3e/namespaceRobot_1_1Globals.html#adb19c4d8d7b61867e04f934a6dcd6f87">Robot::Globals::chassis</a></div><div class="ttdeci">lemlib::Chassis chassis</div></div>
-<div class="ttc" id="anamespacefmt_1_1v10_1_1align_html_a80fc9ee16cf9d5ab1dea50faae298710a4a1e7f0e8e4c93b14e2ae8ae158f2737"><div class="ttname"><a href="../../dc/d3f/namespacefmt_1_1v10_1_1align.html#a80fc9ee16cf9d5ab1dea50faae298710a4a1e7f0e8e4c93b14e2ae8ae158f2737">fmt::v10::align::left</a></div><div class="ttdeci">@ left</div><div class="ttdef"><b>Definition</b> <a href="../../d5/dc4/core_8h_source.html#l01825">core.h:1825</a></div></div>
-<div class="ttc" id="anamespacefmt_1_1v10_1_1align_html_a80fc9ee16cf9d5ab1dea50faae298710a87d7bae73d80c5d0772d12a6f480b104"><div class="ttname"><a href="../../dc/d3f/namespacefmt_1_1v10_1_1align.html#a80fc9ee16cf9d5ab1dea50faae298710a87d7bae73d80c5d0772d12a6f480b104">fmt::v10::align::right</a></div><div class="ttdeci">@ right</div><div class="ttdef"><b>Definition</b> <a href="../../d5/dc4/core_8h_source.html#l01825">core.h:1825</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../dc/df2/classlemlib_1_1Chassis.html#aad9b4283cd809cc9e700853e6dc9925e">lemlib::Chassis::arcade()</a>, <a class="el" href="../../df/d3e/namespaceRobot_1_1Globals.html#adb19c4d8d7b61867e04f934a6dcd6f87">Robot::Globals::chassis</a>, <a class="el" href="../../df/d3e/namespaceRobot_1_1Globals.html#a9935411c69763c03223e884be03447d2">Robot::Globals::controller</a>, <a class="el" href="../../d5/d9a/drivetrain_8h_source.html#l00112">deadzone</a>, and <a class="el" href="../../d7/da3/group__cpp-misc.html#gaaeacf47e15bb9fb9240746d7f995ceb4">pros::v5::Controller::get_analog()</a>.</p>
+<p class="reference">References <a class="el" href="../../df/d3e/namespaceRobot_1_1Globals.html#adb19c4d8d7b61867e04f934a6dcd6f87">Robot::Globals::chassis</a>, <a class="el" href="../../df/d3e/namespaceRobot_1_1Globals.html#a0836d6c757263202c26276bf4dd2f22f">Robot::Globals::controller</a>, and <a class="el" href="../../d5/d9a/drivetrain_8h_source.html#l00140">deadzone</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00070">run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00077">run()</a>.</p>
 
 </div>
 </div>
@@ -294,17 +291,64 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The input value if it is outside the deadzone range, otherwise 0. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00008">8</a> of file <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html">drivetrain.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    8</span>                                                 {</div>
-<div class="line"><span class="lineno">    9</span>    <span class="keywordflow">if</span>(std::abs(ControllerInput) &lt; <a class="code hl_variable" href="#a83881a0114a50194618acc86626e6371">Drivetrain::deadzone</a>) {</div>
-<div class="line"><span class="lineno">   10</span>        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">   11</span>    }</div>
-<div class="line"><span class="lineno">   12</span>    <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   13</span>        <span class="keywordflow">return</span> ControllerInput;</div>
-<div class="line"><span class="lineno">   14</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00009">9</a> of file <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html">drivetrain.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    9</span>                                                 {</div>
+<div class="line"><span class="lineno">   10</span>  <span class="keywordflow">if</span> (std::abs(ControllerInput) &lt; <a class="code hl_variable" href="#a83881a0114a50194618acc86626e6371">Drivetrain::deadzone</a>) {</div>
+<div class="line"><span class="lineno">   11</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   12</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   13</span>    <span class="keywordflow">return</span> ControllerInput;</div>
+<div class="line"><span class="lineno">   14</span>  }</div>
 <div class="line"><span class="lineno">   15</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d5/d9a/drivetrain_8h_source.html#l00112">deadzone</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/d9a/drivetrain_8h_source.html#l00140">deadzone</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00017">CurvatureDrive()</a>.</p>
+
+</div>
+</div>
+<a id="ad4a9c069ab83a269d6349c45f249b2bd" name="ad4a9c069ab83a269d6349c45f249b2bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4a9c069ab83a269d6349c45f249b2bd">&#9670;&#160;</a></span>CurvatureDrive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Drivetrain::CurvatureDrive </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Drives the robot using curvature drive. </p>
+<p>Curvature drive applies curvature to turns and a negative inertia accumulator. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00017">17</a> of file <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html">drivetrain.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   17</span>                                {</div>
+<div class="line"><span class="lineno">   18</span>  <a class="code hl_variable" href="#a83881a0114a50194618acc86626e6371">Drivetrain::deadzone</a> = 5;</div>
+<div class="line"><span class="lineno">   19</span> </div>
+<div class="line"><span class="lineno">   20</span>  <span class="keywordtype">int</span> left = <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#a0836d6c757263202c26276bf4dd2f22f">controller</a>.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);</div>
+<div class="line"><span class="lineno">   21</span>  <span class="keywordtype">int</span> right = <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#a0836d6c757263202c26276bf4dd2f22f">controller</a>.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_X);</div>
+<div class="line"><span class="lineno">   22</span> </div>
+<div class="line"><span class="lineno">   23</span>  left = <a class="code hl_function" href="#a6184f05a5a4f463bdfea0935a947bf63">CheckDeadzone</a>(left);</div>
+<div class="line"><span class="lineno">   24</span>  right = <a class="code hl_function" href="#a6184f05a5a4f463bdfea0935a947bf63">CheckDeadzone</a>(right);</div>
+<div class="line"><span class="lineno">   25</span> </div>
+<div class="line"><span class="lineno">   26</span>  <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#adb19c4d8d7b61867e04f934a6dcd6f87">chassis</a>.curvature(left, right);</div>
+<div class="line"><span class="lineno">   27</span>}</div>
+<div class="ttc" id="aclassRobot_1_1Drivetrain_html_a6184f05a5a4f463bdfea0935a947bf63"><div class="ttname"><a href="#a6184f05a5a4f463bdfea0935a947bf63">Robot::Drivetrain::CheckDeadzone</a></div><div class="ttdeci">int CheckDeadzone(int entry)</div><div class="ttdoc">Checks if the controller input is inside the deadzone range.</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d27/drivetrain_8cpp_source.html#l00009">drivetrain.cpp:9</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../df/d3e/namespaceRobot_1_1Globals.html#adb19c4d8d7b61867e04f934a6dcd6f87">Robot::Globals::chassis</a>, <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00009">CheckDeadzone()</a>, <a class="el" href="../../df/d3e/namespaceRobot_1_1Globals.html#a0836d6c757263202c26276bf4dd2f22f">Robot::Globals::controller</a>, and <a class="el" href="../../d5/d9a/drivetrain_8h_source.html#l00140">deadzone</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00077">run()</a>.</p>
 
 </div>
 </div>
@@ -334,26 +378,21 @@ Private Attributes</h2></td></tr>
 <p>Drives the robot using curve drive. </p>
 <p>Curve drive uses the left joystick for forward and backward movement, and the right joystick for steering. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00051">51</a> of file <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html">drivetrain.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   51</span>                            {</div>
-<div class="line"><span class="lineno">   52</span> </div>
-<div class="line"><span class="lineno">   53</span>    <a class="code hl_variable" href="#a83881a0114a50194618acc86626e6371">Drivetrain::deadzone</a> = 5;</div>
-<div class="line"><span class="lineno">   54</span> </div>
-<div class="line"><span class="lineno">   55</span>    <span class="keywordtype">int</span> <a class="code hl_enumvalue" href="../../dc/d3f/namespacefmt_1_1v10_1_1align.html#a80fc9ee16cf9d5ab1dea50faae298710a4a1e7f0e8e4c93b14e2ae8ae158f2737">left</a> = <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#a9935411c69763c03223e884be03447d2">controller</a>.<a class="code hl_function" href="../../d7/da3/group__cpp-misc.html#gaaeacf47e15bb9fb9240746d7f995ceb4">get_analog</a>(pros::E_CONTROLLER_ANALOG_LEFT_Y);</div>
-<div class="line"><span class="lineno">   56</span>    <span class="keywordtype">int</span> <a class="code hl_enumvalue" href="../../dc/d3f/namespacefmt_1_1v10_1_1align.html#a80fc9ee16cf9d5ab1dea50faae298710a87d7bae73d80c5d0772d12a6f480b104">right</a> = <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#a9935411c69763c03223e884be03447d2">controller</a>.<a class="code hl_function" href="../../d7/da3/group__cpp-misc.html#gaaeacf47e15bb9fb9240746d7f995ceb4">get_analog</a>(pros::E_CONTROLLER_ANALOG_RIGHT_X);</div>
-<div class="line"><span class="lineno">   57</span> </div>
-<div class="line"><span class="lineno">   58</span>    </div>
-<div class="line"><span class="lineno">   59</span>    <span class="comment">// std::abs takes the absolute value of whatever it is called on.</span></div>
-<div class="line"><span class="lineno">   60</span>    <span class="comment">// Thus, any values in range (-5,5) are discarded as 0.</span></div>
-<div class="line"><span class="lineno">   61</span>    <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#adb19c4d8d7b61867e04f934a6dcd6f87">chassis</a>.<a class="code hl_function" href="../../dc/df2/classlemlib_1_1Chassis.html#a4e71bb1fffd5825d64be5de040cd3445">curvature</a>(left, right);</div>
+<p class="definition">Definition at line <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00057">57</a> of file <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html">drivetrain.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   57</span>                            {</div>
+<div class="line"><span class="lineno">   58</span>  <a class="code hl_variable" href="#a83881a0114a50194618acc86626e6371">Drivetrain::deadzone</a> = 5;</div>
+<div class="line"><span class="lineno">   59</span> </div>
+<div class="line"><span class="lineno">   60</span>  <span class="keywordtype">int</span> left = <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#a0836d6c757263202c26276bf4dd2f22f">controller</a>.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);</div>
+<div class="line"><span class="lineno">   61</span>  <span class="keywordtype">int</span> right = <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#a0836d6c757263202c26276bf4dd2f22f">controller</a>.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_X);</div>
 <div class="line"><span class="lineno">   62</span> </div>
-<div class="line"><span class="lineno">   63</span>    pros::delay(15);</div>
-<div class="line"><span class="lineno">   64</span>}</div>
-<div class="ttc" id="aclasslemlib_1_1Chassis_html_a4e71bb1fffd5825d64be5de040cd3445"><div class="ttname"><a href="../../dc/df2/classlemlib_1_1Chassis.html#a4e71bb1fffd5825d64be5de040cd3445">lemlib::Chassis::curvature</a></div><div class="ttdeci">void curvature(int throttle, int turn, bool disableDriveCurve=false)</div><div class="ttdoc">Control the robot during the driver using the curvature drive control scheme. This control scheme is ...</div></div>
+<div class="line"><span class="lineno">   63</span>  <span class="comment">// std::abs takes the absolute value of whatever it is called on.</span></div>
+<div class="line"><span class="lineno">   64</span>  <span class="comment">// Thus, any values in range (-5,5) are discarded as 0.</span></div>
+<div class="line"><span class="lineno">   65</span>  <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#adb19c4d8d7b61867e04f934a6dcd6f87">chassis</a>.curvature(left, right);</div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span>  pros::delay(15);</div>
+<div class="line"><span class="lineno">   68</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../df/d3e/namespaceRobot_1_1Globals.html#adb19c4d8d7b61867e04f934a6dcd6f87">Robot::Globals::chassis</a>, <a class="el" href="../../df/d3e/namespaceRobot_1_1Globals.html#a9935411c69763c03223e884be03447d2">Robot::Globals::controller</a>, <a class="el" href="../../dc/df2/classlemlib_1_1Chassis.html#a4e71bb1fffd5825d64be5de040cd3445">lemlib::Chassis::curvature()</a>, <a class="el" href="../../d5/d9a/drivetrain_8h_source.html#l00112">deadzone</a>, and <a class="el" href="../../d7/da3/group__cpp-misc.html#gaaeacf47e15bb9fb9240746d7f995ceb4">pros::v5::Controller::get_analog()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00070">run()</a>.</p>
+<p class="reference">References <a class="el" href="../../df/d3e/namespaceRobot_1_1Globals.html#adb19c4d8d7b61867e04f934a6dcd6f87">Robot::Globals::chassis</a>, <a class="el" href="../../df/d3e/namespaceRobot_1_1Globals.html#a0836d6c757263202c26276bf4dd2f22f">Robot::Globals::controller</a>, and <a class="el" href="../../d5/d9a/drivetrain_8h_source.html#l00140">deadzone</a>.</p>
 
 </div>
 </div>
@@ -398,25 +437,26 @@ Private Attributes</h2></td></tr>
 <p>This function is responsible for controlling the movement of the robot's drivetrain. It executes the necessary actions to make the robot move according to the current drive mode.</p>
 <p>The drivetrain can be controlled using different drive modes, such as tank drive or arcade drive. This function implements the logic to interpret the joystick inputs and convert them into appropriate drivetrain movements. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00070">70</a> of file <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html">drivetrain.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   70</span>                     {</div>
-<div class="line"><span class="lineno">   71</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a3d11a2bb6aee30ffdd6a31c8e41127e7">Drivetrain::driveMode</a> == 0) {</div>
-<div class="line"><span class="lineno">   72</span>        <a class="code hl_function" href="#a5ff4b99fa2f88c0cad2732b5f2dd36fb">Drivetrain::ArcadeDrive</a>();</div>
-<div class="line"><span class="lineno">   73</span>    }</div>
-<div class="line"><span class="lineno">   74</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a3d11a2bb6aee30ffdd6a31c8e41127e7">Drivetrain::driveMode</a> == 1) {</div>
-<div class="line"><span class="lineno">   75</span>        <a class="code hl_function" href="#af6e286ea58a7d6bfa45d86bd2c0e8d47">Drivetrain::TankDrive</a>();</div>
-<div class="line"><span class="lineno">   76</span>    }</div>
-<div class="line"><span class="lineno">   77</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a3d11a2bb6aee30ffdd6a31c8e41127e7">Drivetrain::driveMode</a> == 2) {</div>
-<div class="line"><span class="lineno">   78</span>        <a class="code hl_function" href="#a1868f488be411281238b5d3559d73048">Drivetrain::CurveDrive</a>();</div>
-<div class="line"><span class="lineno">   79</span>    }</div>
-<div class="line"><span class="lineno">   80</span>}</div>
-<div class="ttc" id="aclassRobot_1_1Drivetrain_html_a1868f488be411281238b5d3559d73048"><div class="ttname"><a href="#a1868f488be411281238b5d3559d73048">Robot::Drivetrain::CurveDrive</a></div><div class="ttdeci">void CurveDrive()</div><div class="ttdoc">Drives the robot using curve drive.</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d27/drivetrain_8cpp_source.html#l00051">drivetrain.cpp:51</a></div></div>
-<div class="ttc" id="aclassRobot_1_1Drivetrain_html_a5ff4b99fa2f88c0cad2732b5f2dd36fb"><div class="ttname"><a href="#a5ff4b99fa2f88c0cad2732b5f2dd36fb">Robot::Drivetrain::ArcadeDrive</a></div><div class="ttdeci">void ArcadeDrive()</div><div class="ttdoc">Drives the robot using arcade drive.</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d27/drivetrain_8cpp_source.html#l00017">drivetrain.cpp:17</a></div></div>
-<div class="ttc" id="aclassRobot_1_1Drivetrain_html_af6e286ea58a7d6bfa45d86bd2c0e8d47"><div class="ttname"><a href="#af6e286ea58a7d6bfa45d86bd2c0e8d47">Robot::Drivetrain::TankDrive</a></div><div class="ttdeci">void TankDrive()</div><div class="ttdoc">Drives the robot using tank drive.</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d27/drivetrain_8cpp_source.html#l00036">drivetrain.cpp:36</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00077">77</a> of file <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html">drivetrain.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   77</span>                     {</div>
+<div class="line"><span class="lineno">   78</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a1447e771ef4efdf7fdb424dedcba93d3">Drivetrain::driveNum</a> == 0) {</div>
+<div class="line"><span class="lineno">   79</span>    <a class="code hl_function" href="#ad4a9c069ab83a269d6349c45f249b2bd">Drivetrain::CurvatureDrive</a>();</div>
+<div class="line"><span class="lineno">   80</span>  }</div>
+<div class="line"><span class="lineno">   81</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a1447e771ef4efdf7fdb424dedcba93d3">Drivetrain::driveNum</a> == 1) {</div>
+<div class="line"><span class="lineno">   82</span>    <a class="code hl_function" href="#a5ff4b99fa2f88c0cad2732b5f2dd36fb">Drivetrain::ArcadeDrive</a>();</div>
+<div class="line"><span class="lineno">   83</span>  }</div>
+<div class="line"><span class="lineno">   84</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a1447e771ef4efdf7fdb424dedcba93d3">Drivetrain::driveNum</a> == 2) {</div>
+<div class="line"><span class="lineno">   85</span>    <a class="code hl_function" href="#af6e286ea58a7d6bfa45d86bd2c0e8d47">Drivetrain::TankDrive</a>();</div>
+<div class="line"><span class="lineno">   86</span>  }</div>
+<div class="line"><span class="lineno">   87</span>}</div>
+<div class="ttc" id="aclassRobot_1_1Drivetrain_html_a1447e771ef4efdf7fdb424dedcba93d3"><div class="ttname"><a href="#a1447e771ef4efdf7fdb424dedcba93d3">Robot::Drivetrain::driveNum</a></div><div class="ttdeci">static int driveNum</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d9a/drivetrain_8h_source.html#l00094">drivetrain.h:94</a></div></div>
+<div class="ttc" id="aclassRobot_1_1Drivetrain_html_a5ff4b99fa2f88c0cad2732b5f2dd36fb"><div class="ttname"><a href="#a5ff4b99fa2f88c0cad2732b5f2dd36fb">Robot::Drivetrain::ArcadeDrive</a></div><div class="ttdeci">void ArcadeDrive()</div><div class="ttdoc">Drives the robot using arcade drive.</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d27/drivetrain_8cpp_source.html#l00029">drivetrain.cpp:29</a></div></div>
+<div class="ttc" id="aclassRobot_1_1Drivetrain_html_ad4a9c069ab83a269d6349c45f249b2bd"><div class="ttname"><a href="#ad4a9c069ab83a269d6349c45f249b2bd">Robot::Drivetrain::CurvatureDrive</a></div><div class="ttdeci">void CurvatureDrive()</div><div class="ttdoc">Drives the robot using curvature drive.</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d27/drivetrain_8cpp_source.html#l00017">drivetrain.cpp:17</a></div></div>
+<div class="ttc" id="aclassRobot_1_1Drivetrain_html_af6e286ea58a7d6bfa45d86bd2c0e8d47"><div class="ttname"><a href="#af6e286ea58a7d6bfa45d86bd2c0e8d47">Robot::Drivetrain::TankDrive</a></div><div class="ttdeci">void TankDrive()</div><div class="ttdoc">Drives the robot using tank drive.</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d27/drivetrain_8cpp_source.html#l00044">drivetrain.cpp:44</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00017">ArcadeDrive()</a>, <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00051">CurveDrive()</a>, <a class="el" href="../../d5/d9a/drivetrain_8h_source.html#l00072">driveMode</a>, and <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00036">TankDrive()</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00029">ArcadeDrive()</a>, <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00017">CurvatureDrive()</a>, <a class="el" href="../../d5/d9a/drivetrain_8h_source.html#l00094">driveNum</a>, and <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00044">TankDrive()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d0a/main_8cpp_source.html#l00153">opcontrol()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d0a/main_8cpp_source.html#l00116">opcontrol()</a>.</p>
 
 </div>
 </div>
@@ -447,52 +487,65 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a4349382fde427976ba7ffc66ead2c43b" name="a4349382fde427976ba7ffc66ead2c43b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4349382fde427976ba7ffc66ead2c43b">&#9670;&#160;</a></span>SwitchDrive()</h2>
+<a id="ae3d4bcd4b57055d7693559736d24249e" name="ae3d4bcd4b57055d7693559736d24249e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3d4bcd4b57055d7693559736d24249e">&#9670;&#160;</a></span>SwitchDrive()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Drivetrain::SwitchDrive </td>
+          <td class="memname">std::string Drivetrain::SwitchDrive </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>drive</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Switches the DriveTrain mode between arcade and tank drive. </p>
-<p>The drive mode determines how the drivetrain interprets the joystick inputs. Arcade drive uses the left joystick for forward and backward movement, and the right joystick for left and right movement. Tank drive uses the left and right joysticks for controlling the left and right sides of the robot. </p>
+<p>The drive mode determines how the drivetrain interprets the joystick inputs. Arcade drive uses the left joystick for forward and backward movement, and the right joystick for left and right movement. Tank drive uses the left and right joysticks for controlling the left and right sides of the robot. &lt; The current drive train mode, between arcade (0) and tank (1).</p>
+<p>Switches the drive mode of the robot.</p>
+<p>This function takes an integer parameter <code>drive</code> representing the desired drive mode and returns a string. The drive mode determines how the robot's drivetrain operates.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">drive</td><td>The desired drive mode. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A string indicating the name of the drive mode switch. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00084">84</a> of file <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html">drivetrain.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   84</span>                             {</div>
-<div class="line"><span class="lineno">   85</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#ad46347e210be82d2a2fe83b0f693d26f">drivetrainToggleSwitch</a>.<a class="code hl_function" href="../../d1/dca/group__cpp-adi.html#ga284792cf240c192cceac607ae8538160">get_new_press</a>()) {</div>
-<div class="line"><span class="lineno">   86</span>        <a class="code hl_function" href="../../d0/d33/group__cpp-llemu.html#gaef44947cea9006f86d4aaa2e32856835">pros::lcd::clear_line</a>(2);</div>
-<div class="line"><span class="lineno">   87</span>        <a class="code hl_variable" href="#a3d11a2bb6aee30ffdd6a31c8e41127e7">Drivetrain::driveMode</a> = <a class="code hl_variable" href="#a3d11a2bb6aee30ffdd6a31c8e41127e7">Drivetrain::driveMode</a> + 1;</div>
-<div class="line"><span class="lineno">   88</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a3d11a2bb6aee30ffdd6a31c8e41127e7">Drivetrain::driveMode</a> == 3) {</div>
-<div class="line"><span class="lineno">   89</span>            <a class="code hl_variable" href="#a3d11a2bb6aee30ffdd6a31c8e41127e7">Drivetrain::driveMode</a> = 0;</div>
-<div class="line"><span class="lineno">   90</span>        }</div>
-<div class="line"><span class="lineno">   91</span>        </div>
-<div class="line"><span class="lineno">   92</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a3d11a2bb6aee30ffdd6a31c8e41127e7">Drivetrain::driveMode</a> == 0) {</div>
-<div class="line"><span class="lineno">   93</span>            <a class="code hl_function" href="../../d0/d33/group__cpp-llemu.html#ga515526f1d3069a6aa985512273aa7788">pros::lcd::set_text</a>(2, <span class="stringliteral">&quot;Drive: Arcade&quot;</span>);</div>
-<div class="line"><span class="lineno">   94</span>        }</div>
-<div class="line"><span class="lineno">   95</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a3d11a2bb6aee30ffdd6a31c8e41127e7">Drivetrain::driveMode</a> == 1) {</div>
-<div class="line"><span class="lineno">   96</span>            <a class="code hl_function" href="../../d0/d33/group__cpp-llemu.html#ga515526f1d3069a6aa985512273aa7788">pros::lcd::set_text</a>(2, <span class="stringliteral">&quot;Drive: Tank&quot;</span>);</div>
-<div class="line"><span class="lineno">   97</span>        }</div>
-<div class="line"><span class="lineno">   98</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a3d11a2bb6aee30ffdd6a31c8e41127e7">Drivetrain::driveMode</a> == 2) {</div>
-<div class="line"><span class="lineno">   99</span>            <a class="code hl_function" href="../../d0/d33/group__cpp-llemu.html#ga515526f1d3069a6aa985512273aa7788">pros::lcd::set_text</a>(2, <span class="stringliteral">&quot;Drive: Curve&quot;</span>);</div>
-<div class="line"><span class="lineno">  100</span>        }</div>
-<div class="line"><span class="lineno">  101</span>    }</div>
-<div class="line"><span class="lineno">  102</span>}</div>
-<div class="ttc" id="agroup__cpp-adi_html_ga284792cf240c192cceac607ae8538160"><div class="ttname"><a href="../../d1/dca/group__cpp-adi.html#ga284792cf240c192cceac607ae8538160">pros::adi::DigitalIn::get_new_press</a></div><div class="ttdeci">std::int32_t get_new_press() const</div></div>
-<div class="ttc" id="agroup__cpp-llemu_html_ga515526f1d3069a6aa985512273aa7788"><div class="ttname"><a href="../../d0/d33/group__cpp-llemu.html#ga515526f1d3069a6aa985512273aa7788">pros::lcd::set_text</a></div><div class="ttdeci">bool set_text(std::int16_t line, std::string text)</div></div>
-<div class="ttc" id="agroup__cpp-llemu_html_gaef44947cea9006f86d4aaa2e32856835"><div class="ttname"><a href="../../d0/d33/group__cpp-llemu.html#gaef44947cea9006f86d4aaa2e32856835">pros::lcd::clear_line</a></div><div class="ttdeci">bool clear_line(std::int16_t line)</div></div>
-<div class="ttc" id="anamespaceRobot_1_1Globals_html_ad46347e210be82d2a2fe83b0f693d26f"><div class="ttname"><a href="../../df/d3e/namespaceRobot_1_1Globals.html#ad46347e210be82d2a2fe83b0f693d26f">Robot::Globals::drivetrainToggleSwitch</a></div><div class="ttdeci">pros::adi::DigitalIn drivetrainToggleSwitch</div></div>
+<p class="definition">Definition at line <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00099">99</a> of file <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html">drivetrain.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   99</span>                                           {</div>
+<div class="line"><span class="lineno">  100</span>  <a class="code hl_variable" href="#a1447e771ef4efdf7fdb424dedcba93d3">Drivetrain::driveNum</a> = drive;</div>
+<div class="line"><span class="lineno">  101</span> </div>
+<div class="line"><span class="lineno">  102</span>  <span class="comment">// Return the name of the drive mode</span></div>
+<div class="line"><span class="lineno">  103</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a1447e771ef4efdf7fdb424dedcba93d3">Drivetrain::driveNum</a> == 0) {</div>
+<div class="line"><span class="lineno">  104</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Curvature Drive&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  105</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;Curvature Drive&quot;</span>;</div>
+<div class="line"><span class="lineno">  106</span>  }</div>
+<div class="line"><span class="lineno">  107</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a1447e771ef4efdf7fdb424dedcba93d3">Drivetrain::driveNum</a> == 1) {</div>
+<div class="line"><span class="lineno">  108</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Arcade Drive&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  109</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;Arcade Drive&quot;</span>;</div>
+<div class="line"><span class="lineno">  110</span>  }</div>
+<div class="line"><span class="lineno">  111</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a1447e771ef4efdf7fdb424dedcba93d3">Drivetrain::driveNum</a> == 2) {</div>
+<div class="line"><span class="lineno">  112</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Tank Drive&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  113</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;Tank Drive&quot;</span>;</div>
+<div class="line"><span class="lineno">  114</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  115</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;Error&quot;</span>;</div>
+<div class="line"><span class="lineno">  116</span>  }</div>
+<div class="line"><span class="lineno">  117</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d0/d33/group__cpp-llemu.html#gaef44947cea9006f86d4aaa2e32856835">pros::lcd::clear_line()</a>, <a class="el" href="../../d5/d9a/drivetrain_8h_source.html#l00072">driveMode</a>, <a class="el" href="../../df/d3e/namespaceRobot_1_1Globals.html#ad46347e210be82d2a2fe83b0f693d26f">Robot::Globals::drivetrainToggleSwitch</a>, <a class="el" href="../../d1/dca/group__cpp-adi.html#ga284792cf240c192cceac607ae8538160">pros::adi::DigitalIn::get_new_press()</a>, and <a class="el" href="../../d0/d33/group__cpp-llemu.html#ga515526f1d3069a6aa985512273aa7788">pros::lcd::set_text()</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/d9a/drivetrain_8h_source.html#l00094">driveNum</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d0a/main_8cpp_source.html#l00046">toggles()</a>, and <a class="el" href="../../dc/dfa/utility_8cpp_source.html#l00011">Robot::Utility::toggleSubsystemOptions()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d85/selector_8cpp_source.html#l00094">drive_update()</a>, and <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00089">toggleDrive()</a>.</p>
 
 </div>
 </div>
@@ -522,26 +575,56 @@ Private Attributes</h2></td></tr>
 <p>Drives the robot using tank drive. </p>
 <p>Tank drive uses the left and right joysticks for controlling the left and right sides of the robot. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00036">36</a> of file <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html">drivetrain.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   36</span>                           {</div>
-<div class="line"><span class="lineno">   37</span> </div>
-<div class="line"><span class="lineno">   38</span>    <a class="code hl_variable" href="#a83881a0114a50194618acc86626e6371">Drivetrain::deadzone</a> = 5;</div>
-<div class="line"><span class="lineno">   39</span> </div>
-<div class="line"><span class="lineno">   40</span>    <span class="keywordtype">int</span> <a class="code hl_enumvalue" href="../../dc/d3f/namespacefmt_1_1v10_1_1align.html#a80fc9ee16cf9d5ab1dea50faae298710a4a1e7f0e8e4c93b14e2ae8ae158f2737">left</a> = <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#a9935411c69763c03223e884be03447d2">controller</a>.<a class="code hl_function" href="../../d7/da3/group__cpp-misc.html#gaaeacf47e15bb9fb9240746d7f995ceb4">get_analog</a>(pros::E_CONTROLLER_ANALOG_LEFT_Y);</div>
-<div class="line"><span class="lineno">   41</span>    <span class="keywordtype">int</span> <a class="code hl_enumvalue" href="../../dc/d3f/namespacefmt_1_1v10_1_1align.html#a80fc9ee16cf9d5ab1dea50faae298710a87d7bae73d80c5d0772d12a6f480b104">right</a> = <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#a9935411c69763c03223e884be03447d2">controller</a>.<a class="code hl_function" href="../../d7/da3/group__cpp-misc.html#gaaeacf47e15bb9fb9240746d7f995ceb4">get_analog</a>(pros::E_CONTROLLER_ANALOG_RIGHT_Y);</div>
-<div class="line"><span class="lineno">   42</span> </div>
-<div class="line"><span class="lineno">   43</span>    </div>
-<div class="line"><span class="lineno">   44</span>    <span class="comment">// std::abs takes the absolute value of whatever it is called on.</span></div>
-<div class="line"><span class="lineno">   45</span>    <span class="comment">// Thus, any values in range (-5,5) are discarded as 0.</span></div>
-<div class="line"><span class="lineno">   46</span>    <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#adb19c4d8d7b61867e04f934a6dcd6f87">chassis</a>.<a class="code hl_function" href="../../dc/df2/classlemlib_1_1Chassis.html#ae70fd9af55bdd6738d961a2cf0908c46">tank</a>(left, right);</div>
-<div class="line"><span class="lineno">   47</span> </div>
-<div class="line"><span class="lineno">   48</span>    pros::delay(15);</div>
-<div class="line"><span class="lineno">   49</span>}</div>
-<div class="ttc" id="aclasslemlib_1_1Chassis_html_ae70fd9af55bdd6738d961a2cf0908c46"><div class="ttname"><a href="../../dc/df2/classlemlib_1_1Chassis.html#ae70fd9af55bdd6738d961a2cf0908c46">lemlib::Chassis::tank</a></div><div class="ttdeci">void tank(int left, int right, bool disableDriveCurve=false)</div><div class="ttdoc">Control the robot during the driver using the arcade drive control scheme. In this control scheme one...</div></div>
+<p class="definition">Definition at line <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00044">44</a> of file <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html">drivetrain.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   44</span>                           {</div>
+<div class="line"><span class="lineno">   45</span>  <a class="code hl_variable" href="#a83881a0114a50194618acc86626e6371">Drivetrain::deadzone</a> = 5;</div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>  <span class="keywordtype">int</span> left = <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#a0836d6c757263202c26276bf4dd2f22f">controller</a>.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);</div>
+<div class="line"><span class="lineno">   48</span>  <span class="keywordtype">int</span> right = <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#a0836d6c757263202c26276bf4dd2f22f">controller</a>.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_Y);</div>
+<div class="line"><span class="lineno">   49</span> </div>
+<div class="line"><span class="lineno">   50</span>  <span class="comment">// std::abs takes the absolute value of whatever it is called on.</span></div>
+<div class="line"><span class="lineno">   51</span>  <span class="comment">// Thus, any values in range (-5,5) are discarded as 0.</span></div>
+<div class="line"><span class="lineno">   52</span>  <a class="code hl_variable" href="../../df/d3e/namespaceRobot_1_1Globals.html#adb19c4d8d7b61867e04f934a6dcd6f87">chassis</a>.tank(left, right);</div>
+<div class="line"><span class="lineno">   53</span> </div>
+<div class="line"><span class="lineno">   54</span>  pros::delay(15);</div>
+<div class="line"><span class="lineno">   55</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../df/d3e/namespaceRobot_1_1Globals.html#adb19c4d8d7b61867e04f934a6dcd6f87">Robot::Globals::chassis</a>, <a class="el" href="../../df/d3e/namespaceRobot_1_1Globals.html#a9935411c69763c03223e884be03447d2">Robot::Globals::controller</a>, <a class="el" href="../../d5/d9a/drivetrain_8h_source.html#l00112">deadzone</a>, <a class="el" href="../../d7/da3/group__cpp-misc.html#gaaeacf47e15bb9fb9240746d7f995ceb4">pros::v5::Controller::get_analog()</a>, and <a class="el" href="../../dc/df2/classlemlib_1_1Chassis.html#ae70fd9af55bdd6738d961a2cf0908c46">lemlib::Chassis::tank()</a>.</p>
+<p class="reference">References <a class="el" href="../../df/d3e/namespaceRobot_1_1Globals.html#adb19c4d8d7b61867e04f934a6dcd6f87">Robot::Globals::chassis</a>, <a class="el" href="../../df/d3e/namespaceRobot_1_1Globals.html#a0836d6c757263202c26276bf4dd2f22f">Robot::Globals::controller</a>, and <a class="el" href="../../d5/d9a/drivetrain_8h_source.html#l00140">deadzone</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00070">run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00077">run()</a>.</p>
+
+</div>
+</div>
+<a id="a0ae2c24454dfe711a64b828493383530" name="a0ae2c24454dfe711a64b828493383530"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ae2c24454dfe711a64b828493383530">&#9670;&#160;</a></span>toggleDrive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Drivetrain::toggleDrive </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Toggles the drive mode of the robot.</p>
+<dl class="section return"><dt>Returns</dt><dd>The new drive mode as a string. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00089">89</a> of file <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html">drivetrain.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   89</span>                                  {</div>
+<div class="line"><span class="lineno">   90</span>  <a class="code hl_variable" href="#a1447e771ef4efdf7fdb424dedcba93d3">Drivetrain::driveNum</a> += 1;</div>
+<div class="line"><span class="lineno">   91</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a1447e771ef4efdf7fdb424dedcba93d3">Drivetrain::driveNum</a> &gt; 2) {</div>
+<div class="line"><span class="lineno">   92</span>    <a class="code hl_variable" href="#a1447e771ef4efdf7fdb424dedcba93d3">Drivetrain::driveNum</a> = 0;</div>
+<div class="line"><span class="lineno">   93</span>  }</div>
+<div class="line"><span class="lineno">   94</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="#ae3d4bcd4b57055d7693559736d24249e">SwitchDrive</a>(<a class="code hl_variable" href="#a1447e771ef4efdf7fdb424dedcba93d3">Drivetrain::driveNum</a>);</div>
+<div class="line"><span class="lineno">   95</span>}</div>
+<div class="ttc" id="aclassRobot_1_1Drivetrain_html_ae3d4bcd4b57055d7693559736d24249e"><div class="ttname"><a href="#ae3d4bcd4b57055d7693559736d24249e">Robot::Drivetrain::SwitchDrive</a></div><div class="ttdeci">static std::string SwitchDrive(int drive)</div><div class="ttdoc">Switches the DriveTrain mode between arcade and tank drive.</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d27/drivetrain_8cpp_source.html#l00099">drivetrain.cpp:99</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d9a/drivetrain_8h_source.html#l00094">driveNum</a>, and <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00099">SwitchDrive()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../df/d0a/main_8cpp_source.html#l00116">opcontrol()</a>.</p>
 
 </div>
 </div>
@@ -568,29 +651,35 @@ Private Attributes</h2></td></tr>
 
 <p>The deadzone value for the joystick. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d9a/drivetrain_8h_source.html#l00112">112</a> of file <a class="el" href="../../d5/d9a/drivetrain_8h_source.html">drivetrain.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d9a/drivetrain_8h_source.html#l00140">140</a> of file <a class="el" href="../../d5/d9a/drivetrain_8h_source.html">drivetrain.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00017">ArcadeDrive()</a>, <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00008">CheckDeadzone()</a>, <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00051">CurveDrive()</a>, and <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00036">TankDrive()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00029">ArcadeDrive()</a>, <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00009">CheckDeadzone()</a>, <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00017">CurvatureDrive()</a>, <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00057">CurveDrive()</a>, and <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00044">TankDrive()</a>.</p>
 
 </div>
 </div>
-<a id="a3d11a2bb6aee30ffdd6a31c8e41127e7" name="a3d11a2bb6aee30ffdd6a31c8e41127e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d11a2bb6aee30ffdd6a31c8e41127e7">&#9670;&#160;</a></span>driveMode</h2>
+<a id="a1447e771ef4efdf7fdb424dedcba93d3" name="a1447e771ef4efdf7fdb424dedcba93d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1447e771ef4efdf7fdb424dedcba93d3">&#9670;&#160;</a></span>driveNum</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int Robot::Drivetrain::driveMode</td>
+          <td class="memname">int Drivetrain::driveNum = 0</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>The current drive train mode, between arcade (0) and tank (1). </p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d9a/drivetrain_8h_source.html#l00094">94</a> of file <a class="el" href="../../d5/d9a/drivetrain_8h_source.html">drivetrain.h</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d9a/drivetrain_8h_source.html#l00072">72</a> of file <a class="el" href="../../d5/d9a/drivetrain_8h_source.html">drivetrain.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00032">Drivetrain()</a>, <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00070">run()</a>, and <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00084">SwitchDrive()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00077">run()</a>, <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00099">SwitchDrive()</a>, and <a class="el" href="../../d9/d27/drivetrain_8cpp_source.html#l00089">toggleDrive()</a>.</p>
 
 </div>
 </div>
@@ -604,7 +693,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../da/d93/namespaceRobot.html">Robot</a></li><li class="navelem"><a class="el" href="../../d7/d0e/classRobot_1_1Drivetrain.html">Drivetrain</a></li>
-    <li class="footer">Generated on Thu Jul 11 2024 04:23:46 for 1516X High Stakes by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
+    <li class="footer">Generated on Fri Jul 26 2024 11:30:17 for 1516X High Stakes by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
   </ul>
 </div>
 </body>

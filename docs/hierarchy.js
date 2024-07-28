@@ -28,14 +28,6 @@ var hierarchy =
     [ "_lv_obj_t", "d2/d48/struct__lv__obj__t.html", null ],
     [ "_lv_theme_t", "db/df4/struct__lv__theme__t.html", null ],
     [ "_lv_timer_t", "db/d9c/struct__lv__timer__t.html", null ],
-    [ "pros::AbstractMotor", "d9/dc1/classpros_1_1v5_1_1AbstractMotor.html", [
-      [ "pros::v5::Motor", "d0/d9a/classpros_1_1v5_1_1Motor.html", null ],
-      [ "pros::v5::MotorGroup", "d8/d78/classpros_1_1v5_1_1MotorGroup.html", null ]
-    ] ],
-    [ "pros::v5::AbstractMotor", "d9/dc1/classpros_1_1v5_1_1AbstractMotor.html", [
-      [ "pros::v5::Motor", "d0/d9a/classpros_1_1v5_1_1Motor.html", null ],
-      [ "pros::v5::MotorGroup", "d8/d78/classpros_1_1v5_1_1MotorGroup.html", null ]
-    ] ],
     [ "fmt::v10::detail::arg_data< T, Char, NUM_ARGS, NUM_NAMED_ARGS >", "db/d85/structfmt_1_1v10_1_1detail_1_1arg__data.html", null ],
     [ "fmt::v10::detail::arg_data< T, Char, NUM_ARGS, 0 >", "d7/d99/structfmt_1_1v10_1_1detail_1_1arg__data_3_01T_00_01Char_00_01NUM__ARGS_00_010_01_4.html", null ],
     [ "fmt::v10::detail::arg_data< value_type, typename Context::char_type, num_args, num_named_args >", "db/d85/structfmt_1_1v10_1_1detail_1_1arg__data.html", null ],
@@ -114,8 +106,6 @@ var hierarchy =
     [ "fmt::v10::detail::char_t_impl< S, typename >", "d3/d9f/structfmt_1_1v10_1_1detail_1_1char__t__impl.html", null ],
     [ "fmt::v10::detail::char_t_impl< S, enable_if_t< is_string< S >::value > >", "dd/dcd/structfmt_1_1v10_1_1detail_1_1char__t__impl_3_01S_00_01enable__if__t_3_01is__string_3_01S_01_4_1_1value_01_4_01_4.html", null ],
     [ "lemlib::Chassis", "dc/df2/classlemlib_1_1Chassis.html", null ],
-    [ "pros::Clock", "d6/d21/structpros_1_1rtos_1_1Clock.html", null ],
-    [ "pros::rtos::Clock", "d6/d21/structpros_1_1rtos_1_1Clock.html", null ],
     [ "fmt::v10::detail::compile_string", "d5/dce/structfmt_1_1v10_1_1detail_1_1compile__string.html", null ],
     [ "fmt::v10::detail::dragonbox::cache_accessor< double >::compute_mul_parity_result", "d7/dbf/structfmt_1_1v10_1_1detail_1_1dragonbox_1_1cache__accessor_3_01double_01_4_1_1compute__mul__parity__result.html", null ],
     [ "fmt::v10::detail::dragonbox::cache_accessor< float >::compute_mul_parity_result", "de/d2f/structfmt_1_1v10_1_1detail_1_1dragonbox_1_1cache__accessor_3_01float_01_4_1_1compute__mul__parity__result.html", null ],
@@ -125,8 +115,6 @@ var hierarchy =
       [ "fmt::v10::conjunction< P1, Pn... >", "db/d97/structfmt_1_1v10_1_1conjunction_3_01P1_00_01Pn_8_8_8_01_4.html", null ],
       [ "fmt::v10::disjunction< P1, Pn... >", "d8/d50/structfmt_1_1v10_1_1disjunction_3_01P1_00_01Pn_8_8_8_01_4.html", null ]
     ] ],
-    [ "pros::Controller", "d0/d8b/classpros_1_1v5_1_1Controller.html", null ],
-    [ "pros::v5::Controller", "d0/d8b/classpros_1_1v5_1_1Controller.html", null ],
     [ "lemlib::ControllerSettings", "d8/df4/classlemlib_1_1ControllerSettings.html", null ],
     [ "fmt::v10::detail::counting_iterator", "de/deb/classfmt_1_1v10_1_1detail_1_1counting__iterator.html", null ],
     [ "fmt::v10::detail::custom_formatter< Char >", "dc/d83/structfmt_1_1v10_1_1detail_1_1custom__formatter.html", null ],
@@ -135,28 +123,6 @@ var hierarchy =
     [ "date_s_t", "d2/da0/structdate__s__t.html", null ],
     [ "fmt::v10::detail::dragonbox::decimal_fp< T >", "de/d6f/structfmt_1_1v10_1_1detail_1_1dragonbox_1_1decimal__fp.html", null ],
     [ "fmt::v10::detail::default_arg_formatter< Char >", "d3/dec/structfmt_1_1v10_1_1detail_1_1default__arg__formatter.html", null ],
-    [ "Device", null, [
-      [ "pros::Link", "d9/dba/classpros_1_1Link.html", null ],
-      [ "pros::Serial", "d6/d5f/classpros_1_1Serial.html", null ]
-    ] ],
-    [ "pros::Device", "da/d4f/classpros_1_1v5_1_1Device.html", [
-      [ "pros::v5::Distance", "d8/d02/classpros_1_1v5_1_1Distance.html", null ],
-      [ "pros::v5::Gps", "d5/df1/classpros_1_1v5_1_1Gps.html", null ],
-      [ "pros::v5::Imu", "da/d34/classpros_1_1v5_1_1Imu.html", null ],
-      [ "pros::v5::Motor", "d0/d9a/classpros_1_1v5_1_1Motor.html", null ],
-      [ "pros::v5::Optical", "d3/da5/classpros_1_1v5_1_1Optical.html", null ],
-      [ "pros::v5::Rotation", "d0/da3/classpros_1_1v5_1_1Rotation.html", null ],
-      [ "pros::v5::Vision", "dc/deb/classpros_1_1v5_1_1Vision.html", null ]
-    ] ],
-    [ "pros::v5::Device", "da/d4f/classpros_1_1v5_1_1Device.html", [
-      [ "pros::v5::Distance", "d8/d02/classpros_1_1v5_1_1Distance.html", null ],
-      [ "pros::v5::Gps", "d5/df1/classpros_1_1v5_1_1Gps.html", null ],
-      [ "pros::v5::Imu", "da/d34/classpros_1_1v5_1_1Imu.html", null ],
-      [ "pros::v5::Motor", "d0/d9a/classpros_1_1v5_1_1Motor.html", null ],
-      [ "pros::v5::Optical", "d3/da5/classpros_1_1v5_1_1Optical.html", null ],
-      [ "pros::v5::Rotation", "d0/da3/classpros_1_1v5_1_1Rotation.html", null ],
-      [ "pros::v5::Vision", "dc/deb/classpros_1_1v5_1_1Vision.html", null ]
-    ] ],
     [ "fmt::v10::detail::digit_grouping< Char >", "d6/d61/classfmt_1_1v10_1_1detail_1_1digit__grouping.html", null ],
     [ "lemlib::DriveCurve", "d1/d8e/classlemlib_1_1DriveCurve.html", [
       [ "lemlib::ExpoDriveCurve", "da/d54/classlemlib_1_1ExpoDriveCurve.html", null ]
@@ -361,12 +327,6 @@ var hierarchy =
     [ "motor_pid_s_t", "d9/d00/structmotor__pid__s__t.html", null ],
     [ "lemlib::MoveToPointParams", "d2/d34/structlemlib_1_1MoveToPointParams.html", null ],
     [ "lemlib::MoveToPoseParams", "d2/db0/structlemlib_1_1MoveToPoseParams.html", null ],
-    [ "pros::Mutex", "d9/dd6/classpros_1_1rtos_1_1Mutex.html", null ],
-    [ "pros::rtos::Mutex", "d9/dd6/classpros_1_1rtos_1_1Mutex.html", null ],
-    [ "pros::MutexVar< Var >", "da/da7/classpros_1_1rtos_1_1MutexVar.html", null ],
-    [ "pros::rtos::MutexVar< Var >", "da/da7/classpros_1_1rtos_1_1MutexVar.html", null ],
-    [ "pros::MutexVarLock< Var >", "dc/d90/classpros_1_1rtos_1_1MutexVarLock.html", null ],
-    [ "pros::rtos::MutexVarLock< Var >", "dc/d90/classpros_1_1rtos_1_1MutexVarLock.html", null ],
     [ "fmt::v10::detail::named_arg_info< Char >", "d8/d35/structfmt_1_1v10_1_1detail_1_1named__arg__info.html", null ],
     [ "fmt::v10::detail::named_arg_info< char_type >", "d8/d35/structfmt_1_1v10_1_1detail_1_1named__arg__info.html", null ],
     [ "fmt::v10::detail::named_arg_info< typename Context::char_type >", "d8/d35/structfmt_1_1v10_1_1detail_1_1named__arg__info.html", null ],
@@ -393,26 +353,12 @@ var hierarchy =
       [ "fmt::v10::disjunction< P >", "d9/d26/structfmt_1_1v10_1_1disjunction_3_01P_01_4.html", null ]
     ] ],
     [ "lemlib::PID", "d4/deb/classlemlib_1_1PID.html", null ],
-    [ "pros::adi::Port", "d4/d9c/classpros_1_1adi_1_1Port.html", [
-      [ "pros::adi::AnalogIn", "d4/d84/classpros_1_1adi_1_1AnalogIn.html", [
-        [ "pros::adi::Potentiometer", "d1/d2b/classpros_1_1adi_1_1Potentiometer.html", null ]
-      ] ],
-      [ "pros::adi::AnalogOut", "d0/d25/classpros_1_1adi_1_1AnalogOut.html", null ],
-      [ "pros::adi::DigitalIn", "de/ddf/classpros_1_1adi_1_1DigitalIn.html", null ],
-      [ "pros::adi::DigitalOut", "d0/d5c/classpros_1_1adi_1_1DigitalOut.html", [
-        [ "pros::adi::Pneumatics", "dd/d53/classpros_1_1adi_1_1Pneumatics.html", null ]
-      ] ],
-      [ "pros::adi::Encoder", "df/dba/classpros_1_1adi_1_1Encoder.html", null ],
-      [ "pros::adi::Gyro", "df/d87/classpros_1_1adi_1_1Gyro.html", null ],
-      [ "pros::adi::Led", "d9/d91/classpros_1_1adi_1_1Led.html", null ],
-      [ "pros::adi::Motor", "d2/d1a/classpros_1_1adi_1_1Motor.html", null ],
-      [ "pros::adi::Ultrasonic", "d6/da4/classpros_1_1adi_1_1Ultrasonic.html", null ]
-    ] ],
     [ "lemlib::Pose", "db/dff/classlemlib_1_1Pose.html", null ],
     [ "fmt::v10::detail::precision_checker< ErrorHandler >", "d3/d21/classfmt_1_1v10_1_1detail_1_1precision__checker.html", null ],
     [ "qrcodegen_Segment", "dd/dcd/structqrcodegen__Segment.html", null ],
     [ "quaternion_s_t", "d4/d47/structquaternion__s__t.html", null ],
-    [ "Robot::RobotSubsystems", "d9/dcb/structRobot_1_1RobotSubsystems.html", null ],
+    [ "RobotScreen", "d2/daa/structRobotScreen.html", null ],
+    [ "RobotSubsystems", "d8/d26/structRobotSubsystems.html", null ],
     [ "std::runtime_error", null, [
       [ "fmt::v10::format_error", "d6/d7c/classfmt_1_1v10_1_1format__error.html", null ]
     ] ],
@@ -420,7 +366,9 @@ var hierarchy =
     [ "fmt::v10::runtime_format_string< Char >", "d7/d7f/structfmt_1_1v10_1_1runtime__format__string.html", null ],
     [ "screen_touch_status_s", "dd/dfb/structscreen__touch__status__s.html", null ],
     [ "screen_touch_status_s_t", "de/d25/structscreen__touch__status__s__t.html", null ],
+    [ "Robot::selector_screen", "d8/db6/classRobot_1_1selector__screen.html", null ],
     [ "fmt::v10::detail::singleton", "d9/d18/structfmt_1_1v10_1_1detail_1_1singleton.html", null ],
+    [ "Robot::status_screen", "d4/d33/classRobot_1_1status__screen.html", null ],
     [ "fmt::v10::detail::std_string_view< T >", "db/d7f/structfmt_1_1v10_1_1detail_1_1std__string__view.html", null ],
     [ "Streambuf", null, [
       [ "fmt::v10::detail::formatbuf< Streambuf >", "dc/d6b/classfmt_1_1v10_1_1detail_1_1formatbuf.html", null ]
@@ -432,8 +380,6 @@ var hierarchy =
     [ "fmt::v10::detail::strip_named_arg< T, true >", "de/dbc/structfmt_1_1v10_1_1detail_1_1strip__named__arg_3_01T_00_01true_01_4.html", null ],
     [ "lemlib::SwingToHeadingParams", "dc/d57/structlemlib_1_1SwingToHeadingParams.html", null ],
     [ "lemlib::SwingToPointParams", "dd/d95/structlemlib_1_1SwingToPointParams.html", null ],
-    [ "pros::rtos::Task", "de/dbc/classpros_1_1rtos_1_1Task.html", null ],
-    [ "pros::Task", "de/dbc/classpros_1_1rtos_1_1Task.html", null ],
     [ "fmt::v10::detail::thousands_sep_result< Char >", "d5/d32/structfmt_1_1v10_1_1detail_1_1thousands__sep__result.html", null ],
     [ "time_s_t", "d0/dc1/structtime__s__t.html", null ],
     [ "lemlib::Timer", "de/d12/classlemlib_1_1Timer.html", null ],

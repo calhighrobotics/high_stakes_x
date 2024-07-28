@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['encoder_0',['Encoder',['../df/dba/classpros_1_1adi_1_1Encoder.html',1,'pros::adi']]],
-  ['error_5fhandler_1',['error_handler',['../d9/d01/structfmt_1_1v10_1_1detail_1_1error__handler.html',1,'fmt::v10::detail']]],
-  ['euler_5fs_5ft_2',['euler_s_t',['../d1/d3d/structeuler__s__t.html',1,'']]],
-  ['exitcondition_3',['ExitCondition',['../d7/df6/classlemlib_1_1ExitCondition.html',1,'lemlib']]],
-  ['expodrivecurve_4',['ExpoDriveCurve',['../da/d54/classlemlib_1_1ExpoDriveCurve.html',1,'lemlib']]]
+  ['selector_5fscreen_0',['selector_screen',['../d8/db6/classRobot_1_1selector__screen.html',1,'Robot']]],
+  ['status_5fscreen_1',['status_screen',['../d4/d33/classRobot_1_1status__screen.html',1,'Robot']]]
 ];

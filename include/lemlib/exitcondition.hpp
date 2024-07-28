@@ -1,5 +1,5 @@
 #pragma once
-
+//
 namespace lemlib {
 class ExitCondition {
     public:

@@ -1,20 +1,7 @@
 var searchData=
 [
-  ['h_0',['h',['../df/d74/structlv__img__header__t.html#a7e3391cd72119d417766378f18aaae2c',1,'lv_img_header_t::h'],['../d5/d77/structlv__color__hsv__t.html#a953cf0eb0bd57da53b496b846b659a10',1,'lv_color_hsv_t::h']]],
-  ['h_5flayout_1',['h_layout',['../d2/d48/struct__lv__obj__t.html#aba143660b28a531b3971bf0812cc3d24',1,'_lv_obj_t']]],
-  ['handler_5f_2',['handler_',['../d8/d37/classfmt_1_1v10_1_1detail_1_1width__checker.html#a447f818dd5bfa6b32210d91ce219a769',1,'fmt::v10::detail::width_checker::handler_'],['../d3/d21/classfmt_1_1v10_1_1detail_1_1precision__checker.html#aae4e0edecbb1173eb8286b24d6aca3e7',1,'fmt::v10::detail::precision_checker::handler_']]],
-  ['has_5falpha_3',['has_alpha',['../d4/d8d/structlv__draw__sw__layer__ctx__t.html#aafeeab001dec6bf6eeefdc27103a60c4',1,'lv_draw_sw_layer_ctx_t']]],
-  ['has_5fgroup_4',['has_group',['../d7/d43/structlv__style__t.html#a4fc3b69ed07adcfd3c60b2f974d83118',1,'lv_style_t']]],
-  ['hash_5ftable_5fsize_5',['hash_table_size',['../d9/d4d/structlv__lru__t.html#aa1ec92f2100e79e0dccd3d15e88c2dbf',1,'lv_lru_t']]],
-  ['head_6',['head',['../da/d89/structlv__ll__t.html#a9ed0ab1e930216ea787109442877abfc',1,'lv_ll_t']]],
-  ['head_5f_7',['head_',['../d5/d01/classfmt_1_1v10_1_1detail_1_1dynamic__arg__list.html#a97037d83fe0781bba0ad58b2af23b2cb',1,'fmt::v10::detail::dynamic_arg_list']]],
-  ['header_8',['header',['../db/dec/structlv__img__dsc__t.html#a552a5487bb4457d4b565dfa00381a846',1,'lv_img_dsc_t::header'],['../d9/d98/struct__lv__img__decoder__dsc__t.html#aea8323c05ea31ca3bfa88eb3b876d40d',1,'_lv_img_decoder_dsc_t::header']]],
-  ['height_5fdef_9',['height_def',['../d0/d4a/struct__lv__obj__class__t.html#a99c9b5cdbfc210f4aead4a177084e1b2',1,'_lv_obj_class_t']]],
-  ['hi_5f_10',['hi_',['../dc/d75/classfmt_1_1v10_1_1detail_1_1uint128__fallback.html#a373e4819087baa43aef6d1652f1741b1',1,'fmt::v10::detail::uint128_fallback']]],
-  ['hint_11',['hint',['../df/d75/structlv__label__t.html#ad4b9a69eed7db62cf2b4ee5318faf4e6',1,'lv_label_t']]],
-  ['hor_5fres_12',['hor_res',['../d1/d47/struct__lv__disp__drv__t.html#a9a46dcf72a366efa819bccc6c243c52e',1,'_lv_disp_drv_t']]],
-  ['horizontal1_13',['horizontal1',['../d0/d5b/classlemlib_1_1OdomSensors.html#a6d22f362e1cbe4498c10fac79e2d99b4',1,'lemlib::OdomSensors']]],
-  ['horizontal2_14',['horizontal2',['../d0/d5b/classlemlib_1_1OdomSensors.html#a1295c5c10391bb368c2cb9ca5dd399b9',1,'lemlib::OdomSensors']]],
-  ['horizontaldrift_15',['horizontalDrift',['../d5/d5f/classlemlib_1_1Drivetrain.html#a99fcfdb36dfd20f3668e6271b0794554',1,'lemlib::Drivetrain::horizontalDrift'],['../d2/db0/structlemlib_1_1MoveToPoseParams.html#a50c0ac39b3f98085640fc3063c3d2f3a',1,'lemlib::MoveToPoseParams::horizontalDrift']]],
-  ['hour_16',['hour',['../d0/dc1/structtime__s__t.html#ac8a3ecd4b82259203859f68163db4551',1,'time_s_t']]]
+  ['redautons_0',['redAutons',['../d8/db6/classRobot_1_1selector__screen.html#af9f7a26e9a753fcec112c1d2e8f287ae',1,'Robot::selector_screen']]],
+  ['rightback_1',['RightBack',['../df/d3e/namespaceRobot_1_1Globals.html#a45509b60c052a78f32531f657f40b8da',1,'Robot::Globals']]],
+  ['rightfront_2',['RightFront',['../df/d3e/namespaceRobot_1_1Globals.html#a57080a8667cacf9797e45a46903c2c0d',1,'Robot::Globals']]],
+  ['rightmid_3',['RightMid',['../df/d3e/namespaceRobot_1_1Globals.html#a8f5ed28ef65173e08177eb6be13a910b',1,'Robot::Globals']]]
 ];

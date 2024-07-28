@@ -1,5 +1,6 @@
 // Header guard - Ensures that the header file will not get double imported.
 #pragma once
+#include <string>
 
 /**
  * @file drivetrain.h
@@ -8,30 +9,35 @@
 
 namespace Robot {
 
-    /**
-     * @class Drivetrain
-     * @brief Represents the drivetrain of the robot.
-     * 
-     * The Drivetrain class is responsible for controlling the movement of the robot's drivetrain.
-     * It provides functions to interpret joystick inputs and convert them into appropriate drivetrain movements.
-     * The drivetrain can be controlled using different drive modes, such as tank drive or arcade drive.
-     * 
-     * The Drivetrain class also allows setting and retrieving the deadzone value for the joystick.
-     * The deadzone is a range around the joystick's resting position where no movement is registered.
-     * By adjusting the deadzone value, the sensitivity of the joystick inputs can be fine-tuned.
-     */
-    class Drivetrain {
-    public:
-        /**
-         * @brief Runs the drivetrain.
-         * 
-         * This function is responsible for controlling the movement of the robot's drivetrain.
-         * It executes the necessary actions to make the robot move according to the current drive mode.
-         * 
-         * @details The drivetrain can be controlled using different drive modes, such as tank drive or arcade drive.
-         * This function implements the logic to interpret the joystick inputs and convert them into appropriate drivetrain movements.
-         */
-        void run();
+/**
+ * @class Drivetrain
+ * @brief Represents the drivetrain of the robot.
+ *
+ * The Drivetrain class is responsible for controlling the movement of the
+ * robot's drivetrain. It provides functions to interpret joystick inputs and
+ * convert them into appropriate drivetrain movements. The drivetrain can be
+ * controlled using different drive modes, such as tank drive or arcade drive.
+ *
+ * The Drivetrain class also allows setting and retrieving the deadzone value
+ * for the joystick. The deadzone is a range around the joystick's resting
+ * position where no movement is registered. By adjusting the deadzone value,
+ * the sensitivity of the joystick inputs can be fine-tuned.
+ */
+class Drivetrain {
+ public:
+  /**
+   * @brief Runs the drivetrain.
+   *
+   * This function is responsible for controlling the movement of the robot's
+   * drivetrain. It executes the necessary actions to make the robot move
+   * according to the current drive mode.
+   *
+   * @details The drivetrain can be controlled using different drive modes, such
+   * as tank drive or arcade drive. This function implements the logic to
+   * interpret the joystick inputs and convert them into appropriate drivetrain
+   * movements.
+   */
+  void run();
 
         /**
          * @brief Sets the joystick deadzone.
@@ -86,44 +92,29 @@ namespace Robot {
          */
         Drivetrain();
 
-    private:
-        /**
-         * @brief Drives the robot using arcade drive.
-         * 
-         * Arcade drive uses the left joystick for forward and backward movement, and the right joystick for left and right movement.
-         */
-        void ArcadeDrive();
+ private:
+  /**
+   * @brief Drives the robot using arcade drive.
+   *
+   * Arcade drive uses the left joystick for forward and backward movement, and
+   * the right joystick for left and right movement.
+   */
+  void ArcadeDrive();
 
-        /**
-         * @brief Drives the robot using curvature drive.
-         * 
-         * Curvature drive applies curvature to turns and a negative inertia accumulator.
-         */
-         void CurvatureDrive();
+  /**
+   * @brief Drives the robot using curvature drive.
+   *
+   * Curvature drive applies curvature to turns and a negative inertia
+   * accumulator.
+   */
+  void CurvatureDrive();
 
-        /**
-         * @brief Drives the robot using tank drive.
-         * 
-         * Tank drive uses the left and right joysticks for controlling the left and right sides of the robot.
-         */
-        void TankDrive();
-
-        /**
-         * @brief Drives the robot using curve drive.
-         * 
-         * Curve drive uses the left joystick for forward and backward movement, and the right joystick for steering.
-         */
-        void CurveDrive();
-
-
-        /**
-         * @brief Checks if the controller input is inside the deadzone range.
-         * 
-         * @param entry The controller input to check.
-         * @return The input value if it is outside the deadzone range, otherwise 0.
-         */
-        int CheckDeadzone(int entry);
-
-        int deadzone; ///< The deadzone value for the joystick.
-    };
-}
+  /**
+   * @brief Drives the robot using tank drive.
+   *
+   * Tank drive uses the left and right joysticks for controlling the left and
+   * right sides of the robot.
+   */
+  void TankDrive();
+};
+}  // namespace Robot

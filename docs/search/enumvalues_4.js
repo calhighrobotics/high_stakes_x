@@ -23,12 +23,9 @@ var searchData=
   ['dec_20',['dec',['../d1/d1a/namespacefmt_1_1v10.html#a852a96f4a48f4f85b5f93a3d2042e080a1feea25ecb958229287f885aebe7c49b',1,'fmt::v10']]],
   ['deep_5fpink_21',['deep_pink',['../d1/d8a/group__cpp-colors.html#gga5533dcafd69b8cfd93f36f13414e2cffa350b14335681ec97282ca0452dd5e7dc',1,'pros']]],
   ['deep_5fsky_5fblue_22',['deep_sky_blue',['../d1/d8a/group__cpp-colors.html#gga5533dcafd69b8cfd93f36f13414e2cffa384d3f701794afb076dd9e92980bdd91',1,'pros']]],
-  ['deg_23',['deg',['../d0/da8/namespacepros_1_1v5.html#a5d68f6e831b560a0beb982fd45159261a3e9eb617073a0597ec590d7bd0f2a407',1,'pros::v5']]],
-  ['degrees_24',['degrees',['../d0/da8/namespacepros_1_1v5.html#a5d68f6e831b560a0beb982fd45159261a18daee01fc6e54aacd7f4c2eef60ff4d',1,'pros::v5']]],
-  ['dim_5fgray_25',['dim_gray',['../d1/d8a/group__cpp-colors.html#gga5533dcafd69b8cfd93f36f13414e2cffa75435e6bea50867263766b9e5f9bc08d',1,'pros']]],
-  ['dim_5fgrey_26',['dim_grey',['../d1/d8a/group__cpp-colors.html#gga5533dcafd69b8cfd93f36f13414e2cffabc048b83e68b33c13b917f0ba4028f42',1,'pros']]],
-  ['distance_27',['distance',['../d3/d60/group__cpp-device.html#gga0a7387ba6156c831ba1e61d75a04c3d9aa74ec9c5b6882f79e32a8fbd8da90c1b',1,'pros::v5']]],
-  ['dodger_5fblue_28',['dodger_blue',['../d1/d8a/group__cpp-colors.html#gga5533dcafd69b8cfd93f36f13414e2cffa5c090aa7c47fc1b6a05035e07ec9fbb9',1,'pros']]],
-  ['double_5ftype_29',['double_type',['../da/d2b/namespacefmt_1_1v10_1_1detail.html#a922f5660f2cd449b7ba0e1113560eb65aaaacacbe6cfde1582c36c02ebed184cc',1,'fmt::v10::detail']]],
-  ['down_30',['DOWN',['../dc/d62/group__c-optical.html#gga656ac13ffc5dd8f7289b47ac1a019409a9b0b4a95b99523966e0e34ffdadac9da',1,'optical.h']]]
+  ['dim_5fgray_23',['dim_gray',['../d1/d8a/group__cpp-colors.html#gga5533dcafd69b8cfd93f36f13414e2cffa75435e6bea50867263766b9e5f9bc08d',1,'pros']]],
+  ['dim_5fgrey_24',['dim_grey',['../d1/d8a/group__cpp-colors.html#gga5533dcafd69b8cfd93f36f13414e2cffabc048b83e68b33c13b917f0ba4028f42',1,'pros']]],
+  ['dodger_5fblue_25',['dodger_blue',['../d1/d8a/group__cpp-colors.html#gga5533dcafd69b8cfd93f36f13414e2cffa5c090aa7c47fc1b6a05035e07ec9fbb9',1,'pros']]],
+  ['double_5ftype_26',['double_type',['../da/d2b/namespacefmt_1_1v10_1_1detail.html#a922f5660f2cd449b7ba0e1113560eb65aaaacacbe6cfde1582c36c02ebed184cc',1,'fmt::v10::detail']]],
+  ['down_27',['DOWN',['../dc/d62/group__c-optical.html#gga656ac13ffc5dd8f7289b47ac1a019409a9b0b4a95b99523966e0e34ffdadac9da',1,'optical.h']]]
 ];
