@@ -19,7 +19,6 @@
     - Deprecate Utility class as soon as live driving data can be displayed with LVGL
 - Tune autonomous routine - Specifically Pure pursuit
 - Format git repository correctly as per multi-contributor repository norms
-- Implement enums to replace random numbers.
 - Arrange LVGL UI transitions in driver code
 - Update 1516B wiki to latest codebase.
     - Write lvgl article
@@ -29,6 +28,7 @@
 
 
 ## Completed
+- Implement enums to replace random numbers.
 - Autonomous selector screen - completed.
 - Check whether manual drive mode changes work with toggle func & comp. switch
 - Re-enable IMU calibration at entrypoint
