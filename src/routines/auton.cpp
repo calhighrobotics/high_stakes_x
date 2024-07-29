@@ -123,9 +123,9 @@ void Autonomous::AutoDrive(Intake &intake, Latch &latch)
 	}
 }
 
-void Autonomous::AutonSwitcher(AUTON_ROUTINE)
+void Autonomous::AutonSwitcher(AUTON_ROUTINE autonRoutine)
 {
-	switch (Autonomous::auton) {
+	switch (autonRoutine) {
 	case RED_LEFT:
 		Autonomous::autonName = "Red Left";
 		Autonomous::auton	  = RED_LEFT;
