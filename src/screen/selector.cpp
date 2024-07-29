@@ -42,7 +42,7 @@ void selector_screen::auton_ui_update(lv_event_t *e)
 		int	 currentAutonIndex = lv_dropdown_get_selected(auton_dd) + 1;
 		bool currentAlliance   = lv_obj_has_state(allianceSwitch, LV_STATE_CHECKED);
 		int	 autonNum		   = currentAlliance ? currentAutonIndex * -1 : currentAutonIndex;
-		Autonomous::AutonSwitcher(static_cast<Autonomous::AUTON_ROUTINE>(autonNum));
+		Autonomous::AutonSwitcher(autonNum);
 	}
 	/* Updates content of the dropdown list based on the alliance color, using
 	 * the state of the alliance color switch, which is detected through
@@ -95,17 +95,14 @@ void selector_screen::auton_ui_update(lv_event_t *e)
  */
 static void drive_update(lv_event_t *e)
 {
-	lv_event_code_t code		 = lv_event_get_code(e);
 	lv_obj_t	   *tab1		 = lv_event_get_current_target(e);
 	lv_obj_t	   *drive_roller = lv_obj_get_child(tab1, -1);
 	lv_obj_t	   *driveLabel	 = lv_obj_get_child(tab1, -2);
 
-	if (code == LV_EVENT_VALUE_CHANGED) {
-		int			rollerIndex = lv_roller_get_selected(drive_roller);
-		std::string driveMode	= Drivetrain::SwitchDrive(static_cast<Drivetrain::DRIVE_MODE>(rollerIndex));
+	int			rollerIndex = lv_roller_get_selected(drive_roller);
+	std::string driveMode	= Drivetrain::SwitchDrive(rollerIndex);
 
-		lv_label_set_text_fmt(driveLabel, "Current drive mode: %s", driveMode.c_str());
-	}
+	lv_label_set_text_fmt(driveLabel, "Current drive mode: %s", driveMode.c_str());
 }
 
 /**

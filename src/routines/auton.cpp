@@ -123,27 +123,27 @@ void Autonomous::AutoDrive(Intake &intake, Latch &latch)
 	}
 }
 
-void Autonomous::AutonSwitcher(AUTON_ROUTINE autonRoutine)
+void Autonomous::AutonSwitcher(int autonNum)
 {
-	switch (autonRoutine) {
-	case RED_LEFT:
+	switch (autonNum) {
+	case 1:
 		Autonomous::autonName = "Red Left";
 		Autonomous::auton	  = RED_LEFT;
-	case RED_RIGHT:
+	case 2:
 		Autonomous::autonName = "Red Right";
 		Autonomous::auton	  = RED_RIGHT;
-	case BLUE_LEFT:
+	case -1:
 		Autonomous::autonName = "Blue Left";
 		Autonomous::auton	  = BLUE_LEFT;
-	case BLUE_RIGHT:
+	case -2:
 		Autonomous::autonName = "Blue Right";
 		Autonomous::auton	  = BLUE_RIGHT;
-	case SKILLS:
+	case 0:
 		Autonomous::autonName = "Skills";
 		Autonomous::auton	  = SKILLS;
 	}
 
-	// Set the controllet text to the current autonomous routine value
+	// Set the controller text to the current autonomous routine value
 	pros::lcd::clear_line(3);
 	pros::lcd::print(3, "Autonomous prog: %s", autonName);
 }

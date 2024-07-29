@@ -58,7 +58,7 @@ public:
 	 * Arcade drive uses the left joystick for forward and backward movement, and the right joystick for left and right
 	 * movement. Tank drive uses the left and right joysticks for controlling the left and right sides of the robot.
 	 */
-	static std::string SwitchDrive(DRIVE_MODE driveMode);
+	static std::string SwitchDrive(int driveMode);
 
 	static std::string toggleDrive();
 

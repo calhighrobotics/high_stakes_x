@@ -7,6 +7,11 @@ using namespace Robot::Globals;
 
 Drivetrain::DRIVE_MODE Drivetrain::driveMode = CURVATURE_DRIVE;
 
+Drivetrain::Drivetrain()
+{
+	Drivetrain::driveMode = CURVATURE_DRIVE;
+}
+
 void Drivetrain::CurvatureDrive()
 {
 	int left  = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
@@ -26,11 +31,6 @@ void Drivetrain::ArcadeDrive()
 	chassis.arcade(left, right, false, 0.6);
 
 	pros::delay(15);
-}
-
-Drivetrain::Drivetrain()
-{
-	Drivetrain::driveMode = CURVATURE_DRIVE;
 }
 
 void Drivetrain::TankDrive()
@@ -57,24 +57,27 @@ void Drivetrain::run()
 	}
 }
 
+// Cycle through each drivetrain control mode, overflows back to 0
 std::string Drivetrain::toggleDrive()
 {
-	DRIVE_MODE driveMode = static_cast<DRIVE_MODE>((Drivetrain::driveMode + 1) % (TANK_DRIVE + 1));
+	int driveMode = (Drivetrain::driveMode + 1) % (TANK_DRIVE + 1);
 	return SwitchDrive(driveMode);
 }
 
 // Switch the drivetrain control mode between arcade and tank drive with the down button(between 1 and 2)
-std::string Drivetrain::SwitchDrive(Drivetrain::DRIVE_MODE driveMode)
+std::string Drivetrain::SwitchDrive(int driveMode)
 {
-    Drivetrain::driveMode = driveMode;
 	switch (driveMode) {
-	case CURVATURE_DRIVE:
+	case 0:
+		Drivetrain::driveMode = CURVATURE_DRIVE;
         std::cout << "Curvature Drive" << std::endl;
 		return "Curvature Drive";
-	case ARCADE_DRIVE:
+	case 1:
+		Drivetrain::driveMode = ARCADE_DRIVE;
         std::cout << "Arcade Drive" << std::endl;
         return "Arcade Drive";
-	case TANK_DRIVE:
+	case 2:
+		Drivetrain::driveMode = TANK_DRIVE;
 		std::cout << "Tank Drive" << std::endl;
 		return "Tank Drive";
     default:
