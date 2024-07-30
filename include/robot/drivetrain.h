@@ -7,7 +7,8 @@
  * @brief Contains the declaration of the Drivetrain class.
  */
 
-namespace Robot {
+namespace Robot
+{
 
 /**
  * @class Drivetrain
@@ -24,87 +25,67 @@ namespace Robot {
  * the sensitivity of the joystick inputs can be fine-tuned.
  */
 class Drivetrain {
- public:
-  /**
-   * @brief Runs the drivetrain.
-   *
-   * This function is responsible for controlling the movement of the robot's
-   * drivetrain. It executes the necessary actions to make the robot move
-   * according to the current drive mode.
-   *
-   * @details The drivetrain can be controlled using different drive modes, such
-   * as tank drive or arcade drive. This function implements the logic to
-   * interpret the joystick inputs and convert them into appropriate drivetrain
-   * movements.
-   */
-  void run();
+public:
+	/**
+	 * @brief Initializes the Drivetrain object.
+	 *
+	 * This constructor is responsible for initializing the Drivetrain object and setting default values.
+	 */
+	Drivetrain();
 
-        enum Mode {
-            CURVATURE_DRIVE, 
-            ARCADE_DRIVE, 
-            TANK_DRIVE
-        };
+	enum DRIVE_MODE { CURVATURE_DRIVE = 0, ARCADE_DRIVE = 1, TANK_DRIVE = 2 };
 
-        /**
-         * @brief Returns the current deadzone value.
-         * 
-         * @return The deadzone value.
-         * 
-         * The deadzone is a range around the joystick's resting position where no movement is registered.
-         * This function returns the current deadzone value that is being used by the drivetrain.
-         * 
-         * @details The deadzone value can be used to fine-tune the drivetrain's responsiveness to joystick inputs.
-         * By retrieving the current deadzone value, you can adjust other parts of your code to take it into account.
-         */
-        int getdeadzone();
+	static DRIVE_MODE driveMode;
 
+	/**
+	 * @brief Runs the drivetrain.
+	 *
+	 * This function is responsible for controlling the movement of the robot's
+	 * drivetrain. It executes the necessary actions to make the robot move
+	 * according to the current drive mode.
+	 *
+	 * @details The drivetrain can be controlled using different drive modes, such
+	 * as tank drive or arcade drive. This function implements the logic to
+	 * interpret the joystick inputs and convert them into appropriate drivetrain
+	 * movements.
+	 */
+	void run();
 
-        /**
-         * @brief Switches the DriveTrain mode between arcade and tank drive.
-         * 
-         * The drive mode determines how the drivetrain interprets the joystick inputs.
-         * Arcade drive uses the left joystick for forward and backward movement, and the right joystick for left and right movement.
-         * Tank drive uses the left and right joysticks for controlling the left and right sides of the robot.
-         */
-        static void SwitchDrive(int driveNum);
+	/**
+	 * @brief Switches the DriveTrain mode between arcade and tank drive.
+	 *
+	 * The drive mode determines how the drivetrain interprets the joystick inputs.
+	 * Arcade drive uses the left joystick for forward and backward movement, and the right joystick for left and right
+	 * movement. Tank drive uses the left and right joysticks for controlling the left and right sides of the robot.
+	 */
+	static std::string SwitchDrive(int driveMode);
 
+	static std::string toggleDrive();
 
-        Mode driveMode; ///< The current drive train mode
+private:
+	/**
+	 * @brief Drives the robot using arcade drive.
+	 *
+	 * Arcade drive uses the left joystick for forward and backward movement, and
+	 * the right joystick for left and right movement.
+	 */
+	void ArcadeDrive();
 
-        /**
-         * @brief Initializes the Drivetrain object.
-         * 
-         * This constructor is responsible for initializing the Drivetrain object and setting default values.
-         */
-        Drivetrain();
+	/**
+	 * @brief Drives the robot using curvature drive.
+	 *
+	 * Curvature drive applies curvature to turns and a negative inertia
+	 * accumulator.
+	 */
+	void CurvatureDrive();
 
-        std::string toggleDrive();
-
- private:
-  /**
-   * @brief Drives the robot using arcade drive.
-   *
-   * Arcade drive uses the left joystick for forward and backward movement, and
-   * the right joystick for left and right movement.
-   */
-  void ArcadeDrive();
-
-  /**
-   * @brief Drives the robot using curvature drive.
-   *
-   * Curvature drive applies curvature to turns and a negative inertia
-   * accumulator.
-   */
-  void CurvatureDrive();
-
-  /**
-   * @brief Drives the robot using tank drive.
-   *
-   * Tank drive uses the left and right joysticks for controlling the left and
-   * right sides of the robot.
-   */
-  void TankDrive();
+	/**
+	 * @brief Drives the robot using tank drive.
+	 *
+	 * Tank drive uses the left and right joysticks for controlling the left and
+	 * right sides of the robot.
+	 */
+	void TankDrive();
 };
 
-
-}  // namespace Robot
+} // namespace Robot
