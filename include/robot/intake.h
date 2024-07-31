@@ -28,14 +28,24 @@ public:
 	 */
 	void toggle();
 
+private:
+	bool elevated;
+
+	/**
+	 * @brief blue is false, red is true.
+	 */
+	bool alliance_color;
+
 	/**
 	 * @brief Runs intake in async.
 	 *
-	 * auto intake and ejection of rings with color sensor.
+	 * automatic scoring and ejection of rings using color sensor.
 	 */
 	void async();
 
-private:
-	bool elevated;
+	/**
+	 @brief Ejects an enemy color ring.
+	 */
+	void eject();
 };
 }
