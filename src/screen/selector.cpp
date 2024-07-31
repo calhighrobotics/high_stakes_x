@@ -59,7 +59,7 @@ void selector_screen::auton_ui_update(lv_event_t *e)
 		}
 		// Switches the autonomous routine to the opposite alliance color, accounts
 		// for option reset
-		Autonomous::AutonSwitcher(Autonomous::auton > 1 ? Autonomous::BLUE_LEFT : Autonomous::RED_LEFT);
+		Autonomous::AutonSwitcher(Autonomous::auton > 0 ? Autonomous::BLUE_LEFT : Autonomous::RED_LEFT);
 	} else {
 		if (lv_obj_has_state(skillSwitch, LV_STATE_CHECKED)) {
 			// Remembers the last competition autonomous
