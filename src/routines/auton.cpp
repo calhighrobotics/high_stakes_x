@@ -5,7 +5,7 @@ using namespace Robot;
 using namespace Robot::Globals;
 
 Autonomous::AUTON_ROUTINE Autonomous::auton = RED_LEFT;
-std::string Autonomous::autonName;
+std::string				  Autonomous::autonName;
 
 ASSET(red_right_pt1_txt);
 ASSET(red_right_pt2_txt);
@@ -129,21 +129,22 @@ void Autonomous::AutonSwitcher(int autonNum)
 	case 1:
 		Autonomous::autonName = "Red Left";
 		Autonomous::auton	  = RED_LEFT;
+		break;
 	case 2:
 		Autonomous::autonName = "Red Right";
 		Autonomous::auton	  = RED_RIGHT;
+		break;
 	case -1:
 		Autonomous::autonName = "Blue Left";
 		Autonomous::auton	  = BLUE_LEFT;
+		break;
 	case -2:
 		Autonomous::autonName = "Blue Right";
 		Autonomous::auton	  = BLUE_RIGHT;
+		break;
 	case 0:
 		Autonomous::autonName = "Skills";
 		Autonomous::auton	  = SKILLS;
 	}
-
-	// Set the controller text to the current autonomous routine value
-	pros::lcd::clear_line(3);
-	pros::lcd::print(3, "Autonomous prog: %s", autonName);
+	std::cout << "Current auton: " + Autonomous::autonName << std::endl;
 }

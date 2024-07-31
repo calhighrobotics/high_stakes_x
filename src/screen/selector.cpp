@@ -6,7 +6,6 @@
 using namespace Robot;
 
 Autonomous::AUTON_ROUTINE selector_screen::lastAuton;
-lv_color_t				  selector_screen::lastColor;
 
 selector_screen::selector_screen()
 {
@@ -60,23 +59,20 @@ void selector_screen::auton_ui_update(lv_event_t *e)
 		}
 		// Switches the autonomous routine to the opposite alliance color, accounts
 		// for option reset
-		Autonomous::AutonSwitcher(Autonomous::auton > 1 ? Autonomous::BLUE_LEFT : Autonomous::RED_LEFT);
+		Autonomous::AutonSwitcher(Autonomous::auton > 0 ? Autonomous::BLUE_LEFT : Autonomous::RED_LEFT);
 	} else {
 		if (lv_obj_has_state(skillSwitch, LV_STATE_CHECKED)) {
 			// Remembers the last competition autonomous
 			selector_screen::lastAuton = Autonomous::auton;
-			selector_screen::lastColor = lv_obj_get_style_border_color(auton_dd, 0);
 
 			// Updates the autonomous routine to skills
 			Autonomous::AutonSwitcher(Autonomous::SKILLS);
 			lv_obj_add_state(allianceSwitch, LV_STATE_DISABLED);
 			lv_obj_add_state(auton_dd, LV_STATE_DISABLED);
-			lv_obj_set_style_border_color(auton_dd, lv_color_hex(0x7a7a7a), 0);
 		} else {
 			Autonomous::AutonSwitcher(selector_screen::lastAuton);
 			lv_obj_clear_state(allianceSwitch, LV_STATE_DISABLED);
 			lv_obj_clear_state(auton_dd, LV_STATE_DISABLED);
-			lv_obj_set_style_border_color(auton_dd, selector_screen::lastColor, 0);
 		}
 	}
 	lv_label_set_text_fmt(autonLabel, "Current Auton: %s", Autonomous::autonName.c_str());
@@ -93,11 +89,11 @@ void selector_screen::auton_ui_update(lv_event_t *e)
  *
  * @param e The event object associated with the drive roller.
  */
-static void drive_update(lv_event_t *e)
+void selector_screen::drive_update(lv_event_t *e)
 {
-	lv_obj_t	   *tab1		 = lv_event_get_current_target(e);
-	lv_obj_t	   *drive_roller = lv_obj_get_child(tab1, -1);
-	lv_obj_t	   *driveLabel	 = lv_obj_get_child(tab1, -2);
+	lv_obj_t *tab1		   = lv_event_get_current_target(e);
+	lv_obj_t *drive_roller = lv_obj_get_child(tab1, -1);
+	lv_obj_t *driveLabel   = lv_obj_get_child(tab1, -2);
 
 	int			rollerIndex = lv_roller_get_selected(drive_roller);
 	std::string driveMode	= Drivetrain::SwitchDrive(rollerIndex);
@@ -166,12 +162,13 @@ void selector_screen::selector()
 	lv_obj_t *auton_dd = lv_dropdown_create(tab1);
 	lv_obj_add_flag(auton_dd, LV_OBJ_FLAG_EVENT_BUBBLE);
 	lv_dropdown_set_options(auton_dd, selector_screen::redAutons);
-	lv_obj_set_style_max_height(auton_dd, 50, LV_PART_MAIN);
+	lv_obj_set_style_max_height(auton_dd, 50, 0);
 	lv_obj_set_size(auton_dd, lv_pct(35), lv_pct(35));
-	lv_obj_set_style_pad_top(auton_dd, 10, LV_PART_MAIN);
-	lv_obj_set_style_pad_bottom(auton_dd, 10, LV_PART_MAIN);
+	lv_obj_set_style_pad_top(auton_dd, 10, 0);
+	lv_obj_set_style_pad_bottom(auton_dd, 10, 0);
 	lv_obj_set_style_border_width(auton_dd, 4, 0);
 	lv_obj_set_style_border_color(auton_dd, lv_color_hex(0xd22730), 0);
+	lv_obj_set_style_border_color(auton_dd, lv_color_hex(0x7a7a7a), LV_STATE_DISABLED);
 	lv_obj_align(auton_dd, LV_ALIGN_TOP_RIGHT, 0, 0);
 
 	// Drive select tab
@@ -180,19 +177,13 @@ void selector_screen::selector()
 	lv_obj_align(driveName, LV_ALIGN_BOTTOM_MID, 0, 0);
 	lv_obj_set_style_text_font(driveName, &lv_font_montserrat_18, 0);
 
-	// Style for the highlighted roller option
-	static lv_style_t roller_style;
-	lv_style_init(&roller_style);
-	lv_style_set_bg_color(&roller_style, lv_color_hex(0xf97e2c));
-	lv_style_set_text_font(&roller_style, &lv_font_montserrat_24);
-
-	// Style for the non-highlighted roller options
-
 	lv_obj_t *drive_roller = lv_roller_create(tab2);
 	lv_obj_add_flag(drive_roller, LV_OBJ_FLAG_EVENT_BUBBLE);
 	lv_roller_set_options(drive_roller, selector_screen::driveModes, LV_ROLLER_MODE_INFINITE);
+
 	// Changed when highlighted
-	lv_obj_add_style(drive_roller, &roller_style, LV_PART_SELECTED);
+	lv_obj_set_style_bg_color(drive_roller, lv_color_hex(0xf97e2c), LV_PART_SELECTED);
+	lv_obj_set_style_text_font(drive_roller, &lv_font_montserrat_24, LV_PART_SELECTED);
 	lv_roller_set_visible_row_count(drive_roller, 3);
 	lv_obj_center(drive_roller);
 	lv_obj_align(drive_roller, LV_ALIGN_TOP_MID, 0, 0);
