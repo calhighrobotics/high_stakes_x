@@ -35,8 +35,6 @@ private:
 	 */
 	static Autonomous::AUTON_ROUTINE lastAuton;
 
-	static lv_color_t lastColor;
-
 	constexpr static char redAutons[] = "Red Left\nRed Right";
 
 	constexpr static char blueAutons[] = "Blue Left\nBlue Right";
