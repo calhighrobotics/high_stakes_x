@@ -1,9 +1,5 @@
 #include "screen/selector.h"
 
-#include "liblvgl/core/lv_obj.h"
-#include "liblvgl/core/lv_obj_style.h"
-#include "liblvgl/font/lv_font.h"
-#include "liblvgl/misc/lv_color.h"
 #include "main.h" // IWYU pragma: export
 #include "robot/auton.h"
 
@@ -93,11 +89,11 @@ void selector_screen::auton_ui_update(lv_event_t *e)
  *
  * @param e The event object associated with the drive roller.
  */
-static void drive_update(lv_event_t *e)
+void selector_screen::drive_update(lv_event_t *e)
 {
-	lv_obj_t	   *tab1		 = lv_event_get_current_target(e);
-	lv_obj_t	   *drive_roller = lv_obj_get_child(tab1, -1);
-	lv_obj_t	   *driveLabel	 = lv_obj_get_child(tab1, -2);
+	lv_obj_t *tab1		   = lv_event_get_current_target(e);
+	lv_obj_t *drive_roller = lv_obj_get_child(tab1, -1);
+	lv_obj_t *driveLabel   = lv_obj_get_child(tab1, -2);
 
 	int			rollerIndex = lv_roller_get_selected(drive_roller);
 	std::string driveMode	= Drivetrain::SwitchDrive(rollerIndex);
@@ -180,11 +176,11 @@ void selector_screen::selector()
 	lv_label_set_text_fmt(driveName, "Current drive mode:");
 	lv_obj_align(driveName, LV_ALIGN_BOTTOM_MID, 0, 0);
 	lv_obj_set_style_text_font(driveName, &lv_font_montserrat_18, 0);
- 
+
 	lv_obj_t *drive_roller = lv_roller_create(tab2);
 	lv_obj_add_flag(drive_roller, LV_OBJ_FLAG_EVENT_BUBBLE);
 	lv_roller_set_options(drive_roller, selector_screen::driveModes, LV_ROLLER_MODE_INFINITE);
-	
+
 	// Changed when highlighted
 	lv_obj_set_style_bg_color(drive_roller, lv_color_hex(0xf97e2c), LV_PART_SELECTED);
 	lv_obj_set_style_text_font(drive_roller, &lv_font_montserrat_24, LV_PART_SELECTED);
