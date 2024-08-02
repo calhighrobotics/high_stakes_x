@@ -10,13 +10,8 @@ using namespace Robot::Globals;
 Intake::Intake()
 {
 	elevated = false;
+	alliance_color = false;
 	controller.print(0, 0, "Intake initialized");
-}
-
-void Intake::score()
-{
-	IntakeMotor.move(127);
-	pros::delay(3000); // will modify later, will run until color sensor doesn't detect a ring
 }
 
 void Intake::run()
@@ -34,4 +29,34 @@ void Intake::toggle()
 {
 	elevated = !elevated;
 	IntakeToggle.toggle();
+}
+
+void Intake::score() {
+	double color = colorSensor.get_hue();
+	bool red = color < 30.0 && color >= 0.0 || color > 330.0 && color <= 359.999;
+	bool blue = color > 200.0 && color < 230.0;
+	while (blue || red) {
+		color = colorSensor.get_hue();
+		red = color < 30.0 && color >= 0.0 || color > 330.0 && color <= 359.999;
+		blue = color > 200.0 && color < 230.0;
+		if (blue) {
+			if (alliance_color) {
+				IntakeMotor.move(-127);
+			}
+			else {
+				IntakeMotor.move(127);
+			}
+		} else if (red) {
+			if (alliance_color) {
+				IntakeMotor.move(127);
+			}
+			else {
+				IntakeMotor.move(-127);
+			}
+		} else {
+			IntakeMotor.brake();
+			break;
+		}
+		pros::delay(10);
+	}
 }

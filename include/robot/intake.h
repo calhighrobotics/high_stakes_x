@@ -17,7 +17,7 @@ public:
 	void run();
 
 	/**
-	 * @brief Outakes rings and scores them inside of latched mobile goal.
+	 * @brief Outakes alliance rings into latched mobile goal and ejects enemy rings.
 	 */
 	void score();
 
@@ -28,14 +28,13 @@ public:
 	 */
 	void toggle();
 
-	/**
-	 * @brief Runs intake in async.
-	 *
-	 * auto intake and ejection of rings with color sensor.
-	 */
-	void async();
-
 private:
 	bool elevated;
+
+	/**
+	 * @brief blue is false, red is true.
+	 */
+	bool alliance_color;
+
 };
 }
