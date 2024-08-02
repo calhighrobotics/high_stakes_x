@@ -37,9 +37,46 @@ EXCLUDE_SRC_FROM_LIB+=$(foreach file, $(SRCDIR)/main,$(foreach cext,$(CEXTS),$(f
 # that are in the the include directory get exported
 TEMPLATE_FILES=$(INCDIR)/**/*.h $(INCDIR)/**/*.hpp
 
+USER_HEADERS=$(INCDIR)/screen/*.h $(INCDIR)/*.h $(INCDIR)/robot/*.h
+
+USER_SRC=$(SRCDIR)/**/*.cpp $(SRCDIR)/*.cpp
+
 .DEFAULT_GOAL=quick
 
 ################################################################################
 ################################################################################
 ########## Nothing below this line should be edited by typical users ###########
 -include ./common.mk
+
+# @...||: is a hack to prevent make from failing if the command outputs a non-fail result -> This is because we recieve is a directory error
+format-all: format-src format-includes
+
+format-src:
+	@clang-format -i $(USER_SRC) --style file ||:
+
+format-includes:
+	@clang-format -i $(USER_HEADERS) --style file ||:
+
+
+lint-all: lint-src lint-includes
+
+lint-src:
+	@clang-tidy $(USER_SRC) -checks=-cppcoreguidelines-* --format-style=file ||:
+	@echo -e "\033[0;32mNon user-code errors can be ignored.\033[0m They are \033[1;33mnot relevant\033[0m to the user code."
+
+lint-includes:
+	@clang-tidy $(USER_HEADERS) -checks=-cppcoreguidelines-* --format-style file ||:
+	@echo -e "\033[0;32mNon user-code errors can be ignored.\033[0m They are \033[1;33mnot relevant\033[0m to the user code."
+
+
+
+docs:
+	@doxygen Doxyfile
+
+# Cleans up the bin/ directory, useful when testing compiler flags
+# Watch out for when other files than globals.cpp or main.cpp are changed, as that is unchecked behavior
+clean-bin:
+	@rm bin/*.cpp.* && rm bin/cold* && rm bin/hot*
+	@echo -e "\033[0;32mNow rebuild the program.\033[0m"
+
+	
