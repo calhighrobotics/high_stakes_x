@@ -1,9 +1,24 @@
 ARCHTUPLE=arm-none-eabi-
 DEVICE=VEX EDR V5
 
+# User toggles for controlling compiler flags for builds
+# ALWAYS run `make clean-bin` before changing these flags
+DEBUG_LEVEL := 0
+ANALYZE_LEVEL := 0
+
+ifeq ($(DEBUG_LEVEL), 1)	
+	DEBUG_FLAGS += -fsanitize=float-divide-by-zero -fsanitize=float-cast-overflow -fsanitize=leak -fsanitize=signed-integer-overflow -fsanitize=bounds -fno-sanitize=null -fno-sanitize=alignment
+endif
+
+ifeq ($(ANALYZE_LEVEL), 1)
+	ANALYZE_FLAGS += -fanalyzer
+endif
+# Optimization flags for the compiler - https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html
+OPTIM_FLAGS :=
+
 MFLAGS=-mcpu=cortex-a9 -mfpu=neon-fp16 -mfloat-abi=softfp -Os -g
 CPPFLAGS=-D_POSIX_THREADS -D_UNIX98_THREAD_MUTEX_ATTRIBUTES -D_POSIX_TIMERS -D_POSIX_MONOTONIC_CLOCK
-GCCFLAGS=-ffunction-sections -fdata-sections -fdiagnostics-color -funwind-tables
+GCCFLAGS=-ffunction-sections -fdata-sections -fdiagnostics-color -funwind-tables $(DEBUG_FLAGS) $(ANALYZE_FLAGS) $(OPTIM_FLAGS)
 
 # Check if the llemu files in libvgl exist. If they do, define macros that the
 # llemu headers in the kernel repo can use to conditionally include the libvgl
