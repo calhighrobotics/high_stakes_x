@@ -15,3 +15,7 @@ temp.log
 temp.errors
 *.ini
 .d/
+
+# Doxygen
+docs/
+!docs/*.css
