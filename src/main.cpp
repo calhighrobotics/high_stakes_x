@@ -48,6 +48,7 @@ void initialize() {
   chassis.setPose(0, 0, 0);
 
   screen.selector.selector();
+  subsystem.intake.set_alliance(screen.selector.get_auton_type());
 }
 
 /**

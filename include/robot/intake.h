@@ -28,6 +28,13 @@ public:
 	 */
 	void toggle();
 
+	/**
+	 * @brief Sets the alliance_color member variable.
+	 * auton_type, 0 = blue, 1 = red, -1 = skills.
+	 */
+	void set_alliance(short auton_type);
+
+
 private:
 	bool elevated;
 

@@ -60,3 +60,11 @@ void Intake::score() {
 		pros::delay(10);
 	}
 }
+
+
+
+void Intake::set_alliance(short auton_type) {
+	if (auton_type != -1) {
+		alliance_color = (auton_type == 0) ? false : true;
+	}
+}
