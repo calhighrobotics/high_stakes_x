@@ -21,6 +21,11 @@ jobs:
           uses: opensource-nepal/commitlint@v1.2.0
           with:
             fail_on_error: false
+        
+        - name: Run Vale
+          uses: errata-ai/vale-action@reviewdog
+          with:
+            files: '["src", "include/robot"]'
 
         - name: Run linter
           uses: Centei/cpp-linter-action@python-cache

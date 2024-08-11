@@ -16,6 +16,9 @@ temp.errors
 *.ini
 .d/
 
+# Vale
+!.vale.ini
+
 # Doxygen
 docs/
 !docs/*.css
