@@ -28,12 +28,6 @@ public:
 	 */
 	void selector();
 
-	/**
-	 * @brief Returns the alliance color selected.
-	 * 0 = Blue, 1 = Red, -1 = Skills.
-	 */
-	short get_auton_type();
-
 private:
 	/**
 	 * @brief Value of the last selected competition autonomous when switching to

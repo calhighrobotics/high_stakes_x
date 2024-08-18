@@ -48,7 +48,6 @@ void initialize() {
   chassis.setPose(0, 0, 0);
 
   screen.selector.selector();
-  subsystem.intake.set_alliance(screen.selector.get_auton_type());
 }
 
 /**
@@ -83,6 +82,7 @@ void competition_initialize() {}
  */
 void autonomous() {
   subsystem.autonomous.AutoDrive(subsystem.intake, subsystem.latch);
+  subsystem.intake.set_alliance(subsystem.autonomous.get_auton_type());
 }
 
 /**

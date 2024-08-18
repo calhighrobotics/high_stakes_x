@@ -197,15 +197,3 @@ void selector_screen::selector()
 	lv_obj_center(drive_roller);
 	lv_obj_align(drive_roller, LV_ALIGN_TOP_MID, 0, 0);
 }
-
-
-
-short selector_screen::get_auton_type() {
-	if (Autonomous::autonName == "Red Left" || Autonomous::autonName == "Red Right") {
-		return 1;
-	} else if (Autonomous::autonName == "Blue Left" || Autonomous::autonName == "Blue Right") {
-		return 0;
-	} else {
-		return -1;
-	}
-}
