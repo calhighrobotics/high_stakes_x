@@ -147,14 +147,3 @@ void Autonomous::AutonSwitcher(int autonNum)
 	pros::lcd::clear_line(3);
 	pros::lcd::print(3, "Autonomous prog: %s", autonName);
 }
-
-
-short Autonomous::get_auton_type() {
-	if (autonName == "Red Left" || autonName == "Red Right") {
-		return 1;
-	} else if (autonName == "Blue Left" || autonName == "Blue Right") {
-		return 0;
-	} else {
-		return -1;
-	}
-}

@@ -54,12 +54,6 @@ public:
 	 */
 	static void AutonSwitcher(int autonNum);
 
-	/**
-	 * @brief Returns the alliance color selected.
-	 * 0 = Blue, 1 = Red, -1 = Skills.
-	 */
-	short get_auton_type();
-
 private:
 	/**
 	 * @brief Runs the autonomous path for the far side defensive game strategy.

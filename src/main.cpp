@@ -82,7 +82,7 @@ void competition_initialize() {}
  */
 void autonomous() {
   subsystem.autonomous.AutoDrive(subsystem.intake, subsystem.latch);
-  subsystem.intake.set_alliance(subsystem.autonomous.get_auton_type());
+  subsystem.intake.set_alliance();
 }
 
 /**

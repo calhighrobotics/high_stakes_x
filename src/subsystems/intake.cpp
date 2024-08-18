@@ -1,4 +1,5 @@
 #include "robot/intake.h"
+#include "robot/auton.h"
 
 #include <cassert>
 
@@ -63,8 +64,8 @@ void Intake::score() {
 
 
 
-void Intake::set_alliance(short auton_type) {
-	if (auton_type != -1) {
-		alliance_color = (auton_type == 0) ? false : true;
+void Intake::set_alliance() {
+	if (Autonomous::auton != 0) {
+		alliance_color = (Autonomous::auton < 0) ? false : true;
 	}
 }
