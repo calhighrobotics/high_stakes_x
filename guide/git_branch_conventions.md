@@ -22,3 +22,7 @@
 * It should be ready to merge with main.
 * A pull request must be created **before** merging.
     - Description must include specific changes and locations made to the codebase.
+
+
+## 4. Merging Branch
+* Branch merges are to be executed by **authorized members only**.
