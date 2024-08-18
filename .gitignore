@@ -18,6 +18,7 @@ temp.errors
 
 # Vale
 !.vale.ini
+vale-styles
 
 # Doxygen
 docs/
