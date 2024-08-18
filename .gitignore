@@ -15,3 +15,11 @@ temp.log
 temp.errors
 *.ini
 .d/
+
+# Vale
+!.vale.ini
+vale-styles
+
+# Doxygen
+docs/
+!docs/*.css
