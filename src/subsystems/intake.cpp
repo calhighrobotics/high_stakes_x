@@ -1,7 +1,5 @@
 #include "robot/intake.h"
 
-#include <cassert>
-
 #include "globals.h"
 
 using namespace Robot;
