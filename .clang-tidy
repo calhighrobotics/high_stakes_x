@@ -1,0 +1,12 @@
+---
+Checks: 'clang-diagnostic-*,clang-analyzer-*,cppcoreguidelines-*'
+WarningsAsErrors: true
+HeaderFilterRegex: ''
+FormatStyle:     file
+SystemHeaders: false
+CheckOptions:
+  - key:             cppcoreguidelines-explicit-virtual-functions.IgnoreDestructors
+    value:           '1'
+  - key:             cppcoreguidelines-non-private-member-variables-in-classes.IgnoreClassesWithAllMemberVariablesBeingPublic
+    value:           '1'
+...
