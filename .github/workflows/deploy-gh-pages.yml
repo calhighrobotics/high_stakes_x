@@ -17,11 +17,13 @@ jobs:
 
     - name: Build
       uses: mattnotmitt/doxygen-action@edge
+      with:
+        doxyfile-path: docs/Doxyfile
 
     - name: Upload
       uses: actions/upload-pages-artifact@v3.0.1
       with:
-        path: ./docs
+        path: ./html
         retention-days: "1"
   deploy:
     needs: build
