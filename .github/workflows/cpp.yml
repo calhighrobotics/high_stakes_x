@@ -18,7 +18,7 @@ jobs:
           uses: actions/checkout@v4
         
         - name: Run commitlint
-          uses: opensource-nepal/commitlint@7f72e9
+          uses: opensource-nepal/commitlint@7f72e9108526ef0f05afcb1627d1239ed41324c6
           with:
             fail_on_error: true
         
