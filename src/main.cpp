@@ -32,6 +32,7 @@ struct RobotSubsystems {
 struct RobotScreen {
   Robot::selector_screen selector;
   Robot::status_screen status;
+  Robot::Controller controller;
 } screen;
 
 /**
@@ -48,6 +49,8 @@ void initialize() {
   chassis.setPose(0, 0, 0);
 
   screen.selector.selector();
+
+  pros::rtos::Task task(screen.controller.update_battery_status);
 }
 
 /**

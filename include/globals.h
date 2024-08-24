@@ -1,10 +1,7 @@
 #pragma once
 
-#include "api.h"
-#include "lemlib/api.hpp"
-
-// The following files are imported in order to provide type definitions into
-// the compiler that allows for the objecys to
+#include "api.h" // IWYU pragma: export
+#include "lemlib/api.hpp" // IWYU pragma: export
 
 /**
  * @file globals.h
