@@ -16,6 +16,5 @@
 Language:        Cpp
 BasedOnStyle:   LLVM
 ColumnLimit:     120
-IndentWidth:     3
-...
-
+AccessModifierOffset: -3
+IndentWidth:     3 
