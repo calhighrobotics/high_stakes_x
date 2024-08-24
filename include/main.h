@@ -43,6 +43,7 @@
 #include "robot/latch.h"
 #include "screen/selector.h"
 #include "screen/status.h"
+#include "screen/controller.h"
 
 /**
  * You should add more #includes here
