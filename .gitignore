@@ -21,5 +21,4 @@ temp.errors
 vale-styles
 
 # Doxygen
-docs/
-!docs/*.css
+html/
