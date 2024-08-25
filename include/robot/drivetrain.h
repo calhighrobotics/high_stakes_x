@@ -19,9 +19,9 @@ namespace Robot
  * convert them into appropriate drivetrain movements. The drivetrain can be
  * controlled using different drive modes, such as tank drive or arcade drive.
  *
- * The Drivetrain class also allows setting and retrieving the deadzone value
- * for the joystick. The deadzone is a range around the joystick's resting
- * position where no movement is registered. By adjusting the deadzone value,
+ * The Drivetrain class also allows setting and retrieving the dead zone value
+ * for the joystick. The dead zone is a range around the joystick's resting
+ * position where no movement is registered. By adjusting the dead zone value,
  * the sensitivity of the joystick inputs can be fine-tuned.
  */
 class Drivetrain {
@@ -33,8 +33,18 @@ public:
 	 */
 	Drivetrain();
 
+	/**
+	 * @brief Drive control schemes.
+	 *
+	 * Data type representing all possible driving control schemes that can be
+	 * used on the robot. Multiple drive modes can be used during runtime
+	 * without recompilation.
+	 */
 	enum DRIVE_MODE { CURVATURE_DRIVE = 0, ARCADE_DRIVE = 1, TANK_DRIVE = 2 };
 
+	/**
+	 * @brief Active drive control scheme.
+	 */
 	static DRIVE_MODE driveMode;
 
 	/**
@@ -60,6 +70,9 @@ public:
 	 */
 	static std::string SwitchDrive(int driveMode);
 
+	/**
+	 * @brief Cycles through each drivetrain control mode.
+	 */
 	static std::string toggleDrive();
 
 private:
