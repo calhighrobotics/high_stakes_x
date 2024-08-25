@@ -9,12 +9,11 @@ We have both a wiki that covers high-level programming, engineering, design, and
 - [Wiki](https://calhighrobotics.github.io/1516b)
 - [Doxygen Documentation](https://calhighrobotics.github.io/high_stakes_x)
 
-
 We aim to have a cohesive codebase that covers many subsystems but also follows best practices in the C++ development space as well as bringing in new features through modularity.
 
 The codebase is split up into:
 
-```
+```text
 /include - Contains information about the declarations of various methods and how they would be used
    /robot - Contains the header files and information custom for the actual robot.
 /src - Contains implementation of the above methods and the definition, specific to the 1516X robot
@@ -27,3 +26,7 @@ We use the following libraries to make our codebase possible. Check out their co
 - [PROS](https://pros.cs.purdue.edu/v5/pros-4/)
 - [Lemlib](https://lemlib.readthedocs.io/)
 - [lvgl](https://docs.lvgl.io/8.3/)
+
+## License
+
+See [LICENSE](https://github.com/calhighrobotics/high_stakes_x/blob/main/LICENSE) for more information.
