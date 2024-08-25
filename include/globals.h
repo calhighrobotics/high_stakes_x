@@ -1,6 +1,6 @@
 #pragma once
 
-#include "api.h" // IWYU pragma: export
+#include "api.h"          // IWYU pragma: export
 #include "lemlib/api.hpp" // IWYU pragma: export
 
 /**
@@ -77,5 +77,5 @@ extern pros::adi::DigitalIn autonToggleSwitch;
 extern pros::adi::Pneumatics LatchControl;
 extern pros::adi::Pneumatics IntakeToggle;
 
-}  // namespace Globals
-}  // namespace Robot
+} // namespace Globals
+} // namespace Robot

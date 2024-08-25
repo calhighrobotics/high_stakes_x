@@ -50,7 +50,7 @@ void initialize() {
 
    screen.selector.selector();
 
-   pros::rtos::Task task(screen.controller.update_battery_status);
+   pros::rtos::Task Task(screen.controller.update_battery_status);
 }
 
 /**
