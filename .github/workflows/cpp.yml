@@ -42,7 +42,7 @@ jobs:
 
         - name: Move and rename artifact
           run: |
-            mv ${{ github.workspace }}/artifact/compile_commands.json ../compile_commands.json
+            mv ${{ github.workspace }}/compile_commands/compile_commands.json ../compile_commands.json
         
         - name: Run commitlint
           uses: opensource-nepal/commitlint@7f72e9108526ef0f05afcb1627d1239ed41324c6
