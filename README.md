@@ -6,7 +6,7 @@ We are a VEX VRC team based in the Bay Area, California.
 
 We have both a wiki that covers high-level programming, engineering, design, and team management topics, as well as Doxygen documentation for our codebase.
 
-- [Wiki](https://calhighrobotics.github.io/1516b)
+- [Wiki](https://calhighrobotics.github.io/1516x)
 - [Doxygen Documentation](https://calhighrobotics.github.io/high_stakes_x)
 
 
