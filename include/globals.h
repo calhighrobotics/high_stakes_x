@@ -44,6 +44,7 @@ extern pros::Motor LeftMid;
 
 extern pros::Motor RightMid;
 extern pros::Motor IntakeMotor;
+extern pros::Motor HookMotor;
 
 extern pros::MotorGroup punchers;
 extern pros::MotorGroup drive_left;

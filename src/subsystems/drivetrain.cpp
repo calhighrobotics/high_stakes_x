@@ -50,10 +50,13 @@ void Drivetrain::run()
 	switch (Drivetrain::driveMode) {
 	case CURVATURE_DRIVE:
 		Drivetrain::CurvatureDrive();
+		break;
 	case ARCADE_DRIVE:
 		Drivetrain::ArcadeDrive();
+		break;
 	case TANK_DRIVE:
 		Drivetrain::TankDrive();
+		break;
 	}
 }
 

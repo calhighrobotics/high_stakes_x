@@ -112,14 +112,19 @@ void Autonomous::AutoDrive(Intake &intake, Latch &latch)
 	switch (Autonomous::auton) {
 	case RED_LEFT:
 		Auton1(intake, latch);
+		break;
 	case RED_RIGHT:
 		Auton2(intake, latch);
+		break;
 	case BLUE_LEFT:
 		Auton3(intake, latch);
+		break;
 	case BLUE_RIGHT:
 		Auton4(intake, latch);
+		break;
 	case SKILLS:
 		Auton5(intake, latch);
+		break;
 	}
 }
 
