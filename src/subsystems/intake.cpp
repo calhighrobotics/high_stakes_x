@@ -19,7 +19,7 @@ void Intake::run()
 		HookMotor.move_velocity(-600);
 	} else if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_R1)) {
 		IntakeMotor.move_velocity(375);
-		HookMotor.move_velocity(-600);
+		HookMotor.move_velocity(600);
 	} else {
 		IntakeMotor.brake();
 		HookMotor.brake();
