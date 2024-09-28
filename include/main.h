@@ -43,6 +43,7 @@
 #include "robot/latch.h"
 #include "screen/selector.h"
 #include "screen/status.h"
+#include "utility/controller.h"
 
 /**
  * You should add more #includes here
@@ -85,4 +86,4 @@ void opcontrol(void);
 // #include <iostream>
 #endif
 
-#endif  // _PROS_MAIN_H_
+#endif // _PROS_MAIN_H_
