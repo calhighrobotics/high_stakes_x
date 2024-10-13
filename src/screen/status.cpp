@@ -1,6 +1,7 @@
 #include "main.h"
 #include "pros/apix.h"
 #include "robot/drivetrain.h"
+#include "screen/status.h"
 
 using namespace Robot;
 
