@@ -17,9 +17,10 @@ public:
 	void run();
 
 	/**
-	 * @brief Outakes alliance rings into latched mobile goal and ejects enemy rings.
+	 * @brief Checks whether the intake should stop to skip the ring depending on color.
+	 * It is the embodiment of vision sensor usage in this codebase.
 	 */
-	void score();
+	void checkStop();
 
 	Intake();
 
