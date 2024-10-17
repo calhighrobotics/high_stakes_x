@@ -28,6 +28,7 @@ struct RobotSubsystems {
    Robot::Drivetrain drivetrain;
    Robot::Intake intake;
    Robot::Latch latch;
+   Robot::Hang hang;
 } subsystem;
 
 struct RobotScreen {
@@ -44,6 +45,7 @@ struct RobotScreen {
 
 void initialize() {
    chassis.calibrate();
+
    chassis.setPose(0, 0, 0);
 
    screen.selector.selector();
@@ -79,6 +81,7 @@ void competition_initialize() {}
  * will be stopped. Re-enabling the robot will restart the task, not re-start
  * it from where it left off.
  */
+
 void autonomous() {
    pros::lcd::initialize();
 
@@ -95,6 +98,7 @@ void autonomous() {
 
    subsystem.autonomous.AutoDrive(subsystem.intake, subsystem.latch);
 }
+
 
 /**
  * Runs the operator control code. This function will be started in its own
@@ -122,10 +126,12 @@ void opcontrol() {
 
       subsystem.drivetrain.run();
       subsystem.latch.run();
+      subsystem.hang.run();
 
       // Intake controller, uses the X button holded down to push the elevation
       // up.
       subsystem.intake.run();
+
       // Intake controller, moves the left and right intakes and stops them if
       // nothing is pressed.
 

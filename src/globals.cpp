@@ -31,13 +31,13 @@ pros::Motor HookMotor(2, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degre
 // placeholder port number
 
 pros::adi::Pneumatics LatchControl('A', false);
-// pros::adi::Pneumatics HangControl('B', false);
-pros::adi::Pneumatics IntakeToggle('C', false);
+pros::adi::Pneumatics HangControl('B', true);
 
 pros::Rotation lateral_sensor(16);
 pros::Rotation horizontal_sensor(17);
 
 pros::Imu inertial_sensor(10);
+
 
 // Vision sensor configuration
 pros::Vision colorSensor(3);

@@ -87,7 +87,7 @@ extern pros::adi::DigitalIn drivetrainToggleSwitch;
 extern pros::adi::DigitalIn autonToggleSwitch;
 
 extern pros::adi::Pneumatics LatchControl;
-extern pros::adi::Pneumatics IntakeToggle;
+extern pros::adi::Pneumatics HangControl;
 
 } // namespace Globals
 } // namespace Robot

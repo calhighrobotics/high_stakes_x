@@ -25,7 +25,6 @@ void Autonomous::Auton1(Intake &intake, Latch &latch) {
    // robot backs up into wallstake and is ready to outake
    chassis.follow(red_right_pt1_txt, 15, 5000);
 
-   intake.score();
    intake.toggle();
    // robot moves forward and intakes red ring on top of stack
    chassis.follow(red_right_pt2_txt, 15, 5000);
@@ -34,14 +33,14 @@ void Autonomous::Auton1(Intake &intake, Latch &latch) {
    // ring
    chassis.follow(red_right_pt3_txt, 15, 5000);
    latch.toggle();
-   intake.score();
+
    intake.toggle();
 
    // robot drags mobile goal and intakes bottom of ring of 2ring stack then
    // stops. ready to outake to mobile goal
    //  then unlatches mobile goal
    chassis.follow(red_right_pt4_txt, 15, 5000);
-   intake.score();
+
    latch.toggle();
 
    // robot ends in contact with tower
@@ -53,7 +52,7 @@ void Autonomous::Auton2(Intake &intake, Latch &latch) {
    chassis.setPose(-146.76, 63.046, 10);
    // robot backs up into wallstake and is ready to outake
    chassis.follow(red_left_pt1_txt, 15, 5000);
-   intake.score();
+
    intake.toggle();
 
    // robot moves and intakes ring from top of 2ring stack.
@@ -63,11 +62,9 @@ void Autonomous::Auton2(Intake &intake, Latch &latch) {
    // robot moves backward toward mobile goal. Ready to latch then score.
    chassis.follow(red_left_pt3_txt, 15, 5000);
    latch.toggle();
-   intake.score();
 
    // robot turns around and intakes ring from bottom of 2ring stack.
    chassis.follow(red_left_pt4_txt, 15, 5000);
-   intake.score();
    latch.toggle();
 
    // robot ends in contact with mobile goal
