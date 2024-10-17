@@ -42,8 +42,6 @@
 #include "robot/hang.h"
 #include "robot/intake.h"
 #include "robot/latch.h"
-#include "screen/selector.h"
-#include "screen/status.h"
 
 /**
  * You should add more #includes here

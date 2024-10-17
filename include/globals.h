@@ -2,6 +2,7 @@
 
 #include "api.h"
 #include "lemlib/api.hpp"
+#include "pros/vision.hpp"
 
 // The following files are imported in order to provide type definitions into
 // the compiler that allows for the objecys to
@@ -57,8 +58,15 @@ extern lemlib::Drivetrain drivetrain;
 
 extern lemlib::OdomSensors sensors;
 
-extern pros::Optical colorSensor;
+extern pros::Vision colorSensor;
 
+extern pros::vision_signature_s_t RED_SIG;
+
+extern pros::vision_signature_s_t BLUE_SIG;
+extern pros::vision_signature_s_t BLUE_DARK_SIG;
+
+extern pros::Rotation lateral_sensor;
+extern pros::Rotation horizontal_sensor;
 // forward/backward PID
 extern lemlib::ControllerSettings lateral_controller;
 

@@ -12,6 +12,7 @@ Intake::Intake() {
 }
 
 void Intake::run() {
+
    if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_R1)) {
       IntakeMotor.move_velocity(-375);
       HookMotor.move_velocity(-600);
@@ -24,7 +25,9 @@ void Intake::run() {
    }
 }
 
+
 void Intake::toggle() { elevated = !elevated; }
 
 // Vision sensor only works with intake, therefore it should not on
 void Intake::checkStop() {}
+

@@ -1,6 +1,8 @@
 #include "globals.h"
 #include "pros/abstract_motor.hpp"
 #include "pros/motors.hpp"
+#include "pros/vision.h"
+#include "pros/vision.hpp"
 
 /*
  * Although the following constants belong in their own seperate
@@ -17,29 +19,46 @@ namespace Robot {
 namespace Globals {
 
 pros::Controller controller(pros::E_CONTROLLER_MASTER);
-pros::Motor RightFront(6, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
-pros::Motor LeftFront(-20, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
-pros::Motor LeftBack(-10, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
-pros::Motor RightBack(8, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
-pros::Motor LeftMid(2, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
-pros::Motor RightMid(-3, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
-pros::Motor IntakeMotor(-9, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
-pros::Motor HookMotor(4, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
+pros::Motor RightFront(13, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
+pros::Motor LeftFront(-19, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
+pros::Motor LeftBack(-18, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
+pros::Motor RightBack(12, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
+pros::Motor LeftMid(20, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
+pros::Motor RightMid(-11, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
+pros::Motor IntakeMotor(-1, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
+pros::Motor HookMotor(2, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
 
-pros::adi::DigitalIn drivetrainToggleSwitch('G');
-pros::adi::DigitalIn autonToggleSwitch('F');
-
-pros::Optical colorSensor(4); // placeholder port number
+// placeholder port number
 
 pros::adi::Pneumatics LatchControl('A', false);
 pros::adi::Pneumatics HangControl('B', true);
 
-pros::Imu inertial_sensor(15);
+pros::Rotation lateral_sensor(16);
+pros::Rotation horizontal_sensor(17);
 
+pros::Imu inertial_sensor(10);
+
+
+// Vision sensor configuration
+pros::Vision colorSensor(3);
+
+pros::vision_signature_s_t RED_SIG =
+    pros::c::vision_signature_from_utility(1, -4653, -3619, -4136, 9831, 11725, 10778, 2.5, 0);
+
+pros::vision_signature_s_t BLUE_SIG =
+    pros::c::vision_signature_from_utility(2, 9187, 12161, 10674, -375, 1327, 476, 2.5, 0);
+pros::vision_signature_s_t BLUE_DARK_SIG =
+    pros::c::vision_signature_from_utility(3, -4793, -4173, -4483, 1069, 2765, 1917, 3, 0);
+
+// Pros motor groups - most used by lemlib
 pros::MotorGroup drive_left({LeftFront.get_port(), LeftMid.get_port(), LeftBack.get_port()});
 pros::MotorGroup drive_right({RightFront.get_port(), RightMid.get_port(), RightBack.get_port()});
 pros::MotorGroup drive_({LeftFront.get_port(), RightFront.get_port(), LeftMid.get_port(), RightMid.get_port(),
                          LeftBack.get_port(), RightBack.get_port()});
+
+// Lemlib objects - Used by lemlib drive and odometry functions
+lemlib::TrackingWheel horizontal_tracking_wheel(&horizontal_sensor, lemlib::Omniwheel::NEW_2, -5);
+lemlib::TrackingWheel vertical_tracking_wheel(&lateral_sensor, lemlib::Omniwheel::NEW_2, -1.5);
 
 // Describes the lemlib objects that are used to control the autonomous
 // functions of the robot.
@@ -53,11 +72,11 @@ lemlib::Drivetrain drivetrain{
 };
 
 lemlib::OdomSensors sensors{
-    nullptr,         // vertical tracking wheel 1
-    nullptr,         // vertical tracking wheel 2
-    nullptr,         // horizontal tracking wheel 1
-    nullptr,         // we don't have a second tracking wheel, so we set it to nullptr
-    &inertial_sensor // inertial sensor
+    &vertical_tracking_wheel,   // vertical tracking wheel 1
+    nullptr,                    // vertical tracking wheel 2
+    &horizontal_tracking_wheel, // horizontal tracking wheel 1
+    nullptr,                    // we don't have a second tracking wheel, so we set it to nullptr
+    &inertial_sensor            // inertial sensor
 };
 
 // forward/backward PID

@@ -1,3 +1,4 @@
+#include "screen/status.h"
 #include "main.h"
 #include "pros/apix.h"
 #include "robot/drivetrain.h"

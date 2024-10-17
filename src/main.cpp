@@ -1,6 +1,7 @@
 #include "main.h"
-
-#include "pros/apix.h"
+#include "globals.h"
+#include "screen/selector.h"
+#include "screen/status.h"
 
 using namespace Robot;
 using namespace Robot::Globals;
@@ -43,9 +44,8 @@ struct RobotScreen {
  */
 
 void initialize() {
-   if (pros::c::registry_get_plugged_type(15) == pros::c::E_DEVICE_IMU) {
-      chassis.calibrate();
-   }
+   chassis.calibrate();
+
    chassis.setPose(0, 0, 0);
 
    screen.selector.selector();
@@ -81,7 +81,24 @@ void competition_initialize() {}
  * will be stopped. Re-enabling the robot will restart the task, not re-start
  * it from where it left off.
  */
-void autonomous() { subsystem.autonomous.AutoDrive(subsystem.intake, subsystem.latch); }
+
+void autonomous() {
+   pros::lcd::initialize();
+
+   pros::Task screen_task([&]() {
+      while (true) {
+         // print robot location to the brain screen
+         pros::lcd::print(0, "X: %f", chassis.getPose().x);         // x
+         pros::lcd::print(1, "Y: %f", chassis.getPose().y);         // y
+         pros::lcd::print(2, "Theta: %f", chassis.getPose().theta); // heading
+         // delay to save resources
+         pros::delay(20);
+      }
+   });
+
+   subsystem.autonomous.AutoDrive(subsystem.intake, subsystem.latch);
+}
+
 
 /**
  * Runs the operator control code. This function will be started in its own

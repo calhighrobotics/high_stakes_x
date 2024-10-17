@@ -65,7 +65,6 @@ void Autonomous::Auton2(Intake &intake, Latch &latch) {
 
    // robot turns around and intakes ring from bottom of 2ring stack.
    chassis.follow(red_left_pt4_txt, 15, 5000);
-
    latch.toggle();
 
    // robot ends in contact with mobile goal
