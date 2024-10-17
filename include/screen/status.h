@@ -9,15 +9,15 @@ namespace Robot {
  */
 class status_screen {
  public:
-  /**
-   * @brief Runs latching mechanism.
-   */
+   /**
+    * @brief Runs latching mechanism.
+    */
 
-  status_screen();
+   status_screen();
 
-  /**
-   * @brief Toggles latch state.
-   */
-  void status();
+   /**
+    * @brief Toggles latch state.
+    */
+   void status();
 };
-}  // namespace Robot
+} // namespace Robot
