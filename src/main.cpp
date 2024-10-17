@@ -27,6 +27,7 @@ struct RobotSubsystems {
   Robot::Drivetrain drivetrain;
   Robot::Intake intake;
   Robot::Latch latch;
+  Robot::Hang hang;
 } subsystem;
 
 struct RobotScreen {
@@ -110,10 +111,12 @@ void opcontrol() {
 
     subsystem.drivetrain.run();
     subsystem.latch.run();
+    subsystem.hang.run();
 
     // Intake controller, uses the X button holded down to push the elevation
     // up.
     subsystem.intake.run();
+
     // Intake controller, moves the left and right intakes and stops them if
     // nothing is pressed.
 

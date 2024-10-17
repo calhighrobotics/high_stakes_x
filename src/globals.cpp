@@ -32,7 +32,7 @@ pros::adi::DigitalIn autonToggleSwitch('F');
 pros::Optical colorSensor(4); // placeholder port number
 
 pros::adi::Pneumatics LatchControl('A', false);
-pros::adi::Pneumatics IntakeToggle('B', false);
+pros::adi::Pneumatics HangControl('B', false);
 
 pros::Imu inertial_sensor(15);
 

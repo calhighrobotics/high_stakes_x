@@ -41,6 +41,7 @@
 #include "robot/drivetrain.h"
 #include "robot/intake.h"
 #include "robot/latch.h"
+#include "robot/hang.h"
 #include "screen/selector.h"
 #include "screen/status.h"
 
