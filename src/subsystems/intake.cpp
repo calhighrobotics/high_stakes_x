@@ -5,33 +5,26 @@
 using namespace Robot;
 using namespace Robot::Globals;
 
-Intake::Intake()
-{
-	elevated = false;
-	alliance_color = false;
-	controller.print(0, 0, "Intake initialized");
+Intake::Intake() {
+   elevated = false;
+   alliance_color = false;
+   controller.print(0, 0, "Intake initialized");
 }
 
-void Intake::run()
-{
-	if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_R1)) {
-		IntakeMotor.move_velocity(-375);
-		HookMotor.move_velocity(-600);
-	} else if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_L1)) {
-		IntakeMotor.move_velocity(375);
-		HookMotor.move_velocity(600);
-	} else {
-		IntakeMotor.brake();
-		HookMotor.brake();
-	}
+void Intake::run() {
+   if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_R1)) {
+      IntakeMotor.move_velocity(-375);
+      HookMotor.move_velocity(-600);
+   } else if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_L1)) {
+      IntakeMotor.move_velocity(375);
+      HookMotor.move_velocity(600);
+   } else {
+      IntakeMotor.brake();
+      HookMotor.brake();
+   }
 }
 
-void Intake::toggle()
-{
-	elevated = !elevated;
-}
+void Intake::toggle() { elevated = !elevated; }
 
 // Vision sensor only works with intake, therefore it should not on
-void Intake::checkStop() {
-	
-}
+void Intake::checkStop() {}

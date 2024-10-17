@@ -7,16 +7,16 @@ namespace Robot {
  */
 class Hang {
  public:
-  /**
-   * @brief Runs Hanging mechanism.
-   */
-  void run();
+   /**
+    * @brief Runs Hanging mechanism.
+    */
+   void run();
 
-  Hang();
+   Hang();
 
-  /**
-   * @brief Toggles Hang state.
-   */
-  void toggle();
+   /**
+    * @brief Toggles Hang state.
+    */
+   void toggle();
 };
-}  // namespace Robot
+} // namespace Robot

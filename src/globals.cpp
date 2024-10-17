@@ -46,7 +46,7 @@ pros::MotorGroup drive_({LeftFront.get_port(), RightFront.get_port(), LeftMid.ge
 lemlib::Drivetrain drivetrain{
     &drive_left,  // left drivetrain motors
     &drive_right, // right drivetrain motors
-    12.25,       // track width
+    12.25,        // track width
     lemlib::Omniwheel::OLD_325,
     450, // drivetrain rpm is 450
     2    // horizontal drift is 2
@@ -62,38 +62,38 @@ lemlib::OdomSensors sensors{
 
 // forward/backward PID
 // lateral PID controller
-lemlib::ControllerSettings lateral_controller(10, // proportional gain (kP)
-                                              0, // integral gain (kI)
-                                              3, // derivative gain (kD)
-                                              3, // anti windup
-                                              1, // small error range, in inches
+lemlib::ControllerSettings lateral_controller(10,  // proportional gain (kP)
+                                              0,   // integral gain (kI)
+                                              3,   // derivative gain (kD)
+                                              3,   // anti windup
+                                              1,   // small error range, in inches
                                               100, // small error range timeout, in milliseconds
-                                              3, // large error range, in inches
+                                              3,   // large error range, in inches
                                               500, // large error range timeout, in milliseconds
-                                              20 // maximum acceleration (slew)
+                                              20   // maximum acceleration (slew)
 );
 
 // angular PID controller
-lemlib::ControllerSettings angular_controller(2, // proportional gain (kP)
-                                              0, // integral gain (kI)
-                                              10, // derivative gain (kD)
-                                              3, // anti windup
-                                              1, // small error range, in degrees
+lemlib::ControllerSettings angular_controller(2,   // proportional gain (kP)
+                                              0,   // integral gain (kI)
+                                              10,  // derivative gain (kD)
+                                              3,   // anti windup
+                                              1,   // small error range, in degrees
                                               100, // small error range timeout, in milliseconds
-                                              3, // large error range, in degrees
+                                              3,   // large error range, in degrees
                                               500, // large error range timeout, in milliseconds
-                                              0 // maximum acceleration (slew)
+                                              0    // maximum acceleration (slew)
 );
 
-lemlib::ExpoDriveCurve throttle_curve(3, // joystick deadband out of 127
-                                     10, // minimum output where drivetrain will move out of 127
-                                     1.019 // expo curve gain
+lemlib::ExpoDriveCurve throttle_curve(3,    // joystick deadband out of 127
+                                      10,   // minimum output where drivetrain will move out of 127
+                                      1.019 // expo curve gain
 );
 
 // input curve for steer input during driver control
-lemlib::ExpoDriveCurve steer_curve(3, // joystick deadband out of 127
-                                  10, // minimum output where drivetrain will move out of 127
-                                  1.019 // expo curve gain
+lemlib::ExpoDriveCurve steer_curve(3,    // joystick deadband out of 127
+                                   10,   // minimum output where drivetrain will move out of 127
+                                   1.019 // expo curve gain
 );
 
 lemlib::Chassis chassis(drivetrain, lateral_controller, angular_controller, sensors, &throttle_curve, &steer_curve);

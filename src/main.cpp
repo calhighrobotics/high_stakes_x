@@ -23,16 +23,16 @@ using namespace Robot::Globals;
  * @brief Structure that holds instances of all robot subsystems.
  */
 struct RobotSubsystems {
-  Robot::Autonomous autonomous;
-  Robot::Drivetrain drivetrain;
-  Robot::Intake intake;
-  Robot::Latch latch;
-  Robot::Hang hang;
+   Robot::Autonomous autonomous;
+   Robot::Drivetrain drivetrain;
+   Robot::Intake intake;
+   Robot::Latch latch;
+   Robot::Hang hang;
 } subsystem;
 
 struct RobotScreen {
-  Robot::selector_screen selector;
-  Robot::status_screen status;
+   Robot::selector_screen selector;
+   Robot::status_screen status;
 } screen;
 
 /**
@@ -43,12 +43,12 @@ struct RobotScreen {
  */
 
 void initialize() {
-  if (pros::c::registry_get_plugged_type(15) == pros::c::E_DEVICE_IMU) {
-    chassis.calibrate();
-  }
-  chassis.setPose(0, 0, 0);
+   if (pros::c::registry_get_plugged_type(15) == pros::c::E_DEVICE_IMU) {
+      chassis.calibrate();
+   }
+   chassis.setPose(0, 0, 0);
 
-  screen.selector.selector();
+   screen.selector.selector();
 }
 
 /**
@@ -81,9 +81,7 @@ void competition_initialize() {}
  * will be stopped. Re-enabling the robot will restart the task, not re-start
  * it from where it left off.
  */
-void autonomous() {
-  subsystem.autonomous.AutoDrive(subsystem.intake, subsystem.latch);
-}
+void autonomous() { subsystem.autonomous.AutoDrive(subsystem.intake, subsystem.latch); }
 
 /**
  * Runs the operator control code. This function will be started in its own
@@ -99,27 +97,27 @@ void autonomous() {
  * the task, not resume it from where it left off.
  */
 void opcontrol() {
-  while (true) {
-    if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_DOWN)) {
-      autonomous();
-    }
-    if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_LEFT)) {
-      std::string name = subsystem.drivetrain.toggleDrive();
-      // Output the current drive mode to the controller screen
-      controller.print(0, 0, name.c_str());
-    }
+   while (true) {
+      if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_DOWN)) {
+         autonomous();
+      }
+      if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_LEFT)) {
+         std::string name = subsystem.drivetrain.toggleDrive();
+         // Output the current drive mode to the controller screen
+         controller.print(0, 0, name.c_str());
+      }
 
-    subsystem.drivetrain.run();
-    subsystem.latch.run();
-    subsystem.hang.run();
+      subsystem.drivetrain.run();
+      subsystem.latch.run();
+      subsystem.hang.run();
 
-    // Intake controller, uses the X button holded down to push the elevation
-    // up.
-    subsystem.intake.run();
+      // Intake controller, uses the X button holded down to push the elevation
+      // up.
+      subsystem.intake.run();
 
-    // Intake controller, moves the left and right intakes and stops them if
-    // nothing is pressed.
+      // Intake controller, moves the left and right intakes and stops them if
+      // nothing is pressed.
 
-    pros::delay(10);  // Small delay to reduce CPU usage
-  }
+      pros::delay(10); // Small delay to reduce CPU usage
+   }
 }
