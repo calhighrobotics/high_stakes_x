@@ -48,7 +48,9 @@ void initialize() {
 
    chassis.setPose(0, 0, 0);
 
-   screen.selector.selector();
+   
+   //screen.selector.selector();
+   
 }
 
 /**
@@ -83,8 +85,8 @@ void competition_initialize() {}
  */
 
 void autonomous() {
+   
    pros::lcd::initialize();
-
    pros::Task screen_task([&]() {
       while (true) {
          // print robot location to the brain screen
@@ -92,6 +94,8 @@ void autonomous() {
          pros::lcd::print(1, "Y: %f", chassis.getPose().y);         // y
          pros::lcd::print(2, "Theta: %f", chassis.getPose().theta); // heading
          // delay to save resources
+         pros::lcd::print(3, "Rotation Sensor: %i", lateral_sensor.get_position());
+         pros::lcd::print(4, "Rotation Sensor: %i", horizontal_sensor.get_position());
          pros::delay(20);
       }
    });

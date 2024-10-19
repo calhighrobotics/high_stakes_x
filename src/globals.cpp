@@ -31,12 +31,12 @@ pros::Motor HookMotor(2, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degre
 // placeholder port number
 
 pros::adi::Pneumatics LatchControl('A', false);
-pros::adi::Pneumatics HangControl('B', true);
+pros::adi::Pneumatics HangControl('B', false);
 
 pros::Rotation lateral_sensor(16);
-pros::Rotation horizontal_sensor(17);
+pros::Rotation horizontal_sensor(-17);
 
-pros::Imu inertial_sensor(10);
+pros::Imu inertial_sensor(14);
 
 
 // Vision sensor configuration
@@ -58,7 +58,7 @@ pros::MotorGroup drive_({LeftFront.get_port(), RightFront.get_port(), LeftMid.ge
 
 // Lemlib objects - Used by lemlib drive and odometry functions
 lemlib::TrackingWheel horizontal_tracking_wheel(&horizontal_sensor, lemlib::Omniwheel::NEW_2, -5);
-lemlib::TrackingWheel vertical_tracking_wheel(&lateral_sensor, lemlib::Omniwheel::NEW_2, -1.5);
+lemlib::TrackingWheel vertical_tracking_wheel(&lateral_sensor, lemlib::Omniwheel::NEW_2, -1.45);
 
 // Describes the lemlib objects that are used to control the autonomous
 // functions of the robot.
@@ -81,25 +81,25 @@ lemlib::OdomSensors sensors{
 
 // forward/backward PID
 // lateral PID controller
-lemlib::ControllerSettings lateral_controller(10,  // proportional gain (kP)
-                                              0,   // integral gain (kI)
-                                              3,   // derivative gain (kD)
-                                              3,   // anti windup
-                                              1,   // small error range, in inches
+lemlib::ControllerSettings lateral_controller(10, // proportional gain (kP)
+                                              0, // integral gain (kI)
+                                              4.5, // derivative gain (kD)
+                                              3, // anti windup
+                                              1, // small error range, in inches
                                               100, // small error range timeout, in milliseconds
-                                              3,   // large error range, in inches
+                                              3, // large error range, in inches
                                               500, // large error range timeout, in milliseconds
-                                              20   // maximum acceleration (slew)
+                                              25 // maximum acceleration (slew)
 );
 
 // angular PID controller
 lemlib::ControllerSettings angular_controller(2,   // proportional gain (kP)
                                               0,   // integral gain (kI)
-                                              10,  // derivative gain (kD)
+                                              10.5,  // derivative gain (kD)
                                               3,   // anti windup
                                               1,   // small error range, in degrees
                                               100, // small error range timeout, in milliseconds
-                                              3,   // large error range, in degrees
+                                              2,   // large error range, in degrees
                                               500, // large error range timeout, in milliseconds
                                               0    // maximum acceleration (slew)
 );
