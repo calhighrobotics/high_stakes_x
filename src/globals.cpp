@@ -31,7 +31,7 @@ pros::Motor HookMotor(2, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degre
 // placeholder port number
 
 pros::adi::Pneumatics LatchControl('A', false);
-pros::adi::Pneumatics HangControl('B', true);
+pros::adi::Pneumatics HangControl('B', false);
 
 pros::Rotation lateral_sensor(16);
 pros::Rotation horizontal_sensor(17);
@@ -44,7 +44,6 @@ pros::Vision colorSensor(3);
 
 pros::vision_signature_s_t RED_SIG =
     pros::c::vision_signature_from_utility(1, -4653, -3619, -4136, 9831, 11725, 10778, 2.5, 0);
-
 pros::vision_signature_s_t BLUE_SIG =
     pros::c::vision_signature_from_utility(2, 9187, 12161, 10674, -375, 1327, 476, 2.5, 0);
 pros::vision_signature_s_t BLUE_DARK_SIG =
@@ -55,6 +54,7 @@ pros::MotorGroup drive_left({LeftFront.get_port(), LeftMid.get_port(), LeftBack.
 pros::MotorGroup drive_right({RightFront.get_port(), RightMid.get_port(), RightBack.get_port()});
 pros::MotorGroup drive_({LeftFront.get_port(), RightFront.get_port(), LeftMid.get_port(), RightMid.get_port(),
                          LeftBack.get_port(), RightBack.get_port()});
+
 
 // Lemlib objects - Used by lemlib drive and odometry functions
 lemlib::TrackingWheel horizontal_tracking_wheel(&horizontal_sensor, lemlib::Omniwheel::NEW_2, -5);

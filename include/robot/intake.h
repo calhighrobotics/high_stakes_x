@@ -1,5 +1,6 @@
 #pragma once
 
+#include "pros/vision.h"
 namespace Robot {
 
 /**
@@ -19,7 +20,7 @@ class Intake {
     * @brief Checks whether the intake should stop to skip the ring depending on color.
     * It is the embodiment of vision sensor usage in this codebase.
     */
-   void checkStop();
+   bool checkStop();
 
 
    Intake();
@@ -36,5 +37,8 @@ class Intake {
     * @brief blue is false, red is true.
     */
    bool alliance_color;
+
+   //Stores blue color code - Red only uses a signature
+   pros::vision_color_code_t blue_color_code;
 };
 } // namespace Robot
