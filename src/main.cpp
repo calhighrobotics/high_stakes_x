@@ -47,9 +47,7 @@ void initialize() {
    chassis.calibrate();
 
    chassis.setPose(0, 0, 0);
-
-   
-   //screen.selector.selector();
+   screen.selector.selector();
    
 }
 
@@ -70,7 +68,9 @@ void disabled() {}
  * This task will exit when the robot is enabled and autonomous or opcontrol
  * starts.<asd></asd>
  */
-void competition_initialize() {}
+void competition_initialize() {
+   
+}
 
 /**6
  * Runs the user autonomous code. This function will be started in its own task

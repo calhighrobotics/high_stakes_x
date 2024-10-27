@@ -6,7 +6,6 @@ using namespace Robot;
 using namespace Robot::Globals;
 
 Intake::Intake() {
-   elevated = false;
    alliance_color = false;
    controller.print(0, 0, "Intake initialized");
 }
@@ -25,8 +24,6 @@ void Intake::run() {
    }
 }
 
-
-void Intake::toggle() { elevated = !elevated; }
 
 // Vision sensor only works with intake, therefore it should not on
 void Intake::checkStop() {}
