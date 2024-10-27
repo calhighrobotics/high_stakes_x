@@ -40,7 +40,7 @@ pros::Imu inertial_sensor(14);
 
 
 // Vision sensor configuration
-pros::Vision colorSensor(3);
+pros::Optical colorSensor(3);
 
 pros::vision_signature_s_t RED_SIG =
     pros::c::vision_signature_from_utility(1, -4653, -3619, -4136, 9831, 11725, 10778, 2.5, 0);

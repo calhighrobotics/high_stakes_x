@@ -28,6 +28,6 @@ void Intake::run() {
 
 void Intake::toggle() { elevated = !elevated; }
 
-// Vision sensor only works with intake, therefore it should not on
+// Optical sensor only works with intake, therefore it should not on
 void Intake::checkStop() {}
 
