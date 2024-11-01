@@ -66,7 +66,6 @@ int Drivetrain::thrustHandler(int thrust) {
       return thrust * -1;
    }
    return thrust;
-
 }
 
 // Switch the drivetrain control mode between arcade and tank drive with the down button(between 1 and 2)

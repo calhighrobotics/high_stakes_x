@@ -21,7 +21,6 @@ class Intake {
     */
    void checkStop();
 
-
    Intake();
 
    /**

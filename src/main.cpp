@@ -50,9 +50,7 @@ void initialize() {
 
    chassis.setPose(0, 0, 0);
 
-   
-   //screen.selector.selector();
-   
+   // screen.selector.selector();
 }
 
 /**
@@ -87,7 +85,7 @@ void competition_initialize() {}
  */
 
 void autonomous() {
-   
+
    pros::lcd::initialize();
    pros::Task screen_task([&]() {
       while (true) {
@@ -104,7 +102,6 @@ void autonomous() {
 
    subsystem.autonomous.AutoDrive(subsystem.intake, subsystem.latch);
 }
-
 
 /**
  * Runs the operator control code. This function will be started in its own

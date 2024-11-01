@@ -7,17 +7,11 @@ using namespace Robot::Globals;
 Autonomous::AUTON_ROUTINE Autonomous::auton = RED_LEFT;
 std::string Autonomous::autonName;
 
-
 // Red Left
-void Autonomous::Auton1(Intake &intake, Latch &latch) {
-
-
-}
+void Autonomous::Auton1(Intake &intake, Latch &latch) {}
 
 // Red Right
-void Autonomous::Auton2(Intake &intake, Latch &latch) {
-
-}
+void Autonomous::Auton2(Intake &intake, Latch &latch) {}
 
 // Blue left
 void Autonomous::Auton3(Intake &intake, Latch &latch) {}
@@ -26,9 +20,7 @@ void Autonomous::Auton3(Intake &intake, Latch &latch) {}
  * @todo Flesh out this method before the competition in order to make it a full
  * solo awp autonomous. Blue right
  */
-void Autonomous::Auton4(Intake &intake, Latch &latch) {
-
-}
+void Autonomous::Auton4(Intake &intake, Latch &latch) {}
 
 void Autonomous::Auton5(Intake &intake, Latch &latch) {
    // Autonomous routine for the Skills challenge
