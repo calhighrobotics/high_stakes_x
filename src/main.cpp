@@ -1,5 +1,7 @@
 #include "main.h"
 #include "globals.h"
+#include "pros/misc.h"
+#include "robot/drivetrain.h"
 #include "screen/selector.h"
 #include "screen/status.h"
 
@@ -122,10 +124,16 @@ void opcontrol() {
       if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_DOWN)) {
          autonomous();
       }
-      if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_LEFT)) {
+      if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_UP)) {
          std::string name = subsystem.drivetrain.toggleDrive();
          // Output the current drive mode to the controller screen
          controller.print(0, 0, name.c_str());
+      }
+      if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_RIGHT)) {
+         Drivetrain::isReversed = !Drivetrain::isReversed;
+         // Output the current drive mode to the controller screen
+
+         controller.print(0, 0, "reversal: %d", Drivetrain::isReversed);
       }
 
       subsystem.drivetrain.run();

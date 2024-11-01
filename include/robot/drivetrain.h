@@ -74,6 +74,13 @@ class Drivetrain {
     */
    static std::string toggleDrive();
 
+    /**
+      * @brief Toggles the orientation of the drivetrain.
+    */
+   static int thrustHandler(int thrust);
+
+   static bool isReversed;
+
  private:
    /**
     * @brief Drives the robot using arcade drive.
