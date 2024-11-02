@@ -1,5 +1,6 @@
 #include "globals.h"
 #include "pros/abstract_motor.hpp"
+#include "pros/misc.hpp"
 #include "pros/motors.hpp"
 #include "pros/vision.h"
 #include "pros/vision.hpp"
@@ -19,6 +20,8 @@ namespace Robot {
 namespace Globals {
 
 pros::Controller controller(pros::E_CONTROLLER_MASTER);
+pros::Controller partner(pros::E_CONTROLLER_PARTNER);
+
 pros::Motor RightFront(13, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
 pros::Motor LeftFront(-19, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
 pros::Motor LeftBack(-18, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);

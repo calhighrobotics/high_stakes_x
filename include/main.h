@@ -42,6 +42,7 @@
 #include "robot/hang.h"
 #include "robot/intake.h"
 #include "robot/latch.h"
+#include "electronic/controller.h"
 
 /**
  * You should add more #includes here
