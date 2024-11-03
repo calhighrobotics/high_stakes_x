@@ -123,9 +123,8 @@ void autonomous() {
  */
 void opcontrol() {
 
-
    while (true) {
-      
+
       // Calls to event handling functions.
       if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_DOWN)) {
          autonomous();
@@ -144,8 +143,6 @@ void opcontrol() {
          controller.print(0, 0, "reversal: %d", Drivetrain::isReversed);
       }
 
-      
-
       subsystem.drivetrain.run();
       subsystem.latch.run();
       subsystem.hang.run();
@@ -155,7 +152,7 @@ void opcontrol() {
 
       // Handles partner controller keypresses to rumble the primary controller
       electronic.controllers.notifier();
-      
+
       // DOES NOT SWITCH CONTROL - Checks for a key press to trigger controller switch
       electronic.controllers.switchControl();
 
