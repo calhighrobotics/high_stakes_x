@@ -1,6 +1,6 @@
 #include "robot/drivetrain.h"
-
 #include "globals.h"
+#define DEFAULT_DELAY_LENGTH 15
 
 using namespace Robot;
 using namespace Robot::Globals;
@@ -17,7 +17,7 @@ void Drivetrain::CurvatureDrive() {
 
    chassis.curvature(thrustHandler(left), thrustHandler(right));
 
-   pros::delay(15);
+   pros::delay(DEFAULT_DELAY_LENGTH);
 }
 
 void Drivetrain::ArcadeDrive() {
@@ -27,7 +27,7 @@ void Drivetrain::ArcadeDrive() {
 
    chassis.arcade(thrustHandler(left), thrustHandler(right), false, 0.6);
 
-   pros::delay(15);
+   pros::delay(DEFAULT_DELAY_LENGTH);
 }
 
 void Drivetrain::TankDrive() {
@@ -36,7 +36,7 @@ void Drivetrain::TankDrive() {
 
    chassis.tank(thrustHandler(left), thrustHandler(right));
 
-   pros::delay(15);
+   pros::delay(DEFAULT_DELAY_LENGTH);
 }
 
 // Run the drivetrain depending on the control mode
