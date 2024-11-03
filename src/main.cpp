@@ -1,4 +1,5 @@
 #include "main.h"
+#include "electronic/controller.h"
 #include "globals.h"
 #include "pros/misc.h"
 #include "robot/drivetrain.h"
@@ -38,6 +39,10 @@ struct RobotScreen {
    Robot::status_screen status;
 } screen;
 
+struct Electronics {
+   Robot::Controller controllers;
+} electronic;
+
 /**
  * Runs initialization code. This occurs as soon as the program is started.
  *
@@ -50,7 +55,7 @@ void initialize() {
 
    chassis.setPose(0, 0, 0);
 
-   // screen.selector.selector();
+   screen.selector.selector();
 }
 
 /**
@@ -117,15 +122,21 @@ void autonomous() {
  * the task, not resume it from where it left off.
  */
 void opcontrol() {
+
+
    while (true) {
+      
+      // Calls to event handling functions.
       if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_DOWN)) {
          autonomous();
       }
+      // Toggles the drivetrain orientation - can be forward or backward
       if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_UP)) {
          std::string name = subsystem.drivetrain.toggleDrive();
          // Output the current drive mode to the controller screen
          controller.print(0, 0, name.c_str());
       }
+      // Checks for drivetrain reversal - Changes conditions in a value handler function in the drivetrain class
       if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_RIGHT)) {
          Drivetrain::isReversed = !Drivetrain::isReversed;
          // Output the current drive mode to the controller screen
@@ -133,16 +144,20 @@ void opcontrol() {
          controller.print(0, 0, "reversal: %d", Drivetrain::isReversed);
       }
 
+      
+
       subsystem.drivetrain.run();
       subsystem.latch.run();
       subsystem.hang.run();
 
-      // Intake controller, uses the X button holded down to push the elevation
-      // up.
+      // Intake controller - uses R1 to pull in and L1 to push out, and stops if nothing pressed
       subsystem.intake.run();
 
-      // Intake controller, moves the left and right intakes and stops them if
-      // nothing is pressed.
+      // Handles partner controller keypresses to rumble the primary controller
+      electronic.controllers.notifier();
+      
+      // DOES NOT SWITCH CONTROL - Checks for a key press to trigger controller switch
+      electronic.controllers.switchControl();
 
       pros::delay(10); // Small delay to reduce CPU usage
    }
