@@ -35,6 +35,7 @@
 #define PROS_USE_LITERALS
 
 #include "api.h"
+#include "electronic/controller.h"
 #include "globals.h"
 #include "pros/apix.h"
 #include "robot/auton.h"

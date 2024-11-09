@@ -35,6 +35,8 @@ namespace Robot {
  * parameters that are used to control the PID that lemlib uses, additionally.
  */
 namespace Globals {
+
+extern pros::Controller partner;
 extern pros::Controller controller;
 
 extern pros::Motor RightFront;

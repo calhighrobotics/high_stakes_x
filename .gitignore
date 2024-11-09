@@ -20,6 +20,7 @@ firmware/
 # Vale
 !.vale.ini
 vale-styles
+styles/
 
 # Doxygen
 html/
