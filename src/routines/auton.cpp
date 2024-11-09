@@ -24,32 +24,150 @@ ASSET(red_left_pt5_txt);
 
 // Red Left
 void Autonomous::Auton1(Intake &intake, Latch &latch) {
-   HangControl.toggle();
+   uint32_t delay_constant = 1050;
+   drive_.set_brake_mode_all(pros::E_MOTOR_BRAKE_BRAKE);
    pros::delay(950);
-   HangControl.toggle();
+   chassis.setPose(0, 0,0);
+   IntakeMotor.move_relative(-900, 100);
+   chassis.moveToPoint(0, 29, 1400, {.forwards = false, .maxSpeed = 70},true);
+   pros::delay(delay_constant);
+   latch.toggle();
+   IntakeMotor.move_velocity(-600);
+   HookMotor.move_velocity(-350);
+   pros::delay(delay_constant * 2);
+   IntakeMotor.move_velocity(0);
+   HookMotor.move_velocity(0);
+
+   // get bottom red ring north
+   chassis.turnToHeading(-45, 1400, {.maxSpeed = 70}, true);
+   pros::delay(delay_constant);
+   chassis.setPose(0,0,0);
+   chassis.moveToPoint(0, 29, 1400, {.forwards = false, .maxSpeed = 70}, true);
+   pros::delay(delay_constant);
+   IntakeMotor.move_velocity(-600);
+   HookMotor.move_velocity(-350);
+   pros::delay(delay_constant * 2);
+   IntakeMotor.move_velocity(0);
+   HookMotor.move_velocity(0);
+
+   latch.toggle()
+   chassis.turnToHeading(90, 1400, {.maxSpeed = 70}, true);
+   pros::delay(delay_constant);
+   chassis.setPose(0,0,0);
+   chassis.moveToPoint(0, -29, 1400, {.forwards = false, .maxSpeed = 70}, true);
+   pros::delay(delay_constant);
 }
 
 // Red Right
 void Autonomous::Auton2(Intake &intake, Latch &latch) {
+   uint32_t delay_constant = 1050;
    //HangControl.toggle();
    drive_.set_brake_mode_all(pros::E_MOTOR_BRAKE_BRAKE);
    pros::delay(950);
    chassis.setPose(0, 0,0);
    IntakeMotor.move_relative(-900, 100);
    chassis.moveToPoint(0, -29, 1400, {.forwards = false, .maxSpeed = 70},true);
-   pros::delay(1050);
+   pros::delay(delay_constant);
    latch.toggle();
    IntakeMotor.move_velocity(-600);
    HookMotor.move_velocity(-350);
-   pros::delay(2000);
+   pros::delay(delay_constant * 2);
+   IntakeMotor.move_velocity(0);
+   HookMotor.move_velocity(0);
+
+   //going for the south bottom red ring
+   chassis.turnToHeading(45, 1400, {.maxSpeed = 70}, true);
+   pros::delay(delay_constant);
+   chassis.setPose(0,0,0);
+   chassis.moveToPoint(0, -60, 1400, {.forwards = false, .maxSpeed = 70}, true);
+   pros::delay(delay_constant * 2);
+   IntakeMotor.move_velocity(-600);
+   HookMotor.move_velocity(-350);
+   pros::delay(delay_constant * 2);
+
+   IntakeMotor.move_velocity(0);
+   HookMotor.move_velocity(0);
+
+   //going for the third ring, north, on middle line of red side
+   chassis.turnToHeading(22, 1400, {.maxSpeed = 70}, true);
+   pros::delay(delay_constant);
+   chassis.setPose(0,0,0);
+   chassis.moveToPoint(-60, 120, 1400, {.forwards=false, .maxSpeed = 70}, true);
+   pros::delay(delay_constant);
+   IntakeMotor.move_velocity(-600);
+   HookMotor.move_velocity(-350);
+   pros::delay(delay_constant * 2);
+   IntakeMotor.move_velocity(0);
+   HookMotor.move_velocity(0);
+
+   // touching tower
+   latch.toggle();
+   chassis.turnToHeading(78, 1400, {.maxSpeed = 70}, true);
+   pros::delay(delay_constant);
+   chassis.setPose(0,0,0);
+   chassis.moveToPoint(-30, 0, 1400, {.forwards=false, .maxSpeed = 70}, true);
+   pros::delay(delay_constant);
+
+
    //chassis.moveToPoint(0, 4, 1000, {.forwards = true, .maxSpeed = 95}, true);
 }
 
 // Blue left
 void Autonomous::Auton3(Intake &intake, Latch &latch) {
-   HangControl.toggle();
+   uint32_t delay_constant = 1050;
+   //HangControl.toggle();
+   drive_.set_brake_mode_all(pros::E_MOTOR_BRAKE_BRAKE);
    pros::delay(950);
-   HangControl.toggle();
+   chassis.setPose(0, 0,0);
+   IntakeMotor.move_relative(-900, 100);
+   chassis.moveToPoint(0, 29, 1400, {.forwards = false, .maxSpeed = 70},true);
+   pros::delay(delay_constant);
+   latch.toggle();
+   IntakeMotor.move_velocity(-600);
+   HookMotor.move_velocity(-350);
+   pros::delay(delay_constant * 2);
+   IntakeMotor.move_velocity(0);
+   HookMotor.move_velocity(0);
+
+   //going for the south both red ring
+   chassis.turnToHeading(-45, 1400, {.maxSpeed = 70}, true);
+   pros::delay(delay_constant);
+   chassis.setPose(0,0,0);
+   chassis.moveToPoint(0, 60, 1400, {.forwards = false, .maxSpeed = 70}, true);
+   pros::delay(delay_constant * 2);
+   IntakeMotor.move_velocity(-600);
+   HookMotor.move_velocity(-350);
+   pros::delay(delay_constant * 2);
+
+   IntakeMotor.move_velocity(0);
+   HookMotor.move_velocity(0);
+
+   //going for the third ring, north, on middle line of red side
+   chassis.turnToHeading(-22, 1400, {.maxSpeed = 70}, true);
+   pros::delay(delay_constant);
+   chassis.setPose(0,0,0);
+   chassis.moveToPoint(60, -120, 1400, {.forwards=false, .maxSpeed = 70}, true);
+   pros::delay(delay_constant);
+   IntakeMotor.move_velocity(-600);
+   HookMotor.move_velocity(-350);
+   pros::delay(delay_constant * 2);
+   IntakeMotor.move_velocity(0);
+   HookMotor.move_velocity(0);
+
+   // touching tower
+   latch.toggle();
+   chassis.turnToHeading(-78, 1400, {.maxSpeed = 70}, true);
+   pros::delay(delay_constant);
+   chassis.setPose(0,0,0);
+   chassis.moveToPoint(30, 0, 1400, {.forwards=false, .maxSpeed = 70}, true);
+   pros::delay(delay_constant);
+
+
+
+
+   /*HangControl.toggle();
+   pros::delay(950);
+   HangControl.toggle();*/
 }
 
 /*
@@ -57,9 +175,38 @@ void Autonomous::Auton3(Intake &intake, Latch &latch) {
  * solo awp autonomous. Blue right
  */
 void Autonomous::Auton4(Intake &intake, Latch &latch) {
-   HangControl.toggle();
+   uint32_t delay_constant = 1050;
+   drive_.set_brake_mode_all(pros::E_MOTOR_BRAKE_BRAKE);
    pros::delay(950);
-   HangControl.toggle();
+   chassis.setPose(0, 0,0);
+   IntakeMotor.move_relative(-900, 100);
+   chassis.moveToPoint(0, -29, 1400, {.forwards = false, .maxSpeed = 70},true);
+   pros::delay(delay_constant);
+   latch.toggle();
+   IntakeMotor.move_velocity(-600);
+   HookMotor.move_velocity(-350);
+   pros::delay(delay_constant * 2);
+   IntakeMotor.move_velocity(0);
+   HookMotor.move_velocity(0);
+
+   // get bottom red ring north
+   chassis.turnToHeading(45, 1400, {.maxSpeed = 70}, true);
+   pros::delay(delay_constant);
+   chassis.setPose(0,0,0);
+   chassis.moveToPoint(0, -29, 1400, {.forwards = false, .maxSpeed = 70}, true);
+   pros::delay(delay_constant);
+   IntakeMotor.move_velocity(-600);
+   HookMotor.move_velocity(-350);
+   pros::delay(delay_constant * 2);
+   IntakeMotor.move_velocity(0);
+   HookMotor.move_velocity(0);
+
+   latch.toggle()
+   chassis.turnToHeading(-90, 1400, {.maxSpeed = 70}, true);
+   pros::delay(delay_constant);
+   chassis.setPose(0,0,0);
+   chassis.moveToPoint(0, 29, 1400, {.forwards = false, .maxSpeed = 70}, true);
+   pros::delay(delay_constant);
 }
 
 void Autonomous::Auton5(Intake &intake, Latch &latch) {
