@@ -56,7 +56,7 @@ jobs:
             fail_on_error: true
 
         - name: Run linter
-          uses: cpp-linter/cpp-linter-action@v2.12.1
+          uses: cpp-linter/cpp-linter-action@v2
           id: linter
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
