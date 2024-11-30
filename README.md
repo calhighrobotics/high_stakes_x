@@ -9,7 +9,7 @@ We have both a wiki that covers high-level programming, engineering, design, and
 - [Wiki](https://calhighrobotics.github.io/1516x)
 - [Doxygen Documentation](https://calhighrobotics.github.io/high_stakes_x)
 
-We aim to have a cohesive codebase that covers many subsystems but also follows best practices in the C++ development space as well as bringing in new features through modularity.
+We aim to have a cohesive codebase that covers many subs>ystems but also follows best practices in the C++ development space as well as bringing in new features through modularity.
 
 ## Features
 
@@ -58,8 +58,8 @@ Having multiple programmers, we emphasize modularity in the codebase. That being
 We use the following libraries to make our codebase possible. We are indebted to their contributioins to make this codebase possible. Check out their code for types and functions that we use as well.
 
 - [PROS](https://pros.cs.purdue.edu/v5/pros-4/)
-- [Lemlib](https://lemlib.readthedocs.io/)
-- [lvgl](https://docs.lvgl.io/8.3/)
+- [LemLib](https://lemlib.readthedocs.io/)
+- [LVGL](https://docs.lvgl.io/8.3/)
 
 ## License
 

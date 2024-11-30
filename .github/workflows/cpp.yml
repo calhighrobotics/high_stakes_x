@@ -1,6 +1,6 @@
 name: C/C++ CI
 
-on: [push, pull_request]
+on: pull_request
 concurrency:
   group: ${{ github.head_ref }}
   cancel-in-progress: true
@@ -45,7 +45,7 @@ jobs:
             mv ${{ github.workspace }}/compile_commands/compile_commands.json ../compile_commands.json
         
         - name: Run commitlint
-          uses: opensource-nepal/commitlint@7f72e9108526ef0f05afcb1627d1239ed41324c6
+          uses: opensource-nepal/commitlint@v1.3.0
           with:
             fail_on_error: true
         
