@@ -2,7 +2,6 @@
 #include "globals.h"
 #include "pros/misc.h"
 #include <cstdint>
-#include <ostream>
 #include <string>
 #include <sys/_intsup.h>
 
