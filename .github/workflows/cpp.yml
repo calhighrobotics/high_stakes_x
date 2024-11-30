@@ -6,7 +6,26 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+    make:
+        name: Compile Project 
+        runs-on: ubuntu-latest
+
+        steps:
+        - name: checkout
+          uses: actions/checkout@v4
+        
+        - name: Run Centei/pros-build
+          id: build 
+          uses: Centei/pros-build@main
+
+        - name: Upload Artifact
+          uses: actions/upload-artifact@v4
+          with:
+            name: ${{ steps.build.outputs.name }}
+            path: ${{ github.workspace }}/compile_commands.json
+            retention-days: 1
     lint:
+        needs: make
         name: Format and Lint
         runs-on: ubuntu-latest
         permissions:
@@ -16,6 +35,14 @@ jobs:
         steps:
         - name: checkout
           uses: actions/checkout@v4
+
+        - name: Download artifact
+          id: artifact
+          uses: actions/download-artifact@v4
+
+        - name: Move and rename artifact
+          run: |
+            mv ${{ github.workspace }}/compile_commands/compile_commands.json ../compile_commands.json
         
         - name: Run commitlint
           uses: opensource-nepal/commitlint@7f72e9108526ef0f05afcb1627d1239ed41324c6
@@ -29,7 +56,7 @@ jobs:
             fail_on_error: true
 
         - name: Run linter
-          uses: Centei/cpp-linter-action@python-cache
+          uses: cpp-linter/cpp-linter-action@v2.12.1
           id: linter
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -37,7 +64,7 @@ jobs:
             style: 'file'
             tidy-checks: 'file'
             tidy-review: true
-            cache: true
+            database: '${{ github.workspace}}'
             version: '18'
 
         - name: Check linter errors
@@ -47,17 +74,3 @@ jobs:
         - name: Check format errors
           if: steps.linter.outputs.clang-format-checks-failed > 0
           run: exit 1
-    make:
-        name: Compile Project 
-        runs-on: ubuntu-latest
-        needs: lint
-
-        steps:
-        - name: checkout
-          uses: actions/checkout@v4
-        
-        - name: Install Arm GNU Toolchain (arm-none-eabi-gcc)
-          uses: carlosperate/arm-none-eabi-gcc-action@v1
-
-        - name: make
-          run: make -j4 EXTRA_CXXFLAGS="-O0"

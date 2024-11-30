@@ -2,19 +2,14 @@
 
 namespace Robot {
 
-/**
- * @brief The Hang class represents a Hanging mechanism.
- */
 class Controller {
- public:
-   /**
-    * @brief Runs Hanging mechanism.
-    */
+public:
    void notifier();
 
    void switchControl();
 
-   Controller();
+   static void notify_motor_disconnect(void *param);
 
+   Controller();
 };
 } // namespace Robot
