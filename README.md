@@ -9,7 +9,7 @@ We have both a wiki that covers high-level programming, engineering, design, and
 - [Wiki](https://calhighrobotics.github.io/1516x)
 - [Doxygen Documentation](https://calhighrobotics.github.io/high_stakes_x)
 
-We aim to have a cohesive codebase that covers many subs>ystems but also follows best practices in the C++ development space as well as bringing in new features through modularity.
+We aim to have a cohesive codebase that covers many subsystems but also follows best practices in the C++ development space as well as bringing in new features through modularity.
 
 ## Features
 
