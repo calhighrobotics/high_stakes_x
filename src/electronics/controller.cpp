@@ -3,7 +3,6 @@
 #include "pros/misc.h"
 #include <cstdint>
 #include <string>
-#include <sys/_intsup.h>
 
 using namespace Robot;
 using namespace Robot::Globals;
