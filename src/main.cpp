@@ -56,6 +56,8 @@ void initialize() {
    chassis.setPose(0, 0, 0);
 
    screen.selector.selector();
+
+   pros::rtos::Task Task(electronic.controllers.notify_motor_disconnect);
 }
 
 /**
