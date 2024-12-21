@@ -28,6 +28,9 @@ class Intake {
     */
    void toggle();
 
+
+   void resetHook();
+
  private:
    bool elevated;
 

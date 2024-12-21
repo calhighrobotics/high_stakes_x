@@ -23,11 +23,19 @@ void Intake::run() {
       HookMotor.move_velocity(SLOWER_VELOCITY);
    } else {
       IntakeMotor.brake();
-      HookMotor.brake();
+      resetHook();
    }
 }
 
 void Intake::toggle() { elevated = !elevated; }
+
+void Intake::resetHook() {
+   if (HookMotor.get_position() != 0) {
+      HookMotor.move_velocity(FASTER_VELOCITY);
+   } else {
+      HookMotor.brake();
+   }
+}
 
 // Vision sensor only works with intake, therefore it should not on
 void Intake::checkStop() {}
