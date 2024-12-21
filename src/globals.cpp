@@ -35,6 +35,7 @@ pros::Motor HookMotor(2, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degre
 
 pros::adi::Pneumatics LatchControl('A', false);
 pros::adi::Pneumatics HangControl('B', false);
+pros::adi::Pneumatics SweeperControl('C', false);
 
 pros::Rotation lateral_sensor(16);
 pros::Rotation horizontal_sensor(-17);

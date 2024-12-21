@@ -32,6 +32,7 @@ struct RobotSubsystems {
    Robot::Intake intake;
    Robot::Latch latch;
    Robot::Hang hang;
+   Robot::Sweeper sweeper;
 } subsystem;
 
 struct RobotScreen {
@@ -147,6 +148,7 @@ void opcontrol() {
 
       subsystem.drivetrain.run();
       subsystem.latch.run();
+      subsystem.sweeper.run()
       subsystem.hang.run();
 
       // Intake controller - uses R1 to pull in and L1 to push out, and stops if nothing pressed
