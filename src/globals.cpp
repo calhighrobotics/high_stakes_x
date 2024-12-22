@@ -39,6 +39,8 @@ pros::adi::Pneumatics HangControl('B', false);
 pros::Rotation lateral_sensor(16);
 pros::Rotation horizontal_sensor(-17);
 
+pros::Distance distance_sensor(4); // placeholder port
+
 pros::Imu inertial_sensor(14);
 
 // Vision sensor configuration

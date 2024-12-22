@@ -30,7 +30,7 @@ void Intake::run() {
 void Intake::toggle() { elevated = !elevated; }
 
 void Intake::resetHook() {
-   if (HookMotor.get_position() != 0) {
+   if (distance_sensor.get() > 40 && HookMotor.get_position() != 0) {
       HookMotor.move_velocity(FASTER_VELOCITY);
    } else {
       HookMotor.brake();
