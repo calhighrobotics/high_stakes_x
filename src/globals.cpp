@@ -7,7 +7,7 @@
 
 /*
  * Although the following constants belong in their own seperate
- * files(auton.cpp, drivetriain.cpp), they are put here in order to maintain a
+ * files(auton.cpp, drivetriain.cpp), they're put here in order to maintain a
  * common location for all of the constants used by the program to belong in.
  * NOTE: This is the location where these variables are put into memory, but
  * they can be otherwise modified throughout the program.
@@ -29,7 +29,7 @@ pros::Motor RightBack(12, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degr
 pros::Motor LeftMid(20, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
 pros::Motor RightMid(-11, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
 pros::Motor IntakeMotor(-1, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
-pros::Motor HookMotor(2, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
+pros::Motor HookMotor(-2, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
 
 // placeholder port number
 
