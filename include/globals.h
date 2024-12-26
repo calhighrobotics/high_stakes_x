@@ -2,6 +2,7 @@
 
 #include "api.h"
 #include "lemlib/api.hpp"
+#include "pros/adi.hpp"
 #include "pros/vision.hpp"
 
 // The following files are imported in order to provide type definitions into
@@ -90,6 +91,7 @@ extern lemlib::ExpoDriveCurve steer_curve;
 
 extern pros::adi::DigitalIn drivetrainToggleSwitch;
 extern pros::adi::DigitalIn autonToggleSwitch;
+extern pros::adi::DigitalIn hookSwitch;
 
 extern pros::adi::Pneumatics LatchControl;
 extern pros::adi::Pneumatics HangControl;

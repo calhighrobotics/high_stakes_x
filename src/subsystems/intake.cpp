@@ -2,8 +2,9 @@
 
 #include "globals.h"
 
-#define SLOWER_VELOCITY 200
-#define FASTER_VELOCITY 600
+constexpr int SLOWER_VELOCITY = 200;
+constexpr int FASTER_VELOCITY = 600;
+constexpr int ONE_ROTATION = 835;
 
 using namespace Robot;
 using namespace Robot::Globals;
@@ -14,26 +15,21 @@ Intake::Intake() {
 }
 
 void Intake::run() {
-
    if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_R1)) {
       IntakeMotor.move_velocity(-FASTER_VELOCITY);
-      HookMotor.move_velocity(-SLOWER_VELOCITY);
    } else if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_L1)) {
       IntakeMotor.move_velocity(FASTER_VELOCITY);
-      HookMotor.move_velocity(SLOWER_VELOCITY);
+      spinHook();
    } else {
       IntakeMotor.brake();
-      resetHook();
    }
 }
 
 void Intake::toggle() { elevated = !elevated; }
 
-void Intake::resetHook() {
-   if (distance_sensor.get() > 40 && HookMotor.get_position() != 0) {
-      HookMotor.move_velocity(FASTER_VELOCITY);
-   } else {
-      HookMotor.brake();
+void Intake::spinHook() {
+   if (hookSwitch.get_value() && HookMotor.get_actual_velocity() == 0) {
+      HookMotor.move_relative(ONE_ROTATION, -SLOWER_VELOCITY);
    }
 }
 

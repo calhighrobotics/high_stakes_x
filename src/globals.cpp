@@ -1,5 +1,6 @@
 #include "globals.h"
 #include "pros/abstract_motor.hpp"
+#include "pros/adi.hpp"
 #include "pros/misc.hpp"
 #include "pros/motors.hpp"
 #include "pros/vision.h"
@@ -35,11 +36,12 @@ pros::Motor HookMotor(-2, pros::v5::MotorGears::green, pros::v5::MotorUnits::deg
 
 pros::adi::Pneumatics LatchControl('A', false);
 pros::adi::Pneumatics HangControl('B', false);
+pros::adi::DigitalIn hookSwitch('C');
 
 pros::Rotation lateral_sensor(16);
 pros::Rotation horizontal_sensor(-17);
 
-pros::Distance distance_sensor(4); // placeholder port
+pros::Distance distance_sensor(10); // placeholder port
 
 pros::Imu inertial_sensor(14);
 
