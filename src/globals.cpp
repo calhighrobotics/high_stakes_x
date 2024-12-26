@@ -7,7 +7,7 @@
 
 /*
  * Although the following constants belong in their own seperate
- * files(auton.cpp, drivetriain.cpp), they are put here in order to maintain a
+ * files(auton.cpp, drivetriain.cpp), they're put here in order to maintain a
  * common location for all of the constants used by the program to belong in.
  * NOTE: This is the location where these variables are put into memory, but
  * they can be otherwise modified throughout the program.
@@ -29,7 +29,7 @@ pros::Motor RightBack(12, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degr
 pros::Motor LeftMid(20, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
 pros::Motor RightMid(-11, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
 pros::Motor IntakeMotor(-1, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
-pros::Motor HookMotor(2, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
+pros::Motor HookMotor(-2, pros::v5::MotorGears::green, pros::v5::MotorUnits::degrees);
 
 // placeholder port number
 
@@ -44,7 +44,7 @@ pros::Distance distance_sensor(4); // placeholder port
 pros::Imu inertial_sensor(14);
 
 // Vision sensor configuration
-pros::Vision colorSensor(3);
+pros::Vision colorSensor(4);
 
 pros::vision_signature_s_t RED_SIG =
     pros::c::vision_signature_from_utility(1, -4653, -3619, -4136, 9831, 11725, 10778, 2.5, 0);
