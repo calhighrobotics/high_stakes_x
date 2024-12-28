@@ -21,6 +21,8 @@ class LadyBrown {
     */
    void checkStop();
 
+   LadyBrown();
+
    LadyBrown(double kP, double kI, double kD);
 
    double pid_update();
