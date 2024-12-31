@@ -4,7 +4,7 @@
 
 constexpr int SLOWER_VELOCITY = 200;
 constexpr int FASTER_VELOCITY = 600;
-constexpr int ONE_ROTATION = 835;
+constexpr double ONE_ROTATION = 901.6;
 
 using namespace Robot;
 using namespace Robot::Globals;
