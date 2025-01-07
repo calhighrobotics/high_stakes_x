@@ -41,9 +41,9 @@
 
 #define PROS_VERSION_MAJOR 4
 #define PROS_VERSION_MINOR 1
+#define PROS_VERSION_PATCH 1
+#define PROS_VERSION_STRING "4.1.1"
 
-#define PROS_VERSION_PATCH 0
-#define PROS_VERSION_STRING "4.1.0"
 
 #include "pros/adi.h"
 #include "pros/colors.h"
@@ -82,4 +82,4 @@
 #include "pros/vision.hpp"
 #endif
 
-#endif // _PROS_API_H_
+#endif  // _PROS_API_H_
