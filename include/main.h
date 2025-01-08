@@ -43,6 +43,7 @@
 #include "robot/hang.h"
 #include "robot/intake.h"
 #include "robot/latch.h"
+#include "robot/sweeper.h"
 
 /**
  * You should add more #includes here
