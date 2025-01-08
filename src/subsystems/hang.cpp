@@ -7,7 +7,7 @@ using namespace Robot;
 using namespace Robot::Globals;
 
 void Hang::run() {
-   if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_Y)) {
+   if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_A)) {
       Hang::toggle();
    }
 }
