@@ -9,9 +9,19 @@
 # PROS
 bin/
 .vscode/
+.lapce/
 .cache/
 compile_commands.json
 temp.log
 temp.errors
 *.ini
+firmware/
 .d/
+
+# Vale
+!.vale.ini
+vale-styles
+styles/
+
+# Doxygen
+html/
