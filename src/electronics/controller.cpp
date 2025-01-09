@@ -34,7 +34,7 @@ void Controller::notifier() {
 
 void Controller::switchControl() {
    // Dynamic controller switching - Switches which controller is main between the dual controllers
-   if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_L2) && partner.is_connected()) {
+   if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_LEFT) && partner.is_connected()) {
       pros::Controller temp = controller;
 
       controller = partner;
