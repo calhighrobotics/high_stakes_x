@@ -24,7 +24,7 @@ namespace Robot {
  * the sensitivity of the joystick inputs can be fine-tuned.
  */
 class Drivetrain {
- public:
+public:
    /**
     * @brief Initializes the Drivetrain object.
     *
@@ -81,7 +81,7 @@ class Drivetrain {
 
    static bool isReversed;
 
- private:
+private:
    /**
     * @brief Drives the robot using arcade drive.
     *

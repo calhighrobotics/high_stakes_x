@@ -6,7 +6,7 @@ namespace Robot {
  * @brief The Latch class represents a latching mechanism.
  */
 class Latch {
- public:
+public:
    /**
     * @brief Runs latching mechanism.
     */

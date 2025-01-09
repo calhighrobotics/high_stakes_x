@@ -3,8 +3,8 @@
 #include "globals.h"
 #include "pros/misc.h"
 #include "robot/drivetrain.h"
-#include "screen/selector.h"
 #include "robot/ladybrown.h"
+#include "screen/selector.h"
 #include "screen/status.h"
 
 using namespace Robot;
