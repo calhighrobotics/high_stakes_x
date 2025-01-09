@@ -51,6 +51,7 @@ Having multiple programmers, we emphasize modularity in the codebase. That being
    /electronic - Miscellaneous electronics-controlling classes
    /robot - Contains the header files and information custom for the actual robot.
 /src - Contains implementation of the above methods and the definition, specific to the 1516X robot
+/docs - Contains Robot/Driver specific documentation that would not fit best in the public wiki or the Doxygen page.
 ```
 
 ## Other Libraries
