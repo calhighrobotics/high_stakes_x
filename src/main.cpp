@@ -58,9 +58,24 @@ void initialize() {
 
    chassis.setPose(0, 0, 0);
 
-   screen.selector.selector();
+   //screen.selector.selector();
+   pros::lcd::initialize();
+   pros::Task screen_task([&]() {
+      while (true) {
+         // print robot location to the brain screen
+         pros::lcd::print(0, "X: %f", chassis.getPose().x);         // x
+         pros::lcd::print(1, "Y: %f", chassis.getPose().y);         // y
+         pros::lcd::print(2, "Theta: %f", chassis.getPose().theta); // heading
+         // delay to save resources
+         pros::lcd::print(3, "Rotation Sensor: %i", lateral_sensor.get_position());
+         pros::lcd::print(4, "Rotation Sensor: %i", horizontal_sensor.get_position());
+         pros::delay(20);
+      }
+   });
+   
+   pros::rtos::Task MotorNotification(electronic.controllers.notify_motor_disconnect);
+   pros::rtos::Task LadyBrownNotification(subsystem.ladybrown.edge_check);
 
-   pros::rtos::Task Task(electronic.controllers.notify_motor_disconnect);
 }
 
 /**
