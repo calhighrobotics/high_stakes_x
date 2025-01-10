@@ -42,6 +42,7 @@
 #include "robot/drivetrain.h"
 #include "robot/hang.h"
 #include "robot/intake.h"
+#include "robot/ladybrown.h"
 #include "robot/latch.h"
 #include "robot/sweeper.h"
 

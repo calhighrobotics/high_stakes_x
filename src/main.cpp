@@ -3,6 +3,7 @@
 #include "globals.h"
 #include "pros/misc.h"
 #include "robot/drivetrain.h"
+#include "robot/ladybrown.h"
 #include "screen/selector.h"
 #include "screen/status.h"
 
@@ -31,6 +32,7 @@ struct RobotSubsystems {
    Robot::Drivetrain drivetrain;
    Robot::Intake intake;
    Robot::Latch latch;
+   Robot::LadyBrown ladybrown;
    Robot::Hang hang;
    Robot::Sweeper sweeper;
 } subsystem;
@@ -150,6 +152,7 @@ void opcontrol() {
       subsystem.latch.run();
       subsystem.sweeper.run();
       subsystem.hang.run();
+      subsystem.ladybrown.run();
 
       // Intake controller - uses R1 to pull in and L1 to push out, and stops if nothing pressed
       subsystem.intake.run();

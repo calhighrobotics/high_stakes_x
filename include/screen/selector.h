@@ -9,7 +9,7 @@ namespace Robot {
  * autonomous take.
  */
 class selector_screen {
- public:
+public:
    /**
     * @brief Constructor.
     */
@@ -27,7 +27,7 @@ class selector_screen {
     */
    void selector();
 
- private:
+private:
    /**
     * @brief Value of the last selected competition autonomous when switching to
     * a skills autonomous.
