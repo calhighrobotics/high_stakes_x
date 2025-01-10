@@ -6,7 +6,7 @@ namespace Robot {
  * @brief The Intake class represents a robot intake system.
  */
 class Intake {
- public:
+public:
    /**
     * @brief Runs the main function of the intake system.
     *
@@ -28,7 +28,7 @@ class Intake {
     */
    void toggle();
 
- private:
+private:
    bool elevated;
 
    /**

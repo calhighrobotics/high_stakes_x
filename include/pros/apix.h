@@ -31,7 +31,6 @@
 #pragma GCC diagnostic ignored "-Wall"
 #pragma GCC diagnostic pop
 #include "pros/serial.h"
-#include "liblvgl/lvgl.h"
 
 #ifdef __cplusplus
 #include "pros/serial.hpp"

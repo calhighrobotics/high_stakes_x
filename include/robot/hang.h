@@ -6,7 +6,7 @@ namespace Robot {
  * @brief The Hang class represents a Hanging mechanism.
  */
 class Hang {
- public:
+public:
    /**
     * @brief Runs Hanging mechanism.
     */
