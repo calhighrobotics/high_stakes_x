@@ -141,9 +141,10 @@ void opcontrol() {
       }
       // Checks for drivetrain reversal - Changes conditions in a value handler function in the drivetrain class
       if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_RIGHT)) {
+         //isReversed is static, it is changed for the global state.
          Drivetrain::isReversed = !Drivetrain::isReversed;
-         // Output the current drive mode to the controller screen
 
+         // Output the current drive mode to the controller screen
          controller.print(0, 0, "reversal: %d", Drivetrain::isReversed);
       }
 
