@@ -48,6 +48,7 @@ extern pros::Motor LeftMid;
 extern pros::Motor RightMid;
 extern pros::Motor IntakeMotor;
 extern pros::Motor HookMotor;
+extern pros::Motor LadyBrownMotor;
 
 extern pros::MotorGroup punchers;
 extern pros::MotorGroup drive_left;
@@ -90,6 +91,7 @@ extern pros::adi::DigitalIn autonToggleSwitch;
 
 extern pros::adi::Pneumatics LatchControl;
 extern pros::adi::Pneumatics HangControl;
+extern pros::adi::Pneumatics SweeperControl;
 
 } // namespace Globals
 } // namespace Robot

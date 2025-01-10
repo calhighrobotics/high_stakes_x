@@ -3,6 +3,7 @@
 #include "globals.h"
 #include "pros/misc.h"
 #include "robot/drivetrain.h"
+#include "robot/ladybrown.h"
 #include "screen/selector.h"
 #include "screen/status.h"
 
@@ -31,7 +32,9 @@ struct RobotSubsystems {
    Robot::Drivetrain drivetrain;
    Robot::Intake intake;
    Robot::Latch latch;
+   Robot::LadyBrown ladybrown;
    Robot::Hang hang;
+   Robot::Sweeper sweeper;
 } subsystem;
 
 struct RobotScreen {
@@ -56,6 +59,8 @@ void initialize() {
    chassis.setPose(0, 0, 0);
 
    screen.selector.selector();
+
+   pros::rtos::Task Task(electronic.controllers.notify_motor_disconnect);
 }
 
 /**
@@ -137,15 +142,18 @@ void opcontrol() {
       }
       // Checks for drivetrain reversal - Changes conditions in a value handler function in the drivetrain class
       if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_RIGHT)) {
+         //isReversed is static, it is changed for the global state.
          Drivetrain::isReversed = !Drivetrain::isReversed;
-         // Output the current drive mode to the controller screen
 
+         // Output the current drive mode to the controller screen
          controller.print(0, 0, "reversal: %d", Drivetrain::isReversed);
       }
 
       subsystem.drivetrain.run();
       subsystem.latch.run();
+      subsystem.sweeper.run();
       subsystem.hang.run();
+      subsystem.ladybrown.run();
 
       // Intake controller - uses R1 to pull in and L1 to push out, and stops if nothing pressed
       subsystem.intake.run();

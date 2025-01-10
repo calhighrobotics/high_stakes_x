@@ -51,6 +51,7 @@ Having multiple programmers, we emphasize modularity in the codebase. That being
    /electronic - Miscellaneous electronics-controlling classes
    /robot - Contains the header files and information custom for the actual robot.
 /src - Contains implementation of the above methods and the definition, specific to the 1516X robot
+/docs - Contains Robot/Driver specific documentation that would not fit best in the public wiki or the Doxygen page.
 ```
 
 ## Other Libraries
@@ -58,8 +59,8 @@ Having multiple programmers, we emphasize modularity in the codebase. That being
 We use the following libraries to make our codebase possible. We are indebted to their contributioins to make this codebase possible. Check out their code for types and functions that we use as well.
 
 - [PROS](https://pros.cs.purdue.edu/v5/pros-4/)
-- [Lemlib](https://lemlib.readthedocs.io/)
-- [lvgl](https://docs.lvgl.io/8.3/)
+- [LemLib](https://lemlib.readthedocs.io/)
+- [LVGL](https://docs.lvgl.io/8.3/)
 
 ## License
 
