@@ -19,7 +19,6 @@ Based on the type of drive as well as the program orientation of the robot, the 
 - **L1 Button**: Activates the intake motor to pull in objects.
 
 ---
-
 - **Digital Up Button**: Toggles the drivetrain orientation (forward or backward).
 - **Digital Down Button**: Executes the autonomous routine during user control.
 - **Digital Right Button**: Toggles the drivetrain reversal.
