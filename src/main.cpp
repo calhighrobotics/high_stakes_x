@@ -34,6 +34,7 @@ struct RobotSubsystems {
    Robot::Latch latch;
    Robot::LadyBrown ladybrown;
    Robot::Hang hang;
+   Robot::Sweeper sweeper;
 } subsystem;
 
 struct RobotScreen {
@@ -149,6 +150,7 @@ void opcontrol() {
 
       subsystem.drivetrain.run();
       subsystem.latch.run();
+      subsystem.sweeper.run();
       subsystem.hang.run();
       subsystem.ladybrown.run();
 
