@@ -28,7 +28,7 @@ pros::Motor LeftBack(-18, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degr
 pros::Motor RightBack(12, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
 pros::Motor LeftMid(20, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
 pros::Motor RightMid(-11, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
-pros::Motor IntakeMotor(-1, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
+pros::Motor IntakeMotor(-9, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
 pros::Motor HookMotor(-2, pros::v5::MotorGears::green, pros::v5::MotorUnits::degrees);
 pros::Motor LadyBrownMotor(3, pros::v5::MotorGears::green, pros::v5::MotorUnits::degrees);
 

@@ -19,16 +19,16 @@ Based on the type of drive as well as the program orientation of the robot, the 
 - **L1 Button**: Activates the intake motor to pull in objects.
 
 ---
-- **Digital Up Button**: Toggles the drivetrain orientation (forward or backward).
-- **Digital Down Button**: Executes the autonomous routine during user control.
-- **Digital Right Button**: Toggles the drivetrain reversal.
+- **Digital Up Button**: Executes the autonomous routine during user control.
+- **Digital Down Button**: Toggles the drivetrain reversal.
+- **Digital Right Button**: Toggles the controller drive type - between arcade, tank, curvature.
 - **Digital Left Button**: Switches control between the main and partner controllers if the partner controller is connected.
 
 ---
 - **Digital B Button**: Toggles the state of the MoGo mech between grabbing and not grabbing.
 - **Digital Y Button**: This button toggles the state of the sweeper between active or retracted.
 - ***NOT IMPLEMENTED -* Digital A Button**: This button controls whether the hang is active.
-- **Digital X Button**: This button suspends the task that runs the lady brown warning system. On continuation of the task, the current location of the motor is considered as a 0 location.
+- ***NOT IMPLEMENTED -* Digital X Button**: This button suspends the task that runs the lady brown warning system. On continuation of the task, the current location of the motor is considered as a 0 location.
 ---
 
 - **R2 Button**: Pulls the Lady Brown down to its loading zone.
