@@ -28,6 +28,7 @@ Based on the type of drive as well as the program orientation of the robot, the 
 - **Digital B Button**: Toggles the state of the MoGo mech between grabbing and not grabbing.
 - **Digital Y Button**: This button toggles the state of the sweeper between active or retracted.
 - ***NOT IMPLEMENTED -* Digital A Button**: This button controls whether the hang is active.
+- **Digital X Button**: This button suspends the task that runs the lady brown warning system. On continuation of the task, the current location of the motor is considered as a 0 location.
 ---
 
 - **R2 Button**: Pulls the Lady Brown down to its loading zone.
