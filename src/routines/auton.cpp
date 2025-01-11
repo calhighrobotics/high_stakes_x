@@ -124,22 +124,21 @@ void Autonomous::Auton5(Intake &intake, Latch &latch, DistanceSensor &distance) 
    drive_.set_brake_mode_all(pros::E_MOTOR_BRAKE_BRAKE);
    IntakeMotor.move_relative(2200, 600);
    HookMotor.move_relative(2200, 200);
-   pros::delay(1000);
+   pros::delay(1500);
    // ############################################## */
 
    //Move back into the center between the two stakes and point mogo at right stake
    /* ############################################## */
    chassis.setPose(0, 0, 0);
-   chassis.moveToPoint(0, 40, 1400, {.forwards = true, .maxSpeed = 60}, true);
-   chassis.turnToHeading(90, 1000, {.maxSpeed = 70}, true);
+   chassis.moveToPoint(0, 15, 1400, {.forwards = true, .maxSpeed = 60}, true);
+   chassis.turnToHeading(-90, 1000, {.direction=AngularDirection::CCW_COUNTERCLOCKWISE, .maxSpeed = 70}, true);
    chassis.waitUntilDone();
    chassis.setPose(0, 0, 0);
    // ############################################## */
 
    //Move backwards into the stake
    /* ############################################## */
-   chassis.moveToPoint(0, -30, 1400, {.forwards = false, .maxSpeed = 60},true);
-   chassis.moveToPoint(0, -68, 1050, {.forwards = false, .maxSpeed = 30},true);
+   chassis.moveToPoint(0, -25, 1400, {.forwards = false, .maxSpeed = 60},true);
    chassis.waitUntilDone();
    latch.toggle();
    pros::delay(750);
@@ -152,117 +151,16 @@ void Autonomous::Auton5(Intake &intake, Latch &latch, DistanceSensor &distance) 
    IntakeMotor.move_velocity(600);
    HookMotor.move_velocity(200);
    chassis.setPose(0, 0,0);
-   chassis.moveToPoint(0, 60, 1250, {.forwards = true, .maxSpeed = 70},true);
-   chassis.moveToPoint(0, 90, 1250, {.forwards = true, .maxSpeed = 90},true);
-   chassis.waitUntilDone();
-   IntakeMotor.move_velocity(0);
-   HookMotor.move_velocity(0);
-   // ############################################## */
-
-   // Move back in preparation for turn
-   chassis.moveToPoint(0,-30,1250, {.forwards = false, .maxSpeed = 90},true);
-
-   // ############################################## */
-
-   // Turn to face bottom ring and move to intake ring
-   /* ############################################## */
-   chassis.setPose(0,0,0);
-   chassis.turnToHeading(90, 1000);
-   IntakeMotor.move_velocity(600);
-   HookMotor.move_velocity(200);
-   chassis.setPose(0, 0,0);
-   chassis.moveToPoint(0, 30, 1250, {.forwards = true, .maxSpeed = 90},true);
-   chassis.waitUntilDone();
-   IntakeMotor.move_velocity(0);
-   HookMotor.move_velocity(0);
-   // ############################################## */
-
-   // line up at 45 degrees for release of mobile goal
-   /* ############################################## */
-   chassis.moveToPoint(0, -30, 1250, {.forwards = false, .maxSpeed = 90},true);
-   chassis.setPose(0,0,0);
-   chassis.turnToHeading(135,1200, {.maxSpeed = 70}, true);
-   // ############################################## */
-
-   // deposit mobile goal in corner
-   /* ############################################## */
-   chassis.setPose(0, 0,0);
-   chassis.moveToPoint(0, -70, 1450, {.forwards = false, .maxSpeed = 90},true);
-   chassis.waitUntilDone();
-   latch.toggle();
-   pros::delay(750);
-   // ############################################## */ 
-
-   /* ############################################## */
-   chassis.moveToPoint(0,70,1450, {.forwards = true, .maxSpeed = 90},true);
-   chassis.setPose(0,0,0);
-   chassis.turnToHeading(135, 1000);
-   chassis.setPose(0, 0,0);
-   chassis.moveToPoint(0,-90,1450, {.forwards = false, .maxSpeed = 90},true);
-   chassis.moveToPoint(0, -120, 1050, {.forwards = false, .maxSpeed = 30},true);
-   chassis.waitUntilDone()
-   latch.toggle();
-   pros::delay(750);
-   // ############################################## */
-
-
-
-
-
-
-
-
-   // Point to right rings and grab
-   /* ############################################## */
+   chassis.moveToPoint(0, 36, 1250, {.forwards = true, .maxSpeed = 70},true);
    chassis.setPose(0, 0, 0);
-   chassis.turnToHeading(180, 2000);
-   IntakeMotor.move_velocity(600);
-   HookMotor.move_velocity(200);
-   chassis.setPose(0, 0,0);
-   chassis.moveToPoint(0, 60, 1250, {.forwards = true, .maxSpeed = 70},true);
-   chassis.moveToPoint(0, 90, 1250, {.forwards = true, .maxSpeed = 90},true);
+   chassis.turnToHeading(135, 2000);
    chassis.waitUntilDone();
-   IntakeMotor.move_velocity(0);
-   HookMotor.move_velocity(0);
-   // ############################################## */
-
-   // Move back in preparation for turn
-   chassis.moveToPoint(0,-30,1250, {.forwards = false, .maxSpeed = 90},true);
-
-   // ############################################## */
-
-   // Turn to face bottom ring and move to intake ring
-   /* ############################################## */
-   chassis.setPose(0,0,0);
-   chassis.turnToHeading(-90, 1000);
-   IntakeMotor.move_velocity(600);
-   HookMotor.move_velocity(200);
-   chassis.setPose(0, 0,0);
-   chassis.moveToPoint(0, 30, 1250, {.forwards = true, .maxSpeed = 90},true);
-   chassis.waitUntilDone();
-   IntakeMotor.move_velocity(0);
-   HookMotor.move_velocity(0);
-   // ############################################## */
-
-   // line up at 45 degrees for release of mobile goal
-   /* ############################################## */
-   chassis.moveToPoint(0, -30, 1250, {.forwards = false, .maxSpeed = 90},true);
-   chassis.setPose(0,0,0);
-   chassis.turnToHeading(-135,1200, {.maxSpeed = 70}, true);
-   // ############################################## */
-
-   // deposit mobile goal in corner
-   /* ############################################## */
-   chassis.setPose(0, 0,0);
-   chassis.moveToPoint(0, -70, 1450, {.forwards = false, .maxSpeed = 90},true);
-   chassis.waitUntilDone();
+   chassis.setPose(0, 0, 0);
+   chassis.moveToPoint(0, 12, 1250, {.forwards = true, .maxSpeed = 70},true);
+   chassis.turnToHeading(45, 2000);
+   chassis.setPose(0, 0, 0);
+   chassis.moveToPoint(0, -15, 1250, {.forwards = false, .maxSpeed = 70},true);
    latch.toggle();
-   pros::delay(750);
-   // ############################################## */ 
-
-
-
-
 
 
 }
