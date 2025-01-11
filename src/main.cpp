@@ -58,10 +58,23 @@ void initialize() {
    chassis.calibrate();
 
    chassis.setPose(0, 0, 0);
+   pros::rtos::Task MotorNotification(electronic.controllers.notify_motor_disconnect);
 
-   screen.selector.selector();
-
-   pros::rtos::Task Task(electronic.controllers.notify_motor_disconnect);
+   // pros::rtos::Task LadyBrownNotification(subsystem.ladybrown.edge_check);
+   // screen.selector.selector();
+   pros::lcd::initialize();
+   pros::Task screen_task([&]() {
+      while (true) {
+         // print robot location to the brain screen
+         pros::lcd::print(0, "X: %f", chassis.getPose().x);         // x
+         pros::lcd::print(1, "Y: %f", chassis.getPose().y);         // y
+         pros::lcd::print(2, "Theta: %f", chassis.getPose().theta); // heading
+         // delay to save resources
+         pros::lcd::print(3, "Rotation Sensor: %i", lateral_sensor.get_position());
+         pros::lcd::print(4, "Rotation Sensor: %i", horizontal_sensor.get_position());
+         pros::delay(20);
+      }
+   });
 }
 
 /**
@@ -98,18 +111,18 @@ void competition_initialize() {}
 void autonomous() {
 
    pros::lcd::initialize();
-   pros::Task screen_task([&]() {
-      while (true) {
-         // print robot location to the brain screen
-         pros::lcd::print(0, "X: %f", chassis.getPose().x);         // x
-         pros::lcd::print(1, "Y: %f", chassis.getPose().y);         // y
-         pros::lcd::print(2, "Theta: %f", chassis.getPose().theta); // heading
-         // delay to save resources
-         pros::lcd::print(3, "Rotation Sensor: %i", lateral_sensor.get_position());
-         pros::lcd::print(4, "Rotation Sensor: %i", horizontal_sensor.get_position());
-         pros::delay(20);
-      }
-   });
+   // pros::Task screen_task([&]() {
+   //    while (true) {
+   //       // print robot location to the brain screen
+   //       pros::lcd::print(0, "X: %f", chassis.getPose().x);         // x
+   //       pros::lcd::print(1, "Y: %f", chassis.getPose().y);         // y
+   //       pros::lcd::print(2, "Theta: %f", chassis.getPose().theta); // heading
+   //       // delay to save resources
+   //       pros::lcd::print(3, "Rotation Sensor: %i", lateral_sensor.get_position());
+   //       pros::lcd::print(4, "Rotation Sensor: %i", horizontal_sensor.get_position());
+   //       pros::delay(20);
+   //    }
+   // });
 
    subsystem.autonomous.AutoDrive(subsystem.intake, subsystem.latch, electronic.distance_sensor);
 }
@@ -143,7 +156,7 @@ void opcontrol() {
       }
       // Checks for drivetrain reversal - Changes conditions in a value handler function in the drivetrain class
       if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_RIGHT)) {
-         //isReversed is static, it is changed for the global state.
+         // isReversed is static, it is changed for the global state.
          Drivetrain::isReversed = !Drivetrain::isReversed;
 
          // Output the current drive mode to the controller screen
