@@ -53,14 +53,15 @@ struct Electronics {
  * to keep execution time for this mode under a few seconds.
  */
 
-pros::rtos::Task MotorNotification(electronic.controllers.notify_motor_disconnect);
-pros::rtos::Task LadyBrownNotification(subsystem.ladybrown.edge_check);
+
 
 void initialize() {
    chassis.calibrate();
 
    chassis.setPose(0, 0, 0);
+   pros::rtos::Task MotorNotification(electronic.controllers.notify_motor_disconnect);
 
+   //pros::rtos::Task LadyBrownNotification(subsystem.ladybrown.edge_check);
    //screen.selector.selector();
    pros::lcd::initialize();
    pros::Task screen_task([&]() {
@@ -112,20 +113,27 @@ void competition_initialize() {}
 void autonomous() {
 
    pros::lcd::initialize();
-   pros::Task screen_task([&]() {
-      while (true) {
-         // print robot location to the brain screen
-         pros::lcd::print(0, "X: %f", chassis.getPose().x);         // x
-         pros::lcd::print(1, "Y: %f", chassis.getPose().y);         // y
-         pros::lcd::print(2, "Theta: %f", chassis.getPose().theta); // heading
-         // delay to save resources
-         pros::lcd::print(3, "Rotation Sensor: %i", lateral_sensor.get_position());
-         pros::lcd::print(4, "Rotation Sensor: %i", horizontal_sensor.get_position());
-         pros::delay(20);
-      }
-   });
+   // pros::Task screen_task([&]() {
+   //    while (true) {
+   //       // print robot location to the brain screen
+   //       pros::lcd::print(0, "X: %f", chassis.getPose().x);         // x
+   //       pros::lcd::print(1, "Y: %f", chassis.getPose().y);         // y
+   //       pros::lcd::print(2, "Theta: %f", chassis.getPose().theta); // heading
+   //       // delay to save resources
+   //       pros::lcd::print(3, "Rotation Sensor: %i", lateral_sensor.get_position());
+   //       pros::lcd::print(4, "Rotation Sensor: %i", horizontal_sensor.get_position());
+   //       pros::delay(20);
+   //    }
+   // });
 
    subsystem.autonomous.AutoDrive(subsystem.intake, subsystem.latch);
+
+   //chassis.turnToHeading(90, 100000);
+   // chassis.turnToHeading(180, 2000);
+   //chassis.moveToPoint(0, 24, 10000);
+
+
+
 }
 
 /**
@@ -162,16 +170,6 @@ void opcontrol() {
 
          // Output the current drive mode to the controller screen
          controller.print(0, 0, "reversal: %d", Drivetrain::isReversed);
-      }
-      if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_X)) {
-         if (LadyBrownNotification.get_state() == 2) {
-            LadyBrownNotification.suspend();
-            controller.print(0, 0, "LB-Disabled");
-         } else {
-            LadyBrownMotor.set_zero_position(LadyBrownMotor.get_position());
-            LadyBrownNotification.resume();
-            controller.print(0, 0, "LB-Enabled");
-         }
       }
 
       subsystem.drivetrain.run();
