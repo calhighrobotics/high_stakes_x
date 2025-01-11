@@ -15,6 +15,10 @@ public:
     */
    void run();
 
+   static void edge_check(void *param);
+
+   static bool needs_warning;
+
    /**
     * @brief Checks whether the intake should stop to skip the ring depending on color.
     * It is the embodiment of vision sensor usage in this codebase.
