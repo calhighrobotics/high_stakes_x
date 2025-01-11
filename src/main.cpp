@@ -1,5 +1,9 @@
 #include "main.h"
+#include "electronic/controller.h"
 #include "globals.h"
+#include "pros/misc.h"
+#include "robot/drivetrain.h"
+#include "robot/ladybrown.h"
 #include "screen/selector.h"
 #include "screen/status.h"
 
@@ -28,13 +32,20 @@ struct RobotSubsystems {
    Robot::Drivetrain drivetrain;
    Robot::Intake intake;
    Robot::Latch latch;
+   Robot::LadyBrown ladybrown;
    Robot::Hang hang;
+   Robot::Sweeper sweeper;
 } subsystem;
 
 struct RobotScreen {
    Robot::selector_screen selector;
    Robot::status_screen status;
 } screen;
+
+struct Electronics {
+   Robot::Controller controllers;
+   Robot::DistanceSensor distance_sensor;
+} electronic;
 
 /**
  * Runs initialization code. This occurs as soon as the program is started.
@@ -47,8 +58,23 @@ void initialize() {
    chassis.calibrate();
 
    chassis.setPose(0, 0, 0);
-   screen.selector.selector();
+   pros::rtos::Task MotorNotification(electronic.controllers.notify_motor_disconnect);
+   // pros::rtos::Task LadyBrownNotification(subsystem.ladybrown.edge_check);
    
+   // screen.selector.selector();
+   pros::lcd::initialize();
+   pros::Task screen_task([&]() {
+      while (true) {
+         // print robot location to the brain screen
+         pros::lcd::print(0, "X: %f", chassis.getPose().x);         // x
+         pros::lcd::print(1, "Y: %f", chassis.getPose().y);         // y
+         pros::lcd::print(2, "Theta: %f", chassis.getPose().theta); // heading
+         // delay to save resources
+         pros::lcd::print(3, "Rotation Sensor: %i", lateral_sensor.get_position());
+         pros::lcd::print(4, "Rotation Sensor: %i", horizontal_sensor.get_position());
+         pros::delay(20);
+      }
+   });
 }
 
 /**
@@ -85,24 +111,23 @@ void competition_initialize() {
  */
 
 void autonomous() {
-   
+
    pros::lcd::initialize();
-   pros::Task screen_task([&]() {
-      while (true) {
-         // print robot location to the brain screen
-         pros::lcd::print(0, "X: %f", chassis.getPose().x);         // x
-         pros::lcd::print(1, "Y: %f", chassis.getPose().y);         // y
-         pros::lcd::print(2, "Theta: %f", chassis.getPose().theta); // heading
-         // delay to save resources
-         pros::lcd::print(3, "Rotation Sensor: %i", lateral_sensor.get_position());
-         pros::lcd::print(4, "Rotation Sensor: %i", horizontal_sensor.get_position());
-         pros::delay(20);
-      }
-   });
+   // pros::Task screen_task([&]() {
+   //    while (true) {
+   //       // print robot location to the brain screen
+   //       pros::lcd::print(0, "X: %f", chassis.getPose().x);         // x
+   //       pros::lcd::print(1, "Y: %f", chassis.getPose().y);         // y
+   //       pros::lcd::print(2, "Theta: %f", chassis.getPose().theta); // heading
+   //       // delay to save resources
+   //       pros::lcd::print(3, "Rotation Sensor: %i", lateral_sensor.get_position());
+   //       pros::lcd::print(4, "Rotation Sensor: %i", horizontal_sensor.get_position());
+   //       pros::delay(20);
+   //    }
+   // });
 
-   subsystem.autonomous.AutoDrive(subsystem.intake, subsystem.latch);
+   subsystem.autonomous.AutoDrive(subsystem.intake, subsystem.latch, electronic.distance_sensor);
 }
-
 
 /**
  * Runs the operator control code. This function will be started in its own
@@ -118,26 +143,42 @@ void autonomous() {
  * the task, not resume it from where it left off.
  */
 void opcontrol() {
+
    while (true) {
+
+      // Calls to event handling functions.
       if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_DOWN)) {
          autonomous();
       }
-      if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_LEFT)) {
+      // Toggles the drivetrain orientation - can be forward or backward
+      if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_UP)) {
          std::string name = subsystem.drivetrain.toggleDrive();
          // Output the current drive mode to the controller screen
          controller.print(0, 0, name.c_str());
       }
+      // Checks for drivetrain reversal - Changes conditions in a value handler function in the drivetrain class
+      if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_RIGHT)) {
+         // isReversed is static, it is changed for the global state.
+         Drivetrain::isReversed = !Drivetrain::isReversed;
+
+         // Output the current drive mode to the controller screen
+         controller.print(0, 0, "reversal: %d", Drivetrain::isReversed);
+      }
 
       subsystem.drivetrain.run();
       subsystem.latch.run();
+      subsystem.sweeper.run();
       subsystem.hang.run();
+      subsystem.ladybrown.run();
 
-      // Intake controller, uses the X button holded down to push the elevation
-      // up.
+      // Intake controller - uses R1 to pull in and L1 to push out, and stops if nothing pressed
       subsystem.intake.run();
 
-      // Intake controller, moves the left and right intakes and stops them if
-      // nothing is pressed.
+      // Handles partner controller keypresses to rumble the primary controller
+      electronic.controllers.notifier();
+
+      // DOES NOT SWITCH CONTROL - Checks for a key press to trigger controller switch
+      electronic.controllers.switchControl();
 
       pros::delay(10); // Small delay to reduce CPU usage
    }

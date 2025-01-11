@@ -35,6 +35,8 @@ namespace Robot {
  * parameters that are used to control the PID that lemlib uses, additionally.
  */
 namespace Globals {
+
+extern pros::Controller partner;
 extern pros::Controller controller;
 
 extern pros::Motor RightFront;
@@ -46,6 +48,7 @@ extern pros::Motor LeftMid;
 extern pros::Motor RightMid;
 extern pros::Motor IntakeMotor;
 extern pros::Motor HookMotor;
+extern pros::Motor LadyBrownMotor;
 
 extern pros::MotorGroup punchers;
 extern pros::MotorGroup drive_left;
@@ -65,6 +68,7 @@ extern pros::vision_signature_s_t RED_SIG;
 extern pros::vision_signature_s_t BLUE_SIG;
 extern pros::vision_signature_s_t BLUE_DARK_SIG;
 
+extern pros::Distance distance_sensor;
 extern pros::Rotation lateral_sensor;
 extern pros::Rotation horizontal_sensor;
 // forward/backward PID
@@ -88,6 +92,7 @@ extern pros::adi::DigitalIn autonToggleSwitch;
 
 extern pros::adi::Pneumatics LatchControl;
 extern pros::adi::Pneumatics HangControl;
+extern pros::adi::Pneumatics SweeperControl;
 
 } // namespace Globals
 } // namespace Robot

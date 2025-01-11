@@ -24,7 +24,7 @@ namespace Robot {
  * the sensitivity of the joystick inputs can be fine-tuned.
  */
 class Drivetrain {
- public:
+public:
    /**
     * @brief Initializes the Drivetrain object.
     *
@@ -74,7 +74,14 @@ class Drivetrain {
     */
    static std::string toggleDrive();
 
- private:
+   /**
+    * @brief Toggles the orientation of the drivetrain.
+    */
+   static int thrustHandler(int thrust);
+
+   static bool isReversed;
+
+private:
    /**
     * @brief Drives the robot using arcade drive.
     *

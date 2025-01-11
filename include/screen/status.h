@@ -8,7 +8,7 @@ namespace Robot {
  * latitude, longitude, etc.
  */
 class status_screen {
- public:
+public:
    /**
     * @brief Runs latching mechanism.
     */

@@ -2,29 +2,31 @@
 
 #include "globals.h"
 
+#define SLOWER_VELOCITY 200
+#define FASTER_VELOCITY 600
+
 using namespace Robot;
 using namespace Robot::Globals;
 
 Intake::Intake() {
    alliance_color = false;
-   controller.print(0, 0, "Intake initialized");
 }
 
 void Intake::run() {
 
    if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_R1)) {
-      IntakeMotor.move_velocity(-375);
-      HookMotor.move_velocity(-600);
+      IntakeMotor.move_velocity(-FASTER_VELOCITY);
+      HookMotor.move_velocity(-SLOWER_VELOCITY);
    } else if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_L1)) {
-      IntakeMotor.move_velocity(375);
-      HookMotor.move_velocity(600);
+      IntakeMotor.move_velocity(FASTER_VELOCITY);
+      HookMotor.move_velocity(SLOWER_VELOCITY);
    } else {
       IntakeMotor.brake();
       HookMotor.brake();
    }
 }
 
+void Intake::toggle() { elevated = !elevated; }
 
 // Vision sensor only works with intake, therefore it should not on
 void Intake::checkStop() {}
-

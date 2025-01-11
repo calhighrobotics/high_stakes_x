@@ -6,7 +6,7 @@ namespace Robot {
  * @brief The Intake class represents a robot intake system.
  */
 class Intake {
- public:
+public:
    /**
     * @brief Runs the main function of the intake system.
     *
@@ -20,7 +20,6 @@ class Intake {
     * It is the embodiment of vision sensor usage in this codebase.
     */
    void checkStop();
-
 
    Intake();
 

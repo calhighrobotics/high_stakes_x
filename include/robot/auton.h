@@ -3,6 +3,7 @@
 
 #include "robot/intake.h"
 #include "robot/latch.h"
+#include "electronic/distance.h"
 
 namespace Robot {
 /**
@@ -11,7 +12,7 @@ namespace Robot {
  * @brief The \ref Autonomous class contains classes and functions related to the robot's autonomous behavior.
  */
 class Autonomous {
- public:
+public:
    enum AUTON_ROUTINE { RED_LEFT = 1, RED_RIGHT = 2, BLUE_LEFT = -1, BLUE_RIGHT = -2, SKILLS = 0 };
 
    /**
@@ -41,7 +42,7 @@ class Autonomous {
     * @param puncher A reference to the Puncher object.
     * @param autono A boolean value indicating whether to use autonomous mode.
     */
-   void AutoDrive(Intake &intake, Latch &latch);
+   void AutoDrive(Intake &intake, Latch &latch, DistanceSensor &distance);
 
    /**
     * @brief Switches the autonomous program.
@@ -53,7 +54,7 @@ class Autonomous {
     */
    static void AutonSwitcher(int autonNum);
 
- private:
+private:
    /**
     * @brief Runs the autonomous path for the far side defensive game strategy.
     *
@@ -61,7 +62,7 @@ class Autonomous {
     * strategy. It contains the specific actions and movements required for this
     * strategy.
     */
-   void Auton1(Intake &intake, Latch &latch);
+   void Auton1(Intake &intake, Latch &latch, DistanceSensor &distance);
 
    /**
     * @brief Runs the autonomous path for the near side offensive game strategy.
@@ -70,7 +71,7 @@ class Autonomous {
     * strategy. It contains the specific actions and movements required for this
     * strategy.
     */
-   void Auton2(Intake &intake, Latch &latch);
+   void Auton2(Intake &intake, Latch &latch, DistanceSensor &distance);
 
    /**
     * @brief Runs the puncher routine for the Skills Challenge.
@@ -81,7 +82,7 @@ class Autonomous {
     *
     * @param puncher A reference to the Puncher object.
     */
-   void Auton3(Intake &intake, Latch &latch);
+   void Auton3(Intake &intake, Latch &latch, DistanceSensor &distance);
 
    /**
     * @brief Runs the autonomous path for the far side offensive game strategy.
@@ -91,7 +92,7 @@ class Autonomous {
     * @todo Make the autonomous more fleshed out, building it properly for the
     * competition
     */
-   void Auton4(Intake &intake, Latch &latch);
+   void Auton4(Intake &intake, Latch &latch, DistanceSensor &distance);
 
    /**
     * Executes the Skills challenge autonomous.
@@ -102,6 +103,6 @@ class Autonomous {
     * @param intake The reference to the `Intake` object.
     * @param latch The reference to the `Latch` object.
     */
-   void Auton5(Intake &intake, Latch &latch);
+   void Auton5(Intake &intake, Latch &latch, DistanceSensor &distance);
 };
 } // namespace Robot
