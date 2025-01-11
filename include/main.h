@@ -36,6 +36,7 @@
 
 #include "api.h"
 #include "electronic/controller.h"
+#include "electronic/distance.h"
 #include "globals.h"
 #include "pros/apix.h"
 #include "robot/auton.h"

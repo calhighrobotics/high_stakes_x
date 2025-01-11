@@ -44,6 +44,7 @@ struct RobotScreen {
 
 struct Electronics {
    Robot::Controller controllers;
+   Robot::DistanceSensor distance_sensor;
 } electronic;
 
 /**
@@ -123,11 +124,7 @@ void autonomous() {
    //    }
    // });
 
-   subsystem.autonomous.AutoDrive(subsystem.intake, subsystem.latch);
-
-   // chassis.turnToHeading(90, 100000);
-   //  chassis.turnToHeading(180, 2000);
-   // chassis.moveToPoint(0, 24, 10000);
+   subsystem.autonomous.AutoDrive(subsystem.intake, subsystem.latch, electronic.distance_sensor);
 }
 
 /**
