@@ -53,16 +53,14 @@ struct Electronics {
  * to keep execution time for this mode under a few seconds.
  */
 
-
-
 void initialize() {
    chassis.calibrate();
 
    chassis.setPose(0, 0, 0);
    pros::rtos::Task MotorNotification(electronic.controllers.notify_motor_disconnect);
 
-   //pros::rtos::Task LadyBrownNotification(subsystem.ladybrown.edge_check);
-   //screen.selector.selector();
+   // pros::rtos::Task LadyBrownNotification(subsystem.ladybrown.edge_check);
+   // screen.selector.selector();
    pros::lcd::initialize();
    pros::Task screen_task([&]() {
       while (true) {
@@ -76,7 +74,6 @@ void initialize() {
          pros::delay(20);
       }
    });
-
 }
 
 /**
@@ -128,12 +125,9 @@ void autonomous() {
 
    subsystem.autonomous.AutoDrive(subsystem.intake, subsystem.latch);
 
-   //chassis.turnToHeading(90, 100000);
-   // chassis.turnToHeading(180, 2000);
-   //chassis.moveToPoint(0, 24, 10000);
-
-
-
+   // chassis.turnToHeading(90, 100000);
+   //  chassis.turnToHeading(180, 2000);
+   // chassis.moveToPoint(0, 24, 10000);
 }
 
 /**
@@ -165,7 +159,7 @@ void opcontrol() {
       }
       // Checks for drivetrain reversal - Changes conditions in a value handler function in the drivetrain class
       if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_RIGHT)) {
-         //isReversed is static, it is changed for the global state.
+         // isReversed is static, it is changed for the global state.
          Drivetrain::isReversed = !Drivetrain::isReversed;
 
          // Output the current drive mode to the controller screen

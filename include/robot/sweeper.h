@@ -6,7 +6,7 @@ namespace Robot {
  * @brief The Latch class represents a latching mechanism.
  */
 class Sweeper {
- public:
+public:
    /**
     * @brief Runs sweeper
     */

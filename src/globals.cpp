@@ -84,20 +84,20 @@ lemlib::OdomSensors sensors{
 // forward/backward PID
 // lateral PID controller
 lemlib::ControllerSettings lateral_controller(5.25, // proportional gain (kP)
-                                              0, // integral gain (kI)
-                                            13, // derivative gain (kD)
-                                              3, // anti windup
-                                              1, // small error range, in inches
-                                              100, // small error range timeout, in milliseconds
-                                              3, // large error range, in inches
-                                              500, // large error range timeout, in milliseconds
-                                              20 // maximum acceleration (slew)
+                                              0,    // integral gain (kI)
+                                              13,   // derivative gain (kD)
+                                              3,    // anti windup
+                                              1,    // small error range, in inches
+                                              100,  // small error range timeout, in milliseconds
+                                              3,    // large error range, in inches
+                                              500,  // large error range timeout, in milliseconds
+                                              20    // maximum acceleration (slew)
 );
 
 // angular PID controller
-lemlib::ControllerSettings angular_controller(1.73,    // proportional gain (kP)
+lemlib::ControllerSettings angular_controller(1.73, // proportional gain (kP)
                                               0,    // integral gain (kI)
-                                              9, // derivative gain (kD)
+                                              9,    // derivative gain (kD)
                                               3,    // anti windup
                                               1,    // small error range, in degrees
                                               100,  // small error range timeout, in milliseconds
