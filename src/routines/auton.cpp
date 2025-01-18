@@ -9,7 +9,7 @@
 using namespace Robot;
 using namespace Robot::Globals;
 
-Autonomous::AUTON_ROUTINE Autonomous::auton = RED_LEFT;
+Autonomous::AUTON_ROUTINE Autonomous::auton = BLUE_LEFT;
 std::string Autonomous::autonName;
 
 constexpr int delay_constant = 1050;
@@ -88,11 +88,17 @@ void Autonomous::Auton3(Intake &intake, Latch &latch, DistanceSensor &distance) 
    HookMotor.move_velocity(200);
    // Move to and back from the blue low ring
    chassis.moveToPoint(0, 22, 1250, {.forwards = true, .maxSpeed = 70},true);
-   chassis.moveToPoint(0, -5, 1250, {.forwards = false, .maxSpeed = 90},true);
+   chassis.turnToHeading(100, 1000, {.maxSpeed = 70}, true);
+   chassis.waitUntilDone();
+
+   chassis.setPose(0, 0, 0);
+   chassis.moveToPoint(0, -22, 1250, {.forwards = false, .maxSpeed = 90},true);
+   latch.toggle();
    chassis.waitUntilDone();
    // Turn to ladder cone
+   chassis.setPose(0, 0, 0);
    chassis.turnToHeading(180, 2000);
-   chassis.moveToPoint(0, -21, 1250, {.forwards = true, .maxSpeed = 50},true);
+   // chassis.moveToPoint(0, -21, 1250, {.forwards = true, .maxSpeed = 50},true);
 }
 
 /*
