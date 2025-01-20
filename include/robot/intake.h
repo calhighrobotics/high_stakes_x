@@ -23,7 +23,13 @@ public:
 
    Intake();
 
- private:
+   /**
+    * @brief Toggles intake elevation.
+    */
+   void toggle();
+
+private:
+   bool elevated;
 
    /**
     * @brief blue is false, red is true.

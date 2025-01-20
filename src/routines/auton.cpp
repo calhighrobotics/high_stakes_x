@@ -9,7 +9,7 @@
 using namespace Robot;
 using namespace Robot::Globals;
 
-Autonomous::AUTON_ROUTINE Autonomous::auton = BLUE_LEFT;
+Autonomous::AUTON_ROUTINE Autonomous::auton = RED_LEFT;
 std::string Autonomous::autonName;
 
 constexpr int delay_constant = 1050;
@@ -68,37 +68,37 @@ void Autonomous::Auton3(Intake &intake, Latch &latch, DistanceSensor &distance) 
       drive_.set_brake_mode_all(pros::E_MOTOR_BRAKE_BRAKE);
    chassis.setPose(0, 0,0);
    // Move to first stake, then a bit farther at a slower speed for alignment
-   chassis.moveToPoint(0, -27, 1400, {.forwards = false, .maxSpeed = 60},true);
-   chassis.moveToPoint(0, -35, 1050, {.forwards = false, .maxSpeed = 30},true);
+   chassis.moveToPose(0, -28, 0, 2000, {.forwards = false});
    chassis.waitUntilDone();
-   pros::delay(200);
    // Grab the closest MOGO mech
    latch.toggle();
-   // Load the ring onto the stake
-   IntakeMotor.move_relative(2200, 600);
-   HookMotor.move_relative(2200, 200);
-   pros::delay(300);
-   chassis.setPose(0, 0, 0);
-   // Point at the blue left side bottom ring for scoring
-   chassis.turnToHeading(75, 1000, {.maxSpeed = 70}, true);
-   chassis.waitUntilDone();
-   chassis.setPose(0, 0, 0);
-   // Start the intake and hook for the rest of auton
-   IntakeMotor.move_velocity(600);
-   HookMotor.move_velocity(200);
-   // Move to and back from the blue low ring
-   chassis.moveToPoint(0, 22, 1250, {.forwards = true, .maxSpeed = 70},true);
-   chassis.turnToHeading(100, 1000, {.maxSpeed = 70}, true);
+   pros::delay(250);
+
+   // Rotate toward blue ring
+   chassis.turnToHeading(90, 1000);
    chassis.waitUntilDone();
 
+   // Load the ring onto the stake
+   IntakeMotor.move_velocity(600);
+   HookMotor.move_velocity(200);
+
+   // Moves to 2 ring stack
    chassis.setPose(0, 0, 0);
-   chassis.moveToPoint(0, -22, 1250, {.forwards = false, .maxSpeed = 90},true);
-   latch.toggle();
+   chassis.moveToPoint(0, 25, 1250, {.forwards = true},true);
+   chassis.turnToHeading(90, 1000);
    chassis.waitUntilDone();
+
+   // Moves goal to corner
+   chassis.setPose(0, 0, 0);
+   chassis.moveToPose(0, -24, 0, 1250, {.forwards = false});
+   chassis.waitUntilDone();
+   latch.toggle();
+
    // Turn to ladder cone
    chassis.setPose(0, 0, 0);
-   chassis.turnToHeading(180, 2000);
-   // chassis.moveToPoint(0, -21, 1250, {.forwards = true, .maxSpeed = 50},true);
+   chassis.moveToPose(0, 29, 0,1250, {.forwards = true},true);
+   chassis.turnToHeading(180, 1000);
+   chassis.moveToPoint(0, 38,1000, {.forwards = false});
 }
 
 /*

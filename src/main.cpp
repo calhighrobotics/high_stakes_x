@@ -1,11 +1,23 @@
 #include "main.h"
 #include "electronic/controller.h"
 #include "globals.h"
+#include "lemlib/chassis/chassis.hpp"
+#include "liblvgl/core/lv_disp.h"
+#include "liblvgl/core/lv_obj.h"
+#include "liblvgl/core/lv_obj_style.h"
+#include "liblvgl/extra/widgets/chart/lv_chart.h"
+#include "liblvgl/misc/lv_area.h"
+#include "liblvgl/misc/lv_color.h"
 #include "pros/misc.h"
+#include "pros/misc.hpp"
+#include "pros/motors.hpp"
+#include "pros/rtos.hpp"
+#include "robot/auton.h"
 #include "robot/drivetrain.h"
 #include "robot/ladybrown.h"
 #include "screen/selector.h"
 #include "screen/status.h"
+#include <string>
 
 using namespace Robot;
 using namespace Robot::Globals;
@@ -59,22 +71,38 @@ void initialize() {
 
    chassis.setPose(0, 0, 0);
    pros::rtos::Task MotorNotification(electronic.controllers.notify_motor_disconnect);
-   // pros::rtos::Task LadyBrownNotification(subsystem.ladybrown.edge_check);
-   
-   screen.selector.selector();
-   // pros::lcd::initialize();
-   // pros::Task screen_task([&]() {
-   //    while (true) {
-   //       // print robot location to the brain screen
-   //       pros::lcd::print(0, "X: %f", chassis.getPose().x);         // x
-   //       pros::lcd::print(1, "Y: %f", chassis.getPose().y);         // y
-   //       pros::lcd::print(2, "Theta: %f", chassis.getPose().theta); // heading
-   //       // delay to save resources
-   //       pros::lcd::print(3, "Rotation Sensor: %i", lateral_sensor.get_position());
-   //       pros::lcd::print(4, "Rotation Sensor: %i", horizontal_sensor.get_position());
-   //       pros::delay(20);
-   //    }
-   // });
+
+   //pros::Task screen_task([&]() {
+   //   lv_obj_t *chart = lv_chart_create(lv_scr_act());
+   //   lv_chart_set_type(chart, LV_CHART_TYPE_LINE);
+   //   lv_chart_set_point_count(chart, 460);
+   //   lv_obj_set_size(chart, 460, 220);
+   //   lv_obj_center(chart);
+   //   lv_chart_set_range(chart, LV_CHART_AXIS_PRIMARY_Y, 60, 120);
+   //   //lv_chart_set_zoom_y(chart, 600);
+   //   lv_chart_set_zoom_x(chart, 1000);
+   //   lv_obj_set_style_size(chart, 0, LV_PART_INDICATOR);
+   //   lv_chart_series_t *s1 = lv_chart_add_series(chart, lv_color_white(), LV_CHART_AXIS_PRIMARY_Y);
+   //   lv_chart_series_t *s2 = lv_chart_add_series(chart, lv_color_hex(0xFFFF0000), LV_CHART_AXIS_SECONDARY_X);
+
+   //   lv_obj_t * label = lv_label_create(lv_scr_act());
+   //   lv_obj_set_style_text_color(lv_scr_act(), lv_color_hex(0xffffff), LV_PART_MAIN);
+   //   lv_obj_align(label, LV_ALIGN_TOP_MID, 0, 0);
+   //   lv_obj_set_style_text_font(label, &lv_font_montserrat_20, 0);
+
+   //   while (true) {
+   //      lemlib::Pose pose = chassis.getPose();
+
+   //      lv_chart_set_next_value(chart, s1, 90);
+   //      lv_chart_set_next_value(chart, s2, pose.theta);
+   //      if (pros::millis() >= 7000) {
+   //         std::string angle = std::to_string(pose.theta);
+   //         lv_label_set_text(label, angle.c_str());
+   //         break;
+   //      }
+   //      pros::delay(10);
+   //   }
+   //});
 }
 
 /**
@@ -94,9 +122,7 @@ void disabled() {}
  * This task will exit when the robot is enabled and autonomous or opcontrol
  * starts.<asd></asd>
  */
-void competition_initialize() {
-   
-}
+void competition_initialize() {}
 
 /**6
  * Runs the user autonomous code. This function will be started in its own task
@@ -111,23 +137,9 @@ void competition_initialize() {
  */
 
 void autonomous() {
-
-   pros::lcd::initialize();
-   pros::Task screen_task([&]() {
-      while (true) {
-         // print robot location to the brain screen
-         pros::lcd::print(0, "X: %f", chassis.getPose().x);         // x
-         pros::lcd::print(1, "Y: %f", chassis.getPose().y);         // y
-         pros::lcd::print(2, "Theta: %f", chassis.getPose().theta); // heading
-         // delay to save resources
-         pros::lcd::print(3, "Rotation Sensor: %i", lateral_sensor.get_position());
-         pros::lcd::print(4, "Rotation Sensor: %i", horizontal_sensor.get_position());
-         pros::delay(20);
-      }
-   });
-
    //chassis.turnToHeading(90, 100000);
-   //chassis.moveToPoint(0, 24, 10000);
+   // chassis.moveToPoint(0, 24, 10000);
+   Autonomous::auton = Robot::Autonomous::BLUE_LEFT;
    subsystem.autonomous.AutoDrive(subsystem.intake, subsystem.latch, electronic.distance_sensor);
 }
 

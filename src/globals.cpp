@@ -97,9 +97,9 @@ lemlib::ControllerSettings lateral_controller(6.5, // proportional gain (kP)
 );
 
 // angular PID controller
-lemlib::ControllerSettings angular_controller(10, // proportional gain (kP)
+lemlib::ControllerSettings angular_controller(2.1, // proportional gain (kP)
                                               0,    // integral gain (kI)
-                                              100,    // derivative gain (kD)
+                                              14,    // derivative gain (kD)
                                               0,    // anti windup
                                             0.5,    // small error range, in degrees
                                               100,  // small error range timeout, in milliseconds
@@ -107,8 +107,6 @@ lemlib::ControllerSettings angular_controller(10, // proportional gain (kP)
                                         500,  // large error range timeout, in milliseconds
                                               0     // maximum acceleration (slew)
 );
-
-// );
 
 lemlib::ExpoDriveCurve throttle_curve(3,    // joystick deadband out of 127
                                       15,   // minimum output where drivetrain will move out of 127
