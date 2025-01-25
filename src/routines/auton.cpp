@@ -65,9 +65,10 @@ void Autonomous::Auton2(Intake &intake, Latch &latch, DistanceSensor &distance) 
 
 // Blue left
 void Autonomous::Auton3(Intake &intake, Latch &latch, DistanceSensor &distance) {
-      drive_.set_brake_mode_all(pros::E_MOTOR_BRAKE_BRAKE);
+   drive_.set_brake_mode_all(pros::E_MOTOR_BRAKE_BRAKE);
    chassis.setPose(0, 0,0);
-   // Move to first stake, then a bit farther at a slower speed for alignment
+
+   // Move to first stake
    chassis.moveToPose(0, -28, 0, 2000, {.forwards = false});
    chassis.waitUntilDone();
    // Grab the closest MOGO mech
@@ -75,7 +76,7 @@ void Autonomous::Auton3(Intake &intake, Latch &latch, DistanceSensor &distance) 
    pros::delay(250);
 
    // Rotate toward blue ring
-   chassis.turnToHeading(90, 1000);
+   chassis.turnToPoint(25, -27, 1000);
    chassis.waitUntilDone();
 
    // Load the ring onto the stake
@@ -83,22 +84,19 @@ void Autonomous::Auton3(Intake &intake, Latch &latch, DistanceSensor &distance) 
    HookMotor.move_velocity(200);
 
    // Moves to 2 ring stack
-   chassis.setPose(0, 0, 0);
-   chassis.moveToPoint(0, 25, 1250, {.forwards = true},true);
-   chassis.turnToHeading(90, 1000);
+   chassis.moveToPoint(25, -27, 1250, {.forwards = true});
+   chassis.turnToPoint(25, 0, 1000, {.forwards = false});
    chassis.waitUntilDone();
 
    // Moves goal to corner
-   chassis.setPose(0, 0, 0);
-   chassis.moveToPose(0, -24, 0, 1250, {.forwards = false});
+   chassis.moveToPoint(28, 3, 1250, {.forwards = false});
    chassis.waitUntilDone();
    latch.toggle();
 
    // Turn to ladder cone
-   chassis.setPose(0, 0, 0);
-   chassis.moveToPose(0, 29, 0,1250, {.forwards = true},true);
-   chassis.turnToHeading(180, 1000);
-   chassis.moveToPoint(0, 38,1000, {.forwards = false});
+   chassis.moveToPoint(25, -30, 1500, {.forwards = true},true);
+   chassis.turnToPoint(25, -40, 1000, {.forwards = false});
+   chassis.moveToPoint(25, -38,1000, {.forwards = false});
 }
 
 /*
