@@ -12,3 +12,5 @@ void Sweeper::run() {
 }
 
 Sweeper::Sweeper() { ; }
+
+void Sweeper::toggle() { SweeperControl.toggle(); }

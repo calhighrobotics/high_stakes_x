@@ -4,6 +4,8 @@
 #include "main.h" // IWYU pragma: export
 #include "pros/motors.h"
 #include "pros/rtos.hpp"
+#include "robot/intake.h"
+#include "robot/sweeper.h"
 
 
 using namespace Robot;
@@ -64,7 +66,7 @@ void Autonomous::Auton2(Intake &intake, Latch &latch, DistanceSensor &distance) 
 }
 
 // Blue left
-void Autonomous::Auton3(Intake &intake, Latch &latch, DistanceSensor &distance) {
+void Autonomous::Auton3(Intake &intake, Latch &latch, Sweeper &sweeper, DistanceSensor &distance) {
    drive_.set_brake_mode_all(pros::E_MOTOR_BRAKE_BRAKE);
    chassis.setPose(0, 0,0);
 
@@ -84,19 +86,30 @@ void Autonomous::Auton3(Intake &intake, Latch &latch, DistanceSensor &distance) 
    HookMotor.move_velocity(200);
 
    // Moves to 2 ring stack
-   chassis.moveToPoint(25, -27, 1250, {.forwards = true});
-   chassis.turnToPoint(25, 0, 1000, {.forwards = false});
-   chassis.waitUntilDone();
 
-   // Moves goal to corner
-   chassis.moveToPoint(28, 3, 1250, {.forwards = false});
+   chassis.moveToPoint(25, -27, 1250, {.forwards = true});
+   chassis.turnToPoint(33.5, 6, 1000);
+   sweeper.toggle();
+   chassis.moveToPoint(35, 7, 1500);
+   chassis.waitUntilDone();
+   IntakeMotor.move_velocity(0);
+   HookMotor.move_velocity(0);
+
+   chassis.moveToPose(25, -4, 170, 2000, {.horizontalDrift = 2});
+   chassis.moveToPoint(32, 10, 1000, {.forwards = false});
    chassis.waitUntilDone();
    latch.toggle();
+   //chassis.turnToHeading(180, 1000, {.direction = AngularDirection::CCW_COUNTERCLOCKWISE});
 
-   // Turn to ladder cone
-   chassis.moveToPoint(25, -30, 1500, {.forwards = true},true);
-   chassis.turnToPoint(25, -40, 1000, {.forwards = false});
-   chassis.moveToPoint(25, -38,1000, {.forwards = false});
+   //// Moves goal to corner
+   //chassis.moveToPoint(28, 3, 1250, {.forwards = false});
+   //chassis.waitUntilDone();
+   //latch.toggle();
+
+   //// Turn to ladder cone
+   //chassis.moveToPoint(25, -30, 1500, {.forwards = true},true);
+   //chassis.turnToPoint(25, -40, 1000, {.forwards = false});
+   //chassis.moveToPoint(25, -38,1000, {.forwards = false});
 }
 
 /*
@@ -170,7 +183,7 @@ void Autonomous::Auton5(Intake &intake, Latch &latch, DistanceSensor &distance) 
 }
 
 // Takes in two parameters: The autonomous value as well as the puncher object.
-void Autonomous::AutoDrive(Intake &intake, Latch &latch, DistanceSensor &distance) {
+void Autonomous::AutoDrive(Intake &intake, Latch &latch, Sweeper &sweeper, DistanceSensor &distance) {
    // Keep the switcher running while the controller down button has not been pressed and the time period is not
    // autonomous Compare the current auton value to run the auton routine
    switch (Autonomous::auton) {
@@ -181,7 +194,7 @@ void Autonomous::AutoDrive(Intake &intake, Latch &latch, DistanceSensor &distanc
       Auton2(intake, latch, distance);
       break;
    case BLUE_LEFT:
-      Auton3(intake, latch, distance);
+      Auton3(intake, latch, sweeper, distance);
       break;
    case BLUE_RIGHT:
       Auton4(intake, latch, distance);

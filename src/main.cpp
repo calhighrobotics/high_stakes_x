@@ -6,6 +6,7 @@
 #include "liblvgl/core/lv_obj.h"
 #include "liblvgl/core/lv_obj_style.h"
 #include "liblvgl/extra/widgets/chart/lv_chart.h"
+#include "liblvgl/llemu.hpp"
 #include "liblvgl/misc/lv_area.h"
 #include "liblvgl/misc/lv_color.h"
 #include "pros/misc.h"
@@ -139,8 +140,21 @@ void competition_initialize() {}
 void autonomous() {
    //chassis.turnToHeading(90, 100000);
    // chassis.moveToPoint(0, 24, 10000);
+   pros::Task screen_task([&]() {
+      pros::lcd::initialize();
+      while (true) {
+         // print robot location to the brain screen
+         pros::lcd::print(0, "X: %f", chassis.getPose().x);         // x
+         pros::lcd::print(1, "Y: %f", chassis.getPose().y);         // y
+         pros::lcd::print(2, "Theta: %f", chassis.getPose().theta); // heading
+         // delay to save resources
+         pros::lcd::print(3, "Rotation Sensor: %i", lateral_sensor.get_position());
+         pros::lcd::print(4, "Rotation Sensor: %i", horizontal_sensor.get_position());
+         pros::delay(20);
+      }
+   });
    Autonomous::auton = Robot::Autonomous::BLUE_LEFT;
-   subsystem.autonomous.AutoDrive(subsystem.intake, subsystem.latch, electronic.distance_sensor);
+   subsystem.autonomous.AutoDrive(subsystem.intake, subsystem.latch, subsystem.sweeper, electronic.distance_sensor);
 }
 
 /**

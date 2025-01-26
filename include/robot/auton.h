@@ -4,6 +4,7 @@
 #include "robot/intake.h"
 #include "robot/latch.h"
 #include "electronic/distance.h"
+#include "robot/sweeper.h"
 
 namespace Robot {
 /**
@@ -42,7 +43,7 @@ public:
     * @param puncher A reference to the Puncher object.
     * @param autono A boolean value indicating whether to use autonomous mode.
     */
-   void AutoDrive(Intake &intake, Latch &latch, DistanceSensor &distance);
+   void AutoDrive(Intake &intake, Latch &latch, Sweeper &sweeper, DistanceSensor &distance);
 
    /**
     * @brief Switches the autonomous program.
@@ -82,7 +83,7 @@ private:
     *
     * @param puncher A reference to the Puncher object.
     */
-   void Auton3(Intake &intake, Latch &latch, DistanceSensor &distance);
+   void Auton3(Intake &intake, Latch &latch, Sweeper &sweeper, DistanceSensor &distance);
 
    /**
     * @brief Runs the autonomous path for the far side offensive game strategy.
