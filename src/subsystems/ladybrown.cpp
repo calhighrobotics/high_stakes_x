@@ -23,44 +23,36 @@ LadyBrown::LadyBrown() {
 }
 
 void LadyBrown::run() {
-   int location = 1;
-
    if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_R1)) {
-      if (location <= 3) {
-         location++;
-         current_state = static_cast<LADYBROWN_STATE>(location);
-         pros::Task task([&]() { MoveToPoint(); });
-      }
+      pros::Task task([&]() { MoveToPoint(); });
    } else if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_L1)) {
-      if (location >= 1) {
-         location--;
-         current_state = static_cast<LADYBROWN_STATE>(location);
-         pros::Task task([&]() { MoveToPoint(); });
-      }
-   } else {
-      LadyBrownMotor.move_velocity(0);
+      pros::Task task([&]() { MoveToPoint(); });
    }
 }
 
-void LadyBrown::MoveToPoint() {
-   lemlib::PID MoveToPointPID(3, 2, 1, 2, false);
+void LadyBrown::MoveToPoint(LadyBrown::LADYBROWN_STATE state) {
+   lemlib::PID MoveToPointPID(1, 0, 0, 2, false);
 
    target = LadyBrownRotation.get_position();
-   
-   if (current_state == BASE_STATE) {
+
+   if (state == BASE_STATE) {
       target = 0;
-   } else if (current_state == LOAD_STATE) {
-      target = -25.58;
-   } else if (current_state == ATTACK_STATE) {
-      target = -200;
+   } else if (state == LOAD_STATE) {
+      target = -2558;
+   } else if (state == ATTACK_STATE) {
+      target = -20000;
    }
+
+   std::cout << "Before loop" << std::endl;
+   std::cout << target << std::endl;
 
    while (true) {
       double error = target - LadyBrownRotation.get_position();
       
       double motor_voltage = MoveToPointPID.update(error);
-      
-      if (std::abs(error < 10)) {
+      std::cout << motor_voltage << std::endl;
+
+      if (std::abs(error) < 10) {
          LadyBrownMotor.brake();
          break;
       }
