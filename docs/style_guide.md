@@ -1,4 +1,4 @@
-# Style Guide
+# Style Guide - Code
 
 ### This style guide is meant to brief contributors on the conventions utilized within this codebase.
 

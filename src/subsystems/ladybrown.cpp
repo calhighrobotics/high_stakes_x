@@ -5,6 +5,7 @@
 #include "globals.h"
 #include "lemlib/pid.hpp"
 #include "pros/motors.h"
+#include "pros/rtos.hpp"
 
 constexpr int SLOWER_VELOCITY = 125;
 constexpr int FASTER_VELOCITY = 150;

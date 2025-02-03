@@ -55,8 +55,8 @@ void Controller::notify_motor_disconnect(void *param) {
    bool is_notified = false;
    uint32_t now = pros::millis();
 
-   const int TASK_DELAY_MILLIS = 1000;
-   const int CONTROLLER_DELAY_MILLIS = 50;
+   constexpr int TASK_DELAY_MILLIS = 1000;
+   constexpr int CONTROLLER_DELAY_MILLIS = 50;
 
    while (true) {
       std::string disc_motors = "MD: ";

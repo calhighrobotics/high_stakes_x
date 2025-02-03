@@ -8,43 +8,43 @@ Autonomous::AUTON_ROUTINE Autonomous::auton = RED_LEFT;
 std::string Autonomous::autonName;
 
 // Red Left
-void Autonomous::Auton1(Intake &intake, Latch &latch) {}
+void Autonomous::Auton1(Intake &intake, Latch &latch, DistanceSensor &distance) {}
 
 // Red Right
-void Autonomous::Auton2(Intake &intake, Latch &latch) {}
+void Autonomous::Auton2(Intake &intake, Latch &latch, DistanceSensor &distance) {}
 
 // Blue left
-void Autonomous::Auton3(Intake &intake, Latch &latch) {}
+void Autonomous::Auton3(Intake &intake, Latch &latch, DistanceSensor &distance) {}
 
 /*
  * @todo Flesh out this method before the competition in order to make it a full
  * solo awp autonomous. Blue right
  */
-void Autonomous::Auton4(Intake &intake, Latch &latch) {}
+void Autonomous::Auton4(Intake &intake, Latch &latch, DistanceSensor &distance) {}
 
-void Autonomous::Auton5(Intake &intake, Latch &latch) {
+void Autonomous::Auton5(Intake &intake, Latch &latch, DistanceSensor &distance) {
    // Autonomous routine for the Skills challenge
 }
 
 // Takes in two parameters: The autonomous value as well as the puncher object.
-void Autonomous::AutoDrive(Intake &intake, Latch &latch) {
+void Autonomous::AutoDrive(Intake &intake, Latch &latch, DistanceSensor &distance) {
    // Keep the switcher running while the controller down button has not been pressed and the time period is not
    // autonomous Compare the current auton value to run the auton routine
    switch (Autonomous::auton) {
    case RED_LEFT:
-      Auton1(intake, latch);
+      Auton1(intake, latch, distance);
       break;
    case RED_RIGHT:
-      Auton2(intake, latch);
+      Auton2(intake, latch, distance);
       break;
    case BLUE_LEFT:
-      Auton3(intake, latch);
+      Auton3(intake, latch, distance);
       break;
    case BLUE_RIGHT:
-      Auton4(intake, latch);
+      Auton4(intake, latch, distance);
       break;
    case SKILLS:
-      Auton5(intake, latch);
+      Auton5(intake, latch, distance);
       break;
    }
 }

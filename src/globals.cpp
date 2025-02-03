@@ -33,10 +33,13 @@ pros::Motor HookMotor(-2, pros::v5::MotorGears::green, pros::v5::MotorUnits::deg
 pros::Motor LadyBrownMotor(-3, pros::v5::MotorGears::green, pros::v5::MotorUnits::degrees);
 
 pros::adi::Pneumatics LatchControl('A', false);
-pros::adi::Pneumatics HangControl('B', false);
+pros::adi::Pneumatics HangControl('C', false);
+pros::adi::Pneumatics SweeperControl('B', false);
 
+
+pros::Distance distance_sensor(10);
 pros::Rotation lateral_sensor(16);
-pros::Rotation horizontal_sensor(-17);
+pros::Rotation horizontal_sensor(17);
 
 pros::Rotation LadyBrownRotation(8);
 
@@ -60,8 +63,8 @@ pros::MotorGroup drive_({LeftFront.get_port(), RightFront.get_port(), LeftMid.ge
                          LeftBack.get_port(), RightBack.get_port()});
 
 // Lemlib objects - Used by lemlib drive and odometry functions
-lemlib::TrackingWheel horizontal_tracking_wheel(&horizontal_sensor, lemlib::Omniwheel::NEW_2, -5);
-lemlib::TrackingWheel vertical_tracking_wheel(&lateral_sensor, lemlib::Omniwheel::NEW_2, -1.45);
+lemlib::TrackingWheel horizontal_tracking_wheel(&horizontal_sensor, 2, -2.75);
+lemlib::TrackingWheel vertical_tracking_wheel(&lateral_sensor, 2, -1);
 
 // Describes the lemlib objects that are used to control the autonomous
 // functions of the robot.
@@ -84,21 +87,21 @@ lemlib::OdomSensors sensors{
 
 // forward/backward PID
 // lateral PID controller
-lemlib::ControllerSettings lateral_controller(10,  // proportional gain (kP)
-                                              0,   // integral gain (kI)
-                                              4.5, // derivative gain (kD)
-                                              3,   // anti windup
-                                              1,   // small error range, in inches
-                                              100, // small error range timeout, in milliseconds
-                                              3,   // large error range, in inches
-                                              500, // large error range timeout, in milliseconds
-                                              25   // maximum acceleration (slew)
+lemlib::ControllerSettings lateral_controller(5.25, // proportional gain (kP)
+                                              0,    // integral gain (kI)
+                                              13,   // derivative gain (kD)
+                                              3,    // anti windup
+                                              1,    // small error range, in inches
+                                              100,  // small error range timeout, in milliseconds
+                                              3,    // large error range, in inches
+                                              500,  // large error range timeout, in milliseconds
+                                              20    // maximum acceleration (slew)
 );
 
 // angular PID controller
-lemlib::ControllerSettings angular_controller(2,    // proportional gain (kP)
+lemlib::ControllerSettings angular_controller(1.73, // proportional gain (kP)
                                               0,    // integral gain (kI)
-                                              10.5, // derivative gain (kD)
+                                              9,    // derivative gain (kD)
                                               3,    // anti windup
                                               1,    // small error range, in degrees
                                               100,  // small error range timeout, in milliseconds
