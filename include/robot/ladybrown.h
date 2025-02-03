@@ -18,7 +18,7 @@ public:
    //True for going upwards, false for going downwards. This helps with the toggler.
    bool direction;
 
-   void run();
+   void run(bool async = true, int timeout = 1000);
 
    void MoveToPoint(LadyBrown::LADYBROWN_STATE state, int timeout = 1000);
 

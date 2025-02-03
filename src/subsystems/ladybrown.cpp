@@ -5,6 +5,7 @@
 #include "globals.h"
 #include "lemlib/pid.hpp"
 #include "lemlib/timer.hpp"
+#include "lemlib/util.hpp"
 #include "pros/motors.h"
 #include "pros/rtos.hpp"
 
@@ -24,7 +25,7 @@ LadyBrown::LadyBrown(): MoveToPointPID(1, 0, 0, 2, false) {
    LadyBrownRotation.set_position(0);
 }
 
-void LadyBrown::run() {
+void LadyBrown::run(bool async, int timeout) {
    LADYBROWN_STATE move_to = current_state;
 
    if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_R1)) {
@@ -33,19 +34,30 @@ void LadyBrown::run() {
       } else if (current_state == LOAD_STATE) {
          move_to = ATTACK_STATE;
       }
-      pros::Task task([&]() { MoveToPoint(move_to); });
+
+      if (!async) {
+         MoveToPoint(move_to);
+      } else {
+         pros::Task task([&]() { MoveToPoint(move_to); });
+      }
+
    } else if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_L1)) {
       if (current_state == ATTACK_STATE) {
          move_to = LOAD_STATE;
       } else if (current_state == LOAD_STATE) {
          move_to = BASE_STATE;
       }
-      pros::Task task([&]() { MoveToPoint(move_to); });
+
+      if (!async) {
+         MoveToPoint(move_to);
+      } else {
+         pros::Task task([&]() { MoveToPoint(move_to); });
+      }
+
    }
 }
 
 void LadyBrown::MoveToPoint(LadyBrown::LADYBROWN_STATE state, int timeout) {
-
    target = LadyBrownRotation.get_position();
 
    if (state == BASE_STATE) {
@@ -55,6 +67,8 @@ void LadyBrown::MoveToPoint(LadyBrown::LADYBROWN_STATE state, int timeout) {
    } else if (state == ATTACK_STATE) {
       target = -20000;
    }
+
+   MoveToPointPID.reset();
 
    std::cout << "Before loop" << std::endl;
    std::cout << target << std::endl;
@@ -66,6 +80,8 @@ void LadyBrown::MoveToPoint(LadyBrown::LADYBROWN_STATE state, int timeout) {
       
       double motor_voltage = MoveToPointPID.update(error);
       std::cout << motor_voltage << std::endl;
+
+      motor_voltage = lemlib::slew(motor_voltage, LadyBrownMotor.get_voltage(), 3050);
 
       if (std::abs(error) < 10 || timer.isDone()) {
          LadyBrownMotor.brake();
