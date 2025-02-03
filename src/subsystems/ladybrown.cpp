@@ -4,6 +4,7 @@
 
 #include "globals.h"
 #include "lemlib/pid.hpp"
+#include "lemlib/timer.hpp"
 #include "pros/motors.h"
 #include "pros/rtos.hpp"
 
@@ -43,8 +44,7 @@ void LadyBrown::run() {
    }
 }
 
-void LadyBrown::MoveToPoint(LadyBrown::LADYBROWN_STATE state, int timeout = 1000) {
-   lemlib::Timer timer(timeout);
+void LadyBrown::MoveToPoint(LadyBrown::LADYBROWN_STATE state, int timeout) {
 
    target = LadyBrownRotation.get_position();
 
@@ -58,6 +58,8 @@ void LadyBrown::MoveToPoint(LadyBrown::LADYBROWN_STATE state, int timeout = 1000
 
    std::cout << "Before loop" << std::endl;
    std::cout << target << std::endl;
+   
+   lemlib::Timer timer(timeout);
 
    while (true) {
       double error = target - LadyBrownRotation.get_position();
@@ -65,7 +67,7 @@ void LadyBrown::MoveToPoint(LadyBrown::LADYBROWN_STATE state, int timeout = 1000
       double motor_voltage = MoveToPointPID.update(error);
       std::cout << motor_voltage << std::endl;
 
-      if (std::abs(error) < 10) {
+      if (std::abs(error) < 10 || timer.isDone()) {
          LadyBrownMotor.brake();
          break;
       }

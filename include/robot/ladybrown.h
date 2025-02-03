@@ -20,7 +20,7 @@ public:
 
    void run();
 
-   void MoveToPoint(LadyBrown::LADYBROWN_STATE state, int timeout);
+   void MoveToPoint(LadyBrown::LADYBROWN_STATE state, int timeout = 1000);
 
    LadyBrown();
 
