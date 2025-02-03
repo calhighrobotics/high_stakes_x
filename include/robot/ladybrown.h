@@ -15,9 +15,12 @@ public:
 
    double target;
 
+   //True for going upwards, false for going downwards. This helps with the toggler.
+   bool direction;
+
    void run();
 
-   void MoveToPoint(LadyBrown::LADYBROWN_STATE state);
+   void MoveToPoint(LadyBrown::LADYBROWN_STATE state, int timeout);
 
    LadyBrown();
 
@@ -26,6 +29,8 @@ private:
     * @brief blue is false, red is true.
     */
    bool alliance_color;
+
+   lemlib::PID MoveToPointPID;
 
 };
 } // namespace Robot

@@ -18,20 +18,32 @@ using namespace Robot::Globals;
 
 LadyBrown::LADYBROWN_STATE current_state = Robot::LadyBrown::BASE_STATE;
 
-LadyBrown::LadyBrown() {
+LadyBrown::LadyBrown(): MoveToPointPID(1, 0, 0, 2, false) {
    LadyBrownRotation.set_position(0);
 }
 
 void LadyBrown::run() {
+   LADYBROWN_STATE move_to = current_state;
+
    if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_R1)) {
-      pros::Task task([&]() { MoveToPoint(); });
+      if (current_state == BASE_STATE) {
+         move_to = LOAD_STATE;
+      } else if (current_state == LOAD_STATE) {
+         move_to = ATTACK_STATE;
+      }
+      pros::Task task([&]() { MoveToPoint(move_to); });
    } else if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_L1)) {
-      pros::Task task([&]() { MoveToPoint(); });
+      if (current_state == ATTACK_STATE) {
+         move_to = LOAD_STATE;
+      } else if (current_state == LOAD_STATE) {
+         move_to = BASE_STATE;
+      }
+      pros::Task task([&]() { MoveToPoint(move_to); });
    }
 }
 
-void LadyBrown::MoveToPoint(LadyBrown::LADYBROWN_STATE state) {
-   lemlib::PID MoveToPointPID(1, 0, 0, 2, false);
+void LadyBrown::MoveToPoint(LadyBrown::LADYBROWN_STATE state, int timeout = 1000) {
+   lemlib::Timer timer(timeout);
 
    target = LadyBrownRotation.get_position();
 

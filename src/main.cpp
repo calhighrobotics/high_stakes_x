@@ -148,8 +148,7 @@ void opcontrol() {
 
       // Calls to event handling functions.
       if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_DOWN)) {
-         //autonomous();
-         subsystem.ladybrown.MoveToPoint();
+         autonomous();
       }
       // Toggles the drivetrain orientation - can be forward or backward
       if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_UP)) {
