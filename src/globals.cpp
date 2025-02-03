@@ -38,6 +38,8 @@ pros::adi::Pneumatics HangControl('B', false);
 pros::Rotation lateral_sensor(16);
 pros::Rotation horizontal_sensor(-17);
 
+pros::Rotation LadyBrownRotation(8);
+
 pros::Imu inertial_sensor(14);
 
 // Vision sensor configuration
@@ -111,8 +113,8 @@ lemlib::ExpoDriveCurve throttle_curve(3,    // joystick deadband out of 127
 );
 
 // input curve for steer input during driver control
-lemlib::ExpoDriveCurve steer_curve(3,    // joystick deadband out of 127
-                                   17,   // minimum output where drivetrain will move out of 127
+lemlib::ExpoDriveCurve steer_curve(3,   // joystick deadband out of 127
+                                   17,  // minimum output where drivetrain will move out of 127
                                    1.01 // expo curve gain
 );
 

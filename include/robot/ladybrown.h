@@ -1,4 +1,5 @@
 #pragma once
+#include "lemlib/api.hpp"
 
 namespace Robot {
 
@@ -6,7 +7,10 @@ namespace Robot {
  * @brief The Intake class represents a robot intake system.
  */
 class LadyBrown {
- public:
+public:
+   // The ENUM associates with each location of the rotation sensor for the LadyBrown to move.
+   enum LADYBROWN_STATE { BASE_STATE = 1, LOAD_STATE = 2, ATTACK_STATE = 3 };
+
    /**
     * @brief Runs the main function of the intake system.
     *
@@ -23,23 +27,17 @@ class LadyBrown {
 
    LadyBrown();
 
-   LadyBrown(double kP, double kI, double kD);
+   void MoveToPoint();
 
-   double pid_update();
+   LADYBROWN_STATE current_state;
 
-   /**
-    * @brief Toggles intake elevation.
-    */
-   void toggle();
+   double target;
 
- private:
-    double kP;
-    double kI;
-    double kD;
-
+private:
    /**
     * @brief blue is false, red is true.
     */
    bool alliance_color;
+
 };
 } // namespace Robot

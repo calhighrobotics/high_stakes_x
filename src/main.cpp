@@ -3,8 +3,8 @@
 #include "globals.h"
 #include "pros/misc.h"
 #include "robot/drivetrain.h"
-#include "screen/selector.h"
 #include "robot/ladybrown.h"
+#include "screen/selector.h"
 #include "screen/status.h"
 
 using namespace Robot;
@@ -56,8 +56,25 @@ void initialize() {
    chassis.calibrate();
 
    chassis.setPose(0, 0, 0);
+   pros::lcd::initialize();
 
-   screen.selector.selector();
+   //screen.selector.selector();
+   pros::Task screen_task([&]() {
+      while (true) {
+         // print robot location to the brain screen
+         pros::lcd::print(0, "X: %f", chassis.getPose().x);         // x
+         pros::lcd::print(1, "Y: %f", chassis.getPose().y);         // y
+         pros::lcd::print(2, "Theta: %f", chassis.getPose().theta); // heading
+         // delay to save resources
+         pros::lcd::print(3, "Lateral Sensor: %i", lateral_sensor.get_position());
+         pros::lcd::print(4, "Horizontal Sensor: %i", horizontal_sensor.get_position());
+         pros::lcd::print(5, "Lady Brown Sensor: %i", LadyBrownRotation.get_position());
+         pros::lcd::print(6, "Lady Brown target: %i", subsystem.ladybrown.target);
+   
+
+         pros::delay(20);
+      }
+   });
 
    pros::rtos::Task Task(electronic.controllers.notify_motor_disconnect);
 }
@@ -131,7 +148,8 @@ void opcontrol() {
 
       // Calls to event handling functions.
       if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_DOWN)) {
-         autonomous();
+         //autonomous();
+         subsystem.ladybrown.MoveToPoint(LadyBrown::LOAD_STATE);
       }
       // Toggles the drivetrain orientation - can be forward or backward
       if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_UP)) {
