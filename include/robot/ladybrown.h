@@ -13,7 +13,7 @@ public:
 
    void run(bool async = true);
 
-   void MoveToPoint(LadyBrown::ANGLE state, int max_error = 10, int timeout = 2000);
+   void MoveToPoint(LadyBrown::ANGLE state, int max_error = 10, int timeout = 10000);
 
    LadyBrown();
 

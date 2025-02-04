@@ -83,7 +83,7 @@ void initialize() {
       lv_chart_set_point_count(chart, 460);
       lv_obj_set_size(chart, 460, 220);
       lv_obj_center(chart);
-      //lv_chart_set_range(chart, LV_CHART_AXIS_PRIMARY_Y, 60, 120);
+      lv_chart_set_range(chart, LV_CHART_AXIS_PRIMARY_Y, -15250, -14750);
       //lv_chart_set_zoom_y(chart, 600);
       //lv_chart_set_zoom_x(chart, 1000);
       lv_obj_set_style_size(chart, 0, LV_PART_INDICATOR);
@@ -98,7 +98,7 @@ void initialize() {
       while (true) {
          lv_chart_set_next_value(chart, s1, subsystem.ladybrown.target_angle);
          lv_chart_set_next_value(chart, s2, LadyBrownRotation.get_position());
-         if (pros::millis() >= 7000) {
+         if (pros::millis() >= 5000) {
             std::string angle = std::to_string(LadyBrownRotation.get_position());
             lv_label_set_text(label, angle.c_str());
             break;

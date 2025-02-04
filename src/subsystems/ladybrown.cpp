@@ -11,7 +11,7 @@
 using namespace Robot;
 using namespace Robot::Globals;
 
-LadyBrown::LadyBrown() : MoveToPointPID(1, 0, 0, 2, false), current_state{ANGLE::BASE_STATE}, target_angle{0} {
+LadyBrown::LadyBrown() : MoveToPointPID(2, 0, 1.25, 2, false), current_state{ANGLE::BASE_STATE}, target_angle{0} {
    LadyBrownMotor.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
    LadyBrownRotation.set_position(0);
 }
