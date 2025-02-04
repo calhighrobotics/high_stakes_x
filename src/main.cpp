@@ -1,6 +1,7 @@
 #include "main.h"
 #include "electronic/controller.h"
 #include "globals.h"
+#include "liblvgl/llemu.hpp"
 #include "pros/misc.h"
 #include "robot/drivetrain.h"
 #include "robot/ladybrown.h"
@@ -61,7 +62,7 @@ void initialize() {
    pros::rtos::Task MotorNotification(electronic.controllers.notify_motor_disconnect);
 
    // pros::rtos::Task LadyBrownNotification(subsystem.ladybrown.edge_check);
-   // screen.selector.selector();
+   //screen.selector.selector();
    pros::lcd::initialize();
    pros::Task screen_task([&]() {
       while (true) {
@@ -141,6 +142,9 @@ void autonomous() {
  * the task, not resume it from where it left off.
  */
 void opcontrol() {
+
+   pros::lcd::shutdown();
+   screen.status.status();
 
    while (true) {
 
