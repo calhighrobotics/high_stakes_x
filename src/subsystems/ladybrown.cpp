@@ -46,7 +46,7 @@ void LadyBrown::run(bool async) {
 
 void LadyBrown::MoveToPoint(LadyBrown::ANGLE state, int max_error, int timeout) {
    constexpr int base_angle = 0;
-   constexpr int load_angle = -2558;
+   constexpr int load_angle = -15000;
    constexpr int attack_angle = -15000;
    lemlib::Timer timer(timeout);
 

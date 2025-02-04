@@ -63,18 +63,47 @@ void initialize() {
    // pros::rtos::Task LadyBrownNotification(subsystem.ladybrown.edge_check);
    // screen.selector.selector();
    pros::lcd::initialize();
-   pros::Task screen_task([&]() {
-      while (true) {
-         // print robot location to the brain screen
-         pros::lcd::print(0, "X: %f", chassis.getPose().x);         // x
-         pros::lcd::print(1, "Y: %f", chassis.getPose().y);         // y
-         pros::lcd::print(2, "Theta: %f", chassis.getPose().theta); // heading
-         // delay to save resources
-         pros::lcd::print(3, "Lateral Sensor: %i", lateral_sensor.get_position());
-         pros::lcd::print(4, "Horizontal Sensor: %i", horizontal_sensor.get_position());
-         pros::lcd::print(5, "Lady Brown Sensor: %i", LadyBrownRotation.get_position());
+   //pros::Task screen_task([&]() {
+   //   while (true) {
+   //      // print robot location to the brain screen
+   //      pros::lcd::print(0, "X: %f", chassis.getPose().x);         // x
+   //      pros::lcd::print(1, "Y: %f", chassis.getPose().y);         // y
+   //      pros::lcd::print(2, "Theta: %f", chassis.getPose().theta); // heading
+   //      // delay to save resources
+   //      pros::lcd::print(3, "Lateral Sensor: %i", lateral_sensor.get_position());
+   //      pros::lcd::print(4, "Horizontal Sensor: %i", horizontal_sensor.get_position());
+   //      pros::lcd::print(5, "Lady Brown Sensor: %i", LadyBrownRotation.get_position());
 
-         pros::delay(20);
+   //      pros::delay(20);
+   //   }
+   //});
+   pros::Task screen_task([&]() {
+      lv_obj_t *chart = lv_chart_create(lv_scr_act());
+      lv_chart_set_type(chart, LV_CHART_TYPE_LINE);
+      lv_chart_set_point_count(chart, 460);
+      lv_obj_set_size(chart, 460, 220);
+      lv_obj_center(chart);
+      //lv_chart_set_range(chart, LV_CHART_AXIS_PRIMARY_Y, 60, 120);
+      //lv_chart_set_zoom_y(chart, 600);
+      //lv_chart_set_zoom_x(chart, 1000);
+      lv_obj_set_style_size(chart, 0, LV_PART_INDICATOR);
+      lv_chart_series_t *s1 = lv_chart_add_series(chart, lv_color_white(), LV_CHART_AXIS_PRIMARY_Y);
+      lv_chart_series_t *s2 = lv_chart_add_series(chart, lv_color_hex(0xFFFF0000), LV_CHART_AXIS_SECONDARY_X);
+
+      lv_obj_t * label = lv_label_create(lv_scr_act());
+      lv_obj_set_style_text_color(lv_scr_act(), lv_color_hex(0xffffff), LV_PART_MAIN);
+      lv_obj_align(label, LV_ALIGN_TOP_MID, 0, 0);
+      lv_obj_set_style_text_font(label, &lv_font_montserrat_20, 0);
+
+      while (true) {
+         lv_chart_set_next_value(chart, s1, subsystem.ladybrown.target_angle);
+         lv_chart_set_next_value(chart, s2, LadyBrownRotation.get_position());
+         if (pros::millis() >= 7000) {
+            std::string angle = std::to_string(LadyBrownRotation.get_position());
+            lv_label_set_text(label, angle.c_str());
+            break;
+         }
+         pros::delay(10);
       }
    });
 

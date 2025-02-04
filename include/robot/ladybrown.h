@@ -17,11 +17,11 @@ public:
 
    LadyBrown();
 
-private:
-   lemlib::PID MoveToPointPID;
-
    ANGLE current_state;
 
    int target_angle;
+private:
+   lemlib::PID MoveToPointPID;
+
 };
 } // namespace Robot
