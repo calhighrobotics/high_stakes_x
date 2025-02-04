@@ -1,96 +1,83 @@
 #include "robot/ladybrown.h"
 #include <cstdlib>
-#include <iostream>
 
 #include "globals.h"
 #include "lemlib/pid.hpp"
 #include "lemlib/timer.hpp"
-#include "lemlib/util.hpp"
+#include "pros/misc.h"
 #include "pros/motors.h"
 #include "pros/rtos.hpp"
-
-constexpr int SLOWER_VELOCITY = 125;
-constexpr int FASTER_VELOCITY = 150;
-
-constexpr double base_location = 0;
-constexpr double load_location = -25.58;
-constexpr double attack_location = -200;
 
 using namespace Robot;
 using namespace Robot::Globals;
 
-LadyBrown::LADYBROWN_STATE current_state = Robot::LadyBrown::BASE_STATE;
-
-LadyBrown::LadyBrown(): MoveToPointPID(1, 0, 0, 2, false) {
+LadyBrown::LadyBrown() : MoveToPointPID(1, 0, 0, 2, false), current_state{ANGLE::BASE_STATE}, target_angle{0} {
+   LadyBrownMotor.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
    LadyBrownRotation.set_position(0);
 }
 
-void LadyBrown::run(bool async, int timeout) {
-   LADYBROWN_STATE move_to = current_state;
+LadyBrown::ANGLE &operator++(LadyBrown::ANGLE &s) {
+   return s = (s == LadyBrown::ANGLE::ATTACK_STATE) ? LadyBrown::ANGLE::BASE_STATE
+                                                    : static_cast<LadyBrown::ANGLE>(static_cast<int>(s) + 1);
+}
 
-   if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_R1)) {
-      if (current_state == BASE_STATE) {
-         move_to = LOAD_STATE;
-      } else if (current_state == LOAD_STATE) {
-         move_to = ATTACK_STATE;
-      }
+LadyBrown::ANGLE &operator--(LadyBrown::ANGLE &s) {
+   return s = (s == LadyBrown::ANGLE::BASE_STATE) ? LadyBrown::ANGLE::BASE_STATE
+                                                  : static_cast<LadyBrown::ANGLE>(static_cast<int>(s) - 1);
+}
 
-      if (!async) {
-         MoveToPoint(move_to);
+void LadyBrown::run(bool async) {
+   if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_R2)) {
+      LadyBrown::ANGLE new_state = ++current_state;
+      if (async) {
+         pros::Task task([new_state, this]() { MoveToPoint(new_state); });
       } else {
-         pros::Task task([&]() { MoveToPoint(move_to); });
+         MoveToPoint(new_state);
       }
-
-   } else if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_L1)) {
-      if (current_state == ATTACK_STATE) {
-         move_to = LOAD_STATE;
-      } else if (current_state == LOAD_STATE) {
-         move_to = BASE_STATE;
-      }
-
-      if (!async) {
-         MoveToPoint(move_to);
+   } else if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_L2)) {
+      LadyBrown::ANGLE new_state = --current_state;
+      if (async) {
+         pros::Task task([new_state, this]() { MoveToPoint(new_state); });
       } else {
-         pros::Task task([&]() { MoveToPoint(move_to); });
+         MoveToPoint(new_state);
       }
-
    }
 }
 
-void LadyBrown::MoveToPoint(LadyBrown::LADYBROWN_STATE state, int timeout) {
-   target = LadyBrownRotation.get_position();
-
-   if (state == BASE_STATE) {
-      target = 0;
-   } else if (state == LOAD_STATE) {
-      target = -2558;
-   } else if (state == ATTACK_STATE) {
-      target = -20000;
-   }
-
-   MoveToPointPID.reset();
-
-   std::cout << "Before loop" << std::endl;
-   std::cout << target << std::endl;
-   
+void LadyBrown::MoveToPoint(LadyBrown::ANGLE state, int max_error, int timeout) {
+   constexpr int base_angle = 0;
+   constexpr int load_angle = -2558;
+   constexpr int attack_angle = -15000;
    lemlib::Timer timer(timeout);
 
+   target_angle = LadyBrownRotation.get_position();
+
+   switch (state) {
+   case ANGLE::BASE_STATE:
+      target_angle = base_angle;
+      break;
+   case ANGLE::LOAD_STATE:
+      target_angle = load_angle;
+      break;
+   case ANGLE::ATTACK_STATE:
+      target_angle = attack_angle;
+      break;
+   }
+
    while (true) {
-      double error = target - LadyBrownRotation.get_position();
-      
-      double motor_voltage = MoveToPointPID.update(error);
-      std::cout << motor_voltage << std::endl;
+      int error = target_angle - LadyBrownRotation.get_position();
+      int current_voltage = LadyBrownMotor.get_voltage();
 
-      motor_voltage = lemlib::slew(motor_voltage, LadyBrownMotor.get_voltage(), 3050);
+      // Converting from int to float for LemLib PID
+      float motor_voltage = MoveToPointPID.update(static_cast<float>(error));
+      motor_voltage = lemlib::slew(motor_voltage, static_cast<float>(current_voltage), 3050);
 
-      if (std::abs(error) < 10 || timer.isDone()) {
+      if (std::abs(error) < max_error || timer.isDone()) {
          LadyBrownMotor.brake();
          break;
       }
 
-      LadyBrownMotor.move_voltage(motor_voltage);
+      LadyBrownMotor.move_voltage(static_cast<int>(motor_voltage));
       pros::delay(20);
-
    }
-
 }

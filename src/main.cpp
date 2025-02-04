@@ -73,8 +73,6 @@ void initialize() {
          pros::lcd::print(3, "Lateral Sensor: %i", lateral_sensor.get_position());
          pros::lcd::print(4, "Horizontal Sensor: %i", horizontal_sensor.get_position());
          pros::lcd::print(5, "Lady Brown Sensor: %i", LadyBrownRotation.get_position());
-         pros::lcd::print(6, "Lady Brown target: %i", subsystem.ladybrown.target);
-   
 
          pros::delay(20);
       }

@@ -1,36 +1,27 @@
 #pragma once
-#include "lemlib/api.hpp"
 
+#include "lemlib/pid.hpp"
 namespace Robot {
 
 /**
- * @brief The Intake class represents a robot intake system.
+ * @brief The LadyBrown class represents the robot lady brown subsystem.
  */
 class LadyBrown {
 public:
    // The ENUM associates with each location of the rotation sensor for the LadyBrown to move.
-   enum LADYBROWN_STATE { BASE_STATE = 1, LOAD_STATE = 2, ATTACK_STATE = 3 };
+   enum class ANGLE { BASE_STATE, LOAD_STATE, ATTACK_STATE };
 
-   LADYBROWN_STATE current_state;
+   void run(bool async = true);
 
-   double target;
-
-   //True for going upwards, false for going downwards. This helps with the toggler.
-   bool direction;
-
-   void run(bool async = true, int timeout = 1000);
-
-   void MoveToPoint(LadyBrown::LADYBROWN_STATE state, int timeout = 1000);
+   void MoveToPoint(LadyBrown::ANGLE state, int max_error = 10, int timeout = 2000);
 
    LadyBrown();
 
 private:
-   /**
-    * @brief blue is false, red is true.
-    */
-   bool alliance_color;
-
    lemlib::PID MoveToPointPID;
 
+   ANGLE current_state;
+
+   int target_angle;
 };
 } // namespace Robot
