@@ -36,7 +36,6 @@ pros::adi::Pneumatics LatchControl('A', false);
 pros::adi::Pneumatics HangControl('C', false);
 pros::adi::Pneumatics SweeperControl('B', false);
 
-
 pros::Distance distance_sensor(10);
 pros::Rotation lateral_sensor(16);
 pros::Rotation horizontal_sensor(17);
