@@ -173,7 +173,7 @@ void autonomous() {
          pros::delay(20);
       }
    });
-   Autonomous::auton = Robot::Autonomous::BLUE_LEFT;
+   Autonomous::auton = Robot::Autonomous::SKILLS;
    subsystem.autonomous.AutoDrive(subsystem.intake, subsystem.latch, subsystem.sweeper, electronic.distance_sensor);
 }
 

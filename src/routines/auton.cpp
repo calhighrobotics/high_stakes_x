@@ -139,45 +139,45 @@ void Autonomous::Auton5(Intake &intake, Latch &latch, DistanceSensor &distance) 
    /* ##############################################*/
    //De-intake into alliance stake
    drive_.set_brake_mode_all(pros::E_MOTOR_BRAKE_BRAKE);
-   IntakeMotor.move_relative(2200, 600);
-   HookMotor.move_relative(2200, 200);
-   pros::delay(1500);
-   // ############################################## */
+   //IntakeMotor.move_relative(2200, 600);
+   HookMotor.move_relative(300, 200);
+   // pros::delay(1500);
+   // // ############################################## */
 
-   //Move back into the center between the two stakes and point mogo at right stake
-   /* ############################################## */
-   chassis.setPose(0, 0, 0);
-   chassis.moveToPoint(0, 15, 1400, {.forwards = true, .maxSpeed = 60}, true);
-   chassis.turnToHeading(-90, 1000, {.direction=AngularDirection::CCW_COUNTERCLOCKWISE, .maxSpeed = 70}, true);
-   chassis.waitUntilDone();
-   chassis.setPose(0, 0, 0);
-   // ############################################## */
+   // //Move back into the center between the two stakes and point mogo at right stake
+   // /* ############################################## */
+   // chassis.setPose(0, 0, 0);
+   // chassis.moveToPoint(0, 15, 1400, {.forwards = true, .maxSpeed = 60}, true);
+   // chassis.turnToHeading(-90, 1000, {.direction=AngularDirection::CCW_COUNTERCLOCKWISE, .maxSpeed = 70}, true);
+   // chassis.waitUntilDone();
+   // chassis.setPose(0, 0, 0);
+   // // ############################################## */
 
-   //Move backwards into the stake
-   /* ############################################## */
-   chassis.moveToPoint(0, -25, 1400, {.forwards = false, .maxSpeed = 60},true);
-   chassis.waitUntilDone();
-   latch.toggle();
-   pros::delay(750);
-   // ############################################## */
+   // //Move backwards into the stake
+   // /* ############################################## */
+   // chassis.moveToPoint(0, -25, 1400, {.forwards = false, .maxSpeed = 60},true);
+   // chassis.waitUntilDone();
+   // latch.toggle();
+   // pros::delay(750);
+   // // ############################################## */
 
-   // Point to right rings and grab
-   /* ############################################## */
-   chassis.setPose(0, 0, 0);
-   chassis.turnToHeading(180, 2000);
-   IntakeMotor.move_velocity(600);
-   HookMotor.move_velocity(200);
-   chassis.setPose(0, 0,0);
-   chassis.moveToPoint(0, 36, 1250, {.forwards = true, .maxSpeed = 70},true);
-   chassis.setPose(0, 0, 0);
-   chassis.turnToHeading(135, 2000);
-   chassis.waitUntilDone();
-   chassis.setPose(0, 0, 0);
-   chassis.moveToPoint(0, 12, 1250, {.forwards = true, .maxSpeed = 70},true);
-   chassis.turnToHeading(45, 2000);
-   chassis.setPose(0, 0, 0);
-   chassis.moveToPoint(0, -15, 1250, {.forwards = false, .maxSpeed = 70},true);
-   latch.toggle();
+   // // Point to right rings and grab
+   // /* ############################################## */
+   // chassis.setPose(0, 0, 0);
+   // chassis.turnToHeading(180, 2000);
+   // IntakeMotor.move_velocity(600);
+   // HookMotor.move_velocity(200);
+   // chassis.setPose(0, 0,0);
+   // chassis.moveToPoint(0, 36, 1250, {.forwards = true, .maxSpeed = 70},true);
+   // chassis.setPose(0, 0, 0);
+   // chassis.turnToHeading(135, 2000);
+   // chassis.waitUntilDone();
+   // chassis.setPose(0, 0, 0);
+   // chassis.moveToPoint(0, 12, 1250, {.forwards = true, .maxSpeed = 70},true);
+   // chassis.turnToHeading(45, 2000);
+   // chassis.setPose(0, 0, 0);
+   // chassis.moveToPoint(0, -15, 1250, {.forwards = false, .maxSpeed = 70},true);
+   // latch.toggle();
 
 
 }
