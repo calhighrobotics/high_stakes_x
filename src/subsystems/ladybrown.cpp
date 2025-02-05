@@ -40,7 +40,9 @@ void LadyBrown::run(bool async, int timeout) {
          pros::Task move([move_to, this]() { MoveToPoint(move_to); });
       }
 
-      current_state = move_to;
+      if (!isPIDRunning) {
+         current_state = move_to;
+      }
 
    } else if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_L2)) {
 
@@ -62,8 +64,9 @@ void LadyBrown::run(bool async, int timeout) {
          pros::Task move([move_to, this]() { MoveToPoint(move_to); }, "LadyBrownMove");
       }
 
-
-      current_state = move_to;
+      if (!isPIDRunning) {
+         current_state = move_to;
+      }
    }
 }
 
@@ -72,47 +75,57 @@ int LadyBrown::get_target() {
 }
 
 void LadyBrown::MoveToPoint(LADYBROWN_STATE state, int max_error, int timeout) {
-   
-   
 
    std::cout << "state: " << current_state << std::endl;
    constexpr double base_location = 30;
-   constexpr double load_location = -2500;
-   constexpr double attack_location = -13000;
+   constexpr double load_location = -2550;
+   constexpr double attack_location = -15500;
 
    int target = LadyBrownRotation.get_position();
 
-   switch (state) {
-   case LADYBROWN_STATE::BASE_STATE:
-      target = base_location;
-      break;
-   case LADYBROWN_STATE::LOAD_STATE:
-      target = load_location;
-      break;
-   case LADYBROWN_STATE::ATTACK_STATE:
-      target = attack_location;
-      break;
-   }
+   std::cout << "state: " << state << std::endl;
+   std::cout << "pid: " << isPIDRunning << std::endl;
 
-   
-   std::cout << "target: " << target << std::endl;
 
-   MoveToPointPID.reset();
+   if (!isPIDRunning) {
 
-   timer.set(timeout);
+      std::cout << "inner pid: " << isPIDRunning << std::endl;
+      LadyBrown::isPIDRunning = true;
+      
 
-   while (true) {
-      double error = target - LadyBrownRotation.get_position();
-      double motor_voltage = MoveToPointPID.update(error);
-
-      //motor_voltage = lemlib::slew(motor_voltage, LadyBrownMotor.get_voltage(), 1500);
-
-      if (std::abs(error) < max_error || timer.isDone()) {
-         LadyBrownMotor.brake();
+      switch (state) {
+      case LADYBROWN_STATE::BASE_STATE:
+         target = base_location;
+         break;
+      case LADYBROWN_STATE::LOAD_STATE:
+         target = load_location;
+         break;
+      case LADYBROWN_STATE::ATTACK_STATE:
+         target = attack_location;
          break;
       }
+      
+      std::cout << "target: " << target << std::endl;
 
-      LadyBrownMotor.move_voltage(motor_voltage);
-      pros::delay(20);
+      MoveToPointPID.reset();
+
+      lemlib::Timer timer(timeout);
+
+      while (true) {
+         double error = target - LadyBrownRotation.get_position();
+         double motor_voltage = MoveToPointPID.update(error);
+
+         //motor_voltage = lemlib::slew(motor_voltage, LadyBrownMotor.get_voltage(), 1500);
+
+         if (std::abs(error) < max_error || timer.isDone()) {
+            LadyBrownMotor.brake();
+            LadyBrown::isPIDRunning = false;
+            break;
+         }
+
+         LadyBrownMotor.move_voltage(motor_voltage);
+         LadyBrown::isPIDRunning = true;
+         pros::delay(20);
+      }
    }
 }

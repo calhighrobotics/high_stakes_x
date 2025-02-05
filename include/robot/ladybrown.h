@@ -13,7 +13,7 @@ public:
 
    void run(bool async = true, int timeout = 1000);
 
-   void MoveToPoint(LadyBrown::LADYBROWN_STATE state, int max_error = 10, int timeout = 1000);
+   void MoveToPoint(LadyBrown::LADYBROWN_STATE state, int max_error = 200, int timeout = 1000);
 
    LadyBrown();
 
@@ -25,6 +25,8 @@ private:
    static LADYBROWN_STATE current_state;
 
    int target;
+
+   bool isPIDRunning;
    
 };
 } // namespace Robot
