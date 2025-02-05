@@ -2,6 +2,7 @@
 #include "pros/abstract_motor.hpp"
 #include "pros/misc.hpp"
 #include "pros/motors.hpp"
+#include "pros/optical.hpp"
 #include "pros/vision.h"
 #include "pros/vision.hpp"
 
@@ -44,7 +45,7 @@ pros::Rotation LadyBrownRotation(8);
 pros::Imu inertial_sensor(14);
 
 // Vision sensor configuration
-pros::Vision colorSensor(4);
+pros::Optical colorSensor(4);
 
 pros::vision_signature_s_t RED_SIG =
     pros::c::vision_signature_from_utility(1, -4653, -3619, -4136, 9831, 11725, 10778, 2.5, 0);

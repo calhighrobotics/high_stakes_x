@@ -174,7 +174,7 @@ void autonomous() {
       }
    });
    Autonomous::auton = Robot::Autonomous::SKILLS;
-   subsystem.autonomous.AutoDrive(subsystem.intake, subsystem.latch, subsystem.sweeper, electronic.distance_sensor);
+   subsystem.autonomous.AutoDrive(subsystem.intake, subsystem.latch, subsystem.sweeper, electronic.distance_sensor, subsystem.ladybrown);
 }
 
 /**

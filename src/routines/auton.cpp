@@ -5,6 +5,7 @@
 #include "pros/motors.h"
 #include "pros/rtos.hpp"
 #include "robot/intake.h"
+#include "robot/ladybrown.h"
 #include "robot/sweeper.h"
 
 
@@ -17,7 +18,7 @@ std::string Autonomous::autonName;
 constexpr int delay_constant = 1050;
 
 // Red Left
-void Autonomous::Auton1(Intake &intake, Latch &latch, DistanceSensor &distance) {
+void Autonomous::RedNeg(Intake &intake, Latch &latch, DistanceSensor &distance) {
    drive_.set_brake_mode_all(pros::E_MOTOR_BRAKE_BRAKE);
    chassis.setPose(0, 0,0);
    // Move to first stake, then a bit farther at a slower speed for alignment
@@ -34,7 +35,7 @@ void Autonomous::Auton1(Intake &intake, Latch &latch, DistanceSensor &distance) 
    
 }
 // Red Right
-void Autonomous::Auton2(Intake &intake, Latch &latch, DistanceSensor &distance) {
+void Autonomous::RedPos(Intake &intake, Latch &latch, DistanceSensor &distance) {
    drive_.set_brake_mode_all(pros::E_MOTOR_BRAKE_BRAKE);
    chassis.setPose(0, 0,0);
    // Move to first stake, then a bit farther at a slower speed for alignment
@@ -66,7 +67,7 @@ void Autonomous::Auton2(Intake &intake, Latch &latch, DistanceSensor &distance) 
 }
 
 // Blue left
-void Autonomous::Auton3(Intake &intake, Latch &latch, Sweeper &sweeper, DistanceSensor &distance) {
+void Autonomous::BluePos(Intake &intake, Latch &latch, Sweeper &sweeper, DistanceSensor &distance) {
    drive_.set_brake_mode_all(pros::E_MOTOR_BRAKE_BRAKE);
    chassis.setPose(0, 0,0);
 
@@ -116,7 +117,7 @@ void Autonomous::Auton3(Intake &intake, Latch &latch, Sweeper &sweeper, Distance
  * @todo Flesh out this method before the competition in order to make it a full
  * solo awp autonomous. Blue right
  */
-void Autonomous::Auton4(Intake &intake, Latch &latch, DistanceSensor &distance) {
+void Autonomous::BlueNeg(Intake &intake, Latch &latch, DistanceSensor &distance) {
    drive_.set_brake_mode_all(pros::E_MOTOR_BRAKE_BRAKE);
    chassis.setPose(0, 0,0);
    // Move to first stake, then a bit farther at a slower speed for alignment
@@ -133,74 +134,108 @@ void Autonomous::Auton4(Intake &intake, Latch &latch, DistanceSensor &distance) 
 }
 
 // Skills
-void Autonomous::Auton5(Intake &intake, Latch &latch, DistanceSensor &distance) {
-   // Autonomous routine for the Skills challenge - 60 seconds MAX
-
-   /* ##############################################*/
-   //De-intake into alliance stake
-   drive_.set_brake_mode_all(pros::E_MOTOR_BRAKE_BRAKE);
-   //IntakeMotor.move_relative(2200, 600);
-   HookMotor.move_relative(300, 200);
-   // pros::delay(1500);
-   // // ############################################## */
-
-   // //Move back into the center between the two stakes and point mogo at right stake
-   // /* ############################################## */
-   // chassis.setPose(0, 0, 0);
-   // chassis.moveToPoint(0, 15, 1400, {.forwards = true, .maxSpeed = 60}, true);
-   // chassis.turnToHeading(-90, 1000, {.direction=AngularDirection::CCW_COUNTERCLOCKWISE, .maxSpeed = 70}, true);
-   // chassis.waitUntilDone();
-   // chassis.setPose(0, 0, 0);
-   // // ############################################## */
-
-   // //Move backwards into the stake
-   // /* ############################################## */
-   // chassis.moveToPoint(0, -25, 1400, {.forwards = false, .maxSpeed = 60},true);
-   // chassis.waitUntilDone();
-   // latch.toggle();
+void Autonomous::Skills(Intake &intake, Latch &latch, DistanceSensor &distance, LadyBrown &ladybrown) {
+   HookMotor.set_zero_position(HookMotor.get_position());
+   colorSensor.set_led_pwm(70);
+   // // Autonomous routine for the Skills challenge - 60 seconds MAX   
+   // /* ##############################################*/
+   // //De-intake into alliance stake
+   // drive_.set_brake_mode_all(pros::E_MOTOR_BRAKE_BRAKE);
+   // chassis.setPose(0, 0,0);
+   // //IntakeMotor.move_relative(2200, 600);
+   // HookMotor.move_relative(150, 200);
    // pros::delay(750);
-   // // ############################################## */
+   // chassis.moveToPoint(0, 15, 1000);
 
-   // // Point to right rings and grab
-   // /* ############################################## */
-   // chassis.setPose(0, 0, 0);
-   // chassis.turnToHeading(180, 2000);
+   // chassis.turnToHeading(-90, 1000);
+   // chassis.waitUntilDone();
+
+   // chassis.moveToPoint(19, 14, 1000, {.forwards = false, .maxSpeed = 75});
+   // chassis.moveToPoint(24, 14, 1000, {.forwards = false, .maxSpeed = 47});
+
+
+   // pros::delay(600);
+
+   // LatchControl.extend();
+
+   // chassis.turnToPoint(24, 38.75, 1000);
+
    // IntakeMotor.move_velocity(600);
    // HookMotor.move_velocity(200);
-   // chassis.setPose(0, 0,0);
-   // chassis.moveToPoint(0, 36, 1250, {.forwards = true, .maxSpeed = 70},true);
-   // chassis.setPose(0, 0, 0);
-   // chassis.turnToHeading(135, 2000);
-   // chassis.waitUntilDone();
-   // chassis.setPose(0, 0, 0);
-   // chassis.moveToPoint(0, 12, 1250, {.forwards = true, .maxSpeed = 70},true);
-   // chassis.turnToHeading(45, 2000);
-   // chassis.setPose(0, 0, 0);
-   // chassis.moveToPoint(0, -15, 1250, {.forwards = false, .maxSpeed = 70},true);
-   // latch.toggle();
+   // chassis.moveToPoint(24, 38.75, 2000);
 
+   // std::cout << "velocity" << HookMotor.get_actual_velocity() << std::endl;
+
+   
+
+   // chassis.moveToPose(48, 88.5, 0, 5000, {.horizontalDrift=8, .lead = 0.4}, true);
+   // std::cout << "velocity" << HookMotor.get_actual_velocity() << std::endl;
+   
+   // chassis.waitUntil(18);
+   // std::cout << "velocity" << HookMotor.get_actual_velocity() << std::endl;
+
+   // if (HookMotor.get_actual_velocity() < 50 && !(colorSensor.get_proximity() > 100)) {
+   //    IntakeMotor.move_relative(300, 600);
+   // }
+
+   // chassis.waitUntilDone();
+   // std::cout << "velocity" << HookMotor.get_actual_velocity() << std::endl;
+
+   // chassis.waitUntilDone();
+
+   // chassis.moveToPose(75, 64.5, 90, 5000, {.horizontalDrift=5, .lead = 0.9}, true);
+
+   ladybrown.MoveToPoint(LadyBrown::LOAD_STATE, 150, 800);
+
+   IntakeMotor.move_velocity(600);
+   HookMotor.move_velocity(200);
+
+   // chassis.waitUntilDone();
+   // while (HookMotor.get_actual_velocity() > 10) {
+   //    pros::delay(100);
+   // }
+
+   while (colorSensor.get_proximity() < 100) {
+      pros::delay(10);
+   }
+
+   pros::delay(900);
+
+   HookMotor.move_relative(-50, 200);
+   pros::delay(500);
+   ladybrown.MoveToPoint(LadyBrown::ATTACK_STATE);
+   HookMotor.move_velocity(200);
+   
+
+   // ladybrown.MoveToPoint(LadyBrown::LOAD_STATE);
+
+   // chassis.moveToPoint(60, 62.5, 2000);
+   // pros::delay(1000);
+   
+   // IntakeMotor.brake();
+   // HookMotor.brake();
 
 }
 
 // Takes in two parameters: The autonomous value as well as the puncher object.
-void Autonomous::AutoDrive(Intake &intake, Latch &latch, Sweeper &sweeper, DistanceSensor &distance) {
+void Autonomous::AutoDrive(Intake &intake, Latch &latch, Sweeper &sweeper, DistanceSensor &distance, LadyBrown &ladybrown) {
    // Keep the switcher running while the controller down button has not been pressed and the time period is not
    // autonomous Compare the current auton value to run the auton routine
    switch (Autonomous::auton) {
    case RED_LEFT:
-      Auton1(intake, latch, distance);
+      RedNeg(intake, latch, distance);
       break;
    case RED_RIGHT:
-      Auton2(intake, latch, distance);
+      RedPos(intake, latch, distance);
       break;
    case BLUE_LEFT:
-      Auton3(intake, latch, sweeper, distance);
+      BluePos(intake, latch, sweeper, distance);
       break;
    case BLUE_RIGHT:
-      Auton4(intake, latch, distance);
+      BlueNeg(intake, latch, distance);
       break;
    case SKILLS:
-      Auton5(intake, latch, distance);
+      Skills(intake, latch, distance, ladybrown);
       break;
    }
 }
