@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 
+#include "electronic/distance.h"
 #include "robot/intake.h"
 #include "robot/latch.h"
 #include "electronic/distance.h"

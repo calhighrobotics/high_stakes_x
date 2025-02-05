@@ -3,6 +3,7 @@
 #include "api.h"
 #include "lemlib/api.hpp"
 #include "pros/vision.hpp"
+#include "robot/ladybrown.h"
 
 // The following files are imported in order to provide type definitions into
 // the compiler that allows for the objecys to
@@ -71,6 +72,9 @@ extern pros::vision_signature_s_t BLUE_DARK_SIG;
 extern pros::Distance distance_sensor;
 extern pros::Rotation lateral_sensor;
 extern pros::Rotation horizontal_sensor;
+
+extern pros::Rotation LadyBrownRotation;
+
 // forward/backward PID
 extern lemlib::ControllerSettings lateral_controller;
 
