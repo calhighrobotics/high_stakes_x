@@ -8,9 +8,7 @@
 using namespace Robot;
 using namespace Robot::Globals;
 
-Intake::Intake() {
-   alliance_color = false;
-}
+Intake::Intake() { alliance_color = false; }
 
 void Intake::run() {
 
@@ -25,4 +23,3 @@ void Intake::run() {
       HookMotor.brake();
    }
 }
-

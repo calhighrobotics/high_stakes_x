@@ -15,9 +15,7 @@ public:
     */
    void run();
 
-
    Intake();
-
 
 private:
    bool elevated;

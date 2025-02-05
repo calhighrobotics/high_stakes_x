@@ -2,9 +2,7 @@
 #include "pros/apix.h" // IWYU pragma: export
 #include "robot/auton.h"
 
-namespace Robot
-{
-
+namespace Robot {
 
 /**
  * @brief The logger screen displays current drive information on the screen.
@@ -12,22 +10,17 @@ namespace Robot
 class logger_screen {
 
 public:
-    
-    /**
-     * @brief Constructor.
-     */
-    logger_screen();
+   /**
+    * @brief Constructor.
+    */
+   logger_screen();
 
-    /**
+   /**
     * @brief Function ceates the logger screen in driver and autonomous modes.
-     */
-    void log();
-
+    */
+   void log();
 
 private:
-
-    void display_update(lv_event_t *e);
-
-
+   void display_update(lv_event_t *e);
 };
-}
+} // namespace Robot

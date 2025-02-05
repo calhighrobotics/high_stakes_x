@@ -1,15 +1,14 @@
 #include "robot/ladybrown.h"
-#include <cstdlib>
 #include "globals.h"
 #include "lemlib/pid.hpp"
 #include "lemlib/timer.hpp"
 #include "pros/misc.h"
 #include "pros/motors.h"
 #include "pros/rtos.hpp"
+#include <cstdlib>
 
 using namespace Robot;
 using namespace Robot::Globals;
-
 
 LadyBrown::LADYBROWN_STATE LadyBrown::current_state = LadyBrown::BASE_STATE;
 
@@ -19,7 +18,7 @@ LadyBrown::LadyBrown() : MoveToPointPID(2, 0, 0, 2, false) {
 }
 
 void LadyBrown::run(bool async, int timeout) {
-   LADYBROWN_STATE move_to = LadyBrown::current_state;
+   LADYBROWN_STATE move_to;
 
    if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_R2)) {
       if (current_state == BASE_STATE) {
@@ -31,7 +30,6 @@ void LadyBrown::run(bool async, int timeout) {
       }
       std::cout << "Moving to: " << move_to << std::endl;
       std::cout << "current state: " << current_state << std::endl;
-
 
       if (!async) {
          MoveToPoint(move_to);
@@ -57,7 +55,6 @@ void LadyBrown::run(bool async, int timeout) {
       std::cout << "Moving to: " << move_to << std::endl;
       std::cout << "current state: " << current_state << std::endl;
 
-
       if (!async) {
          MoveToPoint(move_to);
       } else {
@@ -70,9 +67,7 @@ void LadyBrown::run(bool async, int timeout) {
    }
 }
 
-int LadyBrown::get_target() {
-   return target;
-}
+int LadyBrown::get_target() { return target; }
 
 void LadyBrown::MoveToPoint(LADYBROWN_STATE state, int max_error, int timeout) {
 
@@ -81,17 +76,15 @@ void LadyBrown::MoveToPoint(LADYBROWN_STATE state, int max_error, int timeout) {
    constexpr double load_location = -2550;
    constexpr double attack_location = -15500;
 
-   int target = LadyBrownRotation.get_position();
+   int target;
 
    std::cout << "state: " << state << std::endl;
    std::cout << "pid: " << isPIDRunning << std::endl;
-
 
    if (!isPIDRunning) {
 
       std::cout << "inner pid: " << isPIDRunning << std::endl;
       LadyBrown::isPIDRunning = true;
-      
 
       switch (state) {
       case LADYBROWN_STATE::BASE_STATE:
@@ -104,7 +97,7 @@ void LadyBrown::MoveToPoint(LADYBROWN_STATE state, int max_error, int timeout) {
          target = attack_location;
          break;
       }
-      
+
       std::cout << "target: " << target << std::endl;
 
       MoveToPointPID.reset();
@@ -115,7 +108,7 @@ void LadyBrown::MoveToPoint(LADYBROWN_STATE state, int max_error, int timeout) {
          double error = target - LadyBrownRotation.get_position();
          double motor_voltage = MoveToPointPID.update(error);
 
-         //motor_voltage = lemlib::slew(motor_voltage, LadyBrownMotor.get_voltage(), 1500);
+         // motor_voltage = lemlib::slew(motor_voltage, LadyBrownMotor.get_voltage(), 1500);
 
          if (std::abs(error) < max_error || timer.isDone()) {
             LadyBrownMotor.brake();

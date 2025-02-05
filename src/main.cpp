@@ -76,20 +76,19 @@ void initialize() {
    // screen.selector.selector();
    pros::lcd::initialize();
    pros::Task screen_task([&]() {
-     while (true) {
-        // print robot location to the brain screen
-        pros::lcd::print(0, "X: %f", chassis.getPose().x);         // x
-        pros::lcd::print(1, "Y: %f", chassis.getPose().y);         // y
-        pros::lcd::print(2, "Theta: %f", chassis.getPose().theta); // heading
-        // delay to save resources
-        pros::lcd::print(3, "Lateral Sensor: %i", lateral_sensor.get_position());
-        pros::lcd::print(4, "Horizontal Sensor: %i", horizontal_sensor.get_position());
-        pros::lcd::print(5, "Lady Brown Sensor: %i", LadyBrownRotation.get_position());
-        pros::lcd::print(6, "Lady Brown Target: %i", subsystem.ladybrown.get_target());
+      while (true) {
+         // print robot location to the brain screen
+         pros::lcd::print(0, "X: %f", chassis.getPose().x);         // x
+         pros::lcd::print(1, "Y: %f", chassis.getPose().y);         // y
+         pros::lcd::print(2, "Theta: %f", chassis.getPose().theta); // heading
+         // delay to save resources
+         pros::lcd::print(3, "Lateral Sensor: %i", lateral_sensor.get_position());
+         pros::lcd::print(4, "Horizontal Sensor: %i", horizontal_sensor.get_position());
+         pros::lcd::print(5, "Lady Brown Sensor: %i", LadyBrownRotation.get_position());
+         pros::lcd::print(6, "Lady Brown Target: %i", subsystem.ladybrown.get_target());
 
-
-        pros::delay(20);
-     }
+         pros::delay(20);
+      }
    });
 
    //@TODO: Put the following into a seperate class.
@@ -158,8 +157,8 @@ void competition_initialize() {}
  */
 
 void autonomous() {
-   //chassis.turnToHeading(90, 100000);
-   // chassis.moveToPoint(0, 24, 10000);
+   // chassis.turnToHeading(90, 100000);
+   //  chassis.moveToPoint(0, 24, 10000);
    pros::Task screen_task([&]() {
       pros::lcd::initialize();
       while (true) {
@@ -174,7 +173,8 @@ void autonomous() {
       }
    });
    Autonomous::auton = Robot::Autonomous::SKILLS;
-   subsystem.autonomous.AutoDrive(subsystem.intake, subsystem.latch, subsystem.sweeper, electronic.distance_sensor, subsystem.ladybrown);
+   subsystem.autonomous.AutoDrive(subsystem.intake, subsystem.latch, subsystem.sweeper, electronic.distance_sensor,
+                                  subsystem.ladybrown);
 }
 
 /**

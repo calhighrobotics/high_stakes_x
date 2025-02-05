@@ -3,10 +3,9 @@
 
 #include "electronic/distance.h"
 #include "robot/intake.h"
-#include "robot/latch.h"
-#include "electronic/distance.h"
-#include "robot/sweeper.h"
 #include "robot/ladybrown.h"
+#include "robot/latch.h"
+#include "robot/sweeper.h"
 
 namespace Robot {
 /**

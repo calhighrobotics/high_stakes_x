@@ -5,10 +5,6 @@
 
 using namespace Robot;
 
-logger_screen::logger_screen() {
-}
+logger_screen::logger_screen() {}
 
-
-void logger_screen::log() {
-    
-}
+void logger_screen::log() {}
