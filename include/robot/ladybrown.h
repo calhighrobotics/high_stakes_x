@@ -1,49 +1,32 @@
 #pragma once
 
+#include "lemlib/pid.hpp"
 namespace Robot {
 
 /**
- * @brief The Intake class represents a robot intake system.
+ * @brief The LadyBrown class represents the robot lady brown subsystem.
  */
 class LadyBrown {
 public:
-   /**
-    * @brief Runs the main function of the intake system.
-    *
-    * Takes optional user input to control the direction of the intake system in
-    * autonomous.
-    */
-   void run();
+   // The ENUM associates with each location of the rotation sensor for the LadyBrown to move.
+   enum LADYBROWN_STATE { BASE_STATE = 1, LOAD_STATE = 2, ATTACK_STATE = 3};
 
-   static void edge_check(void *param);
+   void run(bool async = true, int timeout = 1000);
 
-   static bool needs_warning;
-
-   /**
-    * @brief Checks whether the intake should stop to skip the ring depending on color.
-    * It is the embodiment of vision sensor usage in this codebase.
-    */
-   void checkStop();
+   void MoveToPoint(LadyBrown::LADYBROWN_STATE state, int max_error = 200, int timeout = 1000);
 
    LadyBrown();
 
-   LadyBrown(double kP, double kI, double kD);
-
-   double pid_update();
-
-   /**
-    * @brief Toggles intake elevation.
-    */
-   void toggle();
+   int get_target();
 
 private:
-   double kP;
-   double kI;
-   double kD;
+   lemlib::PID MoveToPointPID;
 
-   /**
-    * @brief blue is false, red is true.
-    */
-   bool alliance_color;
+   static LADYBROWN_STATE current_state;
+
+   int target;
+
+   bool isPIDRunning;
+   
 };
 } // namespace Robot

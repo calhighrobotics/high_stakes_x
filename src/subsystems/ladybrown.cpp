@@ -1,72 +1,131 @@
 #include "robot/ladybrown.h"
-
+#include <cstdlib>
 #include "globals.h"
+#include "lemlib/pid.hpp"
+#include "lemlib/timer.hpp"
+#include "pros/misc.h"
 #include "pros/motors.h"
 #include "pros/rtos.hpp"
-
-#define SLOWER_VELOCITY 125
-#define FASTER_VELOCITY 150
 
 using namespace Robot;
 using namespace Robot::Globals;
 
-bool LadyBrown::needs_warning = false;
 
-LadyBrown::LadyBrown(double kiP, double kiI, double kiD) {
+LadyBrown::LADYBROWN_STATE LadyBrown::current_state = LadyBrown::BASE_STATE;
+
+LadyBrown::LadyBrown() : MoveToPointPID(2, 0, 0, 2, false) {
+   LadyBrownRotation.set_position(0);
    LadyBrownMotor.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
-   LadyBrownMotor.set_zero_position(LadyBrownMotor.get_position());
-   LadyBrown::needs_warning = false;
-   LadyBrown::kP = kiP;
-   LadyBrown::kI = kiI;
-   LadyBrown::kD = kiD;
 }
 
-LadyBrown::LadyBrown() {
-   LadyBrownMotor.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
-   LadyBrownMotor.set_zero_position(LadyBrownMotor.get_position());
-   LadyBrown::needs_warning = false;
-   LadyBrown::kP = 0;
-   LadyBrown::kI = 0;
-   LadyBrown::kD = 0;
-}
+void LadyBrown::run(bool async, int timeout) {
+   LADYBROWN_STATE move_to = LadyBrown::current_state;
 
-void LadyBrown::run() {
+   if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_R2)) {
+      if (current_state == BASE_STATE) {
+         move_to = LOAD_STATE;
+      } else if (current_state == LOAD_STATE) {
+         move_to = ATTACK_STATE;
+      } else {
+         move_to = BASE_STATE;
+      }
+      std::cout << "Moving to: " << move_to << std::endl;
+      std::cout << "current state: " << current_state << std::endl;
 
-   if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_R2)) {
-      LadyBrownMotor.move_velocity(-SLOWER_VELOCITY);
-   } else if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_L2)) {
-      LadyBrownMotor.move_velocity(SLOWER_VELOCITY);
-   } else {
-      if (!LadyBrown::needs_warning) {
-         LadyBrownMotor.brake();
+
+      if (!async) {
+         MoveToPoint(move_to);
+      } else {
+
+         pros::Task move([move_to, this]() { MoveToPoint(move_to); });
+      }
+
+      if (!isPIDRunning) {
+         current_state = move_to;
+      }
+
+   } else if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_L2)) {
+
+      if (current_state == ATTACK_STATE) {
+         move_to = LOAD_STATE;
+      } else if (current_state == LOAD_STATE) {
+         move_to = BASE_STATE;
+      } else {
+         return;
+      }
+
+      std::cout << "Moving to: " << move_to << std::endl;
+      std::cout << "current state: " << current_state << std::endl;
+
+
+      if (!async) {
+         MoveToPoint(move_to);
+      } else {
+         pros::Task move([move_to, this]() { MoveToPoint(move_to); }, "LadyBrownMove");
+      }
+
+      if (!isPIDRunning) {
+         current_state = move_to;
       }
    }
 }
 
-void LadyBrown::edge_check(void *param) {
-   constexpr int TASK_DELAY_MILLIS = 100;
-   constexpr int CONTROLLER_DELAY_MILLIS = 50;
-   uint32_t time = pros::millis();
-   LadyBrown::needs_warning = false;
-   // Check if the lady brown position is too low
-   while (true) {
-
-      if (LadyBrownMotor.get_position() < -5 || LadyBrownMotor.get_position() >= 800) {
-         while (LadyBrownMotor.get_position() < -5) {
-            LadyBrown::needs_warning = true;
-            controller.rumble(".");
-         }
-         while (LadyBrownMotor.get_position() >= 800) {
-            LadyBrown::needs_warning = true;
-            controller.rumble("-");
-         }
-      }
-      LadyBrown::needs_warning = false;
-      pros::Task::delay_until(&time, TASK_DELAY_MILLIS);
-   }
+int LadyBrown::get_target() {
+   return target;
 }
 
-void LadyBrown::toggle() {}
+void LadyBrown::MoveToPoint(LADYBROWN_STATE state, int max_error, int timeout) {
 
-// Vision sensor only works with LadyBrown, therefore it should not on
-double LadyBrown::pid_update() { return 0; }
+   std::cout << "state: " << current_state << std::endl;
+   constexpr double base_location = 30;
+   constexpr double load_location = -2550;
+   constexpr double attack_location = -15500;
+
+   int target = LadyBrownRotation.get_position();
+
+   std::cout << "state: " << state << std::endl;
+   std::cout << "pid: " << isPIDRunning << std::endl;
+
+
+   if (!isPIDRunning) {
+
+      std::cout << "inner pid: " << isPIDRunning << std::endl;
+      LadyBrown::isPIDRunning = true;
+      
+
+      switch (state) {
+      case LADYBROWN_STATE::BASE_STATE:
+         target = base_location;
+         break;
+      case LADYBROWN_STATE::LOAD_STATE:
+         target = load_location;
+         break;
+      case LADYBROWN_STATE::ATTACK_STATE:
+         target = attack_location;
+         break;
+      }
+      
+      std::cout << "target: " << target << std::endl;
+
+      MoveToPointPID.reset();
+
+      lemlib::Timer timer(timeout);
+
+      while (true) {
+         double error = target - LadyBrownRotation.get_position();
+         double motor_voltage = MoveToPointPID.update(error);
+
+         //motor_voltage = lemlib::slew(motor_voltage, LadyBrownMotor.get_voltage(), 1500);
+
+         if (std::abs(error) < max_error || timer.isDone()) {
+            LadyBrownMotor.brake();
+            LadyBrown::isPIDRunning = false;
+            break;
+         }
+
+         LadyBrownMotor.move_voltage(motor_voltage);
+         LadyBrown::isPIDRunning = true;
+         pros::delay(20);
+      }
+   }
+}
