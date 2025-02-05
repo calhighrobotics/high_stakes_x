@@ -95,7 +95,6 @@ extern pros::adi::DigitalIn drivetrainToggleSwitch;
 extern pros::adi::DigitalIn autonToggleSwitch;
 
 extern pros::adi::Pneumatics LatchControl;
-extern pros::adi::Pneumatics HangControl;
 extern pros::adi::Pneumatics SweeperControl;
 
 } // namespace Globals

@@ -33,7 +33,6 @@ pros::Motor HookMotor(-2, pros::v5::MotorGears::green, pros::v5::MotorUnits::deg
 pros::Motor LadyBrownMotor(-3, pros::v5::MotorGears::green, pros::v5::MotorUnits::degrees);
 
 pros::adi::Pneumatics LatchControl('A', false);
-pros::adi::Pneumatics HangControl('C', false);
 pros::adi::Pneumatics SweeperControl('B', false);
 
 pros::Distance distance_sensor(10);
