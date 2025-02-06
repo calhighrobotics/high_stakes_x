@@ -151,8 +151,8 @@ void Autonomous::Skills(Intake &intake, Latch &latch, DistanceSensor &distance, 
    //Move to the center, then turn to and touch the right side Mogo.
    chassis.moveToPoint(0, 14, 1000);
    chassis.turnToPoint(19, 15, 1000, {.forwards = false});
-   chassis.moveToPoint(17, 15, 1000, {.forwards = false, .earlyExitRange=2}, false);
-   chassis.moveToPoint(19, 15, 1000, {.forwards = false}, false);
+   chassis.moveToPoint(16.5, 15, 1000, {.forwards = false, .earlyExitRange=2}, false);
+   chassis.moveToPoint(19, 15, 1000, {.forwards = false, .maxSpeed=40}, false);
 
    //Latch the mogo - delays just in case
    LatchControl.extend();
@@ -164,99 +164,155 @@ void Autonomous::Skills(Intake &intake, Latch &latch, DistanceSensor &distance, 
    HookMotor.move_velocity(150);
    chassis.moveToPoint(24, 38.75, 2000);
 
-   // Immediately move to the farthest ring. A couple of tasks happen while this is going on
+   // Immediately move to the farthest ring. A couple of other things happen while this is going on
    chassis.moveToPose(48, 88.5, 0, 3000, {.horizontalDrift = 8, .lead = 0.4}, true);
-   //Checks between 10-45 inches of movement for if the hook got stuck on the 
-   for (int i = 10; i<45; i++) {
+   //Checks between 10-45 inches of movement for if the hook got stuck on the mogo flower
+   for (int i = 10; i<45; i += 5) {
    chassis.waitUntil(i);
    std::cout << "velocity" << HookMotor.get_actual_velocity() << std::endl;
-   if (HookMotor.get_actual_velocity() < 25) {
-      HookMotor.move_velocity(-);
+   //Checks every 5 inches for if the hook gets stuck.
+   while (HookMotor.get_actual_velocity() < 25 && !(colorSensor.get_hue() < 30 && colorSensor.get_hue() > 8)) {
+      //FIX: The hook is lifted back and then hit into the target to ensure fit.
+      HookMotor.move_velocity(-200);
+      pros::delay(150);
       HookMotor.move_velocity(100);
+      pros::delay(350);
    }
-
+   //Lift up the Lady brown to load onto at 40 inches from the last position.
    if (i == 40) {
       ladybrown.MoveToPoint(LadyBrown::LOAD_STATE);
-
    }
    }
 
-   HookMotor.move_velocity(100);
+   //Set the hook to a high-torque rpm to get the best loading possible, waits for the MoveToPose to end.
+   HookMotor.move_velocity(110);
    chassis.waitUntilDone();
-   //std::cout << "velocity" << HookMotor.get_actual_velocity() << std::endl;
+   //Turn to a point ~1.5 tiles away from the right neutral stake
    chassis.turnToPoint(40, 62.5, 800, {.forwards=false});
 
-   if (HookMotor.get_actual_velocity() < 25) {
-      HookMotor.move_relative(-50, 200);
+   
+   while (HookMotor.get_actual_velocity() < 25 && !(colorSensor.get_hue() < 30 && colorSensor.get_hue() > 8)) {
+      //FIX: The hook is lifted back and then hit into the target to ensure fit.
+      HookMotor.move_velocity(-200);
+      pros::delay(150);
       HookMotor.move_velocity(100);
+      pros::delay(350);
    }
 
+   //Actually move there
    chassis.moveToPoint(40, 62.5, 1500, {.forwards=false}, true);
 
-   HookMotor.move_relative(-20, 200);
+   //Immediately hit against the lady brown to ensure appropriate fit.
+   HookMotor.move_relative(-40, 200);
+   pros::delay(100);
    HookMotor.move_velocity(100);
-
-
+   // Wait until 20 inches passed to get to the point behind the lady brown - stop the hook here.
    chassis.waitUntil(20);
    HookMotor.brake();
 
    chassis.waitUntilDone();
 
+   //Turn to the Neutral wall stake.
    chassis.turnToPoint(78, 62.5, 1000);
 
+   // Move there
    chassis.moveToPoint(72, 62.5, 2000, {.forwards=true, .maxSpeed=50}, true);
 
+   // At 18 inches of movement, stop the intake in advance of the neutral wall stake
    chassis.waitUntil(18);
    IntakeMotor.brake();
 
    chassis.waitUntilDone();
 
+   //Allow the robot to settle, then move the lady brown to score on the neutral stake.
    pros::delay(500);
    ladybrown.MoveToPoint(LadyBrown::ATTACK_STATE);
 
+   //Move back to the 5th tile edge, and restart the intake 15 inches into the movement.
    chassis.moveToPoint(47, 62.5, 1500, {.forwards = false, .maxSpeed = 75});
    chassis.waitUntil(15);
    IntakeMotor.move_velocity(600);
-   chassis.turnToPoint(47, 0, 1000);
 
+   //Point the robot towards the home side wall, and put the lady brown down.
+   chassis.turnToPoint(47, 0, 1000);
    ladybrown.MoveToPoint(LadyBrown::BASE_STATE);
 
+   //Go close to the wall, but exit early so that the robot glides to the last ring.
    chassis.moveToPoint(47, 6, 2000, {.forwards = true, .maxSpeed = 55, .earlyExitRange=4.5});
 
-   HookMotor.move(125);
+   //Start the hook at a higher speed rpm
+   HookMotor.move_velocity(155);
 
-   chassis.waitUntil(20);
-
-   for (int i = 5; i<47; i++) {
-   chassis.waitUntil(i);
-   std::cout << "velocity" << HookMotor.get_actual_velocity() << std::endl;
-   if (HookMotor.get_actual_velocity() < 25) {
-      HookMotor.move_relative(-50, 200);
-      HookMotor.move_velocity(100);
-   }
+   // Start at 10 inches into the movement - schedule a check every 5 inches for if the hook is stuck.
+   chassis.waitUntil(10);
+   for (int i = 12; i<47; i += 5) {
+      chassis.waitUntil(i);
+      std::cout << "velocity" << HookMotor.get_actual_velocity() << std::endl;
+      while (HookMotor.get_actual_velocity() < 25 && !(colorSensor.get_hue() < 30 && colorSensor.get_hue() > 8)) {
+         //FIX: The hook is lifted back and then hit into the target to ensure fit.
+         HookMotor.move_velocity(-200);
+         pros::delay(150);
+         HookMotor.move_velocity(125);
+         pros::delay(350);
+      }
    }
 
    chassis.waitUntilDone();
-   pros::delay(2000);
+   //Wait for two seconds at the edge to ensure rings get put onto the mogo.
+   while (colorSensor.get_hue() < 30 && colorSensor.get_hue() > 8) {
+      pros::delay(750);
+   }
 
-   ladybrown.MoveToPoint(LadyBrown::BASE_STATE);
-
+   //Turn, then Move to the point where the last ring was nudged to collect it for top ring
    chassis.turnToPoint(62, 17, 1000);
    chassis.moveToPoint(62, 17, 2000, {.forwards = true, .maxSpeed = 50, .earlyExitRange=4});
 
-   chassis.turnToHeading(-30, 1000, {.direction = AngularDirection::CCW_COUNTERCLOCKWISE}, false);
 
-   chassis.moveToPoint(64, 10, 1000, {.forwards = false, .maxSpeed = 50, .earlyExitRange=1.5}, false);
+   //Turn away to position the mogo in the corner, waiting to let the hook put all items onto the mogo.
+   chassis.turnToHeading(-30, 1000, {.direction = AngularDirection::CCW_COUNTERCLOCKWISE}, false);
    pros::delay(1300);
+   //Let the last ring go when the hook gets stuck
+   HookMotor.move_velocity(-200);
+   pros::delay(200);
+   //Let the mogo go
    LatchControl.retract();
 
+   //Move back a little to ensure the mogo goes into the corner.
+   chassis.moveToPoint(64, 10, 1000, {.forwards = false, .maxSpeed = 50, .earlyExitRange=1.5}, false);
+
+   // Stop the intake and hook.
    IntakeMotor.brake();
    HookMotor.brake();
+   
+   //Move to the top edge of the first tile, preparing for alignment. Then move back into the wall to use the distance sensor to reorient.
+   chassis.moveToPose(48, 20, -90, 2050, {.forwards = true, .maxSpeed = 80}, true);
+   chassis.moveToPoint(72, 20, 2050, {.forwards = false, .maxSpeed = 80, .earlyExitRange=5}, true);
 
-   chassis.moveToPose(48, 15, -90, 1050, {.forwards = true, .maxSpeed = 80}, true);
+   // Get the distance to the wall using the distance sensor, convert to inches and add the distance to tracking center (5in).
+   // Then, set the new position
+   pros::delay(500);
+   float new_x = (float)(72 - ((float)(distance.get_distance()) / (float)10 / (float)2.54 + (float)5));
+   std::cout << "Distance: " << new_x << std::endl;
+   std::cout << "Distance: " << (float)(distance.get_distance()) / (float)10 / (float)2.54 << std::endl;
+   std::cout << "Distance: " << distance.get_distance() << std::endl;
+   chassis.setPose(new_x, chassis.getPose().y, -90);
+   pros::delay(500);
 
+   // Go to the original start to start it all over again for the left side.
+   chassis.moveToPoint(24, 20, 3000, {.maxSpeed=65});
+   chassis.turnToHeading(0, 1000);
 
+   chassis.moveToPoint(24, -5, 2050, {.forwards = false, .earlyExitRange=1}, true);
+   chassis.waitUntilDone();
+   pros::delay(500);
+   std::cout << "X-Loc: " << chassis.getPose().x << std::endl;
+   std::cout << "Distance: " << distance.get_distance() << std::endl;
+   chassis.setPose(chassis.getPose().x, -1.05, 0);
+   pros::delay(500);
 
+   chassis.moveToPoint(chassis.getPose().x, 10, 1000, {.earlyExitRange= 1.5});
+
+   chassis.moveToPose(0, 14, -90, 4000);
 
 }
 
