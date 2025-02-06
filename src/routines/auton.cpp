@@ -7,6 +7,7 @@
 #include "robot/intake.h"
 #include "robot/ladybrown.h"
 #include "robot/sweeper.h"
+#include <iostream>
 
 using namespace Robot;
 using namespace Robot::Globals;
@@ -133,80 +134,130 @@ void Autonomous::BlueNeg(Intake &intake, Latch &latch, DistanceSensor &distance)
 
 // Skills
 void Autonomous::Skills(Intake &intake, Latch &latch, DistanceSensor &distance, LadyBrown &ladybrown) {
+   
+   // Set pre-constants 
    HookMotor.set_zero_position(HookMotor.get_position());
    colorSensor.set_led_pwm(70);
-   // Autonomous routine for the Skills challenge - 60 seconds MAX
-   /* ##############################################*/
-   // De-intake into alliance stake
    drive_.set_brake_mode_all(pros::E_MOTOR_BRAKE_BRAKE);
    chassis.setPose(0, 0, 0);
-   // IntakeMotor.move_relative(2200, 600);
-   HookMotor.move_relative(150, 200);
+
+   // Autonomous routine for the Skills challenge - 60 seconds MAX
+   /* ##############################################*/
+
+   // De-hook into the alliance stake
+   HookMotor.move_relative(200, 100);
    pros::delay(750);
-   chassis.moveToPoint(0, 15, 1000);
 
-   chassis.turnToHeading(-90, 1000);
-   chassis.waitUntilDone();
+   //Move to the center, then turn to and touch the right side Mogo.
+   chassis.moveToPoint(0, 14, 1000);
+   chassis.turnToPoint(19, 15, 1000, {.forwards = false});
+   chassis.moveToPoint(17, 15, 1000, {.forwards = false, .earlyExitRange=2}, false);
+   chassis.moveToPoint(19, 15, 1000, {.forwards = false}, false);
 
-   chassis.moveToPoint(19, 14, 1000, {.forwards = false, .maxSpeed = 75});
-   chassis.moveToPoint(24, 14, 1000, {.forwards = false, .maxSpeed = 47});
-
-   pros::delay(600);
-
+   //Latch the mogo - delays just in case
    LatchControl.extend();
+   pros::delay(250);
 
-   chassis.turnToPoint(24, 38.75, 1000);
-
+   //Turn to the above ring - Start intake and hook, and move there
+   chassis.turnToPoint(24, 38.75, 1000, {}, false);
    IntakeMotor.move_velocity(600);
-   HookMotor.move_velocity(200);
+   HookMotor.move_velocity(150);
    chassis.moveToPoint(24, 38.75, 2000);
 
+   // Immediately move to the farthest ring. A couple of tasks happen while this is going on
+   chassis.moveToPose(48, 88.5, 0, 3000, {.horizontalDrift = 8, .lead = 0.4}, true);
+   //Checks between 10-45 inches of movement for if the hook got stuck on the 
+   for (int i = 10; i<45; i++) {
+   chassis.waitUntil(i);
    std::cout << "velocity" << HookMotor.get_actual_velocity() << std::endl;
+   if (HookMotor.get_actual_velocity() < 25) {
+      HookMotor.move_velocity(-);
+      HookMotor.move_velocity(100);
+   }
 
-   chassis.moveToPose(48, 88.5, 0, 5000, {.horizontalDrift = 8, .lead = 0.4}, true);
-   std::cout << "velocity" << HookMotor.get_actual_velocity() << std::endl;
+   if (i == 40) {
+      ladybrown.MoveToPoint(LadyBrown::LOAD_STATE);
+
+   }
+   }
+
+   HookMotor.move_velocity(100);
+   chassis.waitUntilDone();
+   //std::cout << "velocity" << HookMotor.get_actual_velocity() << std::endl;
+   chassis.turnToPoint(40, 62.5, 800, {.forwards=false});
+
+   if (HookMotor.get_actual_velocity() < 25) {
+      HookMotor.move_relative(-50, 200);
+      HookMotor.move_velocity(100);
+   }
+
+   chassis.moveToPoint(40, 62.5, 1500, {.forwards=false}, true);
+
+   HookMotor.move_relative(-20, 200);
+   HookMotor.move_velocity(100);
+
+
+   chassis.waitUntil(20);
+   HookMotor.brake();
+
+   chassis.waitUntilDone();
+
+   chassis.turnToPoint(78, 62.5, 1000);
+
+   chassis.moveToPoint(72, 62.5, 2000, {.forwards=true, .maxSpeed=50}, true);
 
    chassis.waitUntil(18);
-   std::cout << "velocity" << HookMotor.get_actual_velocity() << std::endl;
-
-   if (HookMotor.get_actual_velocity() < 50 && !(colorSensor.get_proximity() > 100)) {
-      IntakeMotor.move_relative(300, 600);
-   }
-
-   chassis.waitUntilDone();
-   std::cout << "velocity" << HookMotor.get_actual_velocity() << std::endl;
+   IntakeMotor.brake();
 
    chassis.waitUntilDone();
 
-   chassis.moveToPose(75, 64.5, 90, 5000, {.horizontalDrift = 5, .lead = 0.9}, true);
-
-   ladybrown.MoveToPoint(LadyBrown::LOAD_STATE, 150, 800);
-
-   IntakeMotor.move_velocity(600);
-   HookMotor.move_velocity(200);
-
-   while (colorSensor.get_proximity() < 100) {
-      pros::delay(10);
-   }
-
-   pros::delay(900);
-
-   HookMotor.move_relative(-50, 200);
-   chassis.waitUntilDone();
    pros::delay(500);
    ladybrown.MoveToPoint(LadyBrown::ATTACK_STATE);
-   HookMotor.move_velocity(200);
-   pros::delay(1000);
 
-   chassis.moveToPoint(48, 64.5, 1500, {.forwards = false, .maxSpeed = 75});
-   chassis.turnToPoint(28, 0, 1000);
+   chassis.moveToPoint(47, 62.5, 1500, {.forwards = false, .maxSpeed = 75});
+   chassis.waitUntil(15);
+   IntakeMotor.move_velocity(600);
+   chassis.turnToPoint(47, 0, 1000);
 
-   chassis.moveToPoint(28, 0, 5000, {.forwards = true, .maxSpeed = 60});
+   ladybrown.MoveToPoint(LadyBrown::BASE_STATE);
+
+   chassis.moveToPoint(47, 6, 2000, {.forwards = true, .maxSpeed = 55, .earlyExitRange=4.5});
+
+   HookMotor.move(125);
+
+   chassis.waitUntil(20);
+
+   for (int i = 5; i<47; i++) {
+   chassis.waitUntil(i);
+   std::cout << "velocity" << HookMotor.get_actual_velocity() << std::endl;
+   if (HookMotor.get_actual_velocity() < 25) {
+      HookMotor.move_relative(-50, 200);
+      HookMotor.move_velocity(100);
+   }
+   }
 
    chassis.waitUntilDone();
+   pros::delay(2000);
 
-   chassis.swingToHeading(-45, lemlib::DriveSide::LEFT, 1000);
+   ladybrown.MoveToPoint(LadyBrown::BASE_STATE);
+
+   chassis.turnToPoint(62, 17, 1000);
+   chassis.moveToPoint(62, 17, 2000, {.forwards = true, .maxSpeed = 50, .earlyExitRange=4});
+
+   chassis.turnToHeading(-30, 1000, {.direction = AngularDirection::CCW_COUNTERCLOCKWISE}, false);
+
+   chassis.moveToPoint(64, 10, 1000, {.forwards = false, .maxSpeed = 50, .earlyExitRange=1.5}, false);
+   pros::delay(1300);
    LatchControl.retract();
+
+   IntakeMotor.brake();
+   HookMotor.brake();
+
+   chassis.moveToPose(48, 15, -90, 1050, {.forwards = true, .maxSpeed = 80}, true);
+
+
+
+
 }
 
 // Takes in two parameters: The autonomous value as well as the puncher object.
