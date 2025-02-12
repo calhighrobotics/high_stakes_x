@@ -1,8 +1,7 @@
 #pragma once
 #include <string>
-
 #include "electronic/distance.h"
-#include "robot/intake.h"
+#include "robot/lift.h"
 #include "robot/ladybrown.h"
 #include "robot/latch.h"
 #include "robot/sweeper.h"
@@ -44,7 +43,7 @@ public:
     * @param puncher A reference to the Puncher object.
     * @param autono A boolean value indicating whether to use autonomous mode.
     */
-   void AutoDrive(Intake &intake, Latch &latch, Sweeper &sweeper, DistanceSensor &distance, LadyBrown &ladybrown);
+   void AutoDrive(Lift &lift, Latch &latch, Sweeper &sweeper, DistanceSensor &distance, LadyBrown &ladybrown);
 
    /**
     * @brief Switches the autonomous program.
@@ -64,7 +63,7 @@ private:
     * strategy. It contains the specific actions and movements required for this
     * strategy.
     */
-   void RedNeg(Intake &intake, Latch &latch, DistanceSensor &distance);
+   void RedNeg(Lift &lift, Latch &latch, DistanceSensor &distance);
 
    /**
     * @brief Runs the autonomous path for the near side offensive game strategy.
@@ -73,10 +72,10 @@ private:
     * strategy. It contains the specific actions and movements required for this
     * strategy.
     */
-   void RedPos(Intake &intake, Latch &latch, Sweeper &sweeper, DistanceSensor &distance, LadyBrown &ladybrown);
+   void RedPos(Lift &lift, Latch &latch, Sweeper &sweeper, DistanceSensor &distance, LadyBrown &ladybrown);
 
 
-   void RedPosLateGoalRush(Intake &intake, Latch &latch, Sweeper &sweeper, DistanceSensor &distance, LadyBrown &ladybrown);
+   void RedPosLateGoalRush(Lift &lift, Latch &latch, Sweeper &sweeper, DistanceSensor &distance, LadyBrown &ladybrown);
 
 
    /**
@@ -88,10 +87,10 @@ private:
     *
     * @param puncher A reference to the Puncher object.
     */
-   void BluePos(Intake &intake, Latch &latch, Sweeper &sweeper, DistanceSensor &distance, LadyBrown &ladybrown);
+   void BluePos(Lift &lift, Latch &latch, Sweeper &sweeper, DistanceSensor &distance, LadyBrown &ladybrown);
 
 
-   void BluePosLateGoalRush(Intake &intake, Latch &latch, Sweeper &sweeper, DistanceSensor &distance, LadyBrown &ladybrown);
+   void BluePosLateGoalRush(Lift &lift, Latch &latch, Sweeper &sweeper, DistanceSensor &distance, LadyBrown &ladybrown);
 
 
    /**
@@ -102,17 +101,17 @@ private:
     * @todo Make the autonomous more fleshed out, building it properly for the
     * competition
     */
-   void BlueNeg(Intake &intake, Latch &latch, DistanceSensor &distance);
+   void BlueNeg(Lift &lift, Latch &latch, DistanceSensor &distance);
 
    /**
     * Executes the Skills challenge autonomous.
     *
     * This function controls the robot's actions during autonomous routine 5.
-    * It takes references to the `Intake` and `Latch` objects as parameters.
+    * It takes references to the `Lift` and `Latch` objects as parameters.
     *
-    * @param intake The reference to the `Intake` object.
+    * @param lift The reference to the `Lift` object.
     * @param latch The reference to the `Latch` object.
     */
-   void Skills(Intake &intake, Latch &latch, DistanceSensor &distance, LadyBrown &ladybrown);
+   void Skills(Lift &lift, Latch &latch, DistanceSensor &distance, LadyBrown &ladybrown);
 };
 } // namespace Robot

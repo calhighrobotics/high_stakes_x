@@ -5,8 +5,13 @@ namespace Robot {
 /**
  * @brief The Intake class represents a robot intake system.
  */
-class Intake {
+class Lift {
 public:
+
+   enum ALLIANCE_COLOR { RED, BLUE, SKILLS };
+
+   static ALLIANCE_COLOR alliance_color;
+
    /**
     * @brief Runs the main function of the intake system.
     *
@@ -15,14 +20,19 @@ public:
     */
    void run();
 
-   Intake();
+   void HookRun();
+
+   void HookSkip();
+
+   Lift();
 
 private:
-   bool elevated;
+   bool hookSkipRunning;
+
+   ALLIANCE_COLOR ring_color;
 
    /**
     * @brief blue is false, red is true.
     */
-   bool alliance_color;
 };
 } // namespace Robot

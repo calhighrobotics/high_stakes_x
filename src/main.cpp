@@ -39,7 +39,7 @@ using namespace Robot::Globals;
 struct RobotSubsystems {
    Robot::Autonomous autonomous;
    Robot::Drivetrain drivetrain;
-   Robot::Intake intake;
+   Robot::Lift lift;
    Robot::Latch latch;
    Robot::LadyBrown ladybrown;
    Robot::Sweeper sweeper;
@@ -155,8 +155,22 @@ void competition_initialize() {
  */
 
 void autonomous() {
+      pros::Task screen_task([&]() {
+      pros::lcd::initialize();
+      while (true) {
+         // print robot location to the brain screen
+         pros::lcd::print(0, "X: %f", chassis.getPose().x);         // x
+         pros::lcd::print(1, "Y: %f", chassis.getPose().y);         // y
+         pros::lcd::print(2, "Theta: %f", chassis.getPose().theta); // heading
+         // delay to save resources
+         pros::lcd::print(3, "Rotation Sensor: %i", lateral_sensor.get_position());
+         pros::lcd::print(4, "Rotation Sensor: %i", horizontal_sensor.get_position());
+         pros::delay(20);
+      }
+   });
+   
    Autonomous::auton = Autonomous::BLUE_POS_LATE_RUSH;
-   subsystem.autonomous.AutoDrive(subsystem.intake, subsystem.latch, subsystem.sweeper, electronic.distance_sensor,
+   subsystem.autonomous.AutoDrive(subsystem.lift, subsystem.latch, subsystem.sweeper, electronic.distance_sensor,
                                   subsystem.ladybrown);
 }
 
@@ -207,7 +221,7 @@ void opcontrol() {
       subsystem.ladybrown.run();
 
       // Intake controller - uses R1 to pull in and L1 to push out, and stops if nothing pressed
-      subsystem.intake.run();
+      subsystem.lift.run();
 
       // Handles partner controller keypresses to rumble the primary controller
       electronic.controllers.notifier();

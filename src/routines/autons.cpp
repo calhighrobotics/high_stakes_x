@@ -4,7 +4,7 @@
 #include "main.h" // IWYU pragma: export
 #include "pros/motors.h"
 #include "pros/rtos.hpp"
-#include "robot/intake.h"
+#include "robot/lift.h"
 #include "robot/ladybrown.h"
 #include "robot/sweeper.h"
 #include <iostream>
@@ -19,7 +19,7 @@ std::string Autonomous::autonName = "Red Positive";
 constexpr int delay_constant = 1050;
 
 // Red Left
-void Autonomous::RedNeg(Intake &intake, Latch &latch, DistanceSensor &distance) {
+void Autonomous::RedNeg(Lift &lift, Latch &latch, DistanceSensor &distance) {
    drive_.set_brake_mode_all(pros::E_MOTOR_BRAKE_BRAKE);
    chassis.setPose(0, 0, 0);
    // Move to first stake, then a bit farther at a slower speed for alignment
@@ -36,7 +36,7 @@ void Autonomous::RedNeg(Intake &intake, Latch &latch, DistanceSensor &distance) 
    pros::delay(3000);
 }
 // Red Right
-void Autonomous::RedPos(Intake &intake, Latch &latch, Sweeper &sweeper, DistanceSensor &distance, LadyBrown &ladybrown) {
+void Autonomous::RedPos(Lift &lift, Latch &latch, Sweeper &sweeper, DistanceSensor &distance, LadyBrown &ladybrown) {
    drive_.set_brake_mode_all(pros::E_MOTOR_BRAKE_BRAKE);
    chassis.setPose(0, 0,0);
 
@@ -78,7 +78,7 @@ void Autonomous::RedPos(Intake &intake, Latch &latch, Sweeper &sweeper, Distance
 }
 
 // Blue left
-void Autonomous::BluePos(Intake &intake, Latch &latch, Sweeper &sweeper, DistanceSensor &distance, LadyBrown &ladybrown) {
+void Autonomous::BluePos(Lift &lift, Latch &latch, Sweeper &sweeper, DistanceSensor &distance, LadyBrown &ladybrown) {
 
    drive_.set_brake_mode_all(pros::E_MOTOR_BRAKE_BRAKE);
    chassis.setPose(0, 0,0);
@@ -121,7 +121,7 @@ void Autonomous::BluePos(Intake &intake, Latch &latch, Sweeper &sweeper, Distanc
 
 }
 
-void Autonomous::BluePosLateGoalRush(Intake &intake, Latch &latch, Sweeper &sweeper, DistanceSensor &distance, LadyBrown &ladybrown) {
+void Autonomous::BluePosLateGoalRush(Lift &lift, Latch &latch, Sweeper &sweeper, DistanceSensor &distance, LadyBrown &ladybrown) {
       // drive_.set_brake_mode_all(pros::E_MOTOR_BRAKE_BRAKE);
    // chassis.setPose(-36, 11,-17);
 
@@ -196,7 +196,7 @@ void Autonomous::BluePosLateGoalRush(Intake &intake, Latch &latch, Sweeper &swee
    chassis.moveToPoint(25, -38,1000, {.forwards = false});
 }
 
-void Autonomous::RedPosLateGoalRush(Intake &intake, Latch &latch, Sweeper &sweeper, DistanceSensor &distance, LadyBrown &ladybrown) {
+void Autonomous::RedPosLateGoalRush(Lift &lift, Latch &latch, Sweeper &sweeper, DistanceSensor &distance, LadyBrown &ladybrown) {
       // drive_.set_brake_mode_all(pros::E_MOTOR_BRAKE_BRAKE);
    // chassis.setPose(-36, 11,-17);
 
@@ -274,7 +274,7 @@ void Autonomous::RedPosLateGoalRush(Intake &intake, Latch &latch, Sweeper &sweep
  * @todo Flesh out this method before the competition in order to make it a full
  * solo awp autonomous. Blue right
  */
-void Autonomous::BlueNeg(Intake &intake, Latch &latch, DistanceSensor &distance) {
+void Autonomous::BlueNeg(Lift &lift, Latch &latch, DistanceSensor &distance) {
    drive_.set_brake_mode_all(pros::E_MOTOR_BRAKE_BRAKE);
    chassis.setPose(0, 0, 0);
    // Move to first stake, then a bit farther at a slower speed for alignment
@@ -292,38 +292,38 @@ void Autonomous::BlueNeg(Intake &intake, Latch &latch, DistanceSensor &distance)
 }
 
 // Takes in two parameters: The autonomous value as well as the puncher object.
-void Autonomous::AutoDrive(Intake &intake, Latch &latch, Sweeper &sweeper, DistanceSensor &distance,
+void Autonomous::AutoDrive(Lift &lift, Latch &latch, Sweeper &sweeper, DistanceSensor &distance,
                            LadyBrown &ladybrown) {
    // Keep the switcher running while the controller down button has not been pressed and the time period is not
    // autonomous Compare the current auton value to run the auton routine
    switch (Autonomous::auton) {
    case RED_NEG:
       Autonomous::autonName = "Red Negative";
-      RedNeg(intake, latch, distance);
+      RedNeg(lift, latch, distance);
       break;
    case RED_POS:
       Autonomous::autonName = "Red Positive";
-      RedPos(intake, latch, sweeper, distance, ladybrown);
+      RedPos(lift, latch, sweeper, distance, ladybrown);
       break;
    case RED_POS_LATE_RUSH:
       Autonomous::autonName = "Red Positive Late Rush";
-      RedPosLateGoalRush(intake, latch, sweeper, distance, ladybrown);
+      RedPosLateGoalRush(lift, latch, sweeper, distance, ladybrown);
       break;
    case BLUE_POS:
       Autonomous::autonName = "Blue Positive";
-      BluePos(intake, latch, sweeper, distance, ladybrown);
+      BluePos(lift, latch, sweeper, distance, ladybrown);
       break;
    case BLUE_NEG:
       Autonomous::autonName = "Blue Negative";
-      BlueNeg(intake, latch, distance);
+      BlueNeg(lift, latch, distance);
       break;
    case BLUE_POS_LATE_RUSH:
       Autonomous::autonName = "Blue Positive Late Rush";
-      BluePosLateGoalRush(intake, latch, sweeper, distance, ladybrown);
+      BluePosLateGoalRush(lift, latch, sweeper, distance, ladybrown);
       break;
    case SKILLS:
       Autonomous::autonName = "Skills";
-      Skills(intake, latch, distance, ladybrown);
+      Skills(lift, latch, distance, ladybrown);
       break;
    }
 }

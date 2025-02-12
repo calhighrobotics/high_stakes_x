@@ -10,7 +10,7 @@ using namespace Robot;
 using namespace Robot::Globals;
 
 // Skills
-void Autonomous::Skills(Intake &intake, Latch &latch, DistanceSensor &distance, LadyBrown &ladybrown) {
+void Autonomous::Skills(Lift &lift, Latch &latch, DistanceSensor &distance, LadyBrown &ladybrown) {
    
    // Set pre-constants 
    HookMotor.set_zero_position(HookMotor.get_position());

@@ -41,7 +41,7 @@
 #include "pros/apix.h"
 #include "robot/auton.h"
 #include "robot/drivetrain.h"
-#include "robot/intake.h"
+#include "robot/lift.h"
 #include "robot/ladybrown.h"
 #include "robot/latch.h"
 #include "robot/sweeper.h"
