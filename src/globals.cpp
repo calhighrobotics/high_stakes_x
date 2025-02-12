@@ -30,7 +30,7 @@ pros::Motor RightBack(12, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degr
 pros::Motor LeftMid(20, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
 pros::Motor RightMid(-11, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
 pros::Motor IntakeMotor(-9, pros::v5::MotorGears::blue, pros::v5::MotorUnits::degrees);
-pros::Motor HookMotor(-2, pros::v5::MotorGears::green, pros::v5::MotorUnits::degrees);
+pros::Motor HookMotor(7, pros::v5::MotorGears::green, pros::v5::MotorUnits::degrees);
 pros::Motor LadyBrownMotor(-3, pros::v5::MotorGears::green, pros::v5::MotorUnits::degrees);
 
 pros::adi::Pneumatics LatchControl('A', false);
@@ -110,14 +110,14 @@ lemlib::ControllerSettings angular_controller(2.1, // proportional gain (kP)
 );
 
 lemlib::ExpoDriveCurve throttle_curve(3,    // joystick deadband out of 127
-                                      15,   // minimum output where drivetrain will move out of 127
-                                      1.019 // expo curve gain
+                                      50,   // minimum output where drivetrain will move out of 127
+                                      0.992 // expo curve gain
 );
 
 // input curve for steer input during driver control
 lemlib::ExpoDriveCurve steer_curve(3,   // joystick deadband out of 127
                                    17,  // minimum output where drivetrain will move out of 127
-                                   1.01 // expo curve gain
+                                   1 // expo curve gain
 );
 
 lemlib::Chassis chassis(drivetrain, lateral_controller, angular_controller, sensors, &throttle_curve, &steer_curve);
