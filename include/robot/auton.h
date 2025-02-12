@@ -15,7 +15,7 @@ namespace Robot {
  */
 class Autonomous {
 public:
-   enum AUTON_ROUTINE { RED_LEFT = 1, RED_RIGHT = 2, BLUE_LEFT = -1, BLUE_RIGHT = -2, SKILLS = 0 };
+   enum AUTON_ROUTINE { RED_NEG = 1, RED_POS = 2, RED_POS_LATE_RUSH = 3, BLUE_POS = -1, BLUE_POS_LATE_RUSH = -2, BLUE_NEG = -3, SKILLS = 0 };
 
    /**
     * @brief Sets the number of the autonomous program to use.
@@ -73,7 +73,11 @@ private:
     * strategy. It contains the specific actions and movements required for this
     * strategy.
     */
-   void RedPos(Intake &intake, Latch &latch, DistanceSensor &distance);
+   void RedPos(Intake &intake, Latch &latch, Sweeper &sweeper, DistanceSensor &distance, LadyBrown &ladybrown);
+
+
+   void RedPosLateGoalRush(Intake &intake, Latch &latch, Sweeper &sweeper, DistanceSensor &distance, LadyBrown &ladybrown);
+
 
    /**
     * @brief Runs the puncher routine for the Skills Challenge.
@@ -84,7 +88,11 @@ private:
     *
     * @param puncher A reference to the Puncher object.
     */
-   void BluePos(Intake &intake, Latch &latch, Sweeper &sweeper, DistanceSensor &distance);
+   void BluePos(Intake &intake, Latch &latch, Sweeper &sweeper, DistanceSensor &distance, LadyBrown &ladybrown);
+
+
+   void BluePosLateGoalRush(Intake &intake, Latch &latch, Sweeper &sweeper, DistanceSensor &distance, LadyBrown &ladybrown);
+
 
    /**
     * @brief Runs the autonomous path for the far side offensive game strategy.

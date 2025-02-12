@@ -113,6 +113,7 @@ void LadyBrown::MoveToPoint(LADYBROWN_STATE state, int max_error, int timeout) {
          if (std::abs(error) < max_error || timer.isDone()) {
             LadyBrownMotor.brake();
             LadyBrown::isPIDRunning = false;
+            LadyBrown::current_state = state;
             break;
          }
 

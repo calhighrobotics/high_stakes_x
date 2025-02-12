@@ -41,7 +41,7 @@ private:
     * Must be new line seperated to pass to LVGL. Each one should match its
     * corresponding autonomous routine defined in auton.h
     */
-   constexpr static char redAutons[] = "Red Left\nRed Right";
+   constexpr static char redAutons[] = "Red Negative\nRed Positive Sweep\nRed Pos Late Rush";
 
    /**
     * @brief Blue alliance autonomous routines
@@ -50,7 +50,7 @@ private:
     * Must be new line seperated to pass to LVGL. Each one should match its
     * corresponding autonomous routine defined in auton.h
     */
-   constexpr static char blueAutons[] = "Blue Left\nBlue Right";
+   constexpr static char blueAutons[] = "Blue Positive Sweep\nBlue Pos Late Rush\nBlue Negative";
 
    /**
     * @brief Drive control schemes

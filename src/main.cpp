@@ -1,14 +1,9 @@
 #include "main.h"
 #include "electronic/controller.h"
+#include "electronic/distance.h"
 #include "globals.h"
 #include "lemlib/chassis/chassis.hpp"
-#include "liblvgl/core/lv_disp.h"
-#include "liblvgl/core/lv_obj.h"
-#include "liblvgl/core/lv_obj_style.h"
-#include "liblvgl/extra/widgets/chart/lv_chart.h"
 #include "liblvgl/llemu.hpp"
-#include "liblvgl/misc/lv_area.h"
-#include "liblvgl/misc/lv_color.h"
 #include "pros/misc.h"
 #include "pros/misc.hpp"
 #include "pros/motors.hpp"
@@ -19,6 +14,7 @@
 #include "screen/selector.h"
 #include "screen/status.h"
 #include <string>
+#include <cmath>
 
 using namespace Robot;
 using namespace Robot::Globals;
@@ -72,8 +68,6 @@ void initialize() {
    chassis.setPose(0, 0, 0);
    pros::rtos::Task MotorNotification(electronic.controllers.notify_motor_disconnect);
 
-   // pros::rtos::Task LadyBrownNotification(subsystem.ladybrown.edge_check);
-   // screen.selector.selector();
    pros::lcd::initialize();
    pros::Task screen_task([&]() {
       while (true) {
@@ -85,7 +79,8 @@ void initialize() {
          pros::lcd::print(3, "Lateral Sensor: %i", lateral_sensor.get_position());
          pros::lcd::print(4, "Horizontal Sensor: %i", horizontal_sensor.get_position());
          pros::lcd::print(5, "Lady Brown Sensor: %i", LadyBrownRotation.get_position());
-         pros::lcd::print(6, "Lady Brown Target: %i", subsystem.ladybrown.get_target());
+         pros::lcd::print(6, "Autonomous: %s", subsystem.autonomous.autonName);
+         pros::lcd::print(7, "Distance Position: %i", distance_sensor.get_distance());
 
          pros::delay(20);
       }
@@ -142,7 +137,10 @@ void disabled() {}
  * This task will exit when the robot is enabled and autonomous or opcontrol
  * starts.<asd></asd>
  */
-void competition_initialize() {}
+void competition_initialize() {
+   screen.selector.selector();
+
+}
 
 /**6
  * Runs the user autonomous code. This function will be started in its own task
@@ -157,22 +155,7 @@ void competition_initialize() {}
  */
 
 void autonomous() {
-   // chassis.turnToHeading(90, 100000);
-   //  chassis.moveToPoint(0, 24, 10000);
-   pros::Task screen_task([&]() {
-      pros::lcd::initialize();
-      while (true) {
-         // print robot location to the brain screen
-         pros::lcd::print(0, "X: %f", chassis.getPose().x);         // x
-         pros::lcd::print(1, "Y: %f", chassis.getPose().y);         // y
-         pros::lcd::print(2, "Theta: %f", chassis.getPose().theta); // heading
-         // delay to save resources
-         pros::lcd::print(3, "Rotation Sensor: %i", lateral_sensor.get_position());
-         pros::lcd::print(4, "Rotation Sensor: %i", horizontal_sensor.get_position());
-         pros::delay(20);
-      }
-   });
-   Autonomous::auton = Robot::Autonomous::SKILLS;
+   Autonomous::auton = Autonomous::BLUE_POS_LATE_RUSH;
    subsystem.autonomous.AutoDrive(subsystem.intake, subsystem.latch, subsystem.sweeper, electronic.distance_sensor,
                                   subsystem.ladybrown);
 }
@@ -212,6 +195,11 @@ void opcontrol() {
          // Output the current drive mode to the controller screen
          controller.print(0, 0, "reversal: %d", Drivetrain::isReversed);
       }
+
+      if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_A)) {
+         pros::Task move([&]() { subsystem.ladybrown.MoveToPoint(LadyBrown::ATTACK_STATE); }, "LadyBrownMove");
+      }
+
 
       subsystem.drivetrain.run();
       subsystem.latch.run();
