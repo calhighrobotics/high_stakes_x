@@ -12,6 +12,11 @@ public:
     */
    void run();
 
+   /**
+    * @brief Toggles sweeper state.
+    */
+   void toggle();
+
    Sweeper();
 };
 } // namespace Robot

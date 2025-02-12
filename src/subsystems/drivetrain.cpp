@@ -25,7 +25,7 @@ void Drivetrain::ArcadeDrive() {
    int left = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
    int right = controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_X);
 
-   chassis.arcade(thrustHandler(left), thrustHandler(right), false, 0.6);
+   chassis.arcade(thrustHandler(left), thrustHandler(right), false, 0.4);
 
    pros::delay(DEFAULT_DELAY_LENGTH);
 }

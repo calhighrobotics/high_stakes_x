@@ -2,6 +2,7 @@
 
 #include "api.h"
 #include "lemlib/api.hpp"
+#include "pros/optical.hpp"
 #include "pros/vision.hpp"
 #include "robot/ladybrown.h"
 
@@ -62,7 +63,7 @@ extern lemlib::Drivetrain drivetrain;
 
 extern lemlib::OdomSensors sensors;
 
-extern pros::Vision colorSensor;
+extern pros::Optical colorSensor;
 
 extern pros::vision_signature_s_t RED_SIG;
 
@@ -95,7 +96,6 @@ extern pros::adi::DigitalIn drivetrainToggleSwitch;
 extern pros::adi::DigitalIn autonToggleSwitch;
 
 extern pros::adi::Pneumatics LatchControl;
-extern pros::adi::Pneumatics HangControl;
 extern pros::adi::Pneumatics SweeperControl;
 
 } // namespace Globals

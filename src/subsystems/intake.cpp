@@ -8,10 +8,7 @@
 using namespace Robot;
 using namespace Robot::Globals;
 
-Intake::Intake() {
-   elevated = false;
-   alliance_color = false;
-}
+Intake::Intake() { alliance_color = false; }
 
 void Intake::run() {
 
@@ -26,8 +23,3 @@ void Intake::run() {
       HookMotor.brake();
    }
 }
-
-void Intake::toggle() { elevated = !elevated; }
-
-// Vision sensor only works with intake, therefore it should not on
-void Intake::checkStop() {}
