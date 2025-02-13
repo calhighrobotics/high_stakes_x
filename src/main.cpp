@@ -200,6 +200,11 @@ void opcontrol() {
          pros::Task move([&]() { subsystem.ladybrown.MoveToPoint(LadyBrown::ATTACK_STATE); }, "LadyBrownMove");
       }
 
+      if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_X)) {
+         IntakeMotor.move_velocity(600);   
+      }
+
+
 
       subsystem.drivetrain.run();
       subsystem.latch.run();

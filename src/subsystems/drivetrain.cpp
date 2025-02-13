@@ -9,7 +9,7 @@ Drivetrain::DRIVE_MODE Drivetrain::driveMode = CURVATURE_DRIVE;
 
 bool Drivetrain::isReversed = false;
 
-Drivetrain::Drivetrain() { Drivetrain::driveMode = CURVATURE_DRIVE; }
+Drivetrain::Drivetrain() {}
 
 void Drivetrain::CurvatureDrive() {
    int left = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
