@@ -206,10 +206,10 @@ void Autonomous::Skills(Intake &intake, Latch &latch, DistanceSensor &distance, 
 
    chassis.waitUntilDone();   //Turn to a point ~1.5 tiles away from the right neutral stake
    ladybrown.MoveToPoint(LadyBrown::LOAD_STATE);
-   chassis.turnToPoint(-40, 62, 800, {.forwards=false});
+   chassis.turnToPoint(-40, 61, 800, {.forwards=false});
 
    //Actually move there
-   chassis.moveToPoint(-40, 62, 1500, {.forwards=false}, true);
+   chassis.moveToPoint(-40, 61, 1500, {.forwards=false}, true);
 
    //Immediately hit against the lady brown to ensure appropriate fit.
    chassis.waitUntil(30);
@@ -220,10 +220,10 @@ void Autonomous::Skills(Intake &intake, Latch &latch, DistanceSensor &distance, 
    chassis.waitUntilDone();
 
    //Turn to the Neutral wall stake.
-   chassis.turnToPoint(-78, 62, 660);
+   chassis.turnToPoint(-78, 61, 660);
 
    // Move there
-   chassis.moveToPoint(-72, 62, 920, {.forwards=true, .maxSpeed=50}, true);
+   chassis.moveToPoint(-72, 61, 920, {.forwards=true, .maxSpeed=50}, true);
 
    // At 18 inches of movement, stop the intake in advance of the neutral wall stake
    chassis.waitUntil(18);
@@ -235,7 +235,7 @@ void Autonomous::Skills(Intake &intake, Latch &latch, DistanceSensor &distance, 
    ladybrown.MoveToPoint(LadyBrown::ATTACK_STATE);
 
    //Move back to the 5th tile edge, and restart the intake 15 inches into the movement.
-   chassis.moveToPoint(-47, 62.5, 750, {.forwards = false, .maxSpeed = 75});
+   chassis.moveToPoint(-47, 61, 750, {.forwards = false, .maxSpeed = 75});
    IntakeMotor.move_velocity(600);
    chassis.waitUntil(5);
    ladybrown.MoveToPoint(LadyBrown::BASE_STATE);
