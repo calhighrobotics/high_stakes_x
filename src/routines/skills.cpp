@@ -291,6 +291,7 @@ void Autonomous::Skills(Intake &intake, Latch &latch, DistanceSensor &distance, 
    HookMotor.brake();
    
    //Move to the top edge of the first tile, preparing for alignment. Then move back into the wall to use the distance sensor to reorient.
-   chassis.moveToPose(-48, 20, -90, 2050, {.forwards = true, .maxSpeed = 80},  true);
+   chassis.moveToPose(24, 110.5, 90, 2400, {.forwards = true, .maxSpeed = 100},  true);
+   chassis.moveToPoint(70, 132.5, 1500);
 
 }
