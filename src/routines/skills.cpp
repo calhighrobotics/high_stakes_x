@@ -97,14 +97,14 @@ void Autonomous::Skills(Intake &intake, Latch &latch, DistanceSensor &distance, 
 
    //Move back to the 5th tile edge, and restart the intake 15 inches into the movement.
    chassis.moveToPoint(47, 62.5, 750, {.forwards = false, .maxSpeed = 75});
-   chassis.waitUntil(5);
-
    IntakeMotor.move_velocity(600);
-   HookMotor.move_velocity(200);
+   chassis.waitUntil(5);
+   ladybrown.MoveToPoint(LadyBrown::BASE_STATE);
 
    //Point the robot towards the home side wall, and put the lady brown down.
    chassis.turnToPoint(47, 0, 950);
-   ladybrown.MoveToPoint(LadyBrown::BASE_STATE);
+   HookMotor.move_velocity(200);
+   
 
    //Go close to the wall, but exit early so that the robot glides to the last ring.
    chassis.moveToPoint(47, 0, 2500, {.forwards = true, .maxSpeed = 45, .earlyExitRange=2});
@@ -144,7 +144,7 @@ void Autonomous::Skills(Intake &intake, Latch &latch, DistanceSensor &distance, 
    LatchControl.retract();
 
    //Move back a little to ensure the mogo goes into the corner.
-   chassis.moveToPoint(64.5, 5, 1000, {.forwards = false, .maxSpeed = 50, .earlyExitRange=1.5}, false);
+   chassis.moveToPoint(63.5, 4, 1000, {.forwards = false, .maxSpeed = 50, .earlyExitRange=1.5}, false);
 
    // Stop the intake and hook.
    IntakeMotor.brake();
@@ -165,10 +165,10 @@ void Autonomous::Skills(Intake &intake, Latch &latch, DistanceSensor &distance, 
    chassis.setPose(new_x, new_y, chassis.getPose().theta);
    chassis.moveToPoint(chassis.getPose().x-5, chassis.getPose().y, 600, {.earlyExitRange=1});
 
-   chassis.moveToPose(24, 15, -90, 1000, {.horizontalDrift = 8});
+   chassis.moveToPose(0, 15, -90, 1500, {.horizontalDrift = 8,});
    
    
-   chassis.turnToHeading(90, 1000, {});
+   chassis.turnToPoint(-20.5, 15, 1000, {.forwards=false});
    chassis.moveToPoint(-16.5, 15, 1000, {.forwards = false, .maxSpeed=80}, false);
    chassis.moveToPoint(-20.5, 15, 700, {.forwards = false, .maxSpeed=55}, false);
 
@@ -202,10 +202,9 @@ void Autonomous::Skills(Intake &intake, Latch &latch, DistanceSensor &distance, 
    //Set the hook to a high-torque rpm to get the best loading possible, waits for the MoveToPose to end.
    chassis.waitUntil(50);
 
-   HookMotor.move_velocity(110);
+   HookMotor.move_velocity(175);
 
-   chassis.waitUntilDone();
-   //Turn to a point ~1.5 tiles away from the right neutral stake
+   chassis.waitUntilDone();   //Turn to a point ~1.5 tiles away from the right neutral stake
    ladybrown.MoveToPoint(LadyBrown::LOAD_STATE);
    chassis.turnToPoint(-40, 62.5, 800, {.forwards=false});
 
@@ -221,10 +220,10 @@ void Autonomous::Skills(Intake &intake, Latch &latch, DistanceSensor &distance, 
    chassis.waitUntilDone();
 
    //Turn to the Neutral wall stake.
-   chassis.turnToPoint(-78, 61.5, 660);
+   chassis.turnToPoint(-78, 62.5, 660);
 
    // Move there
-   chassis.moveToPoint(-72, 61.5, 920, {.forwards=true, .maxSpeed=50}, true);
+   chassis.moveToPoint(-72, 62.5, 920, {.forwards=true, .maxSpeed=50}, true);
 
    // At 18 inches of movement, stop the intake in advance of the neutral wall stake
    chassis.waitUntil(18);
@@ -237,14 +236,14 @@ void Autonomous::Skills(Intake &intake, Latch &latch, DistanceSensor &distance, 
 
    //Move back to the 5th tile edge, and restart the intake 15 inches into the movement.
    chassis.moveToPoint(-47, 63.5, 750, {.forwards = false, .maxSpeed = 75});
-   chassis.waitUntil(5);
    IntakeMotor.move_velocity(600);
-   HookMotor.move_velocity(200);
+   chassis.waitUntil(5);
+   ladybrown.MoveToPoint(LadyBrown::BASE_STATE);
 
 
    //Point the robot towards the home side wall, and put the lady brown down.
    chassis.turnToPoint(-47, 0, 950);
-   ladybrown.MoveToPoint(LadyBrown::BASE_STATE);
+   HookMotor.move_velocity(200);
 
    //Go close to the wall, but exit early so that the robot glides to the last ring.
    chassis.moveToPoint(-47, -5, 2750, {.forwards = true, .maxSpeed = 45, .earlyExitRange=2});
