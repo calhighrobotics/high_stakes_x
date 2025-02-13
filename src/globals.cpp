@@ -39,13 +39,13 @@ pros::adi::Pneumatics SweeperControl('B', false);
 pros::Distance distance_sensor(10);
 pros::Rotation lateral_sensor(16);
 pros::Rotation horizontal_sensor(17);
-
+pros::Rotation HookRotation(6);
 pros::Rotation LadyBrownRotation(8);
 
-pros::Imu inertial_sensor(14);
+pros::Imu inertial_sensor(15);
 
 // Vision sensor configuration
-pros::Optical colorSensor(4);
+pros::Optical colorSensor(1);
 
 pros::vision_signature_s_t RED_SIG =
     pros::c::vision_signature_from_utility(1, -4653, -3619, -4136, 9831, 11725, 10778, 2.5, 0);

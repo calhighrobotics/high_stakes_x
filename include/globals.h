@@ -73,7 +73,7 @@ extern pros::vision_signature_s_t BLUE_DARK_SIG;
 extern pros::Distance distance_sensor;
 extern pros::Rotation lateral_sensor;
 extern pros::Rotation horizontal_sensor;
-
+extern pros::Rotation HookRotation;
 extern pros::Rotation LadyBrownRotation;
 
 // forward/backward PID

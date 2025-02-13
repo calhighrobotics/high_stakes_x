@@ -6,12 +6,15 @@
 
 constexpr int SLOWER_VELOCITY = 200;
 constexpr int FASTER_VELOCITY = 600;
+// Rough estimate of the number of degrees the hook turns for a full cycle, measured by the rotation sensor
+constexpr int REVOLUITION_DEGREES = 450;
 
 using namespace Robot;
 using namespace Robot::Globals;
 
 // Set to skills by default to prevent any accidental ring skips
 Lift::ALLIANCE_COLOR Lift::alliance_color = Lift::SKILLS;
+bool Lift::ringSkipActive = true;
 
 
 Lift::Lift() { 
@@ -19,6 +22,8 @@ Lift::Lift() {
    Lift::ring_color = Lift::SKILLS;
    Lift::hookSkipRunning = false;
    colorSensor.set_led_pwm(75);
+   HookRotation.set_position(0);
+
  }
 
 void Lift::run() {
@@ -39,7 +44,11 @@ void Lift::run() {
       HookMotor.move_velocity(-SLOWER_VELOCITY);
    } else if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_L1)) {
       IntakeMotor.move_velocity(FASTER_VELOCITY);
-      HookRun();
+      if (ringSkipActive) {
+         HookMotor.move_velocity(SLOWER_VELOCITY);
+      } else {
+         HookMotor.move_velocity(SLOWER_VELOCITY);
+      }
    } else {
       IntakeMotor.brake();
       HookMotor.brake();
@@ -47,9 +56,9 @@ void Lift::run() {
 }
 
 void Lift::HookRun() {
-   if (colorSensor.get_hue() > 200 && colorSensor.get_hue() < 230) {
+   if (colorSensor.get_hue() > 195 && colorSensor.get_hue() < 230) {
       Lift::ring_color = Lift::BLUE;
-   } else if (colorSensor.get_hue() > 0 && colorSensor.get_hue() < 30) {
+   } else if (colorSensor.get_hue() > 12 && colorSensor.get_hue() < 30) {
       Lift::ring_color = Lift::RED;
    }
 
@@ -65,14 +74,11 @@ void Lift::HookRun() {
 }
 
 void Lift::HookSkip() {
-   if (!hookSkipRunning) {
-      hookSkipRunning = true;
+   while (HookRotation.get_position() % 450 < 135 && HookRotation.get_position() % 450 > 165) {
+      int current_position = HookRotation.get_position() % 450;
       HookMotor.move_velocity(200);
-      if (true) {
-         HookMotor.brake();
-         pros::delay(100);
-         HookMotor.move_relative(100, 200);
-      }
    }
-   ;
+   HookMotor.brake();
+   pros::delay(100);
+   HookMotor.move_relative(100, 200);
 }

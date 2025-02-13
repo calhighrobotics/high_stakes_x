@@ -7,15 +7,13 @@ using namespace Robot::Globals;
 
 Drivetrain::DRIVE_MODE Drivetrain::driveMode = CURVATURE_DRIVE;
 
-bool Drivetrain::isReversed = false;
-
 Drivetrain::Drivetrain() { Drivetrain::driveMode = CURVATURE_DRIVE; }
 
 void Drivetrain::CurvatureDrive() {
    int left = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
    int right = controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_X);
 
-   chassis.curvature(thrustHandler(left), thrustHandler(right));
+   chassis.curvature(left, right);
 
    pros::delay(DEFAULT_DELAY_LENGTH);
 }
@@ -25,7 +23,7 @@ void Drivetrain::ArcadeDrive() {
    int left = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
    int right = controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_X);
 
-   chassis.arcade(thrustHandler(left), thrustHandler(right), false, 0.4);
+   chassis.arcade(left, right, false, 0.4);
 
    pros::delay(DEFAULT_DELAY_LENGTH);
 }
@@ -34,7 +32,7 @@ void Drivetrain::TankDrive() {
    int left = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
    int right = controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_Y);
 
-   chassis.tank(thrustHandler(left), thrustHandler(right));
+   chassis.tank(left, right);
 
    pros::delay(DEFAULT_DELAY_LENGTH);
 }
@@ -58,14 +56,6 @@ void Drivetrain::run() {
 std::string Drivetrain::toggleDrive() {
    int driveMode = (Drivetrain::driveMode + 1) % (TANK_DRIVE + 1);
    return SwitchDrive(driveMode);
-}
-
-int Drivetrain::thrustHandler(int thrust) {
-   if (Drivetrain::isReversed) {
-      // Sets each motor to its opposite direction - see globals.cpp for motor ports
-      return thrust * -1;
-   }
-   return thrust;
 }
 
 // Switch the drivetrain control mode between arcade and tank drive with the down button(between 1 and 2)

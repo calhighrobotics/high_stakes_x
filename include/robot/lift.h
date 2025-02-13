@@ -12,6 +12,8 @@ public:
 
    static ALLIANCE_COLOR alliance_color;
 
+   static bool ringSkipActive;
+
    /**
     * @brief Runs the main function of the intake system.
     *
@@ -25,6 +27,7 @@ public:
    void HookSkip();
 
    Lift();
+
 
 private:
    bool hookSkipRunning;

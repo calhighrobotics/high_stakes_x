@@ -11,6 +11,7 @@
 #include "robot/auton.h"
 #include "robot/drivetrain.h"
 #include "robot/ladybrown.h"
+#include "robot/lift.h"
 #include "screen/selector.h"
 #include "screen/status.h"
 #include <string>
@@ -64,6 +65,8 @@ struct Electronics {
 
 void initialize() {
    chassis.calibrate();
+
+   //Also used for ringskip
 
    chassis.setPose(0, 0, 0);
    pros::rtos::Task MotorNotification(electronic.controllers.notify_motor_disconnect);
@@ -169,7 +172,6 @@ void autonomous() {
       }
    });
    
-   Autonomous::auton = Autonomous::BLUE_POS_LATE_RUSH;
    subsystem.autonomous.AutoDrive(subsystem.lift, subsystem.latch, subsystem.sweeper, electronic.distance_sensor,
                                   subsystem.ladybrown);
 }
@@ -204,10 +206,10 @@ void opcontrol() {
       // Checks for drivetrain reversal - Changes conditions in a value handler function in the drivetrain class
       if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_DOWN)) {
          // isReversed is static, it is changed for the global state.
-         Drivetrain::isReversed = !Drivetrain::isReversed;
+         Lift::ringSkipActive = !Lift::ringSkipActive;
 
          // Output the current drive mode to the controller screen
-         controller.print(0, 0, "reversal: %d", Drivetrain::isReversed);
+         controller.print(0, 0, "riskip: %d", Lift::ringSkipActive);
       }
 
       if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_A)) {
