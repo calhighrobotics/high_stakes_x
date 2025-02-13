@@ -42,7 +42,7 @@ pros::Rotation horizontal_sensor(17);
 
 pros::Rotation LadyBrownRotation(8);
 
-pros::Imu inertial_sensor(14);
+pros::Imu inertial_sensor(15);
 
 // Vision sensor configuration
 pros::Optical colorSensor(4);
