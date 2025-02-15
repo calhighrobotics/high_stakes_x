@@ -155,7 +155,7 @@ void competition_initialize() {
  */
 
 void autonomous() {
-   Autonomous::auton = Autonomous::SKILLS;
+   //Autonomous::auton = Autonomous::SKILLS;
    subsystem.autonomous.AutoDrive(subsystem.intake, subsystem.latch, subsystem.sweeper, electronic.distance_sensor,
                                   subsystem.ladybrown);
 }
