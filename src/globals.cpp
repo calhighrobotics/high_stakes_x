@@ -42,7 +42,7 @@ pros::Rotation horizontal_sensor(17);
 
 pros::Rotation LadyBrownRotation(8);
 
-pros::Imu inertial_sensor(2);
+pros::Imu inertial_sensor(15);
 
 // Vision sensor configuration
 pros::Optical colorSensor(4);
@@ -116,8 +116,8 @@ lemlib::ExpoDriveCurve throttle_curve(3,    // joystick deadband out of 127
 
 // input curve for steer input during driver control
 lemlib::ExpoDriveCurve steer_curve(3,   // joystick deadband out of 127
-                                   17,  // minimum output where drivetrain will move out of 127
-                                   1 // expo curve gain
+                                   15,  // minimum output where drivetrain will move out of 127
+                                   1.013 // expo curve gain
 );
 
 lemlib::Chassis chassis(drivetrain, lateral_controller, angular_controller, sensors, &throttle_curve, &steer_curve);

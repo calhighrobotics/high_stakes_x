@@ -22,18 +22,25 @@ constexpr int delay_constant = 1050;
 void Autonomous::RedNeg(Intake &intake, Latch &latch, DistanceSensor &distance) {
    drive_.set_brake_mode_all(pros::E_MOTOR_BRAKE_BRAKE);
    chassis.setPose(0, 0, 0);
-   // Move to first stake, then a bit farther at a slower speed for alignment
-   chassis.moveToPoint(0, -27, 1800, {.forwards = false, .maxSpeed = 60}, true);
-   chassis.moveToPoint(0, -35, 2050, {.forwards = false, .maxSpeed = 30}, true);
-   chassis.waitUntilDone();
-   pros::delay(500);
-   // Grab the closest MOGO mech
-   LatchControl.extend();
-   pros::delay(1500);
-   // Load the ring onto the stake
+
+   
+   chassis.moveToPoint(0, -18, 2000, {.forwards = false});
+   chassis.moveToPoint(0, -24, 2000, {.forwards = false, .maxSpeed=60}, false);
+
+   latch.toggle();
+
+   chassis.turnToHeading(90, 1000);
    IntakeMotor.move_velocity(600);
    HookMotor.move_velocity(200);
-   pros::delay(3000);
+
+   chassis.moveToPoint(27, -24, 1500);
+
+   chassis.waitUntilDone();
+   pros::delay(1000);
+   
+   chassis.turnToHeading(-90.0, 1000);
+   chassis.moveToPoint(-24, 20, 1500, {.maxSpeed=60});
+   
 }
 // Red Right
 void Autonomous::RedPos(Intake &intake, Latch &latch, Sweeper &sweeper, DistanceSensor &distance, LadyBrown &ladybrown) {
@@ -275,20 +282,43 @@ void Autonomous::RedPosLateGoalRush(Intake &intake, Latch &latch, Sweeper &sweep
  * solo awp autonomous. Blue right
  */
 void Autonomous::BlueNeg(Intake &intake, Latch &latch, DistanceSensor &distance) {
+   // drive_.set_brake_mode_all(pros::E_MOTOR_BRAKE_BRAKE);
+   // chassis.setPose(0, 0, 0);
+   // // Move to first stake, then a bit farther at a slower speed for alignment
+   // chassis.moveToPoint(0, -27, 1800, {.forwards = false, .maxSpeed = 60}, true);
+   // chassis.moveToPoint(0, -35, 2050, {.forwards = false, .maxSpeed = 30}, true);
+   // chassis.waitUntilDone();
+   // pros::delay(500);
+   // // Grab the closest MOGO mech
+   // LatchControl.extend();
+   // pros::delay(2000);
+   // // Load the ring onto the stake
+   // IntakeMotor.move_velocity(600);
+   // HookMotor.move_velocity(200);
+   // pros::delay(3000);
+   
    drive_.set_brake_mode_all(pros::E_MOTOR_BRAKE_BRAKE);
    chassis.setPose(0, 0, 0);
-   // Move to first stake, then a bit farther at a slower speed for alignment
-   chassis.moveToPoint(0, -27, 1800, {.forwards = false, .maxSpeed = 60}, true);
-   chassis.moveToPoint(0, -35, 2050, {.forwards = false, .maxSpeed = 30}, true);
-   chassis.waitUntilDone();
-   pros::delay(500);
-   // Grab the closest MOGO mech
-   LatchControl.extend();
-   pros::delay(2000);
-   // Load the ring onto the stake
+
+   
+   chassis.moveToPoint(0, -18, 2000, {.forwards = false});
+   chassis.moveToPoint(0, -24, 2000, {.forwards = false, .maxSpeed=60}, false);
+
+   latch.toggle();
+
+   chassis.turnToHeading(-90, 1000);
    IntakeMotor.move_velocity(600);
    HookMotor.move_velocity(200);
-   pros::delay(3000);
+
+   chassis.moveToPoint(-27, -24, 1500);
+
+   chassis.waitUntilDone();
+   pros::delay(1000);
+   
+   chassis.turnToHeading(90.0, 1000);
+   chassis.moveToPoint(24, 20, 1500, {.maxSpeed=60});
+ 
+
 }
 
 // Takes in two parameters: The autonomous value as well as the puncher object.
