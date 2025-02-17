@@ -82,6 +82,12 @@ void initialize() {
          pros::lcd::print(6, "Autonomous: %s", subsystem.autonomous.autonName);
          pros::lcd::print(7, "Distance Position: %i", distance_sensor.get_distance());
 
+         double total_wattage = LeftBack.get_power() + RightBack.get_power() + LeftFront.get_power() +
+                                RightFront.get_power() + LeftMid.get_power() + RightMid.get_power() +
+                                IntakeMotor.get_power() + HookMotor.get_power() + LadyBrownMotor.get_power();
+
+         std::cout << "Total Wattage: " << total_wattage << std::endl;
+
          pros::delay(20);
       }
    });
