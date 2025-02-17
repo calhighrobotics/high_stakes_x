@@ -20,7 +20,7 @@ void Autonomous::Skills(Intake &intake, Latch &latch, DistanceSensor &distance, 
    drive_.set_brake_mode_all(pros::E_MOTOR_BRAKE_BRAKE);
    chassis.setPose(-5.25, 5.75, 180);
 
-   // Autonomous routine for the Skills challenge - 60 seconds MAX
+   //Autonomous routine for the Skills challenge - 60 seconds MAX
    /* ##############################################*/
 
    // De-hook into the alliance stake
@@ -105,7 +105,7 @@ void Autonomous::Skills(Intake &intake, Latch &latch, DistanceSensor &distance, 
    ladybrown.MoveToPoint(LadyBrown::ATTACK_STATE);
 
    //Move back to the 5th tile edge, and restart the intake 15 inches into the movement.
-   chassis.moveToPoint(47, 64.25, 750, {.forwards = false, .maxSpeed = 75});
+   chassis.moveToPoint(47, 63.75, 750, {.forwards = false, .maxSpeed = 75});
    IntakeMotor.move_velocity(600);
    chassis.waitUntil(5);
    ladybrown.MoveToPoint(LadyBrown::BASE_STATE);

@@ -1,5 +1,6 @@
 #include "robot/drivetrain.h"
 #include "globals.h"
+#include <cmath>
 #define DEFAULT_DELAY_LENGTH 15
 
 using namespace Robot;
@@ -12,29 +13,42 @@ bool Drivetrain::isReversed = false;
 Drivetrain::Drivetrain() { Drivetrain::driveMode = CURVATURE_DRIVE; }
 
 void Drivetrain::CurvatureDrive() {
-   int left = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
-   int right = controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_X);
+   int throttle = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
+   int turn = controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_X);
 
-   chassis.curvature(thrustHandler(left), thrustHandler(right));
+   // Makes the turning of the robot even more controlled when the thrust is 0, as the robot's turning is proportional to
+   // the thrust of the robot has no thrust. Based on an exponential drive curve.   
+   if (throttle <= 1) {
+      turn = std::round(arcade_turn_curve.curve(turn));
+   }
+
+   chassis.curvature(thrustHandler(throttle), thrustHandler(turn));
 
    pros::delay(DEFAULT_DELAY_LENGTH);
 }
 
 void Drivetrain::ArcadeDrive() {
    // Arcade Measurements
-   int left = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
-   int right = controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_X);
+   int throttle = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
+   int turn = controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_X);
 
-   chassis.arcade(thrustHandler(left), thrustHandler(right), false, 0.4);
+   // Makes the turning of the robot even more controlled when the thrust is 0, as the robot's turning is proportional to
+   // the thrust of the robot has no thrust. Based on an exponential drive curve.   
+   if (throttle <= 1) {
+      turn = std::round(arcade_turn_curve.curve(turn));
+   }
+
+   chassis.arcade(thrustHandler(throttle), thrustHandler(turn), false, 0.55);
 
    pros::delay(DEFAULT_DELAY_LENGTH);
 }
 
 void Drivetrain::TankDrive() {
-   int left = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
-   int right = controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_Y);
+   int throttle = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
+   int turn = controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_Y);
+   
 
-   chassis.tank(thrustHandler(left), thrustHandler(right));
+   chassis.tank(thrustHandler(throttle), thrustHandler(turn));
 
    pros::delay(DEFAULT_DELAY_LENGTH);
 }

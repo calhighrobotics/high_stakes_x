@@ -92,6 +92,8 @@ extern lemlib::ExpoDriveCurve throttle_curve;
 
 extern lemlib::ExpoDriveCurve steer_curve;
 
+extern lemlib::ExpoDriveCurve arcade_turn_curve;
+
 extern pros::adi::DigitalIn drivetrainToggleSwitch;
 extern pros::adi::DigitalIn autonToggleSwitch;
 
