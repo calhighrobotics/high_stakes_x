@@ -55,6 +55,7 @@ void LadyBrown::run(bool async, int timeout) {
       std::cout << "Moving to: " << move_to << std::endl;
       std::cout << "current state: " << current_state << std::endl;
 
+
       if (!async) {
          MoveToPoint(move_to);
       } else {
@@ -73,7 +74,7 @@ void LadyBrown::MoveToPoint(LADYBROWN_STATE state, int max_error, int timeout) {
 
    std::cout << "state: " << current_state << std::endl;
    constexpr double base_location = 30;
-   constexpr double load_location = -2550;
+   constexpr double load_location = -2850;
    constexpr double attack_location = -15500;
 
    int target;

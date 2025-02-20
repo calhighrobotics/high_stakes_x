@@ -1,6 +1,7 @@
 #include "robot/intake.h"
 
 #include "globals.h"
+#include "pros/misc.h"
 
 #define SLOWER_VELOCITY 200
 #define FASTER_VELOCITY 600
@@ -21,5 +22,12 @@ void Intake::run() {
    } else {
       IntakeMotor.brake();
       HookMotor.brake();
+   }
+   
+   
+   if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_RIGHT)) {
+      IntakeMotor.move_velocity(FASTER_VELOCITY);
+   } else if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_DOWN)) {
+      IntakeMotor.move_velocity(-FASTER_VELOCITY);
    }
 }

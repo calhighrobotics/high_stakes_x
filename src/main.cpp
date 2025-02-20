@@ -86,9 +86,11 @@ void initialize() {
                                 RightFront.get_power() + LeftMid.get_power() + RightMid.get_power() +
                                 IntakeMotor.get_power() + HookMotor.get_power() + LadyBrownMotor.get_power();
 
-         std::cout << "Total Wattage: " << total_wattage << std::endl;
+         //std::cout << "Total Wattage: " << total_wattage << std::endl;
+         std::cout << chassis.getPose().theta << std::endl;
+         //std::cout << chassis.getPose().x << ", " << chassis.getPose().y << std::endl;
 
-         pros::delay(20);
+         pros::delay(100);
       }
    });
 
@@ -144,7 +146,7 @@ void disabled() {}
  * starts.<asd></asd>
  */
 void competition_initialize() {
-   screen.selector.selector();
+   //screen.selector.selector();
 
 }
 
@@ -161,11 +163,16 @@ void competition_initialize() {
  */
 
 void autonomous() {
-   //Autonomous::auton = Autonomous::SKILLS;
+   Autonomous::auton = Autonomous::BLUE_NEG;
    subsystem.autonomous.AutoDrive(subsystem.intake, subsystem.latch, subsystem.sweeper, electronic.distance_sensor,
-                                  subsystem.ladybrown);
-}
+                                subsystem.ladybrown);
 
+   //chassis.moveToPoint(0, -36, 2000, {.forwards=false, .minSpeed=20, .earlyExitRange=12}, false);
+   
+   //LatchControl.extend();
+
+
+}
 /**
  * Runs the operator control code. This function will be started in its own
  * task with the default priority and stack size whenever the robot is enabled
@@ -183,29 +190,18 @@ void opcontrol() {
 
    while (true) {
 
-      // Calls to event handling functions.
-      if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_UP)) {
-         autonomous();
-      }
       // Toggles the drivetrain orientation - can be forward or backward
-      if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_RIGHT)) {
+      if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_UP)) {
          std::string name = subsystem.drivetrain.toggleDrive();
          // Output the current drive mode to the controller screen
          controller.print(0, 0, name.c_str());
-      }
-      // Checks for drivetrain reversal - Changes conditions in a value handler function in the drivetrain class
-      if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_DOWN)) {
-         // isReversed is static, it is changed for the global state.
-         Drivetrain::isReversed = !Drivetrain::isReversed;
-
-         // Output the current drive mode to the controller screen
-         controller.print(0, 0, "reversal: %d", Drivetrain::isReversed);
       }
 
       if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_A)) {
          pros::Task move([&]() { subsystem.ladybrown.MoveToPoint(LadyBrown::ATTACK_STATE); }, "LadyBrownMove");
       }
 
+      
 
       subsystem.drivetrain.run();
       subsystem.latch.run();

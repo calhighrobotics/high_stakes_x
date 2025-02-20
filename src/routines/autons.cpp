@@ -281,43 +281,59 @@ void Autonomous::RedPosLateGoalRush(Intake &intake, Latch &latch, Sweeper &sweep
  * @todo Flesh out this method before the competition in order to make it a full
  * solo awp autonomous. Blue right
  */
-void Autonomous::BlueNeg(Intake &intake, Latch &latch, DistanceSensor &distance) {
+void Autonomous::BlueNeg(Intake &intake, Latch &latch, DistanceSensor &distance, LadyBrown &ladybrown) {
+
+   
    // drive_.set_brake_mode_all(pros::E_MOTOR_BRAKE_BRAKE);
    // chassis.setPose(0, 0, 0);
-   // // Move to first stake, then a bit farther at a slower speed for alignment
-   // chassis.moveToPoint(0, -27, 1800, {.forwards = false, .maxSpeed = 60}, true);
-   // chassis.moveToPoint(0, -35, 2050, {.forwards = false, .maxSpeed = 30}, true);
-   // chassis.waitUntilDone();
-   // pros::delay(500);
-   // // Grab the closest MOGO mech
-   // LatchControl.extend();
-   // pros::delay(2000);
-   // // Load the ring onto the stake
+
+   
+   // chassis.moveToPoint(0, -18, 2000, {.forwards = false});
+   // chassis.moveToPoint(0, -24, 2000, {.forwards = false, .maxSpeed=60}, false);
+
+   // latch.toggle();
+
+   // chassis.turnToHeading(-90, 1000);
    // IntakeMotor.move_velocity(600);
    // HookMotor.move_velocity(200);
-   // pros::delay(3000);
+
+   // chassis.moveToPoint(-27, -24, 1500);
+
+   // chassis.waitUntilDone();
+   // pros::delay(1000);
    
+   // chassis.turnToHeading(90.0, 1000);
+   // chassis.moveToPoint(24, 20, 1500, {.maxSpeed=60});
+   HookMotor.set_zero_position(HookMotor.get_position());
+   colorSensor.set_led_pwm(70);
    drive_.set_brake_mode_all(pros::E_MOTOR_BRAKE_BRAKE);
-   chassis.setPose(0, 0, 0);
+   //Edge of lady brown is 5.5 inches from the alliance wall stake.
+   chassis.setPose(0, 0, -112);
+ 
+   ladybrown.MoveToPoint(LadyBrown::ATTACK_STATE, 150, 2000);
 
-   
-   chassis.moveToPoint(0, -18, 2000, {.forwards = false});
-   chassis.moveToPoint(0, -24, 2000, {.forwards = false, .maxSpeed=60}, false);
+   chassis.moveToPose(12, 38, 180, 2000, {.forwards=false, .horizontalDrift=6});
 
-   latch.toggle();
-
-   chassis.turnToHeading(-90, 1000);
+   ladybrown.MoveToPoint(LadyBrown::BASE_STATE, 150, 2000);
+   chassis.waitUntilDone();
+   LatchControl.extend();
+   pros::delay(250);
+   chassis.turnToPoint(32, 56, 1000, {.direction=AngularDirection::CCW_COUNTERCLOCKWISE});
    IntakeMotor.move_velocity(600);
    HookMotor.move_velocity(200);
+   chassis.moveToPoint(32, 49, 5000);
+   chassis.turnToPoint(46, 49, 5000);
 
-   chassis.moveToPoint(-27, -24, 1500);
+   chassis.moveToPoint(46, 49, 2500, {.minSpeed = 35});
+   chassis.moveToPoint(10, 35.5, 5000, {.forwards=false});
+   chassis.turnToPoint(38, 36, 5000);
+   chassis.moveToPoint(38, 36, 2000);
 
-   chassis.waitUntilDone();
-   pros::delay(1000);
-   
-   chassis.turnToHeading(90.0, 1000);
-   chassis.moveToPoint(24, 20, 1500, {.maxSpeed=60});
- 
+   chassis.turnToPoint(2, 36, 1000, {.direction=AngularDirection::CCW_COUNTERCLOCKWISE});
+   chassis.moveToPoint(-2, 36, 2500, {.maxSpeed=50});
+   chassis.waitUntil(25);
+   IntakeMotor.brake();
+
 
 }
 
@@ -345,7 +361,7 @@ void Autonomous::AutoDrive(Intake &intake, Latch &latch, Sweeper &sweeper, Dista
       break;
    case BLUE_NEG:
       Autonomous::autonName = "Blue Negative";
-      BlueNeg(intake, latch, distance);
+      BlueNeg(intake, latch, distance, ladybrown);
       break;
    case BLUE_POS_LATE_RUSH:
       Autonomous::autonName = "Blue Positive Late Rush";

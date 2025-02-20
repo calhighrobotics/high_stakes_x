@@ -102,7 +102,7 @@ private:
     * @todo Make the autonomous more fleshed out, building it properly for the
     * competition
     */
-   void BlueNeg(Intake &intake, Latch &latch, DistanceSensor &distance);
+   void BlueNeg(Intake &intake, Latch &latch, DistanceSensor &distance, LadyBrown &ladybrown);
 
    /**
     * Executes the Skills challenge autonomous.
