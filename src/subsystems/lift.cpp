@@ -26,7 +26,7 @@ Lift::Lift() {
    //Set to skills by default to prevent any accidental ring skips
    Lift::ring_color = Lift::SKILLS;
    Lift::hookSkipRunning = false;
-   HookMotor.set_brake_mode(pros::motor_brake_mode_e_t::E_MOTOR_BRAKE_COAST);
+   HookMotor.set_brake_mode(pros::motor_brake_mode_e_t::E_MOTOR_BRAKE_BRAKE);
    colorSensor.set_led_pwm(75);
    HookRotation.set_position(0);
 
@@ -57,16 +57,12 @@ void Lift::run() {
 
       IntakeMotor.move_velocity(-FASTER_VELOCITY);
       HookMotor.move_velocity(-SLOWER_VELOCITY);
-   } else if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_L1)) {
-      while (HookRotation.get_position() % 83540 < 7000) {
-         HookMotor.move_velocity(200);
+   } else if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_L1)) {
+      if (HookRotation.get_position() % 83540 > 40000 && HookRotation.get_position() % 83540 < 44000) {
+         HookMotor.brake();
+         pros::delay(500);
       }
-      HookMotor.brake();
-      pros::delay(800);
-      while (HookRotation.get_position() % 83540 > 7000 && HookRotation.get_position() % 83540 < 53540) {
-         HookMotor.move_velocity(200);
-      }
-      HookMotor.brake();
+      HookMotor.move_velocity(200);
       // IntakeMotor.move_velocity(FASTER_VELOCITY);
       // if (ringSkipActive) {
       //    //HookRun();
@@ -86,6 +82,8 @@ void Lift::run() {
       HookMotor.brake();
    }
    
+   pros::lcd::print(7, "Distance Position: %i", HookRotation.get_position() % 83540);
+
    //std::cout << "Ring Color: " << Lift::ring_color << "Hook velocity" << HookMotor.get_target_velocity() << std::endl;
 }
 
