@@ -28,11 +28,11 @@ public:
 
    Lift();
 
+   ALLIANCE_COLOR ring_color;
+
 
 private:
    bool hookSkipRunning;
-
-   ALLIANCE_COLOR ring_color;
 
    /**
     * @brief blue is false, red is true.

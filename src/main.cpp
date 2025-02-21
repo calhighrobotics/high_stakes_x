@@ -71,6 +71,8 @@ void initialize() {
    chassis.setPose(0, 0, 0);
    pros::rtos::Task MotorNotification(electronic.controllers.notify_motor_disconnect);
 
+   Autonomous::auton = Autonomous::RED_NEG;
+
    pros::lcd::initialize();
    pros::Task screen_task([&]() {
       while (true) {
@@ -83,9 +85,12 @@ void initialize() {
          pros::lcd::print(4, "Horizontal Sensor: %i", horizontal_sensor.get_position());
          pros::lcd::print(5, "Lady Brown Sensor: %i", LadyBrownRotation.get_position());
          pros::lcd::print(6, "Autonomous: %s", subsystem.autonomous.autonName);
-         pros::lcd::print(7, "Distance Position: %i", distance_sensor.get_distance());
+         pros::lcd::print(7, "Distance Position: %i", HookRotation.get_position() % 83540);
 
-         pros::delay(20);
+         //std::cout << "Hook Pos  =  " << HookRotation.get_position() % 83540 << std::endl;
+
+
+         pros::delay(190);
       }
    });
 

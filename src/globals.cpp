@@ -39,7 +39,7 @@ pros::adi::Pneumatics SweeperControl('B', false);
 pros::Distance distance_sensor(10);
 pros::Rotation lateral_sensor(16);
 pros::Rotation horizontal_sensor(17);
-pros::Rotation HookRotation(6);
+pros::Rotation HookRotation(4);
 pros::Rotation LadyBrownRotation(8);
 
 pros::Imu inertial_sensor(15);
