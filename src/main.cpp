@@ -5,6 +5,7 @@
 #include "lemlib/chassis/chassis.hpp"
 #include "liblvgl/llemu.hpp"
 #include "pros/misc.h"
+#include "lemlib/timer.hpp"
 #include "pros/misc.hpp"
 #include "pros/motors.hpp"
 #include "pros/rtos.hpp"
@@ -78,16 +79,16 @@ void initialize() {
          // delay to save resources
          pros::lcd::print(3, "Lateral Sensor: %i", lateral_sensor.get_position());
          pros::lcd::print(4, "Horizontal Sensor: %i", horizontal_sensor.get_position());
-         pros::lcd::print(5, "Lady Brown Sensor: %i", LadyBrownRotation.get_position());
+         pros::lcd::print(5, "Lady Brown Sensor: %i", HookMotor.get_voltage());
          pros::lcd::print(6, "Autonomous: %s", subsystem.autonomous.autonName);
-         pros::lcd::print(7, "Distance Position: %i", distance_sensor.get_distance());
+         pros::lcd::print(7, "Distance Position: %i", HookRotation.get_position());
 
          double total_wattage = LeftBack.get_power() + RightBack.get_power() + LeftFront.get_power() +
                                 RightFront.get_power() + LeftMid.get_power() + RightMid.get_power() +
                                 IntakeMotor.get_power() + HookMotor.get_power() + LadyBrownMotor.get_power();
 
          //std::cout << "Total Wattage: " << total_wattage << std::endl;
-         std::cout << chassis.getPose().theta << std::endl;
+         //std::cout << chassis.getPose().theta << std::endl;
          //std::cout << chassis.getPose().x << ", " << chassis.getPose().y << std::endl;
 
          pros::delay(100);
@@ -167,9 +168,8 @@ void autonomous() {
    subsystem.autonomous.AutoDrive(subsystem.intake, subsystem.latch, subsystem.sweeper, electronic.distance_sensor,
                                 subsystem.ladybrown);
 
-   //chassis.moveToPoint(0, -36, 2000, {.forwards=false, .minSpeed=20, .earlyExitRange=12}, false);
-   
-   //LatchControl.extend();
+   // chassis.setPose(0, 0, 0);
+   // chassis.moveToPoint(0, -3.5, 1000, {.forwards = false});
 
 
 }
@@ -191,13 +191,13 @@ void opcontrol() {
    while (true) {
 
       // Toggles the drivetrain orientation - can be forward or backward
-      if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_UP)) {
+      if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_LEFT)) {
          std::string name = subsystem.drivetrain.toggleDrive();
          // Output the current drive mode to the controller screen
          controller.print(0, 0, name.c_str());
       }
 
-      if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_A)) {
+      if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_X)) {
          pros::Task move([&]() { subsystem.ladybrown.MoveToPoint(LadyBrown::ATTACK_STATE); }, "LadyBrownMove");
       }
 
