@@ -64,7 +64,7 @@ private:
     * strategy. It contains the specific actions and movements required for this
     * strategy.
     */
-   void RedNeg(Intake &intake, Latch &latch, DistanceSensor &distance);
+   void RedNeg(Intake &intake, Latch &latch, DistanceSensor &distance, LadyBrown &ladybrown);
 
    /**
     * @brief Runs the autonomous path for the near side offensive game strategy.
@@ -102,7 +102,7 @@ private:
     * @todo Make the autonomous more fleshed out, building it properly for the
     * competition
     */
-   void BlueNeg(Intake &intake, Latch &latch, DistanceSensor &distance);
+   void BlueNeg(Intake &intake, Latch &latch, DistanceSensor &distance, LadyBrown &ladybrown);
 
    /**
     * Executes the Skills challenge autonomous.

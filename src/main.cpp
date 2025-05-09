@@ -5,6 +5,7 @@
 #include "lemlib/chassis/chassis.hpp"
 #include "liblvgl/llemu.hpp"
 #include "pros/misc.h"
+#include "lemlib/timer.hpp"
 #include "pros/misc.hpp"
 #include "pros/motors.hpp"
 #include "pros/rtos.hpp"
@@ -78,11 +79,19 @@ void initialize() {
          // delay to save resources
          pros::lcd::print(3, "Lateral Sensor: %i", lateral_sensor.get_position());
          pros::lcd::print(4, "Horizontal Sensor: %i", horizontal_sensor.get_position());
-         pros::lcd::print(5, "Lady Brown Sensor: %i", LadyBrownRotation.get_position());
+         pros::lcd::print(5, "Lady Brown Sensor: %i", HookMotor.get_voltage());
          pros::lcd::print(6, "Autonomous: %s", subsystem.autonomous.autonName);
-         pros::lcd::print(7, "Distance Position: %i", distance_sensor.get_distance());
+         pros::lcd::print(7, "Distance Position: %i", HookRotation.get_position());
 
-         pros::delay(20);
+         double total_wattage = LeftBack.get_power() + RightBack.get_power() + LeftFront.get_power() +
+                                RightFront.get_power() + LeftMid.get_power() + RightMid.get_power() +
+                                IntakeMotor.get_power() + HookMotor.get_power() + LadyBrownMotor.get_power();
+
+         //std::cout << "Total Wattage: " << total_wattage << std::endl;
+         //std::cout << chassis.getPose().theta << std::endl;
+         //std::cout << chassis.getPose().x << ", " << chassis.getPose().y << std::endl;
+
+         pros::delay(100);
       }
    });
 
@@ -138,7 +147,7 @@ void disabled() {}
  * starts.<asd></asd>
  */
 void competition_initialize() {
-   screen.selector.selector();
+   //screen.selector.selector();
 
 }
 
@@ -155,11 +164,15 @@ void competition_initialize() {
  */
 
 void autonomous() {
-   Autonomous::auton = Autonomous::BLUE_POS_LATE_RUSH;
+   Autonomous::auton = Autonomous::BLUE_NEG;
    subsystem.autonomous.AutoDrive(subsystem.intake, subsystem.latch, subsystem.sweeper, electronic.distance_sensor,
-                                  subsystem.ladybrown);
-}
+                                subsystem.ladybrown);
 
+   // chassis.setPose(0, 0, 0);
+   // chassis.moveToPoint(0, -3.5, 1000, {.forwards = false});
+
+
+}
 /**
  * Runs the operator control code. This function will be started in its own
  * task with the default priority and stack size whenever the robot is enabled
@@ -177,34 +190,18 @@ void opcontrol() {
 
    while (true) {
 
-      // Calls to event handling functions.
-      if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_UP)) {
-         autonomous();
-      }
       // Toggles the drivetrain orientation - can be forward or backward
-      if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_RIGHT)) {
+      if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_LEFT)) {
          std::string name = subsystem.drivetrain.toggleDrive();
          // Output the current drive mode to the controller screen
          controller.print(0, 0, name.c_str());
       }
-      // Checks for drivetrain reversal - Changes conditions in a value handler function in the drivetrain class
-      if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_DOWN)) {
-         // isReversed is static, it is changed for the global state.
-         Drivetrain::isReversed = !Drivetrain::isReversed;
 
-         // Output the current drive mode to the controller screen
-         controller.print(0, 0, "reversal: %d", Drivetrain::isReversed);
-      }
-
-      if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_A)) {
+      if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_X)) {
          pros::Task move([&]() { subsystem.ladybrown.MoveToPoint(LadyBrown::ATTACK_STATE); }, "LadyBrownMove");
       }
 
-      if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_X)) {
-         IntakeMotor.move_velocity(600);   
-      }
-
-
+      
 
       subsystem.drivetrain.run();
       subsystem.latch.run();

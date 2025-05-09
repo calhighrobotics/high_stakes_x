@@ -75,6 +75,8 @@ extern pros::Rotation lateral_sensor;
 extern pros::Rotation horizontal_sensor;
 
 extern pros::Rotation LadyBrownRotation;
+extern pros::Rotation HookRotation;
+
 
 // forward/backward PID
 extern lemlib::ControllerSettings lateral_controller;
@@ -92,11 +94,15 @@ extern lemlib::ExpoDriveCurve throttle_curve;
 
 extern lemlib::ExpoDriveCurve steer_curve;
 
+extern lemlib::ExpoDriveCurve arcade_turn_curve;
+
 extern pros::adi::DigitalIn drivetrainToggleSwitch;
 extern pros::adi::DigitalIn autonToggleSwitch;
 
 extern pros::adi::Pneumatics LatchControl;
 extern pros::adi::Pneumatics SweeperControl;
+extern pros::adi::Pneumatics IntakeLift;
+extern pros::adi::DigitalIn HookSwitch;
 
 } // namespace Globals
 } // namespace Robot
